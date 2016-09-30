@@ -1,6 +1,50 @@
 #include "PokerMediator.h"
 #include "SGTools.h"
 
+
+/*
+i   AllDui,  j  AllZhang  ;     
+
+
+
+
+
+*/
+
+void test()
+{
+	float posx, posy;   //正张牌的左下角，未被遮挡时
+	vector<vector<int>> pokerIDDui;
+
+	//
+	int duiSize = pokerIDDui.size();
+	int zhangSize;
+	for (DWORD i = 0; i < duiSize - 1; i++)   //非最右边一堆
+	{
+		zhangSize = pokerIDDui.at(i).size();
+		for (DWORD j = 0; j < zhangSize - 1; j++)
+		{
+			pokerIDDui.at(i).at(j);    //非最下边一张
+			//(posx, posy + pkHeight - 30, pkJianju, 30)
+		}
+		pokerIDDui.at(i).at(zhangSize - 1);   //最下边一张(未被遮挡的那一排)
+		//(posx, posy, pkJianju, pkHeight)
+	}
+
+	//最右边一堆
+	zhangSize = pokerIDDui.at(duiSize - 1).size();
+	for (DWORD j = 0; j <zhangSize - 1; j++)  //非最下边一张（位置）
+	{
+		pokerIDDui.at(duiSize - 1).at(j);
+		//(posx, posy + pkHeight - 30, pkWidth, 30)
+	}
+	pokerIDDui.at(duiSize - 1).at(zhangSize - 1); //最下边一张
+	//(posx, posy, pkwidth, pkHeight)
+
+
+}
+
+
 PokerMediator::PokerMediator(int id, bool isOutPoker, int desk, int DuiNum, int ZhangNum, int DuiAllNum, int ZhangAllNum, int isChangePos,bool isGongP)
 {
 	isPlayerOutPoker = isOutPoker;
@@ -79,7 +123,7 @@ void PokerMediator::OnRegister()
 		}
 		float posx = (size.width - 360 * size.width / 960 - (DuiAll - 1) * pkJianJu - pkWidth) / 2 + 360 * size.width / 960 + (Dui - 1)*pkJianJu;
 		float posy = 100 + 30 * (ZhangAll - Zhang - 1);
-		getView()->rootNode->setPosition(Vec2(posx, posy));
+		pokerView->setPosition(Vec2(posx, posy));
 		logV("jianju %d,x %f,y %f duiAll %d, dui %d, zhangAll %d, zhang %d", 
 			pkJianJu, posx, posy, DuiAll, Dui, ZhangAll, Zhang);
 	}
