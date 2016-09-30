@@ -1,0 +1,23 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="action0" Type="Plist" ID="0cced051-9492-45a3-9016-6ca17e127187" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="action/daoju/egg/jidan0001.png" />
+      <FilePathData Path="action/daoju/egg/jidan0002.png" />
+      <FilePathData Path="action/daoju/egg/jidan0003.png" />
+      <FilePathData Path="action/daoju/egg/jidan0004.png" />
+      <FilePathData Path="action/daoju/egg/jidan0005.png" />
+      <FilePathData Path="action/daoju/egg/jidan0006.png" />
+      <FilePathData Path="action/daoju/egg/jidan0007.png" />
+      <FilePathData Path="action/daoju/egg/jidan0008.png" />
+      <FilePathData Path="action/daoju/egg/jidan0009.png" />
+      <FilePathData Path="action/daoju/egg/jidan0010.png" />
+      <FilePathData Path="action/daoju/egg/jidan0011.png" />
+      <FilePathData Path="action/daoju/egg/jidan0012.png" />
+      <FilePathData Path="action/daoju/egg/jidan0013.png" />
+      <FilePathData Path="action/daoju/egg/jidan0014.png" />
+      <FilePathData Path="action/daoju/egg/jidan0015.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

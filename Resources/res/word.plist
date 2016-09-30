@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">  
+<plist version="1.0">  
+<dict>  
+    <key>guandan</key>  
+    <dict>  
+        <key>err</key>  
+        <dict>
+            <key>err1</key>  
+            <string>帐号密码不正确</string>  
+            <key>err2</key>  
+            <string>用户名已被注册</string> 
+			<key>err3</key>  
+            <string>昵称已被注册</string> 
+			<key>err4</key>  
+            <string>账号和密码不能为空</string> 
+            <key>err5</key>  
+            <string>登录失败</string> 
+            <key>err6</key>  
+            <string>不能连上服务器</string> 
+            <key>err7</key>  
+            <string>你已经断开与登录服务器的连接</string> 
+            <key>err8</key>  
+            <string>你已经断开与游戏服务器的连接</string> 
+        </dict>
+		
+		<key>test</key>  
+        <dict>
+            <key>test1</key>  
+            <string>登录成功</string>  
+            <key>test2</key>  
+            <string>用户名已被注册</string> 
+			<key>test3</key>  
+            <string>昵称已被注册</string> 
+			<key>test4</key>  
+            <string>账号和密码不能为空</string> 
+        </dict>
+
+        <key>game</key>  
+        <dict>
+            <key>notfit</key>  
+            <string>你的选牌不符合出牌规则</string>  
+            <key>roomNotOpen</key>  
+            <string>您选择的房间未开放</string>  
+        </dict>
+
+	    <key>net</key>  
+        <dict>
+            <key>loginServerIp</key>  
+            <string>221.226.117.87</string>
+            <!-- <string>192.168.2.130</string> -->
+
+			<key>loginServerPort</key>  
+            <string>8300</string>
+			<key>webUrl</key>  
+            <string>http://221.226.117.87:9000/ttdmx/ClientLogin/login</string>
+        </dict>
+		<key>warning</key>  
+        <dict>
+            <key>warning1</key>  
+            <string>是否确定退出游戏</string>  
+			<key>warning2</key>  
+            <string>您的金币不足，请充点金币再来吧。</string>  
+			<key>warning3</key>  
+            <string>您的钻石不足，请充点钻再来吧。</string>  
+			<key>warningBuy</key>  
+            <string>是否确定购买</string> 
+		</dict>
+		<key>message</key>
+		<dict>
+            <key>gold</key>  
+            <string>获得金币：</string>  
+			<key>diamond</key>  
+            <string>获得钻石：</string>  
+			<key>item</key>  
+            <string>获得道具：</string>  
+		</dict>
+		<key>prop</key>
+		<dict>
+            <key>6</key>  
+            <string>双倍金币卡</string>  
+			<key>7</key>  
+            <string>双倍经验卡</string>  
+			<key>8</key>  
+            <string>记牌器</string>  
+		</dict>
+		
+		<key>task</key>
+		<dict>
+            <key>1</key>  
+            <string>对局三局</string>  
+			<key>2</key>  
+            <string>赢三局</string>  
+			<key>3</key>  
+            <string>头游三局</string>
+			<key>4</key>  
+            <string>添加一位好友</string>  
+			<key>5</key>  
+            <string>与好友比赛</string>      
+			<key>6</key>  
+            <string>充值一次</string>  			
+		</dict>
+		<key>friend</key>
+		<dict>
+            <key>req</key>  
+            <string>请求好友已发送！</string>  
+            <key>agree</key>  
+            <string>同意好友请求已发送！</string>  
+            <key>refuse</key>  
+            <string>拒绝好友请求已发送！</string>  
+			<key>test</key>  
+            <string>2539970682</string>  
+			<key>test2</key>  
+            <string>狐狸哪块</string>
+			<key>agreeAdd</key>  
+            <string>同意添加您为好友！</string>  
+			<key>alreadyFriend</key>  
+            <string>已经是好友，请勿重复添加！</string>      
+			
+		</dict>
+		
+		<key>changci</key>
+		<dict>
+<!-- 			<key>0</key>  
+            <string>空闲中...</string>   -->
+            <key>1</key>  
+            <string>打金新手场</string>  
+            <key>2</key>  
+            <string>打金进阶场</string>  
+            <key>3</key>  
+            <string>打金大师场</string>  
+            <key>4</key>  
+            <string>12人快速场</string>  
+            <key>5</key>  
+            <string>5分钟定时场</string>  
+			<key>6</key>  
+            <string>血战到5</string>
+			<key>7</key>  
+            <string>血战到K</string>
+			<key>8</key>  
+            <string>血战到底</string>
+			<key>9</key>  
+            <string>娱乐好友场</string>                                      
+			<key>10</key>  
+            <string>娱乐随机主牌场</string>   
+        </dict>
+
+        <key>name</key>  
+        <dict>  
+            <key>name1</key>
+			<string>福建路,华侨路,湖南路,建宁路,龙江,宁海路,热河路,水佐岗,三牌楼,晓庄,小市,许府巷,挹江门,奥体,茶南,湖西街,江心洲,水西门,朝天宫,长乐路,常府街,大光路,夫子庙,光华路,建康路,瑞金路,升州路,新街口,月牙湖,北京东路,长江路,丹凤街,红山,后宰门,马群,卫岗,孝陵卫,玄武门,珠江路,安德门,铁心桥,小行,雨花台,迈皋桥,桥北,中央门,新庄,降龙,穷,啰嗦</string>
+            <key>name2</key>
+			<string>路人,过客,侠士,名人,文人,墨客,情敌,比8啵,领嗨,掌门,优雅的,刺头,草莓味,嘎嘣脆,雪碧,可口,度娘,帅,萌傻,青春期,财神,奇葩,肾宝,罗宾,作业,万能,佳人,对象,益达,三无,狐狸,猫奴,影帝,影后,镶金,偷香,门前,花甲,风流,剑客,牌王,走心,良人,乐福,小苹果,圆子,绿柳,风行,萨尔,德玛,蛮子,花甲</string> 
+			<key>name3</key>
+            <string>小杆子,小泡子,潘西,活闹鬼,拾达子,甩料,二糊,胎气,刷刮,犯嫌,讨喜,少一窍,猪头三,烧包,丧德,挺尸,二五郎当,老白儿,翘辨子,光郎头,巴巴头,哪块,拉呱,异怪,马即,歹怪,糊里巴涂,砸锅,恶癞,鸡头果,老混,二报,唱征服,笨小孩,潮男,孟婆汤,小黑,玄灵子</string>  
+        </dict>  
+    </dict>  
+</dict>  
+</plist>  

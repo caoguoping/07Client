@@ -1,0 +1,63 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="Pokers" Type="Plist" ID="6eb07be4-8a8f-4d87-9cbd-ac15da47c56a" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="False" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="poker/1.png" />
+      <FilePathData Path="poker/10.png" />
+      <FilePathData Path="poker/11.png" />
+      <FilePathData Path="poker/12.png" />
+      <FilePathData Path="poker/13.png" />
+      <FilePathData Path="poker/14.png" />
+      <FilePathData Path="poker/15.png" />
+      <FilePathData Path="poker/16.png" />
+      <FilePathData Path="poker/17.png" />
+      <FilePathData Path="poker/18.png" />
+      <FilePathData Path="poker/19.png" />
+      <FilePathData Path="poker/2.png" />
+      <FilePathData Path="poker/20.png" />
+      <FilePathData Path="poker/21.png" />
+      <FilePathData Path="poker/22.png" />
+      <FilePathData Path="poker/23.png" />
+      <FilePathData Path="poker/24.png" />
+      <FilePathData Path="poker/25.png" />
+      <FilePathData Path="poker/26.png" />
+      <FilePathData Path="poker/27.png" />
+      <FilePathData Path="poker/28.png" />
+      <FilePathData Path="poker/29.png" />
+      <FilePathData Path="poker/3.png" />
+      <FilePathData Path="poker/30.png" />
+      <FilePathData Path="poker/31.png" />
+      <FilePathData Path="poker/32.png" />
+      <FilePathData Path="poker/33.png" />
+      <FilePathData Path="poker/34.png" />
+      <FilePathData Path="poker/35.png" />
+      <FilePathData Path="poker/36.png" />
+      <FilePathData Path="poker/37.png" />
+      <FilePathData Path="poker/38.png" />
+      <FilePathData Path="poker/39.png" />
+      <FilePathData Path="poker/4.png" />
+      <FilePathData Path="poker/40.png" />
+      <FilePathData Path="poker/41.png" />
+      <FilePathData Path="poker/42.png" />
+      <FilePathData Path="poker/43.png" />
+      <FilePathData Path="poker/44.png" />
+      <FilePathData Path="poker/45.png" />
+      <FilePathData Path="poker/46.png" />
+      <FilePathData Path="poker/47.png" />
+      <FilePathData Path="poker/48.png" />
+      <FilePathData Path="poker/49.png" />
+      <FilePathData Path="poker/5.png" />
+      <FilePathData Path="poker/50.png" />
+      <FilePathData Path="poker/51.png" />
+      <FilePathData Path="poker/52.png" />
+      <FilePathData Path="poker/53.png" />
+      <FilePathData Path="poker/54.png" />
+      <FilePathData Path="poker/6.png" />
+      <FilePathData Path="poker/7.png" />
+      <FilePathData Path="poker/8.png" />
+      <FilePathData Path="poker/9.png" />
+      <FilePathData Path="poker/icon001.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

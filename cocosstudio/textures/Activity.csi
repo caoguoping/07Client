@@ -1,0 +1,50 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="Activity" Type="Plist" ID="b3b400aa-1fe1-4d1b-ba04-4999559f4ef2" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="False" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="NewActivity/already-receive_3.png" />
+      <FilePathData Path="NewActivity/button_not-receiving.png" />
+      <FilePathData Path="NewActivity/button_receive_1.png" />
+      <FilePathData Path="NewActivity/button_receive_2.png" />
+      <FilePathData Path="NewActivity/button_rewards_receive_1.png" />
+      <FilePathData Path="NewActivity/button_rewards_receive_2.png" />
+      <FilePathData Path="NewActivity/button_spin_1.png" />
+      <FilePathData Path="NewActivity/button_spin_2.png" />
+      <FilePathData Path="NewActivity/frame_players_s.png" />
+      <FilePathData Path="NewActivity/headshot_1_s.png" />
+      <FilePathData Path="NewActivity/headshot_2_s.png" />
+      <FilePathData Path="NewActivity/headshot_3_s.png" />
+      <FilePathData Path="NewActivity/headshot_4_s.png" />
+      <FilePathData Path="NewActivity/label_medal_1.png" />
+      <FilePathData Path="NewActivity/label_medal_2.png" />
+      <FilePathData Path="NewActivity/label_rank_1.png" />
+      <FilePathData Path="NewActivity/label_rank_2.png" />
+      <FilePathData Path="NewActivity/label_rebate_1.png" />
+      <FilePathData Path="NewActivity/label_rebate_2.png" />
+      <FilePathData Path="NewActivity/label_rewards_1.png" />
+      <FilePathData Path="NewActivity/label_rewards_2.png" />
+      <FilePathData Path="NewActivity/label_spin_1.png" />
+      <FilePathData Path="NewActivity/label_spin_2.png" />
+      <FilePathData Path="NewActivity/light_1.png" />
+      <FilePathData Path="NewActivity/light_2.png" />
+      <FilePathData Path="NewActivity/medal_bronze.png" />
+      <FilePathData Path="NewActivity/medal_diamond.png" />
+      <FilePathData Path="NewActivity/medal_exp_bg.png" />
+      <FilePathData Path="NewActivity/medal_exp_top.png" />
+      <FilePathData Path="NewActivity/medal_gold.png" />
+      <FilePathData Path="NewActivity/medal_lv_bg.png" />
+      <FilePathData Path="NewActivity/medal_silver.png" />
+      <FilePathData Path="NewActivity/medal_top1.png" />
+      <FilePathData Path="NewActivity/medal_top2.png" />
+      <FilePathData Path="NewActivity/medal_top3.png" />
+      <FilePathData Path="NewActivity/my-rank_line.png" />
+      <FilePathData Path="NewActivity/rebate_label_100.png" />
+      <FilePathData Path="NewActivity/rebate_label_200.png" />
+      <FilePathData Path="NewActivity/rebate_label_50.png" />
+      <FilePathData Path="NewActivity/rebate_label_500.png" />
+      <FilePathData Path="NewActivity/rewards_bg.png" />
+      <FilePathData Path="NewActivity/title_events.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

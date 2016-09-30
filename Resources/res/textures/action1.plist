@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>action/daoju/boom/zhadan0001.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{200,400},{160,160}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{160,160}</string>
+			</dict>
+			<key>action/daoju/boom/zhadan0002.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{200,560},{160,160}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{160,160}</string>
+			</dict>
+			<key>action/daoju/boom/zhadan0003.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{200,720},{160,160}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{160,160}</string>
+			</dict>
+			<key>action/daoju/boom/zhadan0004.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{360,400},{160,160}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{160,160}</string>
+			</dict>
+			<key>action/daoju/boom/zhadan0005.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{400,200},{160,160}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{160,160}</string>
+			</dict>
+			<key>action/daoju/boom/zhadan0006.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{360,560},{160,160}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{160,160}</string>
+			</dict>
+			<key>action/daoju/boom/zhadan0007.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{360,720},{160,160}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{160,160}</string>
+			</dict>
+			<key>action/daoju/boom/zhadan0008.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{520,360},{160,160}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{160,160}</string>
+			</dict>
+			<key>action/daoju/boom/zhadan0009.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{560,200},{160,160}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{160,160}</string>
+			</dict>
+			<key>action/touyou/touyou0026.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{200,200}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{200,200}</string>
+			</dict>
+			<key>action/touyou/touyou0027.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,200},{200,200}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{200,200}</string>
+			</dict>
+			<key>action/touyou/touyou0028.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,400},{200,200}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{200,200}</string>
+			</dict>
+			<key>action/touyou/touyou0029.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,600},{200,200}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{200,200}</string>
+			</dict>
+			<key>action/touyou/touyou0030.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,800},{200,200}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{200,200}</string>
+			</dict>
+			<key>action/touyou/touyou0031.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{200,0},{200,200}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{200,200}</string>
+			</dict>
+			<key>action/touyou/touyou0032.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{400,0},{200,200}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{200,200}</string>
+			</dict>
+			<key>action/touyou/touyou0033.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{600,0},{200,200}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{200,200}</string>
+			</dict>
+			<key>action/touyou/touyou0034.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{800,0},{200,200}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{200,200}</string>
+			</dict>
+			<key>action/touyou/touyou0035.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{200,200},{200,200}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{200,200}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>action1.png</string>
+			<key>realTextureFileName</key>
+			<string>action1.png</string>
+			<key>size</key>
+			<string>{1024,1024}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>1024</integer>
+			<key>height</key>
+			<integer>1024</integer>
+		</dict>
+	</dict>
+</plist>

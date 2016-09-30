@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>action/daoju/egg/jidan0001.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{210,210}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{210,210}</string>
+			</dict>
+			<key>action/daoju/egg/jidan0002.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,210},{210,210}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{210,210}</string>
+			</dict>
+			<key>action/daoju/egg/jidan0003.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,420},{210,210}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{210,210}</string>
+			</dict>
+			<key>action/daoju/egg/jidan0004.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,630},{210,210}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{210,210}</string>
+			</dict>
+			<key>action/daoju/egg/jidan0005.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{210,0},{210,210}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{210,210}</string>
+			</dict>
+			<key>action/daoju/egg/jidan0006.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{420,0},{210,210}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{210,210}</string>
+			</dict>
+			<key>action/daoju/egg/jidan0007.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{630,0},{210,210}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{210,210}</string>
+			</dict>
+			<key>action/daoju/egg/jidan0008.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{210,210},{210,210}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{210,210}</string>
+			</dict>
+			<key>action/daoju/egg/jidan0009.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{210,420},{210,210}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{210,210}</string>
+			</dict>
+			<key>action/daoju/egg/jidan0010.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{210,630},{210,210}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{210,210}</string>
+			</dict>
+			<key>action/daoju/egg/jidan0011.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{420,210},{210,210}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{210,210}</string>
+			</dict>
+			<key>action/daoju/egg/jidan0012.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{630,210},{210,210}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{210,210}</string>
+			</dict>
+			<key>action/daoju/egg/jidan0013.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{420,420},{210,210}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{210,210}</string>
+			</dict>
+			<key>action/daoju/egg/jidan0014.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{420,630},{210,210}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{210,210}</string>
+			</dict>
+			<key>action/daoju/egg/jidan0015.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{630,420},{210,210}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{210,210}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>action0.png</string>
+			<key>realTextureFileName</key>
+			<string>action0.png</string>
+			<key>size</key>
+			<string>{1024,1024}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>1024</integer>
+			<key>height</key>
+			<integer>1024</integer>
+		</dict>
+	</dict>
+</plist>

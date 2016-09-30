@@ -1,0 +1,26 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="fastStart" Type="Plist" ID="d5145bec-3997-4cf7-9b7a-6534b92436ed" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="1" AllowRotation="False" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="action/daoju/heart/aixin0001.png" />
+      <FilePathData Path="action/daoju/heart/aixin0002.png" />
+      <FilePathData Path="action/daoju/heart/aixin0003.png" />
+      <FilePathData Path="action/daoju/heart/aixin0004.png" />
+      <FilePathData Path="action/daoju/heart/aixin0005.png" />
+      <FilePathData Path="action/daoju/heart/aixin0006.png" />
+      <FilePathData Path="action/daoju/heart/aixin0007.png" />
+      <FilePathData Path="action/daoju/heart/aixin0008.png" />
+      <FilePathData Path="action/daoju/heart/aixin0009.png" />
+      <FilePathData Path="action/daoju/flower/xianhua0001.png" />
+      <FilePathData Path="action/daoju/flower/xianhua0002.png" />
+      <FilePathData Path="action/daoju/flower/xianhua0003.png" />
+      <FilePathData Path="action/daoju/flower/xianhua0004.png" />
+      <FilePathData Path="action/daoju/flower/xianhua0005.png" />
+      <FilePathData Path="action/daoju/flower/xianhua0006.png" />
+      <FilePathData Path="action/daoju/flower/xianhua0007.png" />
+      <FilePathData Path="action/daoju/flower/xianhua0008.png" />
+      <FilePathData Path="action/daoju/flower/xianhua0009.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

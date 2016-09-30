@@ -1,0 +1,46 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="Lobby" Type="Plist" ID="d6e8edf7-9a0c-44b0-964f-3d1101a1c518" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="2" AllowRotation="False" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="NewLobby/ad_1.png" />
+      <FilePathData Path="NewLobby/ad_2.png" />
+      <FilePathData Path="NewLobby/ad_3.png" />
+      <FilePathData Path="NewLobby/ad_page_1.png" />
+      <FilePathData Path="NewLobby/ad_page_2.png" />
+      <FilePathData Path="NewLobby/bottom_bg.png" />
+      <FilePathData Path="NewLobby/button_add_1.png" />
+      <FilePathData Path="NewLobby/button_add_2.png" />
+      <FilePathData Path="NewLobby/button_backpack_1.png" />
+      <FilePathData Path="NewLobby/button_backpack_2.png" />
+      <FilePathData Path="NewLobby/button_events_1.png" />
+      <FilePathData Path="NewLobby/button_events_2.png" />
+      <FilePathData Path="NewLobby/button_lv1_1.png" />
+      <FilePathData Path="NewLobby/button_lv1_2.png" />
+      <FilePathData Path="NewLobby/button_lv2_1.png" />
+      <FilePathData Path="NewLobby/button_lv2_2.png" />
+      <FilePathData Path="NewLobby/button_lv3_1.png" />
+      <FilePathData Path="NewLobby/button_lv3_2.png" />
+      <FilePathData Path="NewLobby/button_lv4_n.png" />
+      <FilePathData Path="NewLobby/button_recharge_1.png" />
+      <FilePathData Path="NewLobby/button_recharge_2.png" />
+      <FilePathData Path="NewLobby/button_setting_1.png" />
+      <FilePathData Path="NewLobby/button_setting_2.png" />
+      <FilePathData Path="NewLobby/button_shop_1.png" />
+      <FilePathData Path="NewLobby/button_shop_2.png" />
+      <FilePathData Path="NewLobby/button_sign-in_1.png" />
+      <FilePathData Path="NewLobby/button_sign-in_2.png" />
+      <FilePathData Path="NewLobby/button_start_1.png" />
+      <FilePathData Path="NewLobby/button_start_2.png" />
+      <FilePathData Path="NewLobby/button_task_1.png" />
+      <FilePathData Path="NewLobby/button_task_2.png" />
+      <FilePathData Path="NewLobby/headshot_frame.png" />
+      <FilePathData Path="NewLobby/icon_gold.png" />
+      <FilePathData Path="NewLobby/logo.png" />
+      <FilePathData Path="NewLobby/number_frame.png" />
+      <FilePathData Path="NewLobby/top_bg.png" />
+      <FilePathData Path="NewLobby/touming.png" />
+      <FilePathData Path="NewLobby/ad_bg.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

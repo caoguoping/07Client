@@ -1,0 +1,13 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="activity2" Type="Plist" ID="7991bedf-ee64-4227-8c88-0982d4b28125" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="False" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="NewActivity/spin_inner.png" />
+      <FilePathData Path="NewActivity/spin_bg.png" />
+      <FilePathData Path="NewActivity/roles_rebate.png" />
+      <FilePathData Path="NewActivity/medal_inner_bg_left.png" />
+      <FilePathData Path="NewActivity/medal_inner_bg_right.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

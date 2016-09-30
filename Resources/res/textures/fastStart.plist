@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>action/daoju/heart/aixin0001.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,925},{75,75}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{75,75}</string>
+			</dict>
+			<key>action/daoju/heart/aixin0002.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{78,925},{75,75}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{75,75}</string>
+			</dict>
+			<key>action/daoju/heart/aixin0003.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{133,265},{75,75}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{75,75}</string>
+			</dict>
+			<key>action/daoju/heart/aixin0004.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{133,342},{75,75}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{75,75}</string>
+			</dict>
+			<key>action/daoju/heart/aixin0005.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{133,419},{75,75}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{75,75}</string>
+			</dict>
+			<key>action/daoju/heart/aixin0006.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{133,496},{75,75}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{75,75}</string>
+			</dict>
+			<key>action/daoju/heart/aixin0007.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{133,573},{75,75}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{75,75}</string>
+			</dict>
+			<key>action/daoju/heart/aixin0008.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{133,650},{75,75}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{75,75}</string>
+			</dict>
+			<key>action/daoju/heart/aixin0009.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{133,727},{75,75}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{75,75}</string>
+			</dict>
+			<key>action/daoju/flower/xianhua0001.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,1},{130,130}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{130,130}</string>
+			</dict>
+			<key>action/daoju/flower/xianhua0002.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,133},{130,130}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{130,130}</string>
+			</dict>
+			<key>action/daoju/flower/xianhua0003.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,265},{130,130}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{130,130}</string>
+			</dict>
+			<key>action/daoju/flower/xianhua0004.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,397},{130,130}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{130,130}</string>
+			</dict>
+			<key>action/daoju/flower/xianhua0005.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,529},{130,130}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{130,130}</string>
+			</dict>
+			<key>action/daoju/flower/xianhua0006.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,661},{130,130}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{130,130}</string>
+			</dict>
+			<key>action/daoju/flower/xianhua0007.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,793},{130,130}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{130,130}</string>
+			</dict>
+			<key>action/daoju/flower/xianhua0008.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{133,1},{130,130}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{130,130}</string>
+			</dict>
+			<key>action/daoju/flower/xianhua0009.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{133,133},{130,130}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{130,130}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>fastStart.png</string>
+			<key>realTextureFileName</key>
+			<string>fastStart.png</string>
+			<key>size</key>
+			<string>{512,1024}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>512</integer>
+			<key>height</key>
+			<integer>1024</integer>
+		</dict>
+	</dict>
+</plist>

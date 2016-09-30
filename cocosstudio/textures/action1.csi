@@ -1,0 +1,27 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="action1" Type="Plist" ID="12335859-3103-42b5-88ac-4b7f58a87719" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="False" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="action/daoju/boom/zhadan0001.png" />
+      <FilePathData Path="action/daoju/boom/zhadan0002.png" />
+      <FilePathData Path="action/daoju/boom/zhadan0003.png" />
+      <FilePathData Path="action/daoju/boom/zhadan0004.png" />
+      <FilePathData Path="action/daoju/boom/zhadan0005.png" />
+      <FilePathData Path="action/daoju/boom/zhadan0006.png" />
+      <FilePathData Path="action/daoju/boom/zhadan0007.png" />
+      <FilePathData Path="action/daoju/boom/zhadan0008.png" />
+      <FilePathData Path="action/daoju/boom/zhadan0009.png" />
+      <FilePathData Path="action/touyou/touyou0026.png" />
+      <FilePathData Path="action/touyou/touyou0027.png" />
+      <FilePathData Path="action/touyou/touyou0028.png" />
+      <FilePathData Path="action/touyou/touyou0029.png" />
+      <FilePathData Path="action/touyou/touyou0030.png" />
+      <FilePathData Path="action/touyou/touyou0031.png" />
+      <FilePathData Path="action/touyou/touyou0032.png" />
+      <FilePathData Path="action/touyou/touyou0033.png" />
+      <FilePathData Path="action/touyou/touyou0034.png" />
+      <FilePathData Path="action/touyou/touyou0035.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>
