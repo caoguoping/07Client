@@ -10,7 +10,28 @@ class  PlayPokerView : public BlueSkyView
 public:
 	PlayPokerView();
 	~PlayPokerView();
-
+	void showPiPei(bool show);
+	void clockShow(float dt);
+	void hideAllPokerNum();
+	void showPokerNum(int desk, int pokerNum);
+	void hideAllFace();
+	void hideAllName();
+	void showCharacterName(int pos, string name);
+	void showDaiJiFace(int pos, int faceID);
+	void showChuPaiFace(int pos, int faceID);
+	void showSuccessFace(int pos, int faceID);
+	void showDaiJiFaceHander(float dt);
+	void showPokerAllOutFaceHander(float dt);
+	void showPokerAllOutFace(int pos, int faceID);
+	void hideClock(int pos = -1);
+	void stopClock();
+	void showBeiLv(int index);
+	void showLunChang();
+	void showJiPaiQiBtn(bool show);
+	void showTouyou(int);
+	void startClock(int deskID, int index = 1);
+	void viewInit();
+public:
 	//划牌触摸层
 	ImageView*  imgHuaPai;
 
@@ -29,8 +50,6 @@ public:
 	ProgressTimer*  topTimer;
 	ProgressTimer*  rightTimer;
 
-
-
 	//轮场次与倍率
 	ImageView*  imgBeilv;
 	ImageView*  imgLunChang;
@@ -38,16 +57,10 @@ public:
 	Text*    txtLun;
 	Text*    txtChang;
 
-
-	void clockShow(float dt);
-
-	//
 	int time = 1;
-
 	int nowIndex = 1;
-
 	int sucessesPlayer = 0;   //已出完牌的玩家个数
-
+	ImageView*  imgTouyou[3];
 	//玩家骨骼动画
 	//
 	Node* meCharacterNode;
@@ -59,15 +72,12 @@ public:
 	cocostudio::Armature* Action3;
 	cocostudio::Armature* Action4;
 
-
 	//头游
 	cocostudio::timeline::ActionTimeline*  touyou;
 	Node*  touyouNode;
 
-
 	//正在匹配
 	cocostudio::Armature* pipeiAction;
-	void showPiPei(bool show);
 
 	//玩家名称
 	Text* leftName;
@@ -78,31 +88,7 @@ public:
 	Node* leftPokerNum;
 	Node* topPokerNum;
 	Node* rightPokerNum;
-	void onTouchesHuapai(Ref*  pSender, Widget::TouchEventType type);
 
-	void hideAllPokerNum();
-	void showPokerNum(int desk, int pokerNum);
-
-	void hideAllFace();
-	void hideAllName();
-	void showCharacterName(int pos,string name);
-	void showDaiJiFace(int pos, int faceID);
-	void showChuPaiFace(int pos, int faceID);
-	void showSuccessFace(int pos, int faceID);
-	void showDaiJiFaceHander(float dt);
-	void showPokerAllOutFaceHander(float dt);
-	void showPokerAllOutFace(int pos, int faceID);
-	void hideClock(int pos = -1);
-	void stopClock();
-	void showBeiLv(int index);
-
-	void showLunChang();
-	void showJiPaiQiBtn(bool show);
-
-	void showTouyou(int);
-	void startClock(int deskID, int index = 1);
-	void viewInit();
-	//
 	int desk = -1;
 	int face = -1;
 	public:
@@ -125,8 +111,7 @@ public:
 	BTN_TOUCH_HANDLE(Button, clickTopBtn, 10620);
 	BTN_TOUCH_HANDLE(Button, clickRightBtn, 10621);
 	BTN_TOUCH_HANDLE(Button, getGoldBtn, 10615);
-	//BTN_TOUCH_HANDLE(addWealthBtn, 10615);
-	//BTN_TOUCH_HANDLE(startBtn, 10616);
+
 };
 
 

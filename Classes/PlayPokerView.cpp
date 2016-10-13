@@ -2,6 +2,7 @@
 #include "SGTools.h"
 #include "DataManager.h"
 #include "ViewManager.h"
+#include "UILayerService.h"
 
 
 
@@ -10,26 +11,36 @@ PlayPokerView::PlayPokerView()
 	rootNode = CSLoader::createNode("PlayScene.csb");
 	addChild(rootNode);
 
+	blueSkyDispatchEvent(12600);
+
+
 	touyou = CSLoader::createTimeline("touyou.csb");
 	touyouNode = CSLoader::createNode("touyou.csb");
 	rootNode->addChild(touyouNode);
 	rootNode->runAction(touyou);
 	touyouNode->setVisible(false);
 
+	for (int i = 0; i < 3; i++)
+	{
+		imgTouyou[i] = NULL;
+	}
+
+
+
 	//划牌触摸
-	imgHuaPai = ImageView::create("toumingBig2.png");
-	VIEW->mainScene->addChild(imgHuaPai, 1000);
+	imgHuaPai = ImageView::create("touchLayer.png");
+	LayerManager->myPokerLayer->addChild(imgHuaPai, 1000);
 	imgHuaPai->setAnchorPoint(Vec2(0, 0));
-	imgHuaPai->setPosition(Vec2(234, 50));
+	imgHuaPai->setPosition(Vec2(0, 50));
 	imgHuaPai->setTouchEnabled(true);
-	imgHuaPai->addTouchEventListener(CC_CALLBACK_2(PlayPokerView::onTouchesHuapai, this));
-	imgHuaPai->setVisible(false);
+	//imgHuaPai->setVisible(false);
+	imgHuaPai->setVisible(true);
+	//logV("imgHuaPai local zorder %d, globelZorder %d", imgHuaPai->getLocalZOrder(), imgHuaPai->getGlobalZOrder());
 
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, fanhui_btn, 10601, "fanhui_btn", NULL)
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, liaotian_Btn, 10602, "liaotian_Btn", NULL)
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, chupai_Btn, 10603, "chupai_Btn", "ProjectNode_1");//
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, tishi_Btn, 10604, "tishi_Btn", "ProjectNode_1");//
-//	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, buchu_Btn, 10605, "buchu_Btn", "ProjectNode_1");//
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, jingongBtn, 10606, "jingongBtn", NULL)
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, huangongBtn, 10607, "huangongBtn", NULL)
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, lookTableBtn, 10608, "lookTableBtn", NULL)
@@ -43,7 +54,17 @@ PlayPokerView::PlayPokerView()
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, clickLeftBtn, 10619, "clickBtn", "left_character");
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, clickTopBtn, 10620, "clickBtn", "top_character");
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, clickRightBtn, 10621, "clickBtn", "right_character");
-//	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, getGoldBtn, 10615, "getGoldBtn", "ProjectNode_5");
+
+	//调整层级不被划牌触摸层覆盖
+	_chupai_Btn->setGlobalZOrder(10);
+	_tishi_Btn->setGlobalZOrder(10);
+	_clickMeBtn->setGlobalZOrder(10);
+	_clickLeftBtn->setGlobalZOrder(10);
+	_clickTopBtn->setGlobalZOrder(10);
+	_clickRightBtn->setGlobalZOrder(10);
+	_jingongBtn->setGlobalZOrder  (10);
+	_huangongBtn->setGlobalZOrder (10);
+
 }
 PlayPokerView::~PlayPokerView()
 {
@@ -51,7 +72,6 @@ PlayPokerView::~PlayPokerView()
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, liaotian_Btn, 10602);
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, chupai_Btn, 10603);//
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, tishi_Btn, 10604);//
-//	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, buchu_Btn, 10605);//
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, jingongBtn, 10606);
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, huangongBtn, 10607);
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, lookTableBtn, 10608);
@@ -65,25 +85,11 @@ PlayPokerView::~PlayPokerView()
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, clickLeftBtn, 10619);
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, clickTopBtn, 10620);
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, clickRightBtn, 10621);
-	//BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, getGoldBtn, 10615);
 	delete rootNode;
 	rootNode = NULL;
 }
 
-void PlayPokerView::onTouchesHuapai(Ref*  pSender, Widget::TouchEventType type)
-{
-	switch (type)
-	{
-	case Widget::TouchEventType::BEGAN:
-		break;
-	case Widget::TouchEventType::ENDED:
-		break;
-	case Widget::TouchEventType::MOVED:
-		break;
-	default:
-		break;
-	}
-}
+
 
 void PlayPokerView::viewInit()
 {
@@ -114,19 +120,19 @@ void PlayPokerView::viewInit()
 
 	myClock->addChild(myTimer);
 	myTimer->setPosition(Vec2(0, -7));
-	myClockText->setZOrder(myTimer->getZOrder() + 1);
+	myClockText->setLocalZOrder(myTimer->getLocalZOrder() + 1);
 
 	leftClock->addChild(leftTimer);
 	leftTimer->setPosition(Vec2(0, -7));
-	leftClockText->setZOrder(leftTimer->getZOrder() + 1);
+	leftClockText->setLocalZOrder(leftTimer->getLocalZOrder() + 1);
 
 	topClock->addChild(topTimer);
 	topTimer->setPosition(Vec2(0, -7));
-	topClockText->setZOrder(topTimer->getZOrder() + 1);
+	topClockText->setLocalZOrder(topTimer->getLocalZOrder() + 1);
 
 	rightClock->addChild(rightTimer);
 	rightTimer->setPosition(Vec2(0, -7));
-	rightClockText->setZOrder(rightTimer->getZOrder() + 1);
+	rightClockText->setLocalZOrder(rightTimer->getLocalZOrder() + 1);
 
 	hideClock();
 
@@ -149,7 +155,6 @@ void PlayPokerView::viewInit()
 	rightPokerNum = rootNode->getChildByName("rightPokerNum");
 	hideAllPokerNum();
 
-	//
 	pipeiAction = dynamic_cast<cocostudio::Armature*>(rootNode->getChildByName("pipeiAction"));
 	showPiPei(true);
 
@@ -175,11 +180,6 @@ void PlayPokerView::viewInit()
 			imgLunChang->setVisible(false);
 			imgBeilv->setVisible(true);
 		}
-
-	//
-//	_getGoldBtn->setVisible(false);
-
-		VIEW->hideViewPlayGold();
 }
 
 void PlayPokerView::showPiPei(bool show)
@@ -289,13 +289,6 @@ void PlayPokerView::clockShow(float dt)
 	topTimer->setPercentage(i * 10 / 3);
 	leftTimer->setPercentage(i * 10 / 3);
 
-
-
-
-
-
-
-
 	//倒数10秒时开始播放计时器音效
 	if (time > 19)
 	{
@@ -366,32 +359,49 @@ void PlayPokerView::hideAllFace()
 
 void PlayPokerView::showTouyou(int i)
 {
-	sucessesPlayer++;
-	if (sucessesPlayer == 1)
+	Vec2 point;
+	switch (i)
 	{
+	case 0:
+		point = Vec2(80, 150);
+		break;
+	case 1:
+		point = Vec2(150, 380);
+		break;
+	case 2:
+		point = Vec2(570, 410);
+		break;
+	case 3:
+		point = Vec2(845, 380);
+		break;
+	default:
+		break;
+	}
+	switch (sucessesPlayer)
+	{
+	case 0:
 		touyou->gotoFrameAndPlay(0, false);
-		Vec2 point;
-		switch (i)
-		{
-		case 0:
-			point = Vec2(80, 150);
-			break;
-		case 1:
-			point = Vec2(80, 380);
-			break;
-		case 2:
-			point = Vec2(570, 410);
-			break;
-		case 3:
-			point = Vec2(875, 380);
-			break;
-		default:
-			break;
-		}
 		touyouNode->setPosition(point);
 		touyouNode->setVisible(true);
+// 		imgTouyou[0] = ImageView::create("outEnd0.png");
+// 		imgTouyou[0]->setPosition(point);
+// 		rootNode->addChild(imgTouyou[0]);
+		break;
+	case 1:
+		imgTouyou[1] = ImageView::create("outEnd1.png");
+		imgTouyou[1]->setPosition(point);
+		rootNode->addChild(imgTouyou[1]);
+		break;
+	case 2:
+		imgTouyou[2] = ImageView::create("outEnd2.png");
+		imgTouyou[2]->setPosition(point);
+		rootNode->addChild(imgTouyou[2]);
+		break;
+	default: 
+		break;
 	}
 
+	sucessesPlayer++;
 
 }
 
@@ -524,13 +534,6 @@ void PlayPokerView::showChuPaiFace(int pos, int faceID)
 		break;
 	}
 
-	//auto call1 = CallFunc::create(
-	//	CC_CALLBACK_2(PlayPokerView::showDaiJiFace, this,pos,faceID)
-	//	);
-
-	//
-	//this->runAction(Sequence::create(DelayTime::create(1),nullptr));
-
 	this->scheduleOnce(schedule_selector(PlayPokerView::showDaiJiFaceHander),1.0f);
 }
 
@@ -540,10 +543,7 @@ void PlayPokerView::showSuccessFace(int pos, int faceID)
 	//
 	desk = pos;
 	face = faceID;
-
 	showTouyou(pos);
-
-
 	Node* node;
 	switch (pos)
 	{
@@ -602,13 +602,6 @@ void PlayPokerView::showSuccessFace(int pos, int faceID)
 		Action4->setVisible(false);
 		break;
 	}
-
-
-	//auto call1 = CallFunc::create(
-	//	CC_CALLBACK_2(PlayPokerView::showDaiJiFace, this, pos, faceID)
-	//	);
-
-	//
 	this->scheduleOnce(schedule_selector(PlayPokerView::showPokerAllOutFaceHander), 1.0f);
 }
 
@@ -696,208 +689,52 @@ void PlayPokerView::hideAllPokerNum()
 
 void PlayPokerView::showPokerNum(int desk, int pokerNum)
 {
-	Node* pokerNumberShow;
-	ImageView* pokerLeft;
-	ImageView* noPoker;
+	Text*  txtLeft;
 	switch (desk)
 	{
 		//本玩家
 		case 0:
 			return;
-			break;
-		//右边的玩家
-		case 3:
-			rightPokerNum->setVisible(true);
-			pokerNumberShow = rightPokerNum->getChildByName("numberNode");
-			pokerLeft = dynamic_cast<ImageView*>(rightPokerNum->getChildByName("pokerLeft"));
-			noPoker = dynamic_cast<ImageView*>(rightPokerNum->getChildByName("noPoker"));
-			break;
-			//对面的玩家
-		case 2:
-			topPokerNum->setVisible(true);
-			pokerNumberShow = topPokerNum->getChildByName("numberNode");
-			pokerLeft = dynamic_cast<ImageView*>(topPokerNum->getChildByName("pokerLeft"));
-			noPoker = dynamic_cast<ImageView*>(topPokerNum->getChildByName("noPoker"));
-			break;
 			//左边的玩家
 		case 1:
-			leftPokerNum->setVisible(true);
-			pokerNumberShow = leftPokerNum->getChildByName("numberNode");
-			pokerLeft = dynamic_cast<ImageView*>(leftPokerNum->getChildByName("pokerLeft"));
-			noPoker = dynamic_cast<ImageView*>(leftPokerNum->getChildByName("noPoker"));
+			if (pokerNum == 0)
+			{
+				leftPokerNum->setVisible(false);
+			}
+			else
+			{
+				leftPokerNum->setVisible(true);
+			}
+			UIGet_Text("leftNum", leftPokerNum, txtLeft)
+				break;
+			//对面的玩家
+		case 2:
+			if (pokerNum == 0)
+			{
+				topPokerNum->setVisible(false);
+			}
+			else
+			{
+				topPokerNum->setVisible(true);
+			}
+			UIGet_Text("leftNum", topPokerNum, txtLeft)
 			break;
-	}
 
-	//
-	ImageView* image1 = dynamic_cast<ImageView*>(pokerNumberShow->getChildByName("Image_1"));
-	ImageView* image2 = dynamic_cast<ImageView*>(pokerNumberShow->getChildByName("Image_2"));
-	ImageView* image3 = dynamic_cast<ImageView*>(pokerNumberShow->getChildByName("Image_3"));
-	ImageView* image4 = dynamic_cast<ImageView*>(pokerNumberShow->getChildByName("Image_4"));
-	ImageView* image5 = dynamic_cast<ImageView*>(pokerNumberShow->getChildByName("Image_5"));
-	ImageView* image6 = dynamic_cast<ImageView*>(pokerNumberShow->getChildByName("Image_6"));
-	ImageView* image7 = dynamic_cast<ImageView*>(pokerNumberShow->getChildByName("Image_7"));
-	ImageView* image8 = dynamic_cast<ImageView*>(pokerNumberShow->getChildByName("Image_8"));
-	ImageView* image9 = dynamic_cast<ImageView*>(pokerNumberShow->getChildByName("Image_9"));
-	ImageView* image10 = dynamic_cast<ImageView*>(pokerNumberShow->getChildByName("Image_10"));
+			//右边的玩家
+		case 3:
+			if (pokerNum == 0)
+			{
+				rightPokerNum->setVisible(false);
+			}
+			else
+			{
+				rightPokerNum->setVisible(true);
+			}
 
-	switch (pokerNum)
-	{
-	case 0:
-		pokerNumberShow->setVisible(false);
-		pokerLeft->setVisible(false);
-		noPoker->setVisible(true);
-		break;
-	case 1:
-		pokerNumberShow->setVisible(true);
-		pokerLeft->setVisible(true);
-		noPoker->setVisible(false);
-		image1->setVisible(true);
-		image2->setVisible(false);
-		image3->setVisible(false);
-		image4->setVisible(false);
-		image5->setVisible(false);
-		image6->setVisible(false);
-		image7->setVisible(false);
-		image8->setVisible(false);
-		image9->setVisible(false);
-		image10->setVisible(false);
-		break;
-	case 2:
-		pokerNumberShow->setVisible(true);
-		pokerLeft->setVisible(true);
-		noPoker->setVisible(false);
-		image1->setVisible(false);
-		image2->setVisible(true);
-		image3->setVisible(false);
-		image4->setVisible(false);
-		image5->setVisible(false);
-		image6->setVisible(false);
-		image7->setVisible(false);
-		image8->setVisible(false);
-		image9->setVisible(false);
-		image10->setVisible(false);
-		break;
-	case 3:
-		pokerNumberShow->setVisible(true);
-		pokerLeft->setVisible(true);
-		noPoker->setVisible(false);
-		image1->setVisible(false);
-		image2->setVisible(false);
-		image3->setVisible(true);
-		image4->setVisible(false);
-		image5->setVisible(false);
-		image6->setVisible(false);
-		image7->setVisible(false);
-		image8->setVisible(false);
-		image9->setVisible(false);
-		image10->setVisible(false);
-		break;
-	case 4:
-		pokerNumberShow->setVisible(true);
-		pokerLeft->setVisible(true);
-		noPoker->setVisible(false);
-		image1->setVisible(false);
-		image2->setVisible(false);
-		image3->setVisible(false);
-		image4->setVisible(true);
-		image5->setVisible(false);
-		image6->setVisible(false);
-		image7->setVisible(false);
-		image8->setVisible(false);
-		image9->setVisible(false);
-		image10->setVisible(false);
-		break;
-	case 5:
-		pokerNumberShow->setVisible(true);
-		pokerLeft->setVisible(true);
-		noPoker->setVisible(false);
-		image1->setVisible(false);
-		image2->setVisible(false);
-		image3->setVisible(false);
-		image4->setVisible(false);
-		image5->setVisible(true);
-		image6->setVisible(false);
-		image7->setVisible(false);
-		image8->setVisible(false);
-		image9->setVisible(false);
-		image10->setVisible(false);
-		break;
-	case 6:
-		pokerNumberShow->setVisible(true);
-		pokerLeft->setVisible(true);
-		noPoker->setVisible(false);
-		image1->setVisible(false);
-		image2->setVisible(false);
-		image3->setVisible(false);
-		image4->setVisible(false);
-		image5->setVisible(false);
-		image6->setVisible(true);
-		image7->setVisible(false);
-		image8->setVisible(false);
-		image9->setVisible(false);
-		image10->setVisible(false);
-		break;
-	case 7:
-		pokerNumberShow->setVisible(true);
-		pokerLeft->setVisible(true);
-		noPoker->setVisible(false);
-		image1->setVisible(false);
-		image2->setVisible(false);
-		image3->setVisible(false);
-		image4->setVisible(false);
-		image5->setVisible(false);
-		image6->setVisible(false);
-		image7->setVisible(true);
-		image8->setVisible(false);
-		image9->setVisible(false);
-		image10->setVisible(false);
-		break;
-	case 8:
-		pokerNumberShow->setVisible(true);
-		pokerLeft->setVisible(true);
-		noPoker->setVisible(false);
-		image1->setVisible(false);
-		image2->setVisible(false);
-		image3->setVisible(false);
-		image4->setVisible(false);
-		image5->setVisible(false);
-		image6->setVisible(false);
-		image7->setVisible(false);
-		image8->setVisible(true);
-		image9->setVisible(false);
-		image10->setVisible(false);
-		break;
-	case 9:
-		pokerNumberShow->setVisible(true);
-		pokerLeft->setVisible(true);
-		noPoker->setVisible(false);
-		image1->setVisible(false);
-		image2->setVisible(false);
-		image3->setVisible(false);
-		image4->setVisible(false);
-		image5->setVisible(false);
-		image6->setVisible(false);
-		image7->setVisible(false);
-		image8->setVisible(false);
-		image9->setVisible(true);
-		image10->setVisible(false);
-		break;
-	case 10:
-		pokerNumberShow->setVisible(true);
-		pokerLeft->setVisible(true);
-		noPoker->setVisible(false);
-		image1->setVisible(false);
-		image2->setVisible(false);
-		image3->setVisible(false);
-		image4->setVisible(false);
-		image5->setVisible(false);
-		image6->setVisible(false);
-		image7->setVisible(false);
-		image8->setVisible(false);
-		image9->setVisible(false);
-		image10->setVisible(true);
-		break;
+			UIGet_Text("leftNum", rightPokerNum, txtLeft)
+				break;
 	}
+	txtLeft->setString(Tools::parseInt2String(pokerNum));
 }
 
 //显示本局倍率
@@ -917,9 +754,9 @@ void PlayPokerView::showJiPaiQiBtn(bool show)
 {
 	_jipaiqi_Btn->setTouchEnabled(show);
 	if (!show)
-		_jipaiqi_Btn->setColor(ccc3(128, 128, 128));
+		_jipaiqi_Btn->setColor(Color3B(128, 128, 128));
 	else
-		_jipaiqi_Btn->setColor(ccc3(255, 255, 255));
+		_jipaiqi_Btn->setColor(Color3B(255, 255, 255));
 }
 
 

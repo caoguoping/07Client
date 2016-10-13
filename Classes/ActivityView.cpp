@@ -1,10 +1,15 @@
 #include "ActivityView.h"
 #include "DataManager.h"
 #include "SendDataService.h"
-#include "DataManager.h"
+
 #include "SGTools.h"
 #include "GameDataModel.h"
 #include <sstream>
+#include "DataManager.h"
+#include "ShopMediator.h"
+#include "ShopView.h"
+#include "SetMediator.h"
+#include "SetView.h"
 
 ActivityView::ActivityView(int actIndex)
 {
@@ -12,21 +17,43 @@ ActivityView::ActivityView(int actIndex)
 	rootNode = CSLoader::createNode("activity.csb");
 	addChild(rootNode);
 
-	;
-	unsigned long dwUserID = DATA->myBaseData.dwUserID;
+	//top
+	Node*  topNode;
+	UIGet_Node("FileNode_top", rootNode, topNode)
+		UIGet_Text("Text_gold", topNode, txtGold)
+		UIGet_Text("Text_diamond", topNode, txtDiamond)
+		txtGold->setString(Tools::parseInt2String(DATA->myBaseData.lUserScore));
+	txtDiamond->setString(Tools::parseInt2String(DATA->myBaseData.rmb));
+	Button   *btnAddGold, *btnAddDiamond, *btnSetting;
+	UIGet_Button("Button_addGold", topNode, btnAddGold)
+		UIGet_Button("Button_addDiamond", topNode, btnAddDiamond)
+		UIGet_Button("Button_setting", topNode, btnSetting)
+		btnAddGold->addClickEventListener([&](Ref* psender)
+	{
+		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		creatView(new ShopView(1), new ShopMediator());
+	}
+	);
+	btnAddDiamond->addClickEventListener([&](Ref* psender)
+	{
+		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		creatView(new ShopView(0), new ShopMediator());
+	}
+	);
+	btnSetting->addClickEventListener([&](Ref* psender)
+	{
+		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		creatView(new SetView(), new SetMediator());
+	}
+	);
+
+
+	DWORD dwUserID = DATA->myBaseData.dwUserID;
 	((SendDataService *)getService(SendDataService::NAME))->sendGetRank(dwUserID);
 
-
-	//rootNode->setScale(0.1f, 0.1f);
-	//rootNode->runAction(Sequence::create(ScaleTo::create(0.2f, 1.03), ScaleTo::create(0.1f, 1.0f), nullptr));
-
-	myGold = static_cast<TextBMFont*>(rootNode->getChildByName("BitmapFontLabel_gold"));
-	myZuanshi = static_cast<TextBMFont*>(rootNode->getChildByName("BitmapFontLabel_zuanshi"));
-
-	actScrow = static_cast<PageView*>(rootNode->getChildByName("PageView_1"));
-	mallItem[E_activity] = (actScrow->getChildByName("Panel_1"))->getChildByName("lotteryNode");
-	mallItem[E_zuanshi] = (actScrow->getChildByName("Panel_2"))->getChildByName("rechargeNode");
-	mallItem[E_myCup] = (actScrow->getChildByName("Panel_3"))->getChildByName("FileNode_myCup");
+	mallItem[E_activity] = rootNode->getChildByName("lotteryNode");
+	mallItem[E_zuanshi] =  rootNode->getChildByName("rechargeNode");
+	mallItem[E_myCup] =    rootNode->getChildByName("FileNode_myCup");
 
 
 	spineIner = static_cast<Sprite*>(mallItem[E_activity]->getChildByName("spin_inner"));
@@ -64,8 +91,6 @@ ActivityView::ActivityView(int actIndex)
 	currentTitle = actIndex;
 
 
-	schedule(schedule_selector(ActivityView::updateTitle), 0.3f);
-
 	UIGet_ScrollView("ScrollView_growth", mallItem[E_myCup], growthScroll);
 	UIGet_ListView("ListView_rank", mallItem[E_myCup], rankList);
 	UIGet_CheckBox("CheckBox_growth", mallItem[E_myCup], growthCheckBox);
@@ -87,29 +112,25 @@ ActivityView::ActivityView(int actIndex)
 		osstr << viewname << i;
 
 		UIGet_ImageView(osstr.str(), growthScroll, imgView1)
-		UIGet_Text("Text_cannot", imgView1, txtCannot[i])
-		UIGet_Button("Button_get", imgView1, btnGetGrowth[i])
-
-		UIClick(btnGetGrowth[i], ActivityView::clickGetGrowth)
+			UIGet_Text("Text_cannot", imgView1, txtCannot[i])
+			UIGet_Button("Button_get", imgView1, btnGetGrowth[i])
+			UIGet_ImageView("Image_getReady", imgView1, imgGetAlready[i])
+			UIClick(btnGetGrowth[i], ActivityView::clickGetGrowth)
+			imgGetAlready[i]->setVisible(false);
 
 		btnGetGrowth[i]->setTag(i);
 	}
 
-
-		//clickGrowth(NULL);	
-
 	switch (actIndex)
 	{
 		case 0:
-			actScrow->setCurrentPageIndex(0);
 			showLottery();
 			break;
 		case 1:
-			actScrow->setCurrentPageIndex(1);
 			showRecharge();
 			break;
 		case 2:
-			actScrow->setCurrentPageIndex(2);
+
 			showMyCup();
 			break;
 		default:
@@ -130,8 +151,6 @@ ActivityView::~ActivityView()
 	BTN_REMOVE_TOUCH_EVENTLISTENER(ActivityView, lotteryBtn, 15002);
 	BTN_REMOVE_TOUCH_EVENTLISTENER(ActivityView, rechargeBtn, 15003);
 	BTN_REMOVE_TOUCH_EVENTLISTENER(ActivityView, myCupBtn, 15010);
-//	BTN_REMOVE_TOUCH_EVENTLISTENER(ActivityView, Button_1, 99999);
-
 	delete rootNode;	
 	rootNode = NULL;
 }
@@ -183,7 +202,6 @@ void ActivityView::setTimes(float dt)
 
 void ActivityView::updateInfo()
 {
-	;
 	showMyGold(DATA->myBaseData.lUserScore);
 	showMyZuanShi(DATA->myBaseData.rmb);
 }
@@ -237,7 +255,7 @@ void ActivityView::clickRank(Ref* psender)
 		Node* rankNode = CSLoader::createNode("rankNode.csb");
 		Layout*  oneRank = Layout::create();
 		oneRank->addChild(rankNode);
-		rankNode->setPosition(Vec2(200, -RANK_ITEM_HEIGHT * 0.5));
+		rankNode->setPosition(Vec2(190, -RANK_ITEM_HEIGHT * 0.5));
 		Text  *rank, *name, *exp;
 		ImageView*  head;
 		UIGet_Text("Text_rank", rankNode, rank)
@@ -261,18 +279,20 @@ void ActivityView::clickRank(Ref* psender)
 
 void ActivityView::startLottery()
 {
-
-
-	;
 	showMyGold(DATA->myBaseData.lUserScore);
 	showMyZuanShi(DATA->diamondNum);
-	unsigned long dwUserID = DATA->myBaseData.dwUserID;
+	DWORD dwUserID = DATA->myBaseData.dwUserID;
 	((SendDataService *)getService(SendDataService::NAME))->sendGambling(dwUserID, 0, wpIndex);
 }
 
 void ActivityView::getSpin(Ref* psender)
 {
 	wpIndex = int(rand_0_1() * 8) + 1;
+	//logV("\nwpIndex:%d", wpIndex);
+	if (wpIndex == 5 || wpIndex == 7)
+	{
+		wpIndex--;
+	}
 	SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
 
 	if (DATA->myBaseData.rmb < needZuanshi)
@@ -306,67 +326,25 @@ void ActivityView::initView()
 
 void ActivityView::showMyZuanShi(int num)
 {
-	char temp[16];
-	sprintf(temp, "%d", num);
-	myZuanshi->setString(temp);
+	txtDiamond->setString(Tools::parseInt2String(num));
 }
 void ActivityView::showMyGold(int num)
 {
-	char temp[16];
-	sprintf(temp, "%d", num);
-	myGold->setString(temp);
+	txtGold->setString(Tools::parseInt2String(num));
 }
 
-void ActivityView::updateTitle(float dt)
+void ActivityView::showActivityNode(int iWhich)
 {
-	ssize_t index = actScrow->getCurrentPageIndex();
-	if (index == currentTitle)
+	if (iWhich >= 3 || iWhich < 0)
 	{
 		return;
 	}
-	else
+	for (int i = 0; i < 3; i++)
 	{
-		currentTitle = index;
-		switch (index)
-		{
-		case E_activity:
-			_lotteryBtn->setSelected(true);
-			_rechargeBtn->setSelected(false);
-			_myCupBtn->setSelected(false);
-
-			_lotteryBtn->setTouchEnabled(false);
-			_rechargeBtn->setTouchEnabled(true);
-			_myCupBtn->setTouchEnabled(true);
-
-			break;
-
-		case E_zuanshi:
-
-			_lotteryBtn->setSelected(false);
-			_rechargeBtn->setSelected(true);
-			_myCupBtn->setSelected(false);
-
-			_lotteryBtn->setTouchEnabled(true);
-			_rechargeBtn->setTouchEnabled(false);
-			_myCupBtn->setTouchEnabled(true);
-			break;
-
-		case E_myCup:
-
-			_lotteryBtn->setSelected(false);
-			_rechargeBtn->setSelected(false);
-			_myCupBtn->setSelected(true);
-
-			_lotteryBtn->setTouchEnabled(true);
-			_rechargeBtn->setTouchEnabled(true);
-			_myCupBtn->setTouchEnabled(false);
-			break;
-
-		default:
-			break;
-		}
+		mallItem[i]->setVisible(false);
 	}
 
+	mallItem[iWhich]->setVisible(true);
 }
 
 void ActivityView::showLottery()
@@ -378,7 +356,7 @@ void ActivityView::showLottery()
 	_lotteryBtn->setTouchEnabled(false);
 	_rechargeBtn->setTouchEnabled(true);
 	_myCupBtn->setTouchEnabled(true);
-	actScrow->scrollToPage(E_activity);
+	showActivityNode(E_activity);
 
 	char needZ[16];
 	sprintf(needZ, "%d", needZuanshi);
@@ -395,7 +373,7 @@ void ActivityView::showRecharge()
 	_lotteryBtn->setTouchEnabled(true);
 	_rechargeBtn->setTouchEnabled(false);
 	_myCupBtn->setTouchEnabled(true);
-	actScrow->scrollToPage(E_zuanshi);
+	showActivityNode(E_zuanshi);
 
 }
 
@@ -408,7 +386,7 @@ void ActivityView::showMyCup()
 	_lotteryBtn->setTouchEnabled(true);
 	_rechargeBtn->setTouchEnabled(true);
 	_myCupBtn->setTouchEnabled(false);
-	actScrow->scrollToPage(E_myCup);
+	showActivityNode(E_myCup);
 
 	//经验
 // 	txtMyLevel->setString(Tools::parseInt2String(myRankInfo.cLevel));
@@ -472,16 +450,20 @@ void ActivityView::setCupAwardsInfo(unsigned short awardsinfo, int cuplvl)
 	{
 		txtCannot[i - 1]->setVisible(false);
 		btnGetGrowth[i - 1]->setVisible(true);
+		imgGetAlready[i - 1]->setVisible(false);
+
 		
 		unsigned short temps = pow(10, (i - 1));
 		if (awardsinfo / temps == 0)
 		{
 			//可以领取
-			btnGetGrowth[i - 1]->setEnabled(true);
+			btnGetGrowth[i - 1]->setVisible(true);
+			imgGetAlready[i - 1]->setVisible(false);
 		}
 		else
 		{
-			btnGetGrowth[i - 1]->setEnabled(false);
+			btnGetGrowth[i - 1]->setVisible(false);
+			imgGetAlready[i - 1]->setVisible(true);
 		}
 
 	}

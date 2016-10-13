@@ -15,30 +15,27 @@ ViewManager *  ViewManager::getInstance()
 
 void ViewManager::init()
 {
-	for (int i = 0; i < eViewMax; i ++)
-	{
-		mViews[i] = NULL;
-	}
-}
-
-void ViewManager::showViewPlayGold()
-{
-	mViews[eViewPlayGold] = ViewPlayGold::create();
-	mainScene->addChild(mViews[eViewPlayGold], 1001, eViewPlayGold);
 
 }
-
-void ViewManager::hideViewPlayGold()
-{
-	if (mViews[eViewPlayGold] != NULL)
-	{
-		mViews[eViewPlayGold]->removeAllChildrenWithCleanup(true);
-		mViews[eViewPlayGold]->removeFromParentAndCleanup(true);
-		mViews[eViewPlayGold] = NULL;
-	}
-
-
-}
+// 
+// void ViewManager::showViewPlayGold()
+// {
+// 	mViews[eViewPlayGold] = ViewPlayGold::create();
+// 	mainScene->addChild(mViews[eViewPlayGold], 1001, eViewPlayGold);
+// 
+// }
+// 
+// void ViewManager::hideViewPlayGold()
+// {
+// 	if (mViews[eViewPlayGold] != NULL)
+// 	{
+// 		mViews[eViewPlayGold]->removeAllChildrenWithCleanup(true);
+// 		mViews[eViewPlayGold]->removeFromParentAndCleanup(true);
+// 		mViews[eViewPlayGold] = NULL;
+// 	}
+// 
+// 
+// }
 
 
 

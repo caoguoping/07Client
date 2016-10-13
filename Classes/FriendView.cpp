@@ -6,6 +6,10 @@
 #include "UTF8.h"
 #include "TCPSocketService.h"
 #include "PlatFormControl.h"
+#include "ShopMediator.h"
+#include "ShopView.h"
+#include "SetMediator.h"
+#include "SetView.h"
 #pragma  1
 
 //caifu降序
@@ -34,9 +38,10 @@ FriendView::FriendView()
 
 FriendView::~FriendView()
 {
+	BTN_REMOVE_TOUCH_EVENTLISTENER(FriendView, closeBtn, 12301);
 	delete rootNode;
 	rootNode = NULL;
-	BTN_REMOVE_TOUCH_EVENTLISTENER(FriendView, closeBtn, 10701);
+
 }
 
 //去除熟人中的好友
@@ -78,7 +83,7 @@ void FriendView::initView()
 	rootNode = CSLoader::createNode("Friends.csb");
 	addChild(rootNode);
 	VIEW->nowViewTag = ViewManager::eViewFriend;
-		BTN_ADD_TOUCH_EVENTLISTENER(Button, FriendView, closeBtn, 10701, "Button_close", NULL)
+		BTN_ADD_TOUCH_EVENTLISTENER(Button, FriendView, closeBtn, 12301, "Button_close", NULL)
 
 		UIGet_Node("FileNode_0", rootNode, ndFriends[E_friends])
 		UIGet_Node("FileNode_1", rootNode, ndFriends[E_familiar])
@@ -105,8 +110,31 @@ void FriendView::initView()
 			UIGet_Text("Text_diamond", topNode, txtDiamond)
 			txtGold->setString(Tools::parseInt2String(DATA->myBaseData.lUserScore));
 		txtDiamond->setString(Tools::parseInt2String(DATA->myBaseData.rmb));
+		Button   *btnAddGold, *btnAddDiamond, *btnSetting;
+		UIGet_Button("Button_addGold", topNode, btnAddGold)
+			UIGet_Button("Button_addDiamond", topNode, btnAddDiamond)
+			UIGet_Button("Button_setting", topNode, btnSetting)
+			btnAddGold->addClickEventListener([&](Ref* psender)
+		{
+			SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+			creatView(new ShopView(1), new ShopMediator());
+		}
+		);
+		btnAddDiamond->addClickEventListener([&](Ref* psender)
+		{
+			SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+			creatView(new ShopView(0), new ShopMediator());
+		}
+		);
+		btnSetting->addClickEventListener([&](Ref* psender)
+		{
+			SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+			creatView(new SetView(), new SetMediator());
+		}
+		);
 
-	//friendlist
+	
+		//friendlist
 		UIGet_Text("Text_friendNow", ndFriends[E_friends], txtFriendsNow)
 			UIGet_Text("Text_friendMax", ndFriends[E_friends], txtFriendsMax)
 			UIGet_ListView("ListView_friends", ndFriends[E_friends], lstFriendsList)

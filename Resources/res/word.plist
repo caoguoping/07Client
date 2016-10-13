@@ -46,12 +46,23 @@
 
 	    <key>net</key>  
         <dict>
-            <key>loginServerIp</key>  
+        	<!--yuanlai-->
+<!--             <key>loginServerIp</key>  
             <string>221.226.117.87</string>
-            <!-- <string>192.168.2.130</string> -->
-
 			<key>loginServerPort</key>  
             <string>8300</string>
+			<key>MatchPort</key>  
+            <string>8311</string> -->
+
+			<!--xin-->
+            <key>loginServerIp</key>  
+            <string>221.226.117.82</string>
+            <!-- <string>192.168.2.130</string> -->
+			<key>loginServerPort</key>  
+            <string>5050</string>
+			<key>MatchPort</key>  
+            <string>5013</string>
+
 			<key>webUrl</key>  
             <string>http://221.226.117.87:9000/ttdmx/ClientLogin/login</string>
         </dict>

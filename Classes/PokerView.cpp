@@ -31,7 +31,7 @@ void PokerView::initView(bool isGongPai, int Dui)
 	rootNode->setVisible(false); 
 
 	//
-	this->scheduleOnce(schedule_selector(PokerView::showNode), Dui/10);
+	this->scheduleOnce(schedule_selector(PokerView::showNode), Dui/20.0f);
 }
 
 void PokerView::showNode(float dt)

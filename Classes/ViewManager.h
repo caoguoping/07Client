@@ -3,13 +3,10 @@
 
 #include "cocos2d.h"
 #include "SGTools.h"
-#include "ViewPlayGold.h"
-
-
 
 USING_NS_CC;
 
-class ViewManager 
+class ViewManager
 {
 public:
 
@@ -26,14 +23,14 @@ public:
 
 	Scene*  mainScene;   //主场景
 	int nowViewTag = eViewMain;  //当前的界面标识
-	Node*  mViews[eViewMax];
+	//Node*  mViews[eViewMax];
 
 public:
 	static ViewManager * getInstance();
 
 	void init();
-	void showViewPlayGold();	
-	void hideViewPlayGold();
+// 	void showViewPlayGold();	
+// 	void hideViewPlayGold();
 };
 
 #define VIEW ViewManager::getInstance()

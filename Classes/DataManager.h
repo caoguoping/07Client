@@ -5,6 +5,8 @@
 #include "cocos2d.h"
 #include "PokerGameModel.h"
 #include "SGTools.h"
+#include "GameDataModel.h"
+#include "PlayerInDeskModel.h"
 
 #pragma pack(1)
 
@@ -283,18 +285,10 @@ public:
 
 //新增数据
 #define DATA DataManager::getInstance()
+#define DATAPokerGame ((PokerGameModel*)getModel(PokerGameModel::NAME))
+#define DATAGameData ((GameDataModel*)getModel(GameDataModel::NAME))
+#define DATAPlayerIndesk ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME))
 
-//玩家信息和游戏结算
-#define DT_game GameDataModel *gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
-
-//任务，商城，背包， 上一轮出牌信息和消息结构体定义
-#define DT_pokerGame  PokerGameModel* pokerGameModel = ((PokerGameModel*)getModel(PokerGameModel::NAME));
-
-//上座玩家信息
-#define DT_inDesk  PlayerInDeskModel* playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
-
-//房间信息
-#define DT_roomList RoomListModel*  roomlistModel =   ((RoomListModel*)getModel(RoomListModel::NAME));
 
 
 

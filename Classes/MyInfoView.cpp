@@ -1,25 +1,20 @@
 #include "MyInfoView.h"
 #include "SGTools.h"
 #include "CallCppHelper.h"
+#include "ShopMediator.h"
+#include "ShopView.h"
 
 MyInfoView::MyInfoView()
 {
 	rootNode = CSLoader::createNode("playerInfo.csb");
 	addChild(rootNode);
-	//rootNode->setScale(0.1, 0.1);
-	//rootNode->runAction(Sequence::create(ScaleTo::create(0.2f, 1.1), ScaleTo::create(0.1f, 1.0f), nullptr));
-
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, MyInfoView, closeBtn, 11701, "closeBtn", NULL)
-	//BTN_ADD_TOUCH_EVENTLISTENER(Button, MyInfoView, addGoldBtn, 10702, "addGoldBtn", NULL)
-	//BTN_ADD_TOUCH_EVENTLISTENER(Button, MyInfoView, addZhuanBtn, 10703, "addZhuanBtn", NULL)
 	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, MyInfoView, Image_1, 11701, "Image_1", NULL)
 }
 
 MyInfoView::~MyInfoView()
 {
 	BTN_REMOVE_TOUCH_EVENTLISTENER(MyInfoView, closeBtn, 11701);
-	//BTN_REMOVE_TOUCH_EVENTLISTENER(MyInfoView, addGoldBtn, 10702);
-	//BTN_REMOVE_TOUCH_EVENTLISTENER(MyInfoView, addZhuanBtn, 10703);
 	BTN_REMOVE_TOUCH_EVENTLISTENER(MyInfoView, Image_1, 11701);
 
 	delete rootNode;
@@ -36,10 +31,30 @@ void MyInfoView::initView()
 		spMy->setVisible(true);
 	spOther->setVisible(false);
 
+
+
+	Button  *btnAddGold, *btnAddDiamond;
 	UIGet_Text("Text_gold", rootNode, txtGold)
+		UIGet_Button("Button_addGold", rootNode, btnAddGold)
 		Layout*   lyDiamond;
 	UIGet_Layout("Panel_diamond", rootNode, lyDiamond)
 		UIGet_Text("Text_diamond", lyDiamond, txtDiamond)
+
+		UIGet_Button("Button_addDiamond", lyDiamond, btnAddDiamond)
+
+		btnAddGold->addClickEventListener([&](Ref* psender)
+	{
+		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		creatView(new ShopView(1), new ShopMediator());
+	}
+	);
+	btnAddDiamond->addClickEventListener([&](Ref* psender)
+	{
+		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		creatView(new ShopView(0), new ShopMediator());
+	}
+	);
+
 
 		Button*  btnAddFriend;
 	UIGet_Button("addFriendBtn", rootNode, btnAddFriend)

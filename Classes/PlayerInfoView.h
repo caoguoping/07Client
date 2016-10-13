@@ -23,7 +23,7 @@ private:
 	BTN_TOUCH_HANDLE(Button, heartBtn, 10704);
 	BTN_TOUCH_HANDLE(Button, flowerBtn, 10705);
 	BTN_TOUCH_HANDLE(Button, addFriendBtn, 10706);
-	BTN_TOUCH_HANDLE(ImageView, Image_1, 99999);
+	BTN_TOUCH_HANDLE(ImageView, Image_close, 10701);
 };
 
 #endif

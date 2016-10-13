@@ -4,6 +4,7 @@
 PlayerInfoView::PlayerInfoView()
 {
 	rootNode = CSLoader::createNode("playerInfo.csb");
+	
 	addChild(rootNode);
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayerInfoView, closeBtn, 10701, "closeBtn", NULL)
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayerInfoView, eggBtn, 10702, "eggBtn", NULL)
@@ -11,8 +12,10 @@ PlayerInfoView::PlayerInfoView()
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayerInfoView, heartBtn, 10704, "heartBtn", NULL)
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayerInfoView, flowerBtn, 10705, "flowerBtn", NULL)
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayerInfoView, addFriendBtn, 10706, "addFriendBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, PlayerInfoView, Image_1, 10701, "Image_1", NULL)
+	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, PlayerInfoView, Image_close, 10701, "Image_1", NULL)
 
+
+//	_Image_1->setGlobalZOrder(11);   //¸Ç¹ýplaySceneLayer
 
 	UIGet_Text("nameText", rootNode, txtName)
 	UIGet_Text("Text_id", rootNode, txtId)
@@ -50,5 +53,5 @@ PlayerInfoView::~PlayerInfoView()
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayerInfoView, heartBtn, 10704);
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayerInfoView, flowerBtn, 10705);
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayerInfoView, addFriendBtn, 10706);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayerInfoView, Image_1, 10701);
+	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayerInfoView, Image_close, 10701);
 }

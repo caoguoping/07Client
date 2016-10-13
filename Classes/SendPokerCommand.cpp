@@ -36,6 +36,5 @@ void SendPokerCommand::execute(void* data)
 	}
 
 	//发完牌后分析玩家的手牌
-	//vector<PokerVO*> pokerArr = ((GameDataModel*)getModel(GameDataModel::NAME))->player[0].pokerArr;
 	gameDataModel->player[0].pokerTypeArr = OutPokerLogicRule::fenXiShouPai(gameDataModel->player[0].pokerArr);
 }

@@ -908,6 +908,7 @@
         </Folder>
         <Folder Name="NewActivity">
           <Image Name="already-receive_3.png" />
+          <Image Name="bg_events.png" />
           <Image Name="button_not-receiving.png" />
           <Image Name="button_receive_1.png" />
           <Image Name="button_receive_2.png" />
@@ -920,6 +921,9 @@
           <Image Name="headshot_2_s.png" />
           <Image Name="headshot_3_s.png" />
           <Image Name="headshot_4_s.png" />
+          <Image Name="inner_bg_medal_left.png" />
+          <Image Name="inner_bg_medal_right.png" />
+          <Image Name="inner_bg_rebate.png" />
           <Image Name="label_medal_1.png" />
           <Image Name="label_medal_2.png" />
           <Image Name="label_rank_1.png" />
@@ -928,6 +932,7 @@
           <Image Name="label_rebate_2.png" />
           <Image Name="label_rewards_1.png" />
           <Image Name="label_rewards_2.png" />
+          <Image Name="label_rope.png" />
           <Image Name="label_spin_1.png" />
           <Image Name="label_spin_2.png" />
           <Image Name="light_1.png" />
@@ -1811,10 +1816,8 @@
         <Project Name="mallGoldImage.csd" Type="Node" />
         <Project Name="MallGoldNode.csd" Type="Node" />
         <Project Name="MallHuoDongNode.csd" Type="Node" />
-        <Project Name="shopJinbi.csd" Type="Node" />
         <Project Name="mallShow.csd" Type="Node" />
         <Project Name="mallTitle.csd" Type="Node" />
-        <Project Name="shopZuanshi.csd" Type="Node" />
         <Project Name="mallZuanShiImage.csd" Type="Node" />
         <Project Name="matchEndLoading.csd" Type="Node" />
         <Project Name="matchEndLoading2.csd" Type="Node" />
@@ -1839,6 +1842,8 @@
         <Project Name="set.csd" Type="Node" />
         <Project Name="sevenDayGift.csd" Type="Node" />
         <Project Name="shop.csd" Type="Node" />
+        <Project Name="shopJinbi.csd" Type="Node" />
+        <Project Name="shopZuanshi.csd" Type="Node" />
         <Project Name="showChat.csd" Type="Node" />
         <Project Name="sysMsgTouming.csd" Type="Node" />
         <Project Name="systemMsg.csd" Type="Node" />

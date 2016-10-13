@@ -38,7 +38,7 @@
             <FileData Type="Normal" Path="bg/icon_gold.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_20_0" ActionTag="-219025416" Tag="335" IconVisible="False" LeftMargin="137.7641" RightMargin="-165.7641" TopMargin="-11.9323" BottomMargin="-16.0677" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="9" RightEage="9" TopEage="11" BottomEage="11" Scale9OriginX="9" Scale9OriginY="11" Scale9Width="10" Scale9Height="5" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_addGold" ActionTag="-219025416" Tag="335" IconVisible="False" LeftMargin="137.7641" RightMargin="-165.7641" TopMargin="-11.9323" BottomMargin="-16.0677" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="9" RightEage="9" TopEage="11" BottomEage="11" Scale9OriginX="9" Scale9OriginY="11" Scale9Width="10" Scale9Height="5" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="28.0000" Y="28.0000" />
             <AnchorPoint ScaleX="0.5554" ScaleY="0.5667" />
             <Position X="153.3153" Y="-0.2001" />
@@ -55,8 +55,8 @@
           </AbstractNodeData>
           <AbstractNodeData Name="Text_gold" ActionTag="-835520960" Tag="337" IconVisible="False" LeftMargin="22.2036" RightMargin="-81.2036" TopMargin="-10.4206" BottomMargin="-16.5794" FontSize="24" LabelText="3000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="59.0000" Y="27.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="51.7036" Y="-3.0794" />
+            <AnchorPoint ScaleX="0.5276" ScaleY="0.7700" />
+            <Position X="53.3293" Y="4.2102" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -87,7 +87,7 @@
             <FileData Type="Normal" Path="bg/icon_diamond.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_20_0_0" ActionTag="1473274107" Tag="340" IconVisible="False" LeftMargin="348.0004" RightMargin="-376.0004" TopMargin="-13.1019" BottomMargin="-14.8981" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="9" RightEage="9" TopEage="11" BottomEage="11" Scale9OriginX="9" Scale9OriginY="11" Scale9Width="10" Scale9Height="5" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_addDiamond" ActionTag="1473274107" Tag="340" IconVisible="False" LeftMargin="348.0004" RightMargin="-376.0004" TopMargin="-13.1019" BottomMargin="-14.8981" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="9" RightEage="9" TopEage="11" BottomEage="11" Scale9OriginX="9" Scale9OriginY="11" Scale9Width="10" Scale9Height="5" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="28.0000" Y="28.0000" />
             <AnchorPoint ScaleX="0.5554" ScaleY="0.5667" />
             <Position X="363.5516" Y="0.9695" />
@@ -114,7 +114,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_6" ActionTag="-198891806" Tag="342" IconVisible="False" LeftMargin="400.7212" RightMargin="-436.7212" TopMargin="-19.6385" BottomMargin="-20.3615" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="6" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_setting" ActionTag="-198891806" Tag="342" IconVisible="False" LeftMargin="400.7212" RightMargin="-436.7212" TopMargin="-19.6385" BottomMargin="-20.3615" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="6" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="36.0000" Y="40.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="418.7212" Y="-0.3615" />

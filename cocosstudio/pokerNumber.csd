@@ -16,25 +16,17 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="NewPlay/remaining poker _number/text_remaining.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="noPoker" ActionTag="-1161611787" Tag="1034" IconVisible="False" LeftMargin="-25.0000" RightMargin="-25.0000" TopMargin="-10.5000" BottomMargin="-10.5000" LeftEage="16" RightEage="16" TopEage="6" BottomEage="6" Scale9OriginX="16" Scale9OriginY="6" Scale9Width="18" Scale9Height="9" ctype="ImageViewObjectData">
-            <Size X="50.0000" Y="21.0000" />
+          <AbstractNodeData Name="leftNum" ActionTag="-657228588" Tag="805" IconVisible="False" LeftMargin="-2.1247" RightMargin="-16.8753" TopMargin="-15.0504" BottomMargin="-15.9496" FontSize="26" LabelText="9" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="18.0000" Y="29.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position />
+            <Position X="7.3753" Y="-0.4496" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
+            <CColor A="255" R="255" G="188" B="65" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="NewPlay/remaining poker _number/text_finished.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="numberNode" ActionTag="699835091" Tag="692" IconVisible="True" LeftMargin="9.0000" RightMargin="-9.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
-            <Size X="0.0000" Y="0.0000" />
-            <AnchorPoint />
-            <Position X="9.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="pokerNumerShow.csd" Plist="" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+            <OutlineColor A="255" R="0" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

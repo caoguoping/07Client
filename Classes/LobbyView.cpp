@@ -30,6 +30,8 @@
 #include "MyInfoView.h"
 #include "FriendMediator.h"
 #include "FriendView.h"
+#include "PlayGoldMediator.h"
+#include "PlayGoldView.h"
 #include "ViewManager.h"
 
 
@@ -48,8 +50,8 @@ LobbyView::LobbyView()
 		UIGet_Button("setBtn", rootNode, mBtnSetting)
 		UIClick(mBtnSetting, LobbyView::clickBtnSetting)
 
-		UIGet_Button("Button_xinshou", rootNode, mBtnEasy)
-		UIClick(mBtnEasy, LobbyView::clickBtnEasy)
+		UIGet_Button("Button_xinshou", rootNode, mBtnPlayGold)
+		UIClick(mBtnPlayGold, LobbyView::clickBtnPlayGold)
 
 		UIGet_Button("Button_jinjie", rootNode, mBtnPrimary)
 		UIClick(mBtnPrimary, LobbyView::clickBtnPrimary)
@@ -134,7 +136,7 @@ void LobbyView::initView()
 UIEnableClick(mBtnTask, LobbyView, enableBtnTask)
 UIEnableClick(mBtnSignature, LobbyView, enableBtnSignature)
 UIEnableClick(mBtnSetting, LobbyView, enableBtnSetting)
-UIEnableClick(mBtnEasy, LobbyView, enableBtnEasy)
+UIEnableClick(mBtnPlayGold, LobbyView, enableBtnPlayGold)
 UIEnableClick(mBtnPrimary, LobbyView, enableBtnPrimary)
 UIEnableClick(mBtnMaster, LobbyView, enableBtnMaster)
 UIEnableClick(mBtnMatch, LobbyView, enableBtnMatch)
@@ -190,11 +192,10 @@ void LobbyView::btnEasyHandle()
 }
 
 
-void LobbyView::clickBtnEasy(Ref* psender)
+void LobbyView::clickBtnPlayGold(Ref* psender)
 {
-	UIDisableClick(mBtnEasy, LobbyView, enableBtnEasy)
-		/*		btnEasyHandle();*/
-		VIEW->showViewPlayGold();
+	UIDisableClick(mBtnPlayGold, LobbyView, enableBtnPlayGold)
+		creatView(new PlayGoldView(), new PlayGoldMediator());
 
 }
 

@@ -1,81 +1,92 @@
-#include "ViewPlayGold.h"
+#include "PlayGoldView.h"
 #include "UTF8.h"
 #include "SGTools.h"
 #include "DataManager.h"
+#include "ShopMediator.h"
+#include "ShopView.h"
+#include "SetMediator.h"
+#include "SetView.h"
 #include "ViewManager.h"
 #include "EventType.h"
 #include "GameDataModel.h"
 #include "PlayerInDeskModel.h"
 
-ViewPlayGold::~ViewPlayGold()
+PlayGoldView::PlayGoldView()
 {
-	
-}
-ViewPlayGold* ViewPlayGold::create()
-{
-	ViewPlayGold * pViewPlayGold = new ViewPlayGold();
-	if (pViewPlayGold)
-	{
-		pViewPlayGold->initView();
-		pViewPlayGold->autorelease();
-	}
-	else
-		CC_SAFE_DELETE(pViewPlayGold);
-	return pViewPlayGold;
+
 }
 
-void ViewPlayGold::initView()
+PlayGoldView::~PlayGoldView()
+{
+	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayGoldView, closeBtn, 12600);
+	delete rootNode;
+	rootNode = NULL;
+}
+
+void PlayGoldView::initView()
 {
 	rootNode = CSLoader::createNode("playGold.csb");
 	rootNode->setPosition(WScreen * 0.5, HScreen * 0.5);
 	this->addChild(rootNode);
 
+	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayGoldView, closeBtn, 12600, "Button_close", NULL)
+
+
 	UIGet_Button("Button_1", rootNode, btn1)
 		UIGet_Button("Button_2", rootNode, btn2)
 		UIGet_Button("Button_3", rootNode, btn3)
 
+		//top
 		Node*  topNode;
-	Button*  btnBack;
-	UIGet_Node("FileNode_1", rootNode, topNode)
-	UIGet_Button("Button_close", rootNode, btnBack)
-	UIClick(btnBack, ViewPlayGold::clickback)
-
-	btn1->setTag(1);
-	btn2->setTag(2);
-	btn3->setTag(3);
-	UIClick(btn1, ViewPlayGold::clickPlay)
-		UIClick(btn2, ViewPlayGold::clickPlay)
-		UIClick(btn3, ViewPlayGold::clickPlay)
-
+	UIGet_Node("FileNode_top", rootNode, topNode)
 		UIGet_Text("Text_gold", topNode, txtGold)
 		UIGet_Text("Text_diamond", topNode, txtDiamond)
 		txtGold->setString(Tools::parseInt2String(DATA->myBaseData.lUserScore));
 	txtDiamond->setString(Tools::parseInt2String(DATA->myBaseData.rmb));
+	Button   *btnAddGold, *btnAddDiamond, *btnSetting;
+	UIGet_Button("Button_addGold", topNode, btnAddGold)
+		UIGet_Button("Button_addDiamond", topNode, btnAddDiamond)
+		UIGet_Button("Button_setting", topNode, btnSetting)
+		btnAddGold->addClickEventListener([&](Ref* psender)
+	{
+		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		creatView(new ShopView(1), new ShopMediator());
+	}
+	);
+	btnAddDiamond->addClickEventListener([&](Ref* psender)
+	{
+		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		creatView(new ShopView(0), new ShopMediator());
+	}
+	);
+	btnSetting->addClickEventListener([&](Ref* psender)
+	{
+		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		creatView(new SetView(), new SetMediator());
+	}
+	);
+
+// 	Button*  btnBack;
+// 	UIGet_Button("Button_close", rootNode, btnBack)
+// 	btnBack->addClickEventListener([&](Ref* psender)
+// 	{
+// 		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+// 		blueSkyDispatchEvent(12600);
+// 	}
+// 	);
+
+		btn1->setTag(1);
+	btn2->setTag(2);
+	btn3->setTag(3);
+	UIClick(btn1, PlayGoldView::clickPlay)
+		UIClick(btn2, PlayGoldView::clickPlay)
+		UIClick(btn3, PlayGoldView::clickPlay)
+
+
 
 }
 
-void ViewPlayGold::updatePlayGold(void* data)
-{
-
-
-}
-
-void ViewPlayGold::blueSkyDispatchEvent(int type, void* data)
-{
-	BlueSkyRegister::getInstance()->blueSkyDispatchEvent(type, data);
-}
-
-void* ViewPlayGold::getModel(string name)
-{
-	return BlueSkyRegister::getInstance()->gameModel[name];
-}
-
-void ViewPlayGold::clickback(Ref* pSender)
-{
-	VIEW->hideViewPlayGold();
-}
-
-void ViewPlayGold::clickPlay(Ref* pSender)
+void PlayGoldView::clickPlay(Ref* pSender)
 {
 	Button*  btn = static_cast<Button*>(pSender);
 	int tags = btn->getTag();
@@ -104,6 +115,7 @@ void ViewPlayGold::clickPlay(Ref* pSender)
 		{
 			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(1));
 			((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 1;
+
 		}
 		break;
 	case 3:

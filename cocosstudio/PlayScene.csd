@@ -418,59 +418,59 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="action/pipei/zhengzaipipei.ExportJson" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="leftName" ActionTag="451829606" Tag="1248" IconVisible="False" LeftMargin="-0.9273" RightMargin="797.9273" TopMargin="93.6442" BottomMargin="422.3558" FontSize="20" LabelText="不能到外边呢的的" HorizontalAlignmentType="HT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="163.0000" Y="24.0000" />
+          <AbstractNodeData Name="leftName" ActionTag="451829606" Tag="1248" IconVisible="False" LeftMargin="10.5725" RightMargin="825.4275" TopMargin="91.6448" BottomMargin="424.3552" FontSize="20" LabelText="不能到外边呢" HorizontalAlignmentType="HT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="124.0000" Y="24.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="80.5727" Y="434.3558" />
+            <Position X="72.5725" Y="436.3552" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0839" Y="0.8044" />
+            <PrePosition X="0.0756" Y="0.8081" />
+            <PreSize X="0.1292" Y="0.0444" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+            <OutlineColor A="255" R="0" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="topName" ActionTag="-125474526" Tag="1249" IconVisible="False" LeftMargin="401.2242" RightMargin="395.7758" TopMargin="46.4241" BottomMargin="469.5759" FontSize="20" LabelText="不能到外边呢的的" HorizontalAlignmentType="HT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="163.0000" Y="24.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="482.7242" Y="481.5759" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5028" Y="0.8918" />
             <PreSize X="0.1698" Y="0.0444" />
             <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="0" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="topName" ActionTag="-125474526" Tag="1249" IconVisible="False" LeftMargin="401.2248" RightMargin="395.7752" TopMargin="50.7578" BottomMargin="465.2422" FontSize="20" LabelText="不能到外边呢的的" HorizontalAlignmentType="HT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="rightName" ActionTag="1453570128" Tag="1250" IconVisible="False" LeftMargin="790.4711" RightMargin="6.5289" TopMargin="91.2089" BottomMargin="424.7911" FontSize="20" LabelText="不能到外边呢的的" HorizontalAlignmentType="HT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="163.0000" Y="24.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="482.7248" Y="477.2422" />
+            <Position X="871.9711" Y="436.7911" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5028" Y="0.8838" />
+            <PrePosition X="0.9083" Y="0.8089" />
             <PreSize X="0.1698" Y="0.0444" />
             <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="0" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="rightName" ActionTag="1453570128" Tag="1250" IconVisible="False" LeftMargin="790.4713" RightMargin="6.5287" TopMargin="92.2088" BottomMargin="423.7912" FontSize="20" LabelText="不能到外边呢的的" HorizontalAlignmentType="HT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="163.0000" Y="24.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="871.9713" Y="435.7912" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.9083" Y="0.8070" />
-            <PreSize X="0.1698" Y="0.0444" />
-            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
-            <OutlineColor A="255" R="0" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="leftPokerNum" ActionTag="-1195431609" Tag="764" IconVisible="True" LeftMargin="86.0000" RightMargin="874.0000" TopMargin="125.0000" BottomMargin="415.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="leftPokerNum" ActionTag="-1195431609" Tag="764" IconVisible="True" LeftMargin="86.0000" RightMargin="874.0000" TopMargin="123.0001" BottomMargin="416.9999" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="86.0000" Y="415.0000" />
+            <Position X="86.0000" Y="416.9999" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0896" Y="0.7685" />
+            <PrePosition X="0.0896" Y="0.7722" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="pokerNumber.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="topPokerNum" ActionTag="1157040902" Tag="780" IconVisible="True" LeftMargin="485.6115" RightMargin="474.3885" TopMargin="87.3412" BottomMargin="452.6588" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="topPokerNum" ActionTag="1157040902" Tag="780" IconVisible="True" LeftMargin="485.6114" RightMargin="474.3886" TopMargin="80.3411" BottomMargin="459.6589" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="485.6115" Y="452.6588" />
+            <Position X="485.6114" Y="459.6589" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5058" Y="0.8383" />
+            <PrePosition X="0.5058" Y="0.8512" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="pokerNumber.csd" Plist="" />
           </AbstractNodeData>

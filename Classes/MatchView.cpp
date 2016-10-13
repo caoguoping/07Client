@@ -8,6 +8,8 @@
 #include "ConnectGameServiceCommand.h"
 #include "LobbyMediator.h"
 #include "LobbyView.h"
+#include "SetMediator.h"
+#include "SetView.h"
 
 MatchView::MatchView()
 {
@@ -114,11 +116,33 @@ void MatchView::initFastView()
 
 			//top
 			Node*  topNode;
-		UIGet_Node("FileNode_2", matchFastNode, topNode)
+		UIGet_Node("FileNode_top", matchFastNode, topNode)
 			UIGet_Text("Text_gold", topNode, txtGold)
 			UIGet_Text("Text_diamond", topNode, txtDiamond)
 			txtGold->setString(Tools::parseInt2String(DATA->myBaseData.lUserScore));
 		txtDiamond->setString(Tools::parseInt2String(DATA->myBaseData.rmb));
+		Button   *btnAddGold, *btnAddDiamond, *btnSetting;
+		UIGet_Button("Button_addGold", topNode, btnAddGold)
+			UIGet_Button("Button_addDiamond", topNode, btnAddDiamond)
+			UIGet_Button("Button_setting", topNode, btnSetting)
+			btnAddGold->addClickEventListener([&](Ref* psender)
+		{
+			SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+			creatView(new ShopView(1), new ShopMediator());
+		}
+		);
+		btnAddDiamond->addClickEventListener([&](Ref* psender)
+		{
+			SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+			creatView(new ShopView(0), new ShopMediator());
+		}
+		);
+		btnSetting->addClickEventListener([&](Ref* psender)
+		{
+			SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+			creatView(new SetView(), new SetMediator());
+		}
+		);
 
 
 		Button*  btnMyRecord;
@@ -178,8 +202,8 @@ void MatchView::gotoMatch(Ref* psender)
 	}
 	else if (tags == 1)
 	{
-		DATA->bMatchItem = 1;
-		blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(3));  // 暂时的
+// 		DATA->bMatchItem = 1;
+// 		blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(3));  // 暂时的
 	}
 
 }

@@ -30,12 +30,7 @@ void OutPokerCommand::execute(void* data)
 	}
 	
 	pokerIDArr = PokerLogic::sortPokerIDArr(pokerIDArr);
-	//blueSkyDispatchEvent(88887, new int(desk));
-	//for (int i = 0; i < pokerIDArr.size(); i++)
-	//{
-	//	blueSkyDispatchEvent(88888, new int(pokerIDArr[i]));
-	//}
-	//blueSkyDispatchEvent(88889);
+
 	int len = pokerIDArr.size();
 	for (int i = 0; i < len; i++)
 	{

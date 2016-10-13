@@ -3,7 +3,7 @@
 
 ViewMatchRanking::~ViewMatchRanking()
 {
-	//rootNode->removeFromParentAndCleanup(true);
+
 }
 ViewMatchRanking* ViewMatchRanking::create()
 {

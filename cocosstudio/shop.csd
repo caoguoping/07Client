@@ -16,7 +16,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/bg_stage.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_1" ActionTag="-1823241858" Tag="1112" IconVisible="True" LeftMargin="0.1627" RightMargin="-0.1627" TopMargin="-242.2898" BottomMargin="242.2898" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_top" ActionTag="-1823241858" Tag="1112" IconVisible="True" LeftMargin="0.1627" RightMargin="-0.1627" TopMargin="-242.2898" BottomMargin="242.2898" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="0.1627" Y="242.2898" />

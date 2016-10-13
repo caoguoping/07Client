@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="1088" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Image_1" ActionTag="-1720037156" Tag="1089" IconVisible="False" LeftMargin="-480.0000" RightMargin="-480.0000" TopMargin="-270.0000" BottomMargin="-270.0000" LeftEage="316" RightEage="316" TopEage="178" BottomEage="178" Scale9OriginX="316" Scale9OriginY="178" Scale9Width="328" Scale9Height="184" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_1" ActionTag="-1720037156" Tag="1089" IconVisible="False" LeftMargin="-480.0000" RightMargin="-480.0000" TopMargin="-270.0000" BottomMargin="-270.0000" TouchEnable="True" LeftEage="316" RightEage="316" TopEage="178" BottomEage="178" Scale9OriginX="316" Scale9OriginY="178" Scale9Width="328" Scale9Height="184" ctype="ImageViewObjectData">
             <Size X="960.0000" Y="540.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
@@ -16,7 +16,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/bg_stage.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_1" ActionTag="883088420" Tag="1090" IconVisible="True" LeftMargin="-0.1825" RightMargin="0.1825" TopMargin="-240.4648" BottomMargin="240.4648" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_top" ActionTag="883088420" Tag="1090" IconVisible="True" LeftMargin="-0.1825" RightMargin="0.1825" TopMargin="-240.4648" BottomMargin="240.4648" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="-0.1825" Y="240.4648" />

@@ -37,37 +37,35 @@ void ChatMediator::onEvent(int i, void* data)
 	switch (i)
 	{
 	case 11310:
-
-		break;
 	case EventType::BACK_TO_HALL:
 		removeView(this);
 		break;
 	case 11301:
-		clickChat1Hander();
+		clickChatHander(1);
 		break;
 	case 11302:
-		clickChat2Hander();
+		clickChatHander(2);
 		break;
 	case 11303:
-		clickChat3Hander();
+		clickChatHander(3);
 		break;
 	case 11304:
-		clickChat4Hander();
+		clickChatHander(4);
 		break;
 	case 11305:
-		clickChat5Hander();
+		clickChatHander(5);
 		break;
 	case 11306:
-		clickChat6Hander();
+		clickChatHander(6);
 		break;
 	case 11307:
-		clickChat7Hander();
+		clickChatHander(7);
 		break;
 	case 11308:
-		clickChat8Hander();
+		clickChatHander(8);
 		break;
 	case 11309:
-		clickChat9Hander();
+		clickChatHander(9);
 		break;
 	}
 }
@@ -77,65 +75,9 @@ Layer* ChatMediator::getLayer()
 	return ((UILayerService*)getService(UILayerService::NAME))->menuLayer;
 }
 
-void ChatMediator::clickChat1Hander()
+void ChatMediator::clickChatHander(WORD wItem)
 {
-	SEND->sendChat(1, 0);
-	blueSkyDispatchEvent(10622);
-	removeView(this);
-}
-
-void ChatMediator::clickChat2Hander()
-{
-	SEND->sendChat(2, 0);
-	blueSkyDispatchEvent(10622);
-	removeView(this);
-}
-
-void ChatMediator::clickChat3Hander()
-{
-	SEND->sendChat(3, 0);
-	blueSkyDispatchEvent(10622);
-	removeView(this);
-}
-
-void ChatMediator::clickChat4Hander()
-{
-	SEND->sendChat(4, 0);
-	blueSkyDispatchEvent(10622);
-	removeView(this);
-}
-
-void ChatMediator::clickChat5Hander()
-{
-	SEND->sendChat(5, 0);
-	blueSkyDispatchEvent(10622);
-	removeView(this);
-}
-
-void ChatMediator::clickChat6Hander()
-{
-	SEND->sendChat(6, 0);
-	blueSkyDispatchEvent(10622);
-	removeView(this);
-}
-
-void ChatMediator::clickChat7Hander()
-{
-	SEND->sendChat(7, 0);
-	blueSkyDispatchEvent(10622);
-	removeView(this);
-}
-
-void ChatMediator::clickChat8Hander()
-{
-	SEND->sendChat(8, 0);
-	blueSkyDispatchEvent(10622);
-	removeView(this);
-}
-
-void ChatMediator::clickChat9Hander()
-{
-	SEND->sendChat(9, 0);
+	SEND->sendChat(wItem, 0);
 	blueSkyDispatchEvent(10622);
 	removeView(this);
 }

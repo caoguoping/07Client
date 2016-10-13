@@ -34,10 +34,6 @@ void BlueSkyRegister::removeView(BlueSkyMediator *mediator)
 		mediator->getLayer()->removeChild(mediator->getView());
 	}
 	deleteOnEvent(mediator);
-
-	//delete mediator->getView();
-	//mediator->setView(NULL);
-// 	delete mediator;
  	mediator = NULL;
 }
 /**
@@ -49,6 +45,7 @@ void BlueSkyRegister::blueSkyDispatchEvent(int type, void* data)
 	EventVO *eventVO = new EventVO();
 	eventVO->type = type;
 	eventVO->data = data;
+
 	eventVOList->push_back(eventVO);
 	if (!isInEvent)
 	{

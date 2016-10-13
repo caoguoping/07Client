@@ -2,7 +2,11 @@
 #include "EventType.h"
 #include "GameDataModel.h"
 #include "SGTools.h"
-
+#include "DataManager.h"
+#include "ShopMediator.h"
+#include "ShopView.h"
+#include "SetMediator.h"
+#include "SetView.h"
 
 /*
 1.  120×ê 100000½ð±Ò  ÌØ¼Û
@@ -97,12 +101,41 @@ void MallView::initView()
 	Button* btnGoldChange4 = static_cast<Button*>(mallItem[E_zuanshi]->getChildByName("Button_11_2"));
 	Button* btnJiPaiqi = static_cast<Button*>(mallItem[E_zuanshi]->getChildByName("Button_11_2_0"));
 	
+	//top
 	Node*  topNode;
-	UIGet_Node("FileNode_1", rootNode, topNode)
+	UIGet_Node("FileNode_top", rootNode, topNode)
 		UIGet_Text("Text_gold", topNode, txtGold)
 		UIGet_Text("Text_diamond", topNode, txtDiamond)
+		txtGold->setString(Tools::parseInt2String(DATA->myBaseData.lUserScore));
+	txtDiamond->setString(Tools::parseInt2String(DATA->myBaseData.rmb));
+	Button   *btnAddGold, *btnAddDiamond, *btnSetting;
+	UIGet_Button("Button_addGold", topNode, btnAddGold)
+		UIGet_Button("Button_addDiamond", topNode, btnAddDiamond)
+		UIGet_Button("Button_setting", topNode, btnSetting)
+		btnAddGold->addClickEventListener([&](Ref* psender)
+	{
+		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		creatView(new ShopView(1), new ShopMediator());
+	}
+	);
+	btnAddDiamond->addClickEventListener([&](Ref* psender)
+	{
+		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		creatView(new ShopView(0), new ShopMediator());
+	}
+	);
+	btnSetting->addClickEventListener([&](Ref* psender)
+	{
+		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		creatView(new SetView(), new SetMediator());
+	}
+	);
 
-	schedule(schedule_selector(MallView::updateTitle), 0.5f);
+	
+		
+		
+		
+		schedule(schedule_selector(MallView::updateTitle), 0.5f);
 
 	//activity 0
 	btnActzshi->addClickEventListener([this](Ref* psender)

@@ -76,6 +76,9 @@ struct PokerVO
 	int isChangePosition = -1;					//用户自定义排序的牌堆，不是则为-1
 	bool isRemoveView = false;					//是否被弃用
 	bool isGongPai = false;						//是否是贡牌
+	//触摸选区的左下角坐标，高度及宽度
+	Rect  rect;
+
 };
 
 //牌的类型

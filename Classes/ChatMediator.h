@@ -14,6 +14,7 @@
 #include "PokerLogic.h"
 #include "ChatView.h"
 
+
 class ChatMediator : public BlueSkyMediator
 {
 public:
@@ -33,19 +34,11 @@ public:
 	void onEvent(int i, void* data);
 	Layer* getLayer();
 
-private:
+	public:
 
 	ChatView* chatView;
+	void clickChatHander(WORD wItem);
 
-	void clickChat1Hander();
-	void clickChat2Hander();
-	void clickChat3Hander();
-	void clickChat4Hander();
-	void clickChat5Hander();
-	void clickChat6Hander();
-	void clickChat7Hander();
-	void clickChat8Hander();
-	void clickChat9Hander();
 };
 
 #endif

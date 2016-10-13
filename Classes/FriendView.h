@@ -150,7 +150,7 @@ public:
 	void handleFriendOptMe(void* data);
 	void handleFriendOptHim(void* data);
 
-	BTN_TOUCH_HANDLE(Button, closeBtn, 10701);
+	BTN_TOUCH_HANDLE(Button, closeBtn, 12301);
 
 };
 

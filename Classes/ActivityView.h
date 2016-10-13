@@ -22,12 +22,11 @@ public:
 	}T_enumMall;
 
 
-	TextBMFont* myZuanshi;  //钻石
-	TextBMFont* myGold;     //金币
+	Text* txtDiamond;  //钻石
+	Text* txtGold;     //金币
 	TextBMFont* textZuanshi;  //抽奖需要的钻石
 	int  needZuanshi;
 
-	PageView* actScrow;
 	int currentTitle;
 	
 
@@ -64,7 +63,7 @@ public:
 	void showLottery();
 	void showRecharge();
 	void showMyCup();
-	void updateTitle(float dt);
+	void showActivityNode(int iWhich);
 	void getSpin(Ref*);
 	void getSpinReward();
 
@@ -76,6 +75,7 @@ public:
 
 	Text*  txtCannot[5];
 	Button*   btnGetGrowth[5];
+	ImageView* imgGetAlready[5];
 	void clickGetGrowth(Ref* psender);
 	Text*  txtMyLevel;      //我的等级
 	Text*  txtMyExp;        //当前经验

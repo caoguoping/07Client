@@ -3,6 +3,8 @@
 #include "BlueSky.h"
 #include "EventType.h"
 #include "GameDataModel.h"
+#include "SetMediator.h"
+#include "SetView.h"
 
 ShopView::ShopView(int id)
 {
@@ -19,10 +21,32 @@ ShopView::ShopView(int id)
 	UIGet_Node("FileNode_jinbi", rootNode, mallItem[E_gold])
 	currentTitle = id;
 
-	Node*  topNode;
-	UIGet_Node("FileNode_1", rootNode, topNode)
+
+		//top
+		Node*  topNode;
+		UIGet_Node("FileNode_top", rootNode, topNode)
 		UIGet_Text("Text_gold", topNode, txtGold)
 		UIGet_Text("Text_diamond", topNode, txtDiamond)
+		txtGold->setString(Tools::parseInt2String(DATA->myBaseData.lUserScore));
+	txtDiamond->setString(Tools::parseInt2String(DATA->myBaseData.rmb));
+	Button   *btnAddGold, *btnAddDiamond, *btnSetting;
+	UIGet_Button("Button_addGold", topNode, btnAddGold)
+		UIGet_Button("Button_addDiamond", topNode, btnAddDiamond)
+		UIGet_Button("Button_setting", topNode, btnSetting)
+		btnAddDiamond->setTouchEnabled(false);
+		btnAddGold->setTouchEnabled(false);
+
+	btnSetting->addClickEventListener([&](Ref* psender)
+	{
+		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		creatView(new SetView(), new SetMediator());
+	}
+	);
+
+
+
+
+
 
 	Button* btnZuanTejia = static_cast<Button*>(mallItem[E_zuanshi]->getChildByName("Button_zhuanshi"));
 	btnZuanTejia->addClickEventListener([this](Ref* psender)

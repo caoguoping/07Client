@@ -6,10 +6,10 @@
       <ObjectData Name="Node" Tag="585" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="roles_spin_41" ActionTag="1390941547" Tag="5274" IconVisible="False" LeftMargin="-383.9027" RightMargin="-443.0973" TopMargin="-134.2660" BottomMargin="-209.7340" ctype="SpriteObjectData">
-            <Size X="827.0000" Y="344.0000" />
+          <AbstractNodeData Name="roles_spin_41" ActionTag="1390941547" Tag="5274" IconVisible="False" LeftMargin="239.6389" RightMargin="-413.6389" TopMargin="-147.5637" BottomMargin="-192.4363" ctype="SpriteObjectData">
+            <Size X="174.0000" Y="340.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="29.5973" Y="-37.7340" />
+            <Position X="326.6389" Y="-22.4363" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -17,8 +17,8 @@
             <FileData Type="Normal" Path="NewActivity/roles_spin.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spin_bg_4" ActionTag="-723327502" Tag="5054" IconVisible="False" LeftMargin="-255.0000" RightMargin="-255.0000" TopMargin="-221.9060" BottomMargin="-209.0940" ctype="SpriteObjectData">
-            <Size X="510.0000" Y="431.0000" />
+          <AbstractNodeData Name="spin_bg_4" ActionTag="-723327502" Tag="5054" IconVisible="False" LeftMargin="-238.0000" RightMargin="-238.0000" TopMargin="-254.4060" BottomMargin="-241.5940" ctype="SpriteObjectData">
+            <Size X="476.0000" Y="496.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position Y="6.4060" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -28,8 +28,8 @@
             <FileData Type="Normal" Path="NewActivity/spin_bg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="light_1_3" ActionTag="-1669811743" Tag="5053" IconVisible="False" LeftMargin="-255.0000" RightMargin="-255.0000" TopMargin="-215.5000" BottomMargin="-215.5000" ctype="SpriteObjectData">
-            <Size X="510.0000" Y="431.0000" />
+          <AbstractNodeData Name="light_1_3" ActionTag="-1669811743" Tag="5053" IconVisible="False" LeftMargin="-220.5000" RightMargin="-220.5000" TopMargin="-220.5000" BottomMargin="-220.5000" ctype="SpriteObjectData">
+            <Size X="441.0000" Y="441.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -39,8 +39,8 @@
             <FileData Type="Normal" Path="NewActivity/light_1.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spin_inner" ActionTag="1555916489" Tag="5055" IconVisible="False" LeftMargin="-205.0000" RightMargin="-205.0000" TopMargin="-205.0000" BottomMargin="-205.0000" ctype="SpriteObjectData">
-            <Size X="410.0000" Y="410.0000" />
+          <AbstractNodeData Name="spin_inner" ActionTag="1555916489" Tag="5055" IconVisible="False" LeftMargin="-205.0000" RightMargin="-205.0000" TopMargin="-205.5000" BottomMargin="-205.5000" ctype="SpriteObjectData">
+            <Size X="410.0000" Y="411.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />

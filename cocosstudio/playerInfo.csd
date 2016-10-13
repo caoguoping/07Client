@@ -211,7 +211,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_20_0" ActionTag="498013216" Tag="1738" IconVisible="False" LeftMargin="134.8821" RightMargin="-162.8821" TopMargin="-69.8816" BottomMargin="41.8816" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="9" RightEage="9" TopEage="11" BottomEage="11" Scale9OriginX="9" Scale9OriginY="11" Scale9Width="10" Scale9Height="5" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_addGold" ActionTag="498013216" Tag="1738" IconVisible="False" LeftMargin="134.8821" RightMargin="-162.8821" TopMargin="-69.8816" BottomMargin="41.8816" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="9" RightEage="9" TopEage="11" BottomEage="11" Scale9OriginX="9" Scale9OriginY="11" Scale9Width="10" Scale9Height="5" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="28.0000" Y="28.0000" />
             <AnchorPoint ScaleX="0.4311" ScaleY="0.4272" />
             <Position X="146.9529" Y="53.8432" />

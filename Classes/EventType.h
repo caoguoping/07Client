@@ -25,6 +25,7 @@ enum EventType
 	NOT_OUT_POKER,
 	SHOW_GAME_DATA,				//本局游戏数据显示（级数）
 	CHANGE_POKER_STATE,			//改变牌的选中状态
+	SELECT_POKER_MOVE,          //滑动选牌，只增不减。
 	REMOVE_POKER,				//在手牌中移除出掉的牌
 	CHANGE_POKER_POSITION,		//改变牌的位置
 	REMOVE_OUT_POKER,			//清除出的牌的显示
@@ -89,7 +90,10 @@ enum EventType
 //12101 --  12200  :LobbyView
 //12120 --          NewLobbyView
 //12201 --  12300  :JiPaiView
+//12301 -- 12399    :FriendView
 //12400 --  12500  :caoguoping
+//12600 --  12700  :playGoldView
+//
 
 //15001-15030   :activity
 //16000 16010:  match

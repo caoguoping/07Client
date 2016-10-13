@@ -143,6 +143,8 @@ bool OutPokerLogicRule::canFollowPoker(vector<PokerVO*> otherPokerIDArr, vector<
 	//ÏÈÅÐ¶Ï³öÅÆÐÍ
 	PokerTypeVO otherPokerType = outPokerType(otherPokerIDArr);
 	PokerTypeVO myPokerType = outPokerType(myPokerArray);
+	logV("\n other Type %d  value %d,  VS  my Type %d value %d",
+		otherPokerType.type, otherPokerType.value, myPokerType.type, myPokerType.value);
 
 	//
 	if (myPokerType.type == 0)

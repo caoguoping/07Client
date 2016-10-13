@@ -39,11 +39,6 @@ public:
 	void onEvent(int i, void* data);
 	Layer* getLayer();
 
-	//触摸开始
-	virtual bool onTouchBegan(Touch *pTouch, Event *pEvent);
-	virtual void onTouchEnd(Touch *pTouch, Event *pEvent);
-	virtual void onTouchMoved(Touch *pTouch, Event *pEvent);
-
 	public:
 	//
 	EventListenerTouchOneByOne* touchListener;				//触摸事件监听器
@@ -75,7 +70,11 @@ public:
 	int ZhangAll;
 
 	//手牌中牌与牌之间的间距
-	int pkJianJu;				
+	int pkJianJu;	
+
+	//poker 中心点坐标
+	float posx;
+	float posy;
 
 	//玩家的座位号
 	//      2       

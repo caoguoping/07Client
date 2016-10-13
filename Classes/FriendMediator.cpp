@@ -36,7 +36,7 @@ void FriendMediator::onEvent(int i, void* data)
 	switch (i)
 	{
 	case EventType::BACK_TO_HALL:
-	case 10701:
+	case 12301:
 		removeView(this);
 		break;
 

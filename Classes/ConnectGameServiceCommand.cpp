@@ -22,11 +22,11 @@ void ConnectGameServiceCommand::execute(void* data)
 		i = 0;
 		if (DATA->bMatchItem == 0)
 		{
-			port = 8311;
+			port = atoi(UTF8::getInstance()->getString("net", "MatchPort").c_str());
 		} 
 		else if (DATA->bMatchItem == 1)
 		{
-			port = 8312;
+			port = atoi(UTF8::getInstance()->getString("net", "MatchPort").c_str());
 		}
 	} 
 	else

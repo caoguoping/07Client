@@ -22,7 +22,7 @@ CallCppHelper *  CallCppHelper::getInstance()
 	if (_instance == NULL)  
 	{
 		_instance = new CallCppHelper();
-		log("cocos2d-x %s", FileUtils::getInstance()->getWritablePath().c_str());
+		
 
 #if(SDKWhich == SDK_NULL)
 		//userId¶ÁÎÄ¼ş
@@ -43,8 +43,8 @@ CallCppHelper *  CallCppHelper::getInstance()
 			_instance->randomNum = int(rand_0_1() * 10000);
 			sprintf(_instance->mUid, "%02d%02d%02d%04d",
 				month, day, hour,_instance->randomNum);
-			sprintf(_instance->mTokenId, "%04d%02d%02d%02d%02d%02d%04d",
-				year, month, day, hour, min, sec, _instance->randomNum);
+			sprintf(_instance->mTokenId, "%02d%02d%02d%04d",
+				month, day, hour, _instance->randomNum);
 			UserDefault::getInstance()->setStringForKey("userId", _instance->mUid);
 			UserDefault::getInstance()->setStringForKey("TokenId", _instance->mTokenId);
 		}
@@ -59,7 +59,7 @@ CallCppHelper *  CallCppHelper::getInstance()
 			memcpy(_instance->mTokenId, strTokenId.c_str(), strTokenId.length() + 1);
 		}
 #endif
-
+		logV("cocos2d-x %s", _instance->mUid);
 	}
 	return _instance;
 };

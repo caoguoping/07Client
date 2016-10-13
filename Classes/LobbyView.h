@@ -13,7 +13,7 @@ public:
 	UIDefDelayClick(Button, Task)
 		UIDefDelayClick(Button, Signature)
 		UIDefDelayClick(Button, Setting)
-		UIDefDelayClick(Button, Easy)
+		UIDefDelayClick(Button, PlayGold)
 		UIDefDelayClick(Button, Primary)
 		UIDefDelayClick(Button, Master)
 		UIDefDelayClick(Button, Match)
