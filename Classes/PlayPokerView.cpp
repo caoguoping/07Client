@@ -33,7 +33,6 @@ PlayPokerView::PlayPokerView()
 	imgHuaPai->setAnchorPoint(Vec2(0, 0));
 	imgHuaPai->setPosition(Vec2(0, 50));
 	imgHuaPai->setTouchEnabled(true);
-	//imgHuaPai->setVisible(false);
 	imgHuaPai->setVisible(true);
 	//logV("imgHuaPai local zorder %d, globelZorder %d", imgHuaPai->getLocalZOrder(), imgHuaPai->getGlobalZOrder());
 
@@ -284,10 +283,10 @@ void PlayPokerView::clockShow(float dt)
 	topClockText->setString(m);
 	leftClockText->setString(m);
 
-	myTimer->setPercentage(i * 10 / 3);
-	rightTimer->setPercentage(i * 10 / 3);
-	topTimer->setPercentage(i * 10 / 3);
-	leftTimer->setPercentage(i * 10 / 3);
+	myTimer->setPercentage(i * 100 / 30);
+	rightTimer->setPercentage(i * 100 / 30);
+	topTimer->setPercentage(i * 100 / 30);
+	leftTimer->setPercentage(i * 100 / 30);
 
 	//倒数10秒时开始播放计时器音效
 	if (time > 19)

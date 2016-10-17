@@ -266,13 +266,13 @@ public:
 
 	BYTE  bMatchItem = 0;    //比赛的第几个按钮  0，1，2
 
-	std::vector<tagFriendParameter> vFriends;
+	std::vector<tagFriendParameter> vFriends;   //
 
-	std::vector<tagContactInfo> vFriendsShuRen;
+	std::vector<tagContactInfo> vFriendsShuRen;  //
 
-	std::vector<tagInviteInfo> vFriendPush;
+	std::vector<tagInviteInfo> vFriendPush;   //friends add me push
 
-	CMD_GP_C_ADD_Friend stFriendOpt;
+	//CMD_GP_C_ADD_Friend stFriendOpt;
 
 	MyBaseData myBaseData;
 	string md5Passwd;

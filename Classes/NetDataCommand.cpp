@@ -14,7 +14,7 @@
 
 
 
-#define  ShowMessage 0
+#define  ShowMessage 1
 
 NetDataCommand::NetDataCommand()
 {
@@ -379,11 +379,10 @@ void NetDataCommand::executeLogin(NetData netData)
 			getFriendsInfo(netData);
 			break;
 		case  5:    //自己发的，回给自己的
-			getFriedsAddInfo(netData);
-			blueSkyDispatchEvent(EventType::FRIEND_OPT_ME, &netData);
+			getFriedsAddInfoMe(netData);
+			break;
 		case 6:   //对方发的，回给自己的
-			getFriedsAddInfo(netData);
-			blueSkyDispatchEvent(EventType::FRIEND_OPT_HIM, &netData);
+			getFriedsAddInfoHim(netData);
 			break;
 		case 9:
 			getFriendsShuRen(netData);
@@ -909,7 +908,7 @@ void NetDataCommand::getDeskInfo(NetData netData)
 //获取进入房间的玩家信息
 void NetDataCommand::getInDeskPlayerInfo(NetData netData)
 {
-
+	logP
 	OnDeskPlayerInfo *result = new OnDeskPlayerInfo();
 	result->dwGameID = netData.readDWORD();
 	result->dwUserID = netData.readDWORD();
@@ -1261,23 +1260,41 @@ void NetDataCommand::getFriendsInfo(NetData netData)
 	blueSkyDispatchEvent(EventType::FRIEND_LIST);
 }
 
-//6	5 或 6 6	返回好友添加信息
-void NetDataCommand::getFriedsAddInfo(NetData netData)
+//6	5 me返回好友添加信息
+void NetDataCommand::getFriedsAddInfoMe(NetData netData)
 {
-	DATA->stFriendOpt.dwUserID = netData.readDWORD();
-	DATA->stFriendOpt.dwTargretUserID = netData.readDWORD();
-	DATA->stFriendOpt.wStatue = netData.readWORD();
-	DATA->stFriendOpt.szNickName = netData.readString(64);
+	CMD_GP_C_ADD_Friend* pFriendOpt = new CMD_GP_C_ADD_Friend();
 
-	DATA->stFriendOpt.dwRmb = netData.readDWORD();
-	DATA->stFriendOpt.FaceID = netData.readWORD();
-	DATA->stFriendOpt.wServerID = netData.readWORD();
-	DATA->stFriendOpt.wKindID = netData.readWORD();
+	pFriendOpt->dwUserID = netData.readDWORD();
+	pFriendOpt->dwTargretUserID = netData.readDWORD();
+	pFriendOpt->wStatue = netData.readWORD();
+	pFriendOpt->szNickName = netData.readString(64);
+	pFriendOpt->dwRmb = netData.readDWORD();
+	pFriendOpt->FaceID = netData.readWORD();
+	pFriendOpt->wServerID = netData.readWORD();
+	pFriendOpt->wKindID = netData.readWORD();
+	pFriendOpt->dwLoveLiness = netData.readDWORD();
+	pFriendOpt->WinRate = netData.readWORD();
+	pFriendOpt->wRcStates = netData.readWORD();
+	blueSkyDispatchEvent(EventType::FRIEND_OPT_ME, pFriendOpt);
+}
 
-	DATA->stFriendOpt.dwLoveLiness = netData.readDWORD();
-	DATA->stFriendOpt.WinRate = netData.readWORD();
-	DATA->stFriendOpt.wRcStates = netData.readWORD();
-
+//或 6 6 him me返回好友添加信息
+void NetDataCommand::getFriedsAddInfoHim(NetData netData)
+{
+	CMD_GP_C_ADD_Friend* pFriendOpt = new CMD_GP_C_ADD_Friend();
+	pFriendOpt->dwUserID = netData.readDWORD();
+	pFriendOpt->dwTargretUserID = netData.readDWORD();
+	pFriendOpt->wStatue = netData.readWORD();
+	pFriendOpt->szNickName = netData.readString(64);
+	pFriendOpt->dwRmb = netData.readDWORD();
+	pFriendOpt->FaceID = netData.readWORD();
+	pFriendOpt->wServerID = netData.readWORD();
+	pFriendOpt->wKindID = netData.readWORD();
+	pFriendOpt->dwLoveLiness = netData.readDWORD();
+	pFriendOpt->WinRate = netData.readWORD();
+	pFriendOpt->wRcStates = netData.readWORD();
+	blueSkyDispatchEvent(EventType::FRIEND_OPT_HIM, pFriendOpt);
 }
 
 //6	9	返回熟人列表

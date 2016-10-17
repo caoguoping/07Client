@@ -161,8 +161,8 @@ void FriendView::initView()
 			UIGet_Layout("Panel_push", ndFriends[E_familiar], layPush)
 				UIGet_Button("Button_agree", layPush, btnAgree)
 				UIGet_Button("Button_refuse", layPush, btnRefuse)
-				UIClick(btnAgree, FriendView::clickAllAgree)
-				UIClick(btnRefuse, FriendView::clickAllRefuse)
+// 				UIClick(btnAgree, FriendView::clickAllAgree)
+// 				UIClick(btnRefuse, FriendView::clickAllRefuse)
 
 
 			UIGet_Node("FileNode_search", ndFriends[E_familiar], ndSearch)
@@ -305,9 +305,6 @@ void FriendView::showFriends()
 			txtChangci->setString(UTF8::getInstance()->getString("changci", Tools::parseInt2String(wChangci)));
 		}
 
-		//txtGame->setString(DATA->vFriends.at(i).)
-		//txtChangci->setString()
-
 		char headName[64];
 		sprintf(headName, "headshot_%d.png", DATA->vFriends.at(i).FaceID);
 		imgHead->loadTexture(headName);
@@ -421,7 +418,7 @@ void FriendView::showPushFriends()
 
 	int itemHeigth = 99;
 	int halfItemWidth = 304 * 0.5;
-	lstShuRen->setItemsMargin(itemHeigth + 6);
+	lstPush->setItemsMargin(itemHeigth + 6);
 
 	int itemSize = DATA->vFriendPush.size();
 	for (int i = 0; i < itemSize / 2; i++)
@@ -555,8 +552,6 @@ void FriendView::showRanks(DWORD dwWhich)
 		oneNode->setPosition(Vec2(halfItemWidth, -itemHeigth * 0.5));
 		Text  *txtRmb, *txtName, *txtGame, *txtChangci, *txtFree, *txtRank;
 		ImageView*  imgHead,  *imgRankIcon;
-		// 
-
 
 		UIGet_Text("Text_name", oneNode, txtName)
 			UIGet_Text("Text_rmb", oneNode, txtRmb)
@@ -564,17 +559,11 @@ void FriendView::showRanks(DWORD dwWhich)
 			UIGet_Text("Text_changci", oneNode, txtChangci)
 			UIGet_Text("Text_free", oneNode, txtFree)
 			UIGet_Text("Text_rank", oneNode, txtRank)
-
-
 			UIGet_ImageView("Image_head", oneNode, imgHead)
 			UIGet_ImageView("Image_rankIcon", oneNode, imgRankIcon)
-
-
 			txtName->setString(DATA->vFriends.at(i).szNickName);
 		txtRank->setString(Tools::parseInt2String(i + 1));
-
 		WORD wChangci = DATA->vFriends.at(i).wServerID;
-
 		if (wChangci == 0)
 		{
 			txtChangci->setVisible(false);
@@ -766,15 +755,7 @@ void FriendView::clickSearchAdd(Ref* pSender)
 	Tools::getInstance()->showSysMsgTouming(UTF8::getInstance()->getString("friend", "req"));
 }
 
-//∫√”—Õ∆ÀÕ
-void FriendView::clickAllAgree(Ref* pSender)
-{
 
-}
-void FriendView::clickAllRefuse(Ref* pSender)
-{
-
-}
 void FriendView::clickOneAgree(Ref* pSender)
 {
 	Button*   btnAdd = static_cast<Button*>(pSender);
@@ -797,17 +778,6 @@ void FriendView::clickOneRefuse(Ref* pSender)
 	showPushFriends();
 	Tools::getInstance()->showSysMsgTouming(UTF8::getInstance()->getString("friend", "refuse"));
 }
-void FriendView::handleOneAgree(int iWhich)
-{
-
-}
-void FriendView::handleOneRefuse(int iWhich)
-{
-
-}
-
-
-
 
 
 void FriendView::handleFriendOptMe(void*  data)

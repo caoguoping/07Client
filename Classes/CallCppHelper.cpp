@@ -42,7 +42,7 @@ CallCppHelper *  CallCppHelper::getInstance()
 			int sec = tm->tm_sec;
 			_instance->randomNum = int(rand_0_1() * 10000);
 			sprintf(_instance->mUid, "%02d%02d%02d%04d",
-				month, day, hour,_instance->randomNum);
+				 day, hour,sec, _instance->randomNum);
 			sprintf(_instance->mTokenId, "%02d%02d%02d%04d",
 				month, day, hour, _instance->randomNum);
 			UserDefault::getInstance()->setStringForKey("userId", _instance->mUid);

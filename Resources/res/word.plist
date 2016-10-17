@@ -47,7 +47,7 @@
 	    <key>net</key>  
         <dict>
         	<!--yuanlai-->
-<!--             <key>loginServerIp</key>  
+<!--             <key>loginServerIp</key> 
             <string>221.226.117.87</string>
 			<key>loginServerPort</key>  
             <string>8300</string>
@@ -56,8 +56,8 @@
 
 			<!--xin-->
             <key>loginServerIp</key>  
-            <string>221.226.117.82</string>
-            <!-- <string>192.168.2.130</string> -->
+            <!-- <string>221.226.117.82</string> -->
+            <string>192.168.2.130</string>
 			<key>loginServerPort</key>  
             <string>5050</string>
 			<key>MatchPort</key>  

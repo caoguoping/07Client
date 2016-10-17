@@ -150,7 +150,6 @@ public:
 	void onRemove();
 	void onEvent(int i, void* data);
 	Layer* getLayer();
-	void clickAddWealthBtnHander();
 	void clickfanHuiBtnHander();
 	void clickChatBtnHander();
 	void clickChuPaiBtnHander();
@@ -166,8 +165,6 @@ public:
 	void clickClearBtnHander();
 	//¿´×ÀÃæ10042
 	bool clicklookTableBtn(Touch *touch, Widget::TouchEventType type);
-	void clicklookTableBtnHander();
-
 
 public:
 	void showPlayerOnDeskHandle(void* data);

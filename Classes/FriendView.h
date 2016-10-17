@@ -139,12 +139,10 @@ public:
 
 
 	//∫√”—Õ∆ÀÕ
-	void clickAllAgree(Ref* pSender);
-	void clickAllRefuse(Ref* pSender);
+
 	void clickOneAgree(Ref* pSender);
 	void clickOneRefuse(Ref* pSender);
-	void handleOneAgree(int iWhich);
-	void handleOneRefuse(int iWhich);
+
 
 	//handle
 	void handleFriendOptMe(void* data);

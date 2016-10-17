@@ -39,16 +39,6 @@
             <FileData Type="Normal" Path="play/diban01.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="myJiShu1" ActionTag="415136857" Tag="524" IconVisible="False" LeftMargin="-38.5000" RightMargin="23.5000" TopMargin="28.0000" BottomMargin="-32.0000" Scale9Width="15" Scale9Height="4" ctype="ImageViewObjectData">
-            <Size X="15.0000" Y="4.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-31.0000" Y="-30.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="play/di-up.png" Plist="" />
-          </AbstractNodeData>
           <AbstractNodeData Name="myJiShu2" ActionTag="1377423010" Tag="525" IconVisible="False" LeftMargin="-38.5000" RightMargin="23.5000" TopMargin="28.0000" BottomMargin="-32.0000" Scale9Width="15" Scale9Height="4" ctype="ImageViewObjectData">
             <Size X="15.0000" Y="4.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -59,10 +49,10 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="play/di-dowm.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="otherJiShu1" ActionTag="24584066" Tag="526" IconVisible="False" LeftMargin="23.5000" RightMargin="-38.5000" TopMargin="28.0000" BottomMargin="-32.0000" Scale9Width="15" Scale9Height="4" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="myJiShu1" ActionTag="415136857" Tag="524" IconVisible="False" LeftMargin="-38.5000" RightMargin="23.5000" TopMargin="28.0000" BottomMargin="-32.0000" Scale9Width="15" Scale9Height="4" ctype="ImageViewObjectData">
             <Size X="15.0000" Y="4.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="31.0000" Y="-30.0000" />
+            <Position X="-31.0000" Y="-30.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -78,6 +68,16 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="play/di-dowm.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="otherJiShu1" ActionTag="24584066" Tag="526" IconVisible="False" LeftMargin="23.5000" RightMargin="-38.5000" TopMargin="28.0000" BottomMargin="-32.0000" Scale9Width="15" Scale9Height="4" ctype="ImageViewObjectData">
+            <Size X="15.0000" Y="4.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="31.0000" Y="-30.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="play/di-up.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="Image_beilv" ActionTag="145035286" VisibleForFrame="False" Tag="1024" IconVisible="False" LeftMargin="-52.0001" RightMargin="-51.9999" TopMargin="-32.6821" BottomMargin="9.6821" LeftEage="34" RightEage="34" TopEage="7" BottomEage="7" Scale9OriginX="34" Scale9OriginY="7" Scale9Width="36" Scale9Height="9" ctype="ImageViewObjectData">
             <Size X="104.0000" Y="23.0000" />
@@ -139,7 +139,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="NewPlay/magnification_text_2.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_myLv" ActionTag="-1554020499" Tag="3796" IconVisible="False" LeftMargin="-39.8115" RightMargin="24.8115" TopMargin="3.4142" BottomMargin="-27.4142" FontSize="20" LabelText="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_myLv" ActionTag="-1554020499" Tag="3796" IconVisible="False" LeftMargin="-39.8115" RightMargin="24.8115" TopMargin="3.4142" BottomMargin="-27.4142" FontSize="20" LabelText="8" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="15.0000" Y="24.0000" />
             <AnchorPoint ScaleX="0.5840" ScaleY="0.6698" />
             <Position X="-31.0515" Y="-11.3390" />
@@ -151,8 +151,8 @@
             <OutlineColor A="255" R="141" G="52" B="10" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_otherLv" ActionTag="1078512382" Tag="3797" IconVisible="False" LeftMargin="18.1616" RightMargin="-41.1616" TopMargin="3.5581" BottomMargin="-27.5581" FontSize="20" LabelText="10" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="23.0000" Y="24.0000" />
+          <AbstractNodeData Name="Text_otherLv" ActionTag="1078512382" Tag="3797" IconVisible="False" LeftMargin="22.8336" RightMargin="-37.8336" TopMargin="3.5581" BottomMargin="-27.5581" FontSize="20" LabelText="8" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="15.0000" Y="24.0000" />
             <AnchorPoint ScaleX="0.5840" ScaleY="0.6698" />
             <Position X="31.5936" Y="-11.4829" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />

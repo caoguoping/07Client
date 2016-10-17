@@ -96,7 +96,10 @@ private:
 	void getFriendsInfo(NetData netData);
 
 	//6	5	返回好友添加信息	s = -1 邀请失败	s = 0 成功邀请 	s = 1  成功加为好友
-	void getFriedsAddInfo(NetData netData);
+	void getFriedsAddInfoMe(NetData netData);
+
+	//6, 6  
+	void getFriedsAddInfoHim(NetData netData);
 
 	//6	9	返回熟人列表
 	void getFriendsShuRen(NetData netData);

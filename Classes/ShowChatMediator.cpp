@@ -68,7 +68,7 @@ Layer* ShowChatMediator::getLayer()
 void ShowChatMediator::playChatMusic(int face, int index)
 {
 	//Ů
-	if (face == 1 || face == 4)
+	if (face == 1 || face == 2)
 	{
 		switch (index)
 		{
@@ -101,7 +101,7 @@ void ShowChatMediator::playChatMusic(int face, int index)
 			break;
 		}
 	}
-	else if (face == 2 || face == 3)
+	else if (face == 4 || face == 3)
 	{
 		switch (index)
 		{

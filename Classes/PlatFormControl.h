@@ -12,11 +12,11 @@
 
 
 
-//  #define SDKWhich  SDK_YIKE
+// #define SDKWhich  SDK_YIKE
 // #define PlatWhich PlatAdr
 // 
-#define SDKWhich  SDK_NULL
-#define PlatWhich PlatWin
+ #define SDKWhich  SDK_NULL
+ #define PlatWhich PlatWin
 
 
 #endif	
