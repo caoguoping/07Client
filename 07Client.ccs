@@ -467,6 +467,43 @@
             <Image Name="touyou0034.png" />
             <Image Name="touyou0035.png" />
           </Folder>
+          <Folder Name="zhupai">
+            <Image Name="card0001.png" />
+            <Image Name="card0002.png" />
+            <Image Name="card0003.png" />
+            <Image Name="card0004.png" />
+            <Image Name="card0005.png" />
+            <Image Name="card0006.png" />
+            <Image Name="card0007.png" />
+            <Image Name="card0008.png" />
+            <Image Name="card0009.png" />
+            <Image Name="card0010.png" />
+            <Image Name="card0011.png" />
+            <Image Name="card0012.png" />
+            <Image Name="card0013.png" />
+            <Image Name="card0014.png" />
+            <Image Name="card0015.png" />
+            <Image Name="card0016.png" />
+            <Image Name="card0017.png" />
+            <Image Name="card0018.png" />
+            <Image Name="card0019.png" />
+            <Image Name="card0020.png" />
+            <Image Name="card0021.png" />
+            <Image Name="card0022.png" />
+            <Image Name="card0023.png" />
+            <Image Name="card0024.png" />
+            <Image Name="card0025.png" />
+            <Image Name="card0026.png" />
+            <Image Name="card0027.png" />
+            <Image Name="card0028.png" />
+            <Image Name="card0029.png" />
+            <Image Name="card0030.png" />
+            <Image Name="card0031.png" />
+            <Image Name="card0032.png" />
+            <Image Name="card0033.png" />
+            <Image Name="card0034.png" />
+            <Image Name="card0035.png" />
+          </Folder>
         </Folder>
         <Folder Name="bg">
           <Image Name="already-receive_2.png" />
@@ -674,9 +711,9 @@
           <Image Name="title_task.png" />
         </Folder>
         <Folder Name="font">
-          <TTF Name="fangzhengchuyuan.TTF" />
           <Fnt Name="mall.fnt" />
           <Fnt Name="timer.fnt" />
+          <TTF Name="fangzhengchuyuan.TTF" />
         </Folder>
         <Folder Name="Friends">
           <Image Name="button_add_1.png" />
@@ -1859,6 +1896,7 @@
         <Project Name="Wealth.csd" Type="Node" />
         <Project Name="wealthNumber.csd" Type="Node" />
         <Project Name="zhuanShiShow.csd" Type="Node" />
+        <Project Name="zhupai.csd" Type="Node" />
       </RootFolder>
     </Group>
   </SolutionFolder>

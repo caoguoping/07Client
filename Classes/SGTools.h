@@ -44,7 +44,35 @@ using namespace std;
 #define UIGet_Sprite(itemName, father, me)    me = static_cast<Sprite*>(father->getChildByName(itemName));
 
 
+
+/*
+touyouTimeline = CSLoader::createTimeline("touyou.csb");
+touyouNode = CSLoader::createNode("touyou.csb");
+rootNode->addChild(touyouNode);
+rootNode->runAction(touyouTimeline);
+touyouTimeline->gotoFrameAndPlay(0, false);
+*/
+//sequences frames
+#define UIFrameDef(name)  cocostudio::timeline::ActionTimeline*  name##Timeline; \
+	Node*  name##Node;
+
+#define UIFrameInit(name) 	name##Node = NULL;
+
+#define UIFrameCreate(name, CsbName,father,loop) name##Timeline = CSLoader::createTimeline(CsbName); \
+	name##Node = CSLoader::createNode(CsbName); \
+	father->addChild(name##Node); \
+	father->runAction(name##Timeline); \
+	name##Timeline->gotoFrameAndPlay(0, loop);
+
+#define UIFrameRemove(name, father) 	if (name##Node) \
+{ \
+	father->stopAction(name##Timeline); \
+	name##Node->removeFromParentAndCleanup(true); \
+	name##Node = NULL; \
+}
+
 #define UIClick(itemName, callFunc) itemName->addClickEventListener(CC_CALLBACK_1(callFunc, this));
+#define UIClickCheck(itemName, callFunc) itemName->addEventListener(CC_CALLBACK_2(callFunc, this));
 
 #define UIDisableClick(itemName, className, funcName) 	itemName->setTouchEnabled(false); \
 	this->scheduleOnce(schedule_selector(className::funcName), 0.5f);

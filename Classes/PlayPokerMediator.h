@@ -43,13 +43,14 @@ USING_NS_CC;
 class  PlayPokerMediator : public BlueSkyMediator
 {
 public:
-	int pintNum = 0;
 	PlayPokerView*  playPokerView;
-	cocostudio::timeline::ActionTimeline* matchEndLoading;
-	cocostudio::timeline::ActionTimeline* matchEndLoading2;
-	bool isShowMatchEndLoading;
-	Node*   matchEndLoadingNode;
-	Node*   matchEndLoadingNode2;
+
+
+	UIFrameDef(zhupai)	
+		ImageView*  imgZhupai;
+	UIFrameDef(matchEndLoading)
+	UIFrameDef(matchEndLoading2)
+
 	Text*   txtLeftDesks = NULL;
 	//积分排名
 	ViewMatchRanking*  mpViewMatchRanking;
@@ -57,19 +58,7 @@ public:
 	Text*  txtScore;        //积分
 	Text*  txtNowRank;		//排名
 	Text*  txtAllLeftPeople; //本轮总人数	
-
-
-	//本局是否买过记牌器
-	bool hasBuyJiPaiQi = false;
-	//记录本轮提示被点击的次数
-	int clickTiShiTimes = 0;
-	//记录本轮同花顺按钮被点击的次数
-	int clickTongHuaShunTimes = 0;
-	//聊天面板是否被打开
-	bool isChatOpened = false;
-	int mJoinInPlayer = 0;  //进入桌子的玩家数目
 	DWORD jipaiqiNum;
-	//
 	Button* addWealthBtn;
 	Button* fanHuiBtn;
 	Button* chatBtn;
@@ -81,21 +70,13 @@ public:
 	Button* tongHuaShunBtn;
 	Button* liChengYiPaiBtn;
 	Button* chongLiBtn;
-
 	Button* startBtn;  //开始游戏按钮
-	//记牌器按钮
-	Button* markBtn;
-	//托管按钮
-	Button* autoBtn;
-	//清零按钮
-	Button* clearBtn;
+	Button* markBtn; 	//记牌器按钮
+	Button* autoBtn; //托管按钮
+	Button* clearBtn; //清零按钮
 	ImageView* imgJPTip;
 	Text*  txtJPTips;
-	//看桌面按钮
-	Button* lookTableBtn;
-	//欢乐豆显示
-	Text* wealthText;
-	//	Text* Text_1;
+	Button* lookTableBtn; 	//看桌面按钮
 	Node* actionNode;
 	//本轮级数
 	ImageView* myJiShu1;
@@ -104,19 +85,16 @@ public:
 	ImageView* otherJiShu2;
 	Text*  myLv;
 	Text*  otherLv;
-
 	//不出
 	ImageView* buchu1;
 	ImageView* buchu2;
 	ImageView* buchu3;
 	ImageView* buchu4;
-
 	//准备
 	ImageView* zhunbei1;
 	ImageView* zhunbei2;
 	ImageView* zhunbei3;
 	ImageView* zhunbei4;
-
 	//托管
 	ImageView* meAutoImage;
 	ImageView* leftAutoImage;
@@ -124,27 +102,24 @@ public:
 	ImageView* rightAutoImage;
 
 	Node* paiFenNode;
-	Vec2 touchBeginPos = Vec2(0, 0);
-	//本局倍率
-	int nowBeiLv = 1;
-	//回贡对象的服务器椅子ID
-	int huiGongID = -1;
-	bool hasPlayJinGongAction = false;
-	bool hasPlayHuanGongAction = false;
-	bool hasGetJinGong = false;
-	bool hasGetHuanGong = false;
-
-	//是否是第一次发牌
-	bool isFirstOutPoker = true;
-	bool isMeFirstOutPoker = false;
-
-	//
+	Vec2 touchBeginPos;
+	int nowBeiLv ;  //本局倍率
+	int huiGongID ;   //回贡对象的服务器椅子ID
+	bool hasPlayJinGongAction ;
+	bool hasPlayHuanGongAction ;
+	bool hasGetJinGong ;
+	bool hasGetHuanGong ;
+	bool isFirstOutPoker ;  //是否是第一次发牌
+	bool isMeFirstOutPoker ;
+	int mJoinInPlayer;  //进入桌子的玩家数目
+	int mPlayCount;    //进行了几次打牌，发完牌算第一次，
+	bool isAutoState;
+	int clickTiShiTimes; //记录本轮提示被点击的次数
+	int clickTongHuaShunTimes; //记录本轮同花顺按钮被点击的次数
+	bool isChatOpened; 	//聊天面板是否被打开
 	int wCurrentUser;
-
-	//
-	bool isAutoState = false;
 public:
-	PlayPokerMediator(){};
+	PlayPokerMediator();
 	~PlayPokerMediator();
 	void OnRegister();
 	void onRemove();
@@ -163,13 +138,14 @@ public:
 	void clickMarkBtnHander();
 	void clickAutoBtnHander();
 	void clickClearBtnHander();
-	//看桌面10042
 	bool clicklookTableBtn(Touch *touch, Widget::TouchEventType type);
 
 public:
 	void showPlayerOnDeskHandle(void* data);
 	void OnDeskHandle(void* data);
-	void sendPokerkHandle(void* data);
+	void delaySendPokerHandle();
+	void delayShowZhupai();
+	void sendPokerkHandle();
 	void notOutPokerHandle(void* data);
 	void reveivePlayerOutPokerHandle(void* data);
 	void payTributeHandle(void* data);
@@ -180,7 +156,6 @@ public:
 	void onMatchEnd(BYTE bState);
 	void updateMatchScore();  //更新
 	void onTouchesHuapai(Ref*  pSender, Widget::TouchEventType type);
-
 	//是否显示出牌按钮
 	void isOrNotMyTurn(bool value);
 	//是否显示不出文字

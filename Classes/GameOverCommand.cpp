@@ -64,12 +64,7 @@ void GameOverCommand::execute(void* data)
 	}
 	gameDataModel->player[0].selectedPokerArr = {};
 
-
 	//±ÈÈü³¡
-
-
-
-
 
 	if (DATA->bGameCate == DataManager::E_GameCateNormal)
 	{

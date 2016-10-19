@@ -41,8 +41,8 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_name" ActionTag="-394846299" Tag="213" IconVisible="False" LeftMargin="-65.4213" RightMargin="-57.5787" TopMargin="-29.1169" BottomMargin="7.1169" FontSize="20" LabelText="啊啊啊啊啊阿" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="123.0000" Y="22.0000" />
+          <AbstractNodeData Name="Text_name" ActionTag="-394846299" Tag="213" IconVisible="False" LeftMargin="-54.9213" RightMargin="-47.0787" TopMargin="-29.1169" BottomMargin="7.1169" FontSize="20" LabelText="默认的名字" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="102.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-3.9213" Y="18.1169" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />

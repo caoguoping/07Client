@@ -11,7 +11,7 @@
 class  ShopView : public BlueSkyView
 {
 public:
-	typedef enum mall
+	typedef enum shop
 	{
 
 		E_zuanshi = 0,
@@ -21,7 +21,7 @@ public:
 	}T_enumShop;
 
 
-	Node* mallItem[E_shopMax];
+	Node* shopItem[E_shopMax];
 	int currentTitle;
 	Text* txtDiamond;  //×êÊ¯
 	Text* txtGold;     //½ð±Ò

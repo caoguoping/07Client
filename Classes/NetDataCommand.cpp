@@ -268,10 +268,6 @@ void NetDataCommand::executeLogin(NetData netData)
 	txtLogin->setString(temp);
 	logV("LoginServer main: %d,  sub: %d    \n", netData.command.wMainCmdID, netData.command.wSubCmdID);
 #endif
-// 
-// 	char temp[512];
-// 	sprintf(temp, "LoginServer main: %d,  sub: %d    \n", netData.command.wMainCmdID, netData.command.wSubCmdID);
-// 	log("cocos2d-x LoginServer in netNata %s", temp);
 
 	if (netData.command.wMainCmdID == MDM_GP_LOGON)
 	{
@@ -960,6 +956,7 @@ void NetDataCommand::getSendPokerInfo(NetData netData)
 	result->bLiangPai = netData.readInt8();
 	result->bLiangCard = netData.readWORD();
 
+	DATA->sendPokerData = result;
 	//
 	blueSkyDispatchEvent(EventType::SEND_POKER, result);
 }

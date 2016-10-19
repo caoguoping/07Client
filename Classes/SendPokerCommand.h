@@ -18,6 +18,7 @@ public:
 	事件通知执行函数
 	*/
 	void execute(void* data);
+	void delaySendPoker();
 };
 
 #endif

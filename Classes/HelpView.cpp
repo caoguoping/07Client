@@ -58,25 +58,10 @@ void HelpView::clickCheckBox(Ref* pSender)
 {
 	CheckBox*  checkBox = static_cast<CheckBox*>(pSender);
 	int iwhich = checkBox->getTag();
-
-	switch (iwhich)
+	if (iwhich < 0 || iwhich >= 5)
 	{
-	case 0:
-		handleWhich(0);
-		break;
-	case 1:
-		handleWhich(1);
-		break;
-	case 2:
-		handleWhich(2);
-		break;
-	case 3:
-		handleWhich(3);
-		break;
-	case 4:
-		handleWhich(4);
-		break;
-	default:
-		break;
+		return;
 	}
+	handleWhich(iwhich);
+
 }

@@ -240,6 +240,8 @@ public:
 	{
 		E_GameCateNormal = 0,
 		E_GameCateMatch,    //比赛
+		E_GameFriend,
+		E_GameRandZhupai    
 	}E_GameCate;
 
 	BYTE jipai[18];     //记牌器数据
@@ -276,6 +278,8 @@ public:
 
 	MyBaseData myBaseData;
 	string md5Passwd;
+
+	void *sendPokerData;
 
 public:
 	static DataManager * getInstance();

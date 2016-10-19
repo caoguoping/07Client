@@ -102,6 +102,8 @@ public:
 	Text* txtDiamond;  //×êÊ¯
 	Text* txtGold;     //½ð±Ò
 
+	int hasNewPushFriends;
+
 
 public:
 	FriendView();
@@ -109,13 +111,9 @@ public:
 	void initView();
 	void refreshShuren();
 	void turningPage(Ref* psender, PageView::EventType type);
-	void setCurrentPage(int currentPage);
-
-	void clickFriends(Ref*  pSender);
-	void clickShuRen(Ref*  pSender);
-	void clickRank(Ref*  pSender);
-
-
+	void handleWhich(int currentPage);
+	void clickCheckItemFriends(Ref*  pSender, CheckBox::EventType type);
+	
 	void clickRankCaiFu(Ref*  pSender);
 	void clickRankMeiLi(Ref*  pSender);
 	void clickRankShengLv(Ref*  pSender);

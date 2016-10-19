@@ -83,23 +83,23 @@ void FriendView::initView()
 	rootNode = CSLoader::createNode("Friends.csb");
 	addChild(rootNode);
 	VIEW->nowViewTag = ViewManager::eViewFriend;
+
+	logV("\n myUserId %d", DATA->myBaseData.dwUserID);
 		BTN_ADD_TOUCH_EVENTLISTENER(Button, FriendView, closeBtn, 12301, "Button_close", NULL)
 
-		UIGet_Node("FileNode_0", rootNode, ndFriends[E_friends])
-		UIGet_Node("FileNode_1", rootNode, ndFriends[E_familiar])
-		UIGet_Node("FileNode_2", rootNode, ndFriends[E_ranks])
+		UIGet_Node("FileNode_0", rootNode, ndFriends[0])
+		UIGet_Node("FileNode_1", rootNode, ndFriends[1])
+		UIGet_Node("FileNode_2", rootNode, ndFriends[2])
 
-		UIGet_CheckBox("CheckBox_0", rootNode, chkFriends[E_friends])
-		UIGet_CheckBox("CheckBox_1", rootNode, chkFriends[E_familiar])
-		UIGet_CheckBox("CheckBox_2", rootNode, chkFriends[E_ranks])
+		UIGet_CheckBox("CheckBox_0", rootNode, chkFriends[0])
+		UIGet_CheckBox("CheckBox_1", rootNode, chkFriends[1])
+		UIGet_CheckBox("CheckBox_2", rootNode, chkFriends[2])
 
-		UIClick(chkFriends[E_friends],   FriendView::clickFriends)
-		UIClick(chkFriends[E_familiar], FriendView::clickShuRen)
-		UIClick(chkFriends[E_ranks], FriendView::clickRank)
-
-		for (int i = 0; i < E_frinedsItemMax; i ++)
+		for (int i = 0; i < 3; i ++)
 		{
 			chkFriends[i]->setTag(i);
+			//UIClick(chkFriends[i], FriendView::clickCheckItemFriend);
+			UIClickCheck(chkFriends[i], FriendView::clickCheckItemFriends);
 		}
 
 
@@ -161,8 +161,6 @@ void FriendView::initView()
 			UIGet_Layout("Panel_push", ndFriends[E_familiar], layPush)
 				UIGet_Button("Button_agree", layPush, btnAgree)
 				UIGet_Button("Button_refuse", layPush, btnRefuse)
-// 				UIClick(btnAgree, FriendView::clickAllAgree)
-// 				UIClick(btnRefuse, FriendView::clickAllRefuse)
 
 
 			UIGet_Node("FileNode_search", ndFriends[E_familiar], ndSearch)
@@ -174,16 +172,6 @@ void FriendView::initView()
 			Button  *btnJoin;
 			UIGet_Button("Button_join", ndSearch, btnJoin)
 			UIClick(btnJoin, FriendView::clickSearchAdd)
-
-
-// 			//shuRen search
-// 			Button  *btnOk, *btnNo;
-// 		UIGet_Button("Button_OK", ndSearch, btnOk)
-// 			UIGet_Button("Button_No", ndSearch, btnNo)
-// 			UIClick(btnOk, FriendView::clickSearchAdd)
-// 			UIClick(btnNo, FriendView::clickSearchNotAdd)
-		
-
 
 
 	//rank
@@ -199,9 +187,8 @@ void FriendView::initView()
 
 
 	currentTitle = E_friends;
-	setCurrentPage(currentTitle);
+	handleWhich(currentTitle);
 	SEND->sendFriendReq(DATA->myBaseData.dwUserID);
-	//showFriends();
 }
 
 void FriendView::clickSearch(Ref* pSender)
@@ -260,7 +247,6 @@ void FriendView::clickSearch(Ref* pSender)
 
 void FriendView::showFriends()
 {
-	setCurrentPage(E_friends);
 	txtFriendsNow->setString(Tools::parseInt2String(DATA->vFriends.size()));
 	int itemHeigth = 99;
 	int halfItemWidth = 614 * 0.5;
@@ -519,8 +505,6 @@ void FriendView::clickShuRenAdd(Ref* pSender)
 
 void FriendView::showRanks(DWORD dwWhich)
 {
-	setCurrentPage(E_ranks);
-
 	lstRank->removeAllChildrenWithCleanup(true);
 
 	switch (dwWhich)
@@ -618,36 +602,41 @@ void FriendView::showRanks(DWORD dwWhich)
 	lstRank->pushBackCustomItem(layoutFate);
 }
 
-
-
-void FriendView::clickFriends(Ref* pSender)
+void FriendView::clickCheckItemFriends(Ref*  pSender, CheckBox::EventType type)
 {
-	currentTitle = E_friends;
-	showFriends();
-
-}
-
-void FriendView::clickShuRen(Ref* pSender)
-{
-	setCurrentPage(E_familiar);
-	currentTitle = E_familiar;
-	logV("vFriendsPush size %d", DATA->vFriendPush.size());
-	if (DATA->vFriendPush.size() == 0)
+	CheckBox*  chk = static_cast<CheckBox*>(pSender);
+	int iwhich = chk->getTag();
+	if (iwhich < 0 || iwhich >= 3)
 	{
-		showShuRen();
+		return;
 	}
-	else
+	handleWhich(iwhich);
+	switch (iwhich)
 	{
-		showPushFriends();
+	case 0:
+		currentTitle = E_friends;
+		showFriends();
+		break;
+	case 1:
+		currentTitle = E_familiar;
+		if (DATA->vFriendPush.size() == 0)
+		{
+			showShuRen();
+		}
+		else
+		{
+			showPushFriends();
+		}
+		break;
+	case 2:
+		currentTitle = E_ranks;
+		showCaiFuRank();
+		break;
+	default:
+		break;
 	}
-
 }
 
-void FriendView::clickRank(Ref* pSender)
-{
-	currentTitle = E_ranks;
-	showCaiFuRank();
-}
 
 void FriendView::clickRankCaiFu(Ref* pSender)
 {
@@ -659,8 +648,10 @@ void FriendView::showCaiFuRank()
 	for (int i = 0; i < E_RankMax; i++)
 	{
 		chkRanks[i]->setSelected(false);
+		chkRanks[i]->setTouchEnabled(true);
 	}
 	chkRanks[E_RankCaifu]->setSelected(true);
+	chkRanks[E_RankCaifu]->setTouchEnabled(false);
 	showRanks(E_RankCaifu);
 }
 
@@ -669,8 +660,10 @@ void FriendView::clickRankMeiLi(Ref* pSender)
 	for (int i = 0; i < E_RankMax; i++)
 	{
 		chkRanks[i]->setSelected(false);
+		chkRanks[i]->setTouchEnabled(true);
 	}
 	chkRanks[E_RankMeiLi]->setSelected(true);
+	chkRanks[E_RankMeiLi]->setTouchEnabled(false);
 	showRanks(E_RankMeiLi);
 }
 
@@ -679,31 +672,31 @@ void FriendView::clickRankShengLv(Ref* pSender)
 	for (int i = 0; i < E_RankMax; i++)
 	{
 		chkRanks[i]->setSelected(false);
+		chkRanks[i]->setTouchEnabled(true);
 	}
 	chkRanks[E_RankShenglv]->setSelected(true);
+	chkRanks[E_RankShenglv]->setTouchEnabled(false);
 	showRanks(E_RankShenglv);
 }
 
-void FriendView::setCurrentPage(int currentPage)
+void FriendView::handleWhich(int iwhich)
 {
-	if (currentPage >= E_frinedsItemMax || currentPage < 0)
-	{
-		return;
-	}
-	for (int i = 0; i < E_frinedsItemMax; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		chkFriends[i]->setSelected(false);
+		chkFriends[i]->setTouchEnabled(true);
 		ndFriends[i]->setVisible(false);
 	}
-	chkFriends[currentPage]->setSelected(true);
-	ndFriends[currentPage]->setVisible(true);
+	chkFriends[iwhich]->setSelected(true);
+	chkFriends[iwhich]->setTouchEnabled(false);
+	ndFriends[iwhich]->setVisible(true);
 }
 
 void FriendView::showSearchResult(WORD wFaceId, std::string szNickName)
 {
 	for (int i = 0; i < DATA->vFriends.size(); i++)
 	{
-		if (dwSearchUserId = DATA->vFriends.at(i).dwUserID)
+		if (dwSearchUserId == DATA->vFriends.at(i).dwUserID)
 		{
 			ndSearch->getChildByName("Button_join")->setVisible(false);
 			Tools::getInstance()->showSysMsgTouming(UTF8::getInstance()->getString("friend", "alreadyFriend"));
@@ -760,12 +753,14 @@ void FriendView::clickOneAgree(Ref* pSender)
 {
 	Button*   btnAdd = static_cast<Button*>(pSender);
 	int i = btnAdd->getTag();
+	logV("clickOneAgree i %d, dwUserId %d,  TargetUserID %d ", i, DATA->myBaseData.dwUserID, DATA->vFriendPush.at(i).dwUserID);
 
 	SEND->sendFriendOption(DATA->myBaseData.dwUserID, DATA->vFriendPush.at(i).dwUserID, esAgree);
-
+	Tools::getInstance()->showSysMsgTouming(UTF8::getInstance()->getString("friend", "agree"));
+	logV("#####  i %d, TargetUserID %d ", i, DATA->vFriendPush.at(i).dwUserID);
 	DATA->vFriendPush.erase(DATA->vFriendPush.begin() + i);
 	showPushFriends();
-	Tools::getInstance()->showSysMsgTouming(UTF8::getInstance()->getString("friend", "agree"));
+
 }
 void FriendView::clickOneRefuse(Ref* pSender)
 {
@@ -779,7 +774,7 @@ void FriendView::clickOneRefuse(Ref* pSender)
 	Tools::getInstance()->showSysMsgTouming(UTF8::getInstance()->getString("friend", "refuse"));
 }
 
-
+//6,  5
 void FriendView::handleFriendOptMe(void*  data)
 {
 	CMD_GP_C_ADD_Friend* pFriendOpt = (CMD_GP_C_ADD_Friend*)data;
@@ -847,6 +842,7 @@ void FriendView::handleFriendOptHim(void*  data)
 	std::string strName;
 	std::string strAgree;
 	tagInviteInfo*  pInvite;
+	logV("handleHim States%d", pFriendOpt->wRcStates);
 	switch (pFriendOpt->wRcStates)
 	{
 	case FriendView::ecInviteSuccess:   //对方要加我
@@ -862,7 +858,7 @@ void FriendView::handleFriendOptHim(void*  data)
 		}
 		else
 		{
-
+			hasNewPushFriends = 1;
 		}
 		break;
 
@@ -874,7 +870,7 @@ void FriendView::handleFriendOptHim(void*  data)
 		Tools::getInstance()->showSysMsgTouming(strName);
 
 		tagFriendParameter* addedFriends = new tagFriendParameter();
-		addedFriends->dwUserID = pFriendOpt->dwUserID;
+		addedFriends->dwUserID = pFriendOpt->dwTargretUserID;  //对方
 		addedFriends->szNickName = pFriendOpt->szNickName;
 		addedFriends->dwRmb = pFriendOpt->dwRmb;
 		addedFriends->FaceID = pFriendOpt->FaceID;

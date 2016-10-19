@@ -17,8 +17,8 @@ ShopView::ShopView(int id)
 	BTN_ADD_TOUCH_EVENTLISTENER(CheckBox, ShopView, goldBtn, 10802, "goldBtn", NULL)
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, ShopView, closeBtn, 10803, "closeBtn", NULL)
 
-	UIGet_Node("FileNode_zuanshi", rootNode, mallItem[E_zuanshi])
-	UIGet_Node("FileNode_jinbi", rootNode, mallItem[E_gold])
+	UIGet_Node("FileNode_zuanshi", rootNode, shopItem[E_zuanshi])
+	UIGet_Node("FileNode_jinbi", rootNode, shopItem[E_gold])
 	currentTitle = id;
 
 
@@ -48,7 +48,7 @@ ShopView::ShopView(int id)
 
 
 
-	Button* btnZuanTejia = static_cast<Button*>(mallItem[E_zuanshi]->getChildByName("Button_zhuanshi"));
+	Button* btnZuanTejia = static_cast<Button*>(shopItem[E_zuanshi]->getChildByName("Button_zhuanshi"));
 	btnZuanTejia->addClickEventListener([this](Ref* psender)
 	{
 		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
@@ -57,8 +57,8 @@ ShopView::ShopView(int id)
 	);
 
 	ScrollView*  scrZuanshi, *scrGold;
-	UIGet_ScrollView("ScrollView_1", mallItem[E_zuanshi], scrZuanshi)
-		UIGet_ScrollView("ScrollView_1", mallItem[E_gold], scrGold)
+	UIGet_ScrollView("ScrollView_1", shopItem[E_zuanshi], scrZuanshi)
+		UIGet_ScrollView("ScrollView_1", shopItem[E_gold], scrGold)
 		Button* btnZuanTejia1 = static_cast<Button*>(scrZuanshi->getChildByName("Button_1"));
 	btnZuanTejia1->addClickEventListener([this](Ref* psender)
 	{
@@ -92,7 +92,7 @@ ShopView::ShopView(int id)
 	);
 
 	//jinbi
-	Button* tnZuanTejia = static_cast<Button*>(mallItem[E_gold]->getChildByName("Button_zhuanshi"));
+	Button* tnZuanTejia = static_cast<Button*>(shopItem[E_gold]->getChildByName("Button_zhuanshi"));
 	tnZuanTejia->addClickEventListener([this](Ref* psender)
 	{
 		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
@@ -177,8 +177,8 @@ void ShopView::showZuanShiView()
 	_goldBtn->setSelected(false);
 	_zhuanShiBtn->setTouchEnabled(false);
 	_goldBtn->setTouchEnabled(true);
-	mallItem[E_zuanshi]->setVisible(true);
-	mallItem[E_gold]->setVisible(false);
+	shopItem[E_zuanshi]->setVisible(true);
+	shopItem[E_gold]->setVisible(false);
 
 
 }
@@ -189,7 +189,7 @@ void ShopView::showGoldView()
 	_goldBtn->setSelected(true);
 	_zhuanShiBtn->setTouchEnabled(true);
 	_goldBtn->setTouchEnabled(false);
-	mallItem[E_zuanshi]->setVisible(false);
-	mallItem[E_gold]->setVisible(true);
+	shopItem[E_zuanshi]->setVisible(false);
+	shopItem[E_gold]->setVisible(true);
 }
 

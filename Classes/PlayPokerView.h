@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include "BlueSky.h"
+#include "SGTools.h"
 using namespace ui;
 USING_NS_CC;
 class  PlayPokerView : public BlueSkyView
@@ -57,9 +58,11 @@ public:
 	Text*    txtLun;
 	Text*    txtChang;
 
-	int time = 1;
-	int nowIndex = 1;
-	int sucessesPlayer = 0;   //已出完牌的玩家个数
+	int time;   //timer
+	int nowIndex;
+	int sucessesPlayer ;   //已出完牌的玩家个数
+	int desk;
+	int face;
 	ImageView*  imgTouyou[3];
 	//玩家骨骼动画
 	//
@@ -73,8 +76,8 @@ public:
 	cocostudio::Armature* Action4;
 
 	//头游
-	cocostudio::timeline::ActionTimeline*  touyou;
-	Node*  touyouNode;
+	UIFrameDef(touyou)
+
 
 	//正在匹配
 	cocostudio::Armature* pipeiAction;
@@ -89,8 +92,7 @@ public:
 	Node* topPokerNum;
 	Node* rightPokerNum;
 
-	int desk = -1;
-	int face = -1;
+
 	public:
 	BTN_TOUCH_HANDLE(Button, fanhui_btn, 10601);
 	BTN_TOUCH_HANDLE(Button, liaotian_Btn, 10602);

@@ -246,14 +246,15 @@
             <FileData Type="Normal" Path="NewMall/price_tag.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_1" ActionTag="-2089031927" Tag="620" IconVisible="False" LeftMargin="-278.0000" RightMargin="238.0000" TopMargin="-92.0000" BottomMargin="72.0000" FontSize="20" LabelText="金币" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="40.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_1" ActionTag="-2089031927" Tag="620" IconVisible="False" LeftMargin="-279.5000" RightMargin="236.5000" TopMargin="-93.0000" BottomMargin="71.0000" FontSize="20" LabelText="金币" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="43.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-258.0000" Y="82.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -301,157 +302,171 @@
             <FileData Type="Normal" Path="NewMall/price_tag.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_7" ActionTag="2072791273" Tag="631" IconVisible="False" LeftMargin="-233.4460" RightMargin="223.4460" TopMargin="-92.0000" BottomMargin="72.0000" FontSize="20" LabelText="x" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="10.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_7" ActionTag="2072791273" Tag="631" IconVisible="False" LeftMargin="-234.9460" RightMargin="221.9460" TopMargin="-93.0000" BottomMargin="71.0000" FontSize="20" LabelText="x" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="13.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-228.4460" Y="82.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_8" ActionTag="6225520" Tag="632" IconVisible="False" LeftMargin="-214.9980" RightMargin="174.9980" TopMargin="-92.1922" BottomMargin="72.1922" FontSize="20" LabelText="1000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="40.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_8" ActionTag="6225520" Tag="632" IconVisible="False" LeftMargin="-216.9980" RightMargin="172.9980" TopMargin="-93.1922" BottomMargin="71.1922" FontSize="20" LabelText="1000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="44.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-194.9980" Y="82.1922" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_1_0" ActionTag="1847234008" Tag="633" IconVisible="False" LeftMargin="-15.0000" RightMargin="-25.0000" TopMargin="-90.0000" BottomMargin="70.0000" FontSize="20" LabelText="金币" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="40.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_1_0" ActionTag="1847234008" Tag="633" IconVisible="False" LeftMargin="-16.5000" RightMargin="-26.5000" TopMargin="-91.0000" BottomMargin="69.0000" FontSize="20" LabelText="金币" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="43.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="5.0000" Y="80.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_7_0" ActionTag="-814177972" Tag="634" IconVisible="False" LeftMargin="29.5540" RightMargin="-39.5540" TopMargin="-90.0000" BottomMargin="70.0000" FontSize="20" LabelText="x" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="10.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_7_0" ActionTag="-814177972" Tag="634" IconVisible="False" LeftMargin="28.0540" RightMargin="-41.0540" TopMargin="-91.0000" BottomMargin="69.0000" FontSize="20" LabelText="x" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="13.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="34.5540" Y="80.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_8_0" ActionTag="1144728407" Tag="635" IconVisible="False" LeftMargin="43.0020" RightMargin="-93.0020" TopMargin="-90.1923" BottomMargin="70.1923" FontSize="20" LabelText="10000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="50.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_8_0" ActionTag="1144728407" Tag="635" IconVisible="False" LeftMargin="40.5020" RightMargin="-95.5020" TopMargin="-91.1923" BottomMargin="69.1923" FontSize="20" LabelText="10000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="55.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="68.0020" Y="80.1923" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_1_1" ActionTag="-1734540175" Tag="636" IconVisible="False" LeftMargin="251.0000" RightMargin="-291.0000" TopMargin="-87.0000" BottomMargin="67.0000" FontSize="20" LabelText="金币" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="40.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_1_1" ActionTag="-1734540175" Tag="636" IconVisible="False" LeftMargin="249.5000" RightMargin="-292.5000" TopMargin="-88.0000" BottomMargin="66.0000" FontSize="20" LabelText="金币" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="43.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="271.0000" Y="77.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_7_1" ActionTag="1792475049" Tag="637" IconVisible="False" LeftMargin="295.5540" RightMargin="-305.5540" TopMargin="-87.0000" BottomMargin="67.0000" FontSize="20" LabelText="x" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="10.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_7_1" ActionTag="1792475049" Tag="637" IconVisible="False" LeftMargin="294.0540" RightMargin="-307.0540" TopMargin="-88.0000" BottomMargin="66.0000" FontSize="20" LabelText="x" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="13.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="300.5540" Y="77.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_8_1" ActionTag="-674770917" Tag="638" IconVisible="False" LeftMargin="309.0020" RightMargin="-359.0020" TopMargin="-87.1923" BottomMargin="67.1923" FontSize="20" LabelText="30000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="50.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_8_1" ActionTag="-674770917" Tag="638" IconVisible="False" LeftMargin="304.5020" RightMargin="-363.5020" TopMargin="-88.1923" BottomMargin="66.1923" FontSize="20" LabelText="30000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="59.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="334.0020" Y="77.1923" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_1_2" ActionTag="2042899971" Tag="639" IconVisible="False" LeftMargin="-270.0004" RightMargin="230.0004" TopMargin="105.0003" BottomMargin="-125.0003" FontSize="20" LabelText="金币" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="40.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_1_2" ActionTag="2042899971" Tag="639" IconVisible="False" LeftMargin="-273.5004" RightMargin="230.5004" TopMargin="104.0003" BottomMargin="-126.0003" FontSize="20" LabelText="金币" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="43.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-250.0004" Y="-115.0003" />
+            <Position X="-252.0004" Y="-115.0003" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_7_2" ActionTag="-319001143" Tag="640" IconVisible="False" LeftMargin="-229.4464" RightMargin="219.4464" TopMargin="105.0003" BottomMargin="-125.0003" FontSize="20" LabelText="x" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="10.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_7_2" ActionTag="-319001143" Tag="640" IconVisible="False" LeftMargin="-232.9464" RightMargin="219.9464" TopMargin="102.0003" BottomMargin="-124.0003" FontSize="20" LabelText="x" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="13.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-224.4464" Y="-115.0003" />
+            <Position X="-226.4464" Y="-113.0003" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_8_2" ActionTag="747496526" Tag="641" IconVisible="False" LeftMargin="-218.9983" RightMargin="158.9983" TopMargin="104.8080" BottomMargin="-124.8080" FontSize="20" LabelText="100000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="60.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_8_2" ActionTag="747496526" Tag="641" IconVisible="False" LeftMargin="-221.9983" RightMargin="155.9983" TopMargin="103.8080" BottomMargin="-125.8080" FontSize="20" LabelText="100000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="66.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-188.9983" Y="-114.8080" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_1_3" ActionTag="307123072" Tag="642" IconVisible="False" LeftMargin="-10.0001" RightMargin="-49.9999" TopMargin="104.0003" BottomMargin="-124.0003" FontSize="20" LabelText="记牌器" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="60.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_1_3" ActionTag="307123072" Tag="642" IconVisible="False" LeftMargin="-11.5001" RightMargin="-51.4999" TopMargin="103.0003" BottomMargin="-125.0003" FontSize="20" LabelText="记牌器" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="63.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="19.9999" Y="-114.0003" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_7_3" ActionTag="-1429385662" Tag="643" IconVisible="False" LeftMargin="52.5538" RightMargin="-62.5538" TopMargin="104.0003" BottomMargin="-124.0003" FontSize="20" LabelText="x" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="10.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_7_3" ActionTag="-1429385662" Tag="643" IconVisible="False" LeftMargin="55.0538" RightMargin="-68.0538" TopMargin="101.0003" BottomMargin="-123.0003" FontSize="20" LabelText="x" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="13.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="57.5538" Y="-114.0003" />
+            <Position X="61.5538" Y="-112.0003" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_8_3" ActionTag="557936547" Tag="644" IconVisible="False" LeftMargin="71.0016" RightMargin="-81.0016" TopMargin="103.8080" BottomMargin="-123.8080" FontSize="20" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="10.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_8_3" ActionTag="557936547" Tag="644" IconVisible="False" LeftMargin="71.0016" RightMargin="-81.0016" TopMargin="102.8080" BottomMargin="-124.8080" FontSize="20" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="10.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="76.0016" Y="-113.8080" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

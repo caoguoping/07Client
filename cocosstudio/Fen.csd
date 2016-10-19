@@ -79,7 +79,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="play/di-up.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_beilv" ActionTag="145035286" VisibleForFrame="False" Tag="1024" IconVisible="False" LeftMargin="-52.0001" RightMargin="-51.9999" TopMargin="-32.6821" BottomMargin="9.6821" LeftEage="34" RightEage="34" TopEage="7" BottomEage="7" Scale9OriginX="34" Scale9OriginY="7" Scale9Width="36" Scale9Height="9" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_beilv" ActionTag="145035286" Tag="1024" IconVisible="False" LeftMargin="-52.0001" RightMargin="-51.9999" TopMargin="-32.6821" BottomMargin="9.6821" LeftEage="34" RightEage="34" TopEage="7" BottomEage="7" Scale9OriginX="34" Scale9OriginY="7" Scale9Width="36" Scale9Height="9" ctype="ImageViewObjectData">
             <Size X="104.0000" Y="23.0000" />
             <Children>
               <AbstractNodeData Name="Text_beiLv" ActionTag="-1714567563" Tag="3180" IconVisible="False" LeftMargin="67.0976" RightMargin="21.9024" TopMargin="-0.7178" BottomMargin="-0.2822" FontSize="20" LabelText="3" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -103,7 +103,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="NewPlay/magnification_text_1.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_lunchang" ActionTag="-691224951" Tag="1025" IconVisible="False" LeftMargin="-49.6258" RightMargin="-54.3742" TopMargin="-34.1210" BottomMargin="11.1210" LeftEage="34" RightEage="34" TopEage="7" BottomEage="7" Scale9OriginX="34" Scale9OriginY="7" Scale9Width="36" Scale9Height="9" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_lunchang" ActionTag="-691224951" VisibleForFrame="False" Tag="1025" IconVisible="False" LeftMargin="-49.6258" RightMargin="-54.3742" TopMargin="-34.1210" BottomMargin="11.1210" LeftEage="34" RightEage="34" TopEage="7" BottomEage="7" Scale9OriginX="34" Scale9OriginY="7" Scale9Width="36" Scale9Height="9" ctype="ImageViewObjectData">
             <Size X="104.0000" Y="23.0000" />
             <Children>
               <AbstractNodeData Name="Text_chang" ActionTag="1389496173" Tag="1027" IconVisible="False" LeftMargin="60.8475" RightMargin="32.1525" TopMargin="-1.1373" BottomMargin="0.1373" FontSize="20" LabelText="1" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -139,8 +139,8 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="NewPlay/magnification_text_2.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_myLv" ActionTag="-1554020499" Tag="3796" IconVisible="False" LeftMargin="-39.8115" RightMargin="24.8115" TopMargin="3.4142" BottomMargin="-27.4142" FontSize="20" LabelText="8" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="15.0000" Y="24.0000" />
+          <AbstractNodeData Name="Text_myLv" ActionTag="-1554020499" Tag="3796" IconVisible="False" LeftMargin="-40.3955" RightMargin="24.3955" TopMargin="3.4142" BottomMargin="-27.4142" FontSize="20" LabelText="-" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="16.0000" Y="24.0000" />
             <AnchorPoint ScaleX="0.5840" ScaleY="0.6698" />
             <Position X="-31.0515" Y="-11.3390" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -151,8 +151,8 @@
             <OutlineColor A="255" R="141" G="52" B="10" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_otherLv" ActionTag="1078512382" Tag="3797" IconVisible="False" LeftMargin="22.8336" RightMargin="-37.8336" TopMargin="3.5581" BottomMargin="-27.5581" FontSize="20" LabelText="8" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="15.0000" Y="24.0000" />
+          <AbstractNodeData Name="Text_otherLv" ActionTag="1078512382" Tag="3797" IconVisible="False" LeftMargin="22.2496" RightMargin="-38.2496" TopMargin="3.5581" BottomMargin="-27.5581" FontSize="20" LabelText="-" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="16.0000" Y="24.0000" />
             <AnchorPoint ScaleX="0.5840" ScaleY="0.6698" />
             <Position X="31.5936" Y="-11.4829" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />

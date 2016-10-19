@@ -1,11 +1,26 @@
 #include "SendPokerCommand.h"
+#include "DataManager.h"
+#include "ViewManager.h"
 /**
 事件通知执行函数
 */
 void SendPokerCommand::execute(void* data)
 {
-	//int* pokerID = static_cast<int*>(data);
-	CMD_S_GameStart Data = *(CMD_S_GameStart*)(data);
+	if (DATA->bGameCate == DataManager::E_GameCateNormal)
+	{
+		delaySendPoker();
+		return;
+	}
+	FiniteTimeAction*  seq = Sequence::create(
+		DelayTime::create(3.0f),
+		CallFunc::create(CC_CALLBACK_0(SendPokerCommand::delaySendPoker, this)),
+		NULL);
+	VIEW->mainScene->runAction(seq);
+}
+
+void SendPokerCommand::delaySendPoker()
+{
+	CMD_S_GameStart Data = *(CMD_S_GameStart*)DATA->sendPokerData;
 
 	GameDataModel* gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
 	//设置本局游戏数据
@@ -14,18 +29,17 @@ void SendPokerCommand::execute(void* data)
 	gameDataModel->gameData.bLiangPai = Data.bLiangPai;
 	gameDataModel->gameData.bOtherSeries = Data.bOtherSeries;
 	gameDataModel->gameData.bOurSeries = Data.bOurSeries;
-	
-	//
+
 	PokerLogic::zhuPaiNum = Data.bCurrentSeries - 2;
 
 	vector<int> pokerIDArr = {};
-	for (int i = 0; i < 27;i++)
+	for (int i = 0; i < 27; i++)
 	{
 		pokerIDArr.push_back(Data.cbCardData[i]);
 	}
 
 	vector<vector<int>> pokerIDDui = PokerLogic::fenPokerIDArr(pokerIDArr);
-	
+
 	//
 	for (DWORD i = 0; i < pokerIDDui.size(); i++)
 	{

@@ -8,18 +8,17 @@
 
 PlayPokerView::PlayPokerView()
 {
+	time = 1;
+	nowIndex = 1;
+	sucessesPlayer = 0;   //已出完牌的玩家个数
+	desk = -1;
+	face = -1;
+	touyouNode = NULL;
+
 	rootNode = CSLoader::createNode("PlayScene.csb");
 	addChild(rootNode);
 
 	blueSkyDispatchEvent(12600);
-
-
-	touyou = CSLoader::createTimeline("touyou.csb");
-	touyouNode = CSLoader::createNode("touyou.csb");
-	rootNode->addChild(touyouNode);
-	rootNode->runAction(touyou);
-	touyouNode->setVisible(false);
-
 	for (int i = 0; i < 3; i++)
 	{
 		imgTouyou[i] = NULL;
@@ -155,6 +154,7 @@ void PlayPokerView::viewInit()
 	hideAllPokerNum();
 
 	pipeiAction = dynamic_cast<cocostudio::Armature*>(rootNode->getChildByName("pipeiAction"));
+	pipeiAction->setVisible(false);
 	showPiPei(true);
 
 
@@ -183,6 +183,10 @@ void PlayPokerView::viewInit()
 
 void PlayPokerView::showPiPei(bool show)
 {
+	if (DATA->bGameCate == DataManager::E_GameCateMatch)
+	{
+		return;
+	}
 	pipeiAction->setVisible(show);
 }
 
@@ -379,9 +383,9 @@ void PlayPokerView::showTouyou(int i)
 	switch (sucessesPlayer)
 	{
 	case 0:
-		touyou->gotoFrameAndPlay(0, false);
+		UIFrameCreate(touyou, "touyou.csb", rootNode, false)
 		touyouNode->setPosition(point);
-		touyouNode->setVisible(true);
+
 // 		imgTouyou[0] = ImageView::create("outEnd0.png");
 // 		imgTouyou[0]->setPosition(point);
 // 		rootNode->addChild(imgTouyou[0]);

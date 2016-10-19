@@ -146,47 +146,51 @@
             <FileData Type="Normal" Path="NewMall/price_tag.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_33" ActionTag="1300085073" Tag="1971" IconVisible="False" LeftMargin="-151.0000" RightMargin="71.0000" TopMargin="-15.0000" BottomMargin="-5.0000" FontSize="20" LabelText="精致礼包" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="80.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_33" ActionTag="1300085073" Tag="1971" IconVisible="False" LeftMargin="-152.5000" RightMargin="69.5000" TopMargin="-16.0000" BottomMargin="-6.0000" FontSize="20" LabelText="精致礼包" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="83.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-111.0000" Y="5.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_34" ActionTag="-694161866" Tag="1972" IconVisible="False" LeftMargin="230.0000" RightMargin="-310.0000" TopMargin="-14.0000" BottomMargin="-6.0000" FontSize="20" LabelText="豪华礼包" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="80.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_34" ActionTag="-694161866" Tag="1972" IconVisible="False" LeftMargin="228.5000" RightMargin="-311.5000" TopMargin="-15.0000" BottomMargin="-7.0000" FontSize="20" LabelText="豪华礼包" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="83.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="270.0000" Y="4.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_52" ActionTag="1417677502" Tag="2429" IconVisible="False" LeftMargin="-225.0000" RightMargin="81.0000" TopMargin="14.0000" BottomMargin="-32.0000" FontSize="18" LabelText="1000金币+1记牌器" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="144.0000" Y="18.0000" />
+          <AbstractNodeData Name="Text_52" ActionTag="1417677502" Tag="2429" IconVisible="False" LeftMargin="-227.0000" RightMargin="79.0000" TopMargin="13.0000" BottomMargin="-33.0000" FontSize="18" LabelText="1000金币+1记牌器" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="148.0000" Y="20.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-153.0000" Y="-23.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="139" G="105" B="20" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_52_0" ActionTag="-1874486211" Tag="2645" IconVisible="False" LeftMargin="150.0000" RightMargin="-312.0000" TopMargin="14.0000" BottomMargin="-32.0000" FontSize="18" LabelText="45000金币+15记牌器" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="162.0000" Y="18.0000" />
+          <AbstractNodeData Name="Text_52_0" ActionTag="-1874486211" Tag="2645" IconVisible="False" LeftMargin="145.5000" RightMargin="-316.5000" TopMargin="13.0000" BottomMargin="-33.0000" FontSize="18" LabelText="45000金币+15记牌器" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="171.0000" Y="20.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="231.0000" Y="-23.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="139" G="105" B="20" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
