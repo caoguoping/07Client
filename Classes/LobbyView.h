@@ -13,10 +13,11 @@ public:
 	UIDefDelayClick(Button, Task)
 		UIDefDelayClick(Button, Signature)
 		UIDefDelayClick(Button, Setting)
-		UIDefDelayClick(Button, PlayGold)
-		UIDefDelayClick(Button, Primary)
-		UIDefDelayClick(Button, Master)
+		UIDefDelayClick(Button, PlayGold)    
+		UIDefDelayClick(Button, Entertainment)
 		UIDefDelayClick(Button, Match)
+		UIDefDelayClick(Button, Blood)
+
 		UIDefDelayClick(Button, Fast)
 		UIDefDelayClick(Button, Charge)
 		UIDefDelayClick(Button, Shop)
@@ -25,10 +26,6 @@ public:
 		UIDefDelayClick(Button, Head)
 		UIDefDelayClick(Button, AddWealth)
 		UIDefDelayClick(Button, Friend)
-
-		void btnEasyHandle();
-		void btnPrimaryHandle();
-		void btnMasterHander();
 
 		TextBMFont*  txtGold;
 		Text*        txtPlayerName;

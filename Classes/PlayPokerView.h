@@ -11,6 +11,9 @@ class  PlayPokerView : public BlueSkyView
 public:
 	PlayPokerView();
 	~PlayPokerView();
+	void showFriendInvites();
+	void hideFriendInvite(DWORD  dwWhich);
+	void clickBtnInvite(Ref*   pSender);
 	void showPiPei(bool show);
 	void clockShow(float dt);
 	void hideAllPokerNum();
@@ -35,6 +38,16 @@ public:
 public:
 	//划牌触摸层
 	ImageView*  imgHuaPai;
+
+	//好友场
+	ImageView*  imgInvitebg1;
+	ImageView*  imgInvitebg2;
+	ImageView*  imgInvitebg3;
+	Button*     btnInvite1;
+	Button*     btnInvite2;
+	Button*     btnInvite3;
+	ImageView*  imgInviteBg;
+	Text*    txtLackPlayer;
 
 	//时间钟
 	Node* myClock;

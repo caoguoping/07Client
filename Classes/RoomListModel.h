@@ -16,6 +16,7 @@ struct RoomList
 	string wszServerAddr;
 	string wszServerName;
 	unsigned int dizhu;
+	WORD  wRoomType;
 };
 
 class  RoomListModel : public BlueSkyModel

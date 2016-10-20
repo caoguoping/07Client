@@ -1,5 +1,7 @@
 #include "PlayGoldMediator.h"
-
+//test
+#include "InviteMediator.h"
+#include "InviteView.h"
 
 PlayGoldMediator::PlayGoldMediator()
 {
@@ -19,6 +21,11 @@ void PlayGoldMediator::OnRegister()
 {
 	playGoldView = (PlayGoldView*)getView();
 	playGoldView->initView();
+
+	//test
+
+	creatView(new InviteView(), new InviteMediator());
+
 }
 
 /**

@@ -644,6 +644,7 @@ void NetDataCommand::getRoomList(NetData netData)
 			guandanRoom.wszServerAddr = netData.readString(64);
 			guandanRoom.wszServerName = netData.readString(64);
 			guandanRoom.dizhu = netData.readInt32();
+			//guandanRoom.wRoomType = netData.readWORD();
 
 			if (guandanRoom.dizhu == 150)
 			{

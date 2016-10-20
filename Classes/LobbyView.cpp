@@ -33,6 +33,10 @@
 #include "PlayGoldMediator.h"
 #include "PlayGoldView.h"
 #include "ViewManager.h"
+#include "EntertainmentMediator.h"
+#include "EntertainmentView.h"
+#include "BloodMediator.h"
+#include "BloodView.h"
 
 
 LobbyView::LobbyView()
@@ -50,17 +54,17 @@ LobbyView::LobbyView()
 		UIGet_Button("setBtn", rootNode, mBtnSetting)
 		UIClick(mBtnSetting, LobbyView::clickBtnSetting)
 
-		UIGet_Button("Button_xinshou", rootNode, mBtnPlayGold)
+		UIGet_Button("Button_playGold", rootNode, mBtnPlayGold)
 		UIClick(mBtnPlayGold, LobbyView::clickBtnPlayGold)
 
-		UIGet_Button("Button_jinjie", rootNode, mBtnPrimary)
-		UIClick(mBtnPrimary, LobbyView::clickBtnPrimary)
+		UIGet_Button("Button_entertainment", rootNode, mBtnEntertainment)
+		UIClick(mBtnEntertainment, LobbyView::clickBtnEntertainment)
 
-		UIGet_Button("Button_dashi", rootNode, mBtnMaster)
-		UIClick(mBtnMaster, LobbyView::clickBtnMaster)
-
-		UIGet_Button("Button_bisai", rootNode, mBtnMatch)
+		UIGet_Button("Button_match", rootNode, mBtnMatch)
 		UIClick(mBtnMatch, LobbyView::clickBtnMatch)
+
+		UIGet_Button("Button_blood", rootNode, mBtnBlood)
+		UIClick(mBtnBlood, LobbyView::clickBtnBlood)
 
 		UIGet_Button("Button_fastStart", rootNode, mBtnFast)
 		UIClick(mBtnFast, LobbyView::clickBtnFast)
@@ -99,6 +103,7 @@ LobbyView::~LobbyView()
 
 void LobbyView::initView()
 {
+
 	currentAd = 0;
 	//¹ã¸æÒ³
 	UIGet_PageView("PageView_ad", rootNode, adPage)
@@ -129,7 +134,8 @@ void LobbyView::initView()
 		rootNode->runAction(fastBtnAction);
 		fastBtnAction->gotoFrameAndPlay(0, true);
 
-
+		//request friend list
+		SEND->sendFriendReq(DATA->myBaseData.dwUserID);
 		
 }
 
@@ -137,9 +143,9 @@ UIEnableClick(mBtnTask, LobbyView, enableBtnTask)
 UIEnableClick(mBtnSignature, LobbyView, enableBtnSignature)
 UIEnableClick(mBtnSetting, LobbyView, enableBtnSetting)
 UIEnableClick(mBtnPlayGold, LobbyView, enableBtnPlayGold)
-UIEnableClick(mBtnPrimary, LobbyView, enableBtnPrimary)
-UIEnableClick(mBtnMaster, LobbyView, enableBtnMaster)
+UIEnableClick(mBtnEntertainment, LobbyView, enableBtnEntertainment)
 UIEnableClick(mBtnMatch, LobbyView, enableBtnMatch)
+UIEnableClick(mBtnBlood, LobbyView, enableBtnBlood)
 UIEnableClick(mBtnFast, LobbyView, enableBtnFast)
 UIEnableClick(mBtnCharge, LobbyView, enableBtnCharge)
 UIEnableClick(mBtnShop, LobbyView, enableBtnShop)
@@ -148,15 +154,6 @@ UIEnableClick(mBtnPackage, LobbyView, enableBtnPackage)
 UIEnableClick(mBtnHead, LobbyView, enableBtnHead)
 UIEnableClick(mBtnAddWealth, LobbyView, enableBtnAddWealth)
 UIEnableClick(mBtnFriend, LobbyView, enableBtnFriend)
-
-// 
-// void LobbyView::enableBtnHead(float dt) 
-// {
-// 
-// 	mBtnHead->setTouchEnabled(true);
-// }
-
-
 
 void LobbyView::clickBtnTask(Ref* psender)
 {
@@ -176,22 +173,6 @@ void LobbyView::clickBtnSetting(Ref* psender)
 		creatView(new SetView(), new SetMediator());
 }
 
-void LobbyView::btnEasyHandle()
-{
-	DATA->bGameCate = DataManager::E_GameCateNormal;
-	long long golds = DATA->myBaseData.lUserScore;
-	if (golds < 500)
-	{
-		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(0, "warning", "warning2", 30001, -1));
-	}
-	else
-	{
-		blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(0));
-		((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 0;
-	}
-}
-
-
 void LobbyView::clickBtnPlayGold(Ref* psender)
 {
 	UIDisableClick(mBtnPlayGold, LobbyView, enableBtnPlayGold)
@@ -199,46 +180,10 @@ void LobbyView::clickBtnPlayGold(Ref* psender)
 
 }
 
-void LobbyView::btnPrimaryHandle()
+void LobbyView::clickBtnEntertainment(Ref* psender)
 {
-	DATA->bGameCate = DataManager::E_GameCateNormal;
-	long long golds = DATA->myBaseData.lUserScore;
-	if (golds < 2000)
-	{
-		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(0, "warning", "warning2", 30001, -1));
-	}
-	else
-	{
-		blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(1));
-		((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 1;
-	}
-}
-
-void LobbyView::clickBtnPrimary(Ref* psender)
-{
-	UIDisableClick(mBtnPrimary, LobbyView, enableBtnPrimary)
-		btnPrimaryHandle();
-}
-
-void LobbyView::btnMasterHander()
-{
-	DATA->bGameCate = DataManager::E_GameCateNormal;
-	long long golds = DATA->myBaseData.lUserScore;
-	if (golds < 10000)
-	{
-		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(0, "warning", "warning2", 30001, -1));
-	}
-	else
-	{
-		blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(2));
-		((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 2;
-	}
-}
-
-void LobbyView::clickBtnMaster(Ref* psender)
-{
-	UIDisableClick(mBtnMaster, LobbyView, enableBtnMaster)
-		btnMasterHander();
+	UIDisableClick(mBtnEntertainment, LobbyView, enableBtnEntertainment)
+		creatView(new EntertainmentView(), new EntertainmentMediator());
 }
 
 void LobbyView::clickBtnMatch(Ref* psender)
@@ -248,17 +193,22 @@ void LobbyView::clickBtnMatch(Ref* psender)
 	creatView(new MatchView(), new MatchMediator());
 }
 
+void LobbyView::clickBtnBlood(Ref* psender)
+{
+	UIDisableClick(mBtnBlood, LobbyView, enableBtnBlood)
+		creatView(new BloodView(), new BloodMediator());
+}
+
 void LobbyView::clickBtnFast(Ref* psender)
 {
 	UIDisableClick(mBtnFast, LobbyView, enableBtnFast)
 		DATA->bGameCate = DataManager::E_GameCateNormal;
 	long long golds = DATA->myBaseData.lUserScore;
 
-	int cof = 80;    //xishu
+	int cof = 80;  
 	if (golds <= 500)
 	{
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(0, "warning", "warning2", 30001, -1));
-		//up charge view
 		return;
 	}
 	else if (golds > 500 && golds * cof / 100 <= 2000)
@@ -319,7 +269,7 @@ void LobbyView::clickBtnFriend(Ref* psender)
 {
 	UIDisableClick(mBtnFriend, LobbyView, enableBtnFriend)
 		creatView(new FriendView(), new FriendMediator());
-	
+
 }
 
 void LobbyView::adUpdate(float dt)

@@ -19,6 +19,8 @@ PlayPokerView::PlayPokerView()
 	addChild(rootNode);
 
 	blueSkyDispatchEvent(12600);
+	blueSkyDispatchEvent(12700);
+	blueSkyDispatchEvent(12800);
 	for (int i = 0; i < 3; i++)
 	{
 		imgTouyou[i] = NULL;
@@ -87,10 +89,71 @@ PlayPokerView::~PlayPokerView()
 	rootNode = NULL;
 }
 
+void PlayPokerView::showFriendInvites()
+{
+	imgInviteBg->setVisible(true);
+	imgInvitebg1->setVisible(true);
+	imgInvitebg2->setVisible(true);
+	imgInvitebg3->setVisible(true);
+	btnInvite1->setVisible(true);
+	btnInvite2->setVisible(true);
+	btnInvite3->setVisible(true);
 
+
+}
+void PlayPokerView::hideFriendInvite(DWORD  dwWhich)
+{
+	switch (dwWhich)
+	{
+	case 1:
+		imgInvitebg1->setVisible(false);
+		btnInvite1->setVisible(false);
+		break;
+
+	case 2:
+		imgInvitebg2->setVisible(false);
+		btnInvite2->setVisible(false);
+		break;
+
+	case 3:
+		imgInvitebg3->setVisible(false);
+		btnInvite3->setVisible(false);
+		break;
+
+	default: 
+		break;
+	
+	}
+}
+void PlayPokerView::clickBtnInvite(Ref*   pSender)
+{
+	Button*  btn = static_cast<Button*>(pSender);
+	int iTag = btn->getTag();
+
+}
 
 void PlayPokerView::viewInit()
 {
+
+	//好友场
+	UIGet_ImageView("Image_inviteBlack1", rootNode, imgInvitebg1)
+		UIGet_ImageView("Image_inviteBlack2", rootNode, imgInvitebg2)
+		UIGet_ImageView("Image_inviteBlack3", rootNode, imgInvitebg3)
+
+		UIGet_ImageView("Image_inviteBg", rootNode, imgInviteBg)
+		UIGet_Text("Text_inviteNum", imgInviteBg, txtLackPlayer)
+
+		UIGet_Button("Button_invite1", rootNode, btnInvite1)
+		UIGet_Button("Button_invite2", rootNode, btnInvite2)
+		UIGet_Button("Button_invite3", rootNode, btnInvite3)
+
+		btnInvite1->setTag(1);
+	btnInvite2->setTag(2);
+	btnInvite3->setTag(3);
+
+	UIClick(btnInvite1, PlayPokerView::clickBtnInvite)
+		UIClick(btnInvite2, PlayPokerView::clickBtnInvite)
+		UIClick(btnInvite3, PlayPokerView::clickBtnInvite)
 
 	//时间钟
 	myClock = rootNode->getChildByName("myClock");

@@ -82,14 +82,14 @@
           <AbstractNodeData Name="Image_beilv" ActionTag="145035286" Tag="1024" IconVisible="False" LeftMargin="-52.0001" RightMargin="-51.9999" TopMargin="-32.6821" BottomMargin="9.6821" LeftEage="34" RightEage="34" TopEage="7" BottomEage="7" Scale9OriginX="34" Scale9OriginY="7" Scale9Width="36" Scale9Height="9" ctype="ImageViewObjectData">
             <Size X="104.0000" Y="23.0000" />
             <Children>
-              <AbstractNodeData Name="Text_beiLv" ActionTag="-1714567563" Tag="3180" IconVisible="False" LeftMargin="67.0976" RightMargin="21.9024" TopMargin="-0.7178" BottomMargin="-0.2822" FontSize="20" LabelText="3" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="15.0000" Y="24.0000" />
+              <AbstractNodeData Name="Text_beiLv" ActionTag="-1714567563" Tag="3180" IconVisible="False" LeftMargin="69.4336" RightMargin="23.5664" TopMargin="-0.7178" BottomMargin="-0.2822" FontSize="20" LabelText="1" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="11.0000" Y="24.0000" />
                 <AnchorPoint ScaleX="0.5840" ScaleY="0.6698" />
                 <Position X="75.8576" Y="15.7930" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="215" B="148" />
                 <PrePosition X="0.7294" Y="0.6867" />
-                <PreSize X="0.1442" Y="1.0435" />
+                <PreSize X="0.1058" Y="1.0435" />
                 <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
                 <OutlineColor A="255" R="141" G="52" B="10" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

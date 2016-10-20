@@ -188,7 +188,8 @@ void FriendView::initView()
 
 	currentTitle = E_friends;
 	handleWhich(currentTitle);
-	SEND->sendFriendReq(DATA->myBaseData.dwUserID);
+//	SEND->sendFriendReq(DATA->myBaseData.dwUserID);
+	showFriends();
 }
 
 void FriendView::clickSearch(Ref* pSender)

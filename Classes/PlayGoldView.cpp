@@ -11,6 +11,8 @@
 #include "GameDataModel.h"
 #include "PlayerInDeskModel.h"
 
+
+
 PlayGoldView::PlayGoldView()
 {
 
@@ -66,22 +68,12 @@ void PlayGoldView::initView()
 	}
 	);
 
-// 	Button*  btnBack;
-// 	UIGet_Button("Button_close", rootNode, btnBack)
-// 	btnBack->addClickEventListener([&](Ref* psender)
-// 	{
-// 		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
-// 		blueSkyDispatchEvent(12600);
-// 	}
-// 	);
-
 		btn1->setTag(1);
 	btn2->setTag(2);
 	btn3->setTag(3);
 	UIClick(btn1, PlayGoldView::clickPlay)
 		UIClick(btn2, PlayGoldView::clickPlay)
 		UIClick(btn3, PlayGoldView::clickPlay)
-
 
 
 }

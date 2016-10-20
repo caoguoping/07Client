@@ -93,10 +93,16 @@ enum EventType
 //12301 -- 12399    :FriendView
 //12400 --  12500  :caoguoping
 //12600 --  12700  :playGoldView
-//
+//12700 -- 12800   :entertainment
+//12800 -- 12900   :blood
+
 
 //15001-15030   :activity
 //16000 16010:  match
+//17000 -- 17100   :invite
+
+
+
 //99999用于屏蔽触摸事件
 //20000开始处理音效
 //30000退出游戏

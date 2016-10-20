@@ -710,10 +710,57 @@
           <Image Name="item_frame_1.png" />
           <Image Name="title_task.png" />
         </Folder>
+        <Folder Name="entertainment">
+          <Image Name="bg_black.png" />
+          <Image Name="black_bg.png" />
+          <Image Name="button_2players_1.png" />
+          <Image Name="button_2players_2.png" />
+          <Image Name="button_4players_1.png" />
+          <Image Name="button_4players_2.png" />
+          <Image Name="button_bg.png" />
+          <Image Name="button_cancel_1.png" />
+          <Image Name="button_cancel_2.png" />
+          <Image Name="button_invite_1.png" />
+          <Image Name="button_invite_2.png" />
+          <Image Name="button_invite2_1.png" />
+          <Image Name="button_invite2_2.png" />
+          <Image Name="button_ok_1.png" />
+          <Image Name="button_ok_2.png" />
+          <Image Name="flash_1.png" />
+          <Image Name="flash_2.png" />
+          <Image Name="icon_fight_5.png" />
+          <Image Name="icon_fight_end.png" />
+          <Image Name="icon_fight_k.png" />
+          <Image Name="icon_friend.png" />
+          <Image Name="icon_random.png" />
+          <Image Name="invite_bg.png" />
+          <Image Name="invite_inner_bg.png" />
+          <Image Name="name_frame_1.png" />
+          <Image Name="name_frame_2.png" />
+          <Image Name="pai_frame_1.png" />
+          <Image Name="pai_frame_2.png" />
+          <Image Name="palyer_bg_1.png" />
+          <Image Name="palyer_bg_2.png" />
+          <Image Name="role_1.png" />
+          <Image Name="role_2.png" />
+          <Image Name="role_black.png" />
+          <Image Name="streamers_1.png" />
+          <Image Name="streamers_2.png" />
+          <Image Name="text_10.png" />
+          <Image Name="text_5.png" />
+          <Image Name="text_dao.png" />
+          <Image Name="text_di.png" />
+          <Image Name="text_K.png" />
+          <Image Name="text_xuezhan.png" />
+          <Image Name="title_fun.png" />
+          <Image Name="title_invite.png" />
+          <Image Name="VS.png" />
+          <Image Name="VS_light.png" />
+        </Folder>
         <Folder Name="font">
+          <TTF Name="fangzhengchuyuan.TTF" />
           <Fnt Name="mall.fnt" />
           <Fnt Name="timer.fnt" />
-          <TTF Name="fangzhengchuyuan.TTF" />
         </Folder>
         <Folder Name="Friends">
           <Image Name="button_add_1.png" />
@@ -750,38 +797,6 @@
           <Image Name="label_win_2.png" />
           <Image Name="title_friends.png" />
         </Folder>
-        <Folder Name="headportrait">
-          <Image Name="07move-anniu.png" />
-          <Image Name="07up-anniu.png" />
-          <Image Name="diban02.png" />
-          <Image Name="diban03.png" />
-          <Image Name="jindou.png" />
-          <Image Name="kuang.png" />
-          <Image Name="kuang01.png" />
-          <Image Name="zuanshi.png" />
-        </Folder>
-        <Folder Name="help">
-          <Image Name="bz.png" />
-          <Image Name="zi02.png" />
-        </Folder>
-        <Folder Name="jiShu">
-          <Image Name="00.png" />
-          <Image Name="01.png" />
-          <Image Name="02.png" />
-          <Image Name="03.png" />
-          <Image Name="04.png" />
-          <Image Name="05.png" />
-          <Image Name="06.png" />
-          <Image Name="07.png" />
-          <Image Name="08.png" />
-          <Image Name="09.png" />
-          <Image Name="10.png" />
-          <Image Name="11.png" />
-          <Image Name="12.png" />
-          <Image Name="13.png" />
-          <Image Name="zi001.png" />
-          <Image Name="zi002.png" />
-        </Folder>
         <Folder Name="lizi">
           <Folder Name="changci">
             <PlistParticleFile Name="changci.plist" />
@@ -795,43 +810,6 @@
           <Folder Name="win">
             <PlistParticleFile Name="shengli.plist" />
           </Folder>
-        </Folder>
-        <Folder Name="lobby">
-          <Image Name="anniu01-move.png" />
-          <Image Name="anniu01-up.png" />
-          <Image Name="di01.png" />
-          <Image Name="jinbi.png" />
-        </Folder>
-        <Folder Name="LobbyNew">
-          <Folder Name="wkernel32.pdb">
-            <Folder Name="B4112310CCA0437BBF51C495A1922FC22" />
-          </Folder>
-          <Image Name="001-down.png" />
-          <Image Name="001-up.png" />
-          <Image Name="002-down.png" />
-          <Image Name="002-up.png" />
-          <Image Name="003-down.png" />
-          <Image Name="003-up.png" />
-          <Image Name="004-down.png" />
-          <Image Name="004-up.png" />
-          <Image Name="005-down.png" />
-          <Image Name="005-up.png" />
-          <Image Name="006-down.png" />
-          <Image Name="006-up.png" />
-          <Image Name="007-down.png" />
-          <Image Name="007-up.png" />
-          <Image Name="01-down.png" />
-          <Image Name="01-up.png" />
-          <Image Name="02-down.png" />
-          <Image Name="02-up.png" />
-          <Image Name="03-down.png" />
-          <Image Name="03-up.png" />
-          <Image Name="beijing.png" />
-          <Image Name="diban.png" />
-          <Image Name="tubiao01-down.png" />
-          <Image Name="tubiao01-up.png" />
-          <Image Name="tubiao02-down.png" />
-          <Image Name="tubiao02-up.png" />
         </Folder>
         <Folder Name="login">
           <Image Name="01-down.png" />
@@ -1342,22 +1320,6 @@
           <Image Name="08.png" />
           <Image Name="09.png" />
         </Folder>
-        <Folder Name="option">
-          <Image Name="01icon-move.png" />
-          <Image Name="01icon-up.png" />
-          <Image Name="02icon-move.png" />
-          <Image Name="02icon-up.png" />
-          <Image Name="04icon-move.png" />
-          <Image Name="04icon-up.png" />
-          <Image Name="05icon-move.png" />
-          <Image Name="05icon-up.png" />
-          <Image Name="06icon-move.png" />
-          <Image Name="06icon-up.png" />
-          <Image Name="beibao-down.png" />
-          <Image Name="beibao-up.png" />
-          <Image Name="renwu-down.png" />
-          <Image Name="renwu-up.png" />
-        </Folder>
         <Folder Name="package">
           <Folder Name="shop">
             <Image Name="biaoqian01-move.png" />
@@ -1487,34 +1449,6 @@
           <Image Name="zi008.png" />
           <Image Name="zi009.png" />
         </Folder>
-        <Folder Name="playerInfo">
-          <Image Name="aling.png" />
-          <Image Name="amei.png" />
-          <Image Name="bab.png" />
-          <Image Name="beijing-01.png" />
-          <Image Name="dan-down-02.png" />
-          <Image Name="dan-up-02.png" />
-          <Image Name="diban01.png" />
-          <Image Name="diban02.png" />
-          <Image Name="down-douzi.png" />
-          <Image Name="down-zuanshi.png" />
-          <Image Name="hua-down-04.png" />
-          <Image Name="hua-up-04.png" />
-          <Image Name="icon-01.png" />
-          <Image Name="icon-anniu-down.png" />
-          <Image Name="icon-anniu-up.png" />
-          <Image Name="icon-jidan-down01.png" />
-          <Image Name="icon-jidan-up01.png" />
-          <Image Name="ji-down-01.png" />
-          <Image Name="ji-up-01.png" />
-          <Image Name="kuuang.png" />
-          <Image Name="mma.png" />
-          <Image Name="up-douzi.png" />
-          <Image Name="up-zuanshi.png" />
-          <Image Name="wanjiaxinxi.png" />
-          <Image Name="xin-down-03.png" />
-          <Image Name="xin-up-03.png" />
-        </Folder>
         <Folder Name="poker">
           <Image Name="1.png" />
           <Image Name="10.png" />
@@ -1571,68 +1505,6 @@
           <Image Name="8.png" />
           <Image Name="9.png" />
           <Image Name="icon001.png" />
-        </Folder>
-        <Folder Name="pokerNumber">
-          <Image Name="zi001 (2).png" />
-          <Image Name="zi001.png" />
-          <Image Name="zi002 (2).png" />
-          <Image Name="zi003 (2).png" />
-          <Image Name="zi004 (2).png" />
-          <Image Name="zi005 (2).png" />
-          <Image Name="zi006 (2).png" />
-          <Image Name="zi007 (2).png" />
-          <Image Name="zi008 (2).png" />
-          <Image Name="zi009 (2).png" />
-          <Image Name="zi010.png" />
-          <Image Name="zi011.png" />
-          <Image Name="zi012.png" />
-        </Folder>
-        <Folder Name="sessionSelect">
-          <Folder Name="ddz">
-            <Folder Name="number">
-              <Image Name="00.png" />
-              <Image Name="01.png" />
-              <Image Name="02.png" />
-              <Image Name="03.png" />
-              <Image Name="04.png" />
-              <Image Name="05.png" />
-              <Image Name="06.png" />
-              <Image Name="07.png" />
-              <Image Name="08.png" />
-              <Image Name="09.png" />
-            </Folder>
-            <Image Name="anniu01-down.png" />
-            <Image Name="anniu01-up.png" />
-            <Image Name="anniu02-down.png" />
-            <Image Name="anniu02-up.png" />
-            <Image Name="anniu03-move.png" />
-            <Image Name="anniu03-up.png" />
-            <Image Name="beijing02.png" />
-            <Image Name="di.png" />
-            <Image Name="di03.png" />
-            <Image Name="jinbi.png" />
-            <Image Name="zi.png" />
-            <Image Name="zi02.png" />
-            <Image Name="zi03.png" />
-            <Image Name="zi04.png" />
-            <Image Name="zi05.png" />
-            <Image Name="zi06.png" />
-            <Image Name="zi07.png" />
-          </Folder>
-          <Image Name="beijing01.png" />
-          <Image Name="changci01-down.png" />
-          <Image Name="changci01-up.png" />
-          <Image Name="changci02-down.png" />
-          <Image Name="changci02-up.png" />
-          <Image Name="changci03-down.png" />
-          <Image Name="changci03-up.png" />
-          <Image Name="changci04-down.png" />
-          <Image Name="changci04-up.png" />
-          <Image Name="zi001.png" />
-          <Image Name="zi002.png" />
-          <Image Name="zi003.png" />
-          <Image Name="zi004.png" />
-          <Image Name="zi-01.png" />
         </Folder>
         <Folder Name="set">
           <Image Name="1.png" />
@@ -1720,92 +1592,12 @@
           <Image Name="zi27.png" />
           <Image Name="zi35.png" />
         </Folder>
-        <Folder Name="shop">
-          <Folder Name="wkernel32.pdb">
-            <Folder Name="B4112310CCA0437BBF51C495A1922FC22" />
-          </Folder>
-          <Image Name="biaoqian01-move.png" />
-          <Image Name="biaoqian01-up.png" />
-          <Image Name="biaoqian02-move.png" />
-          <Image Name="biaoqian02-up.png" />
-          <Image Name="biaotizi.png" />
-          <Image Name="di01.png" />
-          <Image Name="haibao.png" />
-          <Image Name="haibao02.png" />
-          <Image Name="jinbi01.png" />
-          <Image Name="jinbi02.png" />
-          <Image Name="jinbi03.png" />
-          <Image Name="jinbi04.png" />
-          <Image Name="jinbi05.png" />
-          <Image Name="jinbi06.png" />
-          <Image Name="jinbi-icon.png" />
-          <Image Name="jindou.png" />
-          <Image Name="jindou01.png" />
-          <Image Name="jindou02.png" />
-          <Image Name="jindou03.png" />
-          <Image Name="jindou04.png" />
-          <Image Name="jindou05.png" />
-          <Image Name="jindou06.png" />
-          <Image Name="jindou07.png" />
-          <Image Name="jindou-down.png" />
-          <Image Name="jindou-up.png" />
-          <Image Name="jinzi01.png" />
-          <Image Name="jinzi02.png" />
-          <Image Name="jinzi03.png" />
-          <Image Name="jinzi04.png" />
-          <Image Name="jinzi05.png" />
-          <Image Name="jinzi06.png" />
-          <Image Name="jinzi07.png" />
-          <Image Name="piaodai01.png" />
-          <Image Name="piaodai02.png" />
-          <Image Name="yuananniu-down.png" />
-          <Image Name="yuananniu-up.png" />
-          <Image Name="zhuanshi.png" />
-          <Image Name="zi01 (2).png" />
-          <Image Name="zi01.png" />
-          <Image Name="zi02 (2).png" />
-          <Image Name="zi02.png" />
-          <Image Name="zi03.png" />
-          <Image Name="zi04.png" />
-          <Image Name="zi05.png" />
-          <Image Name="zi06.png" />
-          <Image Name="zi07.png" />
-          <Image Name="zi08.png" />
-          <Image Name="zi09.png" />
-          <Image Name="zuannshi05.png" />
-          <Image Name="zuannshi06.png" />
-          <Image Name="zuanshi.png" />
-          <Image Name="zuanshi01.png" />
-          <Image Name="zuanshi02.png" />
-          <Image Name="zuanshi03.png" />
-          <Image Name="zuanshi04.png" />
-          <Image Name="zuanshi05.png" />
-          <Image Name="zuanshi06.png" />
-          <Image Name="zuanshi07.png" />
-          <Image Name="zuanshianniu-down.png" />
-          <Image Name="zuanshianniu-up.png" />
-          <Image Name="zuanshi-down.png" />
-          <Image Name="zuanshi-up.png" />
-          <Image Name="zuanzi01.png" />
-          <Image Name="zuanzi02.png" />
-          <Image Name="zuanzi03.png" />
-          <Image Name="zuanzi04.png" />
-          <Image Name="zuanzi05.png" />
-          <Image Name="zuanzi06.png" />
-        </Folder>
         <Folder Name="textures">
           <PlistInfo Name="action0.csi" Type="Plist" />
           <PlistInfo Name="action1.csi" Type="Plist" />
           <PlistInfo Name="fastStart.csi" Type="Plist" />
           <PlistInfo Name="Pokers.csi" Type="Plist" />
           <PlistInfo Name="touyou.csi" Type="Plist" />
-        </Folder>
-        <Folder Name="warning">
-          <Image Name="role_loser.png" />
-          <Image Name="role_winner.png" />
-          <Image Name="zi01.png" />
-          <Image Name="zi02.png" />
-          <Image Name="zi03.png" />
         </Folder>
         <Project Name="activity.csd" Type="Node" />
         <Project Name="Anjian.csd" Type="Node" />
@@ -1823,6 +1615,7 @@
         <Project Name="dailyMission.csd" Type="Node" />
         <Project Name="dailyMissionShow.csd" Type="Node" />
         <Project Name="daoju.csd" Type="Node" />
+        <Project Name="entertainment.csd" Type="Node" />
         <Project Name="failAction.csd" Type="Node" />
         <Project Name="fastStart.csd" Type="Node" />
         <Project Name="feiji.csd" Type="Node" />
@@ -1897,6 +1690,9 @@
         <Project Name="wealthNumber.csd" Type="Node" />
         <Project Name="zhuanShiShow.csd" Type="Node" />
         <Project Name="zhupai.csd" Type="Node" />
+        <Project Name="blood.csd" Type="Node" />
+        <Project Name="invite.csd" Type="Node" />
+        <Project Name="InviteCell.csd" Type="Node" />
       </RootFolder>
     </Group>
   </SolutionFolder>
