@@ -73,7 +73,7 @@ public:
 	Button* startBtn;  //开始游戏按钮
 	Button* markBtn; 	//记牌器按钮
 	Button* autoBtn; //托管按钮
-	Button* clearBtn; //清零按钮
+	Button* taskBtn; //任务按钮
 	ImageView* imgJPTip;
 	Text*  txtJPTips;
 	Button* lookTableBtn; 	//看桌面按钮
@@ -122,6 +122,9 @@ public:
 	PlayPokerMediator();
 	~PlayPokerMediator();
 	void OnRegister();
+	void readyPlay();
+	void showFriendButtons(bool isShow);
+
 	void onRemove();
 	void onEvent(int i, void* data);
 	Layer* getLayer();
@@ -141,6 +144,7 @@ public:
 	bool clicklookTableBtn(Touch *touch, Widget::TouchEventType type);
 
 public:
+	void handleFriendPlay();
 	void showPlayerOnDeskHandle(void* data);
 	void OnDeskHandle(void* data);
 	void delaySendPokerHandle();

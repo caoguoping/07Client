@@ -8,12 +8,13 @@
 class  InviteView : public BlueSkyView
 {
 public:
-	InviteView();
+	InviteView(int i);
 	~InviteView();
 
 	void initView();
 	void showFriends();
 	void clickInvite(Ref*  pSender);
+	int iDeskId;
 public:
 	ListView*  lstInvite;
 	BTN_TOUCH_HANDLE(Button,closeBtn, 17000);

@@ -2,8 +2,9 @@
 #include "SGTools.h"
 #include "DataManager.h"
 
-InviteView::InviteView()
+InviteView::InviteView(int i)
 {
+	iDeskId = i;
 	rootNode = CSLoader::createNode("invite.csb");
 	addChild(rootNode);
 	BTN_ADD_TOUCH_EVENTLISTENER(Button,InviteView, closeBtn, 17000, "closeBtn", NULL)
@@ -29,7 +30,7 @@ void InviteView::showFriends()
 	lstInvite->removeAllChildrenWithCleanup(true);
 	lstInvite->setItemsMargin(itemHeigth + 10);
 
-	int itemSize = DATA->vFriends.size();
+	int itemSize = DATA->vFriendLine.size();
 	for (int i = 0; i < itemSize; i++)
 	{
 		Node* oneNode = CSLoader::createNode("InviteCell.csb");
@@ -47,9 +48,9 @@ void InviteView::showFriends()
 			UIGet_Button("Button_join", oneNode, btnAdd)
 			btnAdd->setTag(i);
 		UIClick(btnAdd, InviteView::clickInvite)
-			txtName->setString(DATA->vFriends.at(i).szNickName);
+			txtName->setString(DATA->vFriendLine.at(i).szNickName);
 
-		sprintf(headName, "headshot_%d.png", DATA->vFriends.at(i).FaceID);
+		sprintf(headName, "headshot_%d.png", DATA->vFriendLine.at(i).FaceID);
 		imgHead->loadTexture(headName);
 		lstInvite->pushBackCustomItem(oneLayout);
 
@@ -59,5 +60,11 @@ void InviteView::showFriends()
 
 void InviteView::clickInvite(Ref* pSender)
 {
+	Button*   btnInvite = static_cast<Button*>(pSender);
+	int iWhich = btnInvite->getTag();
+	DATA->vFriendLine.at(iWhich).dwUserID;
 
+
+
+	blueSkyDispatchEvent(17000);
 }

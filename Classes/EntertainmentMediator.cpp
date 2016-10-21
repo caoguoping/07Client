@@ -40,6 +40,16 @@ void EntertainmentMediator::onEvent(int i, void* data)
 	case 12700:
 		removeView(this);
 		break;
+	case FRIEND_LIST:
+		DATA->vFriendLine.clear();
+		for (int i = 0; i < DATA->vFriends.size(); i ++)
+		{
+			if (DATA->vFriends.at(i).bStates == 1)
+			{
+				DATA->vFriendLine.push_back(DATA->vFriends.at(i));
+			}
+		}
+		break;
 	default:
 		break;
 	}

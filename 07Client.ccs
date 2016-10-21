@@ -1602,6 +1602,7 @@
         <Project Name="activity.csd" Type="Node" />
         <Project Name="Anjian.csd" Type="Node" />
         <Project Name="bigHead.csd" Type="Node" />
+        <Project Name="blood.csd" Type="Node" />
         <Project Name="boom.csd" Type="Node" />
         <Project Name="cancelAuto.csd" Type="Node" />
         <Project Name="character_right.csd" Type="Node" />
@@ -1632,6 +1633,8 @@
         <Project Name="help.csd" Type="Node" />
         <Project Name="huoJian.csd" Type="Node" />
         <Project Name="Icon.csd" Type="Node" />
+        <Project Name="invite.csd" Type="Node" />
+        <Project Name="InviteCell.csd" Type="Node" />
         <Project Name="jieShuan.csd" Type="Node" />
         <Project Name="jieShuan_match.csd" Type="Node" />
         <Project Name="jieShuanGrade.csd" Type="Node" />
@@ -1690,9 +1693,6 @@
         <Project Name="wealthNumber.csd" Type="Node" />
         <Project Name="zhuanShiShow.csd" Type="Node" />
         <Project Name="zhupai.csd" Type="Node" />
-        <Project Name="blood.csd" Type="Node" />
-        <Project Name="invite.csd" Type="Node" />
-        <Project Name="InviteCell.csd" Type="Node" />
       </RootFolder>
     </Group>
   </SolutionFolder>

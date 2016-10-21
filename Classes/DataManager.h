@@ -136,6 +136,7 @@ struct tagFriendParameter
 	WORD								wKindID     ;							//游戏ID
 	DWORD							    dwLoveLiness;			//魅力
 	WORD								WinRate     ;							//胜率
+	BYTE                                bStates;                //0不在线，1在线
 };
 
 //6	4  好友操作   包括 邀请好友 s = 0  同意邀请 s = 1   删除好友 s = 2
@@ -240,8 +241,10 @@ public:
 	{
 		E_GameCateNormal = 0,
 		E_GameCateMatch,    //比赛
-		E_GameFriend,
-		E_GameRandZhupai    
+		E_GameFriend,  //四人
+		E_GameTeam,   
+		E_GameRandZhupai,  
+		E_GameBlood,
 	}E_GameCate;
 
 	BYTE jipai[18];     //记牌器数据
@@ -268,7 +271,9 @@ public:
 
 	BYTE  bMatchItem = 0;    //比赛的第几个按钮  0，1，2
 
-	std::vector<tagFriendParameter> vFriends;   //
+	std::vector<tagFriendParameter> vFriends;   //好友列表
+	std::vector<tagFriendParameter> vFriendLine;   //在线好友列表
+
 
 	std::vector<tagContactInfo> vFriendsShuRen;  //
 

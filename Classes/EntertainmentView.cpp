@@ -65,7 +65,7 @@ void EntertainmentView::initView()
 	}
 	);
 
-		btn1->setTag(1);
+		btn1->setTag(1);  //ºÃÓÑ³¡
 	btn2->setTag(2);
 	UIClick(btn1, EntertainmentView::clickPlay)
 		UIClick(btn2, EntertainmentView::clickPlay)
@@ -79,7 +79,6 @@ void EntertainmentView::clickPlay(Ref* pSender)
 	Button*  btn = static_cast<Button*>(pSender);
 	int tags = btn->getTag();
 	long long golds = DATA->myBaseData.lUserScore;
-	DATA->bGameCate = DataManager::E_GameCateNormal;
 	switch (tags)
 	{
 	case 1:
@@ -90,8 +89,14 @@ void EntertainmentView::clickPlay(Ref* pSender)
 		}
 		else
 		{
+			DATA->bGameCate = DataManager::E_GameFriend;
+			//request friend list
+			SEND->sendFriendReq(DATA->myBaseData.dwUserID);
+
 			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(0));
 			((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 0;
+			
+			blueSkyDispatchEvent(EventType::FRIEND_PLAY);
 		}
 		break;
 	case 2:
@@ -101,6 +106,7 @@ void EntertainmentView::clickPlay(Ref* pSender)
 		}
 		else
 		{
+			DATA->bGameCate = DataManager::E_GameRandZhupai;
 			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(1));
 			((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 1;
 

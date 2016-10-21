@@ -63,6 +63,7 @@ enum EventType
 	FRIEND_OPT_ME,     //好友操作,自己的操作，回给自己的
 	FRIEND_OPT_HIM,     //好友操作,对方给自己的操作
 	FRIEND_SEARCH,  //好友搜索
+	FRIEND_PLAY,    //进入好友场
 
 	
 };

@@ -66,7 +66,9 @@ void GameOverCommand::execute(void* data)
 
 	//±ÈÈü³¡
 
-	if (DATA->bGameCate == DataManager::E_GameCateNormal)
+	if (DATA->bGameCate == DataManager::E_GameCateNormal ||
+		DATA->bGameCate == DataManager::E_GameRandZhupai
+		)
 	{
 		DATA->bLastMatch = 2;
 		creatView(new AccountView(), new AccountMediator(Data));

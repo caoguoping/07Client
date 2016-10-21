@@ -80,6 +80,10 @@ void FriendView::refreshShuren()
 
 void FriendView::initView()
 {
+
+	//request friend list
+	SEND->sendFriendReq(DATA->myBaseData.dwUserID);
+
 	rootNode = CSLoader::createNode("Friends.csb");
 	addChild(rootNode);
 	VIEW->nowViewTag = ViewManager::eViewFriend;
@@ -188,7 +192,6 @@ void FriendView::initView()
 
 	currentTitle = E_friends;
 	handleWhich(currentTitle);
-//	SEND->sendFriendReq(DATA->myBaseData.dwUserID);
 	showFriends();
 }
 

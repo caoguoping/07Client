@@ -3,7 +3,9 @@
 #include "DataManager.h"
 #include "ViewManager.h"
 #include "UILayerService.h"
-
+//test
+#include "InviteMediator.h"
+#include "InviteView.h"
 
 
 PlayPokerView::PlayPokerView()
@@ -28,13 +30,7 @@ PlayPokerView::PlayPokerView()
 
 
 
-	//划牌触摸
-	imgHuaPai = ImageView::create("touchLayer.png");
-	LayerManager->myPokerLayer->addChild(imgHuaPai, 1000);
-	imgHuaPai->setAnchorPoint(Vec2(0, 0));
-	imgHuaPai->setPosition(Vec2(0, 50));
-	imgHuaPai->setTouchEnabled(true);
-	imgHuaPai->setVisible(true);
+
 	//logV("imgHuaPai local zorder %d, globelZorder %d", imgHuaPai->getLocalZOrder(), imgHuaPai->getGlobalZOrder());
 
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, fanhui_btn, 10601, "fanhui_btn", NULL)
@@ -125,10 +121,14 @@ void PlayPokerView::hideFriendInvite(DWORD  dwWhich)
 	
 	}
 }
+
+//外部的邀请按钮
 void PlayPokerView::clickBtnInvite(Ref*   pSender)
 {
 	Button*  btn = static_cast<Button*>(pSender);
 	int iTag = btn->getTag();
+
+	creatView(new InviteView(iTag), new InviteMediator());
 
 }
 
@@ -136,24 +136,28 @@ void PlayPokerView::viewInit()
 {
 
 	//好友场
-	UIGet_ImageView("Image_inviteBlack1", rootNode, imgInvitebg1)
-		UIGet_ImageView("Image_inviteBlack2", rootNode, imgInvitebg2)
-		UIGet_ImageView("Image_inviteBlack3", rootNode, imgInvitebg3)
+	if (DataManager::E_GameFriend == DATA->bGameCate)
+	{
+		UIGet_ImageView("Image_inviteBlack1", rootNode, imgInvitebg1)
+			UIGet_ImageView("Image_inviteBlack2", rootNode, imgInvitebg2)
+			UIGet_ImageView("Image_inviteBlack3", rootNode, imgInvitebg3)
 
-		UIGet_ImageView("Image_inviteBg", rootNode, imgInviteBg)
-		UIGet_Text("Text_inviteNum", imgInviteBg, txtLackPlayer)
+			UIGet_ImageView("Image_inviteBg", rootNode, imgInviteBg)
+			UIGet_Text("Text_inviteNum", imgInviteBg, txtLackPlayer)
 
-		UIGet_Button("Button_invite1", rootNode, btnInvite1)
-		UIGet_Button("Button_invite2", rootNode, btnInvite2)
-		UIGet_Button("Button_invite3", rootNode, btnInvite3)
+			UIGet_Button("Button_invite1", rootNode, btnInvite1)
+			UIGet_Button("Button_invite2", rootNode, btnInvite2)
+			UIGet_Button("Button_invite3", rootNode, btnInvite3)
 
-		btnInvite1->setTag(1);
-	btnInvite2->setTag(2);
-	btnInvite3->setTag(3);
+			btnInvite1->setTag(1);
+		btnInvite2->setTag(2);
+		btnInvite3->setTag(3);
 
-	UIClick(btnInvite1, PlayPokerView::clickBtnInvite)
-		UIClick(btnInvite2, PlayPokerView::clickBtnInvite)
-		UIClick(btnInvite3, PlayPokerView::clickBtnInvite)
+		UIClick(btnInvite1, PlayPokerView::clickBtnInvite)
+			UIClick(btnInvite2, PlayPokerView::clickBtnInvite)
+			UIClick(btnInvite3, PlayPokerView::clickBtnInvite)
+	}
+
 
 	//时间钟
 	myClock = rootNode->getChildByName("myClock");
@@ -246,7 +250,8 @@ void PlayPokerView::viewInit()
 
 void PlayPokerView::showPiPei(bool show)
 {
-	if (DATA->bGameCate == DataManager::E_GameCateMatch)
+	if (DATA->bGameCate == DataManager::E_GameCateMatch ||
+		DATA->bGameCate == DataManager::E_GameFriend)
 	{
 		return;
 	}
@@ -816,14 +821,6 @@ void PlayPokerView::showLunChang()
 		txtChang->setString(Tools::parseInt2String(DATA->wMatchNowChangci));
 }
 
-void PlayPokerView::showJiPaiQiBtn(bool show)
-{
-	_jipaiqi_Btn->setTouchEnabled(show);
-	if (!show)
-		_jipaiqi_Btn->setColor(Color3B(128, 128, 128));
-	else
-		_jipaiqi_Btn->setColor(Color3B(255, 255, 255));
-}
 
 
 

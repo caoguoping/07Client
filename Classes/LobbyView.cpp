@@ -134,8 +134,7 @@ void LobbyView::initView()
 		rootNode->runAction(fastBtnAction);
 		fastBtnAction->gotoFrameAndPlay(0, true);
 
-		//request friend list
-		SEND->sendFriendReq(DATA->myBaseData.dwUserID);
+
 		
 }
 

@@ -31,7 +31,6 @@ public:
 	void stopClock();
 	void showBeiLv(int index);
 	void showLunChang();
-	void showJiPaiQiBtn(bool show);
 	void showTouyou(int);
 	void startClock(int deskID, int index = 1);
 	void viewInit();

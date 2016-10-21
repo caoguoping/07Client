@@ -3,15 +3,19 @@
 #include "SGTools.h"
 AccountView::AccountView()
 {
-	if (DATA->bGameCate == DataManager::E_GameCateNormal)  //ÆÕÍ¨
+	if (DATA->bGameCate == DataManager::E_GameCateNormal ||
+		DATA->bGameCate == DataManager::E_GameRandZhupai
+		) 
 	{
 		rootNode = CSLoader::createNode("jieShuan.csb");
+		addChild(rootNode);
 		BTN_ADD_TOUCH_EVENTLISTENER(Button, AccountView, continueBtn, 10502, "continueBtn", NULL);
 	}
 
 	else if (DATA->bGameCate == DataManager::E_GameCateMatch)  //±ÈÈü
 	{
 		rootNode = CSLoader::createNode("jieShuan_match.csb");
+		addChild(rootNode);
 		BTN_ADD_TOUCH_EVENTLISTENER(Button, AccountView, nextMatchBtn, 10503, "nextMatchBtn", NULL);
 
 		UIGet_Layout("Panel_win", rootNode, winLayout)
@@ -25,8 +29,8 @@ AccountView::AccountView()
 	}
 
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, AccountView, fanHuiBtn, 10501, "fanHuiBtn", NULL);
-	//BTN_ADD_TOUCH_EVENTLISTENER(ImageView, AccountView, Image_1, 10501, "Image_1", NULL);
-	addChild(rootNode);
+
+
 
 }
 AccountView::~AccountView()

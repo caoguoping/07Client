@@ -62,6 +62,8 @@
             <string>5050</string>
 			<key>MatchPort</key>  
             <string>5013</string>
+            <key>RandZhupaiPort</key>  
+            <string>5014</string>
 
 			<key>webUrl</key>  
             <string>http://221.226.117.87:9000/ttdmx/ClientLogin/login</string>

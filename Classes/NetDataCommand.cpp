@@ -14,7 +14,7 @@
 
 
 
-#define  ShowMessage 1
+#define  ShowMessage 0
 
 NetDataCommand::NetDataCommand()
 {
@@ -644,7 +644,7 @@ void NetDataCommand::getRoomList(NetData netData)
 			guandanRoom.wszServerAddr = netData.readString(64);
 			guandanRoom.wszServerName = netData.readString(64);
 			guandanRoom.dizhu = netData.readInt32();
-			//guandanRoom.wRoomType = netData.readWORD();
+		//	guandanRoom.wRoomType = netData.readWORD();
 
 			if (guandanRoom.dizhu == 150)
 			{
@@ -1254,6 +1254,9 @@ void NetDataCommand::getFriendsInfo(NetData netData)
 		DATA->vFriends.at(i).wKindID = netData.readWORD();
 		DATA->vFriends.at(i).dwLoveLiness = netData.readDWORD();
 		DATA->vFriends.at(i).WinRate = netData.readWORD();
+		DATA->vFriends.at(i).bStates = netData.readByte();
+
+
 	}
 	blueSkyDispatchEvent(EventType::FRIEND_LIST);
 }

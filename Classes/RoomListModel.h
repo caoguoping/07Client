@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include "BlueSky.h"
+#include "SGTools.h"
 #pragma pack(1)
 struct RoomList
 {

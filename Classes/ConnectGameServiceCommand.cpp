@@ -15,11 +15,10 @@ void ConnectGameServiceCommand::execute(void* data)
 	RoomListModel* roomListModel = ((RoomListModel*)getModel(RoomListModel::NAME));
 	int j = *(int*)data;   //°´Å¥´«µÝ
 	
-	int i;
+	int i = 0;
 	unsigned short port;   
 	if (j == 3)  //match 
 	{
-		i = 0;
 		if (DATA->bMatchItem == 0)
 		{
 			port = atoi(UTF8::getInstance()->getString("net", "MatchPort").c_str());
@@ -31,9 +30,17 @@ void ConnectGameServiceCommand::execute(void* data)
 	} 
 	else
 	{
-		i = roomListModel->realSn[j];
-		port = ((RoomListModel*)getModel(RoomListModel::NAME))->roomList[i].wwServerPort;
+		if (DATA->bGameCate == DataManager::E_GameRandZhupai)
+		{
+			port = atoi(UTF8::getInstance()->getString("net", "RandZhupaiPort").c_str());
+		}
+		else
+		{
+			i = roomListModel->realSn[j];
+			port = ((RoomListModel*)getModel(RoomListModel::NAME))->roomList[i].wwServerPort;
+		}
 	}
+
 
 	string ip = ((RoomListModel*)getModel(RoomListModel::NAME))->roomList[i].wszServerAddr;
 

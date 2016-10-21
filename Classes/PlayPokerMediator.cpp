@@ -52,10 +52,60 @@ PlayPokerMediator::~PlayPokerMediator()
 	setView(NULL);
 }
 
+void PlayPokerMediator::showFriendButtons(bool isShow)
+{
+	if (isShow)
+	{
+		paiFenNode->setVisible(true);
+		tongHuaShunBtn->setVisible(true);
+		liChengYiPaiBtn->setVisible(true);
+		chongLiBtn->setVisible(true);
+		markBtn->setVisible(true);
+		autoBtn->setVisible(true);
+		taskBtn->setVisible(true);
+		lookTableBtn->setVisible(true);
+		chatBtn->setVisible(true);
+		imgJPTip->setVisible(true);
+		zhunbei1->setVisible(true);
+
+	}
+	else
+	{
+		paiFenNode     ->setVisible(false);
+		tongHuaShunBtn ->setVisible(false);
+		liChengYiPaiBtn->setVisible(false);
+		chongLiBtn     ->setVisible(false);
+		markBtn        ->setVisible(false);
+		autoBtn        ->setVisible(false);
+		taskBtn        ->setVisible(false);
+		lookTableBtn   ->setVisible(false);
+		chatBtn->setVisible(false);
+		imgJPTip->setVisible(false);
+		zhunbei1->setVisible(false);
+	}
+}
+
+void PlayPokerMediator::readyPlay()
+{
+	sendReadyMsg();
+
+
+	//划牌触摸
+	playPokerView->imgHuaPai = ImageView::create("touchLayer.png");
+	LayerManager->myPokerLayer->addChild(playPokerView->imgHuaPai, 1000);
+	playPokerView->imgHuaPai->setAnchorPoint(Vec2(0, 0));
+	playPokerView->imgHuaPai->setPosition(Vec2(0, 50));
+	playPokerView->imgHuaPai->setTouchEnabled(true);
+	playPokerView->imgHuaPai->setVisible(true);
+	playPokerView->imgHuaPai->addTouchEventListener(CC_CALLBACK_2(PlayPokerMediator::onTouchesHuapai, this));
+	showFriendButtons(true);
+}
+
 void PlayPokerMediator::OnRegister()
 {
 	playPokerView = (PlayPokerView*)getView();
 	mpViewMatchRanking = NULL;
+	playPokerView->imgHuaPai = NULL;
 
 	if (DATA->bGameCate == DataManager::E_GameCateMatch)
 	{
@@ -64,7 +114,6 @@ void PlayPokerMediator::OnRegister()
 		mpViewMatchRanking->setVisible(false);
 	}
 
-	sendReadyMsg();
 	fanHuiBtn = dynamic_cast<Button*>(getView()->rootNode->getChildByName("fanhui_btn"));
 	chatBtn = dynamic_cast<Button*>(getView()->rootNode->getChildByName("liaotian_Btn"));
 	actionNode = getView()->rootNode->getChildByName("ProjectNode_1");
@@ -132,7 +181,7 @@ void PlayPokerMediator::OnRegister()
 	auto topBtnNode = getView()->rootNode->getChildByName("ProjectNode_5");
 	markBtn = dynamic_cast<Button*>(topBtnNode->getChildByName("jipaiqi_Btn"));
 	autoBtn = dynamic_cast<Button*>(topBtnNode->getChildByName("tuoguan_Btn"));
-	clearBtn = dynamic_cast<Button*>(topBtnNode->getChildByName("clear_btn"));
+	taskBtn = dynamic_cast<Button*>(topBtnNode->getChildByName("clear_btn"));
 
 	UIGet_ImageView("Image_jpTip", topBtnNode, imgJPTip)
 		UIGet_Text("Text_jpTip", imgJPTip, txtJPTips)
@@ -205,7 +254,7 @@ void PlayPokerMediator::OnRegister()
 		imgMatchScore->setVisible(true);
 		updateMatchScore();
 	}
-	else if (DataManager::E_GameCateNormal == DATA->bGameCate)
+	else
 	{
 		markBtn->setVisible(true);
 		imgJPTip->setVisible(true);
@@ -214,7 +263,16 @@ void PlayPokerMediator::OnRegister()
 
 	playPokerView->viewInit();
 
-	playPokerView->imgHuaPai->addTouchEventListener(CC_CALLBACK_2(PlayPokerMediator::onTouchesHuapai, this));
+	if (DataManager::E_GameFriend == DATA->bGameCate)
+	{
+		playPokerView->showFriendInvites();
+		showFriendButtons(false);
+	}
+	else
+	{
+		readyPlay();
+	}
+
 }
 
 void PlayPokerMediator::updateMatchScore()
@@ -317,25 +375,23 @@ void PlayPokerMediator::sendReadyMsg()
 	((SendDataService *)getService(SendDataService::NAME))->sendReady();
 }
 
+void PlayPokerMediator::handleFriendPlay()
+{
+
+}
+
 void PlayPokerMediator::showPlayerOnDeskHandle(void* data)
 {
 	logV("mJoinPlayer %d", mJoinInPlayer);
 	if (mJoinInPlayer == 0)
 	{
-		for (int i = 0; i < 3; i++)
-		{
-			if (playPokerView->imgTouyou[i] != NULL)
-			{
-				playPokerView->imgTouyou[i]->removeFromParentAndCleanup(true);
-				playPokerView->imgTouyou[i] = NULL;
-			}
-		}
+
 	}
 
 	nowBeiLv = 1;
 	playPokerView->showBeiLv(nowBeiLv);
 
-	playPokerView->showJiPaiQiBtn(false);
+
 	fanHuiBtn->setVisible(true);
 	playPokerView->hideAllFace();
 	playPokerView->hideAllName();
@@ -440,7 +496,9 @@ void PlayPokerMediator::delayShowZhupai()
 
 void PlayPokerMediator::delaySendPokerHandle()
 {
-	if (DATA->bGameCate == DataManager::E_GameCateMatch)
+	if (DATA->bGameCate == DataManager::E_GameCateMatch ||
+		DATA->bGameCate == DataManager::E_GameRandZhupai
+		)
 	{
 		imgZhupai->removeFromParentAndCleanup(true);
 		zhupaiNode->removeFromParentAndCleanup(true);
@@ -478,7 +536,6 @@ void PlayPokerMediator::delaySendPokerHandle()
 		LogFile("\n\n***************  normal  send poker now!  ********\n\n");
 	}
 
-	playPokerView->showJiPaiQiBtn(true);
 	playPokerView->showPiPei(false);
 	//发牌音效
 	blueSkyDispatchEvent(20047);
@@ -536,7 +593,7 @@ void PlayPokerMediator::delaySendPokerHandle()
 			playPokerView->startClock(playerInDeskModel->chair[Data.wCurrentUser]);
 		}
 	}
-	else if (DATA->bGameCate == DataManager::E_GameCateNormal)
+	else if (DATA->bGameCate == DataManager::E_GameCateNormal )
 	{
 		if (playerInDeskModel->getServiceChairID(0) % 2 == 0)
 		{
@@ -591,6 +648,31 @@ void PlayPokerMediator::delaySendPokerHandle()
 			playPokerView->startClock(playerInDeskModel->chair[Data.wCurrentUser]);
 		}
 	}
+	else if (DATA->bGameCate == DataManager::E_GameRandZhupai)
+	{
+		myLv->setString(strLvNum[Data.bCurrentSeries]);
+		otherLv->setString(strLvNum[Data.bCurrentSeries]);
+		showNowJiShu(true);
+
+		isFirstOutPoker = true;
+
+		if (!isFirstOutPoker)//not first outpoker
+		{
+			wCurrentUser = Data.wCurrentUser;
+			isOrNotMyTurn(false);
+		}
+		else if (playerInDeskModel->getServiceChairID(0) == Data.wCurrentUser)
+		{
+			isOrNotMyTurn(true);
+			setBuChuBtnState(false);
+			playPokerView->startClock(0);
+		}
+		else
+		{
+			isOrNotMyTurn(false);
+			playPokerView->startClock(playerInDeskModel->chair[Data.wCurrentUser]);
+		}
+	}
 }
 
 
@@ -611,7 +693,7 @@ void PlayPokerMediator::reveivePlayerOutPokerHandle(void* data)
 	//剩余10张牌时开始报牌
 	desk = playerInDeskModel->chair[pokerGameModel->playerOutCard.wOutCardUser];
 	pokerNum = gameDataModel->player[desk].pokerNum - pokerGameModel->playerOutCard.bCardCount;
-	if (pokerNum < 11)
+	if (pokerNum < 11 && pokerNum > 0)
 	{
 		playPokerView->showPokerNum(desk, pokerNum);
 	}
@@ -830,6 +912,10 @@ void PlayPokerMediator::onEvent(int i, void* data)
 	
 	switch (i)
 	{
+	case EventType::FRIEND_PLAY:
+		handleFriendPlay();
+		break;
+
 	case EventType::SHOW_PLAYER_ON_DESK:  //桌子进来一位玩家
 		showPlayerOnDeskHandle(data);
 		break;
@@ -867,6 +953,14 @@ void PlayPokerMediator::onEvent(int i, void* data)
 		{
 			playPokerView->touyouNode->removeFromParentAndCleanup(true);
 			playPokerView->touyouNode = NULL;
+		}
+		for (int i = 0; i < 3; i++)
+		{
+			if (playPokerView->imgTouyou[i] != NULL)
+			{
+				playPokerView->imgTouyou[i]->removeFromParentAndCleanup(true);
+				playPokerView->imgTouyou[i] = NULL;
+			}
 		}
 		
 		break;
@@ -1115,7 +1209,12 @@ void PlayPokerMediator::clickfanHuiBtnHander()
 
 	blueSkyDispatchEvent(EventType::BACK_TO_HALL);
 	
-	playPokerView->imgHuaPai->removeFromParentAndCleanup(true);
+	if (playPokerView->imgHuaPai)
+	{
+		playPokerView->imgHuaPai->removeFromParentAndCleanup(true);
+		playPokerView->imgHuaPai = NULL;
+	}
+
 
 }
 
@@ -1643,24 +1742,26 @@ void PlayPokerMediator::clickMarkBtnHander()
 
 	if (jipaiqiNum > 0)
 	{
-		;
-		unsigned long dwUserID = DATA->myBaseData.dwUserID;
-		RoomListModel* roomListModel = ((RoomListModel*)getModel(RoomListModel::NAME));
-		unsigned short wKindID = roomListModel->roomList.at(((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun).wwServerID;
-
-		//使用的是第nowIndex个物品
-		((SendDataService*)getService(SendDataService::NAME))->sendUseJiPaiQi(8, wKindID, dwUserID, 0, 0);
-
- 		blueSkyDispatchEvent(12201); 
-		jipaiqiNum--;
-		((PlayPokerView*)getView())->_jipaiqi_Btn->setTouchEnabled(false);
-		txtJPTips->setString(Tools::parseInt2String(jipaiqiNum));
+// 		;
+// 		unsigned long dwUserID = DATA->myBaseData.dwUserID;
+// 		RoomListModel* roomListModel = ((RoomListModel*)getModel(RoomListModel::NAME));
+// 		unsigned short wKindID = roomListModel->roomList.at(((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun).wwServerID;
+// 
+// 		//使用的是第nowIndex个物品
+// 		((SendDataService*)getService(SendDataService::NAME))->sendUseJiPaiQi(8, wKindID, dwUserID, 0, 0);
+// 
+//  		blueSkyDispatchEvent(12201); 
+// 		jipaiqiNum--;
+// 		playPokerView->_jipaiqi_Btn->setTouchEnabled(false);
+// 		playPokerView->_jipaiqi_Btn->setColor(Color3B(128, 128, 128));
+// 		txtJPTips->setString(Tools::parseInt2String(jipaiqiNum));
 		
 	}
 	else   //没有就购买
 	{
 		//creatView(new MallView(), new MallMediator());
-		((PlayPokerView*)getView())->_jipaiqi_Btn->setTouchEnabled(false);
+		playPokerView->_jipaiqi_Btn->setTouchEnabled(false);
+		playPokerView->_jipaiqi_Btn->setColor(Color3B(128, 128, 128));
 	}
 }
 
@@ -1704,14 +1805,14 @@ bool PlayPokerMediator::clicklookTableBtn(Touch *touch, Widget::TouchEventType t
 		int *i = new int(50);
 		blueSkyDispatchEvent(EventType::SET_POKER_OPACITY,i);
 
-		showMatchEndLoading();
+	//	showMatchEndLoading();
 
 	}
 	if (type == Widget::TouchEventType::ENDED)
 	{
 		int *i = new int(255);
 		blueSkyDispatchEvent(EventType::SET_POKER_OPACITY,i);
-		hideEndLoading();
+	//	hideEndLoading();
 
 	}
 	return true;

@@ -65,7 +65,8 @@ void InDeskService::onEvent(int i, void* data)
 			}
 			
 		}
-		if (DATA->bGameCate == DataManager::E_GameCateNormal)
+		if (DATA->bGameCate == DataManager::E_GameCateNormal ||
+			DATA->bGameCate == DataManager::E_GameRandZhupai)
 		{
 			blueSkyDispatchEvent(EventType::SHOW_PLAYER_ON_DESK);
 		}
