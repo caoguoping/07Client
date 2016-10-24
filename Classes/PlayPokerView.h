@@ -32,7 +32,7 @@ public:
 	void showBeiLv(int index);
 	void showLunChang();
 	void showTouyou(int);
-	void startClock(int deskID, int index = 1);
+	void startClock(int deskID, int index = 1);  //deskId : client chairId.
 	void viewInit();
 public:
 	//»®ÅÆ´¥Ãþ²ã

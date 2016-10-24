@@ -69,7 +69,7 @@ public:
 
 
 	OnDeskPlayerInfo FruitPlayer;
-	int chair[4];   //服务器椅子ID
+	int chair[4];   //服务器椅子ID    下标为服务器Id, 值为客户端ID
 	//清理玩家信息
 	void clean();
 	

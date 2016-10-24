@@ -905,7 +905,6 @@ void NetDataCommand::getDeskInfo(NetData netData)
 //获取进入房间的玩家信息
 void NetDataCommand::getInDeskPlayerInfo(NetData netData)
 {
-	logP
 	OnDeskPlayerInfo *result = new OnDeskPlayerInfo();
 	result->dwGameID = netData.readDWORD();
 	result->dwUserID = netData.readDWORD();

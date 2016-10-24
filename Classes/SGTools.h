@@ -45,13 +45,7 @@ using namespace std;
 
 
 
-/*
-touyouTimeline = CSLoader::createTimeline("touyou.csb");
-touyouNode = CSLoader::createNode("touyou.csb");
-rootNode->addChild(touyouNode);
-rootNode->runAction(touyouTimeline);
-touyouTimeline->gotoFrameAndPlay(0, false);
-*/
+
 //sequences frames
 #define UIFrameDef(name)  cocostudio::timeline::ActionTimeline*  name##Timeline; \
 	Node*  name##Node;

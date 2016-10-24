@@ -48,8 +48,11 @@ public:
 
 	UIFrameDef(zhupai)	
 		ImageView*  imgZhupai;
+	ImageView*  imgZhupaiDi;
 	UIFrameDef(matchEndLoading)
 	UIFrameDef(matchEndLoading2)
+
+
 
 	Text*   txtLeftDesks = NULL;
 	//»ý·ÖÅÅÃû
@@ -121,6 +124,8 @@ public:
 public:
 	PlayPokerMediator();
 	~PlayPokerMediator();
+	void callRemoveZhupaiDi();
+	void callRemoveZhupaiNode();
 	void OnRegister();
 	void readyPlay();
 	void showFriendButtons(bool isShow);

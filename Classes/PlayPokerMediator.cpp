@@ -444,22 +444,39 @@ void PlayPokerMediator::OnDeskHandle(void* data)
 
 void PlayPokerMediator::sendPokerkHandle()
 {
+	//去除准备显示
+	for (int i = 0; i < 4; i++)
+	{
+		showZhunBei(i, false);
+	}
+
+	playPokerView->showPiPei(false);
+
+	//发牌后取消返回按钮显示
+	fanHuiBtn->setVisible(false);
+
 	if (DATA->bGameCate == DataManager::E_GameCateNormal)
 	{
 		delaySendPokerHandle();
 		return;
 	}
 
-	UIFrameCreate(zhupai, "zhupai.csb", playPokerView->rootNode, false);
+
+
+	imgZhupaiDi = ImageView::create("now-card_bg.png");
+	imgZhupaiDi->setPosition(Vec2(WScreen * 0.5, HScreen * 0.5));
+	LayerManager->uiLayer->addChild(imgZhupaiDi);
+
+	UIFrameCreate(zhupai, "zhupai.csb", LayerManager->uiLayer, false);
 	zhupaiNode->setPosition(WScreen * 0.5, HScreen * 0.5);
 
 	FiniteTimeAction*  seq = Sequence::create(
 		DelayTime::create(1.2f),
 		CallFunc::create(CC_CALLBACK_0(PlayPokerMediator::delayShowZhupai, this)),
-		DelayTime::create(1.8f),
+		DelayTime::create(1.0f),
 		CallFunc::create(CC_CALLBACK_0(PlayPokerMediator::delaySendPokerHandle, this)),
 		NULL);
-	playPokerView->rootNode->runAction(seq);
+	LayerManager->uiLayer->runAction(seq);
 
 	if (DATA->bGameCate == DataManager::E_GameCateMatch)
 	{
@@ -476,6 +493,17 @@ void PlayPokerMediator::sendPokerkHandle()
 
 }
 
+void PlayPokerMediator::callRemoveZhupaiDi() 
+{
+	imgZhupaiDi->removeFromParentAndCleanup(true);
+	//zhupaiNode->removeFromParentAndCleanup(true);
+}
+
+void PlayPokerMediator::callRemoveZhupaiNode()
+{
+	zhupaiNode->removeFromParentAndCleanup(true);
+}
+
 void PlayPokerMediator::delayShowZhupai()
 {
 	DWORD dwJishu = ((CMD_S_GameStart*)DATA->sendPokerData)->bCurrentSeries;
@@ -488,7 +516,11 @@ void PlayPokerMediator::delayShowZhupai()
 	imgZhupai = ImageView::create(imgName);
 	FiniteTimeAction*  seq = Sequence::create(
 		DelayTime::create(1.0f),
+		MoveTo::create(0.5f, Vec2(-350, 200)),
+		CallFunc::create(CC_CALLBACK_0(PlayPokerMediator::callRemoveZhupaiDi, this)),
 		FadeOut::create(0.5f),
+		CallFunc::create(CC_CALLBACK_0(PlayPokerMediator::callRemoveZhupaiNode, this)),
+
 		NULL);
 	imgZhupai->runAction(seq);
 	zhupaiNode->addChild(imgZhupai);
@@ -496,13 +528,13 @@ void PlayPokerMediator::delayShowZhupai()
 
 void PlayPokerMediator::delaySendPokerHandle()
 {
-	if (DATA->bGameCate == DataManager::E_GameCateMatch ||
-		DATA->bGameCate == DataManager::E_GameRandZhupai
-		)
-	{
-		imgZhupai->removeFromParentAndCleanup(true);
-		zhupaiNode->removeFromParentAndCleanup(true);
-	}
+// 	if (DATA->bGameCate == DataManager::E_GameCateMatch ||
+// 		DATA->bGameCate == DataManager::E_GameRandZhupai
+// 		)
+// 	{
+// 		imgZhupai->removeFromParentAndCleanup(true);
+// 		zhupaiNode->removeFromParentAndCleanup(true);
+// 	}
 
 	CMD_S_GameStart Data;
 	PlayerInDeskModel *playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
@@ -536,11 +568,9 @@ void PlayPokerMediator::delaySendPokerHandle()
 		LogFile("\n\n***************  normal  send poker now!  ********\n\n");
 	}
 
-	playPokerView->showPiPei(false);
 	//发牌音效
 	blueSkyDispatchEvent(20047);
-	//发牌后取消返回按钮显示
-	fanHuiBtn->setVisible(false);
+
 	//设置玩家的手牌数
 	gameDataModel->player[0].pokerNum = 27;
 	gameDataModel->player[1].pokerNum = 27;
@@ -555,11 +585,7 @@ void PlayPokerMediator::delaySendPokerHandle()
 	gameDataModel->player[2].quanNum = 0;
 	gameDataModel->player[3].quanNum = 0;
 	Data = *(CMD_S_GameStart*)(DATA->sendPokerData);
-	//去除准备显示
-	for (int i = 0; i < 4; i++)
-	{
-		showZhunBei(i, false);
-	}
+
 
 	//显示本轮级数
 	paiFenNode->setPosition(Vec2(81, 502));
@@ -568,29 +594,27 @@ void PlayPokerMediator::delaySendPokerHandle()
 		return;
 	}
 
+// 	logV("serviceId %d:0, %d:1, %d:2, %d:3, currentUser %d:%d   ",
+// 		playerInDeskModel->getServiceChairID(0),
+// 		playerInDeskModel->getServiceChairID(1),
+// 		playerInDeskModel->getServiceChairID(2),
+// 		playerInDeskModel->getServiceChairID(3),
+// 		Data.wCurrentUser,
+// 		playerInDeskModel->chair[Data.wCurrentUser]
+// 		);
+
+
+
 	if (DATA->bGameCate == DataManager::E_GameCateMatch)
 	{
 		myLv->setString(strLvNum[Data.bCurrentSeries]);
 		otherLv->setString(strLvNum[Data.bCurrentSeries]);
 		showNowJiShu(true);
-
-		isFirstOutPoker = true;
-
-		if (!isFirstOutPoker)//not first outpoker
-		{
-			wCurrentUser = Data.wCurrentUser;
-			isOrNotMyTurn(false);
-		}
-		else if (playerInDeskModel->getServiceChairID(0) == Data.wCurrentUser)
+		if (playerInDeskModel->getServiceChairID(0) == Data.wCurrentUser)
 		{
 			isOrNotMyTurn(true);
 			setBuChuBtnState(false);
 			playPokerView->startClock(0);
-		}
-		else
-		{
-			isOrNotMyTurn(false);
-			playPokerView->startClock(playerInDeskModel->chair[Data.wCurrentUser]);
 		}
 	}
 	else if (DATA->bGameCate == DataManager::E_GameCateNormal )
@@ -653,24 +677,11 @@ void PlayPokerMediator::delaySendPokerHandle()
 		myLv->setString(strLvNum[Data.bCurrentSeries]);
 		otherLv->setString(strLvNum[Data.bCurrentSeries]);
 		showNowJiShu(true);
-
-		isFirstOutPoker = true;
-
-		if (!isFirstOutPoker)//not first outpoker
-		{
-			wCurrentUser = Data.wCurrentUser;
-			isOrNotMyTurn(false);
-		}
-		else if (playerInDeskModel->getServiceChairID(0) == Data.wCurrentUser)
+		if (playerInDeskModel->getServiceChairID(0) == Data.wCurrentUser)
 		{
 			isOrNotMyTurn(true);
 			setBuChuBtnState(false);
 			playPokerView->startClock(0);
-		}
-		else
-		{
-			isOrNotMyTurn(false);
-			playPokerView->startClock(playerInDeskModel->chair[Data.wCurrentUser]);
 		}
 	}
 }
@@ -760,6 +771,7 @@ void PlayPokerMediator::reveivePlayerOutPokerHandle(void* data)
 		isOrNotMyTurn(false);
 	}
 	playPokerView->startClock(nextDesk);
+	logV("nextDesk %d", nextDesk);
 }
 
 void PlayPokerMediator::notOutPokerHandle(void* data)
@@ -949,8 +961,10 @@ void PlayPokerMediator::onEvent(int i, void* data)
 		playPokerView->hideClock();
 		playPokerView->stopClock();
 		playPokerView->imgHuaPai->setVisible(false);
+
 		if (playPokerView->touyouNode)
 		{
+			playPokerView->stopAction(playPokerView->touyouTimeline);
 			playPokerView->touyouNode->removeFromParentAndCleanup(true);
 			playPokerView->touyouNode = NULL;
 		}

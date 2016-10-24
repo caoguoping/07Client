@@ -7,6 +7,7 @@
 #include "InviteMediator.h"
 #include "InviteView.h"
 
+#define TIME_SendPoker 20
 
 PlayPokerView::PlayPokerView()
 {
@@ -331,10 +332,10 @@ void PlayPokerView::startClock(int deskID,int index)
 		leftClock->setVisible(true);
 		break;
 	}
-	myClockText->setString("30");
-	rightClockText->setString("30");
-	topClockText->setString("30");
-	leftClockText->setString("30");
+	myClockText->setString("20");
+	rightClockText->setString("20");
+	topClockText->setString("20");
+	leftClockText->setString("20");
 
 	myTimer->setPercentage(100);
 	leftTimer->setPercentage(100);
@@ -344,10 +345,10 @@ void PlayPokerView::startClock(int deskID,int index)
 }
 void PlayPokerView::clockShow(float dt)
 {
-	if (time > 30)
+	if (time > TIME_SendPoker)
 		return;
 	char a[256];
-	int i = 30 - time;
+	int i = TIME_SendPoker - time;
 	sprintf(a, "%d", i);
 	string m = a;
 	myClockText->setString(m);
@@ -355,17 +356,17 @@ void PlayPokerView::clockShow(float dt)
 	topClockText->setString(m);
 	leftClockText->setString(m);
 
-	myTimer->setPercentage(i * 100 / 30);
-	rightTimer->setPercentage(i * 100 / 30);
-	topTimer->setPercentage(i * 100 / 30);
-	leftTimer->setPercentage(i * 100 / 30);
+	myTimer->setPercentage(i * 100 / TIME_SendPoker);
+	rightTimer->setPercentage(i * 100 / TIME_SendPoker);
+	topTimer->setPercentage(i * 100 / TIME_SendPoker);
+	leftTimer->setPercentage(i * 100 / TIME_SendPoker);
 
 	//倒数10秒时开始播放计时器音效
-	if (time > 19)
+	if (time > 15)
 	{
 		blueSkyDispatchEvent(20053);
 	}
-	if (time == 30 && myClock->isVisible())
+	if (time == TIME_SendPoker && myClock->isVisible())
 	{
 		if (nowIndex == 1)
 		{

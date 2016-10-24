@@ -10,6 +10,7 @@ void InDeskService::onEvent(int i, void* data)
 	OnDeskPlayerInfo result;
 
 	PlayerInDeskModel *playerInDeskModel;
+	DWORD dwSvChairID;
 	int wKindID;
 	switch (i)
 	{
@@ -43,16 +44,19 @@ void InDeskService::onEvent(int i, void* data)
 		wKindID = playerInDeskModel->wKindID;
 		playerInDeskModel->DeskPlayerInfo[result.wChairID] = result;
 
+
 		//result.wChairId   服务器定义的椅子ID，四张桌子都一样
 		//playerInDeskModel->chair[], 客户端相对ID，自己为0， 左边为1， 
+
+		dwSvChairID = result.wChairID;
 		if (DATA->myBaseData.dwUserID == result.dwUserID)
 		{
-			playerInDeskModel->chair[result.wChairID] = 0;
-			int index = result.wChairID;
+			playerInDeskModel->chair[dwSvChairID] = 0;
+			DWORD index = dwSvChairID;
 
-			for (int i = 1; i < 4; i++)
+			for (DWORD i = 1; i < 4; i++)
 			{
-				index++;
+				++index;
 				if (index > 3)
 				{
 					index = 0;
