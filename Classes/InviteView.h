@@ -14,7 +14,7 @@ public:
 	void initView();
 	void showFriends();
 	void clickInvite(Ref*  pSender);
-	int iDeskId;
+	int iChairId;
 public:
 	ListView*  lstInvite;
 	BTN_TOUCH_HANDLE(Button,closeBtn, 17000);

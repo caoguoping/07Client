@@ -16,11 +16,11 @@ class AlertVO
 public:
 AlertVO(int _type, string _msgParentName, string _msgName, int _enterEventId, int _cancleEventId)
 {
-type = _type;
-msgParentName = _msgParentName;
-msgName = _msgName;
-enterEventId = _enterEventId;
-cancleEventId = _cancleEventId;
+	type = _type;
+	msgParentName = _msgParentName;
+	msgName = _msgName;
+	enterEventId = _enterEventId;
+	cancleEventId = _cancleEventId;
 };
 ~AlertVO(){};
 string msgParentName;

@@ -37,7 +37,6 @@ void Tools::showSysMsg(std::string msg, std::function<void(Ref*)> callFunc)
 // 		UIClick(btnClose, Tools::closeSysMsg)
 		txtMsg->setString(msg);
 	getcontainer()->addChild(rootNode, 40000);
-
 }
 void Tools::closeSysMsgTouming(Node*  psender)
 {

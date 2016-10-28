@@ -1,10 +1,12 @@
 #include "InviteView.h"
 #include "SGTools.h"
 #include "DataManager.h"
+#include "SendDataService.h"
+#include "TCPSocketService.h"
 
 InviteView::InviteView(int i)
 {
-	iDeskId = i;
+	iChairId = i;
 	rootNode = CSLoader::createNode("invite.csb");
 	addChild(rootNode);
 	BTN_ADD_TOUCH_EVENTLISTENER(Button,InviteView, closeBtn, 17000, "closeBtn", NULL)
@@ -62,9 +64,26 @@ void InviteView::clickInvite(Ref* pSender)
 {
 	Button*   btnInvite = static_cast<Button*>(pSender);
 	int iWhich = btnInvite->getTag();
-	DATA->vFriendLine.at(iWhich).dwUserID;
+	
+
+	CMD_SUB_S_INVITE_ENTER_GAME stInvite;
+	stInvite.dwTargetID = DATA->vFriendLine.at(iWhich).dwUserID; //target id
+	stInvite.dwUserID = DATA->myBaseData.dwUserID;
+	stInvite.wChairID = DATA->wFriendFieldChairId + iChairId;
+	stInvite.wTableID = DATA->wFriendFieldTableId;
+	stInvite.wGameID = 2;
+	if (DATA->bGameCate == DataManager::E_GameFriend)
+	{
+		stInvite.wIsFriend = 1;
+	} 
+	else if (DATA->bGameCate == DataManager::E_GameTeam)
+	{
+		stInvite.wIsFriend = 0;
+	}
 
 
+	memcpy(stInvite.strName, DATA->vFriendLine.at(iWhich).szNickName.c_str(), 64);
+	SEND_LOGIN->SendData(6, 15, &stInvite, sizeof(CMD_SUB_S_INVITE_ENTER_GAME));
 
 	blueSkyDispatchEvent(17000);
 }

@@ -151,6 +151,7 @@ public:
 public:
 	void handleFriendPlay();
 	void showPlayerOnDeskHandle(void* data);
+	void showPlayerOnDeskHandle();
 	void OnDeskHandle(void* data);
 	void delaySendPokerHandle();
 	void delayShowZhupai();

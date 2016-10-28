@@ -3,9 +3,7 @@
 #include "SGTools.h"
 AccountView::AccountView()
 {
-	if (DATA->bGameCate == DataManager::E_GameCateNormal ||
-		DATA->bGameCate == DataManager::E_GameRandZhupai
-		) 
+	if (DATA->bGameCate != DataManager::E_GameCateMatch)
 	{
 		rootNode = CSLoader::createNode("jieShuan.csb");
 		addChild(rootNode);
@@ -39,7 +37,7 @@ AccountView::~AccountView()
 
 	//BTN_REMOVE_TOUCH_EVENTLISTENER(AccountView, Image_1, 10501);
 
-	if (DATA->bGameCate == DataManager::E_GameCateNormal)
+	if (DATA->bGameCate != DataManager::E_GameCateMatch)
 	{
 		BTN_REMOVE_TOUCH_EVENTLISTENER(AccountView, continueBtn, 10502);
 	}

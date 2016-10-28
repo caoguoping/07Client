@@ -156,26 +156,26 @@
           <AbstractNodeData Name="Image_inviteBg" ActionTag="1191518289" VisibleForFrame="False" Tag="816" IconVisible="False" LeftMargin="7.6608" RightMargin="7.3392" TopMargin="255.7738" BottomMargin="112.2262" LeftEage="311" RightEage="311" TopEage="80" BottomEage="80" Scale9OriginX="311" Scale9OriginY="80" Scale9Width="323" Scale9Height="12" ctype="ImageViewObjectData">
             <Size X="945.0000" Y="172.0000" />
             <Children>
-              <AbstractNodeData Name="Text_invite" ActionTag="-1986292428" Tag="817" IconVisible="False" LeftMargin="411.6609" RightMargin="422.3391" TopMargin="51.6098" BottomMargin="86.3902" FontSize="30" LabelText="缺      人" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="111.0000" Y="34.0000" />
+              <AbstractNodeData Name="Text_friend" ActionTag="-1986292428" Tag="817" IconVisible="False" LeftMargin="421.1609" RightMargin="431.8391" TopMargin="51.6098" BottomMargin="86.3902" FontSize="30" LabelText="好友场" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="92.0000" Y="34.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="467.1609" Y="103.3902" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="236" B="0" />
                 <PrePosition X="0.4944" Y="0.6011" />
-                <PreSize X="0.1175" Y="0.1977" />
+                <PreSize X="0.0974" Y="0.1977" />
                 <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_inviteNum" ActionTag="-917779272" Tag="818" IconVisible="False" LeftMargin="455.4361" RightMargin="465.5639" TopMargin="45.9115" BottomMargin="81.0885" FontSize="40" LabelText="3" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="24.0000" Y="45.0000" />
+              <AbstractNodeData Name="Text_team" ActionTag="-917779272" Tag="818" IconVisible="False" LeftMargin="406.4361" RightMargin="416.5639" TopMargin="45.9115" BottomMargin="81.0885" FontSize="40" LabelText="组队场" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="122.0000" Y="45.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="467.4361" Y="103.5885" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="236" B="0" />
                 <PrePosition X="0.4946" Y="0.6023" />
-                <PreSize X="0.0254" Y="0.2616" />
+                <PreSize X="0.1291" Y="0.2616" />
                 <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

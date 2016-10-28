@@ -64,11 +64,9 @@ void GameOverCommand::execute(void* data)
 	}
 	gameDataModel->player[0].selectedPokerArr = {};
 
-	//比赛场
 
-	if (DATA->bGameCate == DataManager::E_GameCateNormal ||
-		DATA->bGameCate == DataManager::E_GameRandZhupai
-		)
+	//非比赛场
+	if (DATA->bGameCate != DataManager::E_GameCateMatch )
 	{
 		DATA->bLastMatch = 2;
 		creatView(new AccountView(), new AccountMediator(Data));

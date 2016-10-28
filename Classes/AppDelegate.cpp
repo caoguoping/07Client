@@ -9,7 +9,8 @@ USING_NS_CC;
 
 void AppDelegate::init()
 {
-	LogFile("\n   GuanDan app is start  \n");
+	logF("\n   GuanDan app is start  \n");
+	logT
 	srand((unsigned)time(NULL));   //随机数时间种子
 
 	log("cocos2d-x %s", FileUtils::getInstance()->getWritablePath().c_str());

@@ -6,7 +6,9 @@
 */
 void SendPokerCommand::execute(void* data)
 {
-	if (DATA->bGameCate == DataManager::E_GameCateNormal)
+	if (DATA->bGameCate!= DataManager::E_GameCateMatch &&
+		DATA->bGameCate != DataManager::E_GameRandZhupai
+		)
 	{
 		delaySendPoker();
 		return;

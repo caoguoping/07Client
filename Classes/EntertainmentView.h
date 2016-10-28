@@ -20,6 +20,7 @@ public:
 	BTN_TOUCH_HANDLE(Button, closeBtn, 12700);
 	Button*  btn1;
 	Button*  btn2;
+	Button*  btn3;
 	Text* txtDiamond;  //×êÊ¯
 	Text* txtGold;     //½ð±Ò
 

@@ -75,7 +75,9 @@ void SendDataService::sendRegister(const char* szLogonPass, int wFaceID, int cbG
 	((TCPSocketService *)getService(TCPSocketService::LOGIN))->SendData(MDM_GP_LOGON, 3, cbBuffer, sizeof(CMD_GP_RegisterAccounts));
 }
 
-void SendDataService::sendGameServerLogin(DWORD dwUserID, const char* szLogonPass, WORD wKindID)
+
+//×îºó¼ÓwTable, wChair
+void SendDataService::sendGameServerLogin(DWORD dwUserID, const char* szLogonPass, WORD wKindID, WORD wTable, WORD wChair)
 {
 	BYTE cbBuffer[SOCKET_TCP_PACKET];
 	CMD_GP_GameAccounts * pGameAccounts = (CMD_GP_GameAccounts *)cbBuffer;
@@ -86,6 +88,8 @@ void SendDataService::sendGameServerLogin(DWORD dwUserID, const char* szLogonPas
 	memcpy(pGameAccounts->szPassword, CallCppHelper::getInstance()->mUid, 32);
 	memcpy(pGameAccounts->szMachineID, szLogonPass, 66);
 	pGameAccounts->wKindID = wKindID;
+	pGameAccounts->wTable = wTable;
+	pGameAccounts->wChair = wChair;
 	((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->wKindID = wKindID;
 	((TCPSocketService *)getService(TCPSocketService::GAME))->SendData(MDM_GP_LOGON, 1, cbBuffer, sizeof(CMD_GP_GameAccounts));
 }

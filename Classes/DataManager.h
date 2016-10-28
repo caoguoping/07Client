@@ -212,6 +212,29 @@ struct CMD_GP_S_RESULT_INVITE
 	tagInviteInfo						info[20];
 };
 
+//6, 15 好友邀请发送
+struct CMD_SUB_S_INVITE_ENTER_GAME
+{
+	DWORD							dwUserID;  //自己ID
+	DWORD							dwTargetID;      //邀请目标玩家
+	WORD								wGameID;		//游戏ID
+	WORD								wTableID;
+	WORD								wChairID;
+	WORD                                wIsFriend;   //1 : friend,  0:  team.
+	char                     strName[64];
+};
+
+//6, 16 收到好友邀请
+struct CMD_SUB_C_INVITE_ENTER_GAME
+{
+	DWORD							dwUserID;  //自己ID
+	DWORD							dwTargetID;      //邀请目标玩家
+	WORD								wGameID;		//游戏ID
+	WORD								wTableID;
+	WORD								wChairID;
+	WORD                                wIsFriend;   //1 : friend,  0:  team.
+	std::string                     strName;
+};
 
 //200, 13 game 发给服务器，  接收广播200, 113
 struct	CMD_C_USE_PROPERTY
@@ -221,6 +244,21 @@ struct	CMD_C_USE_PROPERTY
 	WORD						wTargetID;				//目标ID 
 };
 
+//4, 101.
+//桌子状态
+
+// struct tagTableStatus
+// {
+// 	BYTE							cbTableLock;						//锁定标志
+// 	BYTE							cbPlayStatus;						//游戏标志
+// };
+struct CMD_GR_TableStatus
+{
+	WORD							wTableID;							//桌子号码
+	//tagTableStatus					TableStatus;						//桌子状态
+	BYTE							cbTableLock;						//锁定标志
+	BYTE							cbPlayStatus;						//游戏标志   //0, 桌子不在。
+};
 
 
 
@@ -242,7 +280,9 @@ public:
 		E_GameCateNormal = 0,
 		E_GameCateMatch,    //比赛
 		E_GameFriend,  //四人
-		E_GameTeam,   
+		E_GameFriendPassive,  //四人被动
+		E_GameTeam, 
+		E_GameTeamPassive,  //组队被动
 		E_GameRandZhupai,  
 		E_GameBlood,
 	}E_GameCate;
@@ -271,6 +311,12 @@ public:
 
 	BYTE  bMatchItem = 0;    //比赛的第几个按钮  0，1，2
 
+	WORD wFriendFieldTableId;    //好友场创建者
+	WORD wFriendFieldChairId;
+
+	WORD wFriendPassiveTableId;    //好友场被邀请者
+	WORD wFriendPassiveChairId;
+
 	std::vector<tagFriendParameter> vFriends;   //好友列表
 	std::vector<tagFriendParameter> vFriendLine;   //在线好友列表
 
@@ -278,9 +324,6 @@ public:
 	std::vector<tagContactInfo> vFriendsShuRen;  //
 
 	std::vector<tagInviteInfo> vFriendPush;   //friends add me push
-
-	//CMD_GP_C_ADD_Friend stFriendOpt;
-
 	MyBaseData myBaseData;
 	string md5Passwd;
 

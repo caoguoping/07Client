@@ -39,14 +39,9 @@ public:
 	ImageView*  imgHuaPai;
 
 	//好友场
-	ImageView*  imgInvitebg1;
-	ImageView*  imgInvitebg2;
-	ImageView*  imgInvitebg3;
-	Button*     btnInvite1;
-	Button*     btnInvite2;
-	Button*     btnInvite3;
+	ImageView*  imgInvitebg[3];   //0, 1, 2, 分别为 左 ，上， 下
+	Button*     btnInvite[3];
 	ImageView*  imgInviteBg;
-	Text*    txtLackPlayer;
 
 	//时间钟
 	Node* myClock;

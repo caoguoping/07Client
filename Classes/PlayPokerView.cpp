@@ -89,38 +89,29 @@ PlayPokerView::~PlayPokerView()
 void PlayPokerView::showFriendInvites()
 {
 	imgInviteBg->setVisible(true);
-	imgInvitebg1->setVisible(true);
-	imgInvitebg2->setVisible(true);
-	imgInvitebg3->setVisible(true);
-	btnInvite1->setVisible(true);
-	btnInvite2->setVisible(true);
-	btnInvite3->setVisible(true);
-
-
+	imgInvitebg[0]->setVisible(true);
+	imgInvitebg[1]->setVisible(true);
+	imgInvitebg[2]->setVisible(true);
+	btnInvite[0]->setVisible(true);
+	btnInvite[1]->setVisible(true);
+	btnInvite[2]->setVisible(true);
+	if (DataManager::E_GameTeam == DATA->bGameCate)
+	{
+		btnInvite[0]->setVisible(false);
+		btnInvite[2]->setVisible(false);
+		imgInvitebg[0]->setVisible(false);
+		imgInvitebg[2]->setVisible(false);
+	}
 }
+
 void PlayPokerView::hideFriendInvite(DWORD  dwWhich)
 {
-	switch (dwWhich)
+	if (dwWhich > 3 || dwWhich <= 0)
 	{
-	case 1:
-		imgInvitebg1->setVisible(false);
-		btnInvite1->setVisible(false);
-		break;
-
-	case 2:
-		imgInvitebg2->setVisible(false);
-		btnInvite2->setVisible(false);
-		break;
-
-	case 3:
-		imgInvitebg3->setVisible(false);
-		btnInvite3->setVisible(false);
-		break;
-
-	default: 
-		break;
-	
+		return;
 	}
+	btnInvite[dwWhich - 1]->setVisible(false);
+	imgInvitebg[dwWhich - 1]->setVisible(false);
 }
 
 //外部的邀请按钮
@@ -136,27 +127,44 @@ void PlayPokerView::clickBtnInvite(Ref*   pSender)
 void PlayPokerView::viewInit()
 {
 
-	//好友场
-	if (DataManager::E_GameFriend == DATA->bGameCate)
+	//好友场 ,组队
+	if (DataManager::E_GameFriend == DATA->bGameCate || DataManager::E_GameTeam == DATA->bGameCate)
 	{
-		UIGet_ImageView("Image_inviteBlack1", rootNode, imgInvitebg1)
-			UIGet_ImageView("Image_inviteBlack2", rootNode, imgInvitebg2)
-			UIGet_ImageView("Image_inviteBlack3", rootNode, imgInvitebg3)
+		UIGet_ImageView("Image_inviteBlack1", rootNode, imgInvitebg[0])
+			UIGet_ImageView("Image_inviteBlack2", rootNode, imgInvitebg[1])
+			UIGet_ImageView("Image_inviteBlack3", rootNode, imgInvitebg[2])
 
 			UIGet_ImageView("Image_inviteBg", rootNode, imgInviteBg)
-			UIGet_Text("Text_inviteNum", imgInviteBg, txtLackPlayer)
+			imgInviteBg->setVisible(true);
+		Text  *txtFriend, *txtTeam;
+		UIGet_Text("Text_friend", imgInviteBg, txtFriend)
+			UIGet_Text("Text_team", imgInviteBg, txtTeam)
+			txtFriend->setVisible(true);
+			txtTeam->setVisible(false);
+			if (DataManager::E_GameTeam == DATA->bGameCate)
+			{
+				txtFriend->setVisible(false);
+				txtTeam->setVisible(true);
+			}
 
-			UIGet_Button("Button_invite1", rootNode, btnInvite1)
-			UIGet_Button("Button_invite2", rootNode, btnInvite2)
-			UIGet_Button("Button_invite3", rootNode, btnInvite3)
+			UIGet_Button("Button_invite1", rootNode, btnInvite[0])
+			UIGet_Button("Button_invite2", rootNode, btnInvite[1])
+			UIGet_Button("Button_invite3", rootNode, btnInvite[2])
 
-			btnInvite1->setTag(1);
-		btnInvite2->setTag(2);
-		btnInvite3->setTag(3);
+		btnInvite[0]->setTag(1);
+		btnInvite[1]->setTag(2);
+		btnInvite[2]->setTag(3);
 
-		UIClick(btnInvite1, PlayPokerView::clickBtnInvite)
-			UIClick(btnInvite2, PlayPokerView::clickBtnInvite)
-			UIClick(btnInvite3, PlayPokerView::clickBtnInvite)
+			UIClick(btnInvite[0], PlayPokerView::clickBtnInvite)
+			UIClick(btnInvite[1], PlayPokerView::clickBtnInvite)
+			UIClick(btnInvite[2], PlayPokerView::clickBtnInvite)
+	}
+
+	if (DataManager::E_GameFriendPassive == DATA->bGameCate ||
+		DataManager::E_GameTeamPassive == DATA->bGameCate)
+	{
+		UIGet_ImageView("Image_inviteBg", rootNode, imgInviteBg)
+			imgInviteBg->setVisible(true);
 	}
 
 
@@ -242,7 +250,7 @@ void PlayPokerView::viewInit()
 			showLunChang();
 
 		}
-		else if (DATA->bGameCate == DataManager::E_GameCateNormal)
+		else
 		{
 			imgLunChang->setVisible(false);
 			imgBeilv->setVisible(true);
@@ -252,7 +260,10 @@ void PlayPokerView::viewInit()
 void PlayPokerView::showPiPei(bool show)
 {
 	if (DATA->bGameCate == DataManager::E_GameCateMatch ||
-		DATA->bGameCate == DataManager::E_GameFriend)
+		DATA->bGameCate == DataManager::E_GameFriend ||
+		DATA->bGameCate == DataManager::E_GameFriendPassive||
+		DATA->bGameCate == DataManager::E_GameTeam ||
+		DATA->bGameCate == DataManager::E_GameTeamPassive)
 	{
 		return;
 	}

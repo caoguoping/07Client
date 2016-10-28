@@ -5,6 +5,8 @@
 #include "SGTools.h"
 #include "DataManager.h"
 #include "ConnectGameServiceCommand.h"
+#include "ViewPopup.h"
+#include "ViewManager.h"
 /**
 事件通知执行函数
 */
@@ -57,11 +59,11 @@ void NetDataCommand::executeGame(NetData netData)
 	char temp[512];
 	sprintf(temp, "GameServer main: %d,  sub: %d    \n", netData.command.wMainCmdID, netData.command.wSubCmdID);
 	txtGame->setString(temp);
-	logV("cocos2d-x GameServer main : %d, sub : %d    \n", netData.command.wMainCmdID, netData.command.wSubCmdID);
 
 #endif
 
-	//logV("GameServer main : %d, sub : %d    \n", netData.command.wMainCmdID, netData.command.wSubCmdID);
+	logV("cocos2d-x GameServer main : %d, sub : %d   size %d \n", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
+	logF("cocos2d-x GameServer main : %d, sub : %d   size %d \n", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
 
 
 	int wKindID = ((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->wKindID;
@@ -74,9 +76,6 @@ void NetDataCommand::executeGame(NetData netData)
 
 			netData.readDWORD();
 			errMessage =  netData.readString(netData.wDataSize);
-
-			LogFile("1, 101, game connect failed");
-			logV("1, 101, game connect failed");
 			((TCPSocketService*)getService(TCPSocketService::GAME))->closeMySocket();
 
 			//停掉网络主动监测与心跳
@@ -94,12 +93,25 @@ void NetDataCommand::executeGame(NetData netData)
 			break;
 
 			case 102:	//游戏服务器登录成功
-
-				LogFile("1, 102, game connect success");
-				logV("1, 102, game connect success");
 				blueSkyDispatchEvent(EventType::GAMESERVER_LOGIN_SUCSS);
 
 				break;
+
+			case 103:  //不能进同一个桌子
+				((TCPSocketService*)getService(TCPSocketService::GAME))->closeMySocket();
+
+				//停掉网络主动监测与心跳
+				if (getcontainer()->isScheduled(schedule_selector(ConnectGameServiceCommand::checkNetWorks)))
+				{
+					getcontainer()->unschedule(schedule_selector(ConnectGameServiceCommand::checkNetWorks));
+				}
+
+				if (getcontainer()->isScheduled(schedule_selector(ConnectGameServiceCommand::heartPacket)))
+				{
+					getcontainer()->unschedule(schedule_selector(ConnectGameServiceCommand::heartPacket));
+				}
+				break;
+
 		}
 	}
 	else if (netData.command.wMainCmdID == 3)
@@ -119,8 +131,6 @@ void NetDataCommand::executeGame(NetData netData)
 			break;
 
 		case 104:    //比赛结算用户信息
-			LogFile("3, 104, gameover jiesuan info");
-			logV("cocos2d-x 3, 104, gameOver yonghu info");
 			getMatchUserScore(netData);
 			break;
 
@@ -144,6 +154,19 @@ void NetDataCommand::executeGame(NetData netData)
 			break;
 		}
 	}
+	else if (netData.command.wMainCmdID == 4)
+	{
+		switch (netData.command.wSubCmdID)
+		{
+		case 101://4人好友场主建者退出桌子
+			getTableInfo(netData);
+			break;
+
+		case 102:
+			blueSkyDispatchEvent(EventType::FRIEND_FIELD_QUIT);
+			break;
+		}
+	}
 	else if (netData.command.wMainCmdID == 200)
 	{
 		if (wKindID == 2)
@@ -151,8 +174,6 @@ void NetDataCommand::executeGame(NetData netData)
 			switch (netData.command.wSubCmdID)
 			{
 			case 105://游戏结束
-				LogFile("200, 105, game over");
-				logV("cocos2d-x 200, 105, gameOver");
 				gameOver(netData);
 				break;
 			case 101:
@@ -266,8 +287,10 @@ void NetDataCommand::executeLogin(NetData netData)
 	char temp[512];
 	sprintf(temp, "LoginServer main: %d,  sub: %d    \n", netData.command.wMainCmdID, netData.command.wSubCmdID);
 	txtLogin->setString(temp);
-	logV("LoginServer main: %d,  sub: %d    \n", netData.command.wMainCmdID, netData.command.wSubCmdID);
 #endif
+
+	logV("LoginServer main: %d,  sub: %d   size %d \n", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
+	logF("LoginServer main: %d,  sub: %d   size %d \n", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
 
 	if (netData.command.wMainCmdID == MDM_GP_LOGON)
 	{
@@ -390,6 +413,10 @@ void NetDataCommand::executeLogin(NetData netData)
 
 		case 13:
 			getFriendPush(netData);
+			break;
+
+		case 16:
+			getFriendFieldInvite(netData);
 			break;
 		default:
 			break;
@@ -522,11 +549,24 @@ void NetDataCommand::getSystemMessage(NetData netData)  //1000, 1,     //
 //3, 103, game fail
 void NetDataCommand::getGameFail(NetData netData)
 {
-	unsigned int errorCode = netData.readInt32();
-	string errMsg = netData.readString(256);
-	LogFile("getGameFailed 3, 103, id %d", errorCode);
-	log("cocos2d-x errorCode is %d ", errorCode);
-	log("cocos2d-x errorMsg %s", errMsg.c_str());
+	//unsigned int errorCode = netData.readInt32();
+
+	((TCPSocketService*)getService(TCPSocketService::GAME))->closeMySocket();
+
+	//停掉网络主动监测与心跳
+	if (getcontainer()->isScheduled(schedule_selector(ConnectGameServiceCommand::checkNetWorks)))
+	{
+		getcontainer()->unschedule(schedule_selector(ConnectGameServiceCommand::checkNetWorks));
+	}
+
+	if (getcontainer()->isScheduled(schedule_selector(ConnectGameServiceCommand::heartPacket)))
+	{
+		getcontainer()->unschedule(schedule_selector(ConnectGameServiceCommand::heartPacket));
+	}
+
+	//string errMsg = netData.readString(256);
+//	logF("getGameFailed 3, 103, id %d", errorCode);
+
 }
 
 //3, 104 用户分数
@@ -592,9 +632,6 @@ void NetDataCommand::getMatchChangLun(NetData netData)
 	DATA->wMatchAllChangci = netData.readWORD();
 	DATA->wMatchPlayer = netData.readWORD();   //当前的人数
 	DATA->wMatchNextPlayerCount = netData.readWORD();   //下一轮的人数
-	logV("!!!!!!!! DATA->wMatchNowlunci %d, DATA->wMatchNowChangci %d,", DATA->wMatchNowLuanci, DATA->wMatchNowChangci);
-	LogFile("lunci %d, Changci %d,", DATA->wMatchNowLuanci, DATA->wMatchNowChangci);
-
 }
 
 //7. 410  比赛场是否淘汰
@@ -606,7 +643,6 @@ void NetDataCommand::getMatchPass(NetData netData)
 	if (DATA->bIsJinji == 0)  //淘汰
 	{
 		blueSkyDispatchEvent(10507);
-		LogFile("taotai");
 	}
 	
 }
@@ -771,7 +807,7 @@ void NetDataCommand::insureSuccess(NetData netData)
 */
 void NetDataCommand::getZuanShiInfo(NetData netData)
 {
-	unsigned long zuanShiNum = netData.readDWORD();
+	DWORD zuanShiNum = netData.readDWORD();
 	int zuanShiAdd = zuanShiNum - DATA->myBaseData.rmb;
 	DATA->myBaseData.rmb = zuanShiNum;
 	blueSkyDispatchEvent(EventType::INSURESUCCESS);
@@ -804,7 +840,6 @@ void NetDataCommand::getGamblingInfo(NetData netData)
 	DATA->diamondNum = gamblingReward->diamondNum;  //总钻石
 
 	blueSkyDispatchEvent(EventType::GET_GAMBLING_REWARD, gamblingReward);
-
 
 }
 
@@ -850,7 +885,6 @@ void NetDataCommand::getMatchNumInfo(NetData netData)
 	pokerGameModel->num_info.dwWaitting = netData.readDWORD();
 	pokerGameModel->num_info.dwTotal = netData.readDWORD();
 	pokerGameModel->num_info.dwMatchTotal = netData.readDWORD();
-	LogFile("match people Join  %d", pokerGameModel->num_info.dwTotal);
 	blueSkyDispatchEvent(EventType::MATCH_NUM);
 }
 
@@ -860,7 +894,6 @@ void NetDataCommand::getMatchStates(NetData netData)
 	BYTE* bStates = new BYTE;
 	*bStates = netData.readByte();
 	blueSkyDispatchEvent(EventType::MATCH_STATES, bStates);
-	LogFile("7, 406, gameStates %d", *bStates);
 }
 
 
@@ -890,7 +923,9 @@ void NetDataCommand::getDeskInfo(NetData netData)
 	result->cbUserStatus = netData.readByte();
 
 	//上座，准备
-	if (result->cbUserStatus == US_SIT || result->cbUserStatus == US_READY)
+	if (result->cbUserStatus == US_SIT || result->cbUserStatus == US_READY ||
+		result->cbUserStatus == US_FREE || result->cbUserStatus == US_OFFLINE
+		)
 	{
 		blueSkyDispatchEvent(EventType::ON_DESK, result);
 	}
@@ -898,7 +933,7 @@ void NetDataCommand::getDeskInfo(NetData netData)
 	//离桌
 	if (result->cbUserStatus == 1)
 	{
-
+		logP
 	}
 }
 
@@ -920,6 +955,7 @@ void NetDataCommand::getInDeskPlayerInfo(NetData netData)
 	result->lScore = netData.readUInt64();
 	result->lGrade = netData.readUInt64();
 	result->lInsure = netData.readUInt64();
+
 	result->dwWinCount = netData.readDWORD();
 	result->dwLostCount = netData.readDWORD();
 	result->dwDrawCount = netData.readDWORD();
@@ -927,7 +963,6 @@ void NetDataCommand::getInDeskPlayerInfo(NetData netData)
 	result->dwUserMedal = netData.readDWORD();
 	result->dwExperience = netData.readDWORD();
 	result->lLoveLiness = netData.readDWORD();
-
 	result->nick1 = netData.readWORD();
 	result->nick2 = netData.readWORD();
 	result->szNickName = netData.readString(result->nick1);
@@ -1347,7 +1382,36 @@ void NetDataCommand::getFriendPush(NetData netData)
 	//blueSkyDispatchEvent(EventType::FRIEND_SHUREN);
 }
 
+void NetDataCommand::getFriendFieldInvite(NetData netData)
+{
+	CMD_SUB_C_INVITE_ENTER_GAME*  friendInvite = new CMD_SUB_C_INVITE_ENTER_GAME();
+	friendInvite->dwUserID = netData.readDWORD();
+	friendInvite->dwTargetID = netData.readDWORD();
+	friendInvite->wGameID = netData.readWORD();
+	friendInvite->wTableID = netData.readWORD();
+	friendInvite->wChairID = netData.readWORD();
+	friendInvite->wIsFriend = netData.readWORD();
+	friendInvite->strName = netData.readString(64);
+	ViewPopup*  popup = ViewPopup::create(ViewPopup::popupFriendInvite, friendInvite);
+	VIEW->mainScene->addChild(popup, 1001);
+}
+
 void NetDataCommand::getBroadCastDaoju(NetData netData)
 {
+
+}
+
+void NetDataCommand::getTableInfo(NetData netData)
+{
+	CMD_GR_TableStatus tables;
+	tables.wTableID = netData.readWORD();
+	tables.cbTableLock = netData.readByte();
+	tables.cbPlayStatus = netData.readByte();
+	if (tables.cbPlayStatus == 0)
+	{
+	//	
+	}
+
+
 
 }

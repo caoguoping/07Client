@@ -86,6 +86,7 @@ using namespace std;
 #define WScreen (Director::getInstance()->getWinSize().width)
 
 
+#define DispatchEvent(type, data)   BlueSkyRegister::getInstance()->blueSkyDispatchEvent(type, data);
 
 
 #define SYSMSG_TAGBEGIN   70000    //sysMsg tag 开始
@@ -125,22 +126,29 @@ public:
     
 };
 
-#define LogFile( format,  ... )  Tools::logFile(format,   ##__VA_ARGS__); 
+
 #define  MYFileInfo(mainCmd, subCmd) // 	sprintf(tempTemp, "%s %s:%d  main %d sub %d\n", __FILE__, __FUNCTION__, __LINE__, mainCmd, subCmd);
 #define  MyWriteFile  //Tools::myWriteFile;
+
+
+
 
 #define PRINT_LOG 1
 #if(PRINT_LOG == 1)
 
 //打印过程
 #define logP log("cocos2d-x %s %s %d", __FILE__, __FUNCTION__, __LINE__);	
-//打印其他
+//打印内容
 #define logV log
+//打印时间
 #define logT char temp[64]; Tools::getCurrentTime(temp); log("cocos2d-x %s %s", temp, __FUNCTION__);
+//写文件
+#define logF( format,  ... )  Tools::logFile(format,   ##__VA_ARGS__); 
 #else
 #define logP //
 #define logV //
 #define logT //
+#define logF //
 #endif
 
 

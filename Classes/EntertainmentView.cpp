@@ -25,6 +25,7 @@ EntertainmentView::~EntertainmentView()
 
 void EntertainmentView::initView()
 {
+	SEND->sendFriendReq(DATA->myBaseData.dwUserID);
 	rootNode = CSLoader::createNode("entertainment.csb");
 	rootNode->setPosition(WScreen * 0.5, HScreen * 0.5);
 	this->addChild(rootNode);
@@ -34,6 +35,7 @@ void EntertainmentView::initView()
 
 	UIGet_Button("Button_1", rootNode, btn1)
 		UIGet_Button("Button_2", rootNode, btn2)
+		UIGet_Button("Button_3", rootNode, btn3)
 
 		//top
 		Node*  topNode;
@@ -67,8 +69,10 @@ void EntertainmentView::initView()
 
 		btn1->setTag(1);  //ºÃÓÑ³¡
 	btn2->setTag(2);
+	btn3->setTag(3);
 	UIClick(btn1, EntertainmentView::clickPlay)
 		UIClick(btn2, EntertainmentView::clickPlay)
+		UIClick(btn3, EntertainmentView::clickPlay)
 
 
 
@@ -90,12 +94,8 @@ void EntertainmentView::clickPlay(Ref* pSender)
 		else
 		{
 			DATA->bGameCate = DataManager::E_GameFriend;
-			//request friend list
-			SEND->sendFriendReq(DATA->myBaseData.dwUserID);
-
 			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(0));
 			((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 0;
-			
 			blueSkyDispatchEvent(EventType::FRIEND_PLAY);
 		}
 		break;
@@ -107,6 +107,20 @@ void EntertainmentView::clickPlay(Ref* pSender)
 		else
 		{
 			DATA->bGameCate = DataManager::E_GameRandZhupai;
+			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(1));
+			((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 1;
+
+		}
+		break;
+
+	case 3:
+		if (golds < 2000)
+		{
+			blueSkyDispatchEvent(EventType::ALERT, new AlertVO(0, "warning", "warning2", 30001, -1));
+		}
+		else
+		{
+			DATA->bGameCate = DataManager::E_GameTeam;
 			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(1));
 			((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 1;
 

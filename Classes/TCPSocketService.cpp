@@ -78,6 +78,12 @@ void TCPSocketService::closeMySocket()
 //发送函数
 unsigned short TCPSocketService::SendData(unsigned short wMainCmdID, unsigned short wSubCmdID, void * pData, unsigned short wDataSize)
 {
+	if (wMainCmdID != 0)
+	{
+		logV("send main %d, sub %d, size %d", wMainCmdID, wSubCmdID, wDataSize);
+		logF("send main %d, sub %d, size %d", wMainCmdID, wSubCmdID, wDataSize);
+	}
+
 	//效验大小
 	if (wDataSize > SOCKET_TCP_PACKET) return false;
 
@@ -199,10 +205,9 @@ unsigned char TCPSocketService::MapRecvByte(unsigned char const cbData)
 }
 
 //发送数据
-unsigned long TCPSocketService::SendDataBuffer(void * pBuffer, unsigned short wSendSize)
+bool TCPSocketService::SendDataBuffer(void * pBuffer, unsigned short wSendSize)
 {
 	//效验参数
-//	assert(wSendSize != 0);
 	if (wSendSize == 0)
 	{
 		return false;
@@ -213,7 +218,6 @@ unsigned long TCPSocketService::SendDataBuffer(void * pBuffer, unsigned short wS
 	while (wSended < wSendSize)
 	{
 		int iErrorCode = send(m_hSocket, (char *)pBuffer + wSended, wSendSize - wSended, 0);
-		//int i = WSAGetLastError();
 		if (iErrorCode == -1)
 		{
 			return false;

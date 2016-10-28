@@ -65,14 +65,13 @@ void InDeskService::onEvent(int i, void* data)
 			}
 			if (DATA->bGameCate == DataManager::E_GameCateMatch)
 			{
-				blueSkyDispatchEvent(EventType::SHOW_PLAYER_ON_DESK);
+				blueSkyDispatchEvent(EventType::SHOW_PLAYER_ON_DESK_DATA, data);
 			}
 			
 		}
-		if (DATA->bGameCate == DataManager::E_GameCateNormal ||
-			DATA->bGameCate == DataManager::E_GameRandZhupai)
+		if (DATA->bGameCate != DataManager::E_GameCateMatch)
 		{
-			blueSkyDispatchEvent(EventType::SHOW_PLAYER_ON_DESK);
+			blueSkyDispatchEvent(EventType::SHOW_PLAYER_ON_DESK_DATA, data);
 		}
 		break;
 	case EventType::BACK_TO_HALL:

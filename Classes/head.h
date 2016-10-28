@@ -718,6 +718,9 @@ struct CMD_GP_GameAccounts
 	char szPassword[66];
 	char szMachineID[66];
 	unsigned short wKindID;
+	WORD  wTable;
+	WORD  wChair;
+
 };
 //ÆðÁ¢ÇëÇó
 struct CMD_GR_UserStandUp

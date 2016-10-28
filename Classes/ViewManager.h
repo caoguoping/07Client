@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include "SGTools.h"
+#include "ViewPopup.h"
 
 USING_NS_CC;
 
@@ -24,6 +25,7 @@ public:
 	Scene*  mainScene;   //主场景
 	int nowViewTag = eViewMain;  //当前的界面标识
 	//Node*  mViews[eViewMax];
+
 
 public:
 	static ViewManager * getInstance();

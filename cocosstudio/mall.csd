@@ -6,10 +6,10 @@
       <ObjectData Name="Node" Tag="1104" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Image_1" ActionTag="-237574965" Tag="1107" IconVisible="False" LeftMargin="-481.3876" RightMargin="-478.6124" TopMargin="-275.5508" BottomMargin="-264.4492" TouchEnable="True" LeftEage="316" RightEage="316" TopEage="178" BottomEage="178" Scale9OriginX="316" Scale9OriginY="178" Scale9Width="328" Scale9Height="184" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_1" ActionTag="-237574965" Tag="1107" IconVisible="False" LeftMargin="-480.0000" RightMargin="-480.0000" TopMargin="-270.0000" BottomMargin="-270.0000" TouchEnable="True" LeftEage="316" RightEage="316" TopEage="178" BottomEage="178" Scale9OriginX="316" Scale9OriginY="178" Scale9Width="328" Scale9Height="184" ctype="ImageViewObjectData">
             <Size X="960.0000" Y="540.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-1.3876" Y="5.5508" />
+            <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

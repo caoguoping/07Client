@@ -58,7 +58,7 @@ public:
 	unsigned short CrevasseBuffer(unsigned char pcbDataBuffer[], unsigned short wDataSize);									//解密数据
 	unsigned char MapSendByte(unsigned char const cbData);																	//发送映射
 	unsigned char MapRecvByte(unsigned char const cbData);
-	unsigned long SendDataBuffer(void * pBuffer, unsigned short wSendSize);													//发送数据
+	bool SendDataBuffer(void * pBuffer, unsigned short wSendSize);													//发送数据
 	bool OnRecvPacket();	//接收数据
 	void checkNetWorks(float dt);     //检测是否断线
 	void callNotConnect(Ref* psender);

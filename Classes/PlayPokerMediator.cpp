@@ -66,7 +66,7 @@ void PlayPokerMediator::showFriendButtons(bool isShow)
 		lookTableBtn->setVisible(true);
 		chatBtn->setVisible(true);
 		imgJPTip->setVisible(true);
-		zhunbei1->setVisible(true);
+		//zhunbei1->setVisible(true);
 
 	}
 	else
@@ -87,9 +87,6 @@ void PlayPokerMediator::showFriendButtons(bool isShow)
 
 void PlayPokerMediator::readyPlay()
 {
-	sendReadyMsg();
-
-
 	//划牌触摸
 	playPokerView->imgHuaPai = ImageView::create("touchLayer.png");
 	LayerManager->myPokerLayer->addChild(playPokerView->imgHuaPai, 1000);
@@ -263,7 +260,7 @@ void PlayPokerMediator::OnRegister()
 
 	playPokerView->viewInit();
 
-	if (DataManager::E_GameFriend == DATA->bGameCate)
+	if (DataManager::E_GameTeam == DATA->bGameCate || DATA->bGameCate == DataManager::E_GameFriend)
 	{
 		playPokerView->showFriendInvites();
 		showFriendButtons(false);
@@ -272,6 +269,7 @@ void PlayPokerMediator::OnRegister()
 	{
 		readyPlay();
 	}
+	sendReadyMsg();
 
 }
 
@@ -380,12 +378,57 @@ void PlayPokerMediator::handleFriendPlay()
 
 }
 
+void PlayPokerMediator::showPlayerOnDeskHandle()
+{
+	nowBeiLv = 1;
+	playPokerView->showBeiLv(nowBeiLv);
+	fanHuiBtn->setVisible(true);
+	playPokerView->hideAllFace();
+	playPokerView->hideAllName();
+	playPokerView->hideAllPokerNum();
+	showPlayerOnDesk();
+	playPokerView->hideClock();
+	for (int j = 0; j < 4; j++)
+	{
+		showBuchu(j, false, true);
+	}
+	//去除出牌按钮显示
+	isOrNotMyTurn(false);
+	paiFenNode->setPosition(Vec2(180, 502));
+	if (mJoinInPlayer == 3)
+	{
+		playPokerView->showPiPei(false);
+	}
+	else
+	{
+		playPokerView->showPiPei(true);
+	}
+	mJoinInPlayer++;
+}
+
 void PlayPokerMediator::showPlayerOnDeskHandle(void* data)
 {
+	OnDeskPlayerInfo deskInfo = *(OnDeskPlayerInfo*)data;
 	logV("mJoinPlayer %d", mJoinInPlayer);
 	if (mJoinInPlayer == 0)
 	{
-
+		if (DATA->bGameCate == DataManager::E_GameFriend ||
+			DATA->bGameCate == DataManager::E_GameTeam
+			
+			)
+		{
+			DATA->wFriendFieldTableId = deskInfo.wTableID;
+			DATA->wFriendFieldChairId = deskInfo.wChairID;
+		}
+	}
+	else
+	{
+		if (DATA->bGameCate == DataManager::E_GameFriend ||
+			DATA->bGameCate == DataManager::E_GameTeam )
+		{
+			int clientChairId = DATAPlayerIndesk->chair[deskInfo.wChairID % 4];
+			playPokerView->hideFriendInvite(clientChairId);
+		}
 	}
 
 	nowBeiLv = 1;
@@ -413,6 +456,17 @@ void PlayPokerMediator::showPlayerOnDeskHandle(void* data)
 	if (mJoinInPlayer == 3)
 	{
 		playPokerView->showPiPei(false);
+		if (DataManager::E_GameFriendPassive == DATA->bGameCate ||
+			DataManager::E_GameFriend == DATA->bGameCate ||
+			DATA->bGameCate == DataManager::E_GameTeam ||
+			DATA->bGameCate == DataManager::E_GameTeamPassive
+
+			)
+		{
+			playPokerView->imgInviteBg->setVisible(false);
+			showFriendButtons(true);
+			readyPlay();
+		}
 	}
 	else
 	{
@@ -434,6 +488,15 @@ void PlayPokerMediator::OnDeskHandle(void* data)
 			if (DATAPlayerIndesk->DeskPlayerInfo[i].dwUserID == onDeskResult.dwUserID)
 			{
 				DATAPlayerIndesk->DeskPlayerInfo[i].isClear = true;
+
+				if (DATA->bGameCate == DataManager::E_GameTeamPassive)
+				{
+					if (DATAPlayerIndesk->getServiceChairID(2) == i)  //对家跑了
+					{
+						clickfanHuiBtnHander();
+						return;
+					}
+				}
 				showPlayerOnDesk();
 				break;
 			}
@@ -455,7 +518,9 @@ void PlayPokerMediator::sendPokerkHandle()
 	//发牌后取消返回按钮显示
 	fanHuiBtn->setVisible(false);
 
-	if (DATA->bGameCate == DataManager::E_GameCateNormal)
+	if (DATA->bGameCate != DataManager::E_GameCateMatch &&
+		DATA->bGameCate != DataManager::E_GameRandZhupai
+		)
 	{
 		delaySendPokerHandle();
 		return;
@@ -547,6 +612,7 @@ void PlayPokerMediator::delaySendPokerHandle()
 	if (DATA->bGameCate == DataManager::E_GameCateMatch)
 	{
 		logV("  cocos2d-x match send poker now!  ");
+		logF("  cocos2d-x match send poker now!  ");
 		playPokerView->showLunChang();
 		playPokerView->hideAllFace();
 		playPokerView->hideAllName();
@@ -565,7 +631,7 @@ void PlayPokerMediator::delaySendPokerHandle()
 	else
 	{
 		logV("cocos2d-x send poker now!  ");
-		LogFile("\n\n***************  normal  send poker now!  ********\n\n");
+		logF("cocos2d-x send poker now!  ");
 	}
 
 	//发牌音效
@@ -617,7 +683,12 @@ void PlayPokerMediator::delaySendPokerHandle()
 			playPokerView->startClock(0);
 		}
 	}
-	else if (DATA->bGameCate == DataManager::E_GameCateNormal )
+	else if (DATA->bGameCate == DataManager::E_GameCateNormal ||
+		DATA->bGameCate == DataManager::E_GameFriendPassive ||
+		DATA->bGameCate == DataManager::E_GameFriend ||
+		DATA->bGameCate == DataManager::E_GameTeam ||
+		DATA->bGameCate == DataManager::E_GameTeamPassive
+		)
 	{
 		if (playerInDeskModel->getServiceChairID(0) % 2 == 0)
 		{
@@ -928,8 +999,12 @@ void PlayPokerMediator::onEvent(int i, void* data)
 		handleFriendPlay();
 		break;
 
-	case EventType::SHOW_PLAYER_ON_DESK:  //桌子进来一位玩家
+	case EventType::SHOW_PLAYER_ON_DESK_DATA:  //桌子进来一位玩家
 		showPlayerOnDeskHandle(data);
+		break;
+
+	case EventType::SHOW_PLAYER_ON_DESK:  //桌子进来一位玩家
+		showPlayerOnDeskHandle();
 		break;
 
 		//玩家状态改变
@@ -983,6 +1058,10 @@ void PlayPokerMediator::onEvent(int i, void* data)
 		DATAPlayerIndesk->clean();
 		LayerManager->myPokerLayer->removeAllChildrenWithCleanup(true);
 		removeView(this);
+		break;
+
+	case FRIEND_FIELD_QUIT:
+		clickfanHuiBtnHander();
 		break;
 
 	case EventType::USE_JI_PAI_QI:
@@ -1204,7 +1283,6 @@ void PlayPokerMediator::clickfanHuiBtnHander()
 	((SendDataService*)getService(SendDataService::NAME))->sendLeaveTable(myTable,myChair,true);
 
 	//关闭游戏服务器SOCKET
-	LogFile("playPoker click back ");
 		TCPSocketService*  tcp_game = ((TCPSocketService*)getService(TCPSocketService::GAME));
 	tcp_game->closeMySocket();
 
@@ -1958,12 +2036,10 @@ void PlayPokerMediator::showPlayerOnDesk()
 {
 	PlayPokerView* playPokerView = (PlayPokerView*)getView();
 
-//	if (DATA->bGameCate != DataManager::E_GameCateMatch)
-	{
+
 		playPokerView->hideAllFace();
 		playPokerView->hideAllName();
 		playPokerView->hideAllPokerNum();
-	}
 
 	PlayerInDeskModel *playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
 
@@ -1971,7 +2047,6 @@ void PlayPokerMediator::showPlayerOnDesk()
 	{
 		if (!playerInDeskModel->DeskPlayerInfo[i].isClear)
 		{
-			//logV("playerInDeskModel->chair[i]", playerInDeskModel->chair[i]);
 			playPokerView->showDaiJiFace(playerInDeskModel->chair[i], playerInDeskModel->DeskPlayerInfo[i].wFaceID);
 			playPokerView->showCharacterName(playerInDeskModel->chair[i], playerInDeskModel->DeskPlayerInfo[i].szNickName);
 			if (playerInDeskModel->DeskPlayerInfo[i].cbUserStatus == US_READY ||
@@ -1983,7 +2058,6 @@ void PlayPokerMediator::showPlayerOnDesk()
 				
 			else
 			{
-				//showZhunBei(playerInDeskModel->chair[i], false);
 				showZhunBei(playerInDeskModel->chair[i], true);
 			}
 

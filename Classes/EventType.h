@@ -17,6 +17,7 @@ enum EventType
 	PLAYER_ON_DESK,
 	OTHER_PLAYER_ON_DESK,
 	SHOW_PLAYER_ON_DESK,
+	SHOW_PLAYER_ON_DESK_DATA,
 	REMOVE_TEST_UI,
 	SEND_POKER,                //发牌
 	PAY_TRIBUTE,
@@ -64,6 +65,7 @@ enum EventType
 	FRIEND_OPT_HIM,     //好友操作,对方给自己的操作
 	FRIEND_SEARCH,  //好友搜索
 	FRIEND_PLAY,    //进入好友场
+	FRIEND_FIELD_QUIT,   //好友场主建者逃跑
 
 	
 };

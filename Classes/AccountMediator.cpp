@@ -11,7 +11,7 @@ static DWORD   adwRewards[4] = { 10000, 6000, 2000, 1000 };
 
 AccountMediator::AccountMediator(CMD_S_GameEnd data)
 {
-	if (DATA->bGameCate == DataManager::E_GameCateNormal)
+	if (DATA->bGameCate != DataManager::E_GameCateMatch)
 	{
 		//先获取玩家对应的服务器椅子ID
 		int myChairID, player1ChairID, player2ChairID, player3ChairID = -1;
@@ -123,7 +123,7 @@ void AccountMediator::OnRegister()
 	Size size = Director::getInstance()->getVisibleSize();
 	getView()->rootNode->setPosition(size.width / 2, size.height / 2);
 
-	if (DATA->bGameCate == DataManager::E_GameCateNormal)
+	if (DATA->bGameCate != DataManager::E_GameCateMatch )
 	{
 		//我的游戏结算信息
 		successImage1 = dynamic_cast<Sprite*>(getView()->rootNode->getChildByName("successImage1"));
@@ -270,7 +270,6 @@ void AccountMediator::clickFanHuiBtnHander()
 	((SendDataService*)getService(SendDataService::NAME))->sendLeaveTable(myTable, myChair, true);
 
 	//关闭游戏服务器SOCKET
-	LogFile("Account click back closeSocket");
 	((TCPSocketService*)getService(TCPSocketService::GAME))->closeMySocket(); 
 
 	//停掉网络主动监测与心跳
@@ -312,7 +311,6 @@ void AccountMediator::clickNextMatch()
 	((SendDataService*)getService(SendDataService::NAME))->sendLeaveTable(myTable, myChair, true);
 
 	//关闭游戏服务器SOCKET
-	LogFile("Account nextMatch closeSocket ");
 		((TCPSocketService*)getService(TCPSocketService::GAME))->closeMySocket();  //test
 	//停掉网络主动监测与心跳
 	if (getcontainer()->isScheduled(schedule_selector(ConnectGameServiceCommand::checkNetWorks)))

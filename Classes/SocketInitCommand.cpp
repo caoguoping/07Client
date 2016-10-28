@@ -24,9 +24,8 @@ void SocketInitCommand::execute(void* data)
 
  	if (iErrorCode)
 	{
-		LogFile("login Socket %d ", tcp_login->m_hSocket);
-		//tcp_login->m_isSocketOpen = 1;
-		//getcontainer()->schedule(schedule_selector(SocketInitCommand::checkNetWorks2), 30.0f);  //cgp
+		logF("login Socket %d ", tcp_login->m_hSocket);
+		logV("login Socket %d ", tcp_login->m_hSocket);
 		tcp_login->type = 1;
 
 		getcontainer()->schedule(schedule_selector(SocketInitCommand::heartPacket2), 5.0f);  //cgp

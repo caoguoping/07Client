@@ -506,6 +506,20 @@
           </Folder>
         </Folder>
         <Folder Name="bg">
+          <Folder Name="buy_number">
+            <Image Name="num_0.png" />
+            <Image Name="num_1.png" />
+            <Image Name="num_2.png" />
+            <Image Name="num_3.png" />
+            <Image Name="num_4.png" />
+            <Image Name="num_5.png" />
+            <Image Name="num_6.png" />
+            <Image Name="num_7.png" />
+            <Image Name="num_8.png" />
+            <Image Name="num_9.png" />
+            <Image Name="num_point.png" />
+            <Image Name="num_yuan.png" />
+          </Folder>
           <Image Name="already-receive_2.png" />
           <Image Name="anniu-guanbi-down.png" />
           <Image Name="anniu-guanbi-up.png" />
@@ -524,8 +538,10 @@
           <Image Name="button_back-to-lobby_1.png" />
           <Image Name="button_back-to-lobby_2.png" />
           <Image Name="button_cancel_1 (2).png" />
+          <Image Name="button_cancel_1 (3).png" />
           <Image Name="button_cancel_1.png" />
           <Image Name="button_cancel_2 (2).png" />
+          <Image Name="button_cancel_2 (3).png" />
           <Image Name="button_cancel_2.png" />
           <Image Name="button_cancel-all_1.png" />
           <Image Name="button_cancel-all_2.png" />
@@ -537,9 +553,13 @@
           <Image Name="button_diamond-buy_2.png" />
           <Image Name="button_gold-buy_1.png" />
           <Image Name="button_gold-buy_2.png" />
+          <Image Name="button_invite_1.png" />
+          <Image Name="button_invite_2.png" />
           <Image Name="button_ok_1 (2).png" />
+          <Image Name="button_ok_1 (3).png" />
           <Image Name="button_ok_1.png" />
           <Image Name="button_ok_2 (2).png" />
+          <Image Name="button_ok_2 (3).png" />
           <Image Name="button_ok_2.png" />
           <Image Name="button_ok-all_1.png" />
           <Image Name="button_ok-all_2.png" />
@@ -557,6 +577,7 @@
           <Image Name="headshot-big_3.png" />
           <Image Name="headshot-big_4.png" />
           <Image Name="headshot-big_bg.png" />
+          <Image Name="icon_auto.png" />
           <Image Name="icon_bag1.png" />
           <Image Name="icon_bag2.png" />
           <Image Name="icon_card_exp.png" />
@@ -573,6 +594,7 @@
           <Image Name="icon_gold_2.png" />
           <Image Name="icon_gold_3.png" />
           <Image Name="icon_gold_4.png" />
+          <Image Name="icon_gold_5.png" />
           <Image Name="icon_gold_6.png" />
           <Image Name="icon_setting_1.png" />
           <Image Name="icon_setting_2.png" />
@@ -602,7 +624,6 @@
           <Image Name="top_bg.png" />
           <Image Name="touming.png" />
           <Image Name="toumingBig.png" />
-          <Image Name="wood1_bg.png" />
         </Folder>
         <Folder Name="createRole">
           <Folder Name="action">
@@ -733,6 +754,7 @@
           <Image Name="icon_fight_k.png" />
           <Image Name="icon_friend.png" />
           <Image Name="icon_random.png" />
+          <Image Name="icon_team.png" />
           <Image Name="invite_bg.png" />
           <Image Name="invite_inner_bg.png" />
           <Image Name="name_frame_1.png" />
@@ -1621,6 +1643,7 @@
         <Project Name="fastStart.csd" Type="Node" />
         <Project Name="feiji.csd" Type="Node" />
         <Project Name="Fen.csd" Type="Node" />
+        <Project Name="friendInvite.csd" Type="Node" />
         <Project Name="Friends.csd" Type="Node" />
         <Project Name="FriendsCell.csd" Type="Node" />
         <Project Name="FriendsFind.csd" Type="Node" />

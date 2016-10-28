@@ -24,6 +24,7 @@ public:
 	事件响应函数
 	*/
 	void onEvent(int i, void* data);
+	void handleOndeskInfo(void*  data);
 	Layer* getLayer();
 
 

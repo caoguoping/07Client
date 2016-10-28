@@ -33,15 +33,28 @@ void InviteMediator::onRemove()
 
 }
 
+void InviteMediator::handleOndeskInfo(void* data)
+{
+	OnDeskPlayerInfo  onDeskInfo = *(OnDeskPlayerInfo*)data;
+	int clientChairId = DATAPlayerIndesk->chair[onDeskInfo.wChairID % 4];
+
+
+}
+
 /*
 事件响应函数
 */
 void InviteMediator::onEvent(int i, void* data)
 {
+
 	switch (i)
 	{
 	case 17000:
 		clickCloseBtnHander();
+		break;
+
+	case OTHER_PLAYER_ON_DESK:
+		handleOndeskInfo(data);
 		break;
 	}
 }

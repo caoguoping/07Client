@@ -34,6 +34,14 @@ void ConnectGameServiceCommand::execute(void* data)
 		{
 			port = atoi(UTF8::getInstance()->getString("net", "RandZhupaiPort").c_str());
 		}
+		else if (DATA->bGameCate == DataManager::E_GameFriend || DATA->bGameCate == DataManager::E_GameFriendPassive)
+		{
+			port = atoi(UTF8::getInstance()->getString("net", "FriendPort").c_str());
+		}
+		else if (DATA->bGameCate == DataManager::E_GameTeam || DATA->bGameCate == DataManager::E_GameTeamPassive)
+		{
+			port = atoi(UTF8::getInstance()->getString("net", "TeamPort").c_str());
+		}
 		else
 		{
 			i = roomListModel->realSn[j];
@@ -49,12 +57,11 @@ void ConnectGameServiceCommand::execute(void* data)
 	tcp_game->eventList.clear();
 	tcp_game->lastRcvTime = time(NULL);
 	tcp_game->m_wRecvSize = 0;
-	//memset(tcp_game->m_cbRecvBuf, 0, 16384);
-
 
 	if (iErrorCode)
 	{
-		LogFile("cocos2d-x socket game connect success m_hSocket %d ", tcp_game->m_hSocket);
+		logF("cocos2d-x socket game connect success m_hSocket %d ", tcp_game->m_hSocket);
+		logV("cocos2d-x socket game connect success m_hSocket %d ", tcp_game->m_hSocket);
 
 
 		getcontainer()->schedule(schedule_selector(ConnectGameServiceCommand::checkNetWorks), 30.0f);
@@ -65,11 +72,19 @@ void ConnectGameServiceCommand::execute(void* data)
 		std::thread recvDate(&ConnectGameServiceCommand::recvDate, this);
 		recvDate.detach();
 
-		unsigned int dwUserID = DATA->myBaseData.dwUserID;
+		DWORD dwUserID = DATA->myBaseData.dwUserID;
 		const char* szLogonPass = DATA->md5Passwd.data();
 		/*unsigned short wKindID = ((RoomListModel*)getModel(RoomListModel::NAME))->roomList[i].wKindID;*/
 		unsigned short wKindID = 2;   //only guandan 
-		((SendDataService *)getService(SendDataService::NAME))->sendGameServerLogin(dwUserID, szLogonPass, wKindID);
+		if (DATA->bGameCate == DataManager::E_GameFriendPassive || DATA->bGameCate == DataManager::E_GameTeamPassive)
+		{
+			((SendDataService *)getService(SendDataService::NAME))->sendGameServerLogin(dwUserID, szLogonPass, wKindID, DATA->wFriendPassiveTableId, DATA->wFriendPassiveChairId);
+		}
+		else
+		{
+			((SendDataService *)getService(SendDataService::NAME))->sendGameServerLogin(dwUserID, szLogonPass, wKindID);
+		}
+		
 	}
 
 	else
@@ -83,7 +98,7 @@ void ConnectGameServiceCommand::callNotConnect(Ref* psender)
 	Node*  img = static_cast<Node*>(psender);
 	img->getParent()->removeFromParentAndCleanup(true);
 	
-	LogFile("time out 30s and close mysocket");
+	logF("time out 30s and close mysocket");
 	logV("time out 30s and close mysocket");
 
 	((TCPSocketService*)getService(TCPSocketService::GAME))->closeMySocket();
