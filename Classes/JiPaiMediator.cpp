@@ -61,6 +61,9 @@ void JiPaiMediator::onEvent(int i, void* data)
 	case 12201:
 		getView()->rootNode->setVisible(true);
 		break;
+	case 12202:
+		getView()->rootNode->setVisible(false);
+		break;
 
 	case EventType::PUSH_JIPAIQI:
 		showPushPoker();

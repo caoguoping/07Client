@@ -287,6 +287,9 @@ public:
 		E_GameBlood,
 	}E_GameCate;
 
+	BYTE bGameCate;    //哪一类游戏 0，normal,  1,  比赛，..., 7, 血战   // 其他 E_GameCate
+	BYTE bGameCateSub;    //同类游戏的第几个按钮  0，1，2按顺序
+
 	BYTE jipai[18];     //记牌器数据
 	WORD chouJiangTime;   //抽奖次数
 	WORD diamondNum;     //抽一次需要的钻石
@@ -294,7 +297,7 @@ public:
 	CMD_GP_CupInfo  myRankInfo;    //排行榜信息
 
 	DWORD dwGameBtnId;   //点击的是哪个游戏按钮  
-	BYTE bGameCate;    //哪一类游戏 0， 比赛，   1， 其他
+
 	WORD wMatchAllChangci;   //比赛总场次    3轮  2场
 	WORD wMatchAllLunci;     //当前场次的总轮次（两轮）
 	WORD wMatchNowChangci;   //当前比赛场次    1， 2， 3
@@ -309,7 +312,8 @@ public:
 	WORD    wBestRank;      //历史最佳排名
 	CMD_S_GameEnd   GameEndData;
 
-	BYTE  bMatchItem = 0;    //比赛的第几个按钮  0，1，2
+
+
 
 	WORD wFriendFieldTableId;    //好友场创建者
 	WORD wFriendFieldChairId;

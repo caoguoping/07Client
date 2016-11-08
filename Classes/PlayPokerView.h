@@ -35,8 +35,14 @@ public:
 	void startClock(int deskID, int index = 1);  //deskId : client chairId.
 	void viewInit();
 public:
+
+	Sprite*   spDesk[4];
+	Sprite*    spBg[4];
+
 	//划牌触摸层
 	ImageView*  imgHuaPai;
+
+
 
 	//好友场
 	ImageView*  imgInvitebg[3];   //0, 1, 2, 分别为 左 ，上， 下
@@ -102,19 +108,6 @@ public:
 
 	public:
 	BTN_TOUCH_HANDLE(Button, fanhui_btn, 10601);
-	BTN_TOUCH_HANDLE(Button, liaotian_Btn, 10602);
-	BTN_TOUCH_HANDLE(Button, chupai_Btn, 10603);//
-	BTN_TOUCH_HANDLE(Button, tishi_Btn, 10604);//
-	BTN_TOUCH_HANDLE(Button, buchu_Btn, 10605);//
-	BTN_TOUCH_HANDLE(Button, jingongBtn, 10606);
-	BTN_TOUCH_HANDLE(Button, huangongBtn, 10607);
-	BTN_TOUCH_HANDLE(Button, lookTableBtn, 10608);
-	BTN_TOUCH_HANDLE(Button, tonghuashun_Btn, 10609);//
-	BTN_TOUCH_HANDLE(Button, lichengyipai_Btn, 10610);//
-	BTN_TOUCH_HANDLE(Button, chongxinglipai_Btn, 10611);//
-	BTN_TOUCH_HANDLE(Button, jipaiqi_Btn, 10612);//
-	BTN_TOUCH_HANDLE(Button, tuoguan_Btn, 10613);//
-	BTN_TOUCH_HANDLE(Button, clear_btn, 10614);//
 	BTN_TOUCH_HANDLE(Button, clickMeBtn, 10618);
 	BTN_TOUCH_HANDLE(Button, clickLeftBtn, 10619);
 	BTN_TOUCH_HANDLE(Button, clickTopBtn, 10620);

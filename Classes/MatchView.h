@@ -26,7 +26,7 @@ public:
 
 public:
 
-
+	ImageView*  imgFrame;
 	Button*  btnGoto[3];
 
 	//fastview

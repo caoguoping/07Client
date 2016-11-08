@@ -119,8 +119,8 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="CupActivity.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="closeBtn" ActionTag="-887384901" Tag="1128" IconVisible="False" LeftMargin="-444.7441" RightMargin="368.7441" TopMargin="-262.8962" BottomMargin="221.8962" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="46" Scale9Height="19" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="76.0000" Y="41.0000" />
+          <AbstractNodeData Name="closeBtn" ActionTag="-887384901" Tag="1128" IconVisible="False" LeftMargin="-444.7441" RightMargin="368.7441" TopMargin="-267.8962" BottomMargin="216.8962" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="46" Scale9Height="29" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="76.0000" Y="51.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-406.7441" Y="242.3962" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />

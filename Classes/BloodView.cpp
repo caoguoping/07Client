@@ -19,6 +19,7 @@ BloodView::BloodView()
 BloodView::~BloodView()
 {
 	BTN_REMOVE_TOUCH_EVENTLISTENER(BloodView, closeBtn, 12800);
+	rootNode->stopAllActions();
 	delete rootNode;
 	rootNode = NULL;
 }
@@ -29,51 +30,24 @@ void BloodView::initView()
 	rootNode->setPosition(WScreen * 0.5, HScreen * 0.5);
 	this->addChild(rootNode);
 
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, BloodView, closeBtn, 12800, "Button_close", NULL)
+	cocostudio::timeline::ActionTimeline*  timeLine = CSLoader::createTimeline("blood.csb");
+	timeLine->gotoFrameAndPlay(0, false);
+	rootNode->runAction(timeLine);
 
+	BTN_ADD_TOUCH_EVENTLISTENER(Button, BloodView, closeBtn, 12800, "Button_close", "Image_frame")
+	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, BloodView, imgBg, 12800, "Image_bg", NULL)
 
-	UIGet_Button("Button_1", rootNode, btn1)
-		UIGet_Button("Button_2", rootNode, btn2)
-		UIGet_Button("Button_3", rootNode, btn3)
+		UIGet_ImageView("Image_frame", rootNode, imgFrame)
+		UIGet_Button("Button_1", imgFrame, btn1)
+		UIGet_Button("Button_2", imgFrame, btn2)
+		UIGet_Button("Button_3", imgFrame, btn3)
 
-		//top
-		Node*  topNode;
-	UIGet_Node("FileNode_top", rootNode, topNode)
-		UIGet_Text("Text_gold", topNode, txtGold)
-		UIGet_Text("Text_diamond", topNode, txtDiamond)
-		txtGold->setString(Tools::parseInt2String(DATA->myBaseData.lUserScore));
-	txtDiamond->setString(Tools::parseInt2String(DATA->myBaseData.rmb));
-	Button   *btnAddGold, *btnAddDiamond, *btnSetting;
-	UIGet_Button("Button_addGold", topNode, btnAddGold)
-		UIGet_Button("Button_addDiamond", topNode, btnAddDiamond)
-		UIGet_Button("Button_setting", topNode, btnSetting)
-		btnAddGold->addClickEventListener([&](Ref* psender)
-	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
-		creatView(new ShopView(1), new ShopMediator());
-	}
-	);
-	btnAddDiamond->addClickEventListener([&](Ref* psender)
-	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
-		creatView(new ShopView(0), new ShopMediator());
-	}
-	);
-	btnSetting->addClickEventListener([&](Ref* psender)
-	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
-		creatView(new SetView(), new SetMediator());
-	}
-	);
-
-		btn1->setTag(1);
-	btn2->setTag(2);
-	btn3->setTag(3);
+		btn1->setTag(0);
+	btn2->setTag(1);
+	btn3->setTag(2);
 	UIClick(btn1, BloodView::clickPlay)
 		UIClick(btn2, BloodView::clickPlay)
 		UIClick(btn3, BloodView::clickPlay)
-
-
 
 }
 
@@ -82,10 +56,10 @@ void BloodView::clickPlay(Ref* pSender)
 	Button*  btn = static_cast<Button*>(pSender);
 	int tags = btn->getTag();
 	long long golds = DATA->myBaseData.lUserScore;
-	DATA->bGameCate = DataManager::E_GameCateNormal;
+	DATA->bGameCate = DataManager::E_GameBlood;
 	switch (tags)
 	{
-	case 1:
+	case 0:
 
 		if (golds < 500)
 		{
@@ -93,31 +67,32 @@ void BloodView::clickPlay(Ref* pSender)
 		}
 		else
 		{
-			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(0));
-			((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 0;
+			DATA->bGameCateSub = 0;
+			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE);
 		}
 		break;
-	case 2:
+	case 1:
 		if (golds < 2000)
 		{
 			blueSkyDispatchEvent(EventType::ALERT, new AlertVO(0, "warning", "warning2", 30001, -1));
 		}
 		else
 		{
-			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(1));
-			((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 1;
-
+			DATA->bGameCateSub = 1;
+			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE);
 		}
 		break;
-	case 3:
+	case 2:
 		if (golds < 10000)
 		{
 			blueSkyDispatchEvent(EventType::ALERT, new AlertVO(0, "warning", "warning2", 30001, -1));
 		}
 		else
 		{
-			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(2));
-			((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 2;
+			DATA->bGameCateSub = 2;
+			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE);
+
+
 		}
 		break;
 	default:

@@ -3,7 +3,11 @@ CreateRoleView::CreateRoleView()
 {
 	rootNode = CSLoader::createNode("createRole.csb");
 	addChild(rootNode);
-	//rootNode->setPosition(Vec2(100,100));
+//	rootNode->setScale(0.8f, 0.8f);
+// 	rootNode->runAction(Sequence::create(
+// 		ScaleTo::create(0.2f, 1.03f),
+// 		ScaleTo::create(0.15f, 1.0f),
+// 		nullptr));
 
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, CreateRoleView, character1Btn, 10022, "clickBtn", "character1");
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, CreateRoleView, character2Btn, 10023, "clickBtn", "character2");

@@ -10,8 +10,8 @@ ShopView::ShopView(int id)
 {
 	rootNode = CSLoader::createNode("shop.csb");
 	addChild(rootNode);
-	//rootNode->setScale(0.1f, 0.1f);
-	//rootNode->runAction(Sequence::create(ScaleTo::create(0.2f, 1.03f), ScaleTo::create(0.1f, 1.0f), nullptr));
+	rootNode->setScale(0.8f, 0.8f);
+	rootNode->runAction(Sequence::create(ScaleTo::create(0.2f, 1.03f), ScaleTo::create(0.15f, 1.0f), nullptr));
 	shopID = id;
 	BTN_ADD_TOUCH_EVENTLISTENER(CheckBox, ShopView, zhuanShiBtn, 10801, "zhuanShiBtn", NULL)
 	BTN_ADD_TOUCH_EVENTLISTENER(CheckBox, ShopView, goldBtn, 10802, "goldBtn", NULL)

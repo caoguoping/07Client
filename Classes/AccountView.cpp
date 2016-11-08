@@ -1,76 +1,150 @@
 #include "AccountView.h"
 #include "DataManager.h"
 #include "SGTools.h"
+#include "SendDataService.h"
+#include "TCPSocketService.h"
+#include "ConnectGameServiceCommand.h"
+#include "LobbyView.h"
+#include "LobbyMediator.h"
+
 AccountView::AccountView()
 {
-	if (DATA->bGameCate != DataManager::E_GameCateMatch)
-	{
-		rootNode = CSLoader::createNode("jieShuan.csb");
-		addChild(rootNode);
-		BTN_ADD_TOUCH_EVENTLISTENER(Button, AccountView, continueBtn, 10502, "continueBtn", NULL);
-	}
-
-	else if (DATA->bGameCate == DataManager::E_GameCateMatch)  //比赛
-	{
-		rootNode = CSLoader::createNode("jieShuan_match.csb");
-		addChild(rootNode);
-		BTN_ADD_TOUCH_EVENTLISTENER(Button, AccountView, nextMatchBtn, 10503, "nextMatchBtn", NULL);
-
-		UIGet_Layout("Panel_win", rootNode, winLayout)
-			UIGet_Layout("Panel_fail", rootNode, loseLayout)
-			UIGet_Text("Text_matchNum", rootNode, txtPeoples)
-			UIGet_Text("Text_matchRank", rootNode, txtRanks)
-			UIGet_Text("Text_matchRankBest", rootNode, txtBestRanks)
-			UIGet_Text("Text_reward", winLayout,txtRewards)
-
-
-	}
-
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, AccountView, fanHuiBtn, 10501, "fanHuiBtn", NULL);
-
-
 
 }
+
 AccountView::~AccountView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(AccountView, fanHuiBtn, 10501);
-
-	//BTN_REMOVE_TOUCH_EVENTLISTENER(AccountView, Image_1, 10501);
-
-	if (DATA->bGameCate != DataManager::E_GameCateMatch)
-	{
-		BTN_REMOVE_TOUCH_EVENTLISTENER(AccountView, continueBtn, 10502);
-	}
-	else if (DATA->bGameCate == DataManager::E_GameCateMatch)
-	{
-		BTN_REMOVE_TOUCH_EVENTLISTENER(AccountView, nextMatchBtn, 10503);
-	}
-
 	delete rootNode;
 	rootNode = NULL;
 }
 
 void AccountView::initView()
 {
-	failActionNode = rootNode->getChildByName("failActionNode");
-	failActionNode->setVisible(false);
 
-	failAction = CSLoader::createTimeline("failAction.csb");
-	rootNode->runAction(failAction);
+	if (DATA->bGameCate != DataManager::E_GameCateMatch)
+	{
+		rootNode = CSLoader::createNode("jieShuan.csb");
+		addChild(rootNode);
 
-	winParticle = dynamic_cast<ParticleSystemQuad*>(rootNode->getChildByName("winParticle"));
-	winParticle->setVisible(false);
-	
-	glodParticle = dynamic_cast<ParticleSystemQuad*>(rootNode->getChildByName("glodParticle"));
-	glodParticle->setVisible(false);
+		UIGet_Button("fanHuiBtn", rootNode, btnBack)
+			UIClick(btnBack, AccountView::clickBtnBack)
+
+		UIGet_Button("continueBtn", rootNode, btnContinue)
+		UIClick(btnContinue, AccountView::clickBtnContinune)
+		if (DATA->bGameCate == DataManager::E_GameBlood)
+		{
+			if (DATA->GameEndData.bIsBlood)  //血战打过
+			{
+				btnContinue->setVisible(false);
+				btnBack->setPositionX(0);
+			}
+			else
+			{
+				btnBack->setVisible(false);
+				btnContinue->setPositionX(0);
+			}
+		}
+	}
+
+	else if (DATA->bGameCate == DataManager::E_GameCateMatch)  //比赛
+	{
+		rootNode = CSLoader::createNode("jieShuan_match.csb");
+		addChild(rootNode);
+
+		UIGet_Button("fanHuiBtn", rootNode, btnBack)
+			UIClick(btnBack, AccountView::clickBtnBack)
+
+		UIGet_Button("nextMatchBtn", rootNode, btnNextMatch)
+			UIClick(btnNextMatch, AccountView::clickBtnNextMatch)
+			UIGet_Layout("Panel_win", rootNode, winLayout)
+			UIGet_Layout("Panel_fail", rootNode, loseLayout)
+			UIGet_Text("Text_matchNum", rootNode, txtPeoples)
+			UIGet_Text("Text_matchRank", rootNode, txtRanks)
+			UIGet_Text("Text_matchRankBest", rootNode, txtBestRanks)
+			UIGet_Text("Text_reward", winLayout, txtRewards)
+	}
+
+}
+
+void AccountView::clickBtnBack(Ref* pSender)
+{
+	//发送离开桌子消息
+	PlayerInDeskModel *playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
+	int myChair = playerInDeskModel->getServiceChairID(0);
+	int myTable = playerInDeskModel->DeskPlayerInfo[myChair].wTableID;
+	((SendDataService*)getService(SendDataService::NAME))->sendLeaveTable(myTable, myChair, true);
+
+	//关闭游戏服务器SOCKET
+	((TCPSocketService*)getService(TCPSocketService::GAME))->closeMySocket();
+
+	//停掉网络主动监测与心跳
+	if (getcontainer()->isScheduled(schedule_selector(ConnectGameServiceCommand::checkNetWorks)))
+	{
+		getcontainer()->unschedule(schedule_selector(ConnectGameServiceCommand::checkNetWorks));
+	}
+	if (getcontainer()->isScheduled(schedule_selector(ConnectGameServiceCommand::heartPacket)))
+	{
+		getcontainer()->unschedule(schedule_selector(ConnectGameServiceCommand::heartPacket));
+	}
+	//跳转至大厅界面
+	blueSkyDispatchEvent(EventType::BACK_TO_HALL);
+	creatView(new LobbyView(), new LobbyMediator());
+	blueSkyDispatchEvent(10501);
+
+}
+
+void AccountView::clickBtnContinune(Ref* pSender)
+{
+	((GameDataModel*)getModel(GameDataModel::NAME))->player[0].pokerArr = {};
+	((SendDataService *)getService(SendDataService::NAME))->sendReady();
+	blueSkyDispatchEvent(EventType::SHOW_PLAYER_ON_DESK);
+	//跳转至打牌界面
+	blueSkyDispatchEvent(10501);
+
+}
+
+void AccountView::clickBtnNextMatch(Ref* pSender)
+{
+	//发送离开桌子消息
+	PlayerInDeskModel *playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
+	int myChair = playerInDeskModel->getServiceChairID(0);
+	int myTable = playerInDeskModel->DeskPlayerInfo[myChair].wTableID;
+	((SendDataService*)getService(SendDataService::NAME))->sendLeaveTable(myTable, myChair, true);
+
+	//关闭游戏服务器SOCKET
+	((TCPSocketService*)getService(TCPSocketService::GAME))->closeMySocket();  //test
+	//停掉网络主动监测与心跳
+	if (getcontainer()->isScheduled(schedule_selector(ConnectGameServiceCommand::checkNetWorks)))
+	{
+		getcontainer()->unschedule(schedule_selector(ConnectGameServiceCommand::checkNetWorks));
+	}
+
+	if (getcontainer()->isScheduled(schedule_selector(ConnectGameServiceCommand::heartPacket)))
+	{
+		getcontainer()->unschedule(schedule_selector(ConnectGameServiceCommand::heartPacket));
+	}
+
+
+	DATA->bGameCate = DataManager::E_GameCateMatch;
+	creatView(new MatchView(), new MatchMediator());
+	blueSkyDispatchEvent(10501);
+
 }
 
 void AccountView::playAccountAction(bool isSuccess)
 {
+	failActionNode = rootNode->getChildByName("failActionNode");
+	failActionNode->setVisible(false);
+	winParticle = dynamic_cast<ParticleSystemQuad*>(rootNode->getChildByName("winParticle"));
+	winParticle->setVisible(false);
+	glodParticle = dynamic_cast<ParticleSystemQuad*>(rootNode->getChildByName("glodParticle"));
+	glodParticle->setVisible(false);
 	if (!isSuccess)
 	{
 		failActionNode->setVisible(true);
-		failAction->gotoFrameAndPlay(0, 110, false);
+		failAction = CSLoader::createTimeline("failAction.csb");
+		rootNode->runAction(failAction);
+		failAction->gotoFrameAndPlay(0, false);
 	}
 	else
 	{

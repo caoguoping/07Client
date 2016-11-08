@@ -26,7 +26,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/headshot_frame.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_join" ActionTag="1357052279" Tag="212" IconVisible="False" LeftMargin="62.3437" RightMargin="-147.3437" TopMargin="-38.4573" BottomMargin="-37.5427" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="42" Scale9Height="46" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_join" ActionTag="1357052279" Tag="212" IconVisible="False" LeftMargin="62.3407" RightMargin="-147.3407" TopMargin="-38.4595" BottomMargin="-37.5405" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="42" Scale9Height="46" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="85.0000" Y="76.0000" />
             <AnchorPoint ScaleX="0.1348" ScaleY="0.5592" />
             <Position X="73.7987" Y="4.9587" />
@@ -63,8 +63,8 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/headshot_1.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_addr" ActionTag="-1670219658" Tag="890" IconVisible="False" LeftMargin="-60.4626" RightMargin="-50.5374" TopMargin="9.0067" BottomMargin="-29.0067" FontSize="18" LabelText="江苏省南京市" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="111.0000" Y="20.0000" />
+          <AbstractNodeData Name="Text_addr" ActionTag="-1670219658" Tag="890" IconVisible="False" LeftMargin="-60.4626" RightMargin="-50.5374" TopMargin="9.0067" BottomMargin="-29.0067" FontSize="18" LabelText="江苏省南京市" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="112.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-4.9626" Y="-19.0067" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -72,7 +72,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
+            <OutlineColor A="255" R="255" G="255" B="255" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>

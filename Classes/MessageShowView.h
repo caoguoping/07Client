@@ -25,8 +25,9 @@ private:
 	BTN_TOUCH_HANDLE(Button, getBtn, 11903);
 	BTN_TOUCH_HANDLE(Button, closeBtn, 11904);
 	//
-	Text* msgText;
-	Text* msgTextProp;   //道具消息
+	Text* txtGold;
+	Text* txtDiamond;
+	Text* txtProp;   //道具消息
 
 
 };

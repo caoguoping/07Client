@@ -10,10 +10,11 @@ class  LobbyView : public BlueSkyView
 {
 public:
 
+
 	UIDefDelayClick(Button, Task)
 		UIDefDelayClick(Button, Signature)
 		UIDefDelayClick(Button, Setting)
-		UIDefDelayClick(Button, PlayGold)    
+		UIDefDelayClick(Button, PlayGold)
 		UIDefDelayClick(Button, Entertainment)
 		UIDefDelayClick(Button, Match)
 		UIDefDelayClick(Button, Blood)
@@ -24,11 +25,20 @@ public:
 		UIDefDelayClick(Button, Activity)
 		UIDefDelayClick(Button, Package)
 		UIDefDelayClick(Button, Head)
-		UIDefDelayClick(Button, AddWealth)
+		UIDefDelayClick(Button, AddWealth)   //加金币
+		UIDefDelayClick(Button, AddDiamond)   //加钻石
 		UIDefDelayClick(Button, Friend)
 
-		TextBMFont*  txtGold;
+		ScrollView*   scrBtn;
+		
+		PageView* pgAd;
+		ImageView* imgPageBg;
+
+		Button   *btnFold, *btnUnfold;
+		Text*  txtGold;
+		Text*  txtDiamond;
 		Text*        txtPlayerName;
+		Text*  txtId;
 		Node*  headNode;
 
 public:
@@ -40,7 +50,7 @@ public:
 		E_adMax,
 	}T_enumAd;
 
-	PageView* adPage;
+
 	int currentAd;
 	Button* btnAd[E_adMax];
 	Button* btnAdIndicator[E_adMax];
@@ -56,6 +66,10 @@ public:
 	void showGold(int gold);
 	///
 	void touchEvent(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type);
+
+	void clickBtnFold(Ref*  pSender);
+	void clickBtnUnfold(Ref*  pSender);
+
 
 private:
 

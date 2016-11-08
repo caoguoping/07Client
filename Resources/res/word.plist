@@ -42,6 +42,8 @@
             <string>你的选牌不符合出牌规则</string>  
             <key>roomNotOpen</key>  
             <string>您选择的房间未开放</string>  
+            <key>noTonghuaShun</key>  
+            <string>没有同花顺</string>  
         </dict>
 
 	    <key>net</key>  
@@ -56,10 +58,17 @@
 
 			<!--xin-->
             <key>loginServerIp</key>  
-            <!-- <string>221.226.117.82</string> -->
-            <string>192.168.2.130</string>
+            <string>221.226.117.82</string>
+            <!-- <string>192.168.2.130</string> -->
+            <!-- <string>139.196.237.203</string> -->
 			<key>loginServerPort</key>  
             <string>5050</string>
+			<key>PrimaryPort</key>  
+            <string>5010</string>
+            <key>MediumPort</key>  
+            <string>5011</string>
+            <key>MasterPort</key>  
+            <string>5012</string>
 			<key>MatchPort</key>  
             <string>5013</string>
             <key>RandZhupaiPort</key>  
@@ -68,6 +77,13 @@
             <string>5015</string>
             <key>TeamPort</key>  
             <string>5016</string>
+            <key>BloodPort0</key>  
+            <string>5017</string>
+            <key>BloodPort1</key>  
+            <string>5018</string>
+            <key>BloodPort2</key>  
+            <string>5019</string>
+
 
 			<key>webUrl</key>  
             <string>http://221.226.117.87:9000/ttdmx/ClientLogin/login</string>

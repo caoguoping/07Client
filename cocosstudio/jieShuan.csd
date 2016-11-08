@@ -38,7 +38,7 @@
             <FileData Type="Normal" Path="bg/inner_bg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="myName" ActionTag="1751464147" Tag="245" IconVisible="False" LeftMargin="-33.0000" RightMargin="-75.0000" TopMargin="-69.5000" BottomMargin="42.5000" FontSize="24" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_name0" ActionTag="1751464147" Tag="245" IconVisible="False" LeftMargin="-33.0000" RightMargin="-75.0000" TopMargin="-69.5000" BottomMargin="42.5000" FontSize="24" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="108.0000" Y="27.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="21.0000" Y="56.0000" />
@@ -59,6 +59,28 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="NewJieShuan/title_win.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Sprite_BloodSeccess" ActionTag="861990451" Tag="2252" IconVisible="False" LeftMargin="-207.8905" RightMargin="-207.1095" TopMargin="-286.8929" BottomMargin="53.8929" ctype="SpriteObjectData">
+            <Size X="415.0000" Y="233.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-0.3905" Y="170.3929" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="NewJieShuan/title_war_win.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Sprite_bloodNumSec" ActionTag="-696128115" Tag="2253" IconVisible="False" LeftMargin="82.9065" RightMargin="-125.9065" TopMargin="-176.3859" BottomMargin="115.3859" ctype="SpriteObjectData">
+            <Size X="43.0000" Y="61.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="104.4065" Y="145.8859" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="NewJieShuan/title_war_win_5.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="successImage1" ActionTag="-1298410707" Tag="94" IconVisible="False" LeftMargin="-355.0000" RightMargin="181.0000" TopMargin="-161.0000" BottomMargin="-155.0000" ctype="SpriteObjectData">
@@ -94,6 +116,28 @@
             <FileData Type="Normal" Path="NewJieShuan/role_loser.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
+          <AbstractNodeData Name="Sprite_BloodFail" ActionTag="1753777716" Tag="2254" IconVisible="False" LeftMargin="-208.2816" RightMargin="-206.7184" TopMargin="-187.5721" BottomMargin="89.5721" ctype="SpriteObjectData">
+            <Size X="415.0000" Y="98.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-0.7816" Y="138.5721" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="NewJieShuan/title_war_lose.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Sprite_bloodNumFail" ActionTag="-1845839531" Tag="2255" IconVisible="False" LeftMargin="90.0903" RightMargin="-135.0903" TopMargin="-175.7387" BottomMargin="114.7387" ctype="SpriteObjectData">
+            <Size X="45.0000" Y="61.0000" />
+            <AnchorPoint ScaleX="0.5060" ScaleY="0.5186" />
+            <Position X="112.8581" Y="146.3708" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="NewJieShuan/title_war_lose_5.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
           <AbstractNodeData Name="kuang01_6" ActionTag="325544893" Tag="97" IconVisible="False" LeftMargin="-129.5000" RightMargin="46.5000" TopMargin="-73.5000" BottomMargin="-11.5000" ctype="SpriteObjectData">
             <Size X="83.0000" Y="85.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -105,7 +149,7 @@
             <FileData Type="Normal" Path="bg/headshot_frame.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="myHead" ActionTag="312205993" Tag="103" IconVisible="True" LeftMargin="-88.0001" RightMargin="88.0001" TopMargin="-31.0000" BottomMargin="31.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="NodeHead0" ActionTag="312205993" Tag="103" IconVisible="True" LeftMargin="-88.0001" RightMargin="88.0001" TopMargin="-31.0000" BottomMargin="31.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="-88.0001" Y="31.0000" />
@@ -127,7 +171,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="myGold" ActionTag="-1114011354" Tag="112" IconVisible="False" LeftMargin="46.1874" RightMargin="-95.1874" TopMargin="-39.0001" BottomMargin="17.0001" FontSize="20" LabelText="+300" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_gold0" ActionTag="-1114011354" Tag="112" IconVisible="False" LeftMargin="46.1874" RightMargin="-95.1874" TopMargin="-39.0001" BottomMargin="17.0001" FontSize="20" LabelText="+300" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="49.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="70.6874" Y="28.0001" />
@@ -205,7 +249,7 @@
             <FileData Type="Normal" Path="bg/frame_players_s.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="player1Head" ActionTag="792617917" Tag="125" IconVisible="True" LeftMargin="265.0002" RightMargin="-265.0002" TopMargin="-65.0001" BottomMargin="65.0001" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="NodeHead1" ActionTag="792617917" Tag="125" IconVisible="True" LeftMargin="265.0002" RightMargin="-265.0002" TopMargin="-65.0001" BottomMargin="65.0001" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="265.0002" Y="65.0001" />
@@ -215,7 +259,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="jieShuanOherHead.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="player2Head" ActionTag="-320143122" Tag="128" IconVisible="True" LeftMargin="264.0002" RightMargin="-264.0002" TopMargin="7.9999" BottomMargin="-7.9999" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="NodeHead2" ActionTag="-320143122" Tag="128" IconVisible="True" LeftMargin="264.0002" RightMargin="-264.0002" TopMargin="7.9999" BottomMargin="-7.9999" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="264.0002" Y="-7.9999" />
@@ -225,7 +269,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="jieShuanOherHead.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="player3Head" ActionTag="1078587910" Tag="131" IconVisible="True" LeftMargin="264.0002" RightMargin="-264.0002" TopMargin="82.9999" BottomMargin="-82.9999" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="NodeHead3" ActionTag="1078587910" Tag="131" IconVisible="True" LeftMargin="264.0002" RightMargin="-264.0002" TopMargin="82.9999" BottomMargin="-82.9999" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="264.0002" Y="-82.9999" />
@@ -235,7 +279,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="jieShuanOherHead.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="player1Name" ActionTag="713243212" Tag="246" IconVisible="False" LeftMargin="345.5000" RightMargin="-428.5000" TopMargin="-91.0000" BottomMargin="71.0000" FontSize="18" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_name1" ActionTag="713243212" Tag="246" IconVisible="False" LeftMargin="345.5000" RightMargin="-428.5000" TopMargin="-91.0000" BottomMargin="71.0000" FontSize="18" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="83.0000" Y="20.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="387.0000" Y="81.0000" />
@@ -247,7 +291,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="player1Gold" ActionTag="-1934003656" Tag="247" IconVisible="False" LeftMargin="365.5000" RightMargin="-448.5000" TopMargin="-63.0000" BottomMargin="43.0000" FontSize="18" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_gold1" ActionTag="-1934003656" Tag="247" IconVisible="False" LeftMargin="365.5000" RightMargin="-448.5000" TopMargin="-63.0000" BottomMargin="43.0000" FontSize="18" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="83.0000" Y="20.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="407.0000" Y="53.0000" />
@@ -259,7 +303,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="player2Name" ActionTag="1552903853" Tag="248" IconVisible="False" LeftMargin="345.5000" RightMargin="-428.5000" TopMargin="-17.0000" BottomMargin="-3.0000" FontSize="18" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_name2" ActionTag="1552903853" Tag="248" IconVisible="False" LeftMargin="345.5000" RightMargin="-428.5000" TopMargin="-17.0000" BottomMargin="-3.0000" FontSize="18" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="83.0000" Y="20.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="387.0000" Y="7.0000" />
@@ -271,7 +315,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="player2Gold" ActionTag="400096925" Tag="249" IconVisible="False" LeftMargin="365.5000" RightMargin="-448.5000" TopMargin="13.0000" BottomMargin="-33.0000" FontSize="18" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_gold2" ActionTag="400096925" Tag="249" IconVisible="False" LeftMargin="365.5000" RightMargin="-448.5000" TopMargin="13.0000" BottomMargin="-33.0000" FontSize="18" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="83.0000" Y="20.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="407.0000" Y="-23.0000" />
@@ -283,7 +327,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="player3Name" ActionTag="-300751350" Tag="250" IconVisible="False" LeftMargin="345.3126" RightMargin="-428.3126" TopMargin="56.9997" BottomMargin="-76.9997" FontSize="18" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_name3" ActionTag="-300751350" Tag="250" IconVisible="False" LeftMargin="345.3126" RightMargin="-428.3126" TopMargin="56.9997" BottomMargin="-76.9997" FontSize="18" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="83.0000" Y="20.0000" />
             <AnchorPoint ScaleX="0.4887" ScaleY="0.4839" />
             <Position X="385.8747" Y="-67.3217" />
@@ -295,7 +339,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="player3Gold" ActionTag="1468454146" Tag="251" IconVisible="False" LeftMargin="365.5000" RightMargin="-448.5000" TopMargin="86.0000" BottomMargin="-106.0000" FontSize="18" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_gold3" ActionTag="1468454146" Tag="251" IconVisible="False" LeftMargin="365.5000" RightMargin="-448.5000" TopMargin="86.0000" BottomMargin="-106.0000" FontSize="18" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="83.0000" Y="20.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="407.0000" Y="-96.0000" />

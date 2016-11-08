@@ -45,12 +45,12 @@ class  PlayPokerMediator : public BlueSkyMediator
 public:
 	PlayPokerView*  playPokerView;
 
-
+	UIFrameDef(bloodStart)
 	UIFrameDef(zhupai)	
 		ImageView*  imgZhupai;
 	ImageView*  imgZhupaiDi;
 	UIFrameDef(matchEndLoading)
-	UIFrameDef(matchEndLoading2)
+		UIFrameDef(matchEndLoading2)
 
 
 
@@ -75,6 +75,8 @@ public:
 	Button* chongLiBtn;
 	Button* startBtn;  //开始游戏按钮
 	Button* markBtn; 	//记牌器按钮
+	bool   isJipaiQiShow; //记牌器是否显示
+	bool   isJiapaiQiRequested;   //是否已发送过请求。
 	Button* autoBtn; //托管按钮
 	Button* taskBtn; //任务按钮
 	ImageView* imgJPTip;
@@ -83,9 +85,7 @@ public:
 	Node* actionNode;
 	//本轮级数
 	ImageView* myJiShu1;
-	ImageView* myJiShu2;
 	ImageView* otherJiShu1;
-	ImageView* otherJiShu2;
 	Text*  myLv;
 	Text*  otherLv;
 	//不出
@@ -134,18 +134,18 @@ public:
 	void onEvent(int i, void* data);
 	Layer* getLayer();
 	void clickfanHuiBtnHander();
-	void clickChatBtnHander();
-	void clickChuPaiBtnHander();
-	void clickJinGongBtnHander();
-	void clickHuanGongBtnHander();
-	void clickTiShiBtnHander();
+	void clickChatBtnHander(Ref* psender);
+	void clickJinGongBtnHander(Ref* psender);
+	void clickHuanGongBtnHander(Ref* psender);
+	void clickTiShiBtnHander(Ref* psender);
 	void clickBuChuBtnHander(Ref* psender);
-	void clickTongHuaShunBtnHander();
-	void clickLiChengYiPaiBtnHander();
-	void clickChongLiBtnHander();
-	void clickMarkBtnHander();
-	void clickAutoBtnHander();
-	void clickClearBtnHander();
+	void clickChuPaiBtnHander(Ref* psender);
+	void clickTongHuaShunBtnHander(Ref* psender);
+	void clickLiChengYiPaiBtnHander(Ref* psender);
+	void clickChongLiBtnHander(Ref* psender);
+	void clickMarkBtnHander(Ref* psender);
+	void clickAutoBtnHander(Ref* psender);
+	void clickTaskBtnHander(Ref* psender);
 	bool clicklookTableBtn(Touch *touch, Widget::TouchEventType type);
 
 public:

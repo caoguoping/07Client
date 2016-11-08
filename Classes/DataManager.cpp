@@ -22,6 +22,7 @@ void DataManager::initData()
 	wMatchPlayer = 12;
 	wBestRank = 12;
 	bMatchOver = 0;
+	bGameCateSub = 0;
 	
 }
 

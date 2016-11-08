@@ -16,8 +16,8 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/bentouming.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="kuang01_1" ActionTag="2130495609" Tag="615" IconVisible="False" LeftMargin="-21.9244" RightMargin="-24.0756" TopMargin="-52.0899" BottomMargin="6.0899" ctype="SpriteObjectData">
-            <Size X="696.0000" Y="477.0000" />
+          <AbstractNodeData Name="kuang01_1" ActionTag="2130495609" Tag="615" IconVisible="False" LeftMargin="-346.9244" RightMargin="-349.0756" TopMargin="-284.0899" BottomMargin="-225.9101" ctype="SpriteObjectData">
+            <Size X="696.0000" Y="510.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1.0756" Y="29.0899" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -38,72 +38,72 @@
             <FileData Type="Normal" Path="dailyMission/title_task.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ScrollView_1" ActionTag="-1681068820" Tag="2675" IconVisible="False" LeftMargin="-326.6921" RightMargin="-333.3079" TopMargin="-128.8242" BottomMargin="-191.1758" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+          <AbstractNodeData Name="ScrollView_1" ActionTag="-1681068820" Tag="2675" IconVisible="False" LeftMargin="-323.7906" RightMargin="-336.2094" TopMargin="-112.3876" BottomMargin="-207.6124" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
             <Size X="660.0000" Y="320.0000" />
             <Children>
-              <AbstractNodeData Name="FileNode_1" ActionTag="-348406290" Tag="41" IconVisible="True" LeftMargin="159.8438" RightMargin="640.1562" TopMargin="48.4081" BottomMargin="301.5919" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="FileNode_1" ActionTag="-348406290" Tag="41" IconVisible="True" LeftMargin="155.0079" RightMargin="644.9921" TopMargin="48.4084" BottomMargin="301.5916" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="159.8438" Y="301.5919" />
+                <Position X="155.0079" Y="301.5916" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1998" Y="0.8617" />
+                <PrePosition X="0.1938" Y="0.8617" />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="dailyMissionShow.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="FileNode_2" ActionTag="-20848036" Tag="56" IconVisible="True" LeftMargin="473.4107" RightMargin="326.5893" TopMargin="49.2823" BottomMargin="300.7177" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="FileNode_2" ActionTag="-20848036" Tag="56" IconVisible="True" LeftMargin="468.5743" RightMargin="331.4257" TopMargin="49.2829" BottomMargin="300.7171" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="473.4107" Y="300.7177" />
+                <Position X="468.5743" Y="300.7171" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5918" Y="0.8592" />
+                <PrePosition X="0.5857" Y="0.8592" />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="dailyMissionShow.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="FileNode_3" ActionTag="556843074" Tag="71" IconVisible="True" LeftMargin="161.4806" RightMargin="638.5194" TopMargin="160.8719" BottomMargin="189.1281" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="FileNode_3" ActionTag="556843074" Tag="71" IconVisible="True" LeftMargin="156.6451" RightMargin="643.3549" TopMargin="160.8716" BottomMargin="189.1284" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="161.4806" Y="189.1281" />
+                <Position X="156.6451" Y="189.1284" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2019" Y="0.5404" />
+                <PrePosition X="0.1958" Y="0.5404" />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="dailyMissionShow.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="FileNode_4" ActionTag="-2073715013" Tag="86" IconVisible="True" LeftMargin="475.0460" RightMargin="324.9540" TopMargin="161.7455" BottomMargin="188.2545" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="FileNode_4" ActionTag="-2073715013" Tag="86" IconVisible="True" LeftMargin="470.2089" RightMargin="329.7911" TopMargin="161.7450" BottomMargin="188.2550" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="475.0460" Y="188.2545" />
+                <Position X="470.2089" Y="188.2550" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5938" Y="0.5379" />
+                <PrePosition X="0.5878" Y="0.5379" />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="dailyMissionShow.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="FileNode_5" ActionTag="-170451107" Tag="101" IconVisible="True" LeftMargin="161.1492" RightMargin="638.8508" TopMargin="273.9319" BottomMargin="76.0681" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="FileNode_5" ActionTag="-170451107" Tag="101" IconVisible="True" LeftMargin="156.3132" RightMargin="643.6868" TopMargin="273.9316" BottomMargin="76.0684" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="161.1492" Y="76.0681" />
+                <Position X="156.3132" Y="76.0684" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2014" Y="0.2173" />
+                <PrePosition X="0.1954" Y="0.2173" />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="dailyMissionShow.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="FileNode_6" ActionTag="-1743897823" Tag="116" IconVisible="True" LeftMargin="474.7178" RightMargin="325.2822" TopMargin="274.8062" BottomMargin="75.1938" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="FileNode_6" ActionTag="-1743897823" Tag="116" IconVisible="True" LeftMargin="469.8806" RightMargin="330.1194" TopMargin="274.8059" BottomMargin="75.1941" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="474.7178" Y="75.1938" />
+                <Position X="469.8806" Y="75.1941" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5934" Y="0.2148" />
+                <PrePosition X="0.5874" Y="0.2148" />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="dailyMissionShow.csd" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="-326.6921" Y="-191.1758" />
+            <Position X="-323.7906" Y="-207.6124" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

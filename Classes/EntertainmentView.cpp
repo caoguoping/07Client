@@ -19,6 +19,7 @@ EntertainmentView::EntertainmentView()
 EntertainmentView::~EntertainmentView()
 {
 	BTN_REMOVE_TOUCH_EVENTLISTENER(EntertainmentView, closeBtn, 12700);
+	rootNode->stopAllActions();
 	delete rootNode;
 	rootNode = NULL;
 }
@@ -29,43 +30,23 @@ void EntertainmentView::initView()
 	rootNode = CSLoader::createNode("entertainment.csb");
 	rootNode->setPosition(WScreen * 0.5, HScreen * 0.5);
 	this->addChild(rootNode);
+	
+	cocostudio::timeline::ActionTimeline*  timeLine = CSLoader::createTimeline("entertainment.csb");
+	timeLine->gotoFrameAndPlay(0, false);
+	rootNode->runAction(timeLine);
 
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, EntertainmentView, closeBtn, 12700, "Button_close", NULL)
 
 
-	UIGet_Button("Button_1", rootNode, btn1)
-		UIGet_Button("Button_2", rootNode, btn2)
-		UIGet_Button("Button_3", rootNode, btn3)
+	BTN_ADD_TOUCH_EVENTLISTENER(Button, EntertainmentView, closeBtn, 12700, "Button_close", "Image_frame")
+	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, EntertainmentView, imgBg, 12700, "Image_bg", NULL)
 
-		//top
-		Node*  topNode;
-	UIGet_Node("FileNode_top", rootNode, topNode)
-		UIGet_Text("Text_gold", topNode, txtGold)
-		UIGet_Text("Text_diamond", topNode, txtDiamond)
-		txtGold->setString(Tools::parseInt2String(DATA->myBaseData.lUserScore));
-	txtDiamond->setString(Tools::parseInt2String(DATA->myBaseData.rmb));
-	Button   *btnAddGold, *btnAddDiamond, *btnSetting;
-	UIGet_Button("Button_addGold", topNode, btnAddGold)
-		UIGet_Button("Button_addDiamond", topNode, btnAddDiamond)
-		UIGet_Button("Button_setting", topNode, btnSetting)
-		btnAddGold->addClickEventListener([&](Ref* psender)
-	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
-		creatView(new ShopView(1), new ShopMediator());
-	}
-	);
-	btnAddDiamond->addClickEventListener([&](Ref* psender)
-	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
-		creatView(new ShopView(0), new ShopMediator());
-	}
-	);
-	btnSetting->addClickEventListener([&](Ref* psender)
-	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
-		creatView(new SetView(), new SetMediator());
-	}
-	);
+		UIGet_ImageView("Image_frame", rootNode, imgFrame)
+		UIGet_Button("Button_1", imgFrame, btn1)
+		UIGet_Button("Button_2", imgFrame, btn2)
+		UIGet_Button("Button_3", imgFrame, btn3)
+
+
+
 
 		btn1->setTag(1);  //ºÃÓÑ³¡
 	btn2->setTag(2);
@@ -94,8 +75,7 @@ void EntertainmentView::clickPlay(Ref* pSender)
 		else
 		{
 			DATA->bGameCate = DataManager::E_GameFriend;
-			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(0));
-			((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 0;
+			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE);
 			blueSkyDispatchEvent(EventType::FRIEND_PLAY);
 		}
 		break;
@@ -107,9 +87,7 @@ void EntertainmentView::clickPlay(Ref* pSender)
 		else
 		{
 			DATA->bGameCate = DataManager::E_GameRandZhupai;
-			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(1));
-			((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 1;
-
+			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE);
 		}
 		break;
 
@@ -121,9 +99,7 @@ void EntertainmentView::clickPlay(Ref* pSender)
 		else
 		{
 			DATA->bGameCate = DataManager::E_GameTeam;
-			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(1));
-			((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 1;
-
+			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE);
 		}
 		break;
 

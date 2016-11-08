@@ -1,5 +1,6 @@
 #include "LobbyMediator.h"
 #include "DataManager.h"
+#include "CallCppHelper.h"
 
 
 LobbyMediator::LobbyMediator()
@@ -24,12 +25,16 @@ void LobbyMediator::OnRegister()
 
 	//显示用户金币
 	lobbyView->showGold(DATA->myBaseData.lUserScore);
+	//
+	lobbyView->txtDiamond->setString(Tools::parseInt2String(DATA->myBaseData.rmb));
 
 	//显示头像
 	lobbyView->showHeadImage(DATA->myBaseData.wFaceID);
 
 	//显示名字
 	lobbyView->txtPlayerName->setString(DATA->myBaseData.szNickName);
+
+	lobbyView->txtId->setString(CallCppHelper::getInstance()->mUid);
 }
 
 /**

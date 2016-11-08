@@ -8,8 +8,11 @@ DailyMissionView::DailyMissionView(bool showGetBtn)
 {
 	rootNode = CSLoader::createNode("dailyMission.csb");
 	addChild(rootNode);
-	//rootNode->setScale(0.1, 0.1);
-	//rootNode->runAction(Sequence::create(ScaleTo::create(0.2f, 1.1), ScaleTo::create(0.2f, 1.0f), nullptr));
+	rootNode->setScale(0.8f, 0.8f);
+	rootNode->runAction(Sequence::create(
+		ScaleTo::create(0.2f, 1.03f),
+		ScaleTo::create(0.15f, 1.0f),
+		nullptr));
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, DailyMissionView, closeBtn, 11007, "closeBtn", NULL)
 		BTN_ADD_TOUCH_EVENTLISTENER(ImageView, DailyMissionView, Image_38, 11007, "Image_38", NULL);
 	canShowGetBtn = showGetBtn;

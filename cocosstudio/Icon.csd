@@ -47,7 +47,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="clear_btn" ActionTag="-716812611" Tag="103" IconVisible="False" LeftMargin="61.0000" RightMargin="-127.0000" TopMargin="-45.8522" BottomMargin="-24.1478" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="36" Scale9Height="48" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="task_btn" ActionTag="-716812611" Tag="103" IconVisible="False" LeftMargin="61.0000" RightMargin="-127.0000" TopMargin="-45.8522" BottomMargin="-24.1478" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="36" Scale9Height="48" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="66.0000" Y="70.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="94.0000" Y="10.8522" />
@@ -65,7 +65,7 @@
           <AbstractNodeData Name="Image_jpTip" ActionTag="1677489326" Tag="4066" IconVisible="False" LeftMargin="-41.8391" RightMargin="17.8391" TopMargin="-22.3279" BottomMargin="-1.6721" LeftEage="7" RightEage="7" TopEage="7" BottomEage="7" Scale9OriginX="7" Scale9OriginY="7" Scale9Width="10" Scale9Height="10" ctype="ImageViewObjectData">
             <Size X="24.0000" Y="24.0000" />
             <Children>
-              <AbstractNodeData Name="Text_jpTip" ActionTag="-138146794" Tag="4067" IconVisible="False" LeftMargin="2.3478" RightMargin="1.6522" TopMargin="3.2225" BottomMargin="2.7775" FontSize="14" LabelText="99" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_jpTip" ActionTag="-138146794" Tag="4067" IconVisible="False" LeftMargin="2.3472" RightMargin="1.6528" TopMargin="3.2218" BottomMargin="2.7782" FontSize="14" LabelText="99" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="20.0000" Y="18.0000" />
                 <AnchorPoint ScaleX="0.4876" ScaleY="0.3295" />
                 <Position X="12.0992" Y="8.7092" />

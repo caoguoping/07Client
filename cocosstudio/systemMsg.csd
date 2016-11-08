@@ -16,21 +16,21 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/bentouming.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="heiban_1" ActionTag="-508081531" Tag="749" IconVisible="False" LeftMargin="-234.5000" RightMargin="-234.5000" TopMargin="-132.5000" BottomMargin="-132.5000" ctype="SpriteObjectData">
-            <Size X="469.0000" Y="265.0000" />
+          <AbstractNodeData Name="heiban_1" ActionTag="-508081531" Tag="749" IconVisible="False" LeftMargin="-234.0000" RightMargin="-234.0000" TopMargin="-132.5000" BottomMargin="-132.5000" ctype="SpriteObjectData">
+            <Size X="468.0000" Y="265.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="bg/results_bg.png" Plist="" />
+            <FileData Type="Normal" Path="bg/bg_2nd-ui.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="msgText" ActionTag="-1396438838" Tag="746" IconVisible="False" LeftMargin="-208.4919" RightMargin="-211.5081" TopMargin="-104.0086" BottomMargin="-95.9914" IsCustomSize="True" FontSize="24" LabelText="&#xA;" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="420.0000" Y="200.0000" />
+          <AbstractNodeData Name="msgText" ActionTag="-1396438838" Tag="746" IconVisible="False" LeftMargin="-151.4919" RightMargin="-168.5081" TopMargin="-95.0086" BottomMargin="-54.9914" IsCustomSize="True" FontSize="24" LabelText="&#xA;" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="320.0000" Y="150.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1.5081" Y="4.0086" />
+            <Position X="8.5081" Y="20.0086" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="123" G="70" B="30" />
             <PrePosition />
@@ -64,10 +64,10 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="NewJieShuan/role_loser.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_1" ActionTag="1202366815" Tag="273" IconVisible="False" LeftMargin="-56.3918" RightMargin="-79.6082" TopMargin="61.4767" BottomMargin="-104.4767" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="106" Scale9Height="21" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_1" ActionTag="1202366815" Tag="273" IconVisible="False" LeftMargin="-56.3918" RightMargin="-79.6082" TopMargin="67.4767" BottomMargin="-110.4767" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="106" Scale9Height="21" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="136.0000" Y="43.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="11.6082" Y="-82.9767" />
+            <Position X="11.6082" Y="-88.9767" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

@@ -13,44 +13,68 @@ void ConnectGameServiceCommand::execute(void* data)
 {
 
 	RoomListModel* roomListModel = ((RoomListModel*)getModel(RoomListModel::NAME));
-	int j = *(int*)data;   //°´Å¥´«µÝ
 	
-	int i = 0;
-	unsigned short port;   
-	if (j == 3)  //match 
+	unsigned short port;  
+
+	switch (DATA->bGameCate)
 	{
-		if (DATA->bMatchItem == 0)
+	case DataManager::E_GameCateNormal:
+		if (DATA->bGameCateSub == 0)
 		{
-			port = atoi(UTF8::getInstance()->getString("net", "MatchPort").c_str());
-		} 
-		else if (DATA->bMatchItem == 1)
-		{
-			port = atoi(UTF8::getInstance()->getString("net", "MatchPort").c_str());
+			port = atoi(UTF8::getInstance()->getString("net", "PrimaryPort").c_str());
 		}
-	} 
-	else
-	{
-		if (DATA->bGameCate == DataManager::E_GameRandZhupai)
+		else if (DATA->bGameCateSub == 1)
 		{
-			port = atoi(UTF8::getInstance()->getString("net", "RandZhupaiPort").c_str());
+			port = atoi(UTF8::getInstance()->getString("net", "MediumPort").c_str());
 		}
-		else if (DATA->bGameCate == DataManager::E_GameFriend || DATA->bGameCate == DataManager::E_GameFriendPassive)
+		else if (DATA->bGameCateSub == 2)
 		{
-			port = atoi(UTF8::getInstance()->getString("net", "FriendPort").c_str());
+			port = atoi(UTF8::getInstance()->getString("net", "MasterPort").c_str());
 		}
-		else if (DATA->bGameCate == DataManager::E_GameTeam || DATA->bGameCate == DataManager::E_GameTeamPassive)
+		break;
+
+	case DataManager::E_GameCateMatch:
+		port = atoi(UTF8::getInstance()->getString("net", "MatchPort").c_str());
+		break;
+
+	case DataManager::E_GameFriend:
+	case DataManager::E_GameFriendPassive:
+		port = atoi(UTF8::getInstance()->getString("net", "FriendPort").c_str());
+			break;
+
+	case DataManager::E_GameTeam:
+	case DataManager::E_GameTeamPassive:
+		port = atoi(UTF8::getInstance()->getString("net", "TeamPort").c_str());
+		break;
+
+	case DataManager::E_GameRandZhupai:
+		port = atoi(UTF8::getInstance()->getString("net", "RandZhupaiPort").c_str());
+		break;
+
+	case DataManager::E_GameBlood:
+		if (DATA->bGameCateSub == 0)
 		{
-			port = atoi(UTF8::getInstance()->getString("net", "TeamPort").c_str());
+			port = atoi(UTF8::getInstance()->getString("net", "BloodPort0").c_str());
 		}
-		else
+		else if (DATA->bGameCateSub == 1)
 		{
-			i = roomListModel->realSn[j];
-			port = ((RoomListModel*)getModel(RoomListModel::NAME))->roomList[i].wwServerPort;
+			port = atoi(UTF8::getInstance()->getString("net", "BloodPort1").c_str());
 		}
+		else if (DATA->bGameCateSub == 2)
+		{
+			port = atoi(UTF8::getInstance()->getString("net", "BloodPort2").c_str());
+		}
+		break;
+
+	default:
+
+		break;
+
 	}
 
 
-	string ip = ((RoomListModel*)getModel(RoomListModel::NAME))->roomList[i].wszServerAddr;
+	logV("blood port %d", port);
+	string ip = ((RoomListModel*)getModel(RoomListModel::NAME))->roomList[0].wszServerAddr;
 
 	TCPSocketService*  tcp_game = (TCPSocketService*)getService(TCPSocketService::GAME);
 	bool iErrorCode = tcp_game->Connect(ip.data(), port);

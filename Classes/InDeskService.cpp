@@ -29,7 +29,7 @@ void InDeskService::onEvent(int i, void* data)
 
 			if (wKindID == 2)
 			{
-				creatView(new PlayPokerView(), new PlayPokerMediator(), &((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun);
+				creatView(new PlayPokerView(), new PlayPokerMediator());
 				creatView(new PokerActionView(), new PokerActionMediator());
 				creatView(new JiPaiView(), new JiPaiMediator());
 			}

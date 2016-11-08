@@ -35,49 +35,21 @@ PlayPokerView::PlayPokerView()
 	//logV("imgHuaPai local zorder %d, globelZorder %d", imgHuaPai->getLocalZOrder(), imgHuaPai->getGlobalZOrder());
 
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, fanhui_btn, 10601, "fanhui_btn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, liaotian_Btn, 10602, "liaotian_Btn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, chupai_Btn, 10603, "chupai_Btn", "ProjectNode_1");//
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, tishi_Btn, 10604, "tishi_Btn", "ProjectNode_1");//
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, jingongBtn, 10606, "jingongBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, huangongBtn, 10607, "huangongBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, lookTableBtn, 10608, "lookTableBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, tonghuashun_Btn, 10609, "tonghuashun_Btn", "ProjectNode_3");//
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, lichengyipai_Btn, 10610, "lichengyipai_Btn", "ProjectNode_3");//
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, chongxinglipai_Btn, 10611, "chongxinglipai_Btn", "ProjectNode_3");//
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, jipaiqi_Btn, 10612, "jipaiqi_Btn", "ProjectNode_5");//
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, tuoguan_Btn, 10613, "tuoguan_Btn", "ProjectNode_5");//
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, clear_btn, 10614, "clear_btn", "ProjectNode_5");//
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, clickMeBtn, 10618, "clickBtn", "me_character");
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, clickLeftBtn, 10619, "clickBtn", "left_character");
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, clickTopBtn, 10620, "clickBtn", "top_character");
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, clickRightBtn, 10621, "clickBtn", "right_character");
 
 	//调整层级不被划牌触摸层覆盖
-	_chupai_Btn->setGlobalZOrder(10);
-	_tishi_Btn->setGlobalZOrder(10);
 	_clickMeBtn->setGlobalZOrder(10);
 	_clickLeftBtn->setGlobalZOrder(10);
 	_clickTopBtn->setGlobalZOrder(10);
 	_clickRightBtn->setGlobalZOrder(10);
-	_jingongBtn->setGlobalZOrder  (10);
-	_huangongBtn->setGlobalZOrder (10);
 
 }
 PlayPokerView::~PlayPokerView()
 {
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, fanhui_btn, 10601);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, liaotian_Btn, 10602);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, chupai_Btn, 10603);//
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, tishi_Btn, 10604);//
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, jingongBtn, 10606);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, huangongBtn, 10607);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, lookTableBtn, 10608);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, tonghuashun_Btn, 10609);//
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, lichengyipai_Btn, 10610);//
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, chongxinglipai_Btn, 10611);//
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, jipaiqi_Btn, 10612);//
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, tuoguan_Btn, 10613);//
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, clear_btn, 10614);//
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, clickMeBtn, 10618);
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, clickLeftBtn, 10619);
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, clickTopBtn, 10620);
@@ -126,6 +98,53 @@ void PlayPokerView::clickBtnInvite(Ref*   pSender)
 
 void PlayPokerView::viewInit()
 {
+	char deskName[64];
+	char bgName[64];
+	for (int i = 0; i < 4; i++)
+	{
+		sprintf(deskName, "bscdesk_%d", i + 1);
+		sprintf(bgName, "bscback_%d", i + 1);
+		UIGet_Sprite(deskName, rootNode, spDesk[i])
+		UIGet_Sprite(bgName, rootNode, spBg[i])
+		spDesk[i]->setVisible(false);
+		spBg[i]->setVisible(false);
+	}
+	switch (DATA->bGameCate)
+	{
+	case DataManager::E_GameCateNormal:
+		if (DATA->bGameCateSub == 0)
+		{
+			spDesk[0]->setVisible(true);
+			spBg[0]->setVisible(true);
+		}
+		else if (DATA->bGameCateSub == 1)
+		{
+			spDesk[1]->setVisible(true);
+			spBg[1]->setVisible(true);
+		}
+		else if (DATA->bGameCateSub == 2)
+		{
+			spDesk[2]->setVisible(true);
+			spBg[2]->setVisible(true);
+		}
+		break;
+
+	case DataManager::E_GameCateMatch:
+	case DataManager::E_GameFriend:
+	case DataManager::E_GameFriendPassive:
+	case DataManager::E_GameTeam:
+	case DataManager::E_GameTeamPassive:
+	case DataManager::E_GameRandZhupai:
+	case DataManager::E_GameBlood:
+		spDesk[3]->setVisible(true);
+		spBg[3]->setVisible(true);
+		break;
+	default:
+
+		break;
+
+	}
+
 
 	//好友场 ,组队
 	if (DataManager::E_GameFriend == DATA->bGameCate || DataManager::E_GameTeam == DATA->bGameCate)
@@ -235,7 +254,7 @@ void PlayPokerView::viewInit()
 
 
 	//倍率与轮场
-	Node* paiFenNode = rootNode->getChildByName("ProjectNode_4");
+	Node* paiFenNode = rootNode->getChildByName("ProjectNode_score");
 	UIGet_ImageView("Image_beilv", paiFenNode, imgBeilv)
 		UIGet_ImageView("Image_lunchang", paiFenNode, imgLunChang)
 		UIGet_Text("Text_beiLv", imgBeilv, txtBeilv)

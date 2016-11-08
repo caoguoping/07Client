@@ -71,6 +71,7 @@ void PokerActionMediator::onEvent(int i, void* data)
 	case EventType::BOOM:
 		showNode(4);
 		boom->gotoFrameAndPlay(0, 39, false);
+		boom->setDuration(1.0f);
 		break;
 	case EventType::KANG_GONG:
 		showNode(5);

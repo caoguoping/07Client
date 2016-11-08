@@ -7,6 +7,7 @@
 #include "ConnectGameServiceCommand.h"
 #include "ViewPopup.h"
 #include "ViewManager.h"
+#include "FriendView.h"
 /**
 事件通知执行函数
 */
@@ -680,7 +681,7 @@ void NetDataCommand::getRoomList(NetData netData)
 			guandanRoom.wszServerAddr = netData.readString(64);
 			guandanRoom.wszServerName = netData.readString(64);
 			guandanRoom.dizhu = netData.readInt32();
-		//	guandanRoom.wRoomType = netData.readWORD();
+			guandanRoom.wRoomType = netData.readWORD();
 
 			if (guandanRoom.dizhu == 150)
 			{
@@ -1067,6 +1068,9 @@ void NetDataCommand::gameOver(NetData netData)
 	{
 		gameEnd->Rank[i] = netData.readInt32();
 	}
+	gameEnd->bIsBlood = netData.readByte(); //new add
+
+	logV("bisBlood %d", gameEnd->bIsBlood);
 	blueSkyDispatchEvent(EventType::GAME_OVER, gameEnd);
 }
 
@@ -1311,10 +1315,29 @@ void NetDataCommand::getFriedsAddInfoMe(NetData netData)
 	pFriendOpt->dwLoveLiness = netData.readDWORD();
 	pFriendOpt->WinRate = netData.readWORD();
 	pFriendOpt->wRcStates = netData.readWORD();
-	blueSkyDispatchEvent(EventType::FRIEND_OPT_ME, pFriendOpt);
+
+
+	switch (pFriendOpt->wRcStates)
+	{
+	case FriendView::ecAgreeSuccess: //同意添加对方为好友
+		tagFriendParameter* addedFriends = new tagFriendParameter();
+		addedFriends->dwUserID = pFriendOpt->dwTargretUserID;
+		addedFriends->szNickName = pFriendOpt->szNickName;
+		addedFriends->FaceID = pFriendOpt->FaceID;
+		addedFriends->dwRmb = pFriendOpt->dwRmb;
+		addedFriends->wServerID = pFriendOpt->wServerID;
+		addedFriends->wKindID = pFriendOpt->wKindID;
+		addedFriends->dwLoveLiness = pFriendOpt->dwLoveLiness;
+		addedFriends->WinRate = pFriendOpt->WinRate;
+
+		DATA->vFriends.push_back(*addedFriends);
+		break;
+
+	}
+
 }
 
-//或 6 6 him me返回好友添加信息
+//或 6 6 him 返回好友添加信息
 void NetDataCommand::getFriedsAddInfoHim(NetData netData)
 {
 	CMD_GP_C_ADD_Friend* pFriendOpt = new CMD_GP_C_ADD_Friend();
@@ -1329,16 +1352,84 @@ void NetDataCommand::getFriedsAddInfoHim(NetData netData)
 	pFriendOpt->dwLoveLiness = netData.readDWORD();
 	pFriendOpt->WinRate = netData.readWORD();
 	pFriendOpt->wRcStates = netData.readWORD();
-	blueSkyDispatchEvent(EventType::FRIEND_OPT_HIM, pFriendOpt);
+	
+
+
+	std::string strName;
+	std::string strAgree;
+	tagInviteInfo*  pInvite;
+	logV("handleHim States%d ", pFriendOpt->wRcStates);
+	
+	switch (pFriendOpt->wRcStates)
+	{
+	case FriendView::ecInviteSuccess:   //对方要加我
+		pInvite = new tagInviteInfo();
+		pInvite->dwUserID = pFriendOpt->dwTargretUserID;
+		pInvite->wFaceID = pFriendOpt->FaceID;
+		pInvite->szNickName = pFriendOpt->szNickName;
+		DATA->vFriendPush.push_back(*pInvite);
+
+		blueSkyDispatchEvent(EventType::FRIEND_OPT_HIM, pFriendOpt);
+		break;
+
+	case FriendView::ecAgreeSuccess:   //对方同意添加好友
+	{
+		strName = pFriendOpt->szNickName;
+		strAgree = UTF8::getInstance()->getString("friend", "agreeAdd");
+		strName = strName + strAgree;
+		Tools::getInstance()->showSysMsgTouming(strName);
+		tagFriendParameter* addedFriends = new tagFriendParameter();
+		addedFriends->dwUserID = pFriendOpt->dwTargretUserID;  //对方
+		addedFriends->szNickName = pFriendOpt->szNickName;
+		addedFriends->dwRmb = pFriendOpt->dwRmb;
+		addedFriends->FaceID = pFriendOpt->FaceID;
+		addedFriends->wServerID = pFriendOpt->wServerID;
+		addedFriends->wKindID = pFriendOpt->wKindID;
+		addedFriends->dwLoveLiness = pFriendOpt->dwLoveLiness;
+		addedFriends->WinRate = pFriendOpt->WinRate;
+		DATA->vFriends.push_back(*addedFriends);
+		break;
+	}
+
+	case FriendView::ecAgreeFail:
+
+		break;
+	case FriendView::ecAgreeAlready:
+
+		break;
+	case FriendView::ecRefuseSuccess:
+
+		break;
+	case FriendView::ecRefuseFail:
+
+		break;
+	case FriendView::ecRefuseNot:
+
+		break;
+	case FriendView::ecDeleteSuccess:
+
+		break;
+
+	case FriendView::ecDeleteFail:
+
+		break;
+
+	case FriendView::ecDeleteNot:
+
+		break;
+
+	}
+
 }
 
 //6	9	返回熟人列表
 void NetDataCommand::getFriendsShuRen(NetData netData)
 {
 	WORD wSize = netData.readWORD();
+	logV("FriendsShuRen Size is %d", wSize);
 	if (wSize > 50)
 	{
-		logV("FriendsShuRen Size is too big, maybe error!");
+		
 		return;
 	}
 	DATA->vFriendsShuRen.resize(wSize);
@@ -1347,6 +1438,10 @@ void NetDataCommand::getFriendsShuRen(NetData netData)
 		DATA->vFriendsShuRen.at(i).dwUserID = netData.readDWORD();
 		DATA->vFriendsShuRen.at(i).szNickName = netData.readString(64);
 		DATA->vFriendsShuRen.at(i).wFaceID = netData.readWORD();
+
+		logV("dwUserId %d", DATA->vFriendsShuRen.at(i).dwUserID);
+		logV("Name %s", DATA->vFriendsShuRen.at(i).szNickName.c_str());
+		logV("FaceId %d", DATA->vFriendsShuRen.at(i).wFaceID);
 	}
 	blueSkyDispatchEvent(EventType::FRIEND_SHUREN);
 }
@@ -1367,9 +1462,10 @@ void NetDataCommand::getFriendPush(NetData netData)
 {
 	netData.readDWORD();
 	WORD wSize = netData.readWORD();
+	logV("\n\nFriendPush Size %d",wSize);
 	if (wSize > 20)
 	{
-		logV("FriendPush Size is too big, maybe error!");
+		
 		return;
 	}
 	DATA->vFriendPush.resize(wSize);
@@ -1378,6 +1474,9 @@ void NetDataCommand::getFriendPush(NetData netData)
 		DATA->vFriendPush.at(i).dwUserID = netData.readDWORD();
 		DATA->vFriendPush.at(i).szNickName = netData.readString(64);
 		DATA->vFriendPush.at(i).wFaceID = netData.readWORD();
+		logV("dwUserId %d", DATA->vFriendPush.at(i).dwUserID);
+		logV("Name %s", DATA->vFriendPush.at(i).szNickName.c_str());
+		logV("FaceId %d", DATA->vFriendPush.at(i).wFaceID);
 	}
 	//blueSkyDispatchEvent(EventType::FRIEND_SHUREN);
 }

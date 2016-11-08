@@ -46,7 +46,6 @@ private:
 	void clickCloseBtnHander();
 	void clickMusicBtnHander();
 	void clickEffectBtnHander();
-	void clickShockBtnHander();
 	void clickReLoginBtnHander();
 	void clickHelpBtnHander();
 };

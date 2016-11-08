@@ -26,16 +26,19 @@ void MatchView::initView()
 {
 	rootNode = CSLoader::createNode("matchMain.csb");
 	addChild(rootNode);
-	//rootNode->setScale(0.1f, 0.1f);
 
-	//rootNode->runAction(Sequence::create(ScaleTo::create(0.2f, 1.1f), ScaleTo::create(0.1f, 1.0f), nullptr));
+
+	cocostudio::timeline::ActionTimeline*  timeLine = CSLoader::createTimeline("matchMain.csb");
+	timeLine->gotoFrameAndPlay(0, false);
+	rootNode->runAction(timeLine);
 
 	//外面的关闭
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, MatchView, closeBtn, 16000, "Button_close", NULL);   
+	BTN_ADD_TOUCH_EVENTLISTENER(Button, MatchView, closeBtn, 16000, "Button_close", "Image_frame");   
 	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, MatchView, Image_bg, 16000, "Image_bg", NULL);
 
+	UIGet_ImageView("Image_frame", rootNode, imgFrame)
 	ScrollView* scrow;
-	UIGet_ScrollView("ScrollView_1", rootNode, scrow)
+	UIGet_ScrollView("ScrollView_1", imgFrame, scrow)
 		ImageView*  img[3];
 
 	UIGet_ImageView("Image_1", scrow, img[0])
@@ -79,7 +82,7 @@ void MatchView::clickBtnCloseFast(Ref* pSender)
 
 		logV("!!!!!match click back!!!!!!");
 		matchFastNode->removeFromParentAndCleanup(true);
-		((TCPSocketService *)getService(TCPSocketService::GAME))->SendData(2000, 2000, NULL, 0);  //心跳
+		
 
 		//关闭游戏服务器SOCKET
 		((TCPSocketService*)getService(TCPSocketService::GAME))->closeMySocket();
@@ -197,8 +200,8 @@ void MatchView::gotoMatch(Ref* psender)
 	int tags = btn->getTag();
 	if (tags == 0)
 	{
-		DATA->bMatchItem = 0;
-		blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(3));  // 暂时的
+		DATA->bGameCateSub = 0;
+		blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE);  // 暂时的
 	}
 	else if (tags == 1)
 	{

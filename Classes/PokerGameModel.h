@@ -73,13 +73,15 @@ struct CMD_S_GameEnd
 {
 	DWORD							lGameTax;							//游戏税收
 	DWORD							lGameScore[4];						//游戏积分
-	unsigned char					bCardCount[4];						//扑克数目
-	unsigned char					bCardData[108];						//扑克列表
-	unsigned char                   bOurSeries;                         //我方级数
-	unsigned char                   bOtherSeries;                       //对方级数
-	unsigned char                   bCurrentSeries;                     //本局级数
+	BYTE					bCardCount[4];						//扑克数目
+	BYTE					bCardData[108];						//扑克列表
+	BYTE                   bOurSeries;                         //我方级数
+	BYTE                   bOtherSeries;                       //对方级数
+	BYTE                   bCurrentSeries;                     //本局级数
 	int                             m_iGameResult[4];                   //胜负情况
-	int								Rank[4];							//排名情况
+	int								Rank[4];	//值为服务器座位号， 下标为排名						//排名情况
+	BYTE              bIsBlood;    //0：正常结束，   1：血战场结束
+
 };
 
 //用户表情

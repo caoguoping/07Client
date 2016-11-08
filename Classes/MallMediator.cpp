@@ -92,20 +92,16 @@ void MallMediator::onEvent(int i, void* data)
 
 		//zuanshi to gold 
 	case 11213: 
-		index = 0;
-		getGoldHander(index);
+		getGoldHander(0);
 		break;
 	case 11214:
-		index = 1;
-		getGoldHander(index);
+		getGoldHander(1);
 		break;
 	case 11215:
-		index = 2;
-		getGoldHander(index);
+		getGoldHander(2);
 		break;
 	case 11216:
-		index = 3;
-		getGoldHander(index);
+		getGoldHander(3);
 		break;
 
 		//jipaiqi

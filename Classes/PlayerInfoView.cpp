@@ -6,6 +6,12 @@ PlayerInfoView::PlayerInfoView()
 	rootNode = CSLoader::createNode("playerInfo.csb");
 	
 	addChild(rootNode);
+
+	rootNode->setScale(0.8f, 0.8f);
+	rootNode->runAction(Sequence::create(
+		ScaleTo::create(0.2f, 1.03f),
+		ScaleTo::create(0.15f, 1.0f),
+		nullptr));
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayerInfoView, closeBtn, 10701, "closeBtn", NULL)
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayerInfoView, eggBtn, 10702, "eggBtn", NULL)
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayerInfoView, boomBtn, 10703, "boomBtn", NULL)

@@ -26,6 +26,10 @@ private:
 	BTN_TOUCH_HANDLE(Button, closeBtn, 10902);
 	BTN_TOUCH_HANDLE(ImageView, Image_38, 10902);
 
+	ImageView*  imgFrame;
+	ImageView*  imgGift[7];
+	ImageView*  imgMask[7];
+
 	//µÚÒ»Ìì
 	ImageView* day1_1;
 	ImageView* day1_2;

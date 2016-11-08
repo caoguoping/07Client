@@ -13,7 +13,9 @@ public:
 
 	void initView();
 	void playAccountAction(bool isSuccess);
-
+	void clickBtnBack(Ref*  pSender);
+	void clickBtnContinune(Ref*  pSender);
+	void clickBtnNextMatch(Ref*  pSender);
 public:
 	Layout*  winLayout;    //比赛胜利结算
 	Layout*  loseLayout;   //比赛失败结算
@@ -22,12 +24,8 @@ public:
 	Text*   txtPeoples;   //多少人场比赛
 
 	Text*   txtRewards;   //奖励金币
-private:
-	BTN_TOUCH_HANDLE(Button, fanHuiBtn, 10501);
-	BTN_TOUCH_HANDLE(Button, continueBtn, 10502);
-	//BTN_TOUCH_HANDLE(ImageView, Image_1, 10501);
-	BTN_TOUCH_HANDLE(Button, nextMatchBtn, 10503);
 
+	Button  *btnBack, *btnContinue, *btnNextMatch;
 	//失败动画
 	cocostudio::timeline::ActionTimeline* failAction;
 	Node* failActionNode;

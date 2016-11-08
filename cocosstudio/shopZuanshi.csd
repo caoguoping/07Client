@@ -187,7 +187,7 @@
                 <PreSize X="0.2578" Y="0.0696" />
                 <LabelBMFontFile_CNB Type="Normal" Path="font/mall.fnt" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="jinbi03_37" ActionTag="-1558565981" Tag="344" IconVisible="False" LeftMargin="77.9711" RightMargin="278.0289" TopMargin="42.0470" BottomMargin="351.9530" ctype="SpriteObjectData">
+              <AbstractNodeData Name="jinbi03_37" ActionTag="-1558565981" Tag="344" IconVisible="False" LeftMargin="77.9712" RightMargin="278.0288" TopMargin="42.0470" BottomMargin="351.9530" ctype="SpriteObjectData">
                 <Size X="94.0000" Y="66.0000" />
                 <AnchorPoint ScaleX="0.5587" ScaleY="0.4956" />
                 <Position X="130.4890" Y="384.6626" />
@@ -268,7 +268,7 @@
                 <FileData Type="Normal" Path="NewRecharge/icon_diamond_4.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_8_2" ActionTag="-1232375977" Tag="351" IconVisible="False" LeftMargin="137.7341" RightMargin="275.2659" TopMargin="360.1104" BottomMargin="77.8896" FontSize="20" LabelText="500" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_8_2" ActionTag="-1232375977" Tag="351" IconVisible="False" LeftMargin="137.7329" RightMargin="275.2671" TopMargin="360.1095" BottomMargin="77.8905" FontSize="20" LabelText="500" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="37.0000" Y="22.0000" />
                 <AnchorPoint ScaleX="0.6161" ScaleY="0.4651" />
                 <Position X="160.5286" Y="88.1227" />
@@ -315,7 +315,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_1_2_0" ActionTag="-527270576" Tag="355" IconVisible="False" LeftMargin="284.4360" RightMargin="123.5640" TopMargin="356.5410" BottomMargin="81.4590" FontSize="20" LabelText="钻石" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_1_2_0" ActionTag="-527270576" Tag="355" IconVisible="False" LeftMargin="284.4347" RightMargin="123.5653" TopMargin="356.5404" BottomMargin="81.4596" FontSize="20" LabelText="钻石" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="42.0000" Y="22.0000" />
                 <AnchorPoint ScaleX="0.5179" ScaleY="0.5555" />
                 <Position X="306.1865" Y="93.6806" />

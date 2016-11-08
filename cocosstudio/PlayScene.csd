@@ -4,17 +4,18 @@
     <Content>
       <Animation Duration="0" Speed="1.0000" />
       <ObjectData Name="Scene" Tag="96" ctype="GameNodeObjectData">
-        <Size X="960.0000" Y="540.0000" />
+        <Size X="540.0000" Y="960.0000" />
         <Children>
-          <AbstractNodeData Name="bscback_1" ActionTag="-1289762963" Tag="420" IconVisible="False" LeftMargin="-0.1384" RightMargin="0.1384" TopMargin="-0.0656" BottomMargin="0.0656" Scale9Width="960" Scale9Height="540" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="bscback_1" ActionTag="873653969" Tag="907" IconVisible="False" ctype="SpriteObjectData">
             <Size X="960.0000" Y="540.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="479.8616" Y="270.0656" />
+            <Position X="480.0000" Y="270.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4999" Y="0.5001" />
+            <PrePosition X="0.5000" Y="0.5000" />
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="play/bscback_1.jpg" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="bscback_2" ActionTag="1160723730" Tag="341" IconVisible="False" LeftMargin="-0.1400" RightMargin="0.1400" TopMargin="-0.0700" BottomMargin="0.0700" ctype="SpriteObjectData">
             <Size X="960.0000" Y="540.0000" />
@@ -244,14 +245,14 @@
             <PreSize X="0.6146" Y="0.5926" />
             <FileData Type="Normal" Path="bg/toumingBig.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fanhui_btn" ActionTag="-866093184" Tag="421" IconVisible="False" LeftMargin="5.6299" RightMargin="878.3701" TopMargin="6.4037" BottomMargin="492.5963" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="46" Scale9Height="19" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="76.0000" Y="41.0000" />
+          <AbstractNodeData Name="fanhui_btn" ActionTag="-866093184" Tag="421" IconVisible="False" LeftMargin="-0.7744" RightMargin="884.7744" TopMargin="8.9310" BottomMargin="480.0690" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="46" Scale9Height="29" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="76.0000" Y="51.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="43.6299" Y="513.0963" />
+            <Position X="37.2256" Y="505.5690" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0454" Y="0.9502" />
-            <PreSize X="0.0792" Y="0.0759" />
+            <PrePosition X="0.0388" Y="0.9362" />
+            <PreSize X="0.0792" Y="0.0944" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
             <PressedFileData Type="Normal" Path="bg/button_back_2.png" Plist="" />
@@ -259,7 +260,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ProjectNode_5" ActionTag="1868111129" Tag="519" IconVisible="True" LeftMargin="814.0000" RightMargin="146.0000" TopMargin="49.6327" BottomMargin="490.3673" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="ProjectNode_topBtn" ActionTag="1868111129" Tag="519" IconVisible="True" LeftMargin="814.0000" RightMargin="146.0000" TopMargin="49.6327" BottomMargin="490.3673" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="814.0000" Y="490.3673" />
@@ -269,13 +270,13 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="Icon.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ProjectNode_4" ActionTag="1645536291" Tag="531" IconVisible="True" LeftMargin="180.0000" RightMargin="780.0000" TopMargin="37.9816" BottomMargin="502.0184" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="ProjectNode_score" ActionTag="1645536291" Tag="531" IconVisible="True" LeftMargin="138.0000" RightMargin="822.0000" TopMargin="37.9816" BottomMargin="502.0184" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="180.0000" Y="502.0184" />
+            <Position X="138.0000" Y="502.0184" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1875" Y="0.9297" />
+            <PrePosition X="0.1437" Y="0.9297" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="Fen.csd" Plist="" />
           </AbstractNodeData>
@@ -289,7 +290,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="character_right.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ProjectNode_3" ActionTag="-1805542895" Tag="610" IconVisible="True" LeftMargin="499.1273" RightMargin="460.8727" TopMargin="517.9925" BottomMargin="22.0075" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="ProjectNode_lipai" ActionTag="-1805542895" Tag="610" IconVisible="True" LeftMargin="499.1273" RightMargin="460.8727" TopMargin="517.9925" BottomMargin="22.0075" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="499.1273" Y="22.0075" />
@@ -595,7 +596,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="pokerNumber.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ProjectNode_1" ActionTag="1142999125" Tag="619" IconVisible="True" LeftMargin="499.0977" RightMargin="460.9023" TopMargin="203.4583" BottomMargin="336.5417" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="ProjectNode_action" ActionTag="1142999125" Tag="619" IconVisible="True" LeftMargin="499.0977" RightMargin="460.9023" TopMargin="203.4583" BottomMargin="336.5417" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="499.0977" Y="336.5417" />

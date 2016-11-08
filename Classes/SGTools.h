@@ -2,7 +2,10 @@
 #define _CGPTOOLS_H_
 #include "cocos2d.h"
 #include "BlueSky.h"
-/*#include "cocos2d/cocos/ui/UIWidget.h"*/
+#include "SimpleAudioEngine.h"
+#include<map>
+
+using namespace CocosDenshion;
 
 
 #include <string>
@@ -91,6 +94,8 @@ using namespace std;
 
 #define SYSMSG_TAGBEGIN   70000    //sysMsg tag ¿ªÊ¼
 #define SYSMSG_TAGBEGIN_TOUMING 71000
+
+
 class Tools :public Node, public BlueSkyCommand
 {
 
@@ -98,7 +103,7 @@ public:
 	static Tools*  getInstance();
 	void initTools(void);
 	void showSysMsg(std::string msg, std::function<void(Ref*)> callFunc);
-	void showSysMsgTouming(std::string msg, float x = 0, float y = 0);
+	void showSysMsgTouming(std::string msg, float x = 0, float y = 0, Color3B color = Color3B(255, 255, 255));
 	void closeSysMsgTouming(Node*  psender);
 	void closeSysMsg(Ref*  psender);
 	static void shakeWnd(Node* layout);

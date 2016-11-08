@@ -37,10 +37,10 @@
             <FileData Type="Normal" Path="NewMall/title_recharge.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="closeBtn" ActionTag="826560221" Tag="2145" IconVisible="False" LeftMargin="-444.0360" RightMargin="368.0360" TopMargin="-264.5766" BottomMargin="223.5766" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="46" Scale9Height="19" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="76.0000" Y="41.0000" />
+          <AbstractNodeData Name="closeBtn" ActionTag="826560221" Tag="2145" IconVisible="False" LeftMargin="-459.0369" RightMargin="383.0369" TopMargin="-266.5764" BottomMargin="215.5764" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="46" Scale9Height="29" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="76.0000" Y="51.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-406.0360" Y="244.0766" />
+            <Position X="-421.0369" Y="241.0764" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

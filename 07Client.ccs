@@ -526,6 +526,7 @@
           <Image Name="bentouming.png" />
           <Image Name="bg.png" />
           <Image Name="bg_2nd-ui.png" />
+          <Image Name="bg_cloud.png" />
           <Image Name="bg_icon.png" />
           <Image Name="bg_L_label.png" />
           <Image Name="bg_M.png" />
@@ -624,6 +625,36 @@
           <Image Name="top_bg.png" />
           <Image Name="touming.png" />
           <Image Name="toumingBig.png" />
+        </Folder>
+        <Folder Name="blood">
+          <Image Name="bg_black.png" />
+          <Image Name="bg_fight_10.png" />
+          <Image Name="bg_fight_5.png" />
+          <Image Name="bg_fight_end.png" />
+          <Image Name="bg_fight_k.png" />
+          <Image Name="decoration.png" />
+          <Image Name="flash_1.png" />
+          <Image Name="flash_2.png" />
+          <Image Name="icon_gold.png" />
+          <Image Name="name_frame_1.png" />
+          <Image Name="name_frame_2.png" />
+          <Image Name="pai_frame_1.png" />
+          <Image Name="pai_frame_2.png" />
+          <Image Name="palyer_bg_1.png" />
+          <Image Name="palyer_bg_2.png" />
+          <Image Name="role_1.png" />
+          <Image Name="role_2.png" />
+          <Image Name="streamers_1.png" />
+          <Image Name="streamers_2.png" />
+          <Image Name="text_10.png" />
+          <Image Name="text_5.png" />
+          <Image Name="text_dao.png" />
+          <Image Name="text_di.png" />
+          <Image Name="text_K.png" />
+          <Image Name="text_xuezhan.png" />
+          <Image Name="title_fight.png" />
+          <Image Name="VS.png" />
+          <Image Name="VS_light.png" />
         </Folder>
         <Folder Name="createRole">
           <Folder Name="action">
@@ -747,37 +778,15 @@
           <Image Name="button_invite2_2.png" />
           <Image Name="button_ok_1.png" />
           <Image Name="button_ok_2.png" />
-          <Image Name="flash_1.png" />
-          <Image Name="flash_2.png" />
-          <Image Name="icon_fight_5.png" />
-          <Image Name="icon_fight_end.png" />
-          <Image Name="icon_fight_k.png" />
+          <Image Name="decoration.png" />
           <Image Name="icon_friend.png" />
           <Image Name="icon_random.png" />
           <Image Name="icon_team.png" />
           <Image Name="invite_bg.png" />
           <Image Name="invite_inner_bg.png" />
-          <Image Name="name_frame_1.png" />
-          <Image Name="name_frame_2.png" />
-          <Image Name="pai_frame_1.png" />
-          <Image Name="pai_frame_2.png" />
-          <Image Name="palyer_bg_1.png" />
-          <Image Name="palyer_bg_2.png" />
-          <Image Name="role_1.png" />
-          <Image Name="role_2.png" />
           <Image Name="role_black.png" />
-          <Image Name="streamers_1.png" />
-          <Image Name="streamers_2.png" />
-          <Image Name="text_10.png" />
-          <Image Name="text_5.png" />
-          <Image Name="text_dao.png" />
-          <Image Name="text_di.png" />
-          <Image Name="text_K.png" />
-          <Image Name="text_xuezhan.png" />
           <Image Name="title_fun.png" />
           <Image Name="title_invite.png" />
-          <Image Name="VS.png" />
-          <Image Name="VS_light.png" />
         </Folder>
         <Folder Name="font">
           <TTF Name="fangzhengchuyuan.TTF" />
@@ -1013,6 +1022,14 @@
           <Image Name="stamp_3.png" />
           <Image Name="stamp_4.png" />
           <Image Name="title_lose.png" />
+          <Image Name="title_war_lose.png" />
+          <Image Name="title_war_lose_10.png" />
+          <Image Name="title_war_lose_5.png" />
+          <Image Name="title_war_lose_A.png" />
+          <Image Name="title_war_win.png" />
+          <Image Name="title_war_win_10.png" />
+          <Image Name="title_war_win_5.png" />
+          <Image Name="title_war_win_A.png" />
           <Image Name="title_win.png" />
         </Folder>
         <Folder Name="NewLobby">
@@ -1020,8 +1037,10 @@
           <Image Name="ad_2.png" />
           <Image Name="ad_3.png" />
           <Image Name="ad_bg.png" />
+          <Image Name="ad_fold_bg.png" />
           <Image Name="ad_page_1.png" />
           <Image Name="ad_page_2.png" />
+          <Image Name="ad_unfold_bg.png" />
           <Image Name="bg_lv1.png" />
           <Image Name="bg_lv2.png" />
           <Image Name="bg_lv3.png" />
@@ -1054,13 +1073,21 @@
           <Image Name="button_start_2.png" />
           <Image Name="button_task_1.png" />
           <Image Name="button_task_2.png" />
+          <Image Name="decoration.png" />
           <Image Name="headshot_frame.png" />
+          <Image Name="icon_diamond_1.png" />
+          <Image Name="icon_diamond_2.png" />
           <Image Name="icon_gold.png" />
+          <Image Name="icon_gold_1.png" />
+          <Image Name="icon_gold_2.png" />
           <Image Name="icon_lv1.png" />
           <Image Name="icon_lv2.png" />
           <Image Name="icon_lv3.png" />
           <Image Name="logo.png" />
+          <Image Name="number_bg.png" />
           <Image Name="number_frame.png" />
+          <Image Name="role_bg.png" />
+          <Image Name="role-name_bg.png" />
           <Image Name="title_gold.png" />
           <Image Name="top_bg.png" />
           <Image Name="touming.png" />
@@ -1102,17 +1129,14 @@
           <Image Name="item_bag2_1.png" />
           <Image Name="item_record_2.png" />
           <Image Name="label_diamond_1.png" />
-          <Image Name="label_diamond_11.png" />
-          <Image Name="label_diamond_12.png" />
           <Image Name="label_diamond_2.png" />
           <Image Name="label_events_1.png" />
-          <Image Name="label_events_11.png" />
-          <Image Name="label_events_12.png" />
           <Image Name="label_events_2.png" />
           <Image Name="label_exchange_1.png" />
           <Image Name="label_exchange_2.png" />
           <Image Name="label_gold_1.png" />
           <Image Name="label_gold_2.png" />
+          <Image Name="label_rope.png" />
           <Image Name="number_frame.png" />
           <Image Name="price_tag.png" />
           <Image Name="shop_box.png" />
@@ -1561,58 +1585,19 @@
           <Image Name="title_setting.png" />
         </Folder>
         <Folder Name="sevenDayGift">
-          <Folder Name="wkernel32.pdb">
-            <Folder Name="B4112310CCA0437BBF51C495A1922FC22" />
-          </Folder>
-          <Image Name="001.png" />
-          <Image Name="01-down-anniu.png" />
-          <Image Name="01-up-anniu.png" />
+          <Image Name="1st-day.png" />
+          <Image Name="2nd-day.png" />
+          <Image Name="3rd-day.png" />
+          <Image Name="4th-day.png" />
+          <Image Name="5th-day.png" />
+          <Image Name="6th-day.png" />
+          <Image Name="7th-day.png" />
           <Image Name="already-receive.png" />
-          <Image Name="biaotizi06.png" />
+          <Image Name="bg_reward.png" />
           <Image Name="button_receive_1.png" />
           <Image Name="button_receive_2.png" />
-          <Image Name="di.png" />
-          <Image Name="di01.png" />
-          <Image Name="di02.png" />
-          <Image Name="di03.png" />
-          <Image Name="hasGet.png" />
-          <Image Name="icon01.png" />
-          <Image Name="icon01-01.png" />
-          <Image Name="icon02.png" />
-          <Image Name="icon02-01.png" />
-          <Image Name="inner_bg.png" />
-          <Image Name="kuang.png" />
-          <Image Name="libao.png" />
-          <Image Name="libao02.png" />
-          <Image Name="price_tag.png" />
-          <Image Name="title_bg.png" />
-          <Image Name="title_text.png" />
-          <Image Name="wood1_bg.png" />
-          <Image Name="zhezhao.png" />
+          <Image Name="title_sign-in.png" />
           <Image Name="zi.png" />
-          <Image Name="zi002.png" />
-          <Image Name="zi01.png" />
-          <Image Name="zi02.png" />
-          <Image Name="zi03.png" />
-          <Image Name="zi04.png" />
-          <Image Name="zi05.png" />
-          <Image Name="zi06.png" />
-          <Image Name="zi07.png" />
-          <Image Name="zi10.png" />
-          <Image Name="zi11.png" />
-          <Image Name="zi12.png" />
-          <Image Name="zi13.png" />
-          <Image Name="zi14.png" />
-          <Image Name="zi15.png" />
-          <Image Name="zi16.png" />
-          <Image Name="zi21.png" />
-          <Image Name="zi22.png" />
-          <Image Name="zi23.png" />
-          <Image Name="zi24.png" />
-          <Image Name="zi25.png" />
-          <Image Name="zi26.png" />
-          <Image Name="zi27.png" />
-          <Image Name="zi35.png" />
         </Folder>
         <Folder Name="textures">
           <PlistInfo Name="action0.csi" Type="Plist" />
@@ -1625,6 +1610,7 @@
         <Project Name="Anjian.csd" Type="Node" />
         <Project Name="bigHead.csd" Type="Node" />
         <Project Name="blood.csd" Type="Node" />
+        <Project Name="bloodStart.csd" Type="Node" />
         <Project Name="boom.csd" Type="Node" />
         <Project Name="cancelAuto.csd" Type="Node" />
         <Project Name="character_right.csd" Type="Node" />

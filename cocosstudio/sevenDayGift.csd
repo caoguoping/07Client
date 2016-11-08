@@ -2,400 +2,480 @@
   <PropertyGroup Name="sevenDayGift" Type="Node" ID="b7617d63-1174-44cf-a402-1a4f15fc4d9a" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="0" Speed="1.0000" />
+      <Animation Duration="40" Speed="1.0000">
+        <Timeline ActionTag="-2021362148" Property="Position">
+          <PointFrame FrameIndex="0" X="0.0000" Y="201.2748">
+            <EasingData Type="26" />
+          </PointFrame>
+          <PointFrame FrameIndex="40" X="0.0023" Y="47.0850">
+            <EasingData Type="17" />
+          </PointFrame>
+        </Timeline>
+        <Timeline ActionTag="-2021362148" Property="Scale">
+          <ScaleFrame FrameIndex="0" X="1.0000" Y="1.0000">
+            <EasingData Type="26" />
+          </ScaleFrame>
+        </Timeline>
+        <Timeline ActionTag="-2021362148" Property="RotationSkew">
+          <ScaleFrame FrameIndex="0" X="0.0000" Y="0.0000">
+            <EasingData Type="26" />
+          </ScaleFrame>
+        </Timeline>
+      </Animation>
       <ObjectData Name="Node" Tag="753" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Image_38" ActionTag="1750323098" Alpha="191" Tag="629" IconVisible="False" LeftMargin="-8.0000" RightMargin="-8.0000" TopMargin="-4.5000" BottomMargin="-4.5000" TouchEnable="True" LeftEage="6" RightEage="6" TopEage="2" BottomEage="2" Scale9OriginX="6" Scale9OriginY="2" Scale9Width="4" Scale9Height="5" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_bg" ActionTag="761078668" Alpha="197" Tag="896" IconVisible="False" LeftMargin="-7.9998" RightMargin="-8.0002" TopMargin="-4.5000" BottomMargin="-4.5000" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="6" Scale9Height="5" ctype="ImageViewObjectData">
             <Size X="16.0000" Y="9.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position />
+            <Position X="0.0002" />
             <Scale ScaleX="60.0000" ScaleY="60.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/bentouming.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="wood1_bg_7" ActionTag="-1670535218" Tag="12283" IconVisible="False" LeftMargin="-377.3276" RightMargin="-390.6724" TopMargin="-205.7762" BottomMargin="-198.2238" ctype="SpriteObjectData">
-            <Size X="768.0000" Y="404.0000" />
+          <AbstractNodeData Name="Image_frame" ActionTag="-2021362148" Tag="876" IconVisible="False" LeftMargin="-347.9977" RightMargin="-348.0023" TopMargin="-302.0850" BottomMargin="-207.9150" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="686" Scale9Height="506" ctype="ImageViewObjectData">
+            <Size X="696.0000" Y="510.0000" />
+            <Children>
+              <AbstractNodeData Name="Image_1_0" ActionTag="521730143" Tag="879" IconVisible="False" LeftMargin="166.2484" RightMargin="167.7516" TopMargin="82.3064" BottomMargin="344.6936" LeftEage="86" RightEage="86" TopEage="22" BottomEage="22" Scale9OriginX="86" Scale9OriginY="22" Scale9Width="190" Scale9Height="39" ctype="ImageViewObjectData">
+                <Size X="362.0000" Y="83.0000" />
+                <AnchorPoint />
+                <Position X="166.2484" Y="344.6936" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.2389" Y="0.6759" />
+                <PreSize X="0.5201" Y="0.1627" />
+                <FileData Type="Normal" Path="sevenDayGift/title_sign-in.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="closeBtn" ActionTag="-1603118815" Tag="880" IconVisible="False" LeftMargin="623.6990" RightMargin="-9.6990" TopMargin="82.3044" BottomMargin="347.6956" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="52" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="82.0000" Y="80.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="664.6990" Y="387.6956" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.9550" Y="0.7602" />
+                <PreSize X="0.1178" Y="0.1569" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <PressedFileData Type="Normal" Path="bg/anniu-guanbi-down.png" Plist="" />
+                <NormalFileData Type="Normal" Path="bg/anniu-guanbi-up.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_0" ActionTag="-633397143" Tag="897" IconVisible="False" LeftMargin="31.3608" RightMargin="519.6392" TopMargin="170.5663" BottomMargin="189.4337" LeftEage="47" RightEage="47" TopEage="49" BottomEage="49" Scale9OriginX="47" Scale9OriginY="49" Scale9Width="51" Scale9Height="52" ctype="ImageViewObjectData">
+                <Size X="145.0000" Y="150.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_30_1" ActionTag="611671722" Tag="30" IconVisible="False" LeftMargin="5.9908" RightMargin="60.0092" TopMargin="6.0484" BottomMargin="87.9516" LeftEage="26" RightEage="26" TopEage="18" BottomEage="18" Scale9OriginX="26" Scale9OriginY="18" Scale9Width="27" Scale9Height="20" ctype="ImageViewObjectData">
+                    <Size X="79.0000" Y="56.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="45.4908" Y="115.9516" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.3137" Y="0.7730" />
+                    <PreSize X="0.5448" Y="0.3733" />
+                    <FileData Type="Normal" Path="sevenDayGift/1st-day.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Text_ruju" ActionTag="2051266723" Tag="54" IconVisible="False" LeftMargin="22.9610" RightMargin="18.0390" TopMargin="109.5080" BottomMargin="18.4920" FontSize="20" LabelText="金币×1000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="104.0000" Y="22.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="74.9610" Y="29.4920" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="117" G="42" B="0" />
+                    <PrePosition X="0.5170" Y="0.1966" />
+                    <PreSize X="0.7172" Y="0.1467" />
+                    <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Image_30_1_0" ActionTag="379950273" Tag="31" IconVisible="False" LeftMargin="34.2165" RightMargin="32.7835" TopMargin="27.0041" BottomMargin="45.9959" LeftEage="26" RightEage="26" TopEage="18" BottomEage="18" Scale9OriginX="26" Scale9OriginY="18" Scale9Width="26" Scale9Height="41" ctype="ImageViewObjectData">
+                    <Size X="78.0000" Y="77.0000" />
+                    <AnchorPoint ScaleX="0.4855" ScaleY="0.4949" />
+                    <Position X="72.0855" Y="84.1032" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4971" Y="0.5607" />
+                    <PreSize X="0.5379" Y="0.5133" />
+                    <FileData Type="Normal" Path="bg/icon_gold_1.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Image_mask" ActionTag="1378552645" VisibleForFrame="False" Tag="898" IconVisible="False" LeftMargin="0.3292" RightMargin="-0.3292" TopMargin="0.0665" BottomMargin="-0.0665" LeftEage="47" RightEage="47" TopEage="49" BottomEage="49" Scale9OriginX="47" Scale9OriginY="49" Scale9Width="51" Scale9Height="52" ctype="ImageViewObjectData">
+                    <Size X="145.0000" Y="150.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="72.8292" Y="74.9335" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5023" Y="0.4996" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="sevenDayGift/already-receive.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="103.8608" Y="264.4337" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1492" Y="0.5185" />
+                <PreSize X="0.2083" Y="0.2941" />
+                <FileData Type="Normal" Path="sevenDayGift/bg_reward.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_1" ActionTag="1989266451" Tag="55" IconVisible="False" LeftMargin="186.2033" RightMargin="364.7967" TopMargin="171.8414" BottomMargin="188.1586" LeftEage="47" RightEage="47" TopEage="49" BottomEage="49" Scale9OriginX="47" Scale9OriginY="49" Scale9Width="51" Scale9Height="52" ctype="ImageViewObjectData">
+                <Size X="145.0000" Y="150.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_30_1" ActionTag="1666149052" Tag="56" IconVisible="False" LeftMargin="5.9908" RightMargin="60.0092" TopMargin="6.0484" BottomMargin="87.9516" LeftEage="26" RightEage="26" TopEage="18" BottomEage="18" Scale9OriginX="26" Scale9OriginY="18" Scale9Width="27" Scale9Height="20" ctype="ImageViewObjectData">
+                    <Size X="79.0000" Y="56.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="45.4908" Y="115.9516" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.3137" Y="0.7730" />
+                    <PreSize X="0.5448" Y="0.3733" />
+                    <FileData Type="Normal" Path="sevenDayGift/2nd-day.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Text_ruju" ActionTag="2034495561" Tag="57" IconVisible="False" LeftMargin="20.9610" RightMargin="16.0390" TopMargin="109.5080" BottomMargin="18.4920" FontSize="20" LabelText="金币×2000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="108.0000" Y="22.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="74.9610" Y="29.4920" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="117" G="42" B="0" />
+                    <PrePosition X="0.5170" Y="0.1966" />
+                    <PreSize X="0.7448" Y="0.1467" />
+                    <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Image_30_1_0" ActionTag="1725112077" Tag="58" IconVisible="False" LeftMargin="34.2165" RightMargin="32.7835" TopMargin="27.0041" BottomMargin="45.9959" LeftEage="26" RightEage="26" TopEage="18" BottomEage="18" Scale9OriginX="26" Scale9OriginY="18" Scale9Width="26" Scale9Height="41" ctype="ImageViewObjectData">
+                    <Size X="78.0000" Y="77.0000" />
+                    <AnchorPoint ScaleX="0.4855" ScaleY="0.4949" />
+                    <Position X="72.0855" Y="84.1032" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4971" Y="0.5607" />
+                    <PreSize X="0.5379" Y="0.5133" />
+                    <FileData Type="Normal" Path="bg/icon_gold_1.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Image_mask" ActionTag="-2040193052" VisibleForFrame="False" Tag="59" IconVisible="False" LeftMargin="0.3292" RightMargin="-0.3292" TopMargin="0.0665" BottomMargin="-0.0665" LeftEage="47" RightEage="47" TopEage="49" BottomEage="49" Scale9OriginX="47" Scale9OriginY="49" Scale9Width="51" Scale9Height="52" ctype="ImageViewObjectData">
+                    <Size X="145.0000" Y="150.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="72.8292" Y="74.9335" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5023" Y="0.4996" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="sevenDayGift/already-receive.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="258.7033" Y="263.1586" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.3717" Y="0.5160" />
+                <PreSize X="0.2083" Y="0.2941" />
+                <FileData Type="Normal" Path="sevenDayGift/bg_reward.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_2" ActionTag="1345387520" Tag="60" IconVisible="False" LeftMargin="341.0457" RightMargin="209.9543" TopMargin="171.8414" BottomMargin="188.1586" LeftEage="47" RightEage="47" TopEage="49" BottomEage="49" Scale9OriginX="47" Scale9OriginY="49" Scale9Width="51" Scale9Height="52" ctype="ImageViewObjectData">
+                <Size X="145.0000" Y="150.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_30_1" ActionTag="260564808" Tag="61" IconVisible="False" LeftMargin="5.9908" RightMargin="60.0092" TopMargin="6.0484" BottomMargin="87.9516" LeftEage="26" RightEage="26" TopEage="18" BottomEage="18" Scale9OriginX="26" Scale9OriginY="18" Scale9Width="27" Scale9Height="20" ctype="ImageViewObjectData">
+                    <Size X="79.0000" Y="56.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="45.4908" Y="115.9516" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.3137" Y="0.7730" />
+                    <PreSize X="0.5448" Y="0.3733" />
+                    <FileData Type="Normal" Path="sevenDayGift/3rd-day.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Text_ruju" ActionTag="69466629" Tag="62" IconVisible="False" LeftMargin="20.9610" RightMargin="16.0390" TopMargin="109.5080" BottomMargin="18.4920" FontSize="20" LabelText="金币×3000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="108.0000" Y="22.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="74.9610" Y="29.4920" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="117" G="42" B="0" />
+                    <PrePosition X="0.5170" Y="0.1966" />
+                    <PreSize X="0.7448" Y="0.1467" />
+                    <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Image_30_1_0" ActionTag="-599660992" Tag="63" IconVisible="False" LeftMargin="34.2165" RightMargin="32.7835" TopMargin="27.0041" BottomMargin="45.9959" LeftEage="26" RightEage="26" TopEage="18" BottomEage="18" Scale9OriginX="26" Scale9OriginY="18" Scale9Width="26" Scale9Height="41" ctype="ImageViewObjectData">
+                    <Size X="78.0000" Y="77.0000" />
+                    <AnchorPoint ScaleX="0.4855" ScaleY="0.4949" />
+                    <Position X="72.0855" Y="84.1032" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4971" Y="0.5607" />
+                    <PreSize X="0.5379" Y="0.5133" />
+                    <FileData Type="Normal" Path="bg/icon_gold_1.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Image_mask" ActionTag="1210603984" VisibleForFrame="False" Tag="64" IconVisible="False" LeftMargin="0.3292" RightMargin="-0.3292" TopMargin="0.0665" BottomMargin="-0.0665" LeftEage="47" RightEage="47" TopEage="49" BottomEage="49" Scale9OriginX="47" Scale9OriginY="49" Scale9Width="51" Scale9Height="52" ctype="ImageViewObjectData">
+                    <Size X="145.0000" Y="150.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="72.8292" Y="74.9335" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5023" Y="0.4996" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="sevenDayGift/already-receive.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="413.5457" Y="263.1586" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5942" Y="0.5160" />
+                <PreSize X="0.2083" Y="0.2941" />
+                <FileData Type="Normal" Path="sevenDayGift/bg_reward.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_3" ActionTag="-1283873191" Tag="65" IconVisible="False" LeftMargin="495.8883" RightMargin="55.1117" TopMargin="171.8413" BottomMargin="188.1587" LeftEage="47" RightEage="47" TopEage="49" BottomEage="49" Scale9OriginX="47" Scale9OriginY="49" Scale9Width="51" Scale9Height="52" ctype="ImageViewObjectData">
+                <Size X="145.0000" Y="150.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_30_1" ActionTag="-1050290647" Tag="66" IconVisible="False" LeftMargin="5.9908" RightMargin="60.0092" TopMargin="6.0484" BottomMargin="87.9516" LeftEage="26" RightEage="26" TopEage="18" BottomEage="18" Scale9OriginX="26" Scale9OriginY="18" Scale9Width="27" Scale9Height="20" ctype="ImageViewObjectData">
+                    <Size X="79.0000" Y="56.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="45.4908" Y="115.9516" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.3137" Y="0.7730" />
+                    <PreSize X="0.5448" Y="0.3733" />
+                    <FileData Type="Normal" Path="sevenDayGift/4th-day.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Text_ruju" ActionTag="2050930327" Tag="67" IconVisible="False" LeftMargin="20.9610" RightMargin="16.0390" TopMargin="109.5080" BottomMargin="18.4920" FontSize="20" LabelText="金币×4000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="108.0000" Y="22.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="74.9610" Y="29.4920" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="117" G="42" B="0" />
+                    <PrePosition X="0.5170" Y="0.1966" />
+                    <PreSize X="0.7448" Y="0.1467" />
+                    <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Image_30_1_0" ActionTag="1830147967" Tag="68" IconVisible="False" LeftMargin="34.2165" RightMargin="32.7835" TopMargin="27.0041" BottomMargin="45.9959" LeftEage="26" RightEage="26" TopEage="18" BottomEage="18" Scale9OriginX="26" Scale9OriginY="18" Scale9Width="26" Scale9Height="41" ctype="ImageViewObjectData">
+                    <Size X="78.0000" Y="77.0000" />
+                    <AnchorPoint ScaleX="0.4855" ScaleY="0.4949" />
+                    <Position X="72.0855" Y="84.1032" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4971" Y="0.5607" />
+                    <PreSize X="0.5379" Y="0.5133" />
+                    <FileData Type="Normal" Path="bg/icon_gold_1.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Image_mask" ActionTag="262087648" VisibleForFrame="False" Tag="69" IconVisible="False" LeftMargin="0.3292" RightMargin="-0.3292" TopMargin="0.0665" BottomMargin="-0.0665" LeftEage="47" RightEage="47" TopEage="49" BottomEage="49" Scale9OriginX="47" Scale9OriginY="49" Scale9Width="51" Scale9Height="52" ctype="ImageViewObjectData">
+                    <Size X="145.0000" Y="150.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="72.8292" Y="74.9335" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5023" Y="0.4996" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="sevenDayGift/already-receive.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="568.3883" Y="263.1587" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.8166" Y="0.5160" />
+                <PreSize X="0.2083" Y="0.2941" />
+                <FileData Type="Normal" Path="sevenDayGift/bg_reward.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_4" ActionTag="-732356843" Tag="70" IconVisible="False" LeftMargin="102.3418" RightMargin="448.6582" TopMargin="318.9647" BottomMargin="41.0353" LeftEage="47" RightEage="47" TopEage="49" BottomEage="49" Scale9OriginX="47" Scale9OriginY="49" Scale9Width="51" Scale9Height="52" ctype="ImageViewObjectData">
+                <Size X="145.0000" Y="150.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_30_1" ActionTag="-810168276" Tag="71" IconVisible="False" LeftMargin="5.9908" RightMargin="60.0092" TopMargin="6.0484" BottomMargin="87.9516" LeftEage="26" RightEage="26" TopEage="18" BottomEage="18" Scale9OriginX="26" Scale9OriginY="18" Scale9Width="27" Scale9Height="20" ctype="ImageViewObjectData">
+                    <Size X="79.0000" Y="56.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="45.4908" Y="115.9516" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.3137" Y="0.7730" />
+                    <PreSize X="0.5448" Y="0.3733" />
+                    <FileData Type="Normal" Path="sevenDayGift/5th-day.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Text_ruju" ActionTag="-951260490" Tag="72" IconVisible="False" LeftMargin="20.9610" RightMargin="16.0390" TopMargin="109.5080" BottomMargin="18.4920" FontSize="20" LabelText="金币×5000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="108.0000" Y="22.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="74.9610" Y="29.4920" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="117" G="42" B="0" />
+                    <PrePosition X="0.5170" Y="0.1966" />
+                    <PreSize X="0.7448" Y="0.1467" />
+                    <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Image_30_1_0" ActionTag="902028283" Tag="73" IconVisible="False" LeftMargin="34.2165" RightMargin="32.7835" TopMargin="27.0041" BottomMargin="45.9959" LeftEage="26" RightEage="26" TopEage="18" BottomEage="18" Scale9OriginX="26" Scale9OriginY="18" Scale9Width="26" Scale9Height="41" ctype="ImageViewObjectData">
+                    <Size X="78.0000" Y="77.0000" />
+                    <AnchorPoint ScaleX="0.4855" ScaleY="0.4949" />
+                    <Position X="72.0855" Y="84.1032" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4971" Y="0.5607" />
+                    <PreSize X="0.5379" Y="0.5133" />
+                    <FileData Type="Normal" Path="bg/icon_gold_1.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Image_mask" ActionTag="1598854033" VisibleForFrame="False" Tag="74" IconVisible="False" LeftMargin="0.3292" RightMargin="-0.3292" TopMargin="0.0665" BottomMargin="-0.0665" LeftEage="47" RightEage="47" TopEage="49" BottomEage="49" Scale9OriginX="47" Scale9OriginY="49" Scale9Width="51" Scale9Height="52" ctype="ImageViewObjectData">
+                    <Size X="145.0000" Y="150.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="72.8292" Y="74.9335" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5023" Y="0.4996" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="sevenDayGift/already-receive.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="174.8418" Y="116.0353" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.2512" Y="0.2275" />
+                <PreSize X="0.2083" Y="0.2941" />
+                <FileData Type="Normal" Path="sevenDayGift/bg_reward.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_5" ActionTag="-1991897632" Tag="75" IconVisible="False" LeftMargin="261.4453" RightMargin="289.5547" TopMargin="318.9647" BottomMargin="41.0353" LeftEage="47" RightEage="47" TopEage="49" BottomEage="49" Scale9OriginX="47" Scale9OriginY="49" Scale9Width="51" Scale9Height="52" ctype="ImageViewObjectData">
+                <Size X="145.0000" Y="150.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_30_1" ActionTag="1677081579" Tag="76" IconVisible="False" LeftMargin="5.9908" RightMargin="60.0092" TopMargin="6.0484" BottomMargin="87.9516" LeftEage="26" RightEage="26" TopEage="18" BottomEage="18" Scale9OriginX="26" Scale9OriginY="18" Scale9Width="27" Scale9Height="20" ctype="ImageViewObjectData">
+                    <Size X="79.0000" Y="56.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="45.4908" Y="115.9516" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.3137" Y="0.7730" />
+                    <PreSize X="0.5448" Y="0.3733" />
+                    <FileData Type="Normal" Path="sevenDayGift/6th-day.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Text_ruju" ActionTag="1326330748" Tag="77" IconVisible="False" LeftMargin="20.9610" RightMargin="16.0390" TopMargin="109.5080" BottomMargin="18.4920" FontSize="20" LabelText="金币×6000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="108.0000" Y="22.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="74.9610" Y="29.4920" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="117" G="42" B="0" />
+                    <PrePosition X="0.5170" Y="0.1966" />
+                    <PreSize X="0.7448" Y="0.1467" />
+                    <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Image_30_1_0" ActionTag="716225917" Tag="78" IconVisible="False" LeftMargin="34.2165" RightMargin="32.7835" TopMargin="27.0041" BottomMargin="45.9959" LeftEage="26" RightEage="26" TopEage="18" BottomEage="18" Scale9OriginX="26" Scale9OriginY="18" Scale9Width="26" Scale9Height="41" ctype="ImageViewObjectData">
+                    <Size X="78.0000" Y="77.0000" />
+                    <AnchorPoint ScaleX="0.4855" ScaleY="0.4949" />
+                    <Position X="72.0855" Y="84.1032" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4971" Y="0.5607" />
+                    <PreSize X="0.5379" Y="0.5133" />
+                    <FileData Type="Normal" Path="bg/icon_gold_1.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Image_mask" ActionTag="-1059529205" VisibleForFrame="False" Tag="79" IconVisible="False" LeftMargin="0.3292" RightMargin="-0.3292" TopMargin="0.0665" BottomMargin="-0.0665" LeftEage="47" RightEage="47" TopEage="49" BottomEage="49" Scale9OriginX="47" Scale9OriginY="49" Scale9Width="51" Scale9Height="52" ctype="ImageViewObjectData">
+                    <Size X="145.0000" Y="150.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="72.8292" Y="74.9335" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5023" Y="0.4996" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="sevenDayGift/already-receive.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="333.9453" Y="116.0353" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4798" Y="0.2275" />
+                <PreSize X="0.2083" Y="0.2941" />
+                <FileData Type="Normal" Path="sevenDayGift/bg_reward.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_6" ActionTag="251970423" Tag="80" IconVisible="False" LeftMargin="420.5491" RightMargin="130.4509" TopMargin="318.9647" BottomMargin="41.0353" LeftEage="47" RightEage="47" TopEage="49" BottomEage="49" Scale9OriginX="47" Scale9OriginY="49" Scale9Width="51" Scale9Height="52" ctype="ImageViewObjectData">
+                <Size X="145.0000" Y="150.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_30_1" ActionTag="-1927652689" Tag="81" IconVisible="False" LeftMargin="5.9908" RightMargin="60.0092" TopMargin="6.0484" BottomMargin="87.9516" LeftEage="26" RightEage="26" TopEage="18" BottomEage="18" Scale9OriginX="26" Scale9OriginY="18" Scale9Width="27" Scale9Height="20" ctype="ImageViewObjectData">
+                    <Size X="79.0000" Y="56.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="45.4908" Y="115.9516" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.3137" Y="0.7730" />
+                    <PreSize X="0.5448" Y="0.3733" />
+                    <FileData Type="Normal" Path="sevenDayGift/7th-day.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Text_ruju" ActionTag="909061684" Tag="82" IconVisible="False" LeftMargin="20.9610" RightMargin="16.0390" TopMargin="109.5080" BottomMargin="18.4920" FontSize="20" LabelText="金币×7000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="108.0000" Y="22.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="74.9610" Y="29.4920" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="117" G="42" B="0" />
+                    <PrePosition X="0.5170" Y="0.1966" />
+                    <PreSize X="0.7448" Y="0.1467" />
+                    <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Image_30_1_0" ActionTag="1402826044" Tag="83" IconVisible="False" LeftMargin="34.2165" RightMargin="32.7835" TopMargin="27.0041" BottomMargin="45.9959" LeftEage="26" RightEage="26" TopEage="18" BottomEage="18" Scale9OriginX="26" Scale9OriginY="18" Scale9Width="26" Scale9Height="41" ctype="ImageViewObjectData">
+                    <Size X="78.0000" Y="77.0000" />
+                    <AnchorPoint ScaleX="0.4855" ScaleY="0.4949" />
+                    <Position X="72.0855" Y="84.1032" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4971" Y="0.5607" />
+                    <PreSize X="0.5379" Y="0.5133" />
+                    <FileData Type="Normal" Path="bg/icon_gold_1.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Image_mask" ActionTag="-2081723187" VisibleForFrame="False" Tag="84" IconVisible="False" LeftMargin="0.3292" RightMargin="-0.3292" TopMargin="0.0665" BottomMargin="-0.0665" LeftEage="47" RightEage="47" TopEage="49" BottomEage="49" Scale9OriginX="47" Scale9OriginY="49" Scale9Width="51" Scale9Height="52" ctype="ImageViewObjectData">
+                    <Size X="145.0000" Y="150.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="72.8292" Y="74.9335" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5023" Y="0.4996" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="sevenDayGift/already-receive.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="493.0491" Y="116.0353" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.7084" Y="0.2275" />
+                <PreSize X="0.2083" Y="0.2941" />
+                <FileData Type="Normal" Path="sevenDayGift/bg_reward.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Text_ruju" ActionTag="21557993" Tag="86" IconVisible="False" LeftMargin="258.1408" RightMargin="290.8592" TopMargin="469.8025" BottomMargin="13.1975" FontSize="24" LabelText="明日再来领取" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="147.0000" Y="27.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="331.6408" Y="26.6975" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="229" G="255" B="229" />
+                <PrePosition X="0.4765" Y="0.0523" />
+                <PreSize X="0.2112" Y="0.0529" />
+                <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="getGiftBtn" ActionTag="1728874706" VisibleForFrame="False" Tag="87" IconVisible="False" LeftMargin="267.0413" RightMargin="292.9587" TopMargin="477.0405" BottomMargin="-10.0405" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="106" Scale9Height="21" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="136.0000" Y="43.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="335.0413" Y="11.4595" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4814" Y="0.0225" />
+                <PreSize X="0.1954" Y="0.0843" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <PressedFileData Type="Normal" Path="sevenDayGift/button_receive_2.png" Plist="" />
+                <NormalFileData Type="Normal" Path="sevenDayGift/button_receive_1.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="6.6724" Y="3.7762" />
+            <Position X="0.0023" Y="47.0850" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/wood1_bg.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="heiban_1" ActionTag="1244367866" Tag="754" IconVisible="False" LeftMargin="-374.5000" RightMargin="-374.5000" TopMargin="-144.0000" BottomMargin="-144.0000" ctype="SpriteObjectData">
-            <Size X="749.0000" Y="288.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/inner_bg.png" Plist="" />
-            <BlendFunc Src="770" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day1_1" ActionTag="1195166258" Tag="767" IconVisible="False" LeftMargin="-325.7526" RightMargin="235.7526" TopMargin="-99.5468" BottomMargin="10.5468" Scale9Width="90" Scale9Height="89" ctype="ImageViewObjectData">
-            <Size X="90.0000" Y="89.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-280.7526" Y="55.0468" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/libao.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day1_2" ActionTag="162063137" Tag="768" IconVisible="False" LeftMargin="-324.7496" RightMargin="236.7496" TopMargin="-99.9194" BottomMargin="13.9194" Scale9Width="88" Scale9Height="86" ctype="ImageViewObjectData">
-            <Size X="88.0000" Y="86.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-280.7496" Y="56.9194" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/libao02.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="price_tag_8" ActionTag="1470322165" Tag="12284" IconVisible="False" LeftMargin="-330.9890" RightMargin="215.9890" TopMargin="-33.4987" BottomMargin="5.4987" ctype="SpriteObjectData">
-            <Size X="115.0000" Y="28.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-273.4890" Y="19.4987" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/price_tag.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day1_3" ActionTag="-771565690" Tag="585" IconVisible="False" LeftMargin="-355.3787" RightMargin="190.3787" TopMargin="-138.4283" BottomMargin="4.4283" LeftEage="23" RightEage="23" TopEage="20" BottomEage="20" Scale9OriginX="23" Scale9OriginY="20" Scale9Width="119" Scale9Height="94" ctype="ImageViewObjectData">
-            <Size X="165.0000" Y="134.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-272.8787" Y="71.4283" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/already-receive.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day2_1" ActionTag="536887560" Tag="37" IconVisible="False" LeftMargin="-142.5728" RightMargin="52.5728" TopMargin="-102.1710" BottomMargin="13.1710" Scale9Width="90" Scale9Height="89" ctype="ImageViewObjectData">
-            <Size X="90.0000" Y="89.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-97.5728" Y="57.6710" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/libao.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day2_2" ActionTag="-1951060317" Tag="35" IconVisible="False" LeftMargin="-141.6364" RightMargin="53.6364" TopMargin="-103.6068" BottomMargin="17.6068" Scale9Width="88" Scale9Height="86" ctype="ImageViewObjectData">
-            <Size X="88.0000" Y="86.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-97.6364" Y="60.6068" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/libao02.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="price_tag_9" ActionTag="948805596" Tag="12285" IconVisible="False" LeftMargin="-152.0796" RightMargin="37.0796" TopMargin="-30.7609" BottomMargin="2.7609" ctype="SpriteObjectData">
-            <Size X="115.0000" Y="28.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-94.5796" Y="16.7609" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/price_tag.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day2_3" ActionTag="203238865" Tag="586" IconVisible="False" LeftMargin="-173.7473" RightMargin="8.7473" TopMargin="-137.3096" BottomMargin="3.3096" LeftEage="23" RightEage="23" TopEage="20" BottomEage="20" Scale9OriginX="23" Scale9OriginY="20" Scale9Width="119" Scale9Height="94" ctype="ImageViewObjectData">
-            <Size X="165.0000" Y="134.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-91.2473" Y="70.3096" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/already-receive.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day3_1" ActionTag="-1500853223" Tag="38" IconVisible="False" LeftMargin="30.0579" RightMargin="-120.0579" TopMargin="-104.9493" BottomMargin="15.9493" Scale9Width="90" Scale9Height="89" ctype="ImageViewObjectData">
-            <Size X="90.0000" Y="89.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="75.0579" Y="60.4493" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/libao.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day3_2" ActionTag="-1968144624" Tag="36" IconVisible="False" LeftMargin="31.0583" RightMargin="-119.0583" TopMargin="-105.3213" BottomMargin="19.3213" Scale9Width="88" Scale9Height="86" ctype="ImageViewObjectData">
-            <Size X="88.0000" Y="86.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="75.0583" Y="62.3213" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/libao02.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="price_tag_10" ActionTag="-979590019" Tag="12286" IconVisible="False" LeftMargin="28.3329" RightMargin="-143.3329" TopMargin="-30.7651" BottomMargin="2.7651" ctype="SpriteObjectData">
-            <Size X="115.0000" Y="28.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="85.8329" Y="16.7651" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/price_tag.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day3_3" ActionTag="1995441084" Tag="587" IconVisible="False" LeftMargin="2.9484" RightMargin="-167.9484" TopMargin="-136.9157" BottomMargin="2.9157" LeftEage="23" RightEage="23" TopEage="20" BottomEage="20" Scale9OriginX="23" Scale9OriginY="20" Scale9Width="119" Scale9Height="94" ctype="ImageViewObjectData">
-            <Size X="165.0000" Y="134.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="85.4484" Y="69.9157" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/already-receive.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day4_1" ActionTag="1642691323" CallBackType="Click" Tag="594" IconVisible="False" LeftMargin="215.1328" RightMargin="-299.1328" TopMargin="-96.6196" BottomMargin="15.6196" Scale9Width="84" Scale9Height="81" ctype="ImageViewObjectData">
-            <Size X="84.0000" Y="81.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="257.1328" Y="56.1196" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/icon01.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day4_2" ActionTag="1327777932" Tag="593" IconVisible="False" LeftMargin="215.1965" RightMargin="-299.1965" TopMargin="-96.6194" BottomMargin="15.6194" Scale9Width="84" Scale9Height="81" ctype="ImageViewObjectData">
-            <Size X="84.0000" Y="81.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="257.1965" Y="56.1194" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/icon01-01.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="price_tag_11" ActionTag="2108061644" Tag="12287" IconVisible="False" LeftMargin="205.4266" RightMargin="-320.4266" TopMargin="-30.7653" BottomMargin="2.7653" ctype="SpriteObjectData">
-            <Size X="115.0000" Y="28.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="262.9266" Y="16.7653" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/price_tag.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day4_3" ActionTag="-1610477375" Tag="588" IconVisible="False" LeftMargin="180.3769" RightMargin="-345.3769" TopMargin="-138.1858" BottomMargin="4.1858" LeftEage="23" RightEage="23" TopEage="20" BottomEage="20" Scale9OriginX="23" Scale9OriginY="20" Scale9Width="119" Scale9Height="94" ctype="ImageViewObjectData">
-            <Size X="165.0000" Y="134.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="262.8769" Y="71.1858" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/already-receive.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day5_1" ActionTag="1212173003" Tag="596" IconVisible="False" LeftMargin="-223.7869" RightMargin="119.7869" TopMargin="40.8630" BottomMargin="-131.8630" Scale9Width="104" Scale9Height="91" ctype="ImageViewObjectData">
-            <Size X="104.0000" Y="91.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-171.7869" Y="-86.3630" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/icon02.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day5_2" ActionTag="-581891042" Tag="595" IconVisible="False" LeftMargin="-222.7868" RightMargin="118.7868" TopMargin="40.8630" BottomMargin="-131.8630" Scale9Width="104" Scale9Height="91" ctype="ImageViewObjectData">
-            <Size X="104.0000" Y="91.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-170.7868" Y="-86.3630" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/icon02-01.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="price_tag_12" ActionTag="601176868" Tag="12288" IconVisible="False" LeftMargin="-224.8950" RightMargin="109.8950" TopMargin="111.5704" BottomMargin="-139.5704" ctype="SpriteObjectData">
-            <Size X="115.0000" Y="28.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-167.3950" Y="-125.5704" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/price_tag.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day5_3" ActionTag="1896888708" Tag="589" IconVisible="False" LeftMargin="-250.3701" RightMargin="85.3701" TopMargin="5.5750" BottomMargin="-139.5750" LeftEage="23" RightEage="23" TopEage="20" BottomEage="20" Scale9OriginX="23" Scale9OriginY="20" Scale9Width="119" Scale9Height="94" ctype="ImageViewObjectData">
-            <Size X="165.0000" Y="134.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-167.8701" Y="-72.5750" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/already-receive.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day6_1" ActionTag="-374196625" Tag="598" IconVisible="False" LeftMargin="-43.2234" RightMargin="-40.7766" TopMargin="52.2996" BottomMargin="-133.2996" Scale9Width="84" Scale9Height="81" ctype="ImageViewObjectData">
-            <Size X="84.0000" Y="81.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-1.2234" Y="-92.7996" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/icon01.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day6_2" ActionTag="177513723" Tag="597" IconVisible="False" LeftMargin="-43.2234" RightMargin="-40.7766" TopMargin="52.2996" BottomMargin="-133.2996" Scale9Width="84" Scale9Height="81" ctype="ImageViewObjectData">
-            <Size X="84.0000" Y="81.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-1.2234" Y="-92.7996" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/icon01-01.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="price_tag_13" ActionTag="1087459043" Tag="12289" IconVisible="False" LeftMargin="-52.7653" RightMargin="-62.2347" TopMargin="113.2253" BottomMargin="-141.2253" ctype="SpriteObjectData">
-            <Size X="115.0000" Y="28.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="4.7347" Y="-127.2253" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/price_tag.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day6_3" ActionTag="1869842145" Tag="590" IconVisible="False" LeftMargin="-80.8065" RightMargin="-84.1935" TopMargin="7.4693" BottomMargin="-141.4693" LeftEage="23" RightEage="23" TopEage="20" BottomEage="20" Scale9OriginX="23" Scale9OriginY="20" Scale9Width="119" Scale9Height="94" ctype="ImageViewObjectData">
-            <Size X="165.0000" Y="134.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1.6935" Y="-74.4693" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/already-receive.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day7_1" ActionTag="310246843" Tag="39" IconVisible="False" LeftMargin="131.7189" RightMargin="-221.7189" TopMargin="37.3699" BottomMargin="-126.3699" Scale9Width="90" Scale9Height="89" ctype="ImageViewObjectData">
-            <Size X="90.0000" Y="89.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="176.7189" Y="-81.8699" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/libao.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day7_2" ActionTag="33602549" Tag="40" IconVisible="False" LeftMargin="133.6544" RightMargin="-221.6544" TopMargin="37.8702" BottomMargin="-123.8702" Scale9Width="88" Scale9Height="86" ctype="ImageViewObjectData">
-            <Size X="88.0000" Y="86.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="177.6544" Y="-80.8702" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/libao02.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="price_tag_14" ActionTag="1658781267" Tag="12290" IconVisible="False" LeftMargin="134.2595" RightMargin="-249.2595" TopMargin="113.2255" BottomMargin="-141.2255" ctype="SpriteObjectData">
-            <Size X="115.0000" Y="28.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="191.7595" Y="-127.2255" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/price_tag.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="day7_3" ActionTag="-978060585" Tag="591" IconVisible="False" LeftMargin="97.0246" RightMargin="-262.0246" TopMargin="5.6176" BottomMargin="-139.6176" LeftEage="23" RightEage="23" TopEage="20" BottomEage="20" Scale9OriginX="23" Scale9OriginY="20" Scale9Width="119" Scale9Height="94" ctype="ImageViewObjectData">
-            <Size X="165.0000" Y="134.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="179.5246" Y="-72.6176" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/already-receive.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="getGiftBtn" ActionTag="116853414" Tag="47" IconVisible="False" LeftMargin="-79.5000" RightMargin="-113.5000" TopMargin="139.5001" BottomMargin="-200.5001" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="163" Scale9Height="39" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="193.0000" Y="61.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="17.0000" Y="-170.0001" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="sevenDayGift/button_receive_2.png" Plist="" />
-            <NormalFileData Type="Normal" Path="sevenDayGift/button_receive_1.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="noGiftImage1" ActionTag="-1112807839" Tag="583" IconVisible="False" LeftMargin="-255.0003" RightMargin="-272.9997" TopMargin="139.0000" BottomMargin="-197.0000" LeftEage="174" RightEage="174" TopEage="19" BottomEage="19" Scale9OriginX="174" Scale9OriginY="19" Scale9Width="180" Scale9Height="20" ctype="ImageViewObjectData">
-            <Size X="528.0000" Y="58.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="8.9997" Y="-168.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/di02.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="noGiftImage2" ActionTag="-892854760" Tag="50" IconVisible="False" LeftMargin="-70.0000" RightMargin="-96.0000" TopMargin="153.0000" BottomMargin="-179.0000" LeftEage="54" RightEage="54" TopEage="8" BottomEage="8" Scale9OriginX="54" Scale9OriginY="8" Scale9Width="58" Scale9Height="10" ctype="ImageViewObjectData">
-            <Size X="166.0000" Y="26.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="13.0000" Y="-166.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/zi21.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="title_bg_5" ActionTag="-1773407993" Tag="12281" IconVisible="False" LeftMargin="-165.0068" RightMargin="-201.9932" TopMargin="-211.8797" BottomMargin="129.8797" ctype="SpriteObjectData">
-            <Size X="367.0000" Y="82.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="18.4932" Y="170.8797" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/title_bg.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="title_text_6" ActionTag="1463851043" Tag="12282" IconVisible="False" LeftMargin="-95.3617" RightMargin="-111.6383" TopMargin="-200.2714" BottomMargin="156.2714" ctype="SpriteObjectData">
-            <Size X="207.0000" Y="44.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="8.1383" Y="178.2714" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="sevenDayGift/title_text.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="closeBtn" ActionTag="-997692448" Tag="2490" IconVisible="False" LeftMargin="320.8950" RightMargin="-402.8950" TopMargin="-204.6833" BottomMargin="124.6833" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="52" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="82.0000" Y="80.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="361.8950" Y="164.6833" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="bg/anniu-guanbi-down.png" Plist="" />
-            <NormalFileData Type="Normal" Path="bg/anniu-guanbi-up.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="bg/bg_M.png" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

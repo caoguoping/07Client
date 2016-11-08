@@ -63,6 +63,7 @@ bool TCPSocketService::Connect(const char* dwServerIP, unsigned short wPort)
 }
 void TCPSocketService::closeMySocket()
 {
+	((TCPSocketService *)getService(TCPSocketService::GAME))->SendData(2000, 2000, NULL, 0);  //ÐÄÌø
 #if (PlatWhich == PlatWin)
 		closesocket(m_hSocket);
 

@@ -2,7 +2,7 @@
   <PropertyGroup Name="boom" Type="Node" ID="f6d2db3c-e5fb-489b-a2b4-dd887302d59e" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="39" Speed="1.0000">
+      <Animation Duration="39" Speed="0.6667">
         <Timeline ActionTag="1045920768" Property="FileData">
           <TextureFrame FrameIndex="0" Tween="False">
             <TextureFile Type="Normal" Path="action/boom/zhadan0001.png" Plist="" />
@@ -22,11 +22,8 @@
           <TextureFrame FrameIndex="5" Tween="False">
             <TextureFile Type="Normal" Path="action/boom/zhadan0006.png" Plist="" />
           </TextureFrame>
-          <TextureFrame FrameIndex="6" Tween="False">
-            <TextureFile Type="Normal" Path="action/boom/zhadan0007.png" Plist="" />
-          </TextureFrame>
           <TextureFrame FrameIndex="7" Tween="False">
-            <TextureFile Type="Normal" Path="action/boom/zhadan0008.png" Plist="" />
+            <TextureFile Type="Normal" Path="action/boom/zhadan0007.png" Plist="" />
           </TextureFrame>
           <TextureFrame FrameIndex="8" Tween="False">
             <TextureFile Type="Normal" Path="action/boom/zhadan0009.png" Plist="" />
@@ -76,23 +73,14 @@
           <TextureFrame FrameIndex="23" Tween="False">
             <TextureFile Type="Normal" Path="action/boom/zhadan0024.png" Plist="" />
           </TextureFrame>
-          <TextureFrame FrameIndex="24" Tween="False">
+          <TextureFrame FrameIndex="25" Tween="False">
             <TextureFile Type="Normal" Path="action/boom/zhadan0025.png" Plist="" />
           </TextureFrame>
-          <TextureFrame FrameIndex="25" Tween="False">
+          <TextureFrame FrameIndex="26" Tween="False">
             <TextureFile Type="Normal" Path="action/boom/zhadan0026.png" Plist="" />
           </TextureFrame>
-          <TextureFrame FrameIndex="26" Tween="False">
-            <TextureFile Type="Normal" Path="action/boom/zhadan0027.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="27" Tween="False">
-            <TextureFile Type="Normal" Path="action/boom/zhadan0028.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="28" Tween="False">
-            <TextureFile Type="Normal" Path="action/boom/zhadan0029.png" Plist="" />
-          </TextureFrame>
           <TextureFrame FrameIndex="29" Tween="False">
-            <TextureFile Type="Normal" Path="action/boom/zhadan0030.png" Plist="" />
+            <TextureFile Type="Normal" Path="action/boom/zhadan0028.png" Plist="" />
           </TextureFrame>
           <TextureFrame FrameIndex="30" Tween="False">
             <TextureFile Type="Normal" Path="action/boom/zhadan0031.png" Plist="" />
@@ -103,17 +91,8 @@
           <TextureFrame FrameIndex="32" Tween="False">
             <TextureFile Type="Normal" Path="action/boom/zhadan0033.png" Plist="" />
           </TextureFrame>
-          <TextureFrame FrameIndex="33" Tween="False">
-            <TextureFile Type="Normal" Path="action/boom/zhadan0034.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="34" Tween="False">
-            <TextureFile Type="Normal" Path="action/boom/zhadan0035.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="35" Tween="False">
-            <TextureFile Type="Normal" Path="action/boom/zhadan0036.png" Plist="" />
-          </TextureFrame>
           <TextureFrame FrameIndex="36" Tween="False">
-            <TextureFile Type="Normal" Path="action/boom/zhadan0037.png" Plist="" />
+            <TextureFile Type="Normal" Path="action/boom/zhadan0034.png" Plist="" />
           </TextureFrame>
           <TextureFrame FrameIndex="37" Tween="False">
             <TextureFile Type="Normal" Path="action/boom/zhadan0038.png" Plist="" />
@@ -137,8 +116,8 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="action/boom/zhadan0001.png" Plist="" />
-            <BlendFunc Src="770" Dst="771" />
+            <FileData Type="Normal" Path="action/boom/zhadan0040.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

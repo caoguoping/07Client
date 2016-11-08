@@ -3,13 +3,11 @@
 
 SevenDayGiftMediator::SevenDayGiftMediator(bool isShowCloseBtn)
 {
-	log("cocos2d-x sevenDayMediator");
 	ShowCloseBtn = isShowCloseBtn;
 }
 
 SevenDayGiftMediator::~SevenDayGiftMediator()
 {
-	log("cocos2d-x ~sevenDayMediator");
 	delete getView();
 	setView(NULL);
 }
@@ -20,9 +18,7 @@ SevenDayGiftMediator::~SevenDayGiftMediator()
 void SevenDayGiftMediator::OnRegister()
 {
 	sevenDayGiftView = (SevenDayGiftView*)getView();
-	//
 	GameDataModel* gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
-	;
 	sevenDayGiftView->canGetGiftToday = DATA->myBaseData.isFirstLogin;
 	sevenDayGiftView->nowDay = gameDataModel->player[0].loginCnt;
 	sevenDayGiftView->initView(ShowCloseBtn);
@@ -71,12 +67,9 @@ Layer* SevenDayGiftMediator::getLayer()
 
 void SevenDayGiftMediator::clickGetGiftBtnHander()
 {
-	//
-	;
 	GameDataModel* gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
-	unsigned short loginCnt = gameDataModel->player[0].loginCnt;
-	unsigned long dwUserID = DATA->myBaseData.dwUserID;
-	//((SendDataService*)getService(SendDataService::NAME))->sendSevenLogin(dwUserID, loginCnt);
+	WORD loginCnt = gameDataModel->player[0].loginCnt;
+	DWORD dwUserID = DATA->myBaseData.dwUserID;
 
 	//这边先自己修改今天是否第一次登录标识（后面要放到返回消息中）
 	DATA->myBaseData.isFirstLogin = 0;

@@ -43,7 +43,7 @@ void Tools::closeSysMsgTouming(Node*  psender)
 	psender->removeFromParentAndCleanup(true);
 }
 
-void Tools::showSysMsgTouming(std::string msg, float x, float y)
+void Tools::showSysMsgTouming(std::string msg, float x, float y, Color3B color)
 {
 	Node* rootNode = CSLoader::createNode("sysMsgTouming.csb");
 	Vec2 basePos = Vec2(WScreen * 0.5, HScreen * 0.5);
@@ -52,6 +52,7 @@ void Tools::showSysMsgTouming(std::string msg, float x, float y)
 	Text*   txtMsg;
 	UIGet_Text("msgText", rootNode, txtMsg)
 		txtMsg->setString(msg);
+	txtMsg->setColor(color);
 	getcontainer()->addChild(rootNode, 40000);
 	rootNode->runAction(Sequence::create(
 		MoveBy::create(1.0f, Vec2(0, 5)),

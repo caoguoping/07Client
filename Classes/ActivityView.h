@@ -10,8 +10,6 @@
 class  ActivityView : public BlueSkyView
 {
 public:
-
-
 	typedef enum mall
 	{
 		E_activity = 0,   //в╙ел

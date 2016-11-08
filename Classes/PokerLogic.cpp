@@ -50,6 +50,7 @@ PokerLogic::~PokerLogic()
 
 /*
 	获取牌值 （这边不考虑主牌。用于记牌功能）
+	id,  enum PokerNum  2-A, B, ZhuPai, XiaoGui, DaGui
 */
 int PokerLogic::getPokerNum2(int id)
 {
@@ -73,6 +74,8 @@ int PokerLogic::getPokerNum2(int id)
 
 /*
 	获取牌值 0~14(2~A~大王)
+	id,  enum PokerNum  2-A, B, ZhuPai, XiaoGui, DaGui
+
 */
 int PokerLogic::getPokerNum(int id)
 {

@@ -109,10 +109,10 @@
             <FileData Type="Normal" Path="Friends/title_friends.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_close" ActionTag="-5091756" Tag="1078" IconVisible="False" LeftMargin="-443.6466" RightMargin="367.6466" TopMargin="-264.8487" BottomMargin="223.8487" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="46" Scale9Height="19" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="76.0000" Y="41.0000" />
+          <AbstractNodeData Name="Button_close" ActionTag="-5091756" Tag="1078" IconVisible="False" LeftMargin="-442.1802" RightMargin="366.1802" TopMargin="-265.6931" BottomMargin="214.6931" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="46" Scale9Height="29" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="76.0000" Y="51.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-405.6466" Y="244.3487" />
+            <Position X="-404.1802" Y="240.1931" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

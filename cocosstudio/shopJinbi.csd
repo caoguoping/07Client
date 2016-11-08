@@ -255,7 +255,7 @@
                 <FileData Type="Normal" Path="NewMall/icon_gold_4.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_8_2" ActionTag="-802515058" Tag="2476" IconVisible="False" LeftMargin="117.4038" RightMargin="262.5963" TopMargin="360.1104" BottomMargin="77.8896" FontSize="20" LabelText="500000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_8_2" ActionTag="-802515058" Tag="2476" IconVisible="False" LeftMargin="117.4016" RightMargin="262.5984" TopMargin="360.1095" BottomMargin="77.8905" FontSize="20" LabelText="500000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="70.0000" Y="22.0000" />
                 <AnchorPoint ScaleX="0.6161" ScaleY="0.4651" />
                 <Position X="160.5286" Y="88.1227" />
@@ -302,7 +302,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_1_2_0" ActionTag="-1715695182" Tag="2484" IconVisible="False" LeftMargin="283.9181" RightMargin="123.0819" TopMargin="356.5410" BottomMargin="81.4590" FontSize="20" LabelText="金币" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_1_2_0" ActionTag="-1715695182" Tag="2484" IconVisible="False" LeftMargin="283.9168" RightMargin="123.0832" TopMargin="356.5404" BottomMargin="81.4596" FontSize="20" LabelText="金币" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="43.0000" Y="22.0000" />
                 <AnchorPoint ScaleX="0.5179" ScaleY="0.5555" />
                 <Position X="306.1865" Y="93.6806" />

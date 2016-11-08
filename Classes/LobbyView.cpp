@@ -38,6 +38,7 @@
 #include "BloodMediator.h"
 #include "BloodView.h"
 
+#define FOLD_TIME 0.1
 
 LobbyView::LobbyView()
 {
@@ -54,17 +55,22 @@ LobbyView::LobbyView()
 		UIGet_Button("setBtn", rootNode, mBtnSetting)
 		UIClick(mBtnSetting, LobbyView::clickBtnSetting)
 
-		UIGet_Button("Button_playGold", rootNode, mBtnPlayGold)
+
+		UIGet_ScrollView("ScrollView_button", rootNode, scrBtn)
+
+		UIGet_Button("Button_playGold", scrBtn, mBtnPlayGold)
 		UIClick(mBtnPlayGold, LobbyView::clickBtnPlayGold)
 
-		UIGet_Button("Button_entertainment", rootNode, mBtnEntertainment)
+		UIGet_Button("Button_entertainment", scrBtn, mBtnEntertainment)
 		UIClick(mBtnEntertainment, LobbyView::clickBtnEntertainment)
 
-		UIGet_Button("Button_match", rootNode, mBtnMatch)
+		UIGet_Button("Button_match", scrBtn, mBtnMatch)
 		UIClick(mBtnMatch, LobbyView::clickBtnMatch)
 
-		UIGet_Button("Button_blood", rootNode, mBtnBlood)
+		UIGet_Button("Button_blood", scrBtn, mBtnBlood)
 		UIClick(mBtnBlood, LobbyView::clickBtnBlood)
+
+
 
 		UIGet_Button("Button_fastStart", rootNode, mBtnFast)
 		UIClick(mBtnFast, LobbyView::clickBtnFast)
@@ -88,10 +94,16 @@ LobbyView::LobbyView()
 		UIClick(mBtnHead, LobbyView::clickBtnHead)
 
 		UIGet_Node("headNode", rootNode, headNode)
-		UIGet_Button("Button_add", headNode, mBtnAddWealth)
+		UIGet_Button("Button_gold", headNode, mBtnAddWealth)
 		UIClick(mBtnAddWealth, LobbyView::clickBtnAddWealth)
+
+		UIGet_Button("Button_diamond", headNode, mBtnAddDiamond)
+		UIClick(mBtnAddDiamond, LobbyView::clickBtnAddDiamond)
+
 		UIGet_Text("myName_0_3", headNode, txtPlayerName)
-		UIGet_TextBMFont("BitmapFontLabel_gold", headNode, txtGold)
+		UIGet_Text("Text_gold", headNode, txtGold)
+		UIGet_Text("Text_diamond", headNode, txtDiamond)
+		UIGet_Text("Text_id", headNode, txtId)
 }
 
 LobbyView::~LobbyView()
@@ -101,22 +113,68 @@ LobbyView::~LobbyView()
 }
 
 
+void LobbyView::clickBtnFold(Ref* pSender)  //折叠按钮
+{
+	FiniteTimeAction*  seq = Sequence::create(
+		ScaleTo::create(FOLD_TIME, 0.1f, 1.0f), 
+		Hide::create(),
+		NULL
+		);
+	FiniteTimeAction*  seq1 = Sequence::create(
+		ScaleTo::create(FOLD_TIME, 0.1f, 1.0f),
+		Hide::create(),
+		NULL
+		);
+	pgAd->runAction(seq1);
+	imgPageBg->runAction(seq);
+	scrBtn->runAction(MoveBy::create(FOLD_TIME, Vec2(-250, 0)));
+}
+
+void LobbyView::clickBtnUnfold(Ref* pSender)  //点击展开按钮
+{
+	FiniteTimeAction*  seq = Sequence::create(
+		ScaleTo::create(0, 0.1f, 1.0f),
+		Show::create(),
+		ScaleTo::create(FOLD_TIME, 1.0f, 1.0f),
+		NULL
+		);
+	FiniteTimeAction*  seq1 = Sequence::create(
+		ScaleTo::create(0, 0.1f, 1.0f),
+		Show::create(),
+		ScaleTo::create(FOLD_TIME, 1.0f, 1.0f),
+		NULL
+		);
+	pgAd->runAction(seq1);
+	imgPageBg->runAction(seq);
+	scrBtn->runAction(MoveBy::create(FOLD_TIME, Vec2(250, 0)));
+}
+
+
 void LobbyView::initView()
 {
+// 	if (MusicService::getInstance()->isMusicOn)
+// 	{
+// 		SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+// 	}
 
 	currentAd = 0;
 	//广告页
-	UIGet_PageView("PageView_ad", rootNode, adPage)
-		ImageView* pageBg;
-	UIGet_ImageView("Image_Adbg", rootNode, pageBg)
-		UIGet_Button("Button_10", pageBg, btnAdIndicator[E_choujiang])
-		UIGet_Button("Button_10_0", pageBg, btnAdIndicator[E_recharge])
-		UIGet_Button("Button_10_1", pageBg, btnAdIndicator[E_myCup])
+	UIGet_PageView("PageView_ad", rootNode, pgAd)
+	UIGet_ImageView("Image_Adbg", rootNode, imgPageBg)
+	UIGet_Button("Button_fold", imgPageBg, btnFold)
+	UIGet_Button("Button_unFold", rootNode, btnUnfold)
+	UIClick(btnFold, LobbyView::clickBtnFold)
+	UIClick(btnUnfold, LobbyView::clickBtnUnfold)
+
+
+		UIGet_Button("Button_10", imgPageBg, btnAdIndicator[E_choujiang])
+		UIGet_Button("Button_10_0", imgPageBg, btnAdIndicator[E_recharge])
+		UIGet_Button("Button_10_1", imgPageBg, btnAdIndicator[E_myCup])
 
 		Layout  *panel1, *panel2, *panel3;
-	UIGet_Layout("Panel_1", adPage, panel1)
-		UIGet_Layout("Panel_2", adPage, panel2)
-		UIGet_Layout("Panel_3", adPage, panel3)
+	UIGet_Layout("Panel_1", pgAd, panel1)
+		UIGet_Layout("Panel_2", pgAd, panel2)
+		UIGet_Layout("Panel_3", pgAd, panel3)
 		UIGet_Button("Button_1", panel1, btnAd[E_choujiang])
 		UIGet_Button("Button_1_0", panel2, btnAd[E_recharge])
 		UIGet_Button("Button_1_1", panel3, btnAd[E_myCup])
@@ -152,6 +210,7 @@ UIEnableClick(mBtnActivity, LobbyView, enableBtnActivity)
 UIEnableClick(mBtnPackage, LobbyView, enableBtnPackage)
 UIEnableClick(mBtnHead, LobbyView, enableBtnHead)
 UIEnableClick(mBtnAddWealth, LobbyView, enableBtnAddWealth)
+UIEnableClick(mBtnAddDiamond, LobbyView, enableBtnAddDiamond)
 UIEnableClick(mBtnFriend, LobbyView, enableBtnFriend)
 
 void LobbyView::clickBtnTask(Ref* psender)
@@ -195,6 +254,7 @@ void LobbyView::clickBtnMatch(Ref* psender)
 void LobbyView::clickBtnBlood(Ref* psender)
 {
 	UIDisableClick(mBtnBlood, LobbyView, enableBtnBlood)
+		DATA->bGameCate = DataManager::E_GameBlood;
 		creatView(new BloodView(), new BloodMediator());
 }
 
@@ -212,18 +272,21 @@ void LobbyView::clickBtnFast(Ref* psender)
 	}
 	else if (golds > 500 && golds * cof / 100 <= 2000)
 	{
-		blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(0));
-		((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 0;
+		DATA->bGameCateSub = 0;
+		blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE);
+
 	}
 	else if (golds * cof / 100 > 2000 && golds * cof / 100 <= 10000)
 	{
-		blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(1));
-		((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 1;
+		DATA->bGameCateSub = 1;
+		blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE);
+
 	}
 	else if (golds * cof / 100 > 10000)
 	{
-		blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE, new int(2));
-		((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->ccNun = 2;
+		DATA->bGameCateSub = 2;
+		blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE);
+
 	}
 }
 
@@ -264,6 +327,12 @@ void LobbyView::clickBtnAddWealth(Ref* psender)
 		creatView(new ShopView(1), new ShopMediator());
 }
 
+void LobbyView::clickBtnAddDiamond(Ref* psender)
+{
+	UIDisableClick(mBtnAddDiamond, LobbyView, enableBtnAddDiamond)
+		creatView(new ShopView(0), new ShopMediator());
+}
+
 void LobbyView::clickBtnFriend(Ref* psender)
 {
 	UIDisableClick(mBtnFriend, LobbyView, enableBtnFriend)
@@ -276,13 +345,13 @@ void LobbyView::adUpdate(float dt)
 	currentAd++; 
 	if (currentAd < E_adMax)
 	{
-		adPage->scrollToPage(currentAd);
+		pgAd->scrollToPage(currentAd);
 		
 	}
 	else if (currentAd == E_adMax)
 	{
 		currentAd = E_choujiang;
-		adPage->setCurPageIndex(E_choujiang);
+		pgAd->setCurPageIndex(E_choujiang);
 	}
 	for (int i = 0; i < E_adMax; i ++)
 	{

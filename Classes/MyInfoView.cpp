@@ -8,6 +8,11 @@ MyInfoView::MyInfoView()
 {
 	rootNode = CSLoader::createNode("playerInfo.csb");
 	addChild(rootNode);
+	rootNode->setScale(0.8f, 0.8f);
+	rootNode->runAction(Sequence::create(
+		ScaleTo::create(0.2f, 1.03f),
+		ScaleTo::create(0.15f, 1.0f),
+		nullptr));
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, MyInfoView, closeBtn, 11701, "closeBtn", NULL)
 	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, MyInfoView, Image_1, 11701, "Image_1", NULL)
 }

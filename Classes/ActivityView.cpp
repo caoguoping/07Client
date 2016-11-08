@@ -16,6 +16,12 @@ ActivityView::ActivityView(int actIndex)
 	//std::srand(unsigned int(time(NULL)));
 	rootNode = CSLoader::createNode("activity.csb");
 	addChild(rootNode);
+	rootNode->setScale(0.8f, 0.8f);
+	rootNode->runAction(Sequence::create(
+		ScaleTo::create(0.2f, 1.03f), 
+		ScaleTo::create(0.15f, 1.0f), 
+		nullptr));
+
 
 	//top
 	Node*  topNode;

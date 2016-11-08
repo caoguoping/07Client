@@ -5,11 +5,8 @@ MessageShowView::MessageShowView()
 {
 	rootNode = CSLoader::createNode("messageShow.csb");
 	addChild(rootNode);
-
-	rootNode->setScale(0.1, 0.1);
-	rootNode->runAction(Sequence::create(ScaleTo::create(0.2f, 1.1), ScaleTo::create(0.1f, 1.0f), nullptr));
-
-	ImageView* imgTmp;
+	rootNode->setScale(0.8, 0.8);
+	rootNode->runAction(Sequence::create(ScaleTo::create(0.2f, 1.03), ScaleTo::create(0.15f, 1.0f), nullptr));	ImageView* imgTmp;
 	Button*  btnTmp;
 
 	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, MessageShowView, Image_38, 11902, "Image_38", NULL);
@@ -29,8 +26,9 @@ MessageShowView::~MessageShowView()
 
 void MessageShowView::initView()
 {
-	msgText = dynamic_cast<Text*>(rootNode->getChildByName("msgText"));
-	msgTextProp = dynamic_cast<Text*>(rootNode->getChildByName("msgText_prop"));
+	UIGet_Text("Text_Diamond", rootNode, txtDiamond)
+		UIGet_Text("Text_gold", rootNode, txtGold)
+		UIGet_Text("Text_prop", rootNode, txtProp)
 	rootNode->setVisible(false);
 }
 
@@ -44,15 +42,15 @@ void MessageShowView::showMessage(int type, string name)
 	{
 	case 1:
 		show = UTF8::getInstance()->getString("message", "diamond") + name;
-		msgText->setString(show);
+		txtDiamond->setString(show);
 		break;
 	case 2:
 		show = UTF8::getInstance()->getString("message", "gold") + name;
-		msgText->setString(show);
+		txtGold->setString(show);
 		break;
 	case 3:
 		show = UTF8::getInstance()->getString("message", "item") + name;
-		msgTextProp->setString(show);
+		txtProp->setString(show);
 		break;
 	}
 }
@@ -60,5 +58,8 @@ void MessageShowView::showMessage(int type, string name)
 //
 void MessageShowView::hideMessage()
 {
+	txtDiamond->setString("");
+	txtGold->setString("");
+	txtProp->setString("");
 	rootNode->setVisible(false);
 }

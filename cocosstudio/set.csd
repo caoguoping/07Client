@@ -38,10 +38,10 @@
             <FileData Type="Normal" Path="set/title_setting.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="musicBtn" ActionTag="937310180" Tag="695" IconVisible="False" LeftMargin="-43.3237" RightMargin="-132.6763" TopMargin="-104.8049" BottomMargin="66.8049" TouchEnable="True" ctype="CheckBoxObjectData">
+          <AbstractNodeData Name="musicBtn" ActionTag="937310180" Tag="695" IconVisible="False" LeftMargin="-41.3896" RightMargin="-134.6104" TopMargin="-76.7647" BottomMargin="38.7647" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
             <Size X="176.0000" Y="38.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="44.6763" Y="85.8049" />
+            <Position X="46.6104" Y="57.7647" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -52,10 +52,10 @@
             <NodeNormalFileData Type="Normal" Path="set/select_on.png" Plist="" />
             <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="effectBtn" ActionTag="-1227785666" Tag="696" IconVisible="False" LeftMargin="-43.3237" RightMargin="-132.6763" TopMargin="-44.4009" BottomMargin="6.4009" TouchEnable="True" ctype="CheckBoxObjectData">
+          <AbstractNodeData Name="effectBtn" ActionTag="-1227785666" Tag="696" IconVisible="False" LeftMargin="-41.3896" RightMargin="-134.6104" TopMargin="-16.3599" BottomMargin="-21.6401" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
             <Size X="176.0000" Y="38.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="44.6763" Y="25.4009" />
+            <Position X="46.6104" Y="-2.6401" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -111,10 +111,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_1" ActionTag="-959813748" Tag="1460" IconVisible="False" LeftMargin="-133.1581" RightMargin="74.1581" TopMargin="-100.5737" BottomMargin="69.5737" FontSize="28" LabelText="音乐" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_1" ActionTag="-959813748" Tag="1460" IconVisible="False" LeftMargin="-131.2234" RightMargin="72.2234" TopMargin="-72.5332" BottomMargin="41.5332" FontSize="28" LabelText="音乐" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="59.0000" Y="31.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-103.6581" Y="85.0737" />
+            <Position X="-101.7234" Y="57.0332" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -123,36 +123,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_2" ActionTag="-731780971" Tag="1461" IconVisible="False" LeftMargin="-133.1581" RightMargin="74.1581" TopMargin="-38.3023" BottomMargin="7.3023" FontSize="28" LabelText="音效" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_2" ActionTag="-731780971" Tag="1461" IconVisible="False" LeftMargin="-131.2234" RightMargin="72.2234" TopMargin="-10.2619" BottomMargin="-20.7381" FontSize="28" LabelText="音效" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="59.0000" Y="31.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-103.6581" Y="22.8023" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="effectBtn_0" ActionTag="-180682139" Tag="140" IconVisible="False" LeftMargin="-43.3237" RightMargin="-132.6763" TopMargin="16.0032" BottomMargin="-54.0032" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
-            <Size X="176.0000" Y="38.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="44.6763" Y="-35.0032" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <NormalBackFileData Type="Normal" Path="set/select_off.png" Plist="" />
-            <PressedBackFileData Type="Normal" Path="set/select_off.png" Plist="" />
-            <DisableBackFileData Type="Default" Path="Default/CheckBox_Disable.png" Plist="" />
-            <NodeNormalFileData Type="Normal" Path="set/select_on.png" Plist="" />
-            <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Text_2_0" ActionTag="1514641529" Tag="141" IconVisible="False" LeftMargin="-133.1579" RightMargin="75.1579" TopMargin="23.9692" BottomMargin="-54.9692" FontSize="28" LabelText="震动" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="58.0000" Y="31.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-104.1579" Y="-39.4692" />
+            <Position X="-101.7234" Y="-5.2381" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

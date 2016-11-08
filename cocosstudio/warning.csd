@@ -16,7 +16,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/bentouming.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="heiban_1" ActionTag="-1968642269" Tag="723" IconVisible="False" LeftMargin="-234.5000" RightMargin="-234.5000" TopMargin="-132.5000" BottomMargin="-132.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="heiban_1" ActionTag="-1968642269" Tag="723" IconVisible="False" LeftMargin="-234.0000" RightMargin="-234.0000" TopMargin="-132.5000" BottomMargin="-132.5000" ctype="SpriteObjectData">
             <Size X="468.0000" Y="265.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
@@ -87,15 +87,15 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_1" ActionTag="526941566" Tag="87" IconVisible="False" LeftMargin="-341.9702" RightMargin="167.9702" TopMargin="-172.7387" BottomMargin="-143.2613" LeftEage="57" RightEage="57" TopEage="104" BottomEage="104" Scale9OriginX="57" Scale9OriginY="104" Scale9Width="60" Scale9Height="108" ctype="ImageViewObjectData">
-            <Size X="174.0000" Y="316.0000" />
+          <AbstractNodeData Name="Image_1" ActionTag="526941566" Tag="87" IconVisible="False" LeftMargin="-325.9702" RightMargin="183.9702" TopMargin="-144.7387" BottomMargin="-115.2613" LeftEage="57" RightEage="57" TopEage="104" BottomEage="104" Scale9OriginX="57" Scale9OriginY="104" Scale9Width="28" Scale9Height="52" ctype="ImageViewObjectData">
+            <Size X="142.0000" Y="260.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-254.9702" Y="14.7387" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="NewJieShuan/role_winner.png" Plist="" />
+            <FileData Type="Normal" Path="bg/role_lv1.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="Text_1" ActionTag="153597689" CallBackType="Click" Tag="40" IconVisible="False" LeftMargin="-160.2757" RightMargin="-159.7243" TopMargin="-107.5329" BottomMargin="-42.4671" IsCustomSize="True" FontSize="25" LabelText="" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="320.0000" Y="150.0000" />

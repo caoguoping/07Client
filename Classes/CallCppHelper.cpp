@@ -6,6 +6,7 @@
 #include "EventType.h"
 #include "SGTools.h"
 #include "TCPSocketService.h"
+#include "MusicService.h"
 
 
 
@@ -24,12 +25,15 @@ CallCppHelper *  CallCppHelper::getInstance()
 		_instance = new CallCppHelper();
 		
 
-#if(SDKWhich == SDK_NULL)
+
 		//userId读文件
 		if (UserDefault::getInstance()->getBoolForKey("first_time", true))
 		{
 			//进行所需的首次加载操作
 			UserDefault::getInstance()->setBoolForKey("first_time", false);
+			UserDefault::getInstance()->setBoolForKey("MusicOn", true);
+			UserDefault::getInstance()->setBoolForKey("EffectOn", true);
+#if(SDKWhich == SDK_NULL)
 			time_t tt;
 			time(&tt);
 			struct tm *tm;
@@ -47,18 +51,25 @@ CallCppHelper *  CallCppHelper::getInstance()
 				month, day, hour, _instance->randomNum);
 			UserDefault::getInstance()->setStringForKey("userId", _instance->mUid);
 			UserDefault::getInstance()->setStringForKey("TokenId", _instance->mTokenId);
+#endif
+			UserDefault::getInstance()->flush();
 		}
 		else
 		{
+
+		MusicService::getInstance()->isMusicOn =  UserDefault::getInstance()->getBoolForKey("MusicOn");
+		MusicService::getInstance()->isEffectOn	= UserDefault::getInstance()->getBoolForKey("EffectOn");
+
+#if(SDKWhich == SDK_NULL)
 			std::string strUid;
 			std::string strTokenId;
 			strUid = UserDefault::getInstance()->getStringForKey("userId", "12345678901");
 			strTokenId = UserDefault::getInstance()->getStringForKey("TokenId", "1234567891");
-
 			memcpy(_instance->mUid, strUid.c_str(), strUid.length() + 1);
 			memcpy(_instance->mTokenId, strTokenId.c_str(), strTokenId.length() + 1);
-		}
 #endif
+		}
+
 		logV("cocos2d-x %s", _instance->mUid);
 	}
 	return _instance;

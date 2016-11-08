@@ -16,10 +16,30 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/bg_stage.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="dikuang01_1" ActionTag="-1678923779" Tag="2425" IconVisible="False" LeftMargin="-481.1325" RightMargin="-478.8675" TopMargin="-275.2064" BottomMargin="203.2064" ctype="SpriteObjectData">
+          <AbstractNodeData Name="FileNode_activity" ActionTag="1600208679" Tag="897" IconVisible="True" LeftMargin="104.1412" RightMargin="-104.1412" TopMargin="-29.6819" BottomMargin="29.6819" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="104.1412" Y="29.6819" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="MallHuoDongNode.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_zuanshi" ActionTag="-2136765418" VisibleForFrame="False" Tag="875" IconVisible="True" LeftMargin="104.1412" RightMargin="-104.1412" TopMargin="-29.6819" BottomMargin="29.6819" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="104.1412" Y="29.6819" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="MallGoldNode.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="dikuang01_1" ActionTag="-1678923779" Tag="2425" IconVisible="False" LeftMargin="-479.4380" RightMargin="-480.5620" TopMargin="-270.1099" BottomMargin="198.1099" ctype="SpriteObjectData">
             <Size X="960.0000" Y="72.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-1.1325" Y="239.2064" />
+            <Position X="0.5620" Y="234.1099" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -27,20 +47,30 @@
             <FileData Type="Normal" Path="NewMall/top_bg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_top" ActionTag="-1291496023" Tag="798" IconVisible="True" LeftMargin="-1.0510" RightMargin="1.0510" TopMargin="-247.8664" BottomMargin="247.8664" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_top" ActionTag="-1291496023" Tag="798" IconVisible="True" LeftMargin="0.6467" RightMargin="-0.6467" TopMargin="-241.9236" BottomMargin="241.9236" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="-1.0510" Y="247.8664" />
+            <Position X="0.6467" Y="241.9236" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="publicTop.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="closeBtn" ActionTag="-1730431017" Tag="1150" IconVisible="False" LeftMargin="-452.9031" RightMargin="376.9031" TopMargin="-266.7256" BottomMargin="225.7256" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="46" Scale9Height="19" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="76.0000" Y="41.0000" />
+          <AbstractNodeData Name="Image_7" ActionTag="-1637323720" Tag="711" IconVisible="False" LeftMargin="-413.6888" RightMargin="307.6888" TopMargin="-217.6229" BottomMargin="44.6229" LeftEage="34" RightEage="34" TopEage="57" BottomEage="57" Scale9OriginX="34" Scale9OriginY="57" Scale9Width="38" Scale9Height="59" ctype="ImageViewObjectData">
+            <Size X="106.0000" Y="173.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-414.9031" Y="246.2256" />
+            <Position X="-360.6888" Y="131.1229" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="NewRecharge/label_rope.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="closeBtn" ActionTag="-1730431017" Tag="1150" IconVisible="False" LeftMargin="-449.5344" RightMargin="373.5344" TopMargin="-266.1106" BottomMargin="215.1106" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="46" Scale9Height="29" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="76.0000" Y="51.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-411.5344" Y="240.6106" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -52,131 +82,44 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bottom_bg_6" ActionTag="-1749194955" Tag="6984" IconVisible="False" LeftMargin="-478.9247" RightMargin="-481.0753" TopMargin="186.4747" BottomMargin="-269.4747" ctype="SpriteObjectData">
-            <Size X="960.0000" Y="83.0000" />
+          <AbstractNodeData Name="activityBtn" ActionTag="1534111592" Tag="3234" IconVisible="False" LeftMargin="-471.9216" RightMargin="252.9216" TopMargin="-178.6437" BottomMargin="89.6437" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
+            <Size X="219.0000" Y="89.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1.0753" Y="-227.9747" />
+            <Position X="-362.4216" Y="134.1437" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="NewMall/bottom_bg.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="activityBtn" ActionTag="1534111592" Tag="3234" IconVisible="False" LeftMargin="-352.8264" RightMargin="69.8264" TopMargin="188.9742" BottomMargin="-272.9742" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
-            <Size X="283.0000" Y="84.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-211.3264" Y="-230.9742" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <NormalBackFileData Type="Normal" Path="NewMall/label_events_11.png" Plist="" />
+            <NormalBackFileData Type="Normal" Path="NewMall/label_events_1.png" Plist="" />
             <PressedBackFileData Type="Normal" Path="NewMall/label_events_1.png" Plist="" />
             <DisableBackFileData Type="Default" Path="Default/CheckBox_Disable.png" Plist="" />
-            <NodeNormalFileData Type="Normal" Path="NewMall/label_events_12.png" Plist="" />
+            <NodeNormalFileData Type="Normal" Path="NewMall/label_events_2.png" Plist="" />
             <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="zuanShiBtn" ActionTag="939655558" Tag="3235" IconVisible="False" LeftMargin="59.8146" RightMargin="-342.8146" TopMargin="188.1936" BottomMargin="-272.1936" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
-            <Size X="283.0000" Y="84.0000" />
+          <AbstractNodeData Name="zuanShiBtn" ActionTag="939655558" Tag="3235" IconVisible="False" LeftMargin="-468.8411" RightMargin="249.8411" TopMargin="-73.2384" BottomMargin="-15.7616" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
+            <Size X="219.0000" Y="89.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="201.3146" Y="-230.1936" />
+            <Position X="-359.3411" Y="28.7384" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <NormalBackFileData Type="Normal" Path="NewMall/label_diamond_11.png" Plist="" />
+            <NormalBackFileData Type="Normal" Path="NewMall/label_diamond_1.png" Plist="" />
             <PressedBackFileData Type="Normal" Path="NewMall/label_diamond_1.png" Plist="" />
             <DisableBackFileData Type="Default" Path="Default/CheckBox_Disable.png" Plist="" />
-            <NodeNormalFileData Type="Normal" Path="NewMall/label_diamond_12.png" Plist="" />
+            <NodeNormalFileData Type="Normal" Path="NewMall/label_diamond_2.png" Plist="" />
             <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bottom_line_7" ActionTag="-1335835023" Tag="6985" IconVisible="False" LeftMargin="-10.8208" RightMargin="-20.1792" TopMargin="187.4692" BottomMargin="-270.4692" ctype="SpriteObjectData">
-            <Size X="31.0000" Y="83.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="4.6792" Y="-228.9692" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="NewMall/bottom_line.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="title_bg_10" ActionTag="-518829220" Tag="6988" IconVisible="False" LeftMargin="-345.7741" RightMargin="162.7741" TopMargin="-271.5752" BottomMargin="224.5752" ctype="SpriteObjectData">
+          <AbstractNodeData Name="title_bg_10" ActionTag="-518829220" Tag="6988" IconVisible="False" LeftMargin="-344.8068" RightMargin="161.8068" TopMargin="-266.7407" BottomMargin="219.7407" ctype="SpriteObjectData">
             <Size X="183.0000" Y="47.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-254.2741" Y="248.0752" />
+            <Position X="-253.3068" Y="243.2407" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="NewMall/title_shop.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="PageView_2" CanEdit="False" ActionTag="1104142527" Tag="10126" IconVisible="False" LeftMargin="-480.0000" RightMargin="-480.0000" TopMargin="-219.6547" BottomMargin="-180.3453" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" ctype="PageViewObjectData">
-            <Size X="960.0000" Y="400.0000" />
-            <Children>
-              <AbstractNodeData Name="Panel_2" ActionTag="-235980373" Tag="10551" IconVisible="False" RightMargin="960.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-                <Size X="960.0000" Y="400.0000" />
-                <Children>
-                  <AbstractNodeData Name="FileNode_activity" ActionTag="1600208679" Tag="897" IconVisible="True" LeftMargin="419.2805" RightMargin="540.7195" TopMargin="210.6761" BottomMargin="189.3239" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <AnchorPoint />
-                    <Position X="419.2805" Y="189.3239" />
-                    <Scale ScaleX="1.2000" ScaleY="1.2000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4368" Y="0.4733" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="MallHuoDongNode.csd" Plist="" />
-                  </AbstractNodeData>
-                </Children>
-                <AnchorPoint />
-                <Position />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition />
-                <PreSize X="0.5000" Y="1.0000" />
-                <SingleColor A="255" R="150" G="200" B="255" />
-                <FirstColor A="255" R="150" G="200" B="255" />
-                <EndColor A="255" R="255" G="255" B="255" />
-                <ColorVector ScaleY="1.0000" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="Panel_4" ActionTag="-958675386" ZOrder="1" Tag="10553" IconVisible="False" LeftMargin="960.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-                <Size X="960.0000" Y="400.0000" />
-                <Children>
-                  <AbstractNodeData Name="FileNode_zuanshi" ActionTag="-2136765418" Tag="875" IconVisible="True" LeftMargin="495.8775" RightMargin="464.1225" TopMargin="213.6192" BottomMargin="186.3808" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <AnchorPoint />
-                    <Position X="495.8775" Y="186.3808" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5165" Y="0.4660" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="MallGoldNode.csd" Plist="" />
-                  </AbstractNodeData>
-                </Children>
-                <AnchorPoint />
-                <Position X="960.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" />
-                <PreSize X="0.5000" Y="1.0000" />
-                <SingleColor A="255" R="150" G="200" B="255" />
-                <FirstColor A="255" R="150" G="200" B="255" />
-                <EndColor A="255" R="255" G="255" B="255" />
-                <ColorVector ScaleY="1.0000" />
-              </AbstractNodeData>
-            </Children>
-            <AnchorPoint />
-            <Position X="-480.0000" Y="-180.3453" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <SingleColor A="255" R="150" G="150" B="100" />
-            <FirstColor A="255" R="150" G="150" B="100" />
-            <EndColor A="255" R="255" G="255" B="255" />
-            <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

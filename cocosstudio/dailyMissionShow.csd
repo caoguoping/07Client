@@ -46,7 +46,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_2" ActionTag="-826488084" Tag="6" IconVisible="False" LeftMargin="-147.0838" RightMargin="63.0838" TopMargin="-43.2462" BottomMargin="-42.7538" LeftEage="27" RightEage="27" TopEage="27" BottomEage="27" Scale9OriginX="27" Scale9OriginY="27" Scale9Width="30" Scale9Height="32" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_2" ActionTag="-826488084" Tag="6" IconVisible="False" LeftMargin="-147.0838" RightMargin="63.0838" TopMargin="-38.9405" BottomMargin="-47.0595" LeftEage="27" RightEage="27" TopEage="27" BottomEage="27" Scale9OriginX="27" Scale9OriginY="27" Scale9Width="30" Scale9Height="32" ctype="ImageViewObjectData">
             <Size X="84.0000" Y="86.0000" />
             <Children>
               <AbstractNodeData Name="icon_gold_1_2" ActionTag="-80300062" Tag="8" IconVisible="False" LeftMargin="5.4687" RightMargin="0.5313" TopMargin="1.1100" BottomMargin="7.8900" ctype="SpriteObjectData">
@@ -62,7 +62,7 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-105.0838" Y="0.2462" />
+            <Position X="-105.0838" Y="-4.0595" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

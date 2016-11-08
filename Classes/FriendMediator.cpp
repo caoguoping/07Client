@@ -54,10 +54,10 @@ void FriendMediator::onEvent(int i, void* data)
 		}
 		break;
 
-	case FRIEND_OPT_ME:
-		pFriendView->handleFriendOptMe(data);
+	//case FRIEND_OPT_ME:
+	//	pFriendView->handleFriendOptMe(data);
 
-		break;
+	//	break;
 
 	case FRIEND_OPT_HIM:
 		pFriendView->handleFriendOptHim(data);

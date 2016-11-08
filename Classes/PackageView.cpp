@@ -4,8 +4,11 @@ PackageView::PackageView()
 {
 	rootNode = CSLoader::createNode("package.csb");
 	addChild(rootNode);
-	//rootNode->setScale(0.1, 0.1);
-	//rootNode->runAction(Sequence::create(ScaleTo::create(0.2f, 1.03), ScaleTo::create(0.1f, 1.0f), nullptr));
+	rootNode->setScale(0.8f, 0.8f);
+	rootNode->runAction(Sequence::create(
+		ScaleTo::create(0.2f, 1.03f),
+		ScaleTo::create(0.15f, 1.0f),
+		nullptr));
 
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PackageView, closeBtn, 12001, "closeBtn", NULL)
 	BTN_ADD_TOUCH_EVENTLISTENER(Button, PackageView, useBtn, 12002, "useBtn", NULL)

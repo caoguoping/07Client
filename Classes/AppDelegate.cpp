@@ -43,7 +43,6 @@ void AppDelegate::initService()
 	registerService(TCPSocketService::GAME, new TCPSocketService());
 	registerService(SendDataService::NAME, new SendDataService());
 	registerService(InDeskService::NAME, new InDeskService());
-	registerService(MusicService::NAME, new MusicService());
 }
 void AppDelegate::initCommand()
 {
@@ -169,14 +168,8 @@ void AppDelegate::applicationDidEnterBackground() {
 }
 
 // this function will be called when the app is active again
-void AppDelegate::applicationWillEnterForeground() {
+void AppDelegate::applicationWillEnterForeground() 
+{
     Director::getInstance()->startAnimation();
 
-    // if you use SimpleAudioEngine, it must resume here
-
-	blueSkyDispatchEvent(20060);
-	//if (MusicService::getCanBackgroundMusic())
-	//{
-	//	SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
-	//}
 }

@@ -90,10 +90,6 @@ void MatchMediator::onEvent(int i, void* data)
 			}
 					
 		}
-
-
-
-
 		case EventType::ON_DESK:
 			onDeskResult = *(OnDesk*)data;
 			if (onDeskResult.dwUserID == DATA->myBaseData.dwUserID &&

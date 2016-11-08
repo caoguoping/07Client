@@ -4,8 +4,8 @@ WarningView::WarningView(AlertVO *alertVO)
 {
 	rootNode = CSLoader::createNode("warning.csb");
 	addChild(rootNode);
-	rootNode->setScale(0.1, 0.1);
-	rootNode->runAction(Sequence::create(ScaleTo::create(0.2f, 1.1), ScaleTo::create(0.1f, 1.0f), nullptr));
+	rootNode->setScale(0.8, 0.8);
+	rootNode->runAction(Sequence::create(ScaleTo::create(0.2f, 1.03), ScaleTo::create(0.15f, 1.0f), nullptr));
 	enterEventId = alertVO->enterEventId;
 	cancleEventId = alertVO->cancleEventId;
 	Text_1 = dynamic_cast<Text*>(rootNode->getChildByName("Text_1"));

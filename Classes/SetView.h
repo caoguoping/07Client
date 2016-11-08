@@ -13,14 +13,17 @@ public:
 
 	void initView();
 
-	bool isMusicOpen = true;
-	bool isEffectOpen = true;
-	bool isShockOpen = true;
+	bool isMusicOpen;
+	bool isEffectOpen;
+
+	CheckBox*  chkMusic;
+	CheckBox*  chkEffect;
+
+	void clickChkMusic(Ref*  pSender);
+	void clickChkEffect(Ref*  pSender);
 
 private:
 	BTN_TOUCH_HANDLE(Button,closeBtn, 14001);
-	BTN_TOUCH_HANDLE(CheckBox, musicBtn, 14002);
-	BTN_TOUCH_HANDLE(CheckBox, effectBtn, 14003);
 	BTN_TOUCH_HANDLE(Button, reLoginBtn, 14005);
 	BTN_TOUCH_HANDLE(Button, helpBtn, 14006);
 	BTN_TOUCH_HANDLE(ImageView, Image_38, 14001);

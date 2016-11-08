@@ -86,6 +86,12 @@ void FriendView::initView()
 
 	rootNode = CSLoader::createNode("Friends.csb");
 	addChild(rootNode);
+
+	rootNode->setScale(0.8f, 0.8f);
+	rootNode->runAction(Sequence::create(
+		ScaleTo::create(0.2f, 1.03f),
+		ScaleTo::create(0.15f, 1.0f),
+		nullptr));
 	VIEW->nowViewTag = ViewManager::eViewFriend;
 
 	logV("\n myUserId %d", DATA->myBaseData.dwUserID);
@@ -781,62 +787,62 @@ void FriendView::clickOneRefuse(Ref* pSender)
 //6,  5
 void FriendView::handleFriendOptMe(void*  data)
 {
-	CMD_GP_C_ADD_Friend* pFriendOpt = (CMD_GP_C_ADD_Friend*)data;
-	tagFriendParameter* addedFriends;
-	switch (pFriendOpt->wRcStates)
-	{
-	case FriendView::ecInviteSuccess:
-
-		break;
-
-	case FriendView::ecInviteFail:
-
-		break;
-	case FriendView::ecInviteAlready:
-
-		break;
-	case FriendView::ecAgreeSuccess: //同意添加对方为好友
-		addedFriends = new tagFriendParameter();
-		addedFriends->dwUserID     = pFriendOpt->dwUserID;
-		addedFriends->szNickName   = pFriendOpt->szNickName;
-		addedFriends->dwRmb        = pFriendOpt->dwRmb;
-		addedFriends->FaceID       = pFriendOpt->FaceID;
-		addedFriends->wServerID    = pFriendOpt->wServerID;
-		addedFriends->wKindID      = pFriendOpt->wKindID;
-		addedFriends->dwLoveLiness = pFriendOpt->dwLoveLiness;
-		addedFriends->WinRate      = pFriendOpt->WinRate;
-
-		DATA->vFriends.push_back(*addedFriends);
-
-		break;
-	case FriendView::ecAgreeFail:
-
-		break;
-	case FriendView::ecAgreeAlready:
-
-		break;
-	case FriendView::ecRefuseSuccess:
-
-		break;
-	case FriendView::ecRefuseFail:
-
-		break;
-	case FriendView::ecRefuseNot:
-
-		break;
-	case FriendView::ecDeleteSuccess:
-
-		break;
-
-	case FriendView::ecDeleteFail:
-
-		break;
-
-	case FriendView::ecDeleteNot:
-
-		break;
-
-	}
+// 	CMD_GP_C_ADD_Friend* pFriendOpt = (CMD_GP_C_ADD_Friend*)data;
+// 	tagFriendParameter* addedFriends;
+// 	switch (pFriendOpt->wRcStates)
+// 	{
+// 	case FriendView::ecInviteSuccess:
+// 
+// 		break;
+// 
+// 	case FriendView::ecInviteFail:
+// 
+// 		break;
+// 	case FriendView::ecInviteAlready:
+// 
+// 		break;
+// 	case FriendView::ecAgreeSuccess: //同意添加对方为好友
+// 		addedFriends = new tagFriendParameter();
+// 		addedFriends->dwUserID     = pFriendOpt->dwUserID;
+// 		addedFriends->szNickName   = pFriendOpt->szNickName;
+// 		addedFriends->dwRmb        = pFriendOpt->dwRmb;
+// 		addedFriends->FaceID       = pFriendOpt->FaceID;
+// 		addedFriends->wServerID    = pFriendOpt->wServerID;
+// 		addedFriends->wKindID      = pFriendOpt->wKindID;
+// 		addedFriends->dwLoveLiness = pFriendOpt->dwLoveLiness;
+// 		addedFriends->WinRate      = pFriendOpt->WinRate;
+// 
+// 		DATA->vFriends.push_back(*addedFriends);
+// 
+// 		break;
+// 	case FriendView::ecAgreeFail:
+// 
+// 		break;
+// 	case FriendView::ecAgreeAlready:
+// 
+// 		break;
+// 	case FriendView::ecRefuseSuccess:
+// 
+// 		break;
+// 	case FriendView::ecRefuseFail:
+// 
+// 		break;
+// 	case FriendView::ecRefuseNot:
+// 
+// 		break;
+// 	case FriendView::ecDeleteSuccess:
+// 
+// 		break;
+// 
+// 	case FriendView::ecDeleteFail:
+// 
+// 		break;
+// 
+// 	case FriendView::ecDeleteNot:
+// 
+// 		break;
+// 
+// 	}
 
 }
 
@@ -850,11 +856,6 @@ void FriendView::handleFriendOptHim(void*  data)
 	switch (pFriendOpt->wRcStates)
 	{
 	case FriendView::ecInviteSuccess:   //对方要加我
-		pInvite = new tagInviteInfo();
-		pInvite->dwUserID = pFriendOpt->dwUserID;
-		pInvite->wFaceID = pFriendOpt->FaceID;
-		pInvite->szNickName = pFriendOpt->szNickName;
-		DATA->vFriendPush.push_back(*pInvite);
 		if (VIEW->nowViewTag == ViewManager::eViewFriend 
 			&& currentTitle == E_familiar)   //当前正在好友推送界面
 		{
@@ -866,28 +867,28 @@ void FriendView::handleFriendOptHim(void*  data)
 		}
 		break;
 
-	case FriendView::ecAgreeSuccess:   //对方同意添加好友
-	{
-		strName = pFriendOpt->szNickName;
-		strAgree = UTF8::getInstance()->getString("friend", "agreeAdd");
-		strName = strName + strAgree;
-		Tools::getInstance()->showSysMsgTouming(strName);
-
-		tagFriendParameter* addedFriends = new tagFriendParameter();
-		addedFriends->dwUserID = pFriendOpt->dwTargretUserID;  //对方
-		addedFriends->szNickName = pFriendOpt->szNickName;
-		addedFriends->dwRmb = pFriendOpt->dwRmb;
-		addedFriends->FaceID = pFriendOpt->FaceID;
-		addedFriends->wServerID = pFriendOpt->wServerID;
-		addedFriends->wKindID = pFriendOpt->wKindID;
-		addedFriends->dwLoveLiness = pFriendOpt->dwLoveLiness;
-		addedFriends->WinRate = pFriendOpt->WinRate;
-
-		DATA->vFriends.push_back(*addedFriends);
-
-
-		break;
-	}
+// 	case FriendView::ecAgreeSuccess:   //对方同意添加好友
+// 	{
+// 		strName = pFriendOpt->szNickName;
+// 		strAgree = UTF8::getInstance()->getString("friend", "agreeAdd");
+// 		strName = strName + strAgree;
+// 		Tools::getInstance()->showSysMsgTouming(strName);
+// 
+// 		tagFriendParameter* addedFriends = new tagFriendParameter();
+// 		addedFriends->dwUserID = pFriendOpt->dwTargretUserID;  //对方
+// 		addedFriends->szNickName = pFriendOpt->szNickName;
+// 		addedFriends->dwRmb = pFriendOpt->dwRmb;
+// 		addedFriends->FaceID = pFriendOpt->FaceID;
+// 		addedFriends->wServerID = pFriendOpt->wServerID;
+// 		addedFriends->wKindID = pFriendOpt->wKindID;
+// 		addedFriends->dwLoveLiness = pFriendOpt->dwLoveLiness;
+// 		addedFriends->WinRate = pFriendOpt->WinRate;
+// 
+// 		DATA->vFriends.push_back(*addedFriends);
+// 
+// 
+// 		break;
+// 	}
 
 	case FriendView::ecAgreeFail:
 

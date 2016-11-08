@@ -1,4 +1,5 @@
 #include "ShowChatMediator.h"
+#include "MusicService.h"
 
 ShowChatMediator::ShowChatMediator(int desk, int index,int chat)
 {
@@ -73,64 +74,64 @@ void ShowChatMediator::playChatMusic(int face, int index)
 		switch (index)
 		{
 		case 1:
-			blueSkyDispatchEvent(20030);
+			PLayEffect(HURRY_NV);
 			break;
 		case 2:
-			blueSkyDispatchEvent(20032);
+			PLayEffect(PERFORM_NV);
 			break;
 		case 3:
-			blueSkyDispatchEvent(20034);
+			PLayEffect(FRIEND_NV);
 			break;
 		case 4:
-			blueSkyDispatchEvent(20036);
+			PLayEffect(LEAVE_NV);
 			break;
 		case 5:
-			blueSkyDispatchEvent(20038);
+			PLayEffect(BOOM_HOOM_NV);
 			break;
 		case 6:
-			blueSkyDispatchEvent(20040);
+			PLayEffect(COOPERATE_NV);
 			break;
 		case 7:
-			blueSkyDispatchEvent(20042);
+			PLayEffect(HELLO_NV);
 			break;
 		case 8:
-			blueSkyDispatchEvent(20044);
+			PLayEffect(COMBINE_NV);
 			break;
 		case 9:
-			blueSkyDispatchEvent(20046);
+			PLayEffect(APOLOGY_NV);
 			break;
 		}
 	}
-	else if (face == 4 || face == 3)
+	else if (face == 3 || face == 4)
 	{
 		switch (index)
 		{
 		case 1:
-			blueSkyDispatchEvent(20029);
+			PLayEffect(HURRY_NAN);
 			break;
 		case 2:
-			blueSkyDispatchEvent(20031);
+			PLayEffect(PERFORM_NAN);
 			break;
 		case 3:
-			blueSkyDispatchEvent(20033);
+			PLayEffect(FRIEND_NAN);
 			break;
 		case 4:
-			blueSkyDispatchEvent(20035);
+			PLayEffect(LEAVE_NAN);
 			break;
 		case 5:
-			blueSkyDispatchEvent(20037);
+			PLayEffect(BOOM_HOOM_NAN);
 			break;
 		case 6:
-			blueSkyDispatchEvent(20039);
+			PLayEffect(COOPERATE_NAN);
 			break;
 		case 7:
-			blueSkyDispatchEvent(20041);
+			PLayEffect(HELLO_NAN);
 			break;
 		case 8:
-			blueSkyDispatchEvent(20043);
+			PLayEffect(COMBINE_NAN);
 			break;
 		case 9:
-			blueSkyDispatchEvent(20045);
+			PLayEffect(APOLOGY_NAN);
 			break;
 		}
 	}
