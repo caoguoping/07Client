@@ -14,9 +14,6 @@ public:
 
 	void initView();
 	void showAllMission();
-	void showMission();
-	void showMissionState(Node* show, unsigned short isCompleted, unsigned short canGetMisAward, int index);
-	void showMisCondition(Node* show, int index);
 
 	//储存任务信息
 	vector<DBR_GR_UserLogonMissionRes> dailyMisInfo;
@@ -24,40 +21,26 @@ public:
 public:
 	BTN_TOUCH_HANDLE(Button, closeBtn, 11007);
 	BTN_TOUCH_HANDLE(ImageView, Image_38, 11007);
+	Sprite*  imgFrame;
 
 	//滚动容器
-	ScrollView* activityView;
-	Node*   taskNodes[6];
-	Text*   txtDescrip[6];
-	Text*   txtReward[6];
+	ScrollView* scrImg;
 	Text*   txtNowNum[6];
-	Text*	txtNowNum0[6];
 	Text*   txtNeetNum[6];
+	Text*   txtNumLian[6];
 	Button*  btnGet[6];
 	Button*  btnGoto[6];
-	ImageView*  imgReceive[6];
 	ImageView*  imgNormal[6];
 	ImageView*  imgBlack[6];
 
-
-	//
 	vector<Node*> mallShowNode;
 	vector<Button*> getBtnArr;
-
-	//
-	vector<unsigned short> isComplete;
-	vector<unsigned short> hasGetAward;
-
-	//
+	vector<WORD> isComplete;
+	vector<WORD> hasGetAward;
 	void clickGetBtn(Ref *pSender);    //获得
 	void clickGotoBtn(Ref *pSender);   //前往
 	bool isClicked = true;
-
-	//
 	bool canShowGetBtn;
-
-	//
-	void buyItem(float dt);
 };
 
 #endif

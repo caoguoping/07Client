@@ -1367,86 +1367,30 @@
           <Image Name="09.png" />
         </Folder>
         <Folder Name="package">
-          <Folder Name="shop">
-            <Image Name="biaoqian01-move.png" />
-            <Image Name="biaoqian01-up.png" />
-            <Image Name="biaoqian02-move.png" />
-            <Image Name="biaoqian02-up.png" />
-            <Image Name="biaotizi.png" />
-            <Image Name="di01.png" />
-            <Image Name="haibao.png" />
-            <Image Name="haibao02.png" />
-            <Image Name="jinbi01.png" />
-            <Image Name="jinbi02.png" />
-            <Image Name="jinbi03.png" />
-            <Image Name="jinbi04.png" />
-            <Image Name="jinbi05.png" />
-            <Image Name="jinbi06.png" />
-            <Image Name="jinbi-icon.png" />
-            <Image Name="jindou.png" />
-            <Image Name="jindou01.png" />
-            <Image Name="jindou02.png" />
-            <Image Name="jindou03.png" />
-            <Image Name="jindou04.png" />
-            <Image Name="jindou05.png" />
-            <Image Name="jindou06.png" />
-            <Image Name="jindou07.png" />
-            <Image Name="jindou-down.png" />
-            <Image Name="jindou-up.png" />
-            <Image Name="jinzi01.png" />
-            <Image Name="jinzi02.png" />
-            <Image Name="jinzi03.png" />
-            <Image Name="jinzi04.png" />
-            <Image Name="jinzi05.png" />
-            <Image Name="jinzi06.png" />
-            <Image Name="jinzi07.png" />
-            <Image Name="piaodai01.png" />
-            <Image Name="piaodai02.png" />
-            <Image Name="yuananniu-down.png" />
-            <Image Name="yuananniu-up.png" />
-            <Image Name="zhuanshi.png" />
-            <Image Name="zi01 (2).png" />
-            <Image Name="zi01.png" />
-            <Image Name="zi02 (2).png" />
-            <Image Name="zi02.png" />
-            <Image Name="zi03.png" />
-            <Image Name="zi04.png" />
-            <Image Name="zi05.png" />
-            <Image Name="zi06.png" />
-            <Image Name="zi07.png" />
-            <Image Name="zi08.png" />
-            <Image Name="zi09.png" />
-            <Image Name="zuannshi05.png" />
-            <Image Name="zuannshi06.png" />
-            <Image Name="zuanshi.png" />
-            <Image Name="zuanshi01.png" />
-            <Image Name="zuanshi02.png" />
-            <Image Name="zuanshi03.png" />
-            <Image Name="zuanshi04.png" />
-            <Image Name="zuanshi05.png" />
-            <Image Name="zuanshi06.png" />
-            <Image Name="zuanshi07.png" />
-            <Image Name="zuanshianniu-down.png" />
-            <Image Name="zuanshianniu-up.png" />
-            <Image Name="zuanshi-down.png" />
-            <Image Name="zuanshi-up.png" />
-            <Image Name="zuanzi01.png" />
-            <Image Name="zuanzi02.png" />
-            <Image Name="zuanzi03.png" />
-            <Image Name="zuanzi04.png" />
-            <Image Name="zuanzi05.png" />
-            <Image Name="zuanzi06.png" />
-          </Folder>
-          <Image Name="anniu-shiyong-down.png" />
-          <Image Name="anniu-shiyong-up.png" />
-          <Image Name="biaoti.png" />
-          <Image Name="biaotidi.png" />
-          <Image Name="biaotizi.png" />
-          <Image Name="di.png" />
-          <Image Name="di03-02.png" />
+          <Image Name="bg_backpack.png" />
+          <Image Name="button_use_1.png" />
+          <Image Name="button_use_2.png" />
+          <Image Name="inner_text_bg.png" />
+          <Image Name="item_auto_1.png" />
+          <Image Name="item_auto_2.png" />
+          <Image Name="item_bag_1.png" />
+          <Image Name="item_bag_2.png" />
+          <Image Name="item_bag1_1.png" />
+          <Image Name="item_bag1_2.png" />
+          <Image Name="item_bag2_1.png" />
+          <Image Name="item_bag2_2.png" />
+          <Image Name="item_exp-card_1.png" />
+          <Image Name="item_exp-card_2.png" />
+          <Image Name="item_frame_1.png" />
+          <Image Name="item_frame_2.png" />
+          <Image Name="item_frame_2_light.png" />
+          <Image Name="item_gold-card_1.png" />
+          <Image Name="item_gold-card_2.png" />
+          <Image Name="item_record_1.png" />
+          <Image Name="item_record_2.png" />
+          <Image Name="item_tickets_1.png" />
+          <Image Name="item_tickets_2.png" />
           <Image Name="jipaiqi.png" />
-          <Image Name="ka01.png" />
-          <Image Name="ka02.png" />
           <Image Name="kuang.png" />
           <Image Name="kuang02.png" />
           <Image Name="kuang03.png" />
@@ -1456,6 +1400,7 @@
           <Image Name="libao.png" />
           <Image Name="ruchangjuan.png" />
           <Image Name="tishi.png" />
+          <Image Name="title_backpack.png" />
           <Image Name="waifaguang.png" />
           <Image Name="zi001 .png" />
           <Image Name="zi002.png" />
@@ -1702,6 +1647,7 @@
         <Project Name="wealthNumber.csd" Type="Node" />
         <Project Name="zhuanShiShow.csd" Type="Node" />
         <Project Name="zhupai.csd" Type="Node" />
+        <Project Name="publicMessage.csd" Type="Node" />
       </RootFolder>
     </Group>
   </SolutionFolder>

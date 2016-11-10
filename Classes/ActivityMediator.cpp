@@ -143,17 +143,7 @@ void ActivityMediator::clickMyCupBtnHander()
 
 void ActivityMediator::clickGetLotteryBtnHander()
 {
-// 
-// 	gamblingData = *(CMD_GP_User_Gambling*)data;
-// 	activityView->startLottery(gamblingData.Gambling, gamblingData.GamblingCnt);
-// 	lotteryIndex = gamblingData.Gambling;
-// 	lotteryTimes = gamblingData.GamblingCnt;
-// 
-// 	blueSkyDispatchEvent(20050);
-// 	blueSkyDispatchEvent(11905);
-// 	;
-// 	unsigned long dwUserID = DATA->myBaseData.dwUserID;
-// 	((SendDataService *)getService(SendDataService::NAME))->sendGambling(dwUserID, 0,0);
+
 }
 
 void ActivityMediator::getRechargeAwardHander(int index)

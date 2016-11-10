@@ -57,7 +57,7 @@ void MatchView::clickCansai(Ref* psender)
 {
 
 	//±¨Ãû
-	unsigned long dwUserID = DATA->myBaseData.dwUserID;
+	DWORD dwUserID = DATA->myBaseData.dwUserID;
 	((SendDataService *)getService(SendDataService::NAME))->sendSignUp(dwUserID);
 
 	DATA->bMatchOver = 0;
@@ -67,7 +67,7 @@ void MatchView::clickTuisai(Ref* psender)
 {
 
 	//ÍËÈü
-	unsigned long dwUserID = DATA->myBaseData.dwUserID;
+	DWORD dwUserID = DATA->myBaseData.dwUserID;
 	((SendDataService *)getService(SendDataService::NAME))->sendExitSignUp(dwUserID);
 
 }

@@ -262,7 +262,7 @@ void LobbyView::clickBtnFast(Ref* psender)
 {
 	UIDisableClick(mBtnFast, LobbyView, enableBtnFast)
 		DATA->bGameCate = DataManager::E_GameCateNormal;
-	long long golds = DATA->myBaseData.lUserScore;
+	SCORE golds = DATA->myBaseData.lUserScore;
 
 	int cof = 80;  
 	if (golds <= 500)
@@ -293,7 +293,7 @@ void LobbyView::clickBtnFast(Ref* psender)
 void LobbyView::clickBtnCharge(Ref* psender)
 {
 	UIDisableClick(mBtnCharge, LobbyView, enableBtnCharge)
-		creatView(new ShopView(0), new ShopMediator());   //1 £º zuanshi
+		creatView(new ShopView(0), new ShopMediator());   //0 £º zuanshi
 }
 
 void LobbyView::clickBtnShop(Ref* psender)

@@ -23,6 +23,12 @@
             <key>err8</key>  
             <string>你已经断开与游戏服务器的连接</string> 
         </dict>
+
+		<key>popup</key>  
+        <dict>
+            <key>bloodquit</key>  
+            <string>没有打过规定的级数，退出将扣取额外金币</string>  
+        </dict>
 		
 		<key>test</key>  
         <dict>
@@ -48,15 +54,6 @@
 
 	    <key>net</key>  
         <dict>
-        	<!--yuanlai-->
-<!--             <key>loginServerIp</key> 
-            <string>221.226.117.87</string>
-			<key>loginServerPort</key>  
-            <string>8300</string>
-			<key>MatchPort</key>  
-            <string>8311</string> -->
-
-			<!--xin-->
             <key>loginServerIp</key>  
             <string>221.226.117.82</string>
             <!-- <string>192.168.2.130</string> -->
@@ -84,7 +81,6 @@
             <key>BloodPort2</key>  
             <string>5019</string>
 
-
 			<key>webUrl</key>  
             <string>http://221.226.117.87:9000/ttdmx/ClientLogin/login</string>
         </dict>
@@ -108,6 +104,7 @@
 			<key>item</key>  
             <string>获得道具：</string>  
 		</dict>
+
 		<key>prop</key>
 		<dict>
             <key>6</key>  
@@ -116,6 +113,20 @@
             <string>双倍经验卡</string>  
 			<key>8</key>  
             <string>记牌器</string>  
+            <key>11</key>  
+            <string>入场券</string>  
+		</dict>
+
+		<key>propDescription</key>
+		<dict>
+            <key>6</key>  
+            <string>金币快到碗里来！物超所值呦！</string>  
+			<key>7</key>  
+            <string>原来拥有高积分等级就是这么简单！</string>  
+			<key>8</key>  
+            <string>记忆牌型的利器喔！</string>  
+            <key>11</key>  
+            <string>争夺丰厚奖励的入场券喔，一夜暴富就靠它了！</string>  
 		</dict>
 		
 		<key>task</key>
@@ -149,34 +160,7 @@
             <string>同意添加您为好友！</string>  
 			<key>alreadyFriend</key>  
             <string>已经是好友，请勿重复添加！</string>      
-			
 		</dict>
-		
-		<key>changci</key>
-		<dict>
-<!-- 			<key>0</key>  
-            <string>空闲中...</string>   -->
-            <key>1</key>  
-            <string>打金新手场</string>  
-            <key>2</key>  
-            <string>打金进阶场</string>  
-            <key>3</key>  
-            <string>打金大师场</string>  
-            <key>4</key>  
-            <string>12人快速场</string>  
-            <key>5</key>  
-            <string>5分钟定时场</string>  
-			<key>6</key>  
-            <string>血战到5</string>
-			<key>7</key>  
-            <string>血战到K</string>
-			<key>8</key>  
-            <string>血战到底</string>
-			<key>9</key>  
-            <string>娱乐好友场</string>                                      
-			<key>10</key>  
-            <string>娱乐随机主牌场</string>   
-        </dict>
 
         <key>name</key>  
         <dict>  

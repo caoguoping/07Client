@@ -110,6 +110,7 @@ void PlayPokerMediator::readyPlay()
 
 void PlayPokerMediator::OnRegister()
 {
+	VIEW->nowViewTag = ViewManager::eViewGame;
 	playPokerView = (PlayPokerView*)getView();
 	mpViewMatchRanking = NULL;
 	playPokerView->imgHuaPai = NULL;
@@ -548,14 +549,17 @@ void PlayPokerMediator::sendPokerkHandle()
 			NULL);
 		LayerManager->uiLayer->runAction(seq);
 
+		bloodStartNode->setPosition(WScreen * 0.5, HScreen * 0.5);
+
+
 		Text*  txtName[4];
 		Text   *txtBlueWhite, *txtBlueYellow, *txtRedWhite,  *txtRedYellow;
 		ImageView  *imgBlue, *imgRed; //blue is me,  red is other
 		UIGet_ImageView("Image_blue", bloodStartNode, imgBlue)
 			UIGet_ImageView("Image_red", bloodStartNode, imgRed)
 			UIGet_Text("Text_name0", imgBlue, txtName[0])
-			UIGet_Text("Text_name1", imgBlue, txtName[1])
-			UIGet_Text("Text_name2", imgRed, txtName[2])
+			UIGet_Text("Text_name1", imgBlue, txtName[2])
+			UIGet_Text("Text_name2", imgRed, txtName[1])
 			UIGet_Text("Text_name3", imgRed, txtName[3])
 			UIGet_Text("Text_LvWhite", imgBlue, txtBlueWhite)
 			UIGet_Text("Text_LvYellow", imgBlue, txtBlueYellow)
@@ -564,12 +568,13 @@ void PlayPokerMediator::sendPokerkHandle()
 
 		for (int i = 0; i < 4; i++)
 		{
-			txtName[i]->setString(DATAPlayerIndesk->DeskPlayerInfo[i].szNickName);
+			int svrId = DATAPlayerIndesk->getServiceChairID(i);
+			txtName[i]->setString(DATAPlayerIndesk->DeskPlayerInfo[svrId].szNickName);
 		}
 		CMD_S_GameStart*   sendPokerInfo = (CMD_S_GameStart*)(DATA->sendPokerData);
 
-		if (DATAPlayerIndesk->getServiceChairID(0) == sendPokerInfo->wCurrentUser
-			|| DATAPlayerIndesk->getServiceChairID(2) == sendPokerInfo->wCurrentUser
+		if (DATAPlayerIndesk->getServiceChairID(0) == 0
+			|| DATAPlayerIndesk->getServiceChairID(2) == 2
 			)  //ÎÒ·½´ò
 		{
 			txtBlueYellow->setString(strLvNum[sendPokerInfo->bOurSeries]);
@@ -580,8 +585,8 @@ void PlayPokerMediator::sendPokerkHandle()
 		else
 		{
 			txtBlueYellow->setVisible(false); 
-			txtBlueWhite->setString(strLvNum[sendPokerInfo->bOurSeries]);
-			txtRedYellow->setString(strLvNum[sendPokerInfo->bOtherSeries]);
+			txtBlueWhite->setString(strLvNum[sendPokerInfo->bOtherSeries]);
+			txtRedYellow->setString(strLvNum[sendPokerInfo->bOurSeries]);
 			txtRedWhite->setVisible(false);
 		}
 	}
@@ -1270,6 +1275,9 @@ Layer* PlayPokerMediator::getLayer()
 {
 	return ((UILayerService*)getService(UILayerService::NAME))->mainLayer;
 }
+
+
+
 
 void PlayPokerMediator::clickfanHuiBtnHander()
 {

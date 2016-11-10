@@ -18,8 +18,7 @@ void PackageMediator::OnRegister()
 {
 	packageView = (PackageView*)getView();
 
-	PokerGameModel* pokerGameModel = ((PokerGameModel*)getModel(PokerGameModel::NAME));
-	packageView->packageItem = pokerGameModel->packageItem;
+	DATAPokerGame->packageItem;
 
 	packageView->initView();
 }
@@ -43,9 +42,9 @@ void PackageMediator::onEvent(int i, void* data)
 	case 12001:
 		removeView(this);
 		break;
-	case 12002:
-		clickUseBtnHander();
-		break;
+// 	case 12002:
+// 		clickUseBtnHander();
+// 		break;
 	case 12003:
 		index = *(int*)data;
 		nowIndex = index;

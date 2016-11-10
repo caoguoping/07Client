@@ -18,6 +18,7 @@ public:
 		eViewShop,
 		eViewMatch,
 		eViewPlayGold,
+		eViewGame,
 		eViewMax
 
 	};
@@ -31,8 +32,6 @@ public:
 	static ViewManager * getInstance();
 
 	void init();
-// 	void showViewPlayGold();	
-// 	void hideViewPlayGold();
 };
 
 #define VIEW ViewManager::getInstance()

@@ -26,4 +26,6 @@ public:
 	};
 };
 
+#define UTF8String(dict, key)	 UTF8::getInstance()->getString(dict, key)
+
 #endif

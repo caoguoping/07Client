@@ -1,17 +1,19 @@
 #include "PackageView.h"
+#include "DataManager.h"
+#include "UTF8.h"
 
 PackageView::PackageView()
 {
+	iOldClicked = 0;
 	rootNode = CSLoader::createNode("package.csb");
+	rootNode->setPosition(WScreen * 0.5, HScreen * 0.5);
 	addChild(rootNode);
-	rootNode->setScale(0.8f, 0.8f);
-	rootNode->runAction(Sequence::create(
-		ScaleTo::create(0.2f, 1.03f),
-		ScaleTo::create(0.15f, 1.0f),
-		nullptr));
 
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PackageView, closeBtn, 12001, "closeBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PackageView, useBtn, 12002, "useBtn", NULL)
+	cocostudio::timeline::ActionTimeline*  timeLine = CSLoader::createTimeline("package.csb");
+	timeLine->gotoFrameAndPlay(0, false);
+	rootNode->runAction(timeLine);
+
+	BTN_ADD_TOUCH_EVENTLISTENER(Button, PackageView, closeBtn, 12001, "Button_close", "Image_frame")
 	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, PackageView, Image_close, 12001, "Image_38", NULL)
 }
 
@@ -19,238 +21,126 @@ PackageView::~PackageView()
 {
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PackageView, closeBtn, 12001);
 	BTN_REMOVE_TOUCH_EVENTLISTENER(PackageView, Image_close, 12001);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PackageView, useBtn, 12002);
+	rootNode->stopAllActions();
+	delete rootNode;
+	rootNode = NULL;
+
 }
 
 void PackageView::initView()
 {
-	//
-	doubleExpText = dynamic_cast<Text*>(rootNode->getChildByName("doubleExpText"));
-	doubleGoldText = dynamic_cast<Text*>(rootNode->getChildByName("doubleGoldText"));
-	liBaoText = dynamic_cast<Text*>(rootNode->getChildByName("liBaoText"));
-	jiPaiQiText = dynamic_cast<Text*>(rootNode->getChildByName("jiPaiQiText"));
-	enterCardText = dynamic_cast<Text*>(rootNode->getChildByName("enterCardText"));
+	UIGet_ImageView("Image_frame", rootNode, imgFrame)
+		UIGet_ListView("ListView_1", imgFrame, lstItem)
+		UIGet_Node("FileNode_img", imgFrame, ndImg)
+		UIGet_Text("Text_name", imgFrame, txtName)
+		UIGet_Text("Text_num", imgFrame, txtNum)
+		UIGet_Text("Text_description", imgFrame, txtDescription)
+		UIGet_Button("Button_use", imgFrame, btnUse)
 
-	//
-	itemsView = dynamic_cast<ScrollView*>(rootNode->getChildByName("ScrollView_1"));
-	itemsView->setScrollBarEnabled(false);
 
-	Size size = Director::sharedDirector()->getVisibleSize();
-	rootNode->setPosition(Vec2(size.width / 2, size.height / 2));
-
-	//
-	showItems();
+		showListItems();
+	showItemInfo(iOldClicked);
 }
 
 //显示背包中的物品
-void PackageView::showItems()
+void PackageView::showListItems()
 {
-	for (int i = 0; i < ImageArr.size(); i++)
-	{
-		Director::getInstance()->getEventDispatcher()->removeEventListenersForTarget(ImageArr.at(i));
-	}
-	ImageArr.clear();
-	itemsShowNode.clear();
-	itemsView->removeAllChildren();
+	lstItem->removeAllChildrenWithCleanup(true);
+	vecShowNode.clear();
 
-	//先显示格子
-	showGeZi();
-
-	//下面处理商品的具体显示和事件监听
-	for (int i = 0; i < itemsShowNode.size(); i++)
+	int itemHeigth = 100;
+	int halfItemWidth = 84 * 0.5;
+	int itemSize = DATAPokerGame->packageItem.size();
+	char tempName[64];
+	lstItem->setItemsMargin(100 + 16);
+	for (int i = 0; i < itemSize / 4; i++) //行
 	{
-		ImageArr.push_back(dynamic_cast<ImageView*>(itemsShowNode.at(i)->getChildByName("Image_1")));
-	}
-	//
-	for (int i = 0; i < ImageArr.size(); i++)
-	{
-		ImageArr.at(i)->addTouchEventListener(CC_CALLBACK_1(PackageView::clickItem, this, i));
-	}
-	//
-	for (int i = 0; i < itemsShowNode.size(); i++)
-	{
-		//显示物品的图片和个数
-		Text* numText = dynamic_cast<Text*>(itemsShowNode.at(i)->getChildByName("numText"));
-		ImageView* Image_2 = dynamic_cast<ImageView*>(itemsShowNode.at(i)->getChildByName("Image_2"));
-
-		//没有物品的格子显示空
-		if ((i + 1) > packageItem.size())
+		Node*   oneNode[4];
+		Layout*  oneLayout = Layout::create();
+		for (int iList = 0; iList < 4; iList++) //列
 		{
-			numText->setVisible(false);
-			showItemImage(i);
-		}
-		else
-		{
-			//根据ID显示图片
-			showItemImage(i);
+			oneNode[iList] = CSLoader::createNode("packageShow.csb");
+			oneLayout->addChild(oneNode[iList]);
+			oneNode[iList]->setPosition(Vec2
+				(halfItemWidth * (iList * 2 + 1) + 6 * (iList + 1), -itemHeigth * 0.5));
 
-			//显示个数
-			int num = packageItem.at(i).wPropCount;
-			char t[256];
-			sprintf(t, "%d", num);
-			if (num > 1)
-			{
-				numText->setString(t);
-			}
-			else
-			{
-				numText->setVisible(false);
-				Image_2->setVisible(false);
-			}
+			Text   *txtItemNum;
+			ImageView  *imgBg, *imgClick, *imgItem;
+			UIGet_Text("Text_num", oneNode[iList], txtItemNum)
+				UIGet_ImageView("Image_bg", oneNode[iList], imgBg)
+				UIGet_ImageView("Image_click", oneNode[iList], imgClick)
+				UIGet_ImageView("Image_item", oneNode[iList], imgItem)
+				imgBg->setTag(i * 4 + iList);
+			UIClick(imgBg, PackageView::clickItem)
+				txtItemNum->setString(Tools::parseInt2String(DATAPokerGame->packageItem.at(i * 4 + iList).wPropCount));
+			imgClick->setVisible(false);
+			int index = DATAPokerGame->packageItem.at(i * 4 + iList).wKindID;
+			sprintf(tempName, "item1_%d.png", index);
+			imgItem->loadTexture(tempName);
+			vecShowNode.push_back(oneNode[iList]);
 		}
+		lstItem->pushBackCustomItem(oneLayout);
+	}
+	Node*  oneNode[3];
+	Layout* oneLayout = Layout::create();
+	for (int iList = 0; iList < itemSize % 4; iList++)
+	{
+		oneNode[iList] = CSLoader::createNode("packageShow.csb");
+		oneLayout->addChild(oneNode[iList]);
+		oneNode[iList]->setPosition(Vec2
+			(halfItemWidth * (iList * 2 + 1) + 6 * (iList + 1), -itemHeigth * 0.5));
+		Text   *txtItemNum;
+		ImageView  *imgBg, *imgClick, *imgItem;
+		UIGet_Text("Text_num", oneNode[iList], txtItemNum)
+			UIGet_ImageView("Image_bg", oneNode[iList], imgBg)
+			UIGet_ImageView("Image_click", oneNode[iList], imgClick)
+			UIGet_ImageView("Image_item", oneNode[iList], imgItem)
+			imgBg->setTag((itemSize / 4) * 4 + iList);
+		UIClick(imgBg, PackageView::clickItem)
+			txtItemNum->setString(Tools::parseInt2String(DATAPokerGame->packageItem.at((itemSize / 4) * 4 + iList).wPropCount));
+		imgClick->setVisible(false);
+		int index = DATAPokerGame->packageItem.at((itemSize / 4) * 4 + iList).wKindID;
+		sprintf(tempName, "item1_%d.png", index);
+		imgItem->loadTexture(tempName);
+		vecShowNode.push_back(oneNode[iList]);
 
 	}
-	//默认先选中第一个物品
-	clickItem(nullptr, 0);
+	lstItem->pushBackCustomItem(oneLayout);
+	//cocos bug  , add this ok
+	Layout*   layoutFate = Layout::create();
+	lstItem->pushBackCustomItem(layoutFate);
+
+	vecShowNode.at(0)->getChildByName("Image_click")->setVisible(true);
+
 }
 
-//显示格子
-void PackageView::showGeZi()
+
+void PackageView::showItemInfo(int index)
 {
-	//物品个数小于10就显示9个格子
-	if (packageItem.size() < 10)
-	{
-		for (int i = 0; i < 9; i++)
-		{
-			itemsShowNode.push_back(CSLoader::createNode("packageShow.csb"));
-			itemsView->addChild(itemsShowNode.at(i));
-		}
-	}
-	//否则显示3的倍数个格子
-	else
-	{
-		if (packageItem.size() % 3 > 0)
-		{
-			for (int i = 0; i < packageItem.size() / 3 + 3; i++)
-			{
-				itemsShowNode.push_back(CSLoader::createNode("packageShow.csb"));
-				itemsView->addChild(itemsShowNode.at(i));
-			}
-		}
-		else
-		{
-			for (int i = 0; i < packageItem.size(); i++)
-			{
-				itemsShowNode.push_back(CSLoader::createNode("packageShow.csb"));
-				itemsView->addChild(itemsShowNode.at(i));
-			}
-		}
-	}
+	ndImg->getChildByName("numText_0")->setVisible(false);
+	ndImg->getChildByName("Text_num")->setVisible(false);
+	
+	int kindId = DATAPokerGame->packageItem.at(index).wKindID;
+	int num = DATAPokerGame->packageItem.at(index).wPropCount;
+	txtName->setString(UTF8String("prop", Tools::parseInt2String(kindId)));
+	txtNum->setString(Tools::parseInt2String(num));
+	txtDescription->setString(UTF8String("propDescription", Tools::parseInt2String(kindId)));
+	char tempName[64];
+	sprintf(tempName, "item1_%d.png", kindId);
+	static_cast<ImageView*>(ndImg->getChildByName("Image_item"))->loadTexture(tempName);
+	imgFrame->getChildByName("Button_use")->setVisible(false);
 
-	int num = itemsShowNode.size() / 3;
-	if (itemsShowNode.size() > num * 3)
-		num++;
-	itemsView->setInnerContainerSize(Size(350, 116 * num));
-	itemsView->scrollToTop(1.0f, true);
-
-	int XPos = 60;
-	int YPos = 180;
-	if (num == 1)
-		YPos =180;
-	else
-		YPos = 180 + 116 * (num - 2);
-
-	for (int i = 0; i < itemsShowNode.size(); i++)
-	{
-		int j = (i + 1) / 3;
-		int k = (i + 1) % 3;
-		if (k == 0)
-		{
-			k = 3;
-			j--;
-		}
-		itemsShowNode.at(i)->setPosition(Vec2(XPos + (k - 1) * 114, YPos - j * 114));
-	}
-}
-
-//显示道具图片
-void PackageView::showItemImage(int index)
-{
-	ImageView* doubleExpImage = dynamic_cast<ImageView*>(itemsShowNode.at(index)->getChildByName("doubleExpImage"));
-	ImageView* doubleGoldImage = dynamic_cast<ImageView*>(itemsShowNode.at(index)->getChildByName("doubleGoldImage"));
-	ImageView* enterCardImage = dynamic_cast<ImageView*>(itemsShowNode.at(index)->getChildByName("enterCardImage"));
-	ImageView* jiPaiQiImage = dynamic_cast<ImageView*>(itemsShowNode.at(index)->getChildByName("jiPaiQiImage"));
-	ImageView* liBaoImage = dynamic_cast<ImageView*>(itemsShowNode.at(index)->getChildByName("liBaoImage"));
-	ImageView* Image_2 = dynamic_cast<ImageView*>(itemsShowNode.at(index)->getChildByName("Image_2"));
-	ImageView* isClickedImage = dynamic_cast<ImageView*>(itemsShowNode.at(index)->getChildByName("isClickedImage"));
-
-	if ((index + 1) > packageItem.size())
-	{
-		doubleExpImage->setVisible(false);
-		doubleGoldImage->setVisible(false);
-		enterCardImage->setVisible(false);
-		jiPaiQiImage->setVisible(false);
-		liBaoImage->setVisible(false);
-		Image_2->setVisible(false);
-		isClickedImage->setVisible(false);
-	}
-	else
-	{
-		doubleExpImage->setVisible(false);
-		doubleGoldImage->setVisible(false);
-		enterCardImage->setVisible(false);
-		jiPaiQiImage->setVisible(false);
-		liBaoImage->setVisible(false);
-		isClickedImage->setVisible(false);
-		switch (packageItem.at(index).wKindID)
-		{
-				//双倍金币卡
-			case 6:
-				doubleGoldImage->setVisible(true);
-				break;
-				//双倍积分卡
-			case 7:
-				doubleExpImage->setVisible(true);
-				break;
-				
-				
-				//记牌器
-			case 8:
-				jiPaiQiImage->setVisible(true);
-				break;
-				//小喇叭
-			case 9:
-				break;
-				//大喇叭
-			case 10:
-				break;
-				//入场券
-			case 11:
-				enterCardImage->setVisible(true);
-				break;
-				//蓝钻
-			case 12:
-				break;
-				//白钻
-			case 13:
-				break;
-				//红钻
-			case 14:
-				break;
-		}
-	}
 }
 
 //点击某个物品
-void PackageView::clickItem(Ref *pSender, int i)
+void PackageView::clickItem(Ref *pSender)
 {
-	//isClicked = !isClicked;
-	if (isClicked)
-	{
-		isClicked = false;
-		this->scheduleOnce(schedule_selector(PackageView::buyItem), 0.5f);
-
-		blueSkyDispatchEvent(12003, new int(i));
-		//
-		if (!((i+1) > packageItem.size()))
-		{
-			//
-			blueSkyDispatchEvent(20050);
-
-			//将被点击的物品加上外发光
-			showIsClickedImage(i);
-		}
-	}
+	ImageView*  img = static_cast<ImageView*>(pSender);
+	int tags = img->getTag();
+	showItemInfo(tags);
+	vecShowNode.at(iOldClicked)->getChildByName("Image_click")->setVisible(false);
+	vecShowNode.at(tags)->getChildByName("Image_click")->setVisible(true);
+	iOldClicked = tags;
 }
 
 
@@ -260,96 +150,23 @@ void PackageView::buyItem(float dt)
 	isClicked = true;
 }
 
-/*
-	显示某个物品的详细信息
-	参数：index:第几个物品
-*/
-void PackageView::showItemInfo(int index)
-{
-	Text* doubleExpText = dynamic_cast<Text*>(rootNode->getChildByName("doubleExpText"));
-	Text* doubleGoldText = dynamic_cast<Text*>(rootNode->getChildByName("doubleGoldText"));
-	Text* liBaoText = dynamic_cast<Text*>(rootNode->getChildByName("liBaoText"));
-	Text* jiPaiQiText = dynamic_cast<Text*>(rootNode->getChildByName("jiPaiQiText"));
-	Text* enterCardText = dynamic_cast<Text*>(rootNode->getChildByName("enterCardText"));
-
-	ImageView* doubleExpImage = dynamic_cast<ImageView*>(rootNode->getChildByName("doubleExpImage"));
-	ImageView* doubleGoldImage = dynamic_cast<ImageView*>(rootNode->getChildByName("doubleGoldImage"));
-	ImageView* zuanShiLiBaoImage = dynamic_cast<ImageView*>(rootNode->getChildByName("zuanShiLiBaoImage"));
-	ImageView* goldLiBaoImage = dynamic_cast<ImageView*>(rootNode->getChildByName("goldLiBaoImage"));
-	ImageView* jiPaiQiImage = dynamic_cast<ImageView*>(rootNode->getChildByName("jiPaiQiImage"));
-	ImageView* enterCardImage = dynamic_cast<ImageView*>(rootNode->getChildByName("enterCardImage"));
-
-	//根据ID显示详细信息
-	doubleExpText->setVisible(false);
-	doubleGoldText->setVisible(false);
-	liBaoText->setVisible(false);
-	jiPaiQiText->setVisible(false);
-	enterCardText->setVisible(false);
-	doubleExpImage->setVisible(false);
-	doubleGoldImage->setVisible(false);
-	zuanShiLiBaoImage->setVisible(false);
-	goldLiBaoImage->setVisible(false);
-	jiPaiQiImage->setVisible(false);
-	enterCardImage->setVisible(false);
-	if (!((index + 1) > packageItem.size()))
-	{
-		switch (packageItem.at(index).wKindID)
-		{
-			//双倍金币卡
-		case 6:
-			doubleGoldText->setVisible(true);
-			doubleGoldImage->setVisible(true);
-			break;
-			//双倍积分卡
-		case 7:
-			doubleExpText->setVisible(true);
-			doubleExpImage->setVisible(true);
-			break;
-			//记牌器
-		case 8:
-			jiPaiQiText->setVisible(true);
-			jiPaiQiImage->setVisible(true);
-			break;
-			//小喇叭
-		case 9:
-			break;
-			//大喇叭
-		case 10:
-			break;
-			//入场券
-		case 11:
-			enterCardText->setVisible(true);
-			enterCardImage->setVisible(true);
-			break;
-			//蓝钻
-		case 12:
-			break;
-			//白钻
-		case 13:
-			break;
-			//红钻
-		case 14:
-			break;
-		}
-	}
-}
 
 /*
 	将被点击的物品加上外发光
 */
 void PackageView::showIsClickedImage(int index)
 {
-	for (int i = 0; i < itemsShowNode.size(); i++)
-	{
-		ImageView* isClickedImage = dynamic_cast<ImageView*>(itemsShowNode.at(i)->getChildByName("isClickedImage"));
-		if (i == index)
-		{
-			isClickedImage->setVisible(true);
-		}
-		else
-		{
-			isClickedImage->setVisible(false);
-		}
-	}
+// 	for (int i = 0; i < itemsShowNode.size(); i++)
+// 	{
+// 		ImageView* isClickedImage = dynamic_cast<ImageView*>(itemsShowNode.at(i)->getChildByName("isClickedImage"));
+// 		if (i == index)
+// 		{
+// 			isClickedImage->setVisible(true);
+// 		}
+// 		else
+// 		{
+// 			isClickedImage->setVisible(false);
+// 		}
+// 	}
 	
 }

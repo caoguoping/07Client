@@ -35,13 +35,14 @@ void AccountView::initView()
 		{
 			if (DATA->GameEndData.bIsBlood)  //血战打过
 			{
-				btnContinue->setVisible(false);
-				btnBack->setPositionX(0);
+				//btnContinue->setVisible(false);
+				//btnBack->setPositionX(0);
 			}
 			else
 			{
-				btnBack->setVisible(false);
-				btnContinue->setPositionX(0);
+				//btnBack->setVisible(false);
+				//btnContinue->setPositionX(0);
+
 			}
 		}
 	}
@@ -66,9 +67,8 @@ void AccountView::initView()
 
 }
 
-void AccountView::clickBtnBack(Ref* pSender)
+void AccountView::btnBackHandle()
 {
-	//发送离开桌子消息
 	PlayerInDeskModel *playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
 	int myChair = playerInDeskModel->getServiceChairID(0);
 	int myTable = playerInDeskModel->DeskPlayerInfo[myChair].wTableID;
@@ -90,7 +90,49 @@ void AccountView::clickBtnBack(Ref* pSender)
 	blueSkyDispatchEvent(EventType::BACK_TO_HALL);
 	creatView(new LobbyView(), new LobbyMediator());
 	blueSkyDispatchEvent(10501);
+}
 
+void AccountView::clickBtnBack(Ref* pSender)
+{
+	//血战没打过，二次弹框。
+	if (DATA->bGameCate == DataManager::E_GameBlood && DATA->GameEndData.bIsBlood == 0)
+	{
+		ndPubMsg = CSLoader::createNode("publicMessage.csb");
+		ndPubMsg->setPosition(WScreen * 0.5, HScreen * 0.5);
+		LayerManager->maskLayer->addChild(ndPubMsg);
+		ndPubMsg->setScale(0.8f, 0.8f);
+		ndPubMsg->runAction(Sequence::create(ScaleTo::create(0.2f, 1.03f),
+			ScaleTo::create(0.15f, 1.0f), nullptr));
+		Text*   txtMsg;
+		Button* btnClose, *btnOK, *btnNo;
+		ImageView* imgClose;
+
+		UIGet_Text("Text_msg", ndPubMsg, txtMsg)
+			UIGet_ImageView("Image_close", ndPubMsg, imgClose)
+			UIGet_Button("Button_close", ndPubMsg, btnClose)
+			UIGet_Button("Button_No", ndPubMsg, btnNo)
+			UIGet_Button("Button_OK", ndPubMsg, btnOK)
+
+			txtMsg->setString(UTF8String("popup", "bloodquit"));
+			btnOK->addClickEventListener([this](Ref*  pSender)
+		{
+				ndPubMsg->removeFromParentAndCleanup(true);
+				btnBackHandle();
+			
+		}
+
+		);
+		btnNo->addClickEventListener([this](Ref* pSender)
+		{
+
+			ndPubMsg->removeFromParentAndCleanup(true);
+		}
+			);
+	}
+	else
+	{
+		btnBackHandle();
+	}
 }
 
 void AccountView::clickBtnContinune(Ref* pSender)

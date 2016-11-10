@@ -17,25 +17,7 @@ void ViewManager::init()
 {
 
 }
-// 
-// void ViewManager::showViewPlayGold()
-// {
-// 	mViews[eViewPlayGold] = ViewPlayGold::create();
-// 	mainScene->addChild(mViews[eViewPlayGold], 1001, eViewPlayGold);
-// 
-// }
-// 
-// void ViewManager::hideViewPlayGold()
-// {
-// 	if (mViews[eViewPlayGold] != NULL)
-// 	{
-// 		mViews[eViewPlayGold]->removeAllChildrenWithCleanup(true);
-// 		mViews[eViewPlayGold]->removeFromParentAndCleanup(true);
-// 		mViews[eViewPlayGold] = NULL;
-// 	}
-// 
-// 
-// }
+
 
 
 

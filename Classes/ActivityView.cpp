@@ -221,7 +221,7 @@ void ActivityView::clickGetGrowth(Ref* psender)
 	if (!tempB)
 		return;
 	;
-	unsigned long dwUserID = DATA->myBaseData.dwUserID;
+	DWORD dwUserID = DATA->myBaseData.dwUserID;
 	((SendDataService *)getService(SendDataService::NAME))->sendGetGrowth(dwUserID, (tempB->getTag()+1));
 	btnGetGrowth[0]->setEnabled(false);
 }

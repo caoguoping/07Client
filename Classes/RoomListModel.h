@@ -7,16 +7,16 @@
 #pragma pack(1)
 struct RoomList
 {
-	unsigned short wKindID;
-	unsigned short wwNodeID;
-	unsigned short wwSortID;
-	unsigned short wwServerID;
-	unsigned short wwServerPort;
-	unsigned int wdwOnLineCount;
-	unsigned int wdwFullCount;
+	WORD wKindID;
+	WORD wwNodeID;
+	WORD wwSortID;
+	WORD wwServerID;
+	WORD wwServerPort;
+	DWORD wdwOnLineCount;
+	DWORD wdwFullCount;
 	string wszServerAddr;
 	string wszServerName;
-	unsigned int dizhu;
+	DWORD dizhu;
 	WORD  wRoomType;
 };
 

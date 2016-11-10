@@ -729,7 +729,7 @@ void NetDataCommand::getBuyItemsInfo(NetData netData)
 {
 	int buyNum = 0;
 	//读取信息
-	unsigned long dwPropID = netData.readDWORD();
+	DWORD dwPropID = netData.readDWORD();
 	unsigned short wPropCount = netData.readWORD();
 	unsigned short wKindID = netData.readWORD();
 
@@ -753,9 +753,6 @@ void NetDataCommand::getBuyItemsInfo(NetData netData)
 		pokerGameModel->packageItem.at(size).wPropCount = wPropCount;
 		pokerGameModel->packageItem.at(size).wKindID = wKindID;
 	}
-
-	//
-	//blueSkyDispatchEvent(EventType::GET_BUY_ITEMS);
 
 	//显示获得道具
 	if (wKindID >= 6)
@@ -1114,9 +1111,6 @@ void NetDataCommand::getLoginMisInfo(NetData netData)
 		pokerGameModel->dailyMisInfo.at(i).wMissionId = netData.readWORD();
 		netData.readString(2);
 		pokerGameModel->dailyMisInfo.at(i).dwValue = netData.readDWORD();
-
-		//netData.readString(1);
-		//netData.readString(15);
 		pokerGameModel->dailyMisInfo.at(i).Complete = netData.readWORD();
 		pokerGameModel->dailyMisInfo.at(i).Receive = netData.readWORD();
 	}
@@ -1227,6 +1221,17 @@ void NetDataCommand::getItemsInfo(NetData netData)
 		pokerGameModel->packageItem.at(i).wPropCount = netData.readWORD();
 		pokerGameModel->packageItem.at(i).wKindID = netData.readWORD();  //物品ID，6记牌器。。。
 	}
+// 	pokerGameModel->packageItem.resize(5);
+// 	pokerGameModel->packageItem.at(0).wPropCount = 2;
+// 	pokerGameModel->packageItem.at(0).wKindID = 6;
+// 	pokerGameModel->packageItem.at(1).wPropCount = 3;
+// 	pokerGameModel->packageItem.at(1).wKindID = 7;
+// 	pokerGameModel->packageItem.at(2).wPropCount = 5;
+// 	pokerGameModel->packageItem.at(2).wKindID = 8;
+// 	pokerGameModel->packageItem.at(3).wPropCount = 54;
+// 	pokerGameModel->packageItem.at(3).wKindID = 11;
+// 	pokerGameModel->packageItem.at(4).wPropCount = 5;
+// 	pokerGameModel->packageItem.at(4).wKindID = 6;
 }
 
 

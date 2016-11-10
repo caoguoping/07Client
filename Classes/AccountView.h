@@ -14,9 +14,12 @@ public:
 	void initView();
 	void playAccountAction(bool isSuccess);
 	void clickBtnBack(Ref*  pSender);
+	void btnBackHandle();
+	
 	void clickBtnContinune(Ref*  pSender);
 	void clickBtnNextMatch(Ref*  pSender);
 public:
+	Node*   ndPubMsg;
 	Layout*  winLayout;    //比赛胜利结算
 	Layout*  loseLayout;   //比赛失败结算
 	Text*    txtRanks;    //名次

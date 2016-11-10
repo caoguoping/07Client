@@ -55,10 +55,7 @@ void DailyMissionMediator::onEvent(int i, void* data)
 	case EventType::GAME_OVER:
 		removeView(this);
 		break;
-	//case 11009:
-	//	dailyMissionView->dailyMisInfo = pokerGameModel->dailyMisInfo;
-	//	dailyMissionView->initView();
-	//	break;
+
 	case 11010: // 刷新任务界面
 		PokerGameModel* pokerGameModel = ((PokerGameModel*)getModel(PokerGameModel::NAME));
 		dailyMissionView->dailyMisInfo = pokerGameModel->dailyMisInfo;
@@ -93,7 +90,7 @@ void DailyMissionMediator::getActivityHander(int index)
 
 
 
-	unsigned long dwUserID = DATA->myBaseData.dwUserID;
+	DWORD dwUserID = DATA->myBaseData.dwUserID;
 
 	unsigned short wMissionId = pokerGameModel->dailyMisInfo.at(index).wMissionId;
 	unsigned short wKindID = pokerGameModel->dailyMisInfo.at(index).wKindId;

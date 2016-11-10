@@ -56,7 +56,7 @@ public:
 	static const string NAME;
 
 	//上座的玩家信息
-	OnDeskPlayerInfo DeskPlayerInfo[4];
+	OnDeskPlayerInfo DeskPlayerInfo[4]; //下标为服务器ID
 
 
 
