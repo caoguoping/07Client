@@ -114,7 +114,7 @@
       <ObjectData Name="Node" Tag="786" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Sprite_2" ActionTag="-1285159642" Tag="788" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Sprite_2" ActionTag="-1285159642" Tag="788" IconVisible="False" LeftMargin="-251.0000" RightMargin="-251.0000" TopMargin="-251.0000" BottomMargin="-251.0000" ctype="SpriteObjectData">
             <Size X="502.0000" Y="502.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
@@ -122,7 +122,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="action/zhupai/card0024.png" Plist="" />
+            <FileData Type="Normal" Path="action/zhupai/card0035.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

@@ -76,10 +76,6 @@ void DailyMissionMediator::clickCloseBtnHander()
 
 void DailyMissionMediator::getActivityHander(int index)
 {
-	//
-
-	blueSkyDispatchEvent(20050);
-
  	PokerGameModel* pokerGameModel = ((PokerGameModel*)getModel(PokerGameModel::NAME));
 
 

@@ -63,8 +63,8 @@ void NetDataCommand::executeGame(NetData netData)
 
 #endif
 
-	logV("cocos2d-x GameServer main : %d, sub : %d   size %d \n", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
-	logF("cocos2d-x GameServer main : %d, sub : %d   size %d \n", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
+	logV("cocos2d-x GameServer main : %d, sub : %d   size %d", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
+	logF("cocos2d-x GameServer main : %d, sub : %d   size %d", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
 
 
 	int wKindID = ((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->wKindID;

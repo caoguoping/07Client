@@ -184,6 +184,20 @@ void PlayPokerView::viewInit()
 	{
 		UIGet_ImageView("Image_inviteBg", rootNode, imgInviteBg)
 			imgInviteBg->setVisible(true);
+		Text  *txtFriend, *txtTeam;
+		UIGet_Text("Text_friend", imgInviteBg, txtFriend)
+			UIGet_Text("Text_team", imgInviteBg, txtTeam)
+
+		if (DataManager::E_GameFriendPassive == DATA->bGameCate)
+		{
+			txtFriend->setVisible(true);
+			txtTeam->setVisible(false);
+		} 
+		else if (DataManager::E_GameTeamPassive == DATA->bGameCate)
+		{
+			txtFriend->setVisible(false);
+			txtTeam->setVisible(true);
+		}
 	}
 
 

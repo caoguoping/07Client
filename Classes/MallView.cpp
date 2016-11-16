@@ -73,19 +73,19 @@ void MallView::initView()
 		UIGet_Button("Button_setting", topNode, btnSetting)
 		btnAddGold->addClickEventListener([&](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		creatView(new ShopView(1), new ShopMediator());
 	}
 	);
 	btnAddDiamond->addClickEventListener([&](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		creatView(new ShopView(0), new ShopMediator());
 	}
 	);
 	btnSetting->addClickEventListener([&](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		creatView(new SetView(), new SetMediator());
 	}
 	);
@@ -95,7 +95,7 @@ void MallView::initView()
 	//activity 0
 	btnHuodong[0]->addClickEventListener([this](Ref* psender)
 		{
-			SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+			PLayEffect(EFFECT_BTN)
 			blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 11211, -1));
 		}
 	);
@@ -103,7 +103,7 @@ void MallView::initView()
 	//activity 1
 	btnHuodong[1]->addClickEventListener([this](Ref* psender)
 		{
-			SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+			PLayEffect(EFFECT_BTN)
 			blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 11212, -1));
 		}
 	);
@@ -111,27 +111,27 @@ void MallView::initView()
 
 	btnZuanshi[0]->addClickEventListener([this](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 11213, -1));
 	}
 	);
 	btnZuanshi[1]->addClickEventListener([this](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 11214, -1));
 	}
 	);
 
 	btnZuanshi[2]->addClickEventListener([this](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 11215, -1));
 	}
 	);
 
 	btnZuanshi[3]->addClickEventListener([this](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 11216, -1));
 	}
 	);
@@ -139,7 +139,7 @@ void MallView::initView()
 	btnZuanshi[4]->addClickEventListener([this](Ref* psender)
 	{ 
 		//jipaiqi	
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 11217, -1));
 	}
 	);

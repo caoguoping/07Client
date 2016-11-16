@@ -4,7 +4,7 @@
     <Content>
       <Animation Duration="0" Speed="1.0000" />
       <ObjectData Name="Scene" Tag="3799" ctype="GameNodeObjectData">
-        <Size X="540.0000" Y="960.0000" />
+        <Size X="960.0000" Y="540.0000" />
         <Children>
           <AbstractNodeData Name="Image_bg" ActionTag="-1034216909" Tag="979" IconVisible="False" LeftEage="316" RightEage="316" TopEage="178" BottomEage="178" Scale9OriginX="316" Scale9OriginY="178" Scale9Width="328" Scale9Height="184" ctype="ImageViewObjectData">
             <Size X="960.0000" Y="540.0000" />
@@ -254,7 +254,7 @@
                     <FileData Type="Normal" Path="lizi/changci/changci.plist" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_people" CanEdit="False" ActionTag="1273601689" Tag="61" IconVisible="False" LeftMargin="115.4759" RightMargin="98.5241" TopMargin="204.2219" BottomMargin="33.7781" FontSize="18" LabelText="23" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_people" ActionTag="1273601689" Tag="61" IconVisible="False" LeftMargin="115.4759" RightMargin="98.5241" TopMargin="204.2219" BottomMargin="33.7781" FontSize="18" LabelText="23" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="23.0000" Y="20.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="126.9759" Y="43.7781" />
@@ -567,6 +567,31 @@
             <NormalFileData Type="Normal" Path="NewLobby/button_friends_1.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="tishi_4" ActionTag="-1436403229" Tag="1053" IconVisible="False" LeftMargin="217.1794" RightMargin="718.8206" TopMargin="456.2026" BottomMargin="59.7974" ctype="SpriteObjectData">
+            <Size X="24.0000" Y="24.0000" />
+            <Children>
+              <AbstractNodeData Name="Text_people_0" ActionTag="-1365830463" Tag="1054" IconVisible="False" LeftMargin="6.1046" RightMargin="8.8954" TopMargin="2.8873" BottomMargin="1.1127" FontSize="18" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="9.0000" Y="20.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="10.6046" Y="11.1127" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4419" Y="0.4630" />
+                <PreSize X="0.3750" Y="0.8333" />
+                <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="229.1794" Y="71.7974" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.2387" Y="0.1330" />
+            <PreSize X="0.0250" Y="0.0444" />
+            <FileData Type="Normal" Path="bg/tishi.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

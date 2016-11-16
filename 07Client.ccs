@@ -532,6 +532,8 @@
           <Image Name="bg_M.png" />
           <Image Name="bg_stage.png" />
           <Image Name="bottom_bg.png" />
+          <Image Name="btn1.png" />
+          <Image Name="btn2.png" />
           <Image Name="button_add_1.png" />
           <Image Name="button_add_2.png" />
           <Image Name="button_back_1.png" />
@@ -619,6 +621,7 @@
           <Image Name="role_lv2.png" />
           <Image Name="role_lv3.png" />
           <Image Name="role_smile.png" />
+          <Image Name="tishi.png" />
           <Image Name="title_bg.png" />
           <Image Name="title_lose.png" />
           <Image Name="title_win.png" />
@@ -1341,31 +1344,6 @@
           <Image Name="zi08.png" />
           <Image Name="zi09.png" />
         </Folder>
-        <Folder Name="number2">
-          <Image Name="shuzi00.png" />
-          <Image Name="shuzi01.png" />
-          <Image Name="shuzi02.png" />
-          <Image Name="shuzi03.png" />
-          <Image Name="shuzi04.png" />
-          <Image Name="shuzi05.png" />
-          <Image Name="shuzi06.png" />
-          <Image Name="shuzi07.png" />
-          <Image Name="shuzi08.png" />
-          <Image Name="shuzi09.png" />
-          <Image Name="shuziyuan.png" />
-        </Folder>
-        <Folder Name="number3">
-          <Image Name="00.png" />
-          <Image Name="01.png" />
-          <Image Name="02.png" />
-          <Image Name="03.png" />
-          <Image Name="04.png" />
-          <Image Name="05.png" />
-          <Image Name="06.png" />
-          <Image Name="07.png" />
-          <Image Name="08.png" />
-          <Image Name="09.png" />
-        </Folder>
         <Folder Name="package">
           <Image Name="bg_backpack.png" />
           <Image Name="button_use_1.png" />
@@ -1583,7 +1561,6 @@
         <Project Name="FriendsRankCell.csd" Type="Node" />
         <Project Name="FriendsRanking.csd" Type="Node" />
         <Project Name="FriendsShurenCell.csd" Type="Node" />
-        <Project Name="guangQuan.csd" Type="Node" />
         <Project Name="help.csd" Type="Node" />
         <Project Name="huoJian.csd" Type="Node" />
         <Project Name="Icon.csd" Type="Node" />
@@ -1598,17 +1575,11 @@
         <Project Name="kangGong.csd" Type="Node" />
         <Project Name="Lipai.csd" Type="Node" />
         <Project Name="lobbyHead.csd" Type="Node" />
-        <Project Name="lobbyHeadNumShow.csd" Type="Node" />
         <Project Name="LoginScene.csd" Type="Scene" />
         <Project Name="lottery.csd" Type="Node" />
         <Project Name="mall.csd" Type="Node" />
-        <Project Name="mallCostNumber.csd" Type="Node" />
-        <Project Name="mallDaoJuImageNode.csd" Type="Node" />
-        <Project Name="mallGoldImage.csd" Type="Node" />
         <Project Name="MallGoldNode.csd" Type="Node" />
         <Project Name="MallHuoDongNode.csd" Type="Node" />
-        <Project Name="mallShow.csd" Type="Node" />
-        <Project Name="mallTitle.csd" Type="Node" />
         <Project Name="mallZuanShiImage.csd" Type="Node" />
         <Project Name="matchEndLoading.csd" Type="Node" />
         <Project Name="matchEndLoading2.csd" Type="Node" />
@@ -1626,6 +1597,7 @@
         <Project Name="pokerAction.csd" Type="Node" />
         <Project Name="pokerNumber.csd" Type="Node" />
         <Project Name="pokerNumerShow.csd" Type="Node" />
+        <Project Name="publicMessage.csd" Type="Node" />
         <Project Name="publicTop.csd" Type="Node" />
         <Project Name="publicTop2side.csd" Type="Node" />
         <Project Name="rankNode.csd" Type="Node" />
@@ -1643,11 +1615,8 @@
         <Project Name="topZuanshi.csd" Type="Node" />
         <Project Name="touyou.csd" Type="Node" />
         <Project Name="warning.csd" Type="Node" />
-        <Project Name="Wealth.csd" Type="Node" />
         <Project Name="wealthNumber.csd" Type="Node" />
-        <Project Name="zhuanShiShow.csd" Type="Node" />
         <Project Name="zhupai.csd" Type="Node" />
-        <Project Name="publicMessage.csd" Type="Node" />
       </RootFolder>
     </Group>
   </SolutionFolder>

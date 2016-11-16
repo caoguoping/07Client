@@ -17,7 +17,7 @@ void MusicService::init()
 {
 	//预加载音乐和音效文件
 	SimpleAudioEngine::getInstance()->preloadBackgroundMusic(BG_MUSIC);
-	SimpleAudioEngine::getInstance()->playBackgroundMusic(BG_MUSIC,true);
+	playMusic(BG_MUSIC);
 
 }
 

@@ -676,14 +676,8 @@ struct CMD_GP_LogonAccounts
 {
 	//系统信息
 	DWORD					dwPlazaVersion;								//广场版本
-// 	wchar_t							szMachineID[33];							//机器序列
-// 
-// 	//登录信息
-// 	wchar_t							szPassword[33];							     //登录密码
-// 	wchar_t							szAccounts[32];								 //登录帐号
 
 	WORD							szMachineID[33];							//机器序列
-
 	//登录信息
 	WORD							szPassword[33];							     //登录密码
 	WORD							szAccounts[32];								 //登录帐号

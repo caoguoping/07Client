@@ -36,19 +36,19 @@ ActivityView::ActivityView(int actIndex)
 		UIGet_Button("Button_setting", topNode, btnSetting)
 		btnAddGold->addClickEventListener([&](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		creatView(new ShopView(1), new ShopMediator());
 	}
 	);
 	btnAddDiamond->addClickEventListener([&](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		creatView(new ShopView(0), new ShopMediator());
 	}
 	);
 	btnSetting->addClickEventListener([&](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		creatView(new SetView(), new SetMediator());
 	}
 	);
@@ -299,7 +299,7 @@ void ActivityView::getSpin(Ref* psender)
 	{
 		wpIndex--;
 	}
-	SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+	PLayEffect(EFFECT_BTN)
 
 	if (DATA->myBaseData.rmb < needZuanshi)
 	{
@@ -318,9 +318,6 @@ void ActivityView::getSpin(Ref* psender)
 			NULL
 			);
 		spineIner->runAction(act);
-
-		blueSkyDispatchEvent(20050);
-
 	}
 
 }

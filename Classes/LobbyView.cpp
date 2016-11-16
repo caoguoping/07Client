@@ -215,24 +215,28 @@ UIEnableClick(mBtnFriend, LobbyView, enableBtnFriend)
 
 void LobbyView::clickBtnTask(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnTask, LobbyView, enableBtnTask)
 		creatView(new DailyMissionView(), new DailyMissionMediator());
 }
 
 void LobbyView::clickBtnSignature(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnSignature, LobbyView, enableBtnSignature)
 		creatView(new SevenDayGiftView(), new SevenDayGiftMediator());
 }
 
 void LobbyView::clickBtnSetting(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnSetting, LobbyView, enableBtnSetting)
 		creatView(new SetView(), new SetMediator());
 }
 
 void LobbyView::clickBtnPlayGold(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnPlayGold, LobbyView, enableBtnPlayGold)
 		creatView(new PlayGoldView(), new PlayGoldMediator());
 
@@ -240,12 +244,14 @@ void LobbyView::clickBtnPlayGold(Ref* psender)
 
 void LobbyView::clickBtnEntertainment(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnEntertainment, LobbyView, enableBtnEntertainment)
 		creatView(new EntertainmentView(), new EntertainmentMediator());
 }
 
 void LobbyView::clickBtnMatch(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnMatch, LobbyView, enableBtnMatch)
 		DATA->bGameCate = DataManager::E_GameCateMatch;
 	creatView(new MatchView(), new MatchMediator());
@@ -253,6 +259,7 @@ void LobbyView::clickBtnMatch(Ref* psender)
 
 void LobbyView::clickBtnBlood(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnBlood, LobbyView, enableBtnBlood)
 		DATA->bGameCate = DataManager::E_GameBlood;
 		creatView(new BloodView(), new BloodMediator());
@@ -260,6 +267,7 @@ void LobbyView::clickBtnBlood(Ref* psender)
 
 void LobbyView::clickBtnFast(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnFast, LobbyView, enableBtnFast)
 		DATA->bGameCate = DataManager::E_GameCateNormal;
 	SCORE golds = DATA->myBaseData.lUserScore;
@@ -292,12 +300,14 @@ void LobbyView::clickBtnFast(Ref* psender)
 
 void LobbyView::clickBtnCharge(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnCharge, LobbyView, enableBtnCharge)
 		creatView(new ShopView(0), new ShopMediator());   //0 £º zuanshi
 }
 
 void LobbyView::clickBtnShop(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnShop, LobbyView, enableBtnShop)
 		creatView(new MallView(), new MallMediator());
 }
@@ -305,36 +315,42 @@ void LobbyView::clickBtnShop(Ref* psender)
 
 void LobbyView::clickBtnActivity(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnActivity, LobbyView, enableBtnActivity)
 		creatView(new ActivityView(), new ActivityMediator());
 }
 
 void LobbyView::clickBtnPackage(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnPackage, LobbyView, enableBtnPackage)
 		creatView(new PackageView(), new PackageMediator());
 }
 
 void LobbyView::clickBtnHead(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnHead, LobbyView, enableBtnHead)
 		creatView(new MyInfoView(), new MyInfoMediator());
 }
 
 void LobbyView::clickBtnAddWealth(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnAddWealth, LobbyView, enableBtnAddWealth)
 		creatView(new ShopView(1), new ShopMediator());
 }
 
 void LobbyView::clickBtnAddDiamond(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnAddDiamond, LobbyView, enableBtnAddDiamond)
 		creatView(new ShopView(0), new ShopMediator());
 }
 
 void LobbyView::clickBtnFriend(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnFriend, LobbyView, enableBtnFriend)
 		creatView(new FriendView(), new FriendMediator());
 

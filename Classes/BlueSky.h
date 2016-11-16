@@ -6,6 +6,7 @@
 #include<map>
 #include<string>
 #include <list>
+#include "MusicService.h"
 
 
 #include "SimpleAudioEngine.h"  //added by cgp
@@ -28,7 +29,7 @@ __CLASSTYPE__ * _##__NAME__; \
 	if (type == Widget::TouchEventType::BEGAN)\
 	{ \
 	BlueSkyRegister::getInstance()->btnIndex[__EVENT_NUM__] = true; \
-	SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3"); \
+	PLayEffect(EFFECT_BTN); \
 	} \
 } \
 void __NAME__##ChangeHandler(float dt) \

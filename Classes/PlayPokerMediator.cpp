@@ -526,7 +526,7 @@ void PlayPokerMediator::sendPokerkHandle()
 		FiniteTimeAction*  seq = Sequence::create(
 			DelayTime::create(1.2f),
 			CallFunc::create(CC_CALLBACK_0(PlayPokerMediator::delayShowZhupai, this)),
-			DelayTime::create(1.0f),
+			DelayTime::create(1.3f),
 			CallFunc::create(CC_CALLBACK_0(PlayPokerMediator::delaySendPokerHandle, this)),
 			NULL);
 		LayerManager->uiLayer->runAction(seq);
@@ -602,7 +602,6 @@ void PlayPokerMediator::sendPokerkHandle()
 void PlayPokerMediator::callRemoveZhupaiDi() 
 {
 	imgZhupaiDi->removeFromParentAndCleanup(true);
-	//zhupaiNode->removeFromParentAndCleanup(true);
 }
 
 void PlayPokerMediator::callRemoveZhupaiNode()
@@ -622,26 +621,19 @@ void PlayPokerMediator::delayShowZhupai()
 	imgZhupai = ImageView::create(imgName);
 	FiniteTimeAction*  seq = Sequence::create(
 		DelayTime::create(1.0f),
-		MoveTo::create(0.5f, Vec2(-350, 200)),
-		CallFunc::create(CC_CALLBACK_0(PlayPokerMediator::callRemoveZhupaiDi, this)),
-		FadeOut::create(0.5f),
-		CallFunc::create(CC_CALLBACK_0(PlayPokerMediator::callRemoveZhupaiNode, this)),
-
+		MoveTo::create(0.1f, Vec2(-350, 200)),
+		FadeOut::create(0.1f),
 		NULL);
 	imgZhupai->runAction(seq);
 	zhupaiNode->addChild(imgZhupai);
+
+
+
+
 }
 
 void PlayPokerMediator::delaySendPokerHandle()
 {
-// 	if (DATA->bGameCate == DataManager::E_GameCateMatch ||
-// 		DATA->bGameCate == DataManager::E_GameRandZhupai
-// 		)
-// 	{
-// 		imgZhupai->removeFromParentAndCleanup(true);
-// 		zhupaiNode->removeFromParentAndCleanup(true);
-// 	}
-
 	CMD_S_GameStart Data;
 	PlayerInDeskModel *playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
 	GameDataModel *gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
@@ -705,6 +697,7 @@ void PlayPokerMediator::delaySendPokerHandle()
 	if (DATA->bGameCate == DataManager::E_GameCateMatch)
 	{
 		UIFrameRemove(zhupai, LayerManager->uiLayer)
+		imgZhupaiDi->removeFromParentAndCleanup(true);
 		myLv->setString(strLvNum[Data.bCurrentSeries]);
 		otherLv->setString(strLvNum[Data.bCurrentSeries]);
 		showNowJiShu(true);
@@ -719,6 +712,7 @@ void PlayPokerMediator::delaySendPokerHandle()
 	else if (DATA->bGameCate == DataManager::E_GameRandZhupai)
 	{
 		UIFrameRemove(zhupai, LayerManager->uiLayer)
+			imgZhupaiDi->removeFromParentAndCleanup(true);
 		myLv->setString(strLvNum[Data.bCurrentSeries]);
 		otherLv->setString(strLvNum[Data.bCurrentSeries]);
 		if (playerInDeskModel->getServiceChairID(0) == Data.wCurrentUser ||
@@ -820,8 +814,7 @@ void PlayPokerMediator::reveivePlayerOutPokerHandle(void* data)
 	//剩余10张牌时开始报牌
 	desk = playerInDeskModel->chair[pokerGameModel->playerOutCard.wOutCardUser];
 	pokerNum = gameDataModel->player[desk].pokerNum - pokerGameModel->playerOutCard.bCardCount;
-	//logV("pokerNum %d   desk %d,  old %d, out %d", 
-	//	pokerNum, desk, gameDataModel->player[desk].pokerNum, pokerGameModel->playerOutCard.bCardCount);
+	logV("### desk %d  ###", desk);
 	if (pokerNum < 11 && pokerNum >= 0)
 	{
 		playPokerView->showPokerNum(desk, pokerNum);
@@ -841,6 +834,10 @@ void PlayPokerMediator::reveivePlayerOutPokerHandle(void* data)
 	for (DWORD i = 0; i < gameDataModel->player[desk].outPokerArr.size(); i++)
 	{
 		outPokerArr.push_back(gameDataModel->player[desk].outPokerArr[i]);
+		int pokerId = gameDataModel->player[desk].outPokerArr[i]->pokerID;
+		logV("(%d %d) ", PokerLogic::getPokerNum(pokerId) + 2, 
+			PokerLogic::getPokerHuaSe(pokerId)
+			);
 	}
 	//显示出牌特效
 	outPokerType = OutPokerLogicRule::outPokerType(outPokerArr).type;
@@ -889,7 +886,7 @@ void PlayPokerMediator::reveivePlayerOutPokerHandle(void* data)
 		isOrNotMyTurn(false);
 	}
 	playPokerView->startClock(nextDesk);
-	logV("nextDesk %d", nextDesk);
+
 }
 
 void PlayPokerMediator::notOutPokerHandle(void* data)
@@ -2381,6 +2378,7 @@ void PlayPokerMediator::playChuPaiMusic(int pokerType, int faceID)
 					PLayEffect(SAN_DAI_ER_NV);
 					break;
 				case 5:
+					PLayEffect(SHUN_NV);
 					break;
 				case 6:
 					PLayEffect(LIAN_DUI_NV);
@@ -2422,6 +2420,7 @@ void PlayPokerMediator::playChuPaiMusic(int pokerType, int faceID)
 				PLayEffect(SAN_DAI_ER_NAN);
 				break;
 			case 5:
+				PLayEffect(SHUN_NAN);
 				break;
 			case 6:
 				PLayEffect(LIAN_DUI_NAN);

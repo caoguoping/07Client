@@ -148,8 +148,7 @@ void ActivityMediator::clickGetLotteryBtnHander()
 
 void ActivityMediator::getRechargeAwardHander(int index)
 {
-	//
-	blueSkyDispatchEvent(20050);
+
 }
 void ActivityMediator::getLotteryAwardHander()
 {

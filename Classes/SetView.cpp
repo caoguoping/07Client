@@ -59,7 +59,14 @@ void SetView::clickChkMusic(Ref* pSender)
 
 void SetView::clickChkEffect(Ref* pSender)
 {
-	MusicService::getInstance()->isEffectOn = !(MusicService::getInstance()->isEffectOn);
+	if (MusicService::getInstance()->isEffectOn)
+	{
+		MusicService::getInstance()->isEffectOn = false;
+	} 
+	else
+	{
+		MusicService::getInstance()->isEffectOn = true;
+	}
 	UserDefault::getInstance()->setBoolForKey("EffectOn", MusicService::getInstance()->isEffectOn);
 	UserDefault::getInstance()->flush();
 }

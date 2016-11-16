@@ -82,7 +82,8 @@ void InviteView::clickInvite(Ref* pSender)
 	}
 
 
-	memcpy(stInvite.strName, DATA->vFriendLine.at(iWhich).szNickName.c_str(), 64);
+	/*memcpy(stInvite.strName, DATA->vFriendLine.at(iWhich).szNickName.c_str(), 64);*/
+	memcpy(stInvite.strName, DATA->myBaseData.szNickName.c_str() , 64);
 	SEND_LOGIN->SendData(6, 15, &stInvite, sizeof(CMD_SUB_S_INVITE_ENTER_GAME));
 
 	blueSkyDispatchEvent(17000);

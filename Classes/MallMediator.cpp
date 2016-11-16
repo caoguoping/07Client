@@ -146,9 +146,6 @@ void MallMediator::clickRechargeBtnHander()
 //购买物品(index为第几个物品，从0开始)
 void MallMediator::getActivityHander(int index)
 {
-	//blueSkyDispatchEvent(20050);  //声音
-	;
-
 	switch (index)
 	{
 		//1000Gold + 1jipaiqi
@@ -190,9 +187,7 @@ void MallMediator::getZuanShiHander(int index)
 }
 void MallMediator::getGoldHander(int index)
 {
-	SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
-	//blueSkyDispatchEvent(20050);  //声音
-	;
+	PLayEffect(EFFECT_BTN)
 	((SendDataService *)getService(SendDataService::NAME))->sendBuyItems(DATA->myBaseData.dwUserID, 1, 1);
 
 	switch (index)
@@ -254,9 +249,6 @@ void MallMediator::getGoldHander(int index)
 
 void MallMediator::getJiapiqiHander()
 {
-	//blueSkyDispatchEvent(20050);  //声音
-	;
-
 	if (DATA->myBaseData.rmb < 1)
 	{
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(0, "warning", "warning3", 30002, -1));

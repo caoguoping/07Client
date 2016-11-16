@@ -49,13 +49,13 @@ void MyInfoView::initView()
 
 		btnAddGold->addClickEventListener([&](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		creatView(new ShopView(1), new ShopMediator());
 	}
 	);
 	btnAddDiamond->addClickEventListener([&](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		creatView(new ShopView(0), new ShopMediator());
 	}
 	);

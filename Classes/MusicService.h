@@ -19,6 +19,8 @@ using namespace CocosDenshion;
 #define BOOM_NV					"sounds/mm_zha.mp3"					//炸弹（女）20006
 #define TONG_HUA_SHUN_NAN		"sounds/am_tonghuashun.mp3"			//同花顺（男）20007
 #define TONG_HUA_SHUN_NV		"sounds/mm_tonghuashun.mp3"			//同花顺（女）20008
+#define SHUN_NAN		        "sounds/nan_zashun.mp3"			//顺（男）20007
+#define SHUN_NV		            "sounds/mm_zashun.mp3"			    //顺（女）20008
 #define HUO_JIAN_NAN			"sounds/am_tianwangzha.mp3"			//火箭（男）20009
 #define HUO_JIAN_NV				"sounds/mm_tianwangzha.mp3"			//火箭（女）20010
 #define DAN_ZHANG_NAN			"sounds/am_danzhang.mp3"			//单张（男）20011
@@ -90,6 +92,7 @@ using namespace CocosDenshion;
 #define ACTION_TONG_HUA_SHUN	"sounds/TongHuaShunAct.mp3"		//同花顺 TONG_HUA_SHUN
 #define ACTION_HUO_JIAN			"sounds/game_effect_wanzha.mp3"	//火箭  HUO_JIAN
 
+#define EFFECT_BTN  "sounds/game_button_click.mp3"  //点击按钮音效 20050
 
 class MusicService
 {

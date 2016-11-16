@@ -55,9 +55,9 @@
 	    <key>net</key>  
         <dict>
             <key>loginServerIp</key>  
-            <string>221.226.117.82</string>
+            <!-- <string>221.226.117.82</string> -->
             <!-- <string>192.168.2.130</string> -->
-            <!-- <string>139.196.237.203</string> -->
+            <string>139.196.237.203</string>
 			<key>loginServerPort</key>  
             <string>5050</string>
 			<key>PrimaryPort</key>  

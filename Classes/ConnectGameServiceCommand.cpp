@@ -73,8 +73,9 @@ void ConnectGameServiceCommand::execute(void* data)
 	}
 
 
-	logV("blood port %d", port);
+	
 	string ip = ((RoomListModel*)getModel(RoomListModel::NAME))->roomList[0].wszServerAddr;
+	logV("port %d, ip %s", port, ip.c_str());
 
 	TCPSocketService*  tcp_game = (TCPSocketService*)getService(TCPSocketService::GAME);
 	bool iErrorCode = tcp_game->Connect(ip.data(), port);

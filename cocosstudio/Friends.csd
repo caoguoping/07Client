@@ -72,6 +72,33 @@
           </AbstractNodeData>
           <AbstractNodeData Name="CheckBox_1" ActionTag="681325780" Tag="568" IconVisible="False" LeftMargin="-466.7344" RightMargin="259.7344" TopMargin="-44.9994" BottomMargin="-21.0006" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
             <Size X="207.0000" Y="66.0000" />
+            <Children>
+              <AbstractNodeData Name="tishi_4" ActionTag="-516581491" Tag="1165" IconVisible="False" LeftMargin="179.7267" RightMargin="3.2733" TopMargin="-9.6621" BottomMargin="51.6621" ctype="SpriteObjectData">
+                <Size X="24.0000" Y="24.0000" />
+                <Children>
+                  <AbstractNodeData Name="Text_people_0" ActionTag="1158177004" Tag="1166" IconVisible="False" LeftMargin="6.1046" RightMargin="8.8954" TopMargin="2.8873" BottomMargin="1.1127" FontSize="18" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="9.0000" Y="20.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="10.6046" Y="11.1127" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4419" Y="0.4630" />
+                    <PreSize X="0.3750" Y="0.8333" />
+                    <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="191.7267" Y="63.6621" />
+                <Scale ScaleX="1.2000" ScaleY="1.2000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.9262" Y="0.9646" />
+                <PreSize X="0.1159" Y="0.3636" />
+                <FileData Type="Normal" Path="bg/tishi.png" Plist="" />
+                <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
+            </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-363.2344" Y="11.9994" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />

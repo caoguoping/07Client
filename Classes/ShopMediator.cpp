@@ -149,7 +149,7 @@ void ShopMediator::clickCloseBtnHander()
 //¹ºÂòzuanshi
 void ShopMediator::getZuanShiHander(int index)
 {
-	SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+	PLayEffect(EFFECT_BTN)
 	
 
 	/*
@@ -180,7 +180,7 @@ void ShopMediator::getZuanShiHander(int index)
 }
 void ShopMediator::getGoldHander(int index)
 {
-	SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+	PLayEffect(EFFECT_BTN)
 #if(SDKWhich == SDK_YIKE)
 	CallCppHelper*  helper = CallCppHelper::getInstance();
 	helper->callJavaPayment(8408 + index - 10809, 1, 2, 3);   //(int goodsId, int orderNum, int gold, int pay_amount)

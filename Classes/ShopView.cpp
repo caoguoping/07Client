@@ -38,7 +38,7 @@ ShopView::ShopView(int id)
 
 	btnSetting->addClickEventListener([&](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		creatView(new SetView(), new SetMediator());
 	}
 	);
@@ -51,7 +51,7 @@ ShopView::ShopView(int id)
 	Button* btnZuanTejia = static_cast<Button*>(shopItem[E_zuanshi]->getChildByName("Button_zhuanshi"));
 	btnZuanTejia->addClickEventListener([this](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10804, -1));
 	}
 	);
@@ -62,7 +62,7 @@ ShopView::ShopView(int id)
 		Button* btnZuanTejia1 = static_cast<Button*>(scrZuanshi->getChildByName("Button_1"));
 	btnZuanTejia1->addClickEventListener([this](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10805, -1));
 	}
 	);
@@ -70,7 +70,7 @@ ShopView::ShopView(int id)
 	Button* btnZuanTejia2 = static_cast<Button*>(scrZuanshi->getChildByName("Button_1_0"));
 	btnZuanTejia2->addClickEventListener([this](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10806, -1));
 	}
 	);
@@ -78,7 +78,7 @@ ShopView::ShopView(int id)
 	Button* btnZuanTejia3 = static_cast<Button*>(scrZuanshi->getChildByName("Button_1_2"));
 	btnZuanTejia3->addClickEventListener([this](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10807, -1));
 	}
 	);
@@ -86,7 +86,7 @@ ShopView::ShopView(int id)
 	Button* btnZuanTejia4 = static_cast<Button*>(scrZuanshi->getChildByName("Button_1_2_0"));
 	btnZuanTejia4->addClickEventListener([this](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10808, -1));
 	}
 	);
@@ -95,7 +95,7 @@ ShopView::ShopView(int id)
 	Button* tnZuanTejia = static_cast<Button*>(shopItem[E_gold]->getChildByName("Button_zhuanshi"));
 	tnZuanTejia->addClickEventListener([this](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10809, -1));
 	}
 	);
@@ -103,7 +103,7 @@ ShopView::ShopView(int id)
 	Button* tnZuanTejia1 = static_cast<Button*>(scrGold->getChildByName("Button_1"));
 	tnZuanTejia1->addClickEventListener([this](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10810, -1));
 	}
 	);
@@ -111,7 +111,7 @@ ShopView::ShopView(int id)
 	Button* tnZuanTejia2 = static_cast<Button*>(scrGold->getChildByName("Button_1_0"));
 	tnZuanTejia2->addClickEventListener([this](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10811, -1));
 	}
 	);
@@ -119,7 +119,7 @@ ShopView::ShopView(int id)
 	Button* tnZuanTejia3 = static_cast<Button*>(scrGold->getChildByName("Button_1_2"));
 	tnZuanTejia3->addClickEventListener([this](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10812, -1));
 	}
 	);
@@ -127,7 +127,7 @@ ShopView::ShopView(int id)
 	Button* tnZuanTejia4 = static_cast<Button*>(scrGold->getChildByName("Button_1_2_0"));
 	tnZuanTejia4->addClickEventListener([this](Ref* psender)
 	{
-		SimpleAudioEngine::getInstance()->playEffect("sounds/game_button_click.mp3");
+		PLayEffect(EFFECT_BTN)
 		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10813, -1));
 	}
 	);
