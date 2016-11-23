@@ -216,6 +216,7 @@ void ActivityView::updateInfo()
 
 void ActivityView::clickGetGrowth(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	//myRankInfo = new CMD_GP_CupInfo();
 	Button* tempB = static_cast<Button*>(psender);
 	if (!tempB)
@@ -228,6 +229,7 @@ void ActivityView::clickGetGrowth(Ref* psender)
 
 void ActivityView::clickGrowth(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	growthCheckBox->setSelected(true);
 	rankCheckBox->setSelected(false);
 
@@ -240,6 +242,7 @@ void ActivityView::clickGrowth(Ref* psender)
 
 void ActivityView::clickRank(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN);
 	growthCheckBox->setSelected(false);
 	rankCheckBox->setSelected(true);
 
@@ -405,6 +408,7 @@ void ActivityView::showRechargeGift()
 //
 void ActivityView::clickGetBtn(Ref *pSender, int i)
 {
+	PLayEffect(EFFECT_BTN);
 	//isClicked = !isClicked;
 	if (isClicked)
 	{

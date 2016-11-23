@@ -55,7 +55,7 @@ void MatchView::initView()
 
 void MatchView::clickCansai(Ref* psender)
 {
-
+	PLayEffect(EFFECT_BTN);
 	//报名
 	DWORD dwUserID = DATA->myBaseData.dwUserID;
 	((SendDataService *)getService(SendDataService::NAME))->sendSignUp(dwUserID);
@@ -65,7 +65,7 @@ void MatchView::clickCansai(Ref* psender)
 
 void MatchView::clickTuisai(Ref* psender)
 {
-
+	PLayEffect(EFFECT_BTN);
 	//退赛
 	DWORD dwUserID = DATA->myBaseData.dwUserID;
 	((SendDataService *)getService(SendDataService::NAME))->sendExitSignUp(dwUserID);
@@ -74,6 +74,7 @@ void MatchView::clickTuisai(Ref* psender)
 
 void MatchView::clickBtnCloseFast(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 // 	发送离开桌子消息
 // 	PlayerInDeskModel *playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
 // 	int myChair = 0xFFFF;
@@ -195,7 +196,7 @@ void MatchView::createFastMatch()
 
 void MatchView::gotoMatch(Ref* psender)
 {
-
+	PLayEffect(EFFECT_BTN);
 	Button*  btn = static_cast<Button*>(psender);
 	int tags = btn->getTag();
 	if (tags == 0)

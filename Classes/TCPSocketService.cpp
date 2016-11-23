@@ -81,8 +81,8 @@ unsigned short TCPSocketService::SendData(unsigned short wMainCmdID, unsigned sh
 {
 	if (wMainCmdID != 0)
 	{
-		logV("send main %d, sub %d, size %d", wMainCmdID, wSubCmdID, wDataSize);
-		logF("send main %d, sub %d, size %d", wMainCmdID, wSubCmdID, wDataSize);
+		logV("send %d, %d", wMainCmdID, wSubCmdID);
+		logF("send %d, %d", wMainCmdID, wSubCmdID);
 	}
 
 	//效验大小

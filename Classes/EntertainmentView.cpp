@@ -41,19 +41,19 @@ void EntertainmentView::initView()
 	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, EntertainmentView, imgBg, 12700, "Image_bg", NULL)
 
 		UIGet_ImageView("Image_frame", rootNode, imgFrame)
+		UIGet_Button("Button_0", imgFrame, btn0)
 		UIGet_Button("Button_1", imgFrame, btn1)
 		UIGet_Button("Button_2", imgFrame, btn2)
-		UIGet_Button("Button_3", imgFrame, btn3)
 
 
 
 
-		btn1->setTag(1);  //好友场
+		btn0->setTag(0);  //好友场
+	btn1->setTag(1);
 	btn2->setTag(2);
-	btn3->setTag(3);
-	UIClick(btn1, EntertainmentView::clickPlay)
+	UIClick(btn0, EntertainmentView::clickPlay)
+		UIClick(btn1, EntertainmentView::clickPlay)
 		UIClick(btn2, EntertainmentView::clickPlay)
-		UIClick(btn3, EntertainmentView::clickPlay)
 
 
 
@@ -61,12 +61,13 @@ void EntertainmentView::initView()
 
 void EntertainmentView::clickPlay(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 	Button*  btn = static_cast<Button*>(pSender);
 	int tags = btn->getTag();
 	long long golds = DATA->myBaseData.lUserScore;
 	switch (tags)
 	{
-	case 1:
+	case 0:
 
 		if (golds < 3000)
 		{
@@ -77,6 +78,18 @@ void EntertainmentView::clickPlay(Ref* pSender)
 			DATA->bGameCate = DataManager::E_GameFriend;
 			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE);
 			blueSkyDispatchEvent(EventType::FRIEND_PLAY);
+		}
+		break;
+
+	case 1:
+		if (golds < 3000)
+		{
+			blueSkyDispatchEvent(EventType::ALERT, new AlertVO(0, "warning", "warning2", 30001, -1));
+		}
+		else
+		{
+			DATA->bGameCate = DataManager::E_GameTeam;
+			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE);
 		}
 		break;
 	case 2:
@@ -91,17 +104,7 @@ void EntertainmentView::clickPlay(Ref* pSender)
 		}
 		break;
 
-	case 3:
-		if (golds < 2000)
-		{
-			blueSkyDispatchEvent(EventType::ALERT, new AlertVO(0, "warning", "warning2", 30001, -1));
-		}
-		else
-		{
-			DATA->bGameCate = DataManager::E_GameTeam;
-			blueSkyDispatchEvent(EventType::CONNECT_GAME_SERVICE);
-		}
-		break;
+
 
 	default:
 		break;

@@ -94,6 +94,7 @@ void AccountView::btnBackHandle()
 
 void AccountView::clickBtnBack(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 	//血战没打过，二次弹框。
 	if (DATA->bGameCate == DataManager::E_GameBlood && DATA->GameEndData.bIsBlood == 0)
 	{
@@ -137,6 +138,7 @@ void AccountView::clickBtnBack(Ref* pSender)
 
 void AccountView::clickBtnContinune(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 	((GameDataModel*)getModel(GameDataModel::NAME))->player[0].pokerArr = {};
 	((SendDataService *)getService(SendDataService::NAME))->sendReady();
 	blueSkyDispatchEvent(EventType::SHOW_PLAYER_ON_DESK);
@@ -147,6 +149,7 @@ void AccountView::clickBtnContinune(Ref* pSender)
 
 void AccountView::clickBtnNextMatch(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 	//发送离开桌子消息
 	PlayerInDeskModel *playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
 	int myChair = playerInDeskModel->getServiceChairID(0);

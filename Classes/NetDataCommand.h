@@ -55,6 +55,7 @@ private:
 	void getSignInformation(NetData netData);//签到查询
 	void getMisInfo(NetData netData);//任务信息
 	void getMallInfo(NetData netData);//商城信息
+	void getSysMsg(NetData netData);//系统信息
 	void getMisReward(NetData netData);//任务奖励
 	void getLoginMisInfo(NetData netData);//任务信息
 	void insureSuccess(NetData netData);//钻石换钱
@@ -70,8 +71,6 @@ private:
 	void getMatchStates(NetData netData);    //7, 406  比赛结束，包括非正常结束
 	void getBestRank(NetData netData);     //7, 411, 历史最佳排名
 	void getJipaiqiData(NetData netData);
-	void getSMessage(NetData netData);
-	void getSystemMessage(NetData netData);
 	//3, 104 用户分数
 	void getMatchUserScore(NetData netData);
 

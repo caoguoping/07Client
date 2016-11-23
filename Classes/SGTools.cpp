@@ -55,7 +55,8 @@ void Tools::showSysMsgTouming(std::string msg, float x, float y, Color3B color)
 	txtMsg->setColor(color);
 	getcontainer()->addChild(rootNode, 40000);
 	rootNode->runAction(Sequence::create(
-		MoveBy::create(1.0f, Vec2(0, 5)),
+		MoveBy::create(0.4f, Vec2(0, 10)),
+		DelayTime::create(1.5f),
 		FadeOut::create(1.0f),
 		CallFuncN::create(CC_CALLBACK_1(Tools::closeSysMsgTouming , this)),
 		NULL
@@ -63,6 +64,33 @@ void Tools::showSysMsgTouming(std::string msg, float x, float y, Color3B color)
 		));
 
 }
+
+void Tools::showSysMsgLogin(std::string msg, float x, float y, Color3B color)
+{
+	Node* rootNode = CSLoader::createNode("sysMsgTouming.csb");
+	Vec2 basePos = Vec2(WScreen * 0.5, HScreen * 0.5);
+	basePos.add(Vec2(x, y));
+	rootNode->setPosition(basePos);
+	Text*   txtMsg;
+	UIGet_Text("msgText", rootNode, txtMsg)
+		ImageView* img38;
+	UIGet_ImageView("Image_38", rootNode, img38)
+		txtMsg->setFontSize(18);
+		//img38->setScaleY(0.8);
+		txtMsg->setString(msg);
+	txtMsg->setColor(color);
+	getcontainer()->addChild(rootNode, 40000);
+	rootNode->runAction(Sequence::create(
+		MoveBy::create(0.4f, Vec2(0, -20)),
+		DelayTime::create(1.5f),
+		FadeOut::create(1.0f),
+		CallFuncN::create(CC_CALLBACK_1(Tools::closeSysMsgTouming, this)),
+		NULL
+
+		));
+
+}
+
 void Tools::closeSysMsg(Ref*  psender)
 {
 	Node*  img = static_cast<Node*>(psender);

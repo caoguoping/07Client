@@ -261,7 +261,12 @@ struct CMD_GR_TableStatus
 };
 
 
-
+struct stSystemMsg
+{
+	WORD							wType;								//消息类型
+	WORD							wLength;							//消息长度
+	std::string						strContent;						//消息内容
+};
 
 USING_NS_CC;
 

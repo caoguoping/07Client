@@ -123,22 +123,27 @@ Layer* MallMediator::getLayer()
 
 void MallMediator::clickActivityBtnHander()
 {
+	PLayEffect(EFFECT_BTN);
 	mallView->showActivityView();
 }
 void MallMediator::clickZuanShiBtnHander()
 {
+	PLayEffect(EFFECT_BTN);
 	mallView->showZuanShiView();
 }
 void MallMediator::clickGoldBtnHander()
 {
+	PLayEffect(EFFECT_BTN);
 	mallView->showGoldView();
 }
 void MallMediator::clickRewardBtnHander()
 {
+	PLayEffect(EFFECT_BTN);
 	mallView->showRewardView();
 }
 void MallMediator::clickRechargeBtnHander()
 {
+	PLayEffect(EFFECT_BTN);
 	creatView(new ShopView(0),new ShopMediator());
 	removeView(this);
 }

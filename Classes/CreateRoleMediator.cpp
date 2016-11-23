@@ -100,24 +100,28 @@ Layer* CreateRoleMediator::getLayer()
 //角色选择
 void CreateRoleMediator::clickCharacter1BtnHander()
 {
+	PLayEffect(EFFECT_BTN);
 	faceID = 2;   //红衣大姐
 	createRoleView->setCharacterState(1);
 }
 
 void CreateRoleMediator::clickCharacter2BtnHander()
 {
+	PLayEffect(EFFECT_BTN);
 	faceID = 4;  //深蓝西装帅哥
 	createRoleView->setCharacterState(2);
 }
 
 void CreateRoleMediator::clickCharacter3BtnHander()
 {
+	PLayEffect(EFFECT_BTN);
 	faceID = 3;
 	createRoleView->setCharacterState(3);
 }
 
 void CreateRoleMediator::clickCharacter4BtnHander()
 {
+	PLayEffect(EFFECT_BTN);
 	faceID = 1;   //白色青纯美眉
 	createRoleView->setCharacterState(4);
 }
@@ -125,6 +129,7 @@ void CreateRoleMediator::clickCharacter4BtnHander()
 //随机昵称
 void CreateRoleMediator::clickAutoBtnHander()
 {
+	PLayEffect(EFFECT_BTN);
 	/*time_t rawtime;
 	time(&rawtime);
 	rLogin->szNickName = ctime(&rawtime);*/
@@ -145,6 +150,7 @@ void CreateRoleMediator::clickAutoBtnHander()
 //确定
 void CreateRoleMediator::clickCreateBtnHander()
 {
+	PLayEffect(EFFECT_BTN);
 	std::string atring;
 	atring.data();
 	rLogin->szNickName = (nameText->getString()).data();

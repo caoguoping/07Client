@@ -104,6 +104,7 @@ public:
 	void initTools(void);
 	void showSysMsg(std::string msg, std::function<void(Ref*)> callFunc);
 	void showSysMsgTouming(std::string msg, float x = 0, float y = 0, Color3B color = Color3B(255, 255, 255));
+	void showSysMsgLogin(std::string msg, float x = 0, float y = 0, Color3B color = Color3B(255, 255, 255));
 	void closeSysMsgTouming(Node*  psender);
 	void closeSysMsg(Ref*  psender);
 	static void shakeWnd(Node* layout);

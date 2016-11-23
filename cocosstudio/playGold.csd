@@ -174,7 +174,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_dizhu" ActionTag="-1479062670" Tag="89" IconVisible="False" LeftMargin="95.5770" RightMargin="65.4230" TopMargin="179.5883" BottomMargin="63.4117" FontSize="18" LabelText="300" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_dizhu" ActionTag="-1479062670" Tag="89" IconVisible="False" LeftMargin="95.5770" RightMargin="65.4230" TopMargin="179.5883" BottomMargin="63.4117" FontSize="18" LabelText="600" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="33.0000" Y="20.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="112.0770" Y="73.4117" />
@@ -238,14 +238,14 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_dizhu" ActionTag="27252259" Tag="84" IconVisible="False" LeftMargin="95.5779" RightMargin="65.4221" TopMargin="179.5882" BottomMargin="63.4118" FontSize="18" LabelText="600" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="33.0000" Y="20.0000" />
+                  <AbstractNodeData Name="Text_dizhu" ActionTag="27252259" Tag="84" IconVisible="False" LeftMargin="90.5779" RightMargin="60.4221" TopMargin="179.5882" BottomMargin="63.4118" FontSize="18" LabelText="3000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="43.0000" Y="20.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="112.0779" Y="73.4118" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="163" G="76" B="0" />
                     <PrePosition X="0.5777" Y="0.2791" />
-                    <PreSize X="0.1701" Y="0.0760" />
+                    <PreSize X="0.2216" Y="0.0760" />
                     <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />

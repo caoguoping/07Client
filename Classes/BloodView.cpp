@@ -53,6 +53,7 @@ void BloodView::initView()
 
 void BloodView::clickPlay(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 	Button*  btn = static_cast<Button*>(pSender);
 	int tags = btn->getTag();
 	long long golds = DATA->myBaseData.lUserScore;
@@ -61,7 +62,7 @@ void BloodView::clickPlay(Ref* pSender)
 	{
 	case 0:
 
-		if (golds < 500)
+		if (golds < 20000)
 		{
 			blueSkyDispatchEvent(EventType::ALERT, new AlertVO(0, "warning", "warning2", 30001, -1));
 		}
@@ -72,7 +73,7 @@ void BloodView::clickPlay(Ref* pSender)
 		}
 		break;
 	case 1:
-		if (golds < 2000)
+		if (golds < 50000)
 		{
 			blueSkyDispatchEvent(EventType::ALERT, new AlertVO(0, "warning", "warning2", 30001, -1));
 		}
@@ -83,7 +84,7 @@ void BloodView::clickPlay(Ref* pSender)
 		}
 		break;
 	case 2:
-		if (golds < 10000)
+		if (golds < 100000)
 		{
 			blueSkyDispatchEvent(EventType::ALERT, new AlertVO(0, "warning", "warning2", 30001, -1));
 		}

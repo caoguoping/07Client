@@ -56,6 +56,7 @@ void HelpView::handleWhich(int iWhich)
 
 void HelpView::clickCheckBox(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 	CheckBox*  checkBox = static_cast<CheckBox*>(pSender);
 	int iwhich = checkBox->getTag();
 	if (iwhich < 0 || iwhich >= 5)

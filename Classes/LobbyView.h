@@ -29,6 +29,8 @@ public:
 		UIDefDelayClick(Button, AddDiamond)   //¼Ó×êÊ¯
 		UIDefDelayClick(Button, Friend)
 
+		Sprite*  spFriendTip;
+
 		ScrollView*   scrBtn;
 		
 		PageView* pgAd;

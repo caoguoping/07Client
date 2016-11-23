@@ -38,7 +38,7 @@
 #include "BloodMediator.h"
 #include "BloodView.h"
 
-#define FOLD_TIME 0.1
+#define FOLD_TIME 0.3
 
 LobbyView::LobbyView()
 {
@@ -89,6 +89,15 @@ LobbyView::LobbyView()
 
 		UIGet_Button("Button_friend", rootNode, mBtnFriend)
 		UIClick(mBtnFriend, LobbyView::clickBtnFriend)
+		UIGet_Sprite("Sprite_tips", mBtnFriend, spFriendTip)
+		if (DATA->vFriendPush.size() > 0)
+		{
+			spFriendTip->setVisible(true);
+		} 
+		else
+		{
+			spFriendTip->setVisible(false);
+		}
 
 		UIGet_Button("Button_head", rootNode, mBtnHead)
 		UIClick(mBtnHead, LobbyView::clickBtnHead)
@@ -115,14 +124,27 @@ LobbyView::~LobbyView()
 
 void LobbyView::clickBtnFold(Ref* pSender)  //折叠按钮
 {
+	PLayEffect(EFFECT_BTN);
+// 	FiniteTimeAction*  seq = Sequence::create(
+// 		ScaleTo::create(FOLD_TIME, 0.1f, 1.0f), 
+// 		Hide::create(),
+// 		NULL
+// 		);
+// 	FiniteTimeAction*  seq1 = Sequence::create(
+// 		ScaleTo::create(FOLD_TIME, 0.1f, 1.0f),
+// 		Hide::create(),
+// 		NULL
+// 		);
 	FiniteTimeAction*  seq = Sequence::create(
-		ScaleTo::create(FOLD_TIME, 0.1f, 1.0f), 
+		MoveBy::create(FOLD_TIME, Vec2(-250, 0)),
 		Hide::create(),
+		MoveBy::create(0, Vec2(250, 0)),
 		NULL
 		);
 	FiniteTimeAction*  seq1 = Sequence::create(
-		ScaleTo::create(FOLD_TIME, 0.1f, 1.0f),
+		MoveBy::create(FOLD_TIME, Vec2(-250, 0)),
 		Hide::create(),
+		MoveBy::create(0, Vec2(250, 0)),
 		NULL
 		);
 	pgAd->runAction(seq1);
@@ -132,16 +154,29 @@ void LobbyView::clickBtnFold(Ref* pSender)  //折叠按钮
 
 void LobbyView::clickBtnUnfold(Ref* pSender)  //点击展开按钮
 {
+	PLayEffect(EFFECT_BTN);
+// 	FiniteTimeAction*  seq = Sequence::create(
+// 		ScaleTo::create(0, 0.1f, 1.0f),
+// 		Show::create(),
+// 		ScaleTo::create(FOLD_TIME, 1.0f, 1.0f),
+// 		NULL
+// 		);
+// 	FiniteTimeAction*  seq1 = Sequence::create(
+// 		ScaleTo::create(0, 0.1f, 1.0f),
+// 		Show::create(),
+// 		ScaleTo::create(FOLD_TIME, 1.0f, 1.0f),
+// 		NULL
+// 		);
 	FiniteTimeAction*  seq = Sequence::create(
-		ScaleTo::create(0, 0.1f, 1.0f),
+		MoveBy::create(0, Vec2(-250, 0)),
 		Show::create(),
-		ScaleTo::create(FOLD_TIME, 1.0f, 1.0f),
+		MoveBy::create(FOLD_TIME, Vec2(250, 0)),
 		NULL
 		);
 	FiniteTimeAction*  seq1 = Sequence::create(
-		ScaleTo::create(0, 0.1f, 1.0f),
+		MoveBy::create(0, Vec2(-250, 0)),
 		Show::create(),
-		ScaleTo::create(FOLD_TIME, 1.0f, 1.0f),
+		MoveBy::create(FOLD_TIME, Vec2(250, 0)),
 		NULL
 		);
 	pgAd->runAction(seq1);

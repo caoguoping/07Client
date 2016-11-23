@@ -846,14 +846,16 @@ void PlayPokerMediator::reveivePlayerOutPokerHandle(void* data)
 	{
 		blueSkyDispatchEvent(EventType::TONG_HUA_SHUN);
 		//显示倍率
-		nowBeiLv *= 2;
+		nowBeiLv = nowBeiLv + 2;
+		nowBeiLv = nowBeiLv / 2 * 2;
 		playPokerView->showBeiLv(nowBeiLv);
 	}
 	if (outPokerType == 10)
 	{
 		blueSkyDispatchEvent(EventType::HUO_JIAN);
 		//显示倍率
-		nowBeiLv *= 2;
+		nowBeiLv = nowBeiLv + 2 ;
+		nowBeiLv = nowBeiLv / 2 * 2;
 		playPokerView->showBeiLv(nowBeiLv);
 	}
 	if (outPokerType == 7)
@@ -866,7 +868,8 @@ void PlayPokerMediator::reveivePlayerOutPokerHandle(void* data)
 		//显示倍率
 		if (outPokerNum > 4)
 		{
-			nowBeiLv *= 2;
+			nowBeiLv = nowBeiLv + 2;
+			nowBeiLv = nowBeiLv / 2 * 2;
 			playPokerView->showBeiLv(nowBeiLv);
 		}
 	}
@@ -1278,6 +1281,7 @@ Layer* PlayPokerMediator::getLayer()
 
 void PlayPokerMediator::clickfanHuiBtnHander()
 {
+	PLayEffect(EFFECT_BTN)
 	//发送离开桌子消息
 	PlayerInDeskModel *playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
 	int myChair = playerInDeskModel->getServiceChairID(0);
@@ -1314,6 +1318,7 @@ void PlayPokerMediator::clickfanHuiBtnHander()
 
 void PlayPokerMediator::clickChatBtnHander(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN)
 	if (!isChatOpened)
 	{
 		creatView(new ChatView(), new ChatMediator());
@@ -1330,6 +1335,7 @@ void PlayPokerMediator::clickChatBtnHander(Ref* psender)
 
 void PlayPokerMediator::clickJinGongBtnHander(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN)
 	PlayerInDeskModel *playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
 	//取出玩家的选的要进贡的牌
 	GameDataModel *gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
@@ -1391,6 +1397,7 @@ void PlayPokerMediator::clickJinGongBtnHander(Ref* psender)
 
 void PlayPokerMediator::clickHuanGongBtnHander(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN)
 	PlayerInDeskModel *playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
 	//取出玩家的选的要还贡的牌
 	GameDataModel *gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
@@ -1433,6 +1440,7 @@ void PlayPokerMediator::clickHuanGongBtnHander(Ref* psender)
 //这边必须是要跟牌，才能点击提示按钮，可以在每次轮到玩家出牌时判断一下按钮的显示
 void PlayPokerMediator::clickTiShiBtnHander(Ref*  pSender)
 {
+	PLayEffect(EFFECT_BTN)
 	GameDataModel* gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
 	//先取消之前手牌的选中状态
 	int ids[30];
@@ -1603,6 +1611,7 @@ void PlayPokerMediator::clickTiShiBtnHander(Ref*  pSender)
 
 void PlayPokerMediator::clickChuPaiBtnHander(Ref*  pSender)
 {
+	PLayEffect(EFFECT_BTN)
 	//先判断能不能出牌
 	bool canOutPoker = false;
 	GameDataModel *gameDataModel = (GameDataModel*)getModel(GameDataModel::NAME);
@@ -1699,6 +1708,7 @@ void PlayPokerMediator::clickChuPaiBtnHander(Ref*  pSender)
 
 void PlayPokerMediator::clickBuChuBtnHander(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN)
 	actionNode->setVisible(false);
 	//先取消手牌的选中状态
 	//vector<PokerVO*> selectedPokerArr = ((GameDataModel*)getModel(GameDataModel::NAME))->player[0].selectedPokerArr;
@@ -1736,7 +1746,7 @@ void PlayPokerMediator::clickBuChuBtnHander(Ref* psender)
 
 void PlayPokerMediator::clickTongHuaShunBtnHander(Ref* psender)
 {
-
+	PLayEffect(EFFECT_BTN)
 	//先取消之前手牌的选中状态
 // 	for (DWORD i = 0; i < ((GameDataModel*)getModel(GameDataModel::NAME))->player[0].selectedPokerArr.size(); i++)
 // 	{
@@ -1793,7 +1803,7 @@ void PlayPokerMediator::clickTongHuaShunBtnHander(Ref* psender)
 
 void PlayPokerMediator::clickLiChengYiPaiBtnHander(Ref* psender)
 {
-
+	PLayEffect(EFFECT_BTN)
 	GameDataModel* gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
 	//先移除所有的手牌显示
 	for (DWORD i = 0; i <gameDataModel->player[0].pokerArr.size(); i++)
@@ -1820,6 +1830,7 @@ void PlayPokerMediator::clickLiChengYiPaiBtnHander(Ref* psender)
 
 void PlayPokerMediator::clickChongLiBtnHander(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN)
 	//先取消手牌的选中状态
 	for (DWORD i = 0; i < ((GameDataModel*)getModel(GameDataModel::NAME))->player[0].selectedPokerArr.size(); i++)
 	{
@@ -1853,7 +1864,7 @@ void PlayPokerMediator::clickChongLiBtnHander(Ref* psender)
 //记牌器 //点击记牌器按钮
 void PlayPokerMediator::clickMarkBtnHander(Ref* psender)
 {
-
+	PLayEffect(EFFECT_BTN)
 	PokerGameModel* pokerGameModel = ((PokerGameModel*)getModel(PokerGameModel::NAME));
 
 	if (jipaiqiNum > 0)
@@ -1892,7 +1903,7 @@ void PlayPokerMediator::clickMarkBtnHander(Ref* psender)
 //托管
 void PlayPokerMediator::clickAutoBtnHander(Ref* psender)
 {
-
+	PLayEffect(EFFECT_BTN)
 	isAutoState = true; 
 	showAutoImage(0,true);
 
@@ -1908,13 +1919,14 @@ void PlayPokerMediator::clickAutoBtnHander(Ref* psender)
 //点击任务按钮
 void PlayPokerMediator::clickTaskBtnHander(Ref* psender)
 {
+	PLayEffect(EFFECT_BTN)
 	creatView(new DailyMissionView(), new DailyMissionMediator());
 }
 
 //取消托管
 void PlayPokerMediator::clickCancelAutoBtnHander()
 {
-
+	PLayEffect(EFFECT_BTN)
 	isAutoState = false;
 	showAutoImage(0, false);
 }
@@ -1922,7 +1934,7 @@ void PlayPokerMediator::clickCancelAutoBtnHander()
 //点击桌面按钮
 bool PlayPokerMediator::clicklookTableBtn(Touch *touch, Widget::TouchEventType type)
 {
-
+	PLayEffect(EFFECT_BTN)
 	if (type == Widget::TouchEventType::BEGAN)
 	{
 		//设置手牌的透明效果
@@ -2385,6 +2397,7 @@ void PlayPokerMediator::playChuPaiMusic(int pokerType, int faceID)
 					break;
 				case 7:
 					PLayEffect(FEI_JI_NV);
+					break;
 				case 8:
 					PLayEffect(BOOM_NV);
 					break;
@@ -2427,6 +2440,7 @@ void PlayPokerMediator::playChuPaiMusic(int pokerType, int faceID)
 				break;
 			case 7:
 				PLayEffect(FEI_JI_NAN);
+				break;
 			case 8:
 				PLayEffect(BOOM_NAN);
 				break;

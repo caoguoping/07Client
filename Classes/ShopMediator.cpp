@@ -133,16 +133,19 @@ Layer* ShopMediator::getLayer()
 
 void ShopMediator::clickZhuanShiBtnHander()
 {
+	PLayEffect(EFFECT_BTN);
 	shopView->showZuanShiView();
 }
 
 void ShopMediator::clickGoldBtnHander()
 {
+	PLayEffect(EFFECT_BTN);
 	shopView->showGoldView();
 }
 
 void ShopMediator::clickCloseBtnHander()
 {
+	PLayEffect(EFFECT_BTN);
 	removeView(this);
 }
 

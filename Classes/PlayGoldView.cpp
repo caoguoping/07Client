@@ -58,6 +58,7 @@ void PlayGoldView::initView()
 
 void PlayGoldView::clickPlay(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 	Button*  btn = static_cast<Button*>(pSender);
 	int tags = btn->getTag();
 	long long golds = DATA->myBaseData.lUserScore;

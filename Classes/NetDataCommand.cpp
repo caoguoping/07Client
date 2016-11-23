@@ -168,45 +168,7 @@ void NetDataCommand::executeGame(NetData netData)
 			break;
 		}
 	}
-	else if (netData.command.wMainCmdID == 200)
-	{
-		if (wKindID == 2)
-		{
-			switch (netData.command.wSubCmdID)
-			{
-			case 105://游戏结束
-				gameOver(netData);
-				break;
-			case 101:
-				getSendPokerInfo(netData);  //发牌
-				break;
-			case 102://用户出牌
-				getPlayerOutPoker(netData);
-				break;
-			case 103://放弃出牌
-				notOutPoker(netData);
-				break;
-			case 104://游戏进贡
-				getPayTribute(netData);
-				break;
 
-			case 112://推送记牌器数据
-				getJipaiqiData(netData);
-				break;
-
-			case 110:    //系统消息s
-				//getSMessage(netData);
-				break;
-
-			case 113://广播砸鸡蛋
-				getBroadCastDaoju(netData);
-				break;
-
-
-			}
-		}
-
-	}
 	else if (netData.command.wMainCmdID == 5)
 	{
 		switch (netData.command.wSubCmdID)
@@ -266,13 +228,47 @@ void NetDataCommand::executeGame(NetData netData)
 			break;
 		}
 	}
+	else if (netData.command.wMainCmdID == 200)
+	{
+		if (wKindID == 2)
+		{
+			switch (netData.command.wSubCmdID)
+			{
+			case 105://游戏结束
+				gameOver(netData);
+				break;
+			case 101:
+				getSendPokerInfo(netData);  //发牌
+				break;
+			case 102://用户出牌
+				getPlayerOutPoker(netData);
+				break;
+			case 103://放弃出牌
+				notOutPoker(netData);
+				break;
+			case 104://游戏进贡
+				getPayTribute(netData);
+				break;
 
+			case 112://推送记牌器数据
+				getJipaiqiData(netData);
+				break;
+
+			case 113://广播砸鸡蛋
+				getBroadCastDaoju(netData);
+				break;
+
+
+			}
+		}
+
+	}
 	else if (netData.command.wMainCmdID == 1000)
 	{
 		switch (netData.command.wSubCmdID)
 		{
-		case 1:  //systemMessage2
-			//getSystemMessage(netData);
+		case 1: 
+			getSysMsg(netData);
 			break;
 		}
 	}
@@ -293,7 +289,7 @@ void NetDataCommand::executeLogin(NetData netData)
 	logV("LoginServer main: %d,  sub: %d   size %d \n", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
 	logF("LoginServer main: %d,  sub: %d   size %d \n", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
 
-	if (netData.command.wMainCmdID == MDM_GP_LOGON)
+	if (netData.command.wMainCmdID == 1)
 	{
 		int i;
 		switch (netData.command.wSubCmdID)
@@ -424,18 +420,7 @@ void NetDataCommand::executeLogin(NetData netData)
 		}
 	}
 
-	else if (netData.command.wMainCmdID == 600)
-	{
-		switch (netData.command.wSubCmdID)
-		{
-		//七日登陆（已经登录的总天数 需%7）
-		case 601:
 
-			log("##cocos2d-x seven day");
-			getSignInformation(netData);
-			break;
-		}
-	}
 	else if (netData.command.wMainCmdID == 201)
 	{
 		switch (netData.command.wSubCmdID)
@@ -446,13 +431,13 @@ void NetDataCommand::executeLogin(NetData netData)
 				break;
 		}
 	}
-	else if (netData.command.wMainCmdID == 700)
+	else if (netData.command.wMainCmdID == 202)
 	{
 		switch (netData.command.wSubCmdID)
 		{
-			//任务信息
-		case 701:
-			getLoginMisInfo(netData);
+			//系统消息
+		case 1:
+			getSysMsg(netData);
 			break;
 		}
 	}
@@ -466,6 +451,29 @@ void NetDataCommand::executeLogin(NetData netData)
 			break;
 		}
 	}
+	else if (netData.command.wMainCmdID == 600)
+	{
+		switch (netData.command.wSubCmdID)
+		{
+			//七日登陆（已经登录的总天数 需%7）
+		case 601:
+
+			log("##cocos2d-x seven day");
+			getSignInformation(netData);
+			break;
+		}
+	}
+	else if (netData.command.wMainCmdID == 700)
+	{
+		switch (netData.command.wSubCmdID)
+		{
+			//任务信息
+		case 701:
+			getLoginMisInfo(netData);
+			break;
+		}
+	}
+
 }
 
 
@@ -526,25 +534,6 @@ void NetDataCommand::getJipaiqiData(NetData netData)
 		DATA->jipai[i] = netData.readByte();
 	}
 	blueSkyDispatchEvent(EventType::PUSH_JIPAIQI);
-}
-
-void NetDataCommand::getSMessage(NetData netData)
-{
-	WORD   wchairId = netData.readWORD();
-	string sMsg = netData.readString(256);
-	//Tools::getInstance()->showSysMsgTouming(sMsg);
-}
-
-void NetDataCommand::getSystemMessage(NetData netData)  //1000, 1,     //
-{
-	WORD   wType = netData.readWORD();
-	WORD    wLenth = netData.readWORD();
-	if (wLenth > 512)
-	{
-		return;
-	}
-	std::string sMsg = netData.readString(wLenth * 2);
-	//Tools::getInstance()->showSysMsgTouming(sMsg);
 }
 
 //3, 103, game fail
@@ -1149,6 +1138,17 @@ void NetDataCommand::getMallInfo(NetData netData)
 
 }
 
+
+void NetDataCommand::getSysMsg(NetData netData)
+{
+	stSystemMsg sysMsg;
+	sysMsg.wType = netData.readWORD();
+	sysMsg.wLength = netData.readWORD();
+	sysMsg.strContent = netData.readString(sysMsg.wLength);
+	logV("wLenghth %d, %s", sysMsg.wLength, sysMsg.strContent.c_str());
+	Tools::getInstance()->showSysMsgLogin(sysMsg.strContent.c_str(), 0, 270);
+}
+
 //任务奖励
 void NetDataCommand::getMisReward(NetData netData)
 {
@@ -1321,7 +1321,7 @@ void NetDataCommand::getFriedsAddInfoMe(NetData netData)
 	pFriendOpt->WinRate = netData.readWORD();
 	pFriendOpt->wRcStates = netData.readWORD();
 
-
+	logV("handleMe States%d ", pFriendOpt->wRcStates);
 	switch (pFriendOpt->wRcStates)
 	{
 	case FriendView::ecAgreeSuccess: //同意添加对方为好友
@@ -1467,7 +1467,7 @@ void NetDataCommand::getFriendPush(NetData netData)
 {
 	netData.readDWORD();
 	WORD wSize = netData.readWORD();
-	logV("\n\nFriendPush Size %d",wSize);
+	logV("FriendPush Size %d",wSize);
 	if (wSize > 20)
 	{
 		

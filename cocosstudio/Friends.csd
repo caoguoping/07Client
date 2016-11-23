@@ -73,7 +73,7 @@
           <AbstractNodeData Name="CheckBox_1" ActionTag="681325780" Tag="568" IconVisible="False" LeftMargin="-466.7344" RightMargin="259.7344" TopMargin="-44.9994" BottomMargin="-21.0006" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
             <Size X="207.0000" Y="66.0000" />
             <Children>
-              <AbstractNodeData Name="tishi_4" ActionTag="-516581491" Tag="1165" IconVisible="False" LeftMargin="179.7267" RightMargin="3.2733" TopMargin="-9.6621" BottomMargin="51.6621" ctype="SpriteObjectData">
+              <AbstractNodeData Name="tishi_4" ActionTag="-516581491" VisibleForFrame="False" Tag="1165" IconVisible="False" LeftMargin="179.7267" RightMargin="3.2733" TopMargin="-9.6621" BottomMargin="51.6621" ctype="SpriteObjectData">
                 <Size X="24.0000" Y="24.0000" />
                 <Children>
                   <AbstractNodeData Name="Text_people_0" ActionTag="1158177004" Tag="1166" IconVisible="False" LeftMargin="6.1046" RightMargin="8.8954" TopMargin="2.8873" BottomMargin="1.1127" FontSize="18" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">

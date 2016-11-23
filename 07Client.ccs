@@ -247,6 +247,34 @@
             <Image Name="tianwangzha0038.png" />
             <Image Name="tianwangzha0039.png" />
           </Folder>
+          <Folder Name="jiefeng">
+            <Image Name="jiefeng0003.png" />
+            <Image Name="jiefeng0004.png" />
+            <Image Name="jiefeng0005.png" />
+            <Image Name="jiefeng0006.png" />
+            <Image Name="jiefeng0007.png" />
+            <Image Name="jiefeng0008.png" />
+            <Image Name="jiefeng0009.png" />
+            <Image Name="jiefeng0010.png" />
+            <Image Name="jiefeng0011.png" />
+            <Image Name="jiefeng0012.png" />
+            <Image Name="jiefeng0013.png" />
+            <Image Name="jiefeng0014.png" />
+            <Image Name="jiefeng0015.png" />
+            <Image Name="jiefeng0016.png" />
+            <Image Name="jiefeng0017.png" />
+            <Image Name="jiefeng0018.png" />
+            <Image Name="jiefeng0019.png" />
+            <Image Name="jiefeng0020.png" />
+            <Image Name="jiefeng0021.png" />
+            <Image Name="jiefeng0022.png" />
+            <Image Name="jiefeng0023.png" />
+            <Image Name="jiefeng0024.png" />
+            <Image Name="jiefeng0025.png" />
+            <Image Name="jiefeng0026.png" />
+            <Image Name="jiefeng0027.png" />
+            <Image Name="jiefeng0028.png" />
+          </Folder>
           <Folder Name="jieSuan">
             <Folder Name="fail">
               <Image Name="shibai0002.png" />
@@ -621,6 +649,7 @@
           <Image Name="role_lv2.png" />
           <Image Name="role_lv3.png" />
           <Image Name="role_smile.png" />
+          <Image Name="tips_bg.png" />
           <Image Name="tishi.png" />
           <Image Name="title_bg.png" />
           <Image Name="title_lose.png" />
@@ -1617,6 +1646,7 @@
         <Project Name="warning.csd" Type="Node" />
         <Project Name="wealthNumber.csd" Type="Node" />
         <Project Name="zhupai.csd" Type="Node" />
+        <Project Name="jiefeng.csd" Type="Node" />
       </RootFolder>
     </Group>
   </SolutionFolder>

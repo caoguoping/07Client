@@ -195,14 +195,24 @@ void FriendView::initView()
 	UIClick(chkRanks[E_RankShenglv], FriendView::clickRankShengLv)
 
 
+	if (DATA->vFriendPush.size() > 0)
+	{
+		currentTitle = E_familiar;
+		handleWhich(currentTitle);
+		showPushFriends();
+	}
+	else
+	{
+		currentTitle = E_friends;
+		handleWhich(currentTitle);
+		showFriends();
+	}
 
-	currentTitle = E_friends;
-	handleWhich(currentTitle);
-	showFriends();
 }
 
 void FriendView::clickSearch(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 	std::string strId;
 
 #if(PlatWhich != PlatWin)
@@ -272,15 +282,20 @@ void FriendView::showFriends()
 		oneNode->setPosition(Vec2(halfItemWidth, -itemHeigth * 0.5));
  		Text  *txtRmb, *txtName, *txtGame, *txtChangci, *txtFree;
 		ImageView*  imgHead;
+		Button*  btnDelete;
 // 
+
 		UIGet_Text("Text_name", oneNode, txtName)
 			UIGet_Text("Text_rmb", oneNode, txtRmb)
 			UIGet_Text("Text_game", oneNode, txtGame)
 			UIGet_Text("Text_changci", oneNode, txtChangci)
 			UIGet_Text("Text_free", oneNode, txtFree)
-
+			UIGet_Button("Button_delete", oneNode, btnDelete)
 
 			UIGet_ImageView("Image_head", oneNode, imgHead)
+
+			btnDelete->setTag(i);
+			UIClick(btnDelete, FriendView::clickBtnDelete)
 
 			txtName->setString(DATA->vFriends.at(i).szNickName);
 		txtName->setTextHorizontalAlignment(TextHAlignment::LEFT);
@@ -504,6 +519,7 @@ void FriendView::showPushFriends()
 
 void FriendView::clickShuRenAdd(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 	Button*   btnAdd = static_cast<Button*>(pSender);
 	int i = btnAdd->getTag();
 	Tools::getInstance()->showSysMsgTouming (UTF8::getInstance()->getString("friend", "req"));
@@ -614,6 +630,7 @@ void FriendView::showRanks(DWORD dwWhich)
 
 void FriendView::clickCheckItemFriends(Ref*  pSender, CheckBox::EventType type)
 {
+	PLayEffect(EFFECT_BTN);
 	CheckBox*  chk = static_cast<CheckBox*>(pSender);
 	int iwhich = chk->getTag();
 	if (iwhich < 0 || iwhich >= 3)
@@ -650,6 +667,7 @@ void FriendView::clickCheckItemFriends(Ref*  pSender, CheckBox::EventType type)
 
 void FriendView::clickRankCaiFu(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 	showCaiFuRank();
 }
 
@@ -667,6 +685,7 @@ void FriendView::showCaiFuRank()
 
 void FriendView::clickRankMeiLi(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 	for (int i = 0; i < E_RankMax; i++)
 	{
 		chkRanks[i]->setSelected(false);
@@ -679,6 +698,7 @@ void FriendView::clickRankMeiLi(Ref* pSender)
 
 void FriendView::clickRankShengLv(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 	for (int i = 0; i < E_RankMax; i++)
 	{
 		chkRanks[i]->setSelected(false);
@@ -700,6 +720,18 @@ void FriendView::handleWhich(int iwhich)
 	chkFriends[iwhich]->setSelected(true);
 	chkFriends[iwhich]->setTouchEnabled(false);
 	ndFriends[iwhich]->setVisible(true);
+}
+
+void FriendView::clickBtnDelete(Ref* pSender)
+{
+	PLayEffect(EFFECT_BTN);
+	Button*  btnDelete = static_cast<Button*>(pSender);
+	int iWhich = btnDelete->getTag();
+	SEND->sendFriendOption(DATA->myBaseData.dwUserID, DATA->vFriends.at(iWhich).dwUserID, esDelete);
+
+	DATA->vFriends.erase(DATA->vFriends.begin() + iWhich);
+	showFriends();
+
 }
 
 void FriendView::showSearchResult(WORD wFaceId, std::string szNickName)
@@ -725,6 +757,7 @@ void FriendView::showSearchResult(WORD wFaceId, std::string szNickName)
 
 void FriendView::clickRefind(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 // 	if (DATA->vFriendsShuRen.size() >= 12)
 // 	{
 // 		DATA->vFriendsShuRen.erase(DATA->vFriendsShuRen.begin(), DATA->vFriendsShuRen.begin() + 6);
@@ -739,6 +772,7 @@ void FriendView::clickRefind(Ref* pSender)
 
 void FriendView::clickOneKeyAdd(Ref* pSender)  //一键添加
 {
+	PLayEffect(EFFECT_BTN);
 	Button*   btnAdd = static_cast<Button*>(pSender);
 	int dwsize = DATA->vFriendsShuRen.size() > 6 ? 6 : DATA->vFriendsShuRen.size();
 
@@ -753,6 +787,7 @@ void FriendView::clickOneKeyAdd(Ref* pSender)  //一键添加
 
 void FriendView::clickSearchAdd(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 	SEND->sendFriendOption(DATA->myBaseData.dwUserID, dwSearchUserId, esInvite);
 	ndSearch->setVisible(false);
 	Tools::getInstance()->showSysMsgTouming(UTF8::getInstance()->getString("friend", "req"));
@@ -761,6 +796,7 @@ void FriendView::clickSearchAdd(Ref* pSender)
 
 void FriendView::clickOneAgree(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 	Button*   btnAdd = static_cast<Button*>(pSender);
 	int i = btnAdd->getTag();
 	logV("clickOneAgree i %d, dwUserId %d,  TargetUserID %d ", i, DATA->myBaseData.dwUserID, DATA->vFriendPush.at(i).dwUserID);
@@ -774,6 +810,7 @@ void FriendView::clickOneAgree(Ref* pSender)
 }
 void FriendView::clickOneRefuse(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN);
 	Button*   btnAdd = static_cast<Button*>(pSender);
 	int i = btnAdd->getTag();
 

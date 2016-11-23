@@ -89,6 +89,7 @@ void PlayPokerView::hideFriendInvite(DWORD  dwWhich)
 //外部的邀请按钮
 void PlayPokerView::clickBtnInvite(Ref*   pSender)
 {
+	PLayEffect(EFFECT_BTN)
 	Button*  btn = static_cast<Button*>(pSender);
 	int iTag = btn->getTag();
 

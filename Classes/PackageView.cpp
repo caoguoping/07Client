@@ -135,6 +135,7 @@ void PackageView::showItemInfo(int index)
 //点击某个物品
 void PackageView::clickItem(Ref *pSender)
 {
+	PLayEffect(EFFECT_BTN);
 	ImageView*  img = static_cast<ImageView*>(pSender);
 	int tags = img->getTag();
 	showItemInfo(tags);

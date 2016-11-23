@@ -6,21 +6,21 @@
       <ObjectData Name="Node" Tag="70" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Image_38" ActionTag="1971732796" Alpha="0" Tag="71" IconVisible="False" LeftMargin="-106.0000" RightMargin="-106.0000" TopMargin="-18.0000" BottomMargin="-18.0000" TouchEnable="True" Scale9Enable="True" LeftEage="50" RightEage="50" TopEage="16" BottomEage="20" Scale9OriginX="50" Scale9OriginY="16" Scale9Width="112" Scale9Height="1" ctype="ImageViewObjectData">
-            <Size X="212.0000" Y="36.0000" />
+          <AbstractNodeData Name="Image_38" ActionTag="1971732796" Tag="71" IconVisible="False" LeftMargin="-251.5000" RightMargin="-251.5000" TopMargin="-16.0000" BottomMargin="-16.0000" TouchEnable="True" Scale9Enable="True" LeftEage="50" RightEage="50" TopEage="10" BottomEage="10" Scale9OriginX="50" Scale9OriginY="10" Scale9Width="403" Scale9Height="12" ctype="ImageViewObjectData">
+            <Size X="503.0000" Y="32.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
-            <Scale ScaleX="1.6019" ScaleY="1.6028" />
+            <Scale ScaleX="1.0000" ScaleY="1.0006" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="bg/number_frame.png" Plist="" />
+            <FileData Type="Normal" Path="bg/tips_bg.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="msgText" ActionTag="2116262342" Tag="72" IconVisible="False" LeftMargin="-199.9998" RightMargin="-200.0002" TopMargin="-15.5000" BottomMargin="-11.5000" IsCustomSize="True" FontSize="24" LabelText="" HorizontalAlignmentType="HT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="400.0000" Y="27.0000" />
+          <AbstractNodeData Name="msgText" ActionTag="2116262342" Tag="72" IconVisible="False" LeftMargin="-251.5000" RightMargin="-251.5000" TopMargin="-16.0000" BottomMargin="-16.0000" IsCustomSize="True" FontSize="24" LabelText="谢谢收看，明天再见！" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="503.0000" Y="32.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="0.0002" Y="2.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.1050" />
+            <Position />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />

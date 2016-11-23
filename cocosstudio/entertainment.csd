@@ -35,7 +35,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/bentouming.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_frame" ActionTag="-1736037133" Tag="492" IconVisible="False" LeftMargin="-347.9984" RightMargin="-348.0016" TopMargin="-295.0000" BottomMargin="-215.0000" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="686" Scale9Height="506" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_frame" ActionTag="-1736037133" Tag="492" IconVisible="False" LeftMargin="-348.0000" RightMargin="-348.0000" TopMargin="-435.0000" BottomMargin="-75.0000" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="686" Scale9Height="506" ctype="ImageViewObjectData">
             <Size X="696.0000" Y="510.0000" />
             <Children>
               <AbstractNodeData Name="Image_cloud" ActionTag="-1682850178" Tag="513" IconVisible="False" LeftMargin="14.5093" RightMargin="40.4907" TopMargin="375.0911" BottomMargin="14.9089" LeftEage="86" RightEage="86" TopEage="22" BottomEage="22" Scale9OriginX="86" Scale9OriginY="22" Scale9Width="469" Scale9Height="76" ctype="ImageViewObjectData">
@@ -83,7 +83,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_1" ActionTag="413312729" Tag="1106" IconVisible="False" LeftMargin="33.8602" RightMargin="468.1398" TopMargin="188.4803" BottomMargin="58.5197" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="164" Scale9Height="241" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_0" ActionTag="413312729" Tag="1106" IconVisible="False" LeftMargin="33.8602" RightMargin="468.1398" TopMargin="188.4803" BottomMargin="58.5197" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="164" Scale9Height="241" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="194.0000" Y="263.0000" />
                 <Children>
                   <AbstractNodeData Name="Text_gold" ActionTag="-455950078" Tag="1107" IconVisible="False" LeftMargin="49.7607" RightMargin="101.2393" TopMargin="179.4178" BottomMargin="63.5822" FontSize="18" LabelText="底注: " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -144,6 +144,70 @@
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
                 <NormalFileData Type="Normal" Path="entertainment/icon_friend.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Button_1" ActionTag="1999493199" Tag="854" IconVisible="False" LeftMargin="240.6810" RightMargin="261.3190" TopMargin="188.4803" BottomMargin="58.5197" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="164" Scale9Height="241" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="194.0000" Y="263.0000" />
+                <Children>
+                  <AbstractNodeData Name="Text_gold" ActionTag="1747658224" Tag="855" IconVisible="False" LeftMargin="46.4469" RightMargin="104.5531" TopMargin="179.3406" BottomMargin="63.6594" FontSize="18" LabelText="底注: " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="43.0000" Y="20.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="67.9469" Y="73.6594" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="163" G="76" B="0" />
+                    <PrePosition X="0.3502" Y="0.2801" />
+                    <PreSize X="0.2216" Y="0.0760" />
+                    <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Text_gold_0" ActionTag="-116846392" Tag="856" IconVisible="False" LeftMargin="28.3702" RightMargin="122.6298" TopMargin="201.4990" BottomMargin="41.5010" FontSize="18" LabelText="入局: " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="43.0000" Y="20.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="49.8702" Y="51.5010" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="163" G="76" B="0" />
+                    <PrePosition X="0.2571" Y="0.1958" />
+                    <PreSize X="0.2216" Y="0.0760" />
+                    <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Text_dizhu" ActionTag="416484294" Tag="857" IconVisible="False" LeftMargin="95.5770" RightMargin="65.4230" TopMargin="179.5883" BottomMargin="63.4117" FontSize="18" LabelText="600" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="33.0000" Y="20.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="112.0770" Y="73.4117" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="163" G="76" B="0" />
+                    <PrePosition X="0.5777" Y="0.2791" />
+                    <PreSize X="0.1701" Y="0.0760" />
+                    <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Text_ruju" ActionTag="-34109733" Tag="858" IconVisible="False" LeftMargin="77.2706" RightMargin="37.7294" TopMargin="202.6491" BottomMargin="40.3509" FontSize="18" LabelText="3000金币" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="79.0000" Y="20.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="116.7706" Y="50.3509" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="163" G="76" B="0" />
+                    <PrePosition X="0.6019" Y="0.1914" />
+                    <PreSize X="0.4072" Y="0.0760" />
+                    <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="337.6810" Y="190.0197" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4852" Y="0.3726" />
+                <PreSize X="0.2787" Y="0.5157" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <NormalFileData Type="Normal" Path="entertainment/icon_team.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -211,73 +275,9 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_3" ActionTag="1999493199" Tag="854" IconVisible="False" LeftMargin="240.6810" RightMargin="261.3190" TopMargin="188.4803" BottomMargin="58.5197" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="164" Scale9Height="241" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="194.0000" Y="263.0000" />
-                <Children>
-                  <AbstractNodeData Name="Text_gold" ActionTag="1747658224" Tag="855" IconVisible="False" LeftMargin="46.4469" RightMargin="104.5531" TopMargin="179.3406" BottomMargin="63.6594" FontSize="18" LabelText="底注: " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="43.0000" Y="20.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="67.9469" Y="73.6594" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="163" G="76" B="0" />
-                    <PrePosition X="0.3502" Y="0.2801" />
-                    <PreSize X="0.2216" Y="0.0760" />
-                    <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Text_gold_0" ActionTag="-116846392" Tag="856" IconVisible="False" LeftMargin="28.3702" RightMargin="122.6298" TopMargin="201.4990" BottomMargin="41.5010" FontSize="18" LabelText="入局: " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="43.0000" Y="20.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="49.8702" Y="51.5010" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="163" G="76" B="0" />
-                    <PrePosition X="0.2571" Y="0.1958" />
-                    <PreSize X="0.2216" Y="0.0760" />
-                    <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Text_dizhu" ActionTag="416484294" Tag="857" IconVisible="False" LeftMargin="95.5770" RightMargin="65.4230" TopMargin="179.5883" BottomMargin="63.4117" FontSize="18" LabelText="600" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="33.0000" Y="20.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="112.0770" Y="73.4117" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="163" G="76" B="0" />
-                    <PrePosition X="0.5777" Y="0.2791" />
-                    <PreSize X="0.1701" Y="0.0760" />
-                    <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Text_ruju" ActionTag="-34109733" Tag="858" IconVisible="False" LeftMargin="77.2706" RightMargin="37.7294" TopMargin="202.6491" BottomMargin="40.3509" FontSize="18" LabelText="2000金币" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="79.0000" Y="20.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="116.7706" Y="50.3509" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="163" G="76" B="0" />
-                    <PrePosition X="0.6019" Y="0.1914" />
-                    <PreSize X="0.4072" Y="0.0760" />
-                    <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                </Children>
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="337.6810" Y="190.0197" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4852" Y="0.3726" />
-                <PreSize X="0.2787" Y="0.5157" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <NormalFileData Type="Normal" Path="entertainment/icon_team.png" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="0.0016" Y="40.0000" />
+            <Position Y="180.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

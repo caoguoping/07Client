@@ -141,6 +141,7 @@ public:
 	void clickOneAgree(Ref* pSender);
 	void clickOneRefuse(Ref* pSender);
 
+	void clickBtnDelete(Ref*  pSender);
 
 	//handle
 	void handleFriendOptMe(void* data);
