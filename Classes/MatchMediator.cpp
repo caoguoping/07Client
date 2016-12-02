@@ -3,6 +3,7 @@
 #include "BlueSky.h"
 #include "UILayerService.h"
 #include "DataManager.h"
+#include "ViewManager.h"
 
 MatchMediator::MatchMediator()
 {
@@ -38,7 +39,7 @@ void MatchMediator::onRemove()
 
 Layer* MatchMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 
 void MatchMediator::onEvent(int i, void* data)

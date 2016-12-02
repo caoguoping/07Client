@@ -18,7 +18,6 @@ EntertainmentView::EntertainmentView()
 
 EntertainmentView::~EntertainmentView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(EntertainmentView, closeBtn, 12700);
 	rootNode->stopAllActions();
 	delete rootNode;
 	rootNode = NULL;
@@ -35,17 +34,15 @@ void EntertainmentView::initView()
 	timeLine->gotoFrameAndPlay(0, false);
 	rootNode->runAction(timeLine);
 
-
-
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, EntertainmentView, closeBtn, 12700, "Button_close", "Image_frame")
-	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, EntertainmentView, imgBg, 12700, "Image_bg", NULL)
-
 		UIGet_ImageView("Image_frame", rootNode, imgFrame)
 		UIGet_Button("Button_0", imgFrame, btn0)
 		UIGet_Button("Button_1", imgFrame, btn1)
 		UIGet_Button("Button_2", imgFrame, btn2)
 
-
+		UIGet_Button("Button_close", imgFrame, closeBtn)
+		UIGet_ImageView("Image_bg", rootNode, imgBg)
+		BTN_EVENT(closeBtn, 12700)
+		BTN_EVENT(imgBg, 12700)
 
 
 		btn0->setTag(0);  //∫√”—≥°

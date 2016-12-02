@@ -1,7 +1,7 @@
 #include "LoginMediator.h"
 #include "PlatFormControl.h"
 #include "CallCppHelper.h"
-
+#include "ViewManager.h"
 
 
 #if(SDKWhich == SDK_YIKE)
@@ -65,7 +65,7 @@ LoginMediator::~LoginMediator()
 */
 void LoginMediator::OnRegister()
 {
-	
+    logV("LoginMediator!");
 	acountText = dynamic_cast<TextField*>(getView()->rootNode->getChildByName("acount_text"));
 	passwordText = dynamic_cast<TextField*>(getView()->rootNode->getChildByName("password_text"));
 	ipText = dynamic_cast<TextField*>(getView()->rootNode->getChildByName("ip_text"));
@@ -156,5 +156,5 @@ void LoginMediator::clickLoginBtnHander()
 
 Layer* LoginMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->mainLayer;
+	return VIEW->mainLayer;
 }

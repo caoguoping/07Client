@@ -1,8 +1,9 @@
 #include "DaoJuActionMediator.h"
-
+#include "ViewManager.h"
 DaoJuActionMediator::DaoJuActionMediator(DAO_JU_ACTION data)
 {
 	index = data.index;
+	fromDesk = data.fromDesk;
 	toDeskID = data.toDesk;
 	id = data.id;
 }
@@ -20,7 +21,7 @@ void DaoJuActionMediator::OnRegister()
 {
 	daoJuActionView = (DaoJuActionView*)getView();
 
-	daoJuActionView->initView(index, toDeskID, id);
+	daoJuActionView->initView(index, fromDesk, toDeskID, id);
 }
 
 /**
@@ -55,5 +56,5 @@ void DaoJuActionMediator::onEvent(int i, void* data)
 
 Layer* DaoJuActionMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }

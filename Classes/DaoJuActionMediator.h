@@ -32,15 +32,12 @@ public:
 	*/
 	void onEvent(int i, void* data);
 	Layer* getLayer();
-
-
-private:
+public:
 	DaoJuActionView* daoJuActionView;
-
-	//
-	int index = -1;
-	int toDeskID = -1;
-	int id = -1;
+	WORD								index;	    //道具索引
+	WORD                                fromDesk;   //谁扔的
+	WORD								toDeskID;		//目标玩家椅子ID
+	WORD								id;         //actionId
 };
 
 #endif

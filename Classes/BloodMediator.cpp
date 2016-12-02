@@ -1,5 +1,5 @@
 #include "BloodMediator.h"
-
+#include "ViewManager.h"
 
 BloodMediator::BloodMediator()
 {
@@ -47,6 +47,6 @@ void BloodMediator::onEvent(int i, void* data)
 
 Layer* BloodMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 

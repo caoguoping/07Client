@@ -2,7 +2,7 @@
 #include "PlatFormControl.h"
 #include "SGTools.h"
 #include "DataManager.h"
-
+#include "ViewManager.h"
 MallMediator::MallMediator()
 {
 	log("cocos2d-x mallMediator");
@@ -118,7 +118,7 @@ void MallMediator::onEvent(int i, void* data)
 
 Layer* MallMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 
 void MallMediator::clickActivityBtnHander()

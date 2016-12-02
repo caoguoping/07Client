@@ -1,5 +1,5 @@
 #include "GongPaiActionMediator.h"
-
+#include "ViewManager.h"
 GongPaiActionMediator::GongPaiActionMediator(int fromUserID, int toUserID)
 {
 	fromUser = fromUserID;
@@ -45,5 +45,5 @@ void GongPaiActionMediator::onEvent(int i, void* data)
 
 Layer* GongPaiActionMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }

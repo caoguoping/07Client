@@ -1,5 +1,5 @@
 #include "MessageShowMediator.h"
-
+#include "ViewManager.h"
 MessageShowMediator::MessageShowMediator()
 {
 
@@ -65,5 +65,5 @@ void MessageShowMediator::onEvent(int i, void* data)
 
 Layer* MessageShowMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->TopLayer;
+	return VIEW->TopLayer;
 }

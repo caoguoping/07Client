@@ -44,9 +44,9 @@ public:
 
 public:
 
-	BTN_TOUCH_HANDLE(Button, closeBtn, 11201);
-	BTN_TOUCH_HANDLE(CheckBox, activityBtn, 11202);
-	BTN_TOUCH_HANDLE(CheckBox, zuanShiBtn, 11203);
+	Button  * closeBtn   ;
+	CheckBox* activityBtn;
+	CheckBox* zuanShiBtn ;
 
 	Node* saveNode;
 	Node* mallItem[E_mallMax];

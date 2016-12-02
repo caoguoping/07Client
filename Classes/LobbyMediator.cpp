@@ -1,7 +1,7 @@
 #include "LobbyMediator.h"
 #include "DataManager.h"
 #include "CallCppHelper.h"
-
+#include "ViewManager.h"
 
 LobbyMediator::LobbyMediator()
 {
@@ -20,6 +20,7 @@ LobbyMediator::~LobbyMediator()
 */
 void LobbyMediator::OnRegister()
 {
+    logV("LobbyMediator!");
 	lobbyView = (LobbyView*)getView();
 	lobbyView->initView();
 
@@ -84,6 +85,9 @@ void LobbyMediator::onEvent(int i, void* data)
 				removeView(this);
 			}
 			break;
+		case EventType::BACK_TO_HALL:
+			lobbyView->refreshView();
+			break;
 		default:
 			break;
 
@@ -92,6 +96,6 @@ void LobbyMediator::onEvent(int i, void* data)
 
 Layer* LobbyMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->mainLayer;
+	return VIEW->mainLayer;
 }
 

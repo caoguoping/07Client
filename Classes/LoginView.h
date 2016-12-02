@@ -18,7 +18,6 @@ public:
 
 private:
 	void runLogo();
-// 	BTN_TOUCH_HANDLE(Button, registBtn, 10001);
-// 	BTN_TOUCH_HANDLE(Button, loginBtn, 10002);
+
 };
 #endif

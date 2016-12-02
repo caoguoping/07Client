@@ -6,10 +6,10 @@
       <ObjectData Name="Node" Tag="91" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Image_1" ActionTag="925827848" Alpha="191" Tag="236" IconVisible="False" LeftMargin="-8.9999" RightMargin="-7.0001" TopMargin="-5.5000" BottomMargin="-3.5000" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="6" Scale9Height="5" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_1" ActionTag="925827848" Alpha="191" Tag="236" IconVisible="False" LeftMargin="-8.0000" RightMargin="-8.0000" TopMargin="-4.5000" BottomMargin="-4.5000" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="6" Scale9Height="5" ctype="ImageViewObjectData">
             <Size X="16.0000" Y="9.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-0.9999" Y="1.0000" />
+            <Position />
             <Scale ScaleX="60.0000" ScaleY="60.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -127,7 +127,7 @@
             <FileData Type="Normal" Path="NewJieShuan/title_war_lose.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Sprite_bloodNumFail" ActionTag="-1845839531" Tag="2255" IconVisible="False" LeftMargin="90.0903" RightMargin="-135.0903" TopMargin="-175.7387" BottomMargin="114.7387" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Sprite_bloodNumFail" ActionTag="-1845839531" Tag="2255" IconVisible="False" LeftMargin="90.0881" RightMargin="-135.0881" TopMargin="-175.7362" BottomMargin="114.7362" ctype="SpriteObjectData">
             <Size X="45.0000" Y="61.0000" />
             <AnchorPoint ScaleX="0.5060" ScaleY="0.5186" />
             <Position X="112.8581" Y="146.3708" />

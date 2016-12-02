@@ -13,14 +13,11 @@ PackageView::PackageView()
 	timeLine->gotoFrameAndPlay(0, false);
 	rootNode->runAction(timeLine);
 
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PackageView, closeBtn, 12001, "Button_close", "Image_frame")
-	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, PackageView, Image_close, 12001, "Image_38", NULL)
+
 }
 
 PackageView::~PackageView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PackageView, closeBtn, 12001);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PackageView, Image_close, 12001);
 	rootNode->stopAllActions();
 	delete rootNode;
 	rootNode = NULL;
@@ -37,6 +34,10 @@ void PackageView::initView()
 		UIGet_Text("Text_description", imgFrame, txtDescription)
 		UIGet_Button("Button_use", imgFrame, btnUse)
 
+		UIGet_Button("Button_close", imgFrame, closeBtn)
+		UIGet_ImageView("Image_38", rootNode, Image_close)
+		BTN_EVENT(closeBtn, 12001)
+		BTN_EVENT(Image_close, 12001)
 
 		showListItems();
 	showItemInfo(iOldClicked);

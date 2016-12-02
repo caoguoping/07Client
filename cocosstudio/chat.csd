@@ -6,16 +6,15 @@
       <ObjectData Name="Node" Tag="1466" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Sprite_37" ActionTag="402525428" Tag="2099" IconVisible="False" LeftMargin="-116.5000" RightMargin="-116.5000" TopMargin="-121.0000" BottomMargin="-121.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Image_10" ActionTag="-177718746" Tag="269" IconVisible="False" LeftMargin="-116.5000" RightMargin="-116.5000" TopMargin="-119.0000" BottomMargin="-123.0000" TouchEnable="True" LeftEage="76" RightEage="76" TopEage="79" BottomEage="79" Scale9OriginX="76" Scale9OriginY="79" Scale9Width="81" Scale9Height="84" ctype="ImageViewObjectData">
             <Size X="233.0000" Y="242.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position />
+            <Position Y="-2.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="NewPlay/chat_bg_1.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="ScrollView_1" ActionTag="1550197997" Tag="2100" IconVisible="False" LeftMargin="-98.2439" RightMargin="-101.7561" TopMargin="-98.6659" BottomMargin="-101.3341" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
             <Size X="200.0000" Y="200.0000" />

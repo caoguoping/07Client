@@ -22,9 +22,9 @@ public:
 	int canGetGiftToday = 0;
 
 private:
-	BTN_TOUCH_HANDLE(Button, getGiftBtn, 10901);
-	BTN_TOUCH_HANDLE(Button, closeBtn, 10902);
-	BTN_TOUCH_HANDLE(ImageView, Image_38, 10902);
+	Button   * getGiftBtn;
+	Button   * closeBtn  ;
+	ImageView* Image_38  ;
 
 	ImageView*  imgFrame;
 	ImageView*  imgGift[7];
@@ -64,9 +64,6 @@ private:
 	ImageView* day7_1;
 	ImageView* day7_2;
 	ImageView* day7_3;
-
-	//领取奖励
-	Button* getGiftBtn;
 
 	//明日再来领取
 	ImageView* noGiftImage1;

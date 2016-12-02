@@ -23,8 +23,8 @@ public:
 
 
 private:
-	BTN_TOUCH_HANDLE(Button, closeBtn, 12001);
-	BTN_TOUCH_HANDLE(ImageView, Image_close, 12001);
+	Button   * closeBtn   ;
+	ImageView* Image_close;
 
 	ImageView*  imgFrame;
 	ListView*  lstItem;

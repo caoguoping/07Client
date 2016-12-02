@@ -64,7 +64,7 @@ void NetDataCommand::executeGame(NetData netData)
 #endif
 
 	logV("cocos2d-x GameServer main : %d, sub : %d   size %d", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
-	logF("cocos2d-x GameServer main : %d, sub : %d   size %d", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
+	//logF("cocos2d-x GameServer main : %d, sub : %d   size %d", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
 
 
 	int wKindID = ((PlayerInDeskModel *)getModel(PlayerInDeskModel::NAME))->wKindID;
@@ -159,11 +159,11 @@ void NetDataCommand::executeGame(NetData netData)
 	{
 		switch (netData.command.wSubCmdID)
 		{
-		case 101://4人好友场主建者退出桌子
+		case 101:
 			getTableInfo(netData);
 			break;
 
-		case 102:
+		case 102: //4人好友场主建者退出桌子
 			blueSkyDispatchEvent(EventType::FRIEND_FIELD_QUIT);
 			break;
 		}
@@ -287,7 +287,7 @@ void NetDataCommand::executeLogin(NetData netData)
 #endif
 
 	logV("LoginServer main: %d,  sub: %d   size %d \n", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
-	logF("LoginServer main: %d,  sub: %d   size %d \n", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
+	//logF("LoginServer main: %d,  sub: %d   size %d \n", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
 
 	if (netData.command.wMainCmdID == 1)
 	{
@@ -366,7 +366,11 @@ void NetDataCommand::executeLogin(NetData netData)
 		case 502://购买商城物品
 			getBuyItemsInfo(netData);
 			break;
-			
+
+		case 510:  //被砸的数目
+			getBeiZaInfo(netData);
+			break;
+
 			//钻石变动
 		case 1001:
 			getZuanShiInfo(netData);
@@ -762,6 +766,15 @@ void NetDataCommand::getBuyItemsInfo(NetData netData)
 
 }
 
+void NetDataCommand::getBeiZaInfo(NetData netData)
+{
+	netData.readDWORD();
+	DATA->myBaseData.wBeiZaNum[0] = netData.readWORD();
+	DATA->myBaseData.wBeiZaNum[1] = netData.readWORD();
+	DATA->myBaseData.wBeiZaNum[2] = netData.readWORD();
+	DATA->myBaseData.wBeiZaNum[3] = netData.readWORD();
+}
+
 //增加金币
 void NetDataCommand::insureSuccess(NetData netData)
 {
@@ -936,9 +949,10 @@ void NetDataCommand::getInDeskPlayerInfo(NetData netData)
 	result->cbGender = netData.readByte();
 	result->cbMemberOrder = netData.readByte();
 	result->cbMasterOrder = netData.readByte();
+	result->cbUserStatus = netData.readByte();
 	result->wTableID = netData.readWORD();
 	result->wChairID = netData.readWORD();
-	result->cbUserStatus = netData.readByte();
+
 	result->lScore = netData.readUInt64();
 	result->lGrade = netData.readUInt64();
 	result->lInsure = netData.readUInt64();
@@ -950,8 +964,10 @@ void NetDataCommand::getInDeskPlayerInfo(NetData netData)
 	result->dwUserMedal = netData.readDWORD();
 	result->dwExperience = netData.readDWORD();
 	result->lLoveLiness = netData.readDWORD();
+
 	result->nick1 = netData.readWORD();
 	result->nick2 = netData.readWORD();
+
 	result->szNickName = netData.readString(result->nick1);
 	blueSkyDispatchEvent(EventType::OTHER_PLAYER_ON_DESK, result);
 }
@@ -969,13 +985,13 @@ void NetDataCommand::getSendPokerInfo(NetData netData)
 	result->bOurSeries = netData.readByte();
 	result->bOtherSeries = netData.readByte();
 	result->bCurrentSeries = netData.readByte();
+	result->wServerType = netData.readWORD();
 	for (int i = 0; i < 4; i++)
 	{
 		result->m_iGameResult[i] = netData.readInt32();
 	}
 	result->RoomType = netData.readDWORD();
-	result->wServerType = netData.readWORD();
-	result->bLiangPai = netData.readInt8();
+	result->bLiangPai = netData.readByte();
 	result->bLiangCard = netData.readWORD();
 
 	DATA->sendPokerData = result;
@@ -1042,11 +1058,13 @@ void NetDataCommand::gameOver(NetData netData)
 	{
 		gameEnd->bCardData[i] = netData.readByte();
 	}
-	gameEnd->bOurSeries = netData.readByte();
+	
+    gameEnd->bOurSeries = netData.readByte();
 	gameEnd->bOtherSeries = netData.readByte();
 	gameEnd->bCurrentSeries = netData.readByte();
-	netData.readByte();
-	for (int i = 0; i < 4; i++)
+	gameEnd->bIsBlood = netData.readByte(); //new add
+	
+    for (int i = 0; i < 4; i++)
 	{
 		gameEnd->m_iGameResult[i] = netData.readInt32();
 	}
@@ -1054,7 +1072,7 @@ void NetDataCommand::gameOver(NetData netData)
 	{
 		gameEnd->Rank[i] = netData.readInt32();
 	}
-	gameEnd->bIsBlood = netData.readByte(); //new add
+
 
 	logV("bisBlood %d", gameEnd->bIsBlood);
 	blueSkyDispatchEvent(EventType::GAME_OVER, gameEnd);
@@ -1502,7 +1520,23 @@ void NetDataCommand::getFriendFieldInvite(NetData netData)
 
 void NetDataCommand::getBroadCastDaoju(NetData netData)
 {
+	DAO_JU_ACTION*  broadcasts = new DAO_JU_ACTION();
 
+	broadcasts->index = netData.readWORD();
+	WORD svrFrom = netData.readWORD();
+	WORD svrTo = netData.readWORD();
+	if (svrFrom < 0 || svrFrom > 3)
+	{
+		return;
+	}
+	if (svrTo < 0 || svrTo > 3)
+	{
+		return;
+	}
+
+	broadcasts->fromDesk = DATAPlayerIndesk->chair[svrFrom];
+	broadcasts->toDesk =DATAPlayerIndesk->chair[svrTo];
+	blueSkyDispatchEvent(EventType::SHOW_DAO_JU_ACTION, broadcasts);
 }
 
 void NetDataCommand::getTableInfo(NetData netData)

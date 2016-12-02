@@ -1,4 +1,5 @@
 #include "WarningView.h"
+#include "SGTools.h"
 
 WarningView::WarningView(AlertVO *alertVO)
 {
@@ -9,19 +10,28 @@ WarningView::WarningView(AlertVO *alertVO)
 	enterEventId = alertVO->enterEventId;
 	cancleEventId = alertVO->cancleEventId;
 	Text_1 = dynamic_cast<Text*>(rootNode->getChildByName("Text_1"));
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, WarningView, getBtn_0, 11401, "getBtn_0", NULL);
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, WarningView, cancleBtn, 11402, "cancleBtn", NULL);
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, WarningView, getBtn, 11403, "getBtn", NULL);
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, WarningView, closeBtn, 11404, "closeBtn", NULL);
-	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, WarningView, Image_38, 11404, "Image_38", NULL);
+
+		UIGet_Button("getBtn_0", rootNode, getBtn_0)
+		UIGet_Button("cancleBtn", rootNode, cancleBtn)
+		UIGet_Button("getBtn", rootNode, getBtn)
+		UIGet_Button("closeBtn", rootNode, closeBtn)
+		UIGet_ImageView("Image_38", rootNode, Image_38)
+
+		BTN_EVENT(getBtn_0, 11401)
+		BTN_EVENT(cancleBtn, 11402)
+		BTN_EVENT(getBtn, 11403)
+		BTN_EVENT(closeBtn, 11404)
+		BTN_EVENT(Image_38, 11404)
+
+
 	if (alertVO->type == 0)
 	{
-		_cancleBtn->setVisible(false);
-		_getBtn->setVisible(false);
+		cancleBtn->setVisible(false);
+		getBtn->setVisible(false);
 	}
 	else
 	{
-		_getBtn_0->setVisible(false);
+		getBtn_0->setVisible(false);
 	}
 	string s = UTF8::getInstance()->getString(alertVO->msgParentName, alertVO->msgName);
 	Text_1->setString(s);
@@ -31,12 +41,6 @@ WarningView::WarningView(AlertVO *alertVO)
 
 WarningView::~WarningView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(WarningView, getBtn_0, enterEventId);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(WarningView, cancleBtn, cancleEventId);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(WarningView, getBtn, enterEventId);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(WarningView, closeBtn, cancleEventId);
-
-	BTN_REMOVE_TOUCH_EVENTLISTENER(WarningView, Image_38, 11404);
 	delete rootNode;
 	rootNode = NULL;
 }

@@ -1,29 +1,31 @@
 #include "CreateRoleView.h"
+#include "SGTools.h"
 CreateRoleView::CreateRoleView()
 {
 	rootNode = CSLoader::createNode("createRole.csb");
 	addChild(rootNode);
-//	rootNode->setScale(0.8f, 0.8f);
-// 	rootNode->runAction(Sequence::create(
-// 		ScaleTo::create(0.2f, 1.03f),
-// 		ScaleTo::create(0.15f, 1.0f),
-// 		nullptr));
 
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, CreateRoleView, character1Btn, 10022, "clickBtn", "character1");
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, CreateRoleView, character2Btn, 10023, "clickBtn", "character2");
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, CreateRoleView, character3Btn, 10024, "clickBtn", "character3");
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, CreateRoleView, character4Btn, 10025, "clickBtn", "character4");
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, CreateRoleView, autoBtn, 10026, "autoBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, CreateRoleView, createBtn, 10027, "createBtn", NULL)
+	Node  *node1, *node2, *node3, *node4;
+	UIGet_Node("character1", rootNode, node1)
+	UIGet_Node("character2", rootNode, node2)
+	UIGet_Node("character3", rootNode, node3)
+	UIGet_Node("character4", rootNode, node4)
+	UIGet_Button("clickBtn", node1, character1Btn)
+	UIGet_Button("clickBtn", node2, character2Btn)
+	UIGet_Button("clickBtn", node3, character3Btn)
+	UIGet_Button("clickBtn", node4, character4Btn)
+	UIGet_Button("autoBtn", rootNode, autoBtn)
+	UIGet_Button("createBtn", rootNode, createBtn)
+
+	BTN_EVENT(character1Btn, 10022)
+	BTN_EVENT(character2Btn, 10023)
+	BTN_EVENT(character3Btn, 10024)
+	BTN_EVENT(character4Btn, 10025)
+	BTN_EVENT(autoBtn       ,  10026)
+	BTN_EVENT(createBtn    ,   10027)
 }
 CreateRoleView::~CreateRoleView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(CreateRoleView, character1Btn, 10022);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(CreateRoleView, character2Btn, 10023);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(CreateRoleView, character3Btn, 10024);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(CreateRoleView, character4Btn, 10025);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(CreateRoleView, autoBtn, 10026);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(CreateRoleView, createBtn, 10027);
 	delete rootNode;
 	rootNode = NULL;
 }

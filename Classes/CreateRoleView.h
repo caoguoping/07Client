@@ -17,12 +17,12 @@ public:
 	void showDaiJiFace(Node* node, int index);
 
 private:
-	BTN_TOUCH_HANDLE(Button, character1Btn, 10022);
-	BTN_TOUCH_HANDLE(Button, character2Btn, 10023);
-	BTN_TOUCH_HANDLE(Button, character3Btn, 10024);
-	BTN_TOUCH_HANDLE(Button, character4Btn, 10025);
-	BTN_TOUCH_HANDLE(Button, autoBtn, 10026);
-	BTN_TOUCH_HANDLE(Button, createBtn, 10027);
+	Button* character1Btn;
+	Button* character2Btn;
+	Button* character3Btn;
+	Button* character4Btn;
+	Button* autoBtn      ;
+	Button* createBtn    ;
 
 	cocostudio::Armature* Action1;
 	cocostudio::Armature* Action2;

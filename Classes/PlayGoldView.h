@@ -17,8 +17,8 @@ public:
 
 
 public:
-	BTN_TOUCH_HANDLE(Button, closeBtn, 12600);
-	BTN_TOUCH_HANDLE(ImageView, imgBg, 12600);
+	Button   * closeBtn;
+	ImageView* imgBg   ;
 	ImageView*  imgFrame;
 	Button*  btn1;
 	Button*  btn2;

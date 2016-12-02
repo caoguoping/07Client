@@ -16,7 +16,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/tips_bg.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="msgText" ActionTag="2116262342" Tag="72" IconVisible="False" LeftMargin="-251.5000" RightMargin="-251.5000" TopMargin="-16.0000" BottomMargin="-16.0000" IsCustomSize="True" FontSize="24" LabelText="谢谢收看，明天再见！" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="msgText" ActionTag="2116262342" Tag="72" IconVisible="False" LeftMargin="-251.5000" RightMargin="-251.5000" TopMargin="-16.0000" BottomMargin="-16.0000" IsCustomSize="True" FontSize="24" LabelText="" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="503.0000" Y="32.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />

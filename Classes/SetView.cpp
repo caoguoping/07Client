@@ -16,21 +16,39 @@ SetView::SetView()
 	UIClick(chkMusic, SetView::clickChkMusic)
 	UIClick(chkEffect, SetView::clickChkEffect)
 
+    Button  *closeBtn,  *reLoginBtn,  *helpBtn;
+    ImageView*   imgClose;
+    UIGet_Button("closeBtn", rootNode, closeBtn)
+    UIGet_Button("reLoginBtn", rootNode, reLoginBtn)
+    UIGet_Button("helpBtn", rootNode, helpBtn)
+    UIGet_ImageView("Image_38", rootNode, imgClose)
+    
+    closeBtn->addClickEventListener([this](Ref*  pSender)
+                                    {
+                                        blueSkyDispatchEvent(14001);
+                                    });
 
-	BTN_ADD_TOUCH_EVENTLISTENER(Button,SetView, closeBtn, 14001, "closeBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, SetView, reLoginBtn, 14005, "reLoginBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, SetView, helpBtn, 14006, "helpBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, SetView, Image_38, 14001, "Image_38", NULL)
+    reLoginBtn->addClickEventListener([this](Ref*  pSender)
+                                    {
+                                        blueSkyDispatchEvent(14005);
+                                    });
+    
+
+    helpBtn->addClickEventListener([this](Ref*  pSender)
+                                    {
+                                        blueSkyDispatchEvent(14006);
+                                    });
+    
+
+    imgClose->addClickEventListener([this](Ref*  pSender)
+                                    {
+                                        blueSkyDispatchEvent(14001);
+                                    });
+    
 }
 
 SetView::~SetView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(SetView, closeBtn, 14001);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(SetView, reLoginBtn, 14005);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(SetView, helpBtn, 14006);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(SetView, Image_38, 14001);
-
-
 	delete rootNode;
 	rootNode = NULL;
 }

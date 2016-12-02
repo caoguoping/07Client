@@ -18,7 +18,6 @@ BloodView::BloodView()
 
 BloodView::~BloodView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(BloodView, closeBtn, 12800);
 	rootNode->stopAllActions();
 	delete rootNode;
 	rootNode = NULL;
@@ -34,13 +33,21 @@ void BloodView::initView()
 	timeLine->gotoFrameAndPlay(0, false);
 	rootNode->runAction(timeLine);
 
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, BloodView, closeBtn, 12800, "Button_close", "Image_frame")
-	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, BloodView, imgBg, 12800, "Image_bg", NULL)
+		Button *closeBtn;
+	ImageView*  imgClose;
+	UIGet_ImageView("Image_frame", rootNode, imgClose)
 
 		UIGet_ImageView("Image_frame", rootNode, imgFrame)
 		UIGet_Button("Button_1", imgFrame, btn1)
 		UIGet_Button("Button_2", imgFrame, btn2)
 		UIGet_Button("Button_3", imgFrame, btn3)
+
+		UIGet_ImageView("Image_bg", rootNode, imgClose)
+		UIGet_Button("Button_close", imgFrame, closeBtn)
+		BTN_EVENT(closeBtn, 12800)
+		BTN_EVENT(imgClose, 12800)
+
+
 
 		btn1->setTag(0);
 	btn2->setTag(1);

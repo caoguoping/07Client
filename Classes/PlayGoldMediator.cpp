@@ -1,5 +1,5 @@
 #include "PlayGoldMediator.h"
-
+#include "ViewManager.h"
 
 PlayGoldMediator::PlayGoldMediator()
 {
@@ -49,6 +49,6 @@ void PlayGoldMediator::onEvent(int i, void* data)
 
 Layer* PlayGoldMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 

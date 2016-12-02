@@ -13,13 +13,13 @@ class  UILayerService : public BlueSkyService
 public:
 	UILayerService();
 	~UILayerService();
-	Layer *mainLayer;
-	Layer* outPokerLayer;
-	Layer* myPokerLayer;
-	Layer *menuLayer;
-	Layer *uiLayer;
-	Layer *maskLayer;
-	Layer *TopLayer;
+// 	Layer *mainLayer;
+// 	Layer* outPokerLayer;
+// 	Layer* myPokerLayer;
+// 	Layer *menuLayer;
+// 	Layer *uiLayer;
+// 	Layer *maskLayer;
+// 	Layer *TopLayer;
 	// ÷≈∆≤„°¢≥ˆ≈∆≤„
 
 
@@ -29,7 +29,5 @@ public:
 private:
 	void init();
 };
-
-#define LayerManager ((UILayerService*)getService(UILayerService::NAME))
 
 #endif

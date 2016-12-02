@@ -84,18 +84,7 @@ public:
 	void setTimes(float dt);
 
 
-
-private:
-	BTN_TOUCH_HANDLE(Button,closeBtn, 15001);
-	BTN_TOUCH_HANDLE(CheckBox, lotteryBtn, 15002);
-	BTN_TOUCH_HANDLE(CheckBox, rechargeBtn, 15003);
-	BTN_TOUCH_HANDLE(CheckBox, myCupBtn, 15010);
-	//BTN_TOUCH_HANDLE(Button, spinBtn, 15011);
-
-
-	BTN_TOUCH_HANDLE(Button, getLotteryBtn, 15004);
-
-	BTN_TOUCH_HANDLE(ImageView, Button_1, 99999);
+public:
 
 	Node* mallItem[E_mallMax];
 
@@ -133,6 +122,10 @@ private:
 
 	void buyItem(float dt);
 
+	Button    *closeBtn;
+	CheckBox  *lotteryBtn;
+	CheckBox  *rechargeBtn;
+	CheckBox  *myCupBtn;
 };
 
 #endif

@@ -18,7 +18,7 @@ public:
 
 public:
 	ImageView* image1;
-	Rect touchArea;
+    cocos2d::Rect touchArea;
 
 	//
 	void showNode(float dt);

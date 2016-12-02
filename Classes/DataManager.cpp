@@ -23,6 +23,10 @@ void DataManager::initData()
 	wBestRank = 12;
 	bMatchOver = 0;
 	bGameCateSub = 0;
+	myBaseData.wBeiZaNum[0] = 0;
+	myBaseData.wBeiZaNum[1] = 0;
+	myBaseData.wBeiZaNum[2] = 0;
+	myBaseData.wBeiZaNum[3] = 0;
 	
 }
 

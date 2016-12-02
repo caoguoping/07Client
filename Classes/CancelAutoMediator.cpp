@@ -1,5 +1,5 @@
 #include "CancelAutoMediator.h"
-
+#include "ViewManager.h"
 CancelAutoMediator::CancelAutoMediator()
 {
 
@@ -45,5 +45,5 @@ void CancelAutoMediator::onEvent(int i, void* data)
 
 Layer* CancelAutoMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }

@@ -37,82 +37,13 @@
 #include "EntertainmentView.h"
 #include "BloodMediator.h"
 #include "BloodView.h"
+#include "MusicService.h"
 
 #define FOLD_TIME 0.3
 
 LobbyView::LobbyView()
 {
-	VIEW->nowViewTag = ViewManager::eViewMain;
-	rootNode = CSLoader::createNode("NewLobby.csb");
-	addChild(rootNode);
 
-	UIGet_Button("Button_task", rootNode, mBtnTask)
-		UIClick(mBtnTask, LobbyView::clickBtnTask)
-
-		UIGet_Button("signatureBtn", rootNode, mBtnSignature)
-		UIClick(mBtnSignature, LobbyView::clickBtnSignature)
-
-		UIGet_Button("setBtn", rootNode, mBtnSetting)
-		UIClick(mBtnSetting, LobbyView::clickBtnSetting)
-
-
-		UIGet_ScrollView("ScrollView_button", rootNode, scrBtn)
-
-		UIGet_Button("Button_playGold", scrBtn, mBtnPlayGold)
-		UIClick(mBtnPlayGold, LobbyView::clickBtnPlayGold)
-
-		UIGet_Button("Button_entertainment", scrBtn, mBtnEntertainment)
-		UIClick(mBtnEntertainment, LobbyView::clickBtnEntertainment)
-
-		UIGet_Button("Button_match", scrBtn, mBtnMatch)
-		UIClick(mBtnMatch, LobbyView::clickBtnMatch)
-
-		UIGet_Button("Button_blood", scrBtn, mBtnBlood)
-		UIClick(mBtnBlood, LobbyView::clickBtnBlood)
-
-
-
-		UIGet_Button("Button_fastStart", rootNode, mBtnFast)
-		UIClick(mBtnFast, LobbyView::clickBtnFast)
-
-		UIGet_Button("firstPunchBtn", rootNode, mBtnCharge)
-		UIClick(mBtnCharge, LobbyView::clickBtnCharge)
-
-		UIGet_Button("shopBtn", rootNode, mBtnShop)
-		UIClick(mBtnShop, LobbyView::clickBtnShop)
-
-		UIGet_Button("activityBtn", rootNode, mBtnActivity)
-		UIClick(mBtnActivity, LobbyView::clickBtnActivity)
-
-		UIGet_Button("packageBtn", rootNode, mBtnPackage)
-		UIClick(mBtnPackage, LobbyView::clickBtnPackage)
-
-		UIGet_Button("Button_friend", rootNode, mBtnFriend)
-		UIClick(mBtnFriend, LobbyView::clickBtnFriend)
-		UIGet_Sprite("Sprite_tips", mBtnFriend, spFriendTip)
-		if (DATA->vFriendPush.size() > 0)
-		{
-			spFriendTip->setVisible(true);
-		} 
-		else
-		{
-			spFriendTip->setVisible(false);
-		}
-
-		UIGet_Button("Button_head", rootNode, mBtnHead)
-		UIClick(mBtnHead, LobbyView::clickBtnHead)
-
-		UIGet_Node("headNode", rootNode, headNode)
-		UIGet_Button("Button_gold", headNode, mBtnAddWealth)
-		UIClick(mBtnAddWealth, LobbyView::clickBtnAddWealth)
-
-		UIGet_Button("Button_diamond", headNode, mBtnAddDiamond)
-		UIClick(mBtnAddDiamond, LobbyView::clickBtnAddDiamond)
-
-		UIGet_Text("myName_0_3", headNode, txtPlayerName)
-		UIGet_Text("Text_gold", headNode, txtGold)
-		UIGet_Text("Text_diamond", headNode, txtDiamond)
-		UIGet_Text("Text_id", headNode, txtId)
 }
 
 LobbyView::~LobbyView()
@@ -125,16 +56,6 @@ LobbyView::~LobbyView()
 void LobbyView::clickBtnFold(Ref* pSender)  //折叠按钮
 {
 	PLayEffect(EFFECT_BTN);
-// 	FiniteTimeAction*  seq = Sequence::create(
-// 		ScaleTo::create(FOLD_TIME, 0.1f, 1.0f), 
-// 		Hide::create(),
-// 		NULL
-// 		);
-// 	FiniteTimeAction*  seq1 = Sequence::create(
-// 		ScaleTo::create(FOLD_TIME, 0.1f, 1.0f),
-// 		Hide::create(),
-// 		NULL
-// 		);
 	FiniteTimeAction*  seq = Sequence::create(
 		MoveBy::create(FOLD_TIME, Vec2(-250, 0)),
 		Hide::create(),
@@ -155,18 +76,7 @@ void LobbyView::clickBtnFold(Ref* pSender)  //折叠按钮
 void LobbyView::clickBtnUnfold(Ref* pSender)  //点击展开按钮
 {
 	PLayEffect(EFFECT_BTN);
-// 	FiniteTimeAction*  seq = Sequence::create(
-// 		ScaleTo::create(0, 0.1f, 1.0f),
-// 		Show::create(),
-// 		ScaleTo::create(FOLD_TIME, 1.0f, 1.0f),
-// 		NULL
-// 		);
-// 	FiniteTimeAction*  seq1 = Sequence::create(
-// 		ScaleTo::create(0, 0.1f, 1.0f),
-// 		Show::create(),
-// 		ScaleTo::create(FOLD_TIME, 1.0f, 1.0f),
-// 		NULL
-// 		);
+
 	FiniteTimeAction*  seq = Sequence::create(
 		MoveBy::create(0, Vec2(-250, 0)),
 		Show::create(),
@@ -187,11 +97,66 @@ void LobbyView::clickBtnUnfold(Ref* pSender)  //点击展开按钮
 
 void LobbyView::initView()
 {
-// 	if (MusicService::getInstance()->isMusicOn)
-// 	{
-// 		SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
-// 	}
+	VIEW->nowViewTag = ViewManager::eViewMain;
+	rootNode = CSLoader::createNode("NewLobby.csb");
+	addChild(rootNode);
 
+	UIGet_Button("Button_task", rootNode, mBtnTask)
+		UIClick(mBtnTask, LobbyView::clickBtnTask)
+
+		UIGet_Button("signatureBtn", rootNode, mBtnSignature)
+		UIClick(mBtnSignature, LobbyView::clickBtnSignature)
+
+		UIGet_Button("setBtn", rootNode, mBtnSetting)
+		UIClick(mBtnSetting, LobbyView::clickBtnSetting)
+
+		UIGet_ScrollView("ScrollView_button", rootNode, scrBtn)
+
+		UIGet_Button("Button_playGold", scrBtn, mBtnPlayGold)
+		UIClick(mBtnPlayGold, LobbyView::clickBtnPlayGold)
+
+		UIGet_Button("Button_entertainment", scrBtn, mBtnEntertainment)
+		UIClick(mBtnEntertainment, LobbyView::clickBtnEntertainment)
+
+		UIGet_Button("Button_match", scrBtn, mBtnMatch)
+		UIClick(mBtnMatch, LobbyView::clickBtnMatch)
+
+		UIGet_Button("Button_blood", scrBtn, mBtnBlood)
+		UIClick(mBtnBlood, LobbyView::clickBtnBlood)
+		
+		UIGet_Button("Button_fastStart", rootNode, mBtnFast)
+		UIClick(mBtnFast, LobbyView::clickBtnFast)
+
+		UIGet_Button("firstPunchBtn", rootNode, mBtnCharge)
+		UIClick(mBtnCharge, LobbyView::clickBtnCharge)
+
+		UIGet_Button("shopBtn", rootNode, mBtnShop)
+		UIClick(mBtnShop, LobbyView::clickBtnShop)
+
+		UIGet_Button("activityBtn", rootNode, mBtnActivity)
+		UIClick(mBtnActivity, LobbyView::clickBtnActivity)
+
+		UIGet_Button("packageBtn", rootNode, mBtnPackage)
+		UIClick(mBtnPackage, LobbyView::clickBtnPackage)
+
+		UIGet_Button("Button_friend", rootNode, mBtnFriend)
+		UIClick(mBtnFriend, LobbyView::clickBtnFriend)
+		UIGet_Sprite("Sprite_tips", mBtnFriend, spFriendTip)
+
+	UIGet_Button("Button_head", rootNode, mBtnHead)
+		UIClick(mBtnHead, LobbyView::clickBtnHead)
+
+		UIGet_Node("headNode", rootNode, headNode)
+		UIGet_Button("Button_gold", headNode, mBtnAddWealth)
+		UIClick(mBtnAddWealth, LobbyView::clickBtnAddWealth)
+
+		UIGet_Button("Button_diamond", headNode, mBtnAddDiamond)
+		UIClick(mBtnAddDiamond, LobbyView::clickBtnAddDiamond)
+
+		UIGet_Text("myName_0_3", headNode, txtPlayerName)
+		UIGet_Text("Text_gold", headNode, txtGold)
+		UIGet_Text("Text_diamond", headNode, txtDiamond)
+		UIGet_Text("Text_id", headNode, txtId)
 	currentAd = 0;
 	//广告页
 	UIGet_PageView("PageView_ad", rootNode, pgAd)
@@ -200,7 +165,6 @@ void LobbyView::initView()
 	UIGet_Button("Button_unFold", rootNode, btnUnfold)
 	UIClick(btnFold, LobbyView::clickBtnFold)
 	UIClick(btnUnfold, LobbyView::clickBtnUnfold)
-
 
 		UIGet_Button("Button_10", imgPageBg, btnAdIndicator[E_choujiang])
 		UIGet_Button("Button_10_0", imgPageBg, btnAdIndicator[E_recharge])
@@ -227,8 +191,20 @@ void LobbyView::initView()
 		rootNode->runAction(fastBtnAction);
 		fastBtnAction->gotoFrameAndPlay(0, true);
 
+		refreshView();
+}
 
-		
+void LobbyView::refreshView()
+{
+	PLayMUSIC(BG_MUSIC)
+	if (DATA->vFriendPush.size() > 0)
+	{
+		spFriendTip->setVisible(true);
+	}
+	else
+	{
+		spFriendTip->setVisible(false);
+	}
 }
 
 UIEnableClick(mBtnTask, LobbyView, enableBtnTask)

@@ -62,6 +62,7 @@ private:
 	void getGamblingInfo(NetData netData);//抽奖信息
 	void getItemsInfo(NetData netData);//背包道具
 	void getBuyItemsInfo(NetData netData);//购买商城物品
+	void getBeiZaInfo(NetData netData);   //被砸的数目
 	void getZuanShiInfo(NetData netData);//钻石变动
 	void useItem(NetData netData);//使用道具
 	void useJiPaiQi(NetData netData);//使用记牌器

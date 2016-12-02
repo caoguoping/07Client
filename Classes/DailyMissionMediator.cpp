@@ -1,6 +1,6 @@
 #include "DailyMissionMediator.h"
 #include "DataManager.h"
-
+#include "ViewManager.h"
 DailyMissionMediator::DailyMissionMediator()
 {
 
@@ -66,7 +66,7 @@ void DailyMissionMediator::onEvent(int i, void* data)
 
 Layer* DailyMissionMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 
 void DailyMissionMediator::clickCloseBtnHander()

@@ -32,11 +32,13 @@ void MatchView::initView()
 	timeLine->gotoFrameAndPlay(0, false);
 	rootNode->runAction(timeLine);
 
-	//外面的关闭
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, MatchView, closeBtn, 16000, "Button_close", "Image_frame");   
-	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, MatchView, Image_bg, 16000, "Image_bg", NULL);
-
 	UIGet_ImageView("Image_frame", rootNode, imgFrame)
+		UIGet_Button("Button_close", imgFrame, closeBtn)
+		UIGet_ImageView("Image_bg", rootNode, imgBg)
+		BTN_EVENT(closeBtn, 16000)
+		BTN_EVENT(imgBg, 16000)
+
+
 	ScrollView* scrow;
 	UIGet_ScrollView("ScrollView_1", imgFrame, scrow)
 		ImageView*  img[3];

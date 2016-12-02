@@ -22,11 +22,6 @@ public:
 	void clickChkMusic(Ref*  pSender);
 	void clickChkEffect(Ref*  pSender);
 
-private:
-	BTN_TOUCH_HANDLE(Button,closeBtn, 14001);
-	BTN_TOUCH_HANDLE(Button, reLoginBtn, 14005);
-	BTN_TOUCH_HANDLE(Button, helpBtn, 14006);
-	BTN_TOUCH_HANDLE(ImageView, Image_38, 14001);
 };
 
 #endif

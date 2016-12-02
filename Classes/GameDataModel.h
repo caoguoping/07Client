@@ -63,8 +63,8 @@ enum PokerHuaSe
 };
 
 //卡牌
-struct PokerVO
-{
+    struct PokerVO
+    {
 	int pokerNum = -1;							//牌值
 	int pokerNum2 = -1;							//牌值（不计算是否是主牌）
 	int pokerHuaSe = -1;						//花色
@@ -77,7 +77,7 @@ struct PokerVO
 	bool isRemoveView = false;					//是否被弃用
 	bool isGongPai = false;						//是否是贡牌
 	//触摸选区的左下角坐标，高度及宽度
-	Rect  rect;
+    cocos2d::Rect  rect;		
 
 };
 

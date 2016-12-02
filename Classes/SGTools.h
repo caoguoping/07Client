@@ -91,6 +91,11 @@ using namespace std;
 
 #define DispatchEvent(type, data)   BlueSkyRegister::getInstance()->blueSkyDispatchEvent(type, data);
 
+#define BTN_EVENT(itemName, msgId)  itemName->addClickEventListener([this](Ref*  pSender) \
+                                { \
+                                    blueSkyDispatchEvent(msgId); \
+                                });
+
 
 #define SYSMSG_TAGBEGIN   70000    //sysMsg tag 开始
 #define SYSMSG_TAGBEGIN_TOUMING 71000
@@ -126,17 +131,8 @@ public:
 
 	//写文件
 	static void logFile(const char * lpFormat, ...);
-    static bool saveFile(const char* pContent,string pFileName);
-	static bool myWriteFile(const char* pcontent);
-	static bool createFileLog(char* pcontent, unsigned short mainCmd = 0, unsigned short subCmd = 0);
     
 };
-
-
-#define  MYFileInfo(mainCmd, subCmd) // 	sprintf(tempTemp, "%s %s:%d  main %d sub %d\n", __FILE__, __FUNCTION__, __LINE__, mainCmd, subCmd);
-#define  MyWriteFile  //Tools::myWriteFile;
-
-
 
 
 #define PRINT_LOG 1

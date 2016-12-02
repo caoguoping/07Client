@@ -38,6 +38,7 @@ void FriendMediator::onEvent(int i, void* data)
 	case EventType::BACK_TO_HALL:
 	case 12301:
 		removeView(this);
+		blueSkyDispatchEvent(BACK_TO_HALL);
 		break;
 
 	case FRIEND_LIST:
@@ -76,6 +77,6 @@ void FriendMediator::onEvent(int i, void* data)
 
 Layer* FriendMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 

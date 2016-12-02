@@ -29,31 +29,33 @@ PlayPokerView::PlayPokerView()
 		imgTouyou[i] = NULL;
 	}
 
+	Node  *node1, *node2, *node3, *node4;
+	UIGet_Node("me_character"   ,rootNode, node1)
+	UIGet_Node("left_character" ,rootNode, node2)
+	UIGet_Node("top_character"  ,rootNode, node3)
+	UIGet_Node("right_character",rootNode, node4)
 
+	UIGet_Button("fanhui_btn", rootNode, fanhui_btn)
+	UIGet_Button("clickBtn", node1, clickMeBtn)
+	UIGet_Button("clickBtn", node2, clickLeftBtn)
+	UIGet_Button("clickBtn", node3, clickTopBtn)
+	UIGet_Button("clickBtn", node4, clickRightBtn)
 
-
-	//logV("imgHuaPai local zorder %d, globelZorder %d", imgHuaPai->getLocalZOrder(), imgHuaPai->getGlobalZOrder());
-
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, fanhui_btn, 10601, "fanhui_btn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, clickMeBtn, 10618, "clickBtn", "me_character");
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, clickLeftBtn, 10619, "clickBtn", "left_character");
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, clickTopBtn, 10620, "clickBtn", "top_character");
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayPokerView, clickRightBtn, 10621, "clickBtn", "right_character");
+	BTN_EVENT(fanhui_btn, 10601)
+	BTN_EVENT(clickMeBtn, 10618)
+	BTN_EVENT(clickLeftBtn, 10619)
+	BTN_EVENT(clickTopBtn, 10620)
+	BTN_EVENT(clickRightBtn, 10621)
 
 	//调整层级不被划牌触摸层覆盖
-	_clickMeBtn->setGlobalZOrder(10);
-	_clickLeftBtn->setGlobalZOrder(10);
-	_clickTopBtn->setGlobalZOrder(10);
-	_clickRightBtn->setGlobalZOrder(10);
+	clickMeBtn->setGlobalZOrder   (GOrderPlayerHead);
+	clickLeftBtn->setGlobalZOrder (GOrderPlayerHead);
+	clickTopBtn->setGlobalZOrder  (GOrderPlayerHead);
+	clickRightBtn->setGlobalZOrder(GOrderPlayerHead);
 
 }
 PlayPokerView::~PlayPokerView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, fanhui_btn, 10601);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, clickMeBtn, 10618);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, clickLeftBtn, 10619);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, clickTopBtn, 10620);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayPokerView, clickRightBtn, 10621);
 	delete rootNode;
 	rootNode = NULL;
 }
@@ -473,6 +475,27 @@ void PlayPokerView::hideAllFace()
 	rightCharacterNode->setVisible(false);
 }
 
+void PlayPokerView::gameOverHandle()
+{
+    hideClock();
+    stopClock();
+    imgHuaPai->setVisible(false);
+    
+    if (touyouNode)
+    {
+        stopAction(touyouTimeline);
+        touyouNode->removeFromParentAndCleanup(true);
+        touyouNode = NULL;
+    }
+    for (int i = 0; i < 3; i++)
+    {
+        if (imgTouyou[i] != NULL)
+        {
+            imgTouyou[i]->removeFromParentAndCleanup(true);
+            imgTouyou[i] = NULL;
+        }
+    }
+}
 
 void PlayPokerView::showTouyou(int i)
 {

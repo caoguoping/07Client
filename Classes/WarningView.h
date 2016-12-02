@@ -15,11 +15,11 @@ public:
 	int enterEventId;//点击确定抛出事件id <0不抛出事件
 	int cancleEventId;//点击取消抛出事件id <0不抛出事件
 	
-	BTN_TOUCH_HANDLE(Button, getBtn_0, 11401);
-	BTN_TOUCH_HANDLE(Button, cancleBtn, 11402);
-	BTN_TOUCH_HANDLE(Button, getBtn, 11403);
-	BTN_TOUCH_HANDLE(Button, closeBtn, 11404);
-	BTN_TOUCH_HANDLE(ImageView, Image_38, 11404);
+	Button  *  getBtn_0 ;
+	Button  *  cancleBtn;
+	Button  *  getBtn   ;
+	Button  *  closeBtn ;
+	ImageView* Image_38 ;
 
 	Text *Text_1;
 };

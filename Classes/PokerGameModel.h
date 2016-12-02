@@ -71,16 +71,18 @@ struct CMD_S_PayTribute
 //游戏结束
 struct CMD_S_GameEnd
 {
-	DWORD							lGameTax;							//游戏税收
-	DWORD							lGameScore[4];						//游戏积分
+	int							lGameTax;							//游戏税收
+	int							lGameScore[4];						//游戏积分
 	BYTE					bCardCount[4];						//扑克数目
 	BYTE					bCardData[108];						//扑克列表
 	BYTE                   bOurSeries;                         //我方级数
 	BYTE                   bOtherSeries;                       //对方级数
 	BYTE                   bCurrentSeries;                     //本局级数
-	int                             m_iGameResult[4];                   //胜负情况
+    BYTE              bIsBlood;    //0：正常结束，   1：血战场结束
+    
+    int                             m_iGameResult[4];                   //胜负情况
 	int								Rank[4];	//值为服务器座位号， 下标为排名						//排名情况
-	BYTE              bIsBlood;    //0：正常结束，   1：血战场结束
+
 
 };
 
@@ -102,9 +104,11 @@ struct CMD_GR_S_UserExpression
 //道具动作
 struct DAO_JU_ACTION
 {
-	int								index = -1;							//道具索引
-	int								toDesk = -1;						//目标玩家椅子ID
-	int								id = -1;
+	WORD								index ;							//道具索引
+	WORD                                fromDesk;       //谁扔的
+	WORD								toDesk;						//目标玩家椅子ID
+	WORD								id;         //actionId
+	
 };
 
 //签到查询

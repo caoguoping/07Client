@@ -64,10 +64,17 @@ ActivityView::ActivityView(int actIndex)
 
 	spineIner = static_cast<Sprite*>(mallItem[E_activity]->getChildByName("spin_inner"));
 
-	BTN_ADD_TOUCH_EVENTLISTENER(Button,ActivityView, closeBtn, 15001, "closeBtn", NULL);
-	BTN_ADD_TOUCH_EVENTLISTENER(CheckBox, ActivityView, lotteryBtn, 15002, "lotteryBtn", NULL);
-	BTN_ADD_TOUCH_EVENTLISTENER(CheckBox, ActivityView, rechargeBtn, 15003, "rechargeBtn", NULL);
-	BTN_ADD_TOUCH_EVENTLISTENER(CheckBox, ActivityView, myCupBtn, 15010, "CheckBox_1", NULL);
+
+
+
+	UIGet_Button("closeBtn", rootNode, closeBtn)
+	UIGet_CheckBox("lotteryBtn", rootNode, lotteryBtn);
+	UIGet_CheckBox("rechargeBtn", rootNode, rechargeBtn);
+	UIGet_CheckBox("CheckBox_1", rootNode, myCupBtn);
+	BTN_EVENT(closeBtn, 15001)
+		BTN_EVENT(lotteryBtn, 15002)
+		BTN_EVENT(rechargeBtn, 15003)
+		BTN_EVENT(myCupBtn, 15010)
 
 	textZuanshi = static_cast<TextBMFont*>(mallItem[E_activity]->getChildByName("BitmapFontLabel_needZuan"));
 
@@ -153,10 +160,6 @@ ActivityView::ActivityView(int actIndex)
 
 ActivityView::~ActivityView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(ActivityView, closeBtn, 15001);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(ActivityView, lotteryBtn, 15002);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(ActivityView, rechargeBtn, 15003);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(ActivityView, myCupBtn, 15010);
 	delete rootNode;	
 	rootNode = NULL;
 }
@@ -355,13 +358,13 @@ void ActivityView::showActivityNode(int iWhich)
 
 void ActivityView::showLottery()
 {
-	_lotteryBtn->setSelected(true);
-	_rechargeBtn->setSelected(false);
-	_myCupBtn->setSelected(false);
+	lotteryBtn->setSelected(true);
+	rechargeBtn->setSelected(false);
+	myCupBtn->setSelected(false);
 
-	_lotteryBtn->setTouchEnabled(false);
-	_rechargeBtn->setTouchEnabled(true);
-	_myCupBtn->setTouchEnabled(true);
+	lotteryBtn->setTouchEnabled(false);
+	rechargeBtn->setTouchEnabled(true);
+	myCupBtn->setTouchEnabled(true);
 	showActivityNode(E_activity);
 
 	char needZ[16];
@@ -372,26 +375,26 @@ void ActivityView::showLottery()
 
 void ActivityView::showRecharge()
 {
-	_lotteryBtn->setSelected(false);
-	_rechargeBtn->setSelected(true);
-	_myCupBtn->setSelected(false);
+	lotteryBtn->setSelected(false);
+	rechargeBtn->setSelected(true);
+	myCupBtn->setSelected(false);
 
-	_lotteryBtn->setTouchEnabled(true);
-	_rechargeBtn->setTouchEnabled(false);
-	_myCupBtn->setTouchEnabled(true);
+	lotteryBtn->setTouchEnabled(true);
+	rechargeBtn->setTouchEnabled(false);
+	myCupBtn->setTouchEnabled(true);
 	showActivityNode(E_zuanshi);
 
 }
 
 void ActivityView::showMyCup()
 {
-	_lotteryBtn->setSelected(false);
-	_rechargeBtn->setSelected(false);
-	_myCupBtn->setSelected(true);
+	lotteryBtn->setSelected(false);
+	rechargeBtn->setSelected(false);
+	myCupBtn->setSelected(true);
 
-	_lotteryBtn->setTouchEnabled(true);
-	_rechargeBtn->setTouchEnabled(true);
-	_myCupBtn->setTouchEnabled(false);
+	lotteryBtn->setTouchEnabled(true);
+	rechargeBtn->setTouchEnabled(true);
+	myCupBtn->setTouchEnabled(false);
 	showActivityNode(E_myCup);
 
 	//О­бщ

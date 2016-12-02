@@ -19,10 +19,7 @@ public:
 	void showName(string name);
 
 	public:
-	BTN_TOUCH_HANDLE(Button, closeBtn, 11701);
-	BTN_TOUCH_HANDLE(ImageView, Image_1, 11701);
-// 	BTN_TOUCH_HANDLE(Button, addGoldBtn, 10702);
-// 	BTN_TOUCH_HANDLE(Button, addZhuanBtn, 10703);
+
 
 	//Ãû×Ö
 	Text* txtName;

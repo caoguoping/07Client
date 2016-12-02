@@ -2,6 +2,7 @@
 #include "CallCppHelper.h"
 #include "PlatFormControl.h"
 #include "DataManager.h"
+#include "ViewManager.h"
 
 #if(SDKWhich == SDK_YIKE)
 #include "org_cocos2dx_cpp_SDKPlugin.h"
@@ -128,7 +129,7 @@ void ShopMediator::onEvent(int i, void* data)
 
 Layer* ShopMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 
 void ShopMediator::clickZhuanShiBtnHander()

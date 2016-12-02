@@ -1,5 +1,6 @@
 #include "ActivityMediator.h"
 #include "DataManager.h"
+#include "ViewManager.h"
 
 ActivityMediator::ActivityMediator()
 {
@@ -118,7 +119,7 @@ void ActivityMediator::onEvent(int i, void* data)
 
 Layer* ActivityMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 
 void ActivityMediator::clickCloseBtnHander()

@@ -1,5 +1,5 @@
 #include "WarningMediator.h"
-
+#include "ViewManager.h"
 WarningMediator::WarningMediator()
 {
 
@@ -70,5 +70,5 @@ void WarningMediator::onEvent(int i, void* data)
 
 Layer* WarningMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->TopLayer;
+	return VIEW->TopLayer;
 }

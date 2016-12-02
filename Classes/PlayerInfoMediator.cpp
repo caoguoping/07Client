@@ -1,4 +1,9 @@
 #include "PlayerInfoMediator.h"
+#include "ViewManager.h"
+#include "SendDataService.h"
+#include "TCPSocketService.h"
+#include "FriendView.h"
+#include "DataManager.h"
 
 PlayerInfoMediator::PlayerInfoMediator(int deskID)
 {
@@ -19,12 +24,11 @@ void PlayerInfoMediator::OnRegister()
 	playerInfoView = (PlayerInfoView*)getView();
 
 	head = playerInfoView->rootNode->getChildByName("headNode");
-	PlayerInDeskModel *playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
-	serviceDesk = playerInDeskModel->getServiceChairID(clientDesk);
-	playerInfoView->txtName->setString(playerInDeskModel->DeskPlayerInfo[serviceDesk].szNickName);
-	playerInfoView->txtGold->setString(Tools::parseLL2String(playerInDeskModel->DeskPlayerInfo[serviceDesk].lScore));
+	serviceDesk = DATAPlayerIndesk->getServiceChairID(clientDesk);
+	playerInfoView->txtName->setString(DATAPlayerIndesk->DeskPlayerInfo[serviceDesk].szNickName);
+	playerInfoView->txtGold->setString(Tools::parseLL2String(DATAPlayerIndesk->DeskPlayerInfo[serviceDesk].lScore));
 
-	face = playerInDeskModel->DeskPlayerInfo[serviceDesk].wFaceID;
+	face = DATAPlayerIndesk->DeskPlayerInfo[serviceDesk].wFaceID;
 	showHead();
 	Size size = Director::getInstance()->getVisibleSize();
 	getView()->rootNode->setPosition(size.width / 2, size.height / 2);
@@ -72,7 +76,7 @@ void PlayerInfoMediator::onEvent(int i, void* data)
 */
 Layer* PlayerInfoMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 
 //
@@ -113,46 +117,79 @@ void PlayerInfoMediator::showHead()
 
 void PlayerInfoMediator::clickEggBtnHander()
 {
-	//int* toDeskID = new int(clientDesk);
-	DAO_JU_ACTION* data = new DAO_JU_ACTION();
-	data->index = 1;
-	data->toDesk = clientDesk;
+// 	DAO_JU_ACTION* data = new DAO_JU_ACTION();
+// 	data->index = 1;
+// 	data->toDesk = clientDesk;
+// 	data->fromDesk = 0;
+// 
+// 	blueSkyDispatchEvent(EventType::SHOW_DAO_JU_ACTION, data);
 
-	blueSkyDispatchEvent(EventType::SHOW_DAO_JU_ACTION, data);
+	CMD_C_USE_PROPERTY*  pData = new CMD_C_USE_PROPERTY();
+	pData->wIndex = 1;
+	pData->wChairID = DATAPlayerIndesk->getServiceChairID(0);
+	pData->wTargetID = DATAPlayerIndesk->getServiceChairID(clientDesk);
+	SEND_GAME->SendData(200, 13, pData, sizeof(CMD_C_USE_PROPERTY));
+
 	removeView(this);
 }
 
 void PlayerInfoMediator::clickBoomBtnHander()
 {
-	DAO_JU_ACTION* data = new DAO_JU_ACTION();
-	data->index = 2;
-	data->toDesk = clientDesk;
+// 	DAO_JU_ACTION* data = new DAO_JU_ACTION();
+// 	data->index = 2;
+// 	data->toDesk = clientDesk;
+// 	data->fromDesk = 0;
+// 	blueSkyDispatchEvent(EventType::SHOW_DAO_JU_ACTION, data);
 
-	blueSkyDispatchEvent(EventType::SHOW_DAO_JU_ACTION, data);
+	CMD_C_USE_PROPERTY*  pData = new CMD_C_USE_PROPERTY();
+	pData->wIndex = 2;
+	pData->wChairID = DATAPlayerIndesk->getServiceChairID(0);
+	pData->wTargetID = DATAPlayerIndesk->getServiceChairID(clientDesk);
+	SEND_GAME->SendData(200, 13, pData, sizeof(CMD_C_USE_PROPERTY));
+
 	removeView(this);
 }
 
 void PlayerInfoMediator::clickHeartBtnHander()
 {
-	DAO_JU_ACTION* data = new DAO_JU_ACTION();
-	data->index = 3;
-	data->toDesk = clientDesk;
+// 	DAO_JU_ACTION* data = new DAO_JU_ACTION();
+// 	data->index = 3;
+// 	data->toDesk = clientDesk;
+// 	data->fromDesk = 0;
+// 	blueSkyDispatchEvent(EventType::SHOW_DAO_JU_ACTION, data);
 
-	blueSkyDispatchEvent(EventType::SHOW_DAO_JU_ACTION, data);
+	CMD_C_USE_PROPERTY*  pData = new CMD_C_USE_PROPERTY();
+	pData->wIndex = 3;
+	pData->wChairID = DATAPlayerIndesk->getServiceChairID(0);
+	pData->wTargetID = DATAPlayerIndesk->getServiceChairID(clientDesk);
+	SEND_GAME->SendData(200, 13, pData, sizeof(CMD_C_USE_PROPERTY));
+
 	removeView(this);
 }
 
 void PlayerInfoMediator::clickFlowerBtnHander()
 {
-	DAO_JU_ACTION* data = new DAO_JU_ACTION();
-	data->index = 4;
-	data->toDesk = clientDesk;
+// 	DAO_JU_ACTION* data = new DAO_JU_ACTION();
+// 	data->index = 4;
+// 	data->toDesk = clientDesk;
+// 	data->fromDesk = 0;
+// 	blueSkyDispatchEvent(EventType::SHOW_DAO_JU_ACTION, data);
 
-	blueSkyDispatchEvent(EventType::SHOW_DAO_JU_ACTION, data);
+	CMD_C_USE_PROPERTY*  pData = new CMD_C_USE_PROPERTY();
+	pData->wIndex = 4;
+	pData->wChairID = DATAPlayerIndesk->getServiceChairID(0);
+	pData->wTargetID = DATAPlayerIndesk->getServiceChairID(clientDesk);
+	SEND_GAME->SendData(200, 13, pData, sizeof(CMD_C_USE_PROPERTY));
+
 	removeView(this);
 }
 
 void PlayerInfoMediator::clickAddFriendBtnHander()
 {
-
+	Tools::getInstance()->showSysMsgTouming(UTF8::getInstance()->getString("friend", "req"));
+	int targetSvr = DATAPlayerIndesk->chair[clientDesk];
+	DWORD  dwTargetId = DATAPlayerIndesk->DeskPlayerInfo[targetSvr].dwUserID;
+	SEND->sendFriendOption(DATA->myBaseData.dwUserID, dwTargetId, FriendView::esInvite);
+	playerInfoView->btnAddFriend->setColor(Color3B(64, 64, 64));
+	playerInfoView->btnAddFriend->setTouchEnabled(false);
 }

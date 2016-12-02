@@ -20,7 +20,6 @@ PlayGoldView::PlayGoldView()
 
 PlayGoldView::~PlayGoldView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayGoldView, closeBtn, 12600);
 	rootNode->stopAllActions();
 	delete rootNode;
 	rootNode = NULL;
@@ -36,15 +35,16 @@ void PlayGoldView::initView()
 	timeLine->gotoFrameAndPlay(0, false);
 	rootNode->runAction(timeLine);
 
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayGoldView, closeBtn, 12600, "Button_close", "Image_frame");
-	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, PlayGoldView, imgBg, 12600, "Image_bg", NULL);
-
 	UIGet_ImageView("Image_frame", rootNode, imgFrame)
 		UIGet_Button("Button_1", imgFrame, btn1)
 		UIGet_Button("Button_2", imgFrame, btn2)
 		UIGet_Button("Button_3", imgFrame, btn3)
 
 
+		UIGet_Button("Button_close", imgFrame, closeBtn)
+		UIGet_ImageView("Image_bg", rootNode, imgBg)
+		BTN_EVENT(closeBtn, 12600)
+		BTN_EVENT(imgBg, 12600)
 
 		btn1->setTag(0);
 	btn2->setTag(1);

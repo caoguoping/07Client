@@ -1,6 +1,6 @@
 #include "PokerMediator.h"
 #include "SGTools.h"
-
+#include "ViewManager.h"
 PokerMediator::PokerMediator(int id, bool isOutPoker, int desk, int DuiNum, int ZhangNum, int DuiAllNum, int ZhangAllNum, int isChangePos,bool isGongP)
 {
 	isPlayerOutPoker = isOutPoker;
@@ -311,9 +311,9 @@ void PokerMediator::onEvent(int i, void* data)
 Layer* PokerMediator::getLayer()
 {
 	if (isPlayerOutPoker)
-		return ((UILayerService*)getService(UILayerService::NAME))->outPokerLayer;
+		return VIEW->outPokerLayer;
 	else
-		return ((UILayerService*)getService(UILayerService::NAME))->myPokerLayer;
+		return VIEW->myPokerLayer;
 }
 
 

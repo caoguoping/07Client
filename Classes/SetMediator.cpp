@@ -1,5 +1,5 @@
 #include "SetMediator.h"
-
+#include "ViewManager.h"
 SetMediator::SetMediator()
 {
 
@@ -51,7 +51,7 @@ void SetMediator::onEvent(int i, void* data)
 
 Layer* SetMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 
 void SetMediator::clickCloseBtnHander()

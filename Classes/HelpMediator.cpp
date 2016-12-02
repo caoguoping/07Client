@@ -1,5 +1,5 @@
 #include "HelpMediator.h"
-
+#include "ViewManager.h"
 HelpMediator::HelpMediator()
 {
 
@@ -47,7 +47,7 @@ void HelpMediator::onEvent(int i, void* data)
 
 Layer* HelpMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 
 void HelpMediator::clickCloseBtnHander()

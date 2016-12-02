@@ -1,6 +1,6 @@
 #include "ShowChatMediator.h"
 #include "MusicService.h"
-
+#include "ViewManager.h"
 ShowChatMediator::ShowChatMediator(int desk, int index,int chat)
 {
 	deskID = desk;
@@ -62,7 +62,7 @@ void ShowChatMediator::onEvent(int i, void* data)
 
 Layer* ShowChatMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 
 //

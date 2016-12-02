@@ -13,7 +13,7 @@
 #include "MusicService.h"
 #include "MallMediator.h"
 #include "MallView.h"
-
+#include "ViewManager.h"
 static string strLvNum[15] = { "0", "0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
 
 PlayPokerMediator::PlayPokerMediator()
@@ -97,7 +97,7 @@ void PlayPokerMediator::readyPlay()
 {
 	//划牌触摸
 	playPokerView->imgHuaPai = ImageView::create("touchLayer.png");
-	LayerManager->myPokerLayer->addChild(playPokerView->imgHuaPai, 1000);
+	VIEW->myPokerLayer->addChild(playPokerView->imgHuaPai, 1000);
 	playPokerView->imgHuaPai->setAnchorPoint(Vec2(0, 0));
 	playPokerView->imgHuaPai->setPosition(Vec2(0, 50));
 	playPokerView->imgHuaPai->setTouchEnabled(true);
@@ -283,7 +283,7 @@ void PlayPokerMediator::onTouchesHuapai(Ref*  pSender, Widget::TouchEventType ty
 	{
 		notClickPoker = true;
 		touchPos = imgHP->getTouchEndPosition();
-		if (abs(touchPos.x - touchBeginPos.x) < 30 && abs(touchPos.y - touchBeginPos.y) < 30)
+		if (abs(touchPos.x - touchBeginPos.x) < 10 && abs(touchPos.y - touchBeginPos.y) < 10)
 		{
 			for (int i = 0; i < gameDataModel->player[0].pokerArr.size(); i++)
 			{
@@ -518,9 +518,9 @@ void PlayPokerMediator::sendPokerkHandle()
 
 		imgZhupaiDi = ImageView::create("now-card_bg.png");
 		imgZhupaiDi->setPosition(Vec2(WScreen * 0.5, HScreen * 0.5));
-		LayerManager->uiLayer->addChild(imgZhupaiDi);
+		VIEW->uiLayer->addChild(imgZhupaiDi);
 
-		UIFrameCreate(zhupai, "zhupai.csb", LayerManager->uiLayer, false);
+		UIFrameCreate(zhupai, "zhupai.csb", VIEW->uiLayer, false);
 		zhupaiNode->setPosition(WScreen * 0.5, HScreen * 0.5);
 
 		FiniteTimeAction*  seq = Sequence::create(
@@ -529,7 +529,7 @@ void PlayPokerMediator::sendPokerkHandle()
 			DelayTime::create(1.3f),
 			CallFunc::create(CC_CALLBACK_0(PlayPokerMediator::delaySendPokerHandle, this)),
 			NULL);
-		LayerManager->uiLayer->runAction(seq);
+		VIEW->uiLayer->runAction(seq);
 
 		if (DATA->bGameCate == DataManager::E_GameCateMatch)
 		{
@@ -542,12 +542,12 @@ void PlayPokerMediator::sendPokerkHandle()
 	}
 	else if (DATA->bGameCate == DataManager::E_GameBlood)
 	{
-		UIFrameCreate(bloodStart, "bloodStart.csb", LayerManager->uiLayer, false);
+		UIFrameCreate(bloodStart, "bloodStart.csb", VIEW->uiLayer, false);
 		FiniteTimeAction*  seq = Sequence::create(
 			DelayTime::create(2.0f),
 			CallFunc::create(CC_CALLBACK_0(PlayPokerMediator::delaySendPokerHandle, this)),
 			NULL);
-		LayerManager->uiLayer->runAction(seq);
+		VIEW->uiLayer->runAction(seq);
 
 		bloodStartNode->setPosition(WScreen * 0.5, HScreen * 0.5);
 
@@ -663,6 +663,7 @@ void PlayPokerMediator::delaySendPokerHandle()
 	}
 	else
 	{
+		creatView(new JiPaiView(), new JiPaiMediator());
 		logV("cocos2d-x send poker now!  ");
 		logF("cocos2d-x send poker now!  ");
 	}
@@ -696,7 +697,7 @@ void PlayPokerMediator::delaySendPokerHandle()
 
 	if (DATA->bGameCate == DataManager::E_GameCateMatch)
 	{
-		UIFrameRemove(zhupai, LayerManager->uiLayer)
+		UIFrameRemove(zhupai, VIEW->uiLayer)
 		imgZhupaiDi->removeFromParentAndCleanup(true);
 		myLv->setString(strLvNum[Data.bCurrentSeries]);
 		otherLv->setString(strLvNum[Data.bCurrentSeries]);
@@ -711,7 +712,7 @@ void PlayPokerMediator::delaySendPokerHandle()
 	}
 	else if (DATA->bGameCate == DataManager::E_GameRandZhupai)
 	{
-		UIFrameRemove(zhupai, LayerManager->uiLayer)
+		UIFrameRemove(zhupai, VIEW->uiLayer)
 			imgZhupaiDi->removeFromParentAndCleanup(true);
 		myLv->setString(strLvNum[Data.bCurrentSeries]);
 		otherLv->setString(strLvNum[Data.bCurrentSeries]);
@@ -739,7 +740,7 @@ void PlayPokerMediator::delaySendPokerHandle()
 	{
 		if (DATA->bGameCate == DataManager::E_GameBlood)
 		{
-			UIFrameRemove(bloodStart, LayerManager->uiLayer)
+			UIFrameRemove(bloodStart, VIEW->uiLayer)
 		}
 		if (playerInDeskModel->getServiceChairID(0) % 2 == 0)
 		{
@@ -814,7 +815,21 @@ void PlayPokerMediator::reveivePlayerOutPokerHandle(void* data)
 	//剩余10张牌时开始报牌
 	desk = playerInDeskModel->chair[pokerGameModel->playerOutCard.wOutCardUser];
 	pokerNum = gameDataModel->player[desk].pokerNum - pokerGameModel->playerOutCard.bCardCount;
+
+	logF("receive playersize 0:%d, 1:%d, 2:%d, 3:%d",
+		gameDataModel->player[0].pokerArr.size(),
+		gameDataModel->player[1].pokerArr.size(),
+		gameDataModel->player[2].pokerArr.size(),
+		gameDataModel->player[3].pokerArr.size()
+		);
+	logV("receive playersize 0:%d, 1:%d, 2:%d, 3:%d",
+		gameDataModel->player[0].pokerArr.size(),
+		gameDataModel->player[1].pokerArr.size(),
+		gameDataModel->player[2].pokerArr.size(),
+		gameDataModel->player[3].pokerArr.size()
+		);
 	logV("### desk %d  ###", desk);
+	logF("### desk %d  ###", desk);
 	if (pokerNum < 11 && pokerNum >= 0)
 	{
 		playPokerView->showPokerNum(desk, pokerNum);
@@ -836,6 +851,9 @@ void PlayPokerMediator::reveivePlayerOutPokerHandle(void* data)
 		outPokerArr.push_back(gameDataModel->player[desk].outPokerArr[i]);
 		int pokerId = gameDataModel->player[desk].outPokerArr[i]->pokerID;
 		logV("(%d %d) ", PokerLogic::getPokerNum(pokerId) + 2, 
+			PokerLogic::getPokerHuaSe(pokerId)
+			);
+		logF("(%d %d) ", PokerLogic::getPokerNum(pokerId) + 2,
 			PokerLogic::getPokerHuaSe(pokerId)
 			);
 	}
@@ -1039,6 +1057,7 @@ void PlayPokerMediator::onEvent(int i, void* data)
 {
 
 	DWORD wLeftDesks;
+	CMD_C_USE_PROPERTY*  broadcasts = NULL;
 	
 	switch (i)
 	{
@@ -1081,30 +1100,13 @@ void PlayPokerMediator::onEvent(int i, void* data)
 
 	case EventType::GAME_OVER:
 		clickCancelAutoBtnHander();
-		playPokerView->hideClock();
-		playPokerView->stopClock();
-		playPokerView->imgHuaPai->setVisible(false);
-
-		if (playPokerView->touyouNode)
-		{
-			playPokerView->stopAction(playPokerView->touyouTimeline);
-			playPokerView->touyouNode->removeFromParentAndCleanup(true);
-			playPokerView->touyouNode = NULL;
-		}
-		for (int i = 0; i < 3; i++)
-		{
-			if (playPokerView->imgTouyou[i] != NULL)
-			{
-				playPokerView->imgTouyou[i]->removeFromParentAndCleanup(true);
-				playPokerView->imgTouyou[i] = NULL;
-			}
-		}
+            playPokerView->gameOverHandle();
 		
 		break;
 
 	case EventType::BACK_TO_HALL:
 		DATAPlayerIndesk->clean();
-		LayerManager->myPokerLayer->removeAllChildrenWithCleanup(true);
+		VIEW->myPokerLayer->removeAllChildrenWithCleanup(true);
 		removeView(this);
 		break;
 
@@ -1273,7 +1275,7 @@ void PlayPokerMediator::onMatchEnd(BYTE bState)
 
 Layer* PlayPokerMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->mainLayer;
+	return VIEW->mainLayer;
 }
 
 
@@ -1611,6 +1613,7 @@ void PlayPokerMediator::clickTiShiBtnHander(Ref*  pSender)
 
 void PlayPokerMediator::clickChuPaiBtnHander(Ref*  pSender)
 {
+	logF("before chupai size %d ", DATAGameData->player[0].pokerArr.size());
 	PLayEffect(EFFECT_BTN)
 	//先判断能不能出牌
 	bool canOutPoker = false;
@@ -1669,9 +1672,18 @@ void PlayPokerMediator::clickChuPaiBtnHander(Ref*  pSender)
 	{
 		actionNode->setVisible(false);
 		unsigned char CardData[27];
+
+		logF("my outpoker");
+		logV("my outpoker");
 		for (DWORD i = 0; i < gameDataModel->player[0].selectedPokerArr.size(); i++)
 		{
 			CardData[i] = gameDataModel->player[0].selectedPokerArr.at(i)->pokerID;
+			logV("(%d %d) ", PokerLogic::getPokerNum(CardData[i]) + 2,
+				PokerLogic::getPokerHuaSe(CardData[i])
+				);
+			logF("(%d %d) ", PokerLogic::getPokerNum(CardData[i]) + 2,
+				PokerLogic::getPokerHuaSe(CardData[i])
+				);
 		}
 		((SendDataService *)getService(SendDataService::NAME))->sendOutPoker(gameDataModel->player[0].selectedPokerArr.size(), CardData);
 		//在手牌中移除出掉的牌
@@ -1689,12 +1701,20 @@ void PlayPokerMediator::clickChuPaiBtnHander(Ref*  pSender)
 		gameDataModel->player[0].pokerTypeArr = OutPokerLogicRule::fenXiShouPai(gameDataModel->player[0].pokerArr);
 
 		//重新调整手牌的位置
+		logF("#########         left poker   size %d", gameDataModel->player[0].pokerArr.size());
+		logV("#########         left poker   size %d", gameDataModel->player[0].pokerArr.size());
 		for (DWORD i = 0; i < gameDataModel->player[0].pokerArr.size(); i++)
 		{
 			pokeridData *data = new pokeridData();
 			data->pokerID = gameDataModel->player[0].pokerArr.at(i)->pokerID;
 			data->pokerID2 = gameDataModel->player[0].pokerArr.at(i)->pokerID2;
 			blueSkyDispatchEvent(EventType::CHANGE_POKER_POSITION, data);
+			logV("(%d %d) ", PokerLogic::getPokerNum(data->pokerID) + 2,
+				PokerLogic::getPokerHuaSe(data->pokerID)
+				);
+			logF("(%d %d) ", PokerLogic::getPokerNum(data->pokerID) + 2,
+				PokerLogic::getPokerHuaSe(data->pokerID)
+				);
 		}
 
 		//重置本轮提示点击次数
@@ -1871,6 +1891,7 @@ void PlayPokerMediator::clickMarkBtnHander(Ref* psender)
 	{
 		if (!isJiapaiQiRequested)
 		{
+			logV("if (!isJiapaiQiRequested)");
 			isJiapaiQiRequested = true;
 			isJipaiQiShow = true;
 			DWORD dwUserID = DATA->myBaseData.dwUserID;
@@ -1886,10 +1907,12 @@ void PlayPokerMediator::clickMarkBtnHander(Ref* psender)
 			isJipaiQiShow = !isJipaiQiShow;
 			if (isJipaiQiShow)
 			{
+				logV("if (isJipaiQiShow 12201)");
 				blueSkyDispatchEvent(12201);
 			}
 			else
 			{
+				logV("else (isJipaiQiShow 12202)");
 				blueSkyDispatchEvent(12202);
 			}
 		}

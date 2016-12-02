@@ -10,17 +10,11 @@ SevenDayGiftView::SevenDayGiftView()
 	timeLine->gotoFrameAndPlay(0, false);
 	rootNode->runAction(timeLine);
 
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, SevenDayGiftView, getGiftBtn, 10901, "getGiftBtn", "Image_frame")
-		BTN_ADD_TOUCH_EVENTLISTENER(Button, SevenDayGiftView, closeBtn, 10902, "closeBtn", "Image_frame")
-		BTN_ADD_TOUCH_EVENTLISTENER(ImageView, SevenDayGiftView, Image_38, 10902, "Image_bg", NULL)
+
 }
 
 SevenDayGiftView::~SevenDayGiftView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(SevenDayGiftView, getGiftBtn, 10901);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(SevenDayGiftView, closeBtn, 10902);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(SevenDayGiftView, Image_38, 10902);
-
 	rootNode->stopAllActions();
 	delete rootNode;
 	rootNode = NULL;
@@ -28,8 +22,16 @@ SevenDayGiftView::~SevenDayGiftView()
 
 void SevenDayGiftView::initView(bool isShowCloseBtn)
 {
+
 	UIGet_ImageView("Image_frame", rootNode, imgFrame)
-		char temp[64];
+	UIGet_Button("getGiftBtn", imgFrame, getGiftBtn)
+	UIGet_Button("closeBtn", imgFrame, closeBtn)
+	UIGet_ImageView("Image_bg", rootNode,  Image_38)
+	BTN_EVENT(getGiftBtn, 10901	)
+	BTN_EVENT(closeBtn, 10902	)
+	BTN_EVENT(Image_38, 10902	)
+		
+	char temp[64];
 	for (int i = 0; i < 7; i++)
 	{
 		sprintf(temp, "Image_%d", i);

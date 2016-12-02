@@ -15,20 +15,27 @@ UILayerService::~UILayerService()
  
 void UILayerService::init()
 {
-	mainLayer = Layer::create();
-	outPokerLayer = Layer::create();
-	myPokerLayer = Layer::create();
-	menuLayer = Layer::create();
-	uiLayer = Layer::create();
-	maskLayer = Layer::create();
-	TopLayer = Layer::create();
-	getcontainer()->addChild(mainLayer);
-	getcontainer()->addChild(outPokerLayer);
-	getcontainer()->addChild(myPokerLayer);
-	getcontainer()->addChild(menuLayer);
-	getcontainer()->addChild(uiLayer);
-	getcontainer()->addChild(maskLayer);
-	getcontainer()->addChild(TopLayer, 10000);
+// 	mainLayer     = Layer::create();
+// 	outPokerLayer = Layer::create();
+// 	myPokerLayer  = Layer::create();
+// 	menuLayer     = Layer::create();
+// 	uiLayer       = Layer::create();
+// 	maskLayer     = Layer::create();
+// 	TopLayer      = Layer::create();
+//     logV("\n\nmainLayer ####### %p", mainLayer);
+//     logV("outPokerLayer ####### %p",   outPokerLayer);
+//     logV("myPokerLayer ####### %p", myPokerLayer);
+//     logV("menuLayer ####### %p", menuLayer);
+//     logV("uiLayer ####### %p", uiLayer);
+//     logV("maskLayer ####### %p", maskLayer);
+//     logV("TopLayer ####### %p", TopLayer);
+// 	getcontainer()->addChild(mainLayer);
+// 	getcontainer()->addChild(outPokerLayer);
+// 	getcontainer()->addChild(myPokerLayer);
+// 	getcontainer()->addChild(menuLayer);
+// 	getcontainer()->addChild(uiLayer);
+// 	getcontainer()->addChild(maskLayer);
+// 	getcontainer()->addChild(TopLayer, 10000);
 }
 
 void UILayerService::onEvent(int i, void* data)

@@ -1,5 +1,5 @@
 #include "ChatMediator.h"
-
+#include "ViewManager.h"
 ChatMediator::ChatMediator()
 {
 
@@ -72,7 +72,7 @@ void ChatMediator::onEvent(int i, void* data)
 
 Layer* ChatMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->menuLayer;
+	return VIEW->menuLayer;
 }
 
 void ChatMediator::clickChatHander(WORD wItem)

@@ -520,13 +520,13 @@
             <PreSize X="0.0490" Y="0.0759" />
             <FileData Type="Normal" Path="play/icon-tuoguan02-up.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="pipeiAction" ActionTag="1648346266" Tag="324" IconVisible="True" LeftMargin="488.0000" RightMargin="472.0000" TopMargin="274.0000" BottomMargin="266.0000" IsLoop="True" IsAutoPlay="True" CurrentAnimationName="zhengcaipipei" ctype="ArmatureNodeObjectData">
+          <AbstractNodeData Name="pipeiAction" ActionTag="1648346266" Tag="324" IconVisible="True" LeftMargin="491.0000" RightMargin="469.0000" TopMargin="303.0000" BottomMargin="237.0000" IsLoop="True" IsAutoPlay="True" CurrentAnimationName="zhengcaipipei" ctype="ArmatureNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="488.0000" Y="266.0000" />
+            <Position X="491.0000" Y="237.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5083" Y="0.4926" />
+            <PrePosition X="0.5115" Y="0.4389" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="action/pipei/zhengzaipipei.ExportJson" Plist="" />
           </AbstractNodeData>

@@ -1,6 +1,6 @@
 #include "MyInfoMediator.h"
 #include "DataManager.h"
-
+#include "ViewManager.h"
 MyInfoMediator::MyInfoMediator()
 {
 
@@ -63,7 +63,7 @@ void MyInfoMediator::onEvent(int i, void* data)
 
 Layer* MyInfoMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 
 void MyInfoMediator::clickCloseBtnHander()

@@ -14,8 +14,8 @@ public:
 	void initView();
 
 public:
-	BTN_TOUCH_HANDLE(Button,closeBtn, 13001);
-	BTN_TOUCH_HANDLE(ImageView, Image_38, 13001);
+	Button   *closeBtn ;
+	ImageView* Image_38;
 
 	//
 	//¹ö¶¯ÈÝÆ÷

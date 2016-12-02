@@ -22,16 +22,17 @@ MallView::MallView()
 	mallItem[E_zuanshi] = rootNode->getChildByName("FileNode_zuanshi");
 	currentTitle = E_activity;
 
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, MallView, closeBtn, 11201, "closeBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(CheckBox, MallView, activityBtn, 11202, "activityBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(CheckBox, MallView, zuanShiBtn, 11203, "zuanShiBtn", NULL)
+	UIGet_Button("closeBtn", rootNode, closeBtn)
+	UIGet_CheckBox("activityBtn", rootNode, activityBtn)
+	UIGet_CheckBox("zuanShiBtn", rootNode, zuanShiBtn)
+	BTN_EVENT(closeBtn, 11201)
+	BTN_EVENT(activityBtn, 11202)
+	BTN_EVENT(zuanShiBtn, 11203)
 }
 
 MallView::~MallView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(MallView, closeBtn, 11201);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(MallView, activityBtn, 11202);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(MallView, zuanShiBtn, 11203);
+
 }
 
 
@@ -149,10 +150,10 @@ void MallView::initView()
 
 void MallView::showActivityView()
 {
-	_activityBtn->setSelected(true);
-	_zuanShiBtn->setSelected(false);
-	_activityBtn->setTouchEnabled(false);
-	_zuanShiBtn->setTouchEnabled(true);
+	activityBtn->setSelected(true);
+	zuanShiBtn->setSelected(false);
+	activityBtn->setTouchEnabled(false);
+	zuanShiBtn->setTouchEnabled(true);
 
 	mallItem[E_activity]->setVisible(true);
 	mallItem[E_zuanshi]->setVisible(false);
@@ -160,10 +161,10 @@ void MallView::showActivityView()
 
 void MallView::showZuanShiView()
 {
-	 	_activityBtn->setSelected(false);
-	 	_zuanShiBtn->setSelected(true);
-		_activityBtn->setTouchEnabled(true);
-		_zuanShiBtn->setTouchEnabled(false);
+	 	activityBtn->setSelected(false);
+	 	zuanShiBtn->setSelected(true);
+		activityBtn->setTouchEnabled(true);
+		zuanShiBtn->setTouchEnabled(false);
 		mallItem[E_activity]->setVisible(false);
 		mallItem[E_zuanshi]->setVisible(true);
 }

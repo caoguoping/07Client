@@ -13,9 +13,13 @@ ShopView::ShopView(int id)
 	rootNode->setScale(0.8f, 0.8f);
 	rootNode->runAction(Sequence::create(ScaleTo::create(0.2f, 1.03f), ScaleTo::create(0.15f, 1.0f), nullptr));
 	shopID = id;
-	BTN_ADD_TOUCH_EVENTLISTENER(CheckBox, ShopView, zhuanShiBtn, 10801, "zhuanShiBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(CheckBox, ShopView, goldBtn, 10802, "goldBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, ShopView, closeBtn, 10803, "closeBtn", NULL)
+
+	UIGet_CheckBox("zhuanShiBtn", rootNode, zhuanShiBtn)
+		UIGet_CheckBox("goldBtn", rootNode, goldBtn)
+		UIGet_Button("closeBtn", rootNode, closeBtn)
+	BTN_EVENT(zhuanShiBtn, 10801)
+	BTN_EVENT(goldBtn, 10802	)
+	BTN_EVENT(closeBtn, 10803	)
 
 	UIGet_Node("FileNode_zuanshi", rootNode, shopItem[E_zuanshi])
 	UIGet_Node("FileNode_jinbi", rootNode, shopItem[E_gold])
@@ -162,10 +166,6 @@ void ShopView::showMyGold(int num)
 
 ShopView::~ShopView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(ShopView, zhuanShiBtn, 10801);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(ShopView, goldBtn, 10802);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(ShopView, closeBtn, 10803);
-
 	delete rootNode;
 	rootNode = NULL;
 
@@ -173,10 +173,10 @@ ShopView::~ShopView()
 
 void ShopView::showZuanShiView()
 {
-	_zhuanShiBtn->setSelected(true);
-	_goldBtn->setSelected(false);
-	_zhuanShiBtn->setTouchEnabled(false);
-	_goldBtn->setTouchEnabled(true);
+	zhuanShiBtn->setSelected(true);
+	goldBtn->setSelected(false);
+	zhuanShiBtn->setTouchEnabled(false);
+	goldBtn->setTouchEnabled(true);
 	shopItem[E_zuanshi]->setVisible(true);
 	shopItem[E_gold]->setVisible(false);
 
@@ -185,10 +185,10 @@ void ShopView::showZuanShiView()
 
 void ShopView::showGoldView()
 {
-	_zhuanShiBtn->setSelected(false);
-	_goldBtn->setSelected(true);
-	_zhuanShiBtn->setTouchEnabled(true);
-	_goldBtn->setTouchEnabled(false);
+	zhuanShiBtn->setSelected(false);
+	goldBtn->setSelected(true);
+	zhuanShiBtn->setTouchEnabled(true);
+	goldBtn->setTouchEnabled(false);
 	shopItem[E_zuanshi]->setVisible(false);
 	shopItem[E_gold]->setVisible(true);
 }

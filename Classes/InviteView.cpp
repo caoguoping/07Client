@@ -9,12 +9,12 @@ InviteView::InviteView(int i)
 	iChairId = i;
 	rootNode = CSLoader::createNode("invite.csb");
 	addChild(rootNode);
-	BTN_ADD_TOUCH_EVENTLISTENER(Button,InviteView, closeBtn, 17000, "closeBtn", NULL)
+		UIGet_Button("closeBtn", rootNode, closeBtn)
+		BTN_EVENT(closeBtn, 17000)
 }
 
 InviteView::~InviteView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(InviteView, closeBtn, 17000);
 	delete rootNode;
 	rootNode = NULL;
 }

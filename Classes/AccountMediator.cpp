@@ -3,9 +3,11 @@
 #include "TCPSocketService.h"
 #include "DataManager.h"
 #include "MusicService.h"
+#include "ViewManager.h"
 static DWORD   adwRewards[4] = { 10000, 6000, 2000, 1000 };
 AccountMediator::AccountMediator(CMD_S_GameEnd data)
 {
+    logV("GameResult   %d %d %d %d %d", data.bIsBlood, data.Rank[0], data.Rank[1], data.Rank[2], data.Rank[3] );
 	if (DATA->bGameCate != DataManager::E_GameCateMatch)
 	{
 		//先获取玩家对应的服务器椅子ID
@@ -205,7 +207,7 @@ void AccountMediator::onEvent(int i, void* data)
 //放到遮罩层
 Layer* AccountMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->maskLayer;
+	return VIEW->maskLayer;
 }
 
 //显示玩家头像

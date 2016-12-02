@@ -47,9 +47,9 @@ public:
 
 
 private:
-	BTN_TOUCH_HANDLE(CheckBox, zhuanShiBtn, 10801);
-	BTN_TOUCH_HANDLE(CheckBox, goldBtn, 10802);
-	BTN_TOUCH_HANDLE(Button, closeBtn, 10803);
+	CheckBox* zhuanShiBtn;
+	CheckBox* goldBtn    ;
+	Button  * closeBtn   ;
 
 
 };

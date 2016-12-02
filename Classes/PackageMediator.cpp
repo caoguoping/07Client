@@ -1,5 +1,5 @@
 #include "PackageMediator.h"
-
+#include "ViewManager.h"
 PackageMediator::PackageMediator()
 {
 
@@ -55,7 +55,7 @@ void PackageMediator::onEvent(int i, void* data)
 
 Layer* PackageMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 
 void PackageMediator::clickUseBtnHander()

@@ -11,8 +11,9 @@ public:
 	DaoJuActionView();
 	~DaoJuActionView();
 
-	void initView(int index = -1, int toDesk = -1,int actionID= -1);
-	void showAction(int index = -1,int toDesk = -1);
+	//都是clientDesk,不是服务器椅子ID
+	void initView(int index = -1, int fromID = -1, int toDesk = -1, int actionID = -1);
+	void showAction(int index = -1, int fromID = -1, int toDesk = -1);
 	void showNextAction();
 	void removeAction();
 

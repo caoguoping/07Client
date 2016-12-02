@@ -41,6 +41,8 @@ bool TCPSocketService::Connect(const char* dwServerIP, unsigned short wPort)
 {
 	//½¨Á¢ SOCKET
 	m_hSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+	m_hSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+    logV("m_hsocket socket %d", m_hSocket);
 	struct sockaddr_in SocketAddr;
 	memset(&SocketAddr, 0, sizeof(SocketAddr));
 
@@ -68,7 +70,7 @@ void TCPSocketService::closeMySocket()
 		closesocket(m_hSocket);
 
 #else
-
+    logV("close m_hSocket %d", m_hSocket);
 		close(m_hSocket);
 
 #endif
@@ -335,8 +337,9 @@ bool TCPSocketService::OnRecvPacket()
 		}
 		else if (iRetCode < 0)
 		{
-			//logV("cocos2d-x recv iRetCode header");
-			m_hSocket = 0;
+			logV("cocos2d-x recv iRetCode header %d", iRetCode);
+            closeMySocket();
+			//m_hSocket = 0;
 			return true;
 		}
 		else

@@ -6,15 +6,14 @@ HelpView::HelpView()
 	rootNode = CSLoader::createNode("help.csb");
 	addChild(rootNode);
 
-	BTN_ADD_TOUCH_EVENTLISTENER(Button,HelpView, closeBtn, 13001, "closeBtn", NULL)
-		BTN_ADD_TOUCH_EVENTLISTENER(ImageView, HelpView, Image_38, 13001, "Image_38", NULL)
+		UIGet_Button("closeBtn", rootNode, closeBtn)
+		UIGet_ImageView("Image_38", rootNode, Image_38)
+		BTN_EVENT(closeBtn, 13001)
+		BTN_EVENT(Image_38, 13001)
 }
 
 HelpView::~HelpView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(HelpView, closeBtn, 13001);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(HelpView, Image_38, 13001);
-
 	delete rootNode;
 	rootNode = NULL;
 }

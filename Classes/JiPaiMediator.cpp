@@ -1,6 +1,6 @@
 #include "JiPaiMediator.h"
 #include "DataManager.h"
-
+#include "ViewManager.h"
 JiPaiMediator::JiPaiMediator()
 {
 
@@ -74,7 +74,7 @@ void JiPaiMediator::onEvent(int i, void* data)
 //放到工具层
 Layer* JiPaiMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->menuLayer;
+	return VIEW->menuLayer;
 }
 
 void JiPaiMediator::showPushPoker()

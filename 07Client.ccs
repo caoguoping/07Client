@@ -1595,6 +1595,7 @@
         <Project Name="Icon.csd" Type="Node" />
         <Project Name="invite.csd" Type="Node" />
         <Project Name="InviteCell.csd" Type="Node" />
+        <Project Name="jiefeng.csd" Type="Node" />
         <Project Name="jieShuan.csd" Type="Node" />
         <Project Name="jieShuan_match.csd" Type="Node" />
         <Project Name="jieShuanGrade.csd" Type="Node" />
@@ -1646,7 +1647,6 @@
         <Project Name="warning.csd" Type="Node" />
         <Project Name="wealthNumber.csd" Type="Node" />
         <Project Name="zhupai.csd" Type="Node" />
-        <Project Name="jiefeng.csd" Type="Node" />
       </RootFolder>
     </Group>
   </SolutionFolder>

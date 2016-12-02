@@ -38,7 +38,6 @@ FriendView::FriendView()
 
 FriendView::~FriendView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(FriendView, closeBtn, 12301);
 	delete rootNode;
 	rootNode = NULL;
 
@@ -95,7 +94,8 @@ void FriendView::initView()
 	VIEW->nowViewTag = ViewManager::eViewFriend;
 
 	logV("\n myUserId %d", DATA->myBaseData.dwUserID);
-		BTN_ADD_TOUCH_EVENTLISTENER(Button, FriendView, closeBtn, 12301, "Button_close", NULL)
+	UIGet_Button("Button_close", rootNode, closeBtn)
+		BTN_EVENT(closeBtn, 12301)
 
 		UIGet_Node("FileNode_0", rootNode, ndFriends[0])
 		UIGet_Node("FileNode_1", rootNode, ndFriends[1])
@@ -220,7 +220,6 @@ void FriendView::clickSearch(Ref* pSender)
 #else
 	strId = UTF8::getInstance()->getString("friend", "test2");
 #endif
-	//strId = UTF8::getInstance()->getString("friend", "test2");
 
 	if (strId.empty())
 	{

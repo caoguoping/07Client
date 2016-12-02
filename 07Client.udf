@@ -28,24 +28,5 @@
         <EnableHTML5Advanced Value="False" />
       </Value>
     </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="entertainment.csd" />
-          <FilePathData Path="MallGoldNode.csd" />
-          <FilePathData Path="daoju.csd" />
-          <FilePathData Path="dailyMission.csd" />
-          <FilePathData Path="dailyMissionShow.csd" />
-          <FilePathData Path="bigHead.csd" />
-          <FilePathData Path="NewLobby.csd" />
-          <FilePathData Path="sysMsgTouming.csd" />
-          <FilePathData Path="FriendsCell.csd" />
-          <FilePathData Path="playGold.csd" />
-          <FilePathData Path="blood.csd" />
-          <FilePathData Path="jiefeng.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="sysMsgTouming.csd" />
-      </Value>
-    </Item>
   </Properties>
 </UserData>

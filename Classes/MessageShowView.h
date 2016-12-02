@@ -21,9 +21,9 @@ public:
 	void hideMessage();
 
 private:
-	BTN_TOUCH_HANDLE(ImageView, Image_38, 11902);
-	BTN_TOUCH_HANDLE(Button, getBtn, 11903);
-	BTN_TOUCH_HANDLE(Button, closeBtn, 11904);
+	ImageView* Image_38;
+	Button   * getBtn  ;
+	Button   * closeBtn;
 	//
 	Text* txtGold;
 	Text* txtDiamond;

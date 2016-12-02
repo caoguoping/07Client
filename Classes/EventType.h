@@ -46,7 +46,7 @@ enum EventType
 	CHAT,
 	INSURESUCCESS,
 	POKER_GONG_PAI_STATE,		//牌加上贡牌标记
-	SHOW_DAO_JU_ACTION,
+	SHOW_DAO_JU_ACTION,     //广播砸鸡蛋
 	SEVEN_LOGIN_INFO,			//七日登录信息
 	DAILY_MISSION_INFO,			//日常任务信息
 	MALL_INFO,					//商城信息
@@ -66,6 +66,7 @@ enum EventType
 	FRIEND_SEARCH,  //好友搜索
 	FRIEND_PLAY,    //进入好友场
 	FRIEND_FIELD_QUIT,   //好友场主建者逃跑
+
 
 	
 };

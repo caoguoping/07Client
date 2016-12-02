@@ -201,28 +201,14 @@ string Tools::getFileByName(string pFileName)
    return NULL;
 }
 
-bool Tools::saveFile(const char *pContent, string pFileName)
-{
-	string path;
-#if (PlatWhich == PlatAdr) //Android
-	{
-		path = "/mnt/sdcard/";
-		path = path + pFileName;
-	}
-#else
-	{
-		path = FileUtils::getInstance()->getWritablePath() + pFileName;
-	}
-#endif	
 
-   FILE* file = fopen(path.c_str(), "a+");  
-   if (file) 
-   {
-       fputs(pContent, file);
-       fclose(file);
-   }
-   return false;
-}
+//    FILE* file = fopen(path.c_str(), "a+");  
+//    if (file) 
+//    {
+//        fputs(pContent, file);
+//        fclose(file);
+//    }
+
 
 void Tools::logFile(const char * lpFormat, ...)
 {
@@ -275,30 +261,6 @@ void Tools::logFile(const char * lpFormat, ...)
 	}
 	return;
 
-}
-
-bool Tools::myWriteFile(const char* pcontent)
-{
-	time_t tt;
-	time(&tt);
-	struct tm *tm;
-	tm = localtime(&tt);
-	int month = tm->tm_mon + 1;
-	int day = tm->tm_mday;
-	int hour = tm->tm_hour;
-	int min = tm->tm_min;
-	char  fileName[128];
-	//sprintf(fileName, "%02d%02d%02d%02d.txt", month, day, hour, min * 10);
-	sprintf(fileName, "guandan%02d%02d%", month, day);
-	Tools::saveFile(pcontent, fileName);
-	return true;
-}
-
-//need define char fileLog[128];
-bool Tools::createFileLog(char * pcontent,  unsigned short mainCmd, unsigned short subCmd)
-{
-	sprintf(pcontent, "%s:%s:%d  main %d sub %d", __FILE__, __FUNCTION__, __LINE__, mainCmd, subCmd);
-	return true;
 }
 
 void Tools::getCurrentTime(char*  times)

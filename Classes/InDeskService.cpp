@@ -31,7 +31,6 @@ void InDeskService::onEvent(int i, void* data)
 			{
 				creatView(new PlayPokerView(), new PlayPokerMediator());
 				creatView(new PokerActionView(), new PokerActionMediator());
-				creatView(new JiPaiView(), new JiPaiMediator());
 			}
 			
 		}

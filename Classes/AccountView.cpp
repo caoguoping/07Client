@@ -6,6 +6,7 @@
 #include "ConnectGameServiceCommand.h"
 #include "LobbyView.h"
 #include "LobbyMediator.h"
+#include "ViewManager.h"
 
 AccountView::AccountView()
 {
@@ -100,7 +101,7 @@ void AccountView::clickBtnBack(Ref* pSender)
 	{
 		ndPubMsg = CSLoader::createNode("publicMessage.csb");
 		ndPubMsg->setPosition(WScreen * 0.5, HScreen * 0.5);
-		LayerManager->maskLayer->addChild(ndPubMsg);
+		VIEW->maskLayer->addChild(ndPubMsg);
 		ndPubMsg->setScale(0.8f, 0.8f);
 		ndPubMsg->runAction(Sequence::create(ScaleTo::create(0.2f, 1.03f),
 			ScaleTo::create(0.15f, 1.0f), nullptr));

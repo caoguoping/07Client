@@ -1,6 +1,6 @@
 #include "SevenDayGiftMediator.h"
 #include "DataManager.h"
-
+#include "ViewManager.h"
 SevenDayGiftMediator::SevenDayGiftMediator(bool isShowCloseBtn)
 {
 	ShowCloseBtn = isShowCloseBtn;
@@ -61,7 +61,7 @@ void SevenDayGiftMediator::onEvent(int i, void* data)
 
 Layer* SevenDayGiftMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 
 

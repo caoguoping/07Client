@@ -19,8 +19,8 @@ public:
 	vector<DBR_GR_UserLogonMissionRes> dailyMisInfo;
 
 public:
-	BTN_TOUCH_HANDLE(Button, closeBtn, 11007);
-	BTN_TOUCH_HANDLE(ImageView, Image_38, 11007);
+	Button   * closeBtn;
+	ImageView* Image_38;
 	Sprite*  imgFrame;
 
 	//¹ö¶¯ÈÝÆ÷

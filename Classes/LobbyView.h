@@ -64,6 +64,7 @@ public:
 	LobbyView();
 	~LobbyView();
 	void initView();
+	void refreshView();
 	void showHeadImage(int index);
 	void showGold(int gold);
 	///

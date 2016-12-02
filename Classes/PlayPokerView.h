@@ -90,7 +90,7 @@ public:
 
 	//头游
 	UIFrameDef(touyou)
-
+    void gameOverHandle();
 
 	//正在匹配
 	cocostudio::Armature* pipeiAction;
@@ -107,12 +107,12 @@ public:
 
 
 	public:
-	BTN_TOUCH_HANDLE(Button, fanhui_btn, 10601);
-	BTN_TOUCH_HANDLE(Button, clickMeBtn, 10618);
-	BTN_TOUCH_HANDLE(Button, clickLeftBtn, 10619);
-	BTN_TOUCH_HANDLE(Button, clickTopBtn, 10620);
-	BTN_TOUCH_HANDLE(Button, clickRightBtn, 10621);
-	BTN_TOUCH_HANDLE(Button, getGoldBtn, 10615);
+	Button* fanhui_btn   ;
+	Button* clickMeBtn   ;
+	Button* clickLeftBtn ;
+	Button* clickTopBtn  ;
+	Button* clickRightBtn;
+	Button* getGoldBtn   ;
 
 };
 

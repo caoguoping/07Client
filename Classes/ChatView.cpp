@@ -1,4 +1,5 @@
 #include "ChatView.h"
+#include "ViewManager.h"
 
 ChatView::ChatView()
 {
@@ -34,6 +35,16 @@ void ChatView::initView()
 	Image_7->addTouchEventListener(Image_7, toucheventselector(ChatView::clickImage7));
 	Image_8->addTouchEventListener(Image_8, toucheventselector(ChatView::clickImage8));
 	Image_9->addTouchEventListener(Image_9, toucheventselector(ChatView::clickImage9));
+    
+    Image_1->setGlobalZOrder(GOrderPlayerHead + 1);
+    Image_2->setGlobalZOrder(GOrderPlayerHead + 1);
+    Image_3->setGlobalZOrder(GOrderPlayerHead + 1);
+    Image_4->setGlobalZOrder(GOrderPlayerHead + 1);
+    Image_5->setGlobalZOrder(GOrderPlayerHead + 1);
+    Image_6->setGlobalZOrder(GOrderPlayerHead + 1);
+    Image_7->setGlobalZOrder(GOrderPlayerHead + 1);
+    Image_8->setGlobalZOrder(GOrderPlayerHead + 1);
+    Image_9->setGlobalZOrder(GOrderPlayerHead + 1);
 
 	show1 = layout->getChildByName("show1");
 	show2 = layout->getChildByName("show2");

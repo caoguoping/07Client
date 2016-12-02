@@ -1,5 +1,6 @@
 #include "BlueSky.h"
 #include "SGTools.h"
+#include "ViewManager.h"
 BlueSkyRegister* BlueSkyRegister::_instance;
 BlueSkyRegister::BlueSkyRegister()
 {
@@ -16,9 +17,10 @@ void BlueSkyRegister::creatView(BlueSkyView *view,BlueSkyMediator *mediator, voi
 	mediator->setNoteData(noteData);
 	mediator->setView(view);
 	mediator->OnRegister();
-	if (mediator->getLayer() != NULL)
+   Layer* layer = mediator->getLayer();
+	if (layer != NULL)
 	{
-		mediator->getLayer()->addChild(view);
+		layer->addChild(view);
 	}
 	else
 	{

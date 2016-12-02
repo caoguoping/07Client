@@ -6,10 +6,10 @@
       <ObjectData Name="Node" Tag="468" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Image_1" ActionTag="1437870106" Alpha="191" Tag="1974" IconVisible="False" LeftMargin="-8.0000" RightMargin="-8.0000" TopMargin="-4.5000" BottomMargin="-4.5000" TouchEnable="True" LeftEage="6" RightEage="6" TopEage="2" BottomEage="2" Scale9OriginX="6" Scale9OriginY="2" Scale9Width="4" Scale9Height="5" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_1" ActionTag="1437870106" Alpha="191" Tag="1974" IconVisible="False" LeftMargin="-7.1337" RightMargin="-8.8663" TopMargin="-4.5000" BottomMargin="-4.5000" TouchEnable="True" LeftEage="6" RightEage="6" TopEage="2" BottomEage="2" Scale9OriginX="6" Scale9OriginY="2" Scale9Width="4" Scale9Height="5" ctype="ImageViewObjectData">
             <Size X="16.0000" Y="9.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position />
+            <Position X="0.8663" Y="0.0000" />
             <Scale ScaleX="60.0000" ScaleY="60.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -273,7 +273,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="addFriendBtn" ActionTag="1759483508" VisibleForFrame="False" Tag="2971" IconVisible="False" LeftMargin="-32.4880" RightMargin="-103.5120" TopMargin="-28.0178" BottomMargin="-14.9822" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="106" Scale9Height="21" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="addFriendBtn" ActionTag="1759483508" Tag="2971" IconVisible="False" LeftMargin="-32.4880" RightMargin="-103.5120" TopMargin="-28.0178" BottomMargin="-14.9822" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="106" Scale9Height="21" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="136.0000" Y="43.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="35.5120" Y="6.5178" />
@@ -288,7 +288,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_diamond" ActionTag="-1621347669" Tag="314" IconVisible="False" LeftMargin="-34.2753" RightMargin="-165.7247" TopMargin="-35.9377" BottomMargin="-14.0623" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_diamond" Visible="False" ActionTag="-1621347669" Tag="314" IconVisible="False" LeftMargin="-34.2753" RightMargin="-165.7247" TopMargin="-35.9377" BottomMargin="-14.0623" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="200.0000" Y="50.0000" />
             <Children>
               <AbstractNodeData Name="number_frame_12_0_0" ActionTag="846730105" Tag="315" IconVisible="False" LeftMargin="1.6639" RightMargin="-4.6639" TopMargin="6.4395" BottomMargin="4.5605" ctype="SpriteObjectData">
@@ -352,7 +352,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_daoju" ActionTag="-236736759" Tag="320" IconVisible="False" LeftMargin="-176.3111" RightMargin="166.3111" TopMargin="160.8887" BottomMargin="-182.8887" FontSize="20" LabelText="1" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_0" ActionTag="-236736759" VisibleForFrame="False" Tag="320" IconVisible="False" LeftMargin="-176.3111" RightMargin="166.3111" TopMargin="160.8887" BottomMargin="-182.8887" FontSize="20" LabelText="1" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="10.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-171.3111" Y="-171.8887" />
@@ -364,7 +364,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_daoju_0" ActionTag="1111762822" Tag="324" IconVisible="False" LeftMargin="-69.8161" RightMargin="55.8161" TopMargin="160.8887" BottomMargin="-182.8887" FontSize="20" LabelText="2" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_1" ActionTag="1111762822" VisibleForFrame="False" Tag="324" IconVisible="False" LeftMargin="-69.8161" RightMargin="55.8161" TopMargin="160.8887" BottomMargin="-182.8887" FontSize="20" LabelText="2" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="14.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-62.8161" Y="-171.8887" />
@@ -376,7 +376,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_daoju_1" ActionTag="1494587993" Tag="325" IconVisible="False" LeftMargin="38.6786" RightMargin="-52.6786" TopMargin="160.8887" BottomMargin="-182.8887" FontSize="20" LabelText="3" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_2" ActionTag="1494587993" VisibleForFrame="False" Tag="325" IconVisible="False" LeftMargin="38.6786" RightMargin="-52.6786" TopMargin="160.8887" BottomMargin="-182.8887" FontSize="20" LabelText="3" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="14.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="45.6786" Y="-171.8887" />
@@ -388,7 +388,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_daoju_2" ActionTag="-1409579118" Tag="326" IconVisible="False" LeftMargin="149.1742" RightMargin="-159.1742" TopMargin="160.8887" BottomMargin="-182.8887" FontSize="20" LabelText="1" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_3" ActionTag="-1409579118" VisibleForFrame="False" Tag="326" IconVisible="False" LeftMargin="149.1742" RightMargin="-159.1742" TopMargin="160.8887" BottomMargin="-182.8887" FontSize="20" LabelText="1" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="10.0000" Y="22.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="154.1742" Y="-171.8887" />

@@ -4,22 +4,27 @@
 PlayerInfoView::PlayerInfoView()
 {
 	rootNode = CSLoader::createNode("playerInfo.csb");
-	
 	addChild(rootNode);
+    
+    Button  *closeBtn, *eggBtn,  *boomBtn,  *heartBtn,  *flowerBtn, *addFriendBtn;
+    UIGet_Button("closeBtn", rootNode, closeBtn)
+    UIGet_Button("eggBtn", rootNode, eggBtn)
+    UIGet_Button("boomBtn", rootNode, boomBtn)
+    UIGet_Button("heartBtn", rootNode, heartBtn)
+    UIGet_Button("flowerBtn", rootNode, flowerBtn)
+    UIGet_Button("addFriendBtn", rootNode, addFriendBtn)
+    
 
-	rootNode->setScale(0.8f, 0.8f);
-	rootNode->runAction(Sequence::create(
-		ScaleTo::create(0.2f, 1.03f),
-		ScaleTo::create(0.15f, 1.0f),
-		nullptr));
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayerInfoView, closeBtn, 10701, "closeBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayerInfoView, eggBtn, 10702, "eggBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayerInfoView, boomBtn, 10703, "boomBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayerInfoView, heartBtn, 10704, "heartBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayerInfoView, flowerBtn, 10705, "flowerBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, PlayerInfoView, addFriendBtn, 10706, "addFriendBtn", NULL)
-	BTN_ADD_TOUCH_EVENTLISTENER(ImageView, PlayerInfoView, Image_close, 10701, "Image_1", NULL)
 
+	ImageView* imgClose;
+	UIGet_ImageView("Image_1", rootNode, imgClose)
+	BTN_EVENT(closeBtn, 10701)
+	BTN_EVENT(eggBtn, 10702)
+	BTN_EVENT(boomBtn, 10703)
+	BTN_EVENT(heartBtn, 10704)
+	BTN_EVENT(flowerBtn, 10705)
+	BTN_EVENT(addFriendBtn, 10706)
+	BTN_EVENT(imgClose, 10701)
 
 //	_Image_1->setGlobalZOrder(11);   //¸Ç¹ýplaySceneLayer
 
@@ -36,7 +41,7 @@ PlayerInfoView::PlayerInfoView()
 	UIGet_Layout("Panel_diamond", rootNode, lyDiamond)
 		lyDiamond->setVisible(false);
 
-		Button*  btnAddFriend;
+
 	UIGet_Button("addFriendBtn", rootNode, btnAddFriend)
 		btnAddFriend->setVisible(true);
 
@@ -53,11 +58,5 @@ PlayerInfoView::~PlayerInfoView()
 {
 	delete rootNode;
 	rootNode = NULL;
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayerInfoView, closeBtn, 10701);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayerInfoView, eggBtn, 10702);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayerInfoView, boomBtn, 10703);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayerInfoView, heartBtn, 10704);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayerInfoView, flowerBtn, 10705);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayerInfoView, addFriendBtn, 10706);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(PlayerInfoView, Image_close, 10701);
+
 }

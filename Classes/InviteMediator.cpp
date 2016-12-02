@@ -1,6 +1,6 @@
 #include "InviteMediator.h"
 #include "UILayerService.h"
-
+#include "ViewManager.h"
 InviteMediator::InviteMediator()
 {
 
@@ -61,7 +61,7 @@ void InviteMediator::onEvent(int i, void* data)
 
 Layer* InviteMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 
 void InviteMediator::clickCloseBtnHander()

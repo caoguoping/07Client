@@ -10,10 +10,8 @@ USING_NS_CC;
 void AppDelegate::init()
 {
 	logF("\n   GuanDan app is start  \n");
-	logT
 	srand((unsigned)time(NULL));   //随机数时间种子
-
-	log("cocos2d-x %s", FileUtils::getInstance()->getWritablePath().c_str());
+	logV("cocos2d-x %s", FileUtils::getInstance()->getWritablePath().c_str());
 	initModel();
 	initService();
 	initCommand();
@@ -24,10 +22,6 @@ void AppDelegate::init()
 	listener->onKeyReleased = CC_CALLBACK_2(AppDelegate::onKeyReleased, this);
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithFixedPriority(listener,1);
 
-
-
-
-//	CallCppHelper::getInstance()->createSysText();
 }
 void AppDelegate::initModel()
 {
@@ -129,6 +123,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	director->runWithScene(scene);
 	constructor(scene);//注册主场景
 	VIEW->mainScene = scene;
+    VIEW->createLayer();
 
 	init();
 // 	glEnable(GL_POINT_SMOOTH);
@@ -171,5 +166,5 @@ void AppDelegate::applicationDidEnterBackground() {
 void AppDelegate::applicationWillEnterForeground() 
 {
     Director::getInstance()->startAnimation();
-
+	SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }

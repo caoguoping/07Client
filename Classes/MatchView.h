@@ -12,8 +12,8 @@ public:
 	~MatchView();
 	void initView();
 
-	BTN_TOUCH_HANDLE(Button, closeBtn, 16000);
-	BTN_TOUCH_HANDLE(ImageView, Image_bg, 16000);
+	Button   * closeBtn;
+	ImageView* imgBg;
 	void gotoMatch(Ref*  psender);
 	void createFastMatch();
 

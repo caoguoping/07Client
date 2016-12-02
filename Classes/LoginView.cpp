@@ -1,11 +1,11 @@
 #include "LoginView.h"
 #include "SGTools.h"
+#include "ViewManager.h"
+
 
 LoginView::LoginView()
 {
-	logP
 	rootNode = CSLoader::createNode("LoginScene.csb");
-	logV("after LoginView csb");
 	addChild(rootNode);
 
 

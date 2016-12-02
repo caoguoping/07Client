@@ -86,7 +86,7 @@ void ConnectGameServiceCommand::execute(void* data)
 	if (iErrorCode)
 	{
 		logF("cocos2d-x socket game connect success m_hSocket %d ", tcp_game->m_hSocket);
-		logV("cocos2d-x socket game connect success m_hSocket %d ", tcp_game->m_hSocket);
+		logV("\ncocos2d-x socket game connect success m_hSocket %d \n", tcp_game->m_hSocket);
 
 
 		getcontainer()->schedule(schedule_selector(ConnectGameServiceCommand::checkNetWorks), 30.0f);

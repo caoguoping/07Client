@@ -1,5 +1,5 @@
 #include "PokerActionMediator.h"
-
+#include "ViewManager.h"
 PokerActionMediator::PokerActionMediator()
 {
 
@@ -86,7 +86,7 @@ void PokerActionMediator::onEvent(int i, void* data)
 
 Layer* PokerActionMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 
 void PokerActionMediator::showNode(int id)

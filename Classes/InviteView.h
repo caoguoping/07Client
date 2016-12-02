@@ -17,7 +17,7 @@ public:
 	int iChairId;
 public:
 	ListView*  lstInvite;
-	BTN_TOUCH_HANDLE(Button,closeBtn, 17000);
+	Button *closeBtn;
 };
 
 #endif

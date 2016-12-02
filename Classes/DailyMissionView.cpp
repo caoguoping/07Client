@@ -19,16 +19,14 @@ DailyMissionView::DailyMissionView(bool showGetBtn)
 	timeLine->gotoFrameAndPlay(0, false);
 	rootNode->runAction(timeLine);
 
-	BTN_ADD_TOUCH_EVENTLISTENER(Button, DailyMissionView, closeBtn, 11007, "closeBtn", "ImageFrame")
-		BTN_ADD_TOUCH_EVENTLISTENER(ImageView, DailyMissionView, Image_38, 11007, "Image_38", NULL);
+
+
+
 	canShowGetBtn = showGetBtn;
 }
 
 DailyMissionView::~DailyMissionView()
 {
-	BTN_REMOVE_TOUCH_EVENTLISTENER(DailyMissionView, closeBtn, 11007);
-	BTN_REMOVE_TOUCH_EVENTLISTENER(DailyMissionView, Image_38, 11007);
-
 	rootNode->stopAllActions();
 	delete rootNode;
 	rootNode = NULL;
@@ -38,6 +36,11 @@ void DailyMissionView::initView()
 {
 	UIGet_Sprite("ImageFrame", rootNode, imgFrame)
 		UIGet_ScrollView("ScrollView_1", imgFrame, scrImg)
+
+		UIGet_Button("closeBtn",   imgFrame, closeBtn)
+		UIGet_ImageView("Image_38", rootNode, Image_38)
+		BTN_EVENT(closeBtn, 11007)
+		BTN_EVENT(Image_38, 11007)
 
 		char tempStr[64];
 		for (int i = 0; i < 6; i ++)

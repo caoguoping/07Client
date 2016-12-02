@@ -1,5 +1,5 @@
 #include "EntertainmentMediator.h"
-
+#include "ViewManager.h"
 
 EntertainmentMediator::EntertainmentMediator()
 {
@@ -57,6 +57,6 @@ void EntertainmentMediator::onEvent(int i, void* data)
 
 Layer* EntertainmentMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->uiLayer;
+	return VIEW->uiLayer;
 }
 

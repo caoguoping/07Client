@@ -9,14 +9,9 @@
 #define SDK_NULL 0   //没有SDK
 #define SDK_YIKE 1   //易科SDK
 
+#define PlatWhich PlatAdr
+#define SDKWhich  SDK_NULL
 
-
-
-//#define SDKWhich  SDK_YIKE	
-//#define PlatWhich PlatAdr
-// 
- #define SDKWhich  SDK_NULL
-#define PlatWhich PlatWin
 
 
 #endif	

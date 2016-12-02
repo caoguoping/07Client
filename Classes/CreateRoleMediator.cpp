@@ -1,5 +1,5 @@
 #include "CreateRoleMediator.h"
-
+#include "ViewManager.h"
 CreateRoleMediator::CreateRoleMediator(registLogin data)
 {
 	rLogin = new registLogin();
@@ -21,6 +21,7 @@ CreateRoleMediator::~CreateRoleMediator()
 */
 void CreateRoleMediator::OnRegister()
 {
+    logV("createRole!");
 	createRoleView = (CreateRoleView*)getView();
 
 	//
@@ -93,7 +94,7 @@ void CreateRoleMediator::onEvent(int i, void* data)
 */
 Layer* CreateRoleMediator::getLayer()
 {
-	return ((UILayerService*)getService(UILayerService::NAME))->mainLayer;
+	return VIEW->mainLayer;
 }
 
 
