@@ -153,20 +153,7 @@ void ActivityMediator::getRechargeAwardHander(int index)
 }
 void ActivityMediator::getLotteryAwardHander()
 {
-// 	blueSkyDispatchEvent(11905);
-// 	//加金币
-// 	;
-// 	DATA->myBaseData.lUserScore += activityView ;
-// 	blueSkyDispatchEvent(EventType::INSURESUCCESS);
-// 
-// 	//显示金币增加信息
-// 	MessageVO* data = new  MessageVO();
-// 	data->type = 2;
-// 	char t[256];
-// 	sprintf(t, "%d", lotteryIndex);
-// 	string name = t;
-// 	data->name = name;
-// 	blueSkyDispatchEvent(11901, data);
+
 }
 
 void ActivityMediator::updateCupAward(CMD_GP_CupAwards info)

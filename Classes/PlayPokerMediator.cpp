@@ -644,8 +644,8 @@ void PlayPokerMediator::delaySendPokerHandle()
 
 	if (DATA->bGameCate == DataManager::E_GameCateMatch)
 	{
-		logV("  cocos2d-x match send poker now!  ");
-		logF("  cocos2d-x match send poker now!  ");
+		logV("  cocos2d-x match send poker now! \n\n ");
+		logF("  cocos2d-x match send poker now! \n\n");
 		playPokerView->showLunChang();
 		playPokerView->hideAllFace();
 		playPokerView->hideAllName();
@@ -664,8 +664,8 @@ void PlayPokerMediator::delaySendPokerHandle()
 	else
 	{
 		creatView(new JiPaiView(), new JiPaiMediator());
-		logV("cocos2d-x send poker now!  ");
-		logF("cocos2d-x send poker now!  ");
+		logV("cocos2d-x send poker now! \n\n ");
+		logF("cocos2d-x send poker now! \n\n ");
 	}
 
 	//发牌音效
@@ -816,13 +816,13 @@ void PlayPokerMediator::reveivePlayerOutPokerHandle(void* data)
 	desk = playerInDeskModel->chair[pokerGameModel->playerOutCard.wOutCardUser];
 	pokerNum = gameDataModel->player[desk].pokerNum - pokerGameModel->playerOutCard.bCardCount;
 
-	logF("receive playersize 0:%d, 1:%d, 2:%d, 3:%d",
+	logF("\nreceive playersize 0:%d, 1:%d, 2:%d, 3:%d",
 		gameDataModel->player[0].pokerArr.size(),
 		gameDataModel->player[1].pokerArr.size(),
 		gameDataModel->player[2].pokerArr.size(),
 		gameDataModel->player[3].pokerArr.size()
 		);
-	logV("receive playersize 0:%d, 1:%d, 2:%d, 3:%d",
+	logV("\nreceive playersize 0:%d, 1:%d, 2:%d, 3:%d",
 		gameDataModel->player[0].pokerArr.size(),
 		gameDataModel->player[1].pokerArr.size(),
 		gameDataModel->player[2].pokerArr.size(),
@@ -1305,6 +1305,19 @@ void PlayPokerMediator::clickfanHuiBtnHander()
 		getcontainer()->unschedule(schedule_selector(ConnectGameServiceCommand::heartPacket));
 	}
 
+	//清空数据
+	DATAGameData->player[0].pokerArr = {};
+	DATAGameData->player[0].outPokerArr = {};
+	DATAGameData->player[1].outPokerArr = {};
+	DATAGameData->player[2].outPokerArr = {};
+	DATAGameData->player[3].outPokerArr = {};
+	for (int i = 0; i < 4; i++)
+	{
+		DATAGameData->player[i].allOutPokerArrID = {};
+	}
+	DATAGameData->player[0].selectedPokerArr = {};
+
+
 	creatView(new LobbyView(), new LobbyMediator());
 
 	blueSkyDispatchEvent(EventType::BACK_TO_HALL);
@@ -1613,7 +1626,6 @@ void PlayPokerMediator::clickTiShiBtnHander(Ref*  pSender)
 
 void PlayPokerMediator::clickChuPaiBtnHander(Ref*  pSender)
 {
-	logF("before chupai size %d ", DATAGameData->player[0].pokerArr.size());
 	PLayEffect(EFFECT_BTN)
 	//先判断能不能出牌
 	bool canOutPoker = false;
@@ -1701,20 +1713,20 @@ void PlayPokerMediator::clickChuPaiBtnHander(Ref*  pSender)
 		gameDataModel->player[0].pokerTypeArr = OutPokerLogicRule::fenXiShouPai(gameDataModel->player[0].pokerArr);
 
 		//重新调整手牌的位置
-		logF("#########         left poker   size %d", gameDataModel->player[0].pokerArr.size());
-		logV("#########         left poker   size %d", gameDataModel->player[0].pokerArr.size());
+	//	logF("------         left poker   size %d      -------", gameDataModel->player[0].pokerArr.size());
+	//	logV("------         left poker   size %d      -------", gameDataModel->player[0].pokerArr.size());
 		for (DWORD i = 0; i < gameDataModel->player[0].pokerArr.size(); i++)
 		{
 			pokeridData *data = new pokeridData();
 			data->pokerID = gameDataModel->player[0].pokerArr.at(i)->pokerID;
 			data->pokerID2 = gameDataModel->player[0].pokerArr.at(i)->pokerID2;
 			blueSkyDispatchEvent(EventType::CHANGE_POKER_POSITION, data);
-			logV("(%d %d) ", PokerLogic::getPokerNum(data->pokerID) + 2,
-				PokerLogic::getPokerHuaSe(data->pokerID)
-				);
-			logF("(%d %d) ", PokerLogic::getPokerNum(data->pokerID) + 2,
-				PokerLogic::getPokerHuaSe(data->pokerID)
-				);
+// 			logV("(%d %d) ", PokerLogic::getPokerNum(data->pokerID) + 2,
+// 				PokerLogic::getPokerHuaSe(data->pokerID)
+// 				);
+// 			logF("(%d %d) ", PokerLogic::getPokerNum(data->pokerID) + 2,
+// 				PokerLogic::getPokerHuaSe(data->pokerID)
+// 				);
 		}
 
 		//重置本轮提示点击次数
@@ -1723,6 +1735,14 @@ void PlayPokerMediator::clickChuPaiBtnHander(Ref*  pSender)
 		//重置本轮同花顺按钮点击次数
 		clickTongHuaShunTimes = 0;
 	}
+	//不符合出牌，并且是托管状态，直接不出
+// 	else  
+// 	{
+// 		if (isAutoState == true)
+// 		{
+// 			clickBuChuBtnHander(NULL);
+// 		}
+// 	}
 
 }
 

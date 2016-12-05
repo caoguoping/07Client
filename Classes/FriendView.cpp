@@ -59,7 +59,6 @@ void FriendView::refreshShuren()
 				i--;
 				dwShurenSize--;
 				break;
-				logV("friend i %d, j %d dwShurenSize %d, ", i, j, dwFriendsSize);
 			}
 		}
 	}

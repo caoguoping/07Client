@@ -300,7 +300,6 @@ void ActivityView::startLottery()
 void ActivityView::getSpin(Ref* psender)
 {
 	wpIndex = int(rand_0_1() * 8) + 1;
-	//logV("\nwpIndex:%d", wpIndex);
 	if (wpIndex == 5 || wpIndex == 7)
 	{
 		wpIndex--;

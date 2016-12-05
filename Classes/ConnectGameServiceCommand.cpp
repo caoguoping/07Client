@@ -76,6 +76,7 @@ void ConnectGameServiceCommand::execute(void* data)
 	
 	string ip = ((RoomListModel*)getModel(RoomListModel::NAME))->roomList[0].wszServerAddr;
 	logV("port %d, ip %s", port, ip.c_str());
+	logF("port %d, ip %s", port, ip.c_str());
 
 	TCPSocketService*  tcp_game = (TCPSocketService*)getService(TCPSocketService::GAME);
 	bool iErrorCode = tcp_game->Connect(ip.data(), port);
@@ -120,28 +121,29 @@ void ConnectGameServiceCommand::execute(void* data)
 
 void ConnectGameServiceCommand::callNotConnect(Ref* psender)
 {
-	Node*  img = static_cast<Node*>(psender);
-	img->getParent()->removeFromParentAndCleanup(true);
-	
-	logF("time out 30s and close mysocket");
-	logV("time out 30s and close mysocket");
-
-	((TCPSocketService*)getService(TCPSocketService::GAME))->closeMySocket();
-
-	//停掉网络主动监测与心跳
-	if (getcontainer()->isScheduled(schedule_selector(ConnectGameServiceCommand::checkNetWorks)))
-	{
-		getcontainer()->unschedule(schedule_selector(ConnectGameServiceCommand::checkNetWorks));
-	}
-
-	if (getcontainer()->isScheduled(schedule_selector(ConnectGameServiceCommand::heartPacket)))
-	{
-		getcontainer()->unschedule(schedule_selector(ConnectGameServiceCommand::heartPacket));
-	}
-
-	//跳转至大厅界面
-	blueSkyDispatchEvent(EventType::BACK_TO_HALL);
-	creatView(new LobbyView(), new LobbyMediator());
+	blueSkyDispatchEvent(10601);
+ 	Node*  img = static_cast<Node*>(psender);
+ 	img->getParent()->removeFromParentAndCleanup(true);
+// 	
+// 	logF("time out 30s and close mysocket");
+// 	logV("time out 30s and close mysocket");
+// 
+// 	((TCPSocketService*)getService(TCPSocketService::GAME))->closeMySocket();
+// 
+// 	//停掉网络主动监测与心跳
+// 	if (getcontainer()->isScheduled(schedule_selector(ConnectGameServiceCommand::checkNetWorks)))
+// 	{
+// 		getcontainer()->unschedule(schedule_selector(ConnectGameServiceCommand::checkNetWorks));
+// 	}
+// 
+// 	if (getcontainer()->isScheduled(schedule_selector(ConnectGameServiceCommand::heartPacket)))
+// 	{
+// 		getcontainer()->unschedule(schedule_selector(ConnectGameServiceCommand::heartPacket));
+// 	}
+// 
+// 	//跳转至大厅界面
+// 	blueSkyDispatchEvent(EventType::BACK_TO_HALL);
+// 	creatView(new LobbyView(), new LobbyMediator());
 
 }
 

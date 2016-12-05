@@ -41,8 +41,12 @@ bool TCPSocketService::Connect(const char* dwServerIP, unsigned short wPort)
 {
 	//½¨Á¢ SOCKET
 	m_hSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-	m_hSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-    logV("m_hsocket socket %d", m_hSocket);
+        logV("m_hsocket socket %d", m_hSocket);
+    if(m_hSocket == 0)
+    {
+        m_hSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+    }
+
 	struct sockaddr_in SocketAddr;
 	memset(&SocketAddr, 0, sizeof(SocketAddr));
 

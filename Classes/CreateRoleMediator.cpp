@@ -21,7 +21,6 @@ CreateRoleMediator::~CreateRoleMediator()
 */
 void CreateRoleMediator::OnRegister()
 {
-    logV("createRole!");
 	createRoleView = (CreateRoleView*)getView();
 
 	//

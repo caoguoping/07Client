@@ -7,7 +7,6 @@
 static DWORD   adwRewards[4] = { 10000, 6000, 2000, 1000 };
 AccountMediator::AccountMediator(CMD_S_GameEnd data)
 {
-    logV("GameResult   %d %d %d %d %d", data.bIsBlood, data.Rank[0], data.Rank[1], data.Rank[2], data.Rank[3] );
 	if (DATA->bGameCate != DataManager::E_GameCateMatch)
 	{
 		//先获取玩家对应的服务器椅子ID
@@ -22,7 +21,6 @@ AccountMediator::AccountMediator(CMD_S_GameEnd data)
 		//获取上座玩家的名次(0~3)
 		if (data.m_iGameResult[0] == 0 && data.m_iGameResult[1] == 0 && data.m_iGameResult[2] == 0 && data.m_iGameResult[3] == 0)
 		{
-			logV("all m_isGameResult 0");
 			if (data.lGameScore[svrChairId[2]] < 0)
 			{
 				iGrade[0] = 0;
@@ -53,6 +51,10 @@ AccountMediator::AccountMediator(CMD_S_GameEnd data)
 			((GameDataModel*)getModel(GameDataModel::NAME))->player[0].isSuccess = false;
 		}
 		DATA->myBaseData.lUserScore += data.lGameScore[svrChairId[0]];
+		if (DATA->myBaseData.lUserInsure < 0)
+		{
+			DATA->myBaseData.lUserInsure = 0;
+		}
 	}
 }
 
@@ -104,6 +106,10 @@ void AccountMediator::OnRegister()
 			showGrade(iGrade[i]);
 		}
 		DATA->myBaseData.lUserScore += dwGold[0];
+		if (DATA->myBaseData.lUserInsure < 0)
+		{
+			DATA->myBaseData.lUserInsure = 0;
+		}
 
 		successImage1->setVisible(isSuccess);
 		failImage1->setVisible(!isSuccess);
@@ -174,6 +180,10 @@ void AccountMediator::OnRegister()
 		accountView->playAccountAction(isSuccess);
 		DATA->wMatchScore = 10;   //下一场清零
 		DATA->myBaseData.lUserScore += dwReword;
+		if (DATA->myBaseData.lUserInsure < 0)
+		{
+			DATA->myBaseData.lUserInsure = 0;
+		}
 	}
 }
 
