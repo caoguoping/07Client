@@ -147,6 +147,9 @@ public:
 	void clickAutoBtnHander(Ref* psender);
 	void clickTaskBtnHander(Ref* psender);
 	bool clicklookTableBtn(Touch *touch, Widget::TouchEventType type);
+	void handleTiShi();
+	void handleBuChu();
+	void handleChuPai();
 
 public:
 	void handleFriendPlay();
@@ -167,7 +170,7 @@ public:
 	void updateMatchScore();  //更新
 	void onTouchesHuapai(Ref*  pSender, Widget::TouchEventType type);
 	//是否显示出牌按钮
-	void isOrNotMyTurn(bool value);
+	void isMyTurn(bool value);
 	//是否显示不出文字
 	void showBuchu(int deskID, bool show, bool isClearData);
 	//显示上座的玩家

@@ -5,6 +5,8 @@
 #include "GameDataModel.h"
 #include "SetMediator.h"
 #include "SetView.h"
+#include "ViewManager.h"
+#include "SGTools.h"
 
 ShopView::ShopView(int id)
 {
@@ -17,18 +19,40 @@ ShopView::ShopView(int id)
 	UIGet_CheckBox("zhuanShiBtn", rootNode, zhuanShiBtn)
 		UIGet_CheckBox("goldBtn", rootNode, goldBtn)
 		UIGet_Button("closeBtn", rootNode, closeBtn)
-	BTN_EVENT(zhuanShiBtn, 10801)
-	BTN_EVENT(goldBtn, 10802	)
+		UIClickCheck(zhuanShiBtn, ShopView::showZuanShiView)
+		UIClickCheck(goldBtn, ShopView::showGoldView)
 	BTN_EVENT(closeBtn, 10803	)
 
 	UIGet_Node("FileNode_zuanshi", rootNode, shopItem[E_zuanshi])
 	UIGet_Node("FileNode_jinbi", rootNode, shopItem[E_gold])
 	currentTitle = id;
 
+	Button*  chargeBtns[10];
+	ScrollView*  scrZuanshi, *scrGold;
+	UIGet_ScrollView("ScrollView_1", shopItem[E_zuanshi], scrZuanshi)
+	UIGet_ScrollView("ScrollView_1", shopItem[E_gold], scrGold)
 
-		//top
-		Node*  topNode;
-		UIGet_Node("FileNode_top", rootNode, topNode)
+	UIGet_Button("Button_0", shopItem[E_zuanshi], chargeBtns[0])
+	UIGet_Button("Button_1", scrZuanshi, chargeBtns[1])
+	UIGet_Button("Button_2", scrZuanshi, chargeBtns[2])
+	UIGet_Button("Button_3", scrZuanshi, chargeBtns[3])
+	UIGet_Button("Button_4", scrZuanshi, chargeBtns[4])
+
+	UIGet_Button("Button_5", shopItem[E_gold], chargeBtns[5])
+	UIGet_Button("Button_6", scrGold, chargeBtns[6])
+	UIGet_Button("Button_7", scrGold, chargeBtns[7])
+	UIGet_Button("Button_8", scrGold, chargeBtns[8])
+	UIGet_Button("Button_9", scrGold, chargeBtns[9])
+
+	for (int i = 0; i < 10; i ++)
+	{
+		chargeBtns[i]->setTag(i);
+		UIClick(chargeBtns[i], ShopView::clickChargeBtn)
+	}
+
+	//top
+	Node*  topNode;
+	UIGet_Node("FileNode_top", rootNode, topNode)
 		UIGet_Text("Text_gold", topNode, txtGold)
 		UIGet_Text("Text_diamond", topNode, txtDiamond)
 		txtGold->setString(Tools::parseInt2String(DATA->myBaseData.lUserScore));
@@ -38,104 +62,14 @@ ShopView::ShopView(int id)
 		UIGet_Button("Button_addDiamond", topNode, btnAddDiamond)
 		UIGet_Button("Button_setting", topNode, btnSetting)
 		btnAddDiamond->setTouchEnabled(false);
-		btnAddGold->setTouchEnabled(false);
+	btnAddGold->setTouchEnabled(false);
 
 	btnSetting->addClickEventListener([&](Ref* psender)
 	{
 		PLayEffect(EFFECT_BTN)
-		creatView(new SetView(), new SetMediator());
+			creatView(new SetView(), new SetMediator());
 	}
 	);
-
-
-
-
-
-
-	Button* btnZuanTejia = static_cast<Button*>(shopItem[E_zuanshi]->getChildByName("Button_zhuanshi"));
-	btnZuanTejia->addClickEventListener([this](Ref* psender)
-	{
-		PLayEffect(EFFECT_BTN)
-		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10804, -1));
-	}
-	);
-
-	ScrollView*  scrZuanshi, *scrGold;
-	UIGet_ScrollView("ScrollView_1", shopItem[E_zuanshi], scrZuanshi)
-		UIGet_ScrollView("ScrollView_1", shopItem[E_gold], scrGold)
-		Button* btnZuanTejia1 = static_cast<Button*>(scrZuanshi->getChildByName("Button_1"));
-	btnZuanTejia1->addClickEventListener([this](Ref* psender)
-	{
-		PLayEffect(EFFECT_BTN)
-		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10805, -1));
-	}
-	);
-
-	Button* btnZuanTejia2 = static_cast<Button*>(scrZuanshi->getChildByName("Button_1_0"));
-	btnZuanTejia2->addClickEventListener([this](Ref* psender)
-	{
-		PLayEffect(EFFECT_BTN)
-		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10806, -1));
-	}
-	);
-
-	Button* btnZuanTejia3 = static_cast<Button*>(scrZuanshi->getChildByName("Button_1_2"));
-	btnZuanTejia3->addClickEventListener([this](Ref* psender)
-	{
-		PLayEffect(EFFECT_BTN)
-		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10807, -1));
-	}
-	);
-
-	Button* btnZuanTejia4 = static_cast<Button*>(scrZuanshi->getChildByName("Button_1_2_0"));
-	btnZuanTejia4->addClickEventListener([this](Ref* psender)
-	{
-		PLayEffect(EFFECT_BTN)
-		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10808, -1));
-	}
-	);
-
-	//jinbi
-	Button* tnZuanTejia = static_cast<Button*>(shopItem[E_gold]->getChildByName("Button_zhuanshi"));
-	tnZuanTejia->addClickEventListener([this](Ref* psender)
-	{
-		PLayEffect(EFFECT_BTN)
-		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10809, -1));
-	}
-	);
-
-	Button* tnZuanTejia1 = static_cast<Button*>(scrGold->getChildByName("Button_1"));
-	tnZuanTejia1->addClickEventListener([this](Ref* psender)
-	{
-		PLayEffect(EFFECT_BTN)
-		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10810, -1));
-	}
-	);
-
-	Button* tnZuanTejia2 = static_cast<Button*>(scrGold->getChildByName("Button_1_0"));
-	tnZuanTejia2->addClickEventListener([this](Ref* psender)
-	{
-		PLayEffect(EFFECT_BTN)
-		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10811, -1));
-	}
-	);
-
-	Button* tnZuanTejia3 = static_cast<Button*>(scrGold->getChildByName("Button_1_2"));
-	tnZuanTejia3->addClickEventListener([this](Ref* psender)
-	{
-		PLayEffect(EFFECT_BTN)
-		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10812, -1));
-	}
-	);
-
-	Button* tnZuanTejia4 = static_cast<Button*>(scrGold->getChildByName("Button_1_2_0"));
-	tnZuanTejia4->addClickEventListener([this](Ref* psender)
-	{
-		PLayEffect(EFFECT_BTN)
-		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", 10813, -1));
-	}
-	);
-
 }
 
 void ShopView::initView()
@@ -144,10 +78,10 @@ void ShopView::initView()
 	{
 
 	case 0:
-		showZuanShiView();
+		showZuanShiView(NULL, CheckBox::EventType::SELECTED);
 		break;
 	case 1:
-		showGoldView();
+		showGoldView(NULL, CheckBox::EventType::SELECTED);
 		break;
 
 	default:
@@ -159,7 +93,7 @@ void ShopView::showMyZuanShi(int num)
 {
 	txtDiamond->setString(Tools::parseInt2String(num));
 }
-void ShopView::showMyGold(int num)
+void ShopView::showMyGold(SCORE num)
 {
 	txtGold->setString(Tools::parseInt2String(num));
 }
@@ -171,8 +105,9 @@ ShopView::~ShopView()
 
 }
 
-void ShopView::showZuanShiView()
+void ShopView::showZuanShiView(Ref*  pSender, CheckBox::EventType type)
 {
+	PLayEffect(EFFECT_BTN);
 	zhuanShiBtn->setSelected(true);
 	goldBtn->setSelected(false);
 	zhuanShiBtn->setTouchEnabled(false);
@@ -183,7 +118,7 @@ void ShopView::showZuanShiView()
 
 }
 
-void ShopView::showGoldView()
+void ShopView::showGoldView(Ref*  pSender, CheckBox::EventType type)
 {
 	zhuanShiBtn->setSelected(false);
 	goldBtn->setSelected(true);
@@ -193,3 +128,10 @@ void ShopView::showGoldView()
 	shopItem[E_gold]->setVisible(true);
 }
 
+void ShopView::clickChargeBtn(Ref* pSender)
+{
+	Button*  btn = static_cast<Button*>(pSender);
+	int itags = btn->getTag();
+	PLayEffect(EFFECT_BTN)
+	blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", (10804 + itags), -1));
+}

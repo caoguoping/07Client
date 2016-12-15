@@ -58,6 +58,7 @@ ActivityView::ActivityView(int actIndex)
 	((SendDataService *)getService(SendDataService::NAME))->sendGetRank(dwUserID);
 
 	mallItem[E_activity] = rootNode->getChildByName("lotteryNode");
+	mallItem[E_activity]->setVisible(false);
 	mallItem[E_zuanshi] =  rootNode->getChildByName("rechargeNode");
 	mallItem[E_myCup] =    rootNode->getChildByName("FileNode_myCup");
 
@@ -69,6 +70,7 @@ ActivityView::ActivityView(int actIndex)
 
 	UIGet_Button("closeBtn", rootNode, closeBtn)
 	UIGet_CheckBox("lotteryBtn", rootNode, lotteryBtn);
+	lotteryBtn->setVisible(false);
 	UIGet_CheckBox("rechargeBtn", rootNode, rechargeBtn);
 	UIGet_CheckBox("CheckBox_1", rootNode, myCupBtn);
 	BTN_EVENT(closeBtn, 15001)

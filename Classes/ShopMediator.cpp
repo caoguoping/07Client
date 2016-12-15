@@ -4,7 +4,7 @@
 #include "DataManager.h"
 #include "ViewManager.h"
 
-#if(SDKWhich == SDK_YIKE)
+#if(SDKWhich == SDK_YIKE && PlatWhich == PlatAdr)
 #include "org_cocos2dx_cpp_SDKPlugin.h"
 #include "CallCppHelper.h"
 #include "cocos2d.h"
@@ -18,8 +18,6 @@ JNIEXPORT void JNICALL Java_org_cocos2dx_cpp_SDKPlugin_paySecessCallback(JNIEnv 
 	memset(helpers->mOrderNum, 0, 32);
 
 	char* tempChar = helpers->jstringTostring(env, orderNum);
-	//helpers->PostToken(strUid, strToken);
-	log("cocos2d-x payment jnicall success\n");
 	strncpy(helpers->mOrderNum, tempChar, 32);
 	log("cocos2d-x javaCallCpp mOrderNum %s",  helpers->mOrderNum);
 	helpers->sendOrderNum();
@@ -44,7 +42,6 @@ void ShopMediator::OnRegister()
 {
 	shopView = (ShopView*)getView();
 
-	PokerGameModel* pokerGameModel = ((PokerGameModel*)getModel(PokerGameModel::NAME));
 	shopView->initView();
 
 	Size size = Director::getInstance()->getVisibleSize();
@@ -74,20 +71,11 @@ void ShopMediator::refreshInfo()
 */
 void ShopMediator::onEvent(int i, void* data)
 {
-	int index = -1;
 	switch (i)
 	{
-	case 10801:
-		clickZhuanShiBtnHander();
-		break;
-	case 10802:
-		clickGoldBtnHander();
-		break;
 	case 10803:
 		clickCloseBtnHander();
 		break;
-
-		//zuanshi 5,  jinbi 5
 	case 10804:
 		getZuanShiHander(i);
 		break;
@@ -104,19 +92,19 @@ void ShopMediator::onEvent(int i, void* data)
 		getZuanShiHander(i);
 		break;
 	case 10809:
-		getGoldHander(i);
+		getZuanShiHander(i);
 		break;
 	case 10810:
-		getGoldHander(i);
+		getZuanShiHander(i);
 		break;
 	case 10811:
-		getGoldHander(i);
+		getZuanShiHander(i);
 		break;
 	case 10812:
-		getGoldHander(i);
+		getZuanShiHander(i);
 		break;
 	case 10813:
-		getGoldHander(i);
+		getZuanShiHander(i);
 		break;
 	case EventType::GAME_OVER:
 	case EventType::BACK_TO_HALL:
@@ -130,18 +118,6 @@ void ShopMediator::onEvent(int i, void* data)
 Layer* ShopMediator::getLayer()
 {
 	return VIEW->uiLayer;
-}
-
-void ShopMediator::clickZhuanShiBtnHander()
-{
-	PLayEffect(EFFECT_BTN);
-	shopView->showZuanShiView();
-}
-
-void ShopMediator::clickGoldBtnHander()
-{
-	PLayEffect(EFFECT_BTN);
-	shopView->showGoldView();
 }
 
 void ShopMediator::clickCloseBtnHander()
@@ -169,27 +145,15 @@ void ShopMediator::getZuanShiHander(int index)
 	8412       100Íò½ð±Ò 100
 	*/
 
-#if(SDKWhich == SDK_YIKE)
+#if(SDKWhich == SDK_YIKE && PlatWhich == PlatAdr)
 	CallCppHelper*  helper = CallCppHelper::getInstance();
-	//test
-	helper->callJavaPayment(8403 + index - 10804, 1, 2, 3);   //(int goodsId, int orderNum, int gold, int pay_amount)
-
-	//release
-	//	helper->callJavaPayment(8403 + index - 10804, 1, 2, 3);   //(int goodsId, int orderNum, int gold, int pay_amount)
-#else
-	log("clicked %d", 8403 + index - 10804);
-
+	helper->callJavaPayment(8403 + index - 10804, 1, 2, 3);  
 #endif
-
-}
-void ShopMediator::getGoldHander(int index)
-{
-	PLayEffect(EFFECT_BTN)
-#if(SDKWhich == SDK_YIKE)
-	CallCppHelper*  helper = CallCppHelper::getInstance();
-	helper->callJavaPayment(8408 + index - 10809, 1, 2, 3);   //(int goodsId, int orderNum, int gold, int pay_amount)
-#else
-	log("clicked %d", 8408 + index - 10809);
+    
+#if(SDKWhich == SDK_YIKE && PlatWhich == PlatIos)
+    CallCppHelper*  helper = CallCppHelper::getInstance();
+    helper->callJavaPayment(8403 + index - 10804);
 #endif
+    
 }
 

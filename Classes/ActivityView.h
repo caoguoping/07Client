@@ -28,7 +28,7 @@ public:
 	int currentTitle;
 	
 
-	ActivityView(int actIndex = 0);
+	ActivityView(int actIndex = 1);
 	~ActivityView();
 
 

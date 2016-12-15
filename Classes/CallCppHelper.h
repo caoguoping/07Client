@@ -31,14 +31,18 @@ public:
 	void PostToken(char* uid, char* access_token);
 	void onHttpRequestCompleted(cocos2d::network::HttpClient *sender, cocos2d::network::HttpResponse *response);
 
-#if(SDKWhich == SDK_YIKE)
+#if(SDKWhich == SDK_YIKE && PlatWhich == PlatAdr)
 	char* jstringTostring(JNIEnv* env, jstring jstr);
-#endif
-
-#if(SDKWhich == SDK_YIKE)
 	void callJavaPayment(int, int, int, int);
 #endif
+    
+#if(SDKWhich == SDK_YIKE  && PlatWhich == PlatIos)
+    void callJavaPayment(int );
+#endif
 
+    void iosSetUserId(const char*  uid);
+    void iosSetOrderNum(const char*  orderNum);
+    
 	void sendLoginData(void);
 	void sendOrderNum(void);
 };

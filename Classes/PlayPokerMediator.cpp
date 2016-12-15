@@ -377,7 +377,7 @@ void PlayPokerMediator::showPlayerOnDeskHandle()
 		showBuchu(j, false, true);
 	}
 	//去除出牌按钮显示
-	isOrNotMyTurn(false);
+	isMyTurn(false);
 	//paiFenNode->setPosition(Vec2(180, 502));
 	if (mJoinInPlayer == 3)
 	{
@@ -434,7 +434,7 @@ void PlayPokerMediator::showPlayerOnDeskHandle(void* data)
 		showBuchu(j, false, true);
 	}
 	//去除出牌按钮显示
-	isOrNotMyTurn(false);
+	isMyTurn(false);
 
 	//paiFenNode->setPosition(Vec2(180, 502));
 
@@ -704,7 +704,7 @@ void PlayPokerMediator::delaySendPokerHandle()
 		showNowJiShu(true);
 		if (playerInDeskModel->getServiceChairID(0) == Data.wCurrentUser)
 		{
-			isOrNotMyTurn(true);
+			isMyTurn(true);
 			setBuChuBtnState(false);
 			playPokerView->startClock(0);
 		}
@@ -729,7 +729,7 @@ void PlayPokerMediator::delaySendPokerHandle()
 
 		if (playerInDeskModel->getServiceChairID(0) == Data.wCurrentUser)
 		{
-			isOrNotMyTurn(true);
+			isMyTurn(true);
 			setBuChuBtnState(false);
 			playPokerView->startClock(0);
 			
@@ -780,18 +780,18 @@ void PlayPokerMediator::delaySendPokerHandle()
 		if (!isFirstOutPoker)
 		{
 			wCurrentUser = Data.wCurrentUser;
-			isOrNotMyTurn(false);
+			isMyTurn(false);
 		}
 		//first out poker
 		else if (playerInDeskModel->getServiceChairID(0) == Data.wCurrentUser)
 		{
-			isOrNotMyTurn(true);
+			isMyTurn(true);
 			setBuChuBtnState(false);
 			playPokerView->startClock(0);
 		}
 		else
 		{
-			isOrNotMyTurn(false);
+			isMyTurn(false);
 			playPokerView->startClock(playerInDeskModel->chair[Data.wCurrentUser]);
 		}
 	}
@@ -899,12 +899,12 @@ void PlayPokerMediator::reveivePlayerOutPokerHandle(void* data)
 	showBuchu(nextDesk, false, false);
 	if (nextDesk == 0)
 	{
-		isOrNotMyTurn(true);
+		isMyTurn(true);
 		setBuChuBtnState(true);
 	}
 	else
 	{
-		isOrNotMyTurn(false);
+		isMyTurn(false);
 	}
 	playPokerView->startClock(nextDesk);
 
@@ -927,7 +927,7 @@ void PlayPokerMediator::notOutPokerHandle(void* data)
 	showBuchu(desk, true, true);
 	if (nextDesk == 0)
 	{
-		isOrNotMyTurn(true);
+		isMyTurn(true);
 		if (isNewTurn)
 		{
 			setBuChuBtnState(false);
@@ -939,7 +939,7 @@ void PlayPokerMediator::notOutPokerHandle(void* data)
 	}
 	else
 	{
-		isOrNotMyTurn(false);
+		isMyTurn(false);
 	}
 		
 	playPokerView->startClock(nextDesk);
@@ -1013,12 +1013,12 @@ void PlayPokerMediator::payTributeHandle(void* data)
 		blueSkyDispatchEvent(EventType::KANG_GONG);
 		if (wCurrentUser == playerInDeskModel->getServiceChairID(0))
 		{
-			isOrNotMyTurn(true);
+			isMyTurn(true);
 			setBuChuBtnState(false);
 		}
 		else
 		{
-			isOrNotMyTurn(false);
+			isMyTurn(false);
 		}
 		playPokerView->startClock(playerInDeskModel->chair[wCurrentUser]);
 		hasPlayJinGongAction = false;
@@ -1035,12 +1035,12 @@ void PlayPokerMediator::payTributeHandle(void* data)
 		//判断是否是自己先出牌(payTributeData.wCurrentUser先出)
 		if (playerInDeskModel->getServiceChairID(0) == payTributeData.wCurrentUser)
 		{
-			isOrNotMyTurn(true);
+			isMyTurn(true);
 			setBuChuBtnState(false);
 		}
 		else
 		{
-			isOrNotMyTurn(false);
+			isMyTurn(false);
 		}
 		playPokerView->startClock(playerInDeskModel->chair[payTributeData.wCurrentUser]);
 		hasPlayJinGongAction = false;
@@ -1170,9 +1170,6 @@ void PlayPokerMediator::onEvent(int i, void* data)
 		clickfanHuiBtnHander();
 		break;
 
-	case 10603:
-		clickChuPaiBtnHander(NULL);
-		break;
 	case 11101:
 		clickCancelAutoBtnHander();
 		break;
@@ -1456,6 +1453,24 @@ void PlayPokerMediator::clickHuanGongBtnHander(Ref* psender)
 void PlayPokerMediator::clickTiShiBtnHander(Ref*  pSender)
 {
 	PLayEffect(EFFECT_BTN)
+		handleTiShi();
+}
+
+void PlayPokerMediator::clickChuPaiBtnHander(Ref*  pSender)
+{
+	PLayEffect(EFFECT_BTN)
+		handleChuPai();
+
+}
+
+void PlayPokerMediator::clickBuChuBtnHander(Ref* psender)
+{
+	PLayEffect(EFFECT_BTN)
+		handleBuChu();
+}
+
+void PlayPokerMediator::handleTiShi()
+{
 	GameDataModel* gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
 	//先取消之前手牌的选中状态
 	int ids[30];
@@ -1481,7 +1496,7 @@ void PlayPokerMediator::clickTiShiBtnHander(Ref*  pSender)
 
 	//所有的能跟牌的组合
 	vector<vector<PokerVO*>> allPokerArr;
-	
+
 	//先考虑是否是跟牌的情况
 	if (gameDataModel->player[1].outPokerArr.size() != 0)
 	{
@@ -1592,7 +1607,7 @@ void PlayPokerMediator::clickTiShiBtnHander(Ref*  pSender)
 		}
 		else if (LaiZiArr.size() == 2)
 		{
-			allPokerArr.push_back({ LaiZiArr.at(0) , LaiZiArr.at(1) });
+			allPokerArr.push_back({ LaiZiArr.at(0), LaiZiArr.at(1) });
 		}
 	}
 
@@ -1607,7 +1622,7 @@ void PlayPokerMediator::clickTiShiBtnHander(Ref*  pSender)
 		((SendDataService *)getService(SendDataService::NAME))->sendNotOutPoker();
 		clickTiShiTimes = 0;
 		clickTongHuaShunTimes = 0;
-		actionNode->setVisible(false);  
+		actionNode->setVisible(false);
 		return;
 	}
 
@@ -1621,18 +1636,59 @@ void PlayPokerMediator::clickTiShiBtnHander(Ref*  pSender)
 		data->pokerID2 = pokerArr.at(i)->pokerID2;
 		blueSkyDispatchEvent(EventType::CHANGE_POKER_STATE, data);
 	}
+	logV("\n  +++++++++ pokerArr.size %d ++++++++++ ", pokerArr.size());
 	clickTiShiTimes++;
 }
 
-void PlayPokerMediator::clickChuPaiBtnHander(Ref*  pSender)
+void PlayPokerMediator::handleBuChu()
 {
-	PLayEffect(EFFECT_BTN)
+	actionNode->setVisible(false);
+	//先取消手牌的选中状态
+	//vector<PokerVO*> selectedPokerArr = ((GameDataModel*)getModel(GameDataModel::NAME))->player[0].selectedPokerArr;
+	GameDataModel *gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
+	//先取消之前手牌的选中状态
+	int ids[30];
+	int id2s[30];
+	int selectSize = gameDataModel->player[0].selectedPokerArr.size();
+	for (int i = 0; i < selectSize; i++)
+	{
+		ids[i] = gameDataModel->player[0].selectedPokerArr.at(i)->pokerID;
+		id2s[i] = gameDataModel->player[0].selectedPokerArr.at(i)->pokerID2;
+	}
+	for (int i = 0; i < selectSize; i++)
+	{
+		pokeridData *data = new pokeridData();
+		data->pokerID = ids[i];
+		data->pokerID2 = id2s[i];
+		blueSkyDispatchEvent(EventType::CHANGE_POKER_STATE, data);
+	}
+
+	//不出时清空本轮出牌数据
+	gameDataModel->player[0].selectedPokerArr = {};
+
+	//向服务器发消息
+	((SendDataService *)getService(SendDataService::NAME))->sendNotOutPoker();
+
+	//重置本轮提示点击次数
+	clickTiShiTimes = 0;
+
+	//重置本轮同花顺按钮点击次数
+	clickTongHuaShunTimes = 0;
+
+}
+
+void PlayPokerMediator::handleChuPai()
+{
 	//先判断能不能出牌
 	bool canOutPoker = false;
 	GameDataModel *gameDataModel = (GameDataModel*)getModel(GameDataModel::NAME);
 	vector<PokerVO*> outPokerArr;
 	vector<PokerVO*> selectedPokerArr;
 	vector<PokerVO*> pokerArr;
+
+
+	logV("\n  +++++++++ selectedPokerArr.size %d ++++++++++ ", 
+		gameDataModel->player[0].selectedPokerArr.size());
 	for (DWORD i = 0; i < gameDataModel->player[0].selectedPokerArr.size(); i++)
 	{
 		selectedPokerArr.push_back(gameDataModel->player[0].selectedPokerArr[i]);
@@ -1713,76 +1769,36 @@ void PlayPokerMediator::clickChuPaiBtnHander(Ref*  pSender)
 		gameDataModel->player[0].pokerTypeArr = OutPokerLogicRule::fenXiShouPai(gameDataModel->player[0].pokerArr);
 
 		//重新调整手牌的位置
-	//	logF("------         left poker   size %d      -------", gameDataModel->player[0].pokerArr.size());
-	//	logV("------         left poker   size %d      -------", gameDataModel->player[0].pokerArr.size());
+		//	logF("------         left poker   size %d      -------", gameDataModel->player[0].pokerArr.size());
+		//	logV("------         left poker   size %d      -------", gameDataModel->player[0].pokerArr.size());
 		for (DWORD i = 0; i < gameDataModel->player[0].pokerArr.size(); i++)
 		{
 			pokeridData *data = new pokeridData();
 			data->pokerID = gameDataModel->player[0].pokerArr.at(i)->pokerID;
 			data->pokerID2 = gameDataModel->player[0].pokerArr.at(i)->pokerID2;
 			blueSkyDispatchEvent(EventType::CHANGE_POKER_POSITION, data);
-// 			logV("(%d %d) ", PokerLogic::getPokerNum(data->pokerID) + 2,
-// 				PokerLogic::getPokerHuaSe(data->pokerID)
-// 				);
-// 			logF("(%d %d) ", PokerLogic::getPokerNum(data->pokerID) + 2,
-// 				PokerLogic::getPokerHuaSe(data->pokerID)
-// 				);
+			// 			logV("(%d %d) ", PokerLogic::getPokerNum(data->pokerID) + 2,
+			// 				PokerLogic::getPokerHuaSe(data->pokerID)
+			// 				);
+			// 			logF("(%d %d) ", PokerLogic::getPokerNum(data->pokerID) + 2,
+			// 				PokerLogic::getPokerHuaSe(data->pokerID)
+			// 				);
 		}
 
-		//重置本轮提示点击次数
 		clickTiShiTimes = 0;
-
-		//重置本轮同花顺按钮点击次数
 		clickTongHuaShunTimes = 0;
 	}
 	//不符合出牌，并且是托管状态，直接不出
-// 	else  
-// 	{
-// 		if (isAutoState == true)
-// 		{
-// 			clickBuChuBtnHander(NULL);
-// 		}
-// 	}
+	// 	else  
+	// 	{
+	// 		if (isAutoState == true)
+	// 		{
 
+	// 		}
+	// 	}
 }
 
-void PlayPokerMediator::clickBuChuBtnHander(Ref* psender)
-{
-	PLayEffect(EFFECT_BTN)
-	actionNode->setVisible(false);
-	//先取消手牌的选中状态
-	//vector<PokerVO*> selectedPokerArr = ((GameDataModel*)getModel(GameDataModel::NAME))->player[0].selectedPokerArr;
-	GameDataModel *gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
-	//先取消之前手牌的选中状态
-	int ids[30];
-	int id2s[30];
-	int selectSize = gameDataModel->player[0].selectedPokerArr.size();
-	for (int i = 0; i < selectSize; i++)
-	{
-		ids[i] = gameDataModel->player[0].selectedPokerArr.at(i)->pokerID;
-		id2s[i] = gameDataModel->player[0].selectedPokerArr.at(i)->pokerID2;
-	}
-	for (int i = 0; i < selectSize; i++)
-	{
-		pokeridData *data = new pokeridData();
-		data->pokerID = ids[i];
-		data->pokerID2 = id2s[i];
-		blueSkyDispatchEvent(EventType::CHANGE_POKER_STATE, data);
-	}
 
-	//不出时清空本轮出牌数据
-	gameDataModel->player[0].selectedPokerArr = {};
-
-	//向服务器发消息
-	((SendDataService *)getService(SendDataService::NAME))->sendNotOutPoker();
-
-	//重置本轮提示点击次数
-	clickTiShiTimes = 0;
-
-	//重置本轮同花顺按钮点击次数
-	clickTongHuaShunTimes = 0;
-
-}
 
 void PlayPokerMediator::clickTongHuaShunBtnHander(Ref* psender)
 {
@@ -1952,7 +1968,7 @@ void PlayPokerMediator::clickAutoBtnHander(Ref* psender)
 
 	if (actionNode->isVisible())
 	{
-		isOrNotMyTurn(true);
+		isMyTurn(true);
 	}
 
 	//
@@ -2020,7 +2036,7 @@ void PlayPokerMediator::setChuPaiBtnState(bool isZhiHui)
 }
 
 //是否显示出牌按钮
-void PlayPokerMediator::isOrNotMyTurn(bool value)
+void PlayPokerMediator::isMyTurn(bool value)
 {
 	actionNode->setVisible(value);
 
@@ -2028,9 +2044,14 @@ void PlayPokerMediator::isOrNotMyTurn(bool value)
 
 	//
 	if (gameDataModel->player[0].selectedPokerArr.size() > 0)
+	{
 		setChuPaiBtnState(false);
+	}
 	else
+	{
 		setChuPaiBtnState(true);
+	}
+		
 
 	//这边处理是否已经有玩家与本局无关的情况
 	if (value)
@@ -2070,13 +2091,15 @@ void PlayPokerMediator::isOrNotMyTurn(bool value)
 	if (value && isAutoState)
 	{
 		//和提示功能相同
-		clickTiShiBtnHander(NULL);
+		handleTiShi();
+		FiniteTimeAction*  act = Sequence::create(
+			DelayTime::create(0.5f),
+			CallFunc::create(CC_CALLBACK_0(PlayPokerMediator::handleChuPai, this)),
+			NULL
+			);
 
-
-		//这边要通过抛事件来自动出牌
-		blueSkyDispatchEvent(10603);
-		//这边要通过抛事件来自动出牌
-		//clickChuPaiBtnHander(NULL);
+		playPokerView->runAction(act);
+		//handleChuPai();
 	}
 }
 
@@ -2273,23 +2296,24 @@ void PlayPokerMediator::getJingGong(int pokerID)
 //自己的出牌时间已到
 void PlayPokerMediator::meTimeUp()
 {
-	if (buChuBtn->isVisible())
-	{
-		//直接不出
-		clickBuChuBtnHander(NULL);
-		logV("cocos2d-x meTimeUp not out poker");
-	}
-	else
-	{
-		//和提示功能相同
-		clickTiShiBtnHander(NULL);
-
-		//这边要通过抛事件来自动出牌
-		//clickChuPaiBtnHander(NULL);
-		blueSkyDispatchEvent(10603);
-		logV("cocos2d-x meTimeUp  out poker as tishi");
-
-	}
+// 	if (buChuBtn->isVisible())
+// 	{
+// 		//直接不出
+// 		handleBuChu();
+// 		logV("cocos2d-x meTimeUp not out poker");
+// 	}
+// 	else
+// 	{
+// 		//和提示功能相同
+// 		handleTiShi();
+// 		FiniteTimeAction*  act = Sequence::create(
+// 			DelayTime::create(0.5f),
+// 			CallFunc::create(CC_CALLBACK_0(PlayPokerMediator::handleChuPai, this)),
+// 			NULL
+// 			);
+// 
+// 		playPokerView->runAction(act);
+// 	}
 }
 
 //进贡时间到

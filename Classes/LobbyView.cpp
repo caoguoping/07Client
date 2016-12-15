@@ -157,7 +157,11 @@ void LobbyView::initView()
 		UIGet_Text("Text_gold", headNode, txtGold)
 		UIGet_Text("Text_diamond", headNode, txtDiamond)
 		UIGet_Text("Text_id", headNode, txtId)
-	currentAd = 0;
+	
+		
+		//currentAd = 0;
+	currentAd = 1;
+	
 	//π„∏Ê“≥
 	UIGet_PageView("PageView_ad", rootNode, pgAd)
 	UIGet_ImageView("Image_Adbg", rootNode, imgPageBg)
@@ -369,22 +373,44 @@ void LobbyView::clickBtnFriend(Ref* psender)
 
 void LobbyView::adUpdate(float dt)
 {
-	currentAd++; 
+// 	currentAd++; 
+// 	if (currentAd < E_adMax)
+// 	{
+// 		pgAd->scrollToPage(currentAd);
+// 		
+// 	}
+// 	else if (currentAd == E_adMax)
+// 	{
+// 		currentAd = E_choujiang;
+// 		pgAd->setCurPageIndex(E_choujiang);
+// 	}
+// 	for (int i = 0; i < E_adMax; i ++)
+// 	{
+// 		btnAdIndicator[i]->setEnabled(false);
+// 	}
+// 	btnAdIndicator[currentAd]->setEnabled(true);
+
+	currentAd++;
+	if (currentAd == 0)
+	{
+		currentAd++;
+	}
 	if (currentAd < E_adMax)
 	{
 		pgAd->scrollToPage(currentAd);
-		
+
 	}
 	else if (currentAd == E_adMax)
 	{
-		currentAd = E_choujiang;
-		pgAd->setCurPageIndex(E_choujiang);
+		currentAd = E_choujiang + 1;
+		pgAd->setCurPageIndex(E_choujiang + 1);
 	}
-	for (int i = 0; i < E_adMax; i ++)
+	for (int i = 0; i < E_adMax; i++)
 	{
 		btnAdIndicator[i]->setEnabled(false);
 	}
 	btnAdIndicator[currentAd]->setEnabled(true);
+
 	
 }
 
@@ -392,6 +418,10 @@ void LobbyView::callAdselect(Ref* psender)
 {
 	Button* btnClicked = static_cast<Button*>(psender);
 	int tags = btnClicked->getTag();
+	if (tags == 0)
+	{
+		tags = 1;
+	}
 	creatView(new ActivityView(tags), new ActivityMediator());
 
 

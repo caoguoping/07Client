@@ -36,14 +36,9 @@ public:
 
 	int currentID;  //1 zuanshi, 2 jinbi;
 
-private:
-	//
-	void clickZhuanShiBtnHander();
-	void clickGoldBtnHander();
 	void clickCloseBtnHander();
 
 	void getZuanShiHander(int index);
-	void getGoldHander(int index);
 
 	ShopView* shopView;
 };

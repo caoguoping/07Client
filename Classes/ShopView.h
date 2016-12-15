@@ -26,27 +26,16 @@ public:
 	Text* txtDiamond;  //×êÊ¯
 	Text* txtGold;     //½ð±Ò
 	int shopID;
-
-
-
 public:
 	ShopView(int shopID);
 	~ShopView();
 
 	void showMyZuanShi(int num);
-	void showMyGold(int num);
-
-
-	void showZuanShiView();
-	void showGoldView();
-
-
-
+	void showMyGold(SCORE num);
+	void showZuanShiView(Ref*  pSender, CheckBox::EventType type);
+	void showGoldView(Ref*  pSender, CheckBox::EventType type);
 	void initView();
-
-
-
-private:
+	void clickChargeBtn(Ref*  pSender);
 	CheckBox* zhuanShiBtn;
 	CheckBox* goldBtn    ;
 	Button  * closeBtn   ;

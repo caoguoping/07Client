@@ -10,10 +10,13 @@
 
 
 
-#if(SDKWhich == SDK_YIKE)
+#if(SDKWhich == SDK_YIKE  && PlatWhich == PlatAdr )
 #include "platform/android/jni/JniHelper.h"
 #endif
 
+#if(SDKWhich == SDK_YIKE  && PlatWhich == PlatIos )
+#include "OcCaller.h"
+#endif
 
 static CallCppHelper *_instance = NULL;
 
@@ -75,7 +78,7 @@ CallCppHelper *  CallCppHelper::getInstance()
 	return _instance;
 };
 
-#if(SDKWhich == SDK_YIKE)
+#if(SDKWhich == SDK_YIKE && PlatWhich == PlatAdr)
 void CallCppHelper::callJavaPayment(int goodsId, int orderNum, int gold, int pay_amount)
 {
 	//gettimeofday()
@@ -91,6 +94,25 @@ void CallCppHelper::callJavaPayment(int goodsId, int orderNum, int gold, int pay
 }
 #endif
 
+#if(SDKWhich == SDK_YIKE && PlatWhich == PlatIos)
+void CallCppHelper::callJavaPayment(int goodsId)
+{
+    OcCaller::getInstance()->ChargeHandle(goodsId);
+}
+#endif
+
+void CallCppHelper::iosSetUserId(const char *uid)
+{
+     strncpy(mUid, uid, 32);
+     log("mUid %s",  mUid);
+}
+
+void CallCppHelper::iosSetOrderNum(const char *orderNum)
+{
+    strncpy(mOrderNum, orderNum, 32);
+    log("orderNum %s",  orderNum);
+}
+
 void CallCppHelper::sendLoginData()
 {
 	log("cocos2dx sendLoginData");
@@ -104,12 +126,11 @@ void CallCppHelper::sendLoginData()
 
 void CallCppHelper::sendOrderNum()
 {
-	log("cocos2d-x sendOrderNum %s", mOrderNum);
 	unsigned char cbBuffer[SOCKET_TCP_PACKET];
 	//1, 6,  ³äÖµÏûÏ¢ºÅ
 	memcpy(cbBuffer, mOrderNum, 32);
 	((TCPSocketService *)getService(TCPSocketService::LOGIN))->SendData(1, 6, cbBuffer, 32);
-	log("cocos2d-x sendOrderNum seccess after!\n");
+	log("cocos2d-x sendOrderNum seccess after!%s\n", mOrderNum);
 }
 
 
@@ -149,7 +170,7 @@ void CallCppHelper::onHttpRequestCompleted(HttpClient *sender, HttpResponse *res
 		return;
 	}
 }
-#if(SDKWhich == SDK_YIKE)
+#if(SDKWhich == SDK_YIKE && PlatWhich == PlatAdr)
 char* CallCppHelper::jstringTostring(JNIEnv* env, jstring jstr)
 {
 	char* rtn = NULL;

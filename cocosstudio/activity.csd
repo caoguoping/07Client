@@ -36,7 +36,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="NewActivity/label_rope.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lotteryBtn" ActionTag="-1652729621" Tag="776" IconVisible="False" LeftMargin="-462.3364" RightMargin="243.3364" TopMargin="-201.2643" BottomMargin="112.2643" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
+          <AbstractNodeData Name="lotteryBtn" ActionTag="-1652729621" VisibleForFrame="False" Tag="776" IconVisible="False" LeftMargin="-462.3364" RightMargin="243.3364" TopMargin="-201.2643" BottomMargin="112.2643" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
             <Size X="219.0000" Y="89.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-352.8364" Y="156.7643" />
@@ -89,7 +89,7 @@
             <FileData Type="Normal" Path="NewActivity/title_events.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lotteryNode" Visible="False" ActionTag="-956952063" Tag="942" IconVisible="True" LeftMargin="-2.7589" RightMargin="2.7589" TopMargin="27.6542" BottomMargin="-27.6542" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="lotteryNode" Visible="False" ActionTag="-956952063" VisibleForFrame="False" Tag="942" IconVisible="True" LeftMargin="-2.7589" RightMargin="2.7589" TopMargin="27.6542" BottomMargin="-27.6542" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="-2.7589" Y="-27.6542" />

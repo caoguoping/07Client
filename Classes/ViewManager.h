@@ -32,7 +32,7 @@ public:
     Layer* myPokerLayer;
 
     Layer *uiLayer;
-        Layer *menuLayer;
+    Layer *menuLayer;
     Layer *maskLayer;
     Layer *TopLayer;
     int nowViewTag = eViewMain;  //当前的界面标识
