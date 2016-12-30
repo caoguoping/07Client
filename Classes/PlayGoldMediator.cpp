@@ -39,7 +39,10 @@ void PlayGoldMediator::onEvent(int i, void* data)
 	switch (i)
 	{
 	case EventType::BACK_TO_HALL:
+
+		break;
 	case 12600:
+		//PLayEffect(EFFECT_BTN)
 		removeView(this);
 		break;
 	default:

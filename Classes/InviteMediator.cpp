@@ -50,6 +50,7 @@ void InviteMediator::onEvent(int i, void* data)
 	switch (i)
 	{
 	case 17000:
+		PLayEffect(EFFECT_BTN)
 		clickCloseBtnHander();
 		break;
 

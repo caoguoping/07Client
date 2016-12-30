@@ -32,8 +32,10 @@ public:
 
 	void showMyZuanShi(int num);
 	void showMyGold(SCORE num);
-	void showZuanShiView(Ref*  pSender, CheckBox::EventType type);
-	void showGoldView(Ref*  pSender, CheckBox::EventType type);
+	void showZuanShiView();
+	void showGoldView();
+	void clickBtnZuanShi(Ref*  pSender, CheckBox::EventType type);
+	void clickBtnGold(Ref*  pSender, CheckBox::EventType type);
 	void initView();
 	void clickChargeBtn(Ref*  pSender);
 	CheckBox* zhuanShiBtn;

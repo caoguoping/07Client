@@ -97,12 +97,12 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/role_lv1.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_1" ActionTag="153597689" CallBackType="Click" Tag="40" IconVisible="False" LeftMargin="-160.2757" RightMargin="-159.7243" TopMargin="-107.5329" BottomMargin="-42.4671" IsCustomSize="True" FontSize="25" LabelText="" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="320.0000" Y="150.0000" />
+          <AbstractNodeData Name="Text_1" ActionTag="153597689" CallBackType="Click" Tag="40" IconVisible="False" LeftMargin="-132.1602" RightMargin="-147.8398" TopMargin="-84.1118" BottomMargin="-35.8882" IsCustomSize="True" FontSize="22" LabelText="" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="280.0000" Y="120.0000" />
             <AnchorPoint ScaleX="0.5018" ScaleY="0.4427" />
-            <Position X="0.3003" Y="23.9379" />
+            <Position X="8.3438" Y="17.2358" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="123" G="70" B="30" />
+            <CColor A="255" R="123" G="75" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />

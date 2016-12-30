@@ -49,12 +49,15 @@ void MessageShowMediator::onEvent(int i, void* data)
 		}
 		break;
 	case 11902:
+		PLayEffect(BUTTON_CLICK)
 		messageShowView->hideMessage();
 		break;
 	case 11903:
+		PLayEffect(BUTTON_CLICK)
 		messageShowView->hideMessage();
 		break;
 	case 11904:
+		PLayEffect(BUTTON_CLICK)
 		messageShowView->hideMessage();
 		break;
 	case 11905:

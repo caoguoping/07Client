@@ -37,8 +37,13 @@ void InDeskService::onEvent(int i, void* data)
 		break;
 
 	case EventType::OTHER_PLAYER_ON_DESK:
+
 		result = *(OnDeskPlayerInfo*)data;
 		result.isClear = false;
+		if (DATA->mJoinInPlayer == 3)
+		{
+			result.isClear = true;
+		}
 		playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
 		wKindID = playerInDeskModel->wKindID;
 		playerInDeskModel->DeskPlayerInfo[result.wChairID] = result;

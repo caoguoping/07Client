@@ -19,6 +19,8 @@ public:
 	static const string NAME;
 	void sendUserYbToGold(DWORD	dwUserID, int num, int wKindID);
 	void sendLogin(const char* Accounts, const char* Password, const char* MachineID);
+	void sendLoginTest(int sumIndex);
+	void sendRegisterTest(int sumIndex);
 	void sendRegister(const char* szLogonPass, int wFaceID, int cbGender, const char* szAccounts, const char*  szNickName);
 	void sendGameServerLogin(DWORD dwUserID, const char* szLogonPass, WORD wKindID, WORD wTable = 0xFFFF, WORD wChair = 0xFFFF);
 	void sendReady();

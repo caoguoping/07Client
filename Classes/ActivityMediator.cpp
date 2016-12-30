@@ -124,21 +124,25 @@ Layer* ActivityMediator::getLayer()
 
 void ActivityMediator::clickCloseBtnHander()
 {
+	PLayEffect(EFFECT_BTN)
 	removeView(this);
 }
 
 void ActivityMediator::clickLotteryBtnHander()
 {
+	PLayEffect(EFFECT_BTN)
 	activityView->showLottery();
 }
 
 void ActivityMediator::clickRechargeBtnHander()
 {
+	PLayEffect(EFFECT_BTN)
 	activityView->showRecharge();
 }
 
 void ActivityMediator::clickMyCupBtnHander()
 {
+	PLayEffect(EFFECT_BTN)
 	activityView->showMyCup();
 }
 

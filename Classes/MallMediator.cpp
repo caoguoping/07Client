@@ -60,6 +60,7 @@ void MallMediator::onEvent(int i, void* data)
 	switch (i)
 	{
 	case 11201:
+		PLayEffect(EFFECT_BTN)
 		removeView(this);
 		break;
 

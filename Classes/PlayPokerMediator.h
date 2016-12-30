@@ -114,7 +114,7 @@ public:
 	bool hasGetHuanGong ;
 	bool isFirstOutPoker ;  //是否是第一次发牌
 	bool isMeFirstOutPoker ;
-	int mJoinInPlayer;  //进入桌子的玩家数目
+
 	int mPlayCount;    //进行了几次打牌，发完牌算第一次，
 	bool isAutoState;
 	int clickTiShiTimes; //记录本轮提示被点击的次数
@@ -134,6 +134,7 @@ public:
 	void onEvent(int i, void* data);
 	Layer* getLayer();
 	void clickfanHuiBtnHander();
+	void handleFanhui();
 	void clickChatBtnHander(Ref* psender);
 	void clickJinGongBtnHander(Ref* psender);
 	void clickHuanGongBtnHander(Ref* psender);
@@ -191,7 +192,7 @@ public:
 	//显示托管图标
 	void showAutoImage(int deskID,bool show);
 	//播放出牌音效
-	void playChuPaiMusic(int pokerType,int faceID);
+	void playChuPaiMusic(int pokerType,int faceID, int value = 0, int desk = 0);
 	//取消托管
 	void clickCancelAutoBtnHander();
 	//是否将出牌按钮置灰

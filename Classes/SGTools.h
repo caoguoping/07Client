@@ -72,7 +72,7 @@ using namespace std;
 #define UIClickCheck(itemName, callFunc) itemName->addEventListener(CC_CALLBACK_2(callFunc, this));
 
 #define UIDisableClick(itemName, className, funcName) 	itemName->setTouchEnabled(false); \
-	this->scheduleOnce(schedule_selector(className::funcName), 0.5f);
+	this->scheduleOnce(schedule_selector(className::funcName), 1.0f);
 #define UIEnableClick(itemName, className, funcName) void className::funcName(float dt) \
 { \
 	itemName->setTouchEnabled(true); \
@@ -95,6 +95,10 @@ using namespace std;
                                 { \
                                     blueSkyDispatchEvent(msgId); \
                                 });
+#define CHECK_EVENT(itemName, msgId)  itemName->addEventListener([this](Ref*  pSender, CheckBox::EventType type) \
+{ \
+	blueSkyDispatchEvent(msgId); \
+});
 
 
 #define SYSMSG_TAGBEGIN   70000    //sysMsg tag ¿ªÊ¼
@@ -108,7 +112,7 @@ public:
 	static Tools*  getInstance();
 	void initTools(void);
 	void showSysMsg(std::string msg, std::function<void(Ref*)> callFunc);
-	void showSysMsgTouming(std::string msg, float x = 0, float y = 0, Color3B color = Color3B(255, 255, 255));
+	void showSysMsgTouming(std::string msg, float x = 0, float y = 0, Color3B color = Color3B(255, 255, 255), bool isShowBg = true);
 	void showSysMsgLogin(std::string msg, float x = 0, float y = 0, Color3B color = Color3B(255, 255, 255));
 	void closeSysMsgTouming(Node*  psender);
 	void closeSysMsg(Ref*  psender);

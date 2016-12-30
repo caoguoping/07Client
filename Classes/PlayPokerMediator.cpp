@@ -27,7 +27,7 @@ PlayPokerMediator::PlayPokerMediator()
 	hasGetHuanGong = false;
 	isFirstOutPoker = true;  //是否是第一次发牌
 	isMeFirstOutPoker = false;
-	mJoinInPlayer = 0;  //进入桌子的玩家数目
+	DATA->mJoinInPlayer = 0;  //进入桌子的玩家数目
 	mPlayCount = 0;    //进行了几次打牌，发完牌算第一次，
 	isAutoState = false;
 	clickTiShiTimes = 0; //记录本轮提示被点击的次数
@@ -364,13 +364,23 @@ void PlayPokerMediator::handleFriendPlay()
 
 void PlayPokerMediator::showPlayerOnDeskHandle()
 {
+	logV("showPlayerOnDeskHandle()");
 	nowBeiLv = 1;
 	playPokerView->showBeiLv(nowBeiLv);
 	fanHuiBtn->setVisible(true);
 	playPokerView->hideAllFace();
 	playPokerView->hideAllName();
 	playPokerView->hideAllPokerNum();
-	showPlayerOnDesk();
+	//showPlayerOnDesk();
+	for (int i = 0; i < 4; i++)
+	{
+		DATAPlayerIndesk->DeskPlayerInfo[i].isClear = false;
+		if (!DATAPlayerIndesk->DeskPlayerInfo[i].isClear)
+		{
+			playPokerView->showDaiJiFace(DATAPlayerIndesk->chair[i], DATAPlayerIndesk->DeskPlayerInfo[i].wFaceID);
+			playPokerView->showCharacterName(DATAPlayerIndesk->chair[i], DATAPlayerIndesk->DeskPlayerInfo[i].szNickName);
+		}
+	}
 	playPokerView->hideClock();
 	for (int j = 0; j < 4; j++)
 	{
@@ -379,24 +389,26 @@ void PlayPokerMediator::showPlayerOnDeskHandle()
 	//去除出牌按钮显示
 	isMyTurn(false);
 	//paiFenNode->setPosition(Vec2(180, 502));
-	if (mJoinInPlayer == 3)
-	{
-		playPokerView->showPiPei(false);
-	}
-	else
-	{
-		playPokerView->showPiPei(true);
-	}
-	mJoinInPlayer++;
+// 	if (DATA->mJoinInPlayer == 3)
+// 	{
+// 		playPokerView->showPiPei(false);
+// 	}
+// 	else
+// 	{
+// 		playPokerView->showPiPei(true);
+// 	}
+	DATA->mJoinInPlayer++;
 }
 
 void PlayPokerMediator::showPlayerOnDeskHandle(void* data)
 {
+	logV("showPlayerOnDeskHandle(void* data)");
 	OnDeskPlayerInfo deskInfo = *(OnDeskPlayerInfo*)data;
-	logV("mJoinPlayer %d", mJoinInPlayer);
-	if (mJoinInPlayer == 0)
+	logV("mJoinPlayer %d", DATA->mJoinInPlayer);
+	if (DATA->mJoinInPlayer == 0)
 	{
 		SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+		DATA->dwGameState = 1;
 		if (DATA->bGameCate == DataManager::E_GameFriend ||
 			DATA->bGameCate == DataManager::E_GameTeam
 			
@@ -438,9 +450,9 @@ void PlayPokerMediator::showPlayerOnDeskHandle(void* data)
 
 	//paiFenNode->setPosition(Vec2(180, 502));
 
-	if (mJoinInPlayer == 3)
+	if (DATA->mJoinInPlayer == 3)
 	{
-		playPokerView->showPiPei(false);
+	//	playPokerView->showPiPei(false);
 		if (DataManager::E_GameFriendPassive == DATA->bGameCate ||
 			DataManager::E_GameFriend == DATA->bGameCate ||
 			DATA->bGameCate == DataManager::E_GameTeam ||
@@ -458,7 +470,7 @@ void PlayPokerMediator::showPlayerOnDeskHandle(void* data)
 		playPokerView->showPiPei(true);
 	}
 
-	mJoinInPlayer++;
+	DATA->mJoinInPlayer++;
 }
 
 void PlayPokerMediator::OnDeskHandle(void* data)
@@ -492,6 +504,15 @@ void PlayPokerMediator::OnDeskHandle(void* data)
 
 void PlayPokerMediator::sendPokerkHandle()
 {
+	for (int i = 0; i < 4; i++)
+	{
+		DATAPlayerIndesk->DeskPlayerInfo[i].isClear = false;
+		if (!DATAPlayerIndesk->DeskPlayerInfo[i].isClear)
+		{
+			playPokerView->showDaiJiFace(DATAPlayerIndesk->chair[i], DATAPlayerIndesk->DeskPlayerInfo[i].wFaceID);
+			playPokerView->showCharacterName(DATAPlayerIndesk->chair[i], DATAPlayerIndesk->DeskPlayerInfo[i].szNickName);
+		}
+	}
 	markBtn->setTouchEnabled(true);
 	//去除准备显示
 	for (int i = 0; i < 4; i++)
@@ -637,7 +658,7 @@ void PlayPokerMediator::delaySendPokerHandle()
 	CMD_S_GameStart Data;
 	PlayerInDeskModel *playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
 	GameDataModel *gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
-	mJoinInPlayer = 0;  
+	DATA->mJoinInPlayer = 0;  
 	playPokerView->sucessesPlayer = 0;
 	playPokerView->imgHuaPai->setVisible(true);
 
@@ -670,6 +691,7 @@ void PlayPokerMediator::delaySendPokerHandle()
 
 	//发牌音效
 	PLayEffect(SEND_CARD)
+	DATA->dwGameState = 2; //已发牌
 
 	//设置玩家的手牌数
 	gameDataModel->player[0].pokerNum = 27;
@@ -858,8 +880,9 @@ void PlayPokerMediator::reveivePlayerOutPokerHandle(void* data)
 			);
 	}
 	//显示出牌特效
-	outPokerType = OutPokerLogicRule::outPokerType(outPokerArr).type;
-	outPokerNum = OutPokerLogicRule::outPokerType(outPokerArr).len;
+	PokerTypeVO typeVo = OutPokerLogicRule::outPokerType(outPokerArr);
+	outPokerType = typeVo.type;
+	outPokerNum = typeVo.len;
 	if (outPokerType == 9)
 	{
 		blueSkyDispatchEvent(EventType::TONG_HUA_SHUN);
@@ -893,7 +916,7 @@ void PlayPokerMediator::reveivePlayerOutPokerHandle(void* data)
 	}
 
 	face = playerInDeskModel->DeskPlayerInfo[pokerGameModel->playerOutCard.wOutCardUser].wFaceID;
-	playChuPaiMusic(outPokerType, face);
+	playChuPaiMusic(outPokerType, face, typeVo.value, desk);
 
 	nextDesk = playerInDeskModel->chair[pokerGameModel->playerOutCard.wCurrentUser];
 	showBuchu(nextDesk, false, false);
@@ -1111,6 +1134,7 @@ void PlayPokerMediator::onEvent(int i, void* data)
 		break;
 
 	case FRIEND_FIELD_QUIT:
+		//handleFanhui();
 		clickfanHuiBtnHander();
 		break;
 
@@ -1168,6 +1192,11 @@ void PlayPokerMediator::onEvent(int i, void* data)
 
 	case 10601:
 		clickfanHuiBtnHander();
+		break;
+
+	case 10602:
+
+		handleFanhui();
 		break;
 
 	case 11101:
@@ -1276,19 +1305,16 @@ Layer* PlayPokerMediator::getLayer()
 }
 
 
-
-
-void PlayPokerMediator::clickfanHuiBtnHander()
+void PlayPokerMediator::handleFanhui()
 {
-	PLayEffect(EFFECT_BTN)
 	//发送离开桌子消息
 	PlayerInDeskModel *playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
 	int myChair = playerInDeskModel->getServiceChairID(0);
 	int myTable = playerInDeskModel->DeskPlayerInfo[myChair].wTableID;
-	((SendDataService*)getService(SendDataService::NAME))->sendLeaveTable(myTable,myChair,true);
+	((SendDataService*)getService(SendDataService::NAME))->sendLeaveTable(myTable, myChair, true);
 
 	//关闭游戏服务器SOCKET
-		TCPSocketService*  tcp_game = ((TCPSocketService*)getService(TCPSocketService::GAME));
+	TCPSocketService*  tcp_game = ((TCPSocketService*)getService(TCPSocketService::GAME));
 	tcp_game->closeMySocket();
 
 	//停掉网络主动监测与心跳
@@ -1318,16 +1344,28 @@ void PlayPokerMediator::clickfanHuiBtnHander()
 	creatView(new LobbyView(), new LobbyMediator());
 
 	blueSkyDispatchEvent(EventType::BACK_TO_HALL);
-	
+
 	if (playPokerView->imgHuaPai)
 	{
 		playPokerView->imgHuaPai->removeFromParentAndCleanup(true);
 		playPokerView->imgHuaPai = NULL;
 	}
-
-
 }
 
+void PlayPokerMediator::clickfanHuiBtnHander()
+{
+	PLayEffect(EFFECT_BTN)
+	if (DATA->dwGameState == 2)
+	{
+		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warning4", 10602, -1));
+	}
+	else
+	{
+		handleFanhui();
+	}
+
+}
+		
 void PlayPokerMediator::clickChatBtnHander(Ref* psender)
 {
 	PLayEffect(EFFECT_BTN)
@@ -1789,13 +1827,15 @@ void PlayPokerMediator::handleChuPai()
 		clickTongHuaShunTimes = 0;
 	}
 	//不符合出牌，并且是托管状态，直接不出
-	// 	else  
-	// 	{
-	// 		if (isAutoState == true)
-	// 		{
+	else  
+	{
 
-	// 		}
-	// 	}
+		if (isAutoState != true)
+		{
+			Tools::getInstance()->showSysMsgTouming
+				(UTF8::getInstance()->getString("game", "notfit"), 0, 0, Color3B(0xFB, 0xE7, 0x1A), false);
+		}
+	}
 }
 
 
@@ -1838,8 +1878,9 @@ void PlayPokerMediator::clickTongHuaShunBtnHander(Ref* psender)
 	//如果没有同花顺
 	if (allPokerArr.size() == 0)
 	{
-		Tools::getInstance()->showSysMsgTouming
-			(UTF8::getInstance()->getString("game", "noTonghuaShun"), 0, -100, Color3B(0xFF, 0x8A, 0x00));
+		Tools::getInstance()->showSysMsgTouming                  
+			(UTF8::getInstance()->getString("game", "noTonghuaShun"), 0, 0, Color3B(0xFB, 0xE7, 0x1A), false);
+		//(UTF8::getInstance()->getString("game", "noTonghuaShun"), 0, -100, Color3B(0xE1, 0x96, 0x52), false);
 		return;
 	}
 
@@ -1888,14 +1929,30 @@ void PlayPokerMediator::clickChongLiBtnHander(Ref* psender)
 {
 	PLayEffect(EFFECT_BTN)
 	//先取消手牌的选中状态
-	for (DWORD i = 0; i < ((GameDataModel*)getModel(GameDataModel::NAME))->player[0].selectedPokerArr.size(); i++)
+	int ids[30];
+	int id2s[30];
+	int selectSize = DATAGameData->player[0].selectedPokerArr.size();
+	for (int i = 0; i < selectSize; i++)
+	{
+		ids[i] = DATAGameData->player[0].selectedPokerArr.at(i)->pokerID;
+		id2s[i] = DATAGameData->player[0].selectedPokerArr.at(i)->pokerID2;
+	}
+	for (int i = 0; i < selectSize; i++)
 	{
 		pokeridData *data = new pokeridData();
-		data->pokerID = ((GameDataModel*)getModel(GameDataModel::NAME))->player[0].selectedPokerArr.at(i)->pokerID;
-		data->pokerID2 = ((GameDataModel*)getModel(GameDataModel::NAME))->player[0].selectedPokerArr.at(i)->pokerID2;
+		data->pokerID = ids[i];
+		data->pokerID2 = id2s[i];
 		blueSkyDispatchEvent(EventType::CHANGE_POKER_STATE, data);
 	}
-	((GameDataModel*)getModel(GameDataModel::NAME))->player[0].selectedPokerArr = {};
+
+// 	for (DWORD i = 0; i < ((GameDataModel*)getModel(GameDataModel::NAME))->player[0].selectedPokerArr.size(); i++)
+// 	{
+// 		pokeridData *data = new pokeridData();
+// 		data->pokerID = ((GameDataModel*)getModel(GameDataModel::NAME))->player[0].selectedPokerArr.at(i)->pokerID;
+// 		data->pokerID2 = ((GameDataModel*)getModel(GameDataModel::NAME))->player[0].selectedPokerArr.at(i)->pokerID2;
+// 		blueSkyDispatchEvent(EventType::CHANGE_POKER_STATE, data);
+// 	}
+// 	((GameDataModel*)getModel(GameDataModel::NAME))->player[0].selectedPokerArr = {};
 
 	//先移除所有的手牌显示
 	for (DWORD i = 0; i < ((GameDataModel*)getModel(GameDataModel::NAME))->player[0].pokerArr.size(); i++)
@@ -2147,6 +2204,7 @@ void PlayPokerMediator::showBuchu(int deskID, bool show, bool isClearData)
 //显示上座的玩家
 void PlayPokerMediator::showPlayerOnDesk()
 {
+	logV("showPlayerONdesk!\n");
 	PlayPokerView* playPokerView = (PlayPokerView*)getView();
 
 
@@ -2296,24 +2354,24 @@ void PlayPokerMediator::getJingGong(int pokerID)
 //自己的出牌时间已到
 void PlayPokerMediator::meTimeUp()
 {
-// 	if (buChuBtn->isVisible())
-// 	{
-// 		//直接不出
-// 		handleBuChu();
-// 		logV("cocos2d-x meTimeUp not out poker");
-// 	}
-// 	else
-// 	{
-// 		//和提示功能相同
-// 		handleTiShi();
-// 		FiniteTimeAction*  act = Sequence::create(
-// 			DelayTime::create(0.5f),
-// 			CallFunc::create(CC_CALLBACK_0(PlayPokerMediator::handleChuPai, this)),
-// 			NULL
-// 			);
-// 
-// 		playPokerView->runAction(act);
-// 	}
+	if (buChuBtn->isVisible())
+	{
+		//直接不出
+		handleBuChu();
+		logV("cocos2d-x meTimeUp not out poker");
+	}
+	else
+	{
+		//和提示功能相同
+		handleTiShi();
+		FiniteTimeAction*  act = Sequence::create(
+			DelayTime::create(0.5f),
+			CallFunc::create(CC_CALLBACK_0(PlayPokerMediator::handleChuPai, this)),
+			NULL
+			);
+
+		playPokerView->runAction(act);
+	}
 }
 
 //进贡时间到
@@ -2430,8 +2488,14 @@ void PlayPokerMediator::showAutoImage(int deskID, bool show)
 }
 
 //播放出牌音效
-void PlayPokerMediator::playChuPaiMusic(int pokerType, int faceID)
+void PlayPokerMediator::playChuPaiMusic(int pokerType, int faceID, int value, int desk )
 {
+	int randomEff = int(CCRANDOM_0_1() * 3) ;
+	char effectNames[64];
+	if (value == ZhuPai)
+	{
+		value = ((CMD_S_GameStart*)DATA->sendPokerData)->bCurrentSeries - 2;
+	}
 	switch (faceID)
 	{
 		//女
@@ -2441,17 +2505,32 @@ void PlayPokerMediator::playChuPaiMusic(int pokerType, int faceID)
 			//0 不出 。1.单张 2.对子 3.3张  4.3带2 5.顺子 6.连队 7.飞机  8.炸弹 9.同花顺 10.火箭
 			switch (pokerType)
 			{
-				case 0:
+			case 0:
+				if (randomEff == 0)
+				{
 					PLayEffect(BU_CHU_NV);
+				}
+				else if (randomEff == 1)
+				{
+					PLayEffect("sounds/mmpass.mp3");
+				}
+				else
+				{
+					PLayEffect("sounds/mm_yaobuqi.mp3");
+
+				}
 					break;
 				case 1:
-					PLayEffect(DAN_ZHANG_NV);
+					sprintf(effectNames, "sounds/nv_%04d.mp3", value + 2);
+					PLayEffect(effectNames);
 					break;
 				case 2:
-					PLayEffect(DUI_ZI_NV);
+					sprintf(effectNames, "sounds/nv_%02d%02d.mp3", value + 2,value + 2);
+					PLayEffect(effectNames);
 					break;
 				case 3:
-					PLayEffect(SAN_ZHANG_NV);
+					sprintf(effectNames, "sounds/lord_v_3card_%02d.mp3",value + 2);
+					PLayEffect(effectNames);
 					break;
 				case 4:
 					PLayEffect(SAN_DAI_ER_NV);
@@ -2464,15 +2543,20 @@ void PlayPokerMediator::playChuPaiMusic(int pokerType, int faceID)
 					break;
 				case 7:
 					PLayEffect(FEI_JI_NV);
+					PLayEffect("sounds/feijiEff.mp3");
+
 					break;
 				case 8:
 					PLayEffect(BOOM_NV);
+					PLayEffect("sounds/zhadanEff.mp3");
 					break;
 				case 9:
 					PLayEffect(TONG_HUA_SHUN_NV);
 					break;
 				case 10:
 					PLayEffect(HUO_JIAN_NV);
+					PLayEffect("sounds/huojianEff.mp3");
+
 					break;
 			}
 		}
@@ -2488,13 +2572,23 @@ void PlayPokerMediator::playChuPaiMusic(int pokerType, int faceID)
 				PLayEffect(BU_CHU_NAN);
 				break;
 			case 1:
-				PLayEffect(DAN_ZHANG_NAN);
+				sprintf(effectNames, "sounds/nan_%04d.mp3", value + 2);
+				PLayEffect(effectNames);
 				break;
 			case 2:
-				PLayEffect(DUI_ZI_NAN);
+				sprintf(effectNames, "sounds/nan_%02d%02d.mp3", value + 2, value + 2);
+				PLayEffect(effectNames);
 				break;
 			case 3:
-				PLayEffect(SAN_ZHANG_NAN);
+// 				if (desk == 0)
+// 				{
+					PLayEffect(SAN_ZHANG_NAN);
+// 				}
+// 				else
+// 				{
+// 					PLayEffect("sounds/am_dani.mp3");
+// 				}
+
 				break;
 			case 4:
 				PLayEffect(SAN_DAI_ER_NAN);
@@ -2507,15 +2601,19 @@ void PlayPokerMediator::playChuPaiMusic(int pokerType, int faceID)
 				break;
 			case 7:
 				PLayEffect(FEI_JI_NAN);
+				PLayEffect("sounds/feijiEff.mp3");
 				break;
+
 			case 8:
 				PLayEffect(BOOM_NAN);
+				PLayEffect("sounds/zhadanEff.mp3");
 				break;
 			case 9:
 				PLayEffect(TONG_HUA_SHUN_NAN);
 				break;
 			case 10:
 				PLayEffect(HUO_JIAN_NAN);
+				PLayEffect("sounds/huojianEff.mp3");
 				break;
 			}
 		}

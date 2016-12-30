@@ -1,4 +1,6 @@
 #include "ShowChatView.h"
+#include "SGTools.h"
+#include "UTF8.h"
 
 ShowChatView::ShowChatView()
 {
@@ -17,7 +19,7 @@ void ShowChatView::initView(int desk,int index,int chat)
 {
 	deskID = desk;
 	chatID = chat;
-	showNode = rootNode->getChildByName("showNode");
+	UIGet_Text("Text_1",rootNode, showNode)
 	leftImage = dynamic_cast<ImageView*>(rootNode->getChildByName("leftImage"));
 	rightImage = dynamic_cast<ImageView*>(rootNode->getChildByName("rightImage"));
 
@@ -51,126 +53,14 @@ void ShowChatView::initView(int desk,int index,int chat)
 
 void ShowChatView::showChat(int index)
 {
-	ImageView* chat1 = dynamic_cast<ImageView*>(showNode->getChildByName("chat1"));
-	ImageView* chat2 = dynamic_cast<ImageView*>(showNode->getChildByName("chat2"));
-	ImageView* chat3 = dynamic_cast<ImageView*>(showNode->getChildByName("chat3"));
-	ImageView* chat4 = dynamic_cast<ImageView*>(showNode->getChildByName("chat4"));
-	ImageView* chat5 = dynamic_cast<ImageView*>(showNode->getChildByName("chat5"));
-	ImageView* chat6 = dynamic_cast<ImageView*>(showNode->getChildByName("chat6"));
-	ImageView* chat7 = dynamic_cast<ImageView*>(showNode->getChildByName("chat7"));
-	ImageView* chat8 = dynamic_cast<ImageView*>(showNode->getChildByName("chat8"));
-	ImageView* chat9 = dynamic_cast<ImageView*>(showNode->getChildByName("chat9"));
-
-	switch (index)
-	{
-	case 1:
-		chat1->setVisible(true);
-		chat2->setVisible(false);
-		chat3->setVisible(false);
-		chat4->setVisible(false);
-		chat5->setVisible(false);
-		chat6->setVisible(false);
-		chat7->setVisible(false);
-		chat8->setVisible(false);
-		chat9->setVisible(false);
-		break;
-	case 2:
-		chat1->setVisible(false);
-		chat2->setVisible(true);
-		chat3->setVisible(false);
-		chat4->setVisible(false);
-		chat5->setVisible(false);
-		chat6->setVisible(false);
-		chat7->setVisible(false);
-		chat8->setVisible(false);
-		chat9->setVisible(false);
-		break;
-	case 3:
-		chat1->setVisible(false);
-		chat2->setVisible(false);
-		chat3->setVisible(true);
-		chat4->setVisible(false);
-		chat5->setVisible(false);
-		chat6->setVisible(false);
-		chat7->setVisible(false);
-		chat8->setVisible(false);
-		chat9->setVisible(false);
-		break;
-	case 4:
-		chat1->setVisible(false);
-		chat2->setVisible(false);
-		chat3->setVisible(false);
-		chat4->setVisible(true);
-		chat5->setVisible(false);
-		chat6->setVisible(false);
-		chat7->setVisible(false);
-		chat8->setVisible(false);
-		chat9->setVisible(false);
-		break;
-	case 5:
-		chat1->setVisible(false);
-		chat2->setVisible(false);
-		chat3->setVisible(false);
-		chat4->setVisible(false);
-		chat5->setVisible(true);
-		chat6->setVisible(false);
-		chat7->setVisible(false);
-		chat8->setVisible(false);
-		chat9->setVisible(false);
-		break;
-	case 6:
-		chat1->setVisible(false);
-		chat2->setVisible(false);
-		chat3->setVisible(false);
-		chat4->setVisible(false);
-		chat5->setVisible(false);
-		chat6->setVisible(true);
-		chat7->setVisible(false);
-		chat8->setVisible(false);
-		chat9->setVisible(false);
-		break;
-	case 7:
-		chat1->setVisible(false);
-		chat2->setVisible(false);
-		chat3->setVisible(false);
-		chat4->setVisible(false);
-		chat5->setVisible(false);
-		chat6->setVisible(false);
-		chat7->setVisible(true);
-		chat8->setVisible(false);
-		chat9->setVisible(false);
-		break;
-	case 8:
-		chat1->setVisible(false);
-		chat2->setVisible(false);
-		chat3->setVisible(false);
-		chat4->setVisible(false);
-		chat5->setVisible(false);
-		chat6->setVisible(false);
-		chat7->setVisible(false);
-		chat8->setVisible(true);
-		chat9->setVisible(false);
-		break;
-	case 9:
-		chat1->setVisible(false);
-		chat2->setVisible(false);
-		chat3->setVisible(false);
-		chat4->setVisible(false);
-		chat5->setVisible(false);
-		chat6->setVisible(false);
-		chat7->setVisible(false);
-		chat8->setVisible(false);
-		chat9->setVisible(true);
-		break;
-	}
-
+	char chatName[64];
+	sprintf(chatName, "chat%d", index);
+	showNode->setString(UTF8String("chat", chatName));
 	//2ÃëºóÒÆ³ýÁÄÌìÏÔÊ¾
 	auto call1 = CallFunc::create(
-		//CC_CALLBACK_2(PlayPokerView::hideChat, desk)
 		bind(&ShowChatView::hideChat, this)
 		);
 	this->runAction(Sequence::create(DelayTime::create(2.0f), call1, nullptr));
-	//this->scheduleOnce(schedule_selector(PlayPokerView::clockShow), 2.0f);
 }
 
 

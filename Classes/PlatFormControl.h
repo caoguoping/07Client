@@ -8,6 +8,7 @@
 
 #define SDK_NULL 0   //没有SDK
 #define SDK_YIKE 1   //易科SDK
+#define SDK_CREATE_ROLE 2 //创建角色测试
 
 #define PlatWhich PlatAdr
 #define SDKWhich  SDK_YIKE

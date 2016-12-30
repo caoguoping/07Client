@@ -29,13 +29,15 @@ SetView::SetView()
                                     });
 
     reLoginBtn->addClickEventListener([this](Ref*  pSender)
-                                    {
-                                        blueSkyDispatchEvent(14005);
-                                    });
+    {
+		PLayEffect(BUTTON_CLICK)
+			blueSkyDispatchEvent(14005);
+	});
     
 
     helpBtn->addClickEventListener([this](Ref*  pSender)
                                     {
+										PLayEffect(BUTTON_CLICK)
                                         blueSkyDispatchEvent(14006);
                                     });
     
@@ -61,15 +63,16 @@ void SetView::initView()
 
 void SetView::clickChkMusic(Ref* pSender)
 {
+	PLayEffect(BUTTON_CLICK)
 	if (MusicService::getInstance()->isMusicOn)
 	{
-		SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 		MusicService::getInstance()->isMusicOn = false;
+		SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 	}
 	else
 	{
-		SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 		MusicService::getInstance()->isMusicOn = true;
+		PLayMUSIC(BG_MUSIC)
 	}
 	UserDefault::getInstance()->setBoolForKey("MusicOn", MusicService::getInstance()->isMusicOn);
 	UserDefault::getInstance()->flush();
@@ -77,6 +80,7 @@ void SetView::clickChkMusic(Ref* pSender)
 
 void SetView::clickChkEffect(Ref* pSender)
 {
+	PLayEffect(BUTTON_CLICK)
 	if (MusicService::getInstance()->isEffectOn)
 	{
 		MusicService::getInstance()->isEffectOn = false;

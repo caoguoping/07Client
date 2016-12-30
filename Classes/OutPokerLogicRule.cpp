@@ -26,7 +26,8 @@ PokerTypeVO OutPokerLogicRule::outPokerType(vector<PokerVO*> outPokerArr)
 	vector<PokerVO*> pokerArr = {};
 
 	//这边先将扑克按照牌值从小到大排序
-	pokerArr = BubbleSort2(outPokerArr);
+	//pokerArr = BubbleSort2(outPokerArr);
+	pokerArr = BubbleSort(outPokerArr);
 
 	//先判断是否是炸弹
 	if (len >= 4)
@@ -60,7 +61,11 @@ PokerTypeVO OutPokerLogicRule::outPokerType(vector<PokerVO*> outPokerArr)
 		//先判断是否是三带二
 		pokerType = isSanDaiEr(pokerArr);
 		if (pokerType.type != 0)
+		{
+			logV("!!!!!!!sandaier value %d", pokerType.value);
 			return pokerType;
+		}
+			
 		//在判断是否是同花顺
 		pokerType = isTongHuaShun(pokerArr);
 		if (pokerType.type != 0)
@@ -1034,7 +1039,7 @@ vector<PokerTypeVO> OutPokerLogicRule::fenXiShouPai(vector<PokerVO*> pokerArr)
 
 	//这边先将扑克按照牌值从小到大排序
 	//mypokerArr = BubbleSort(pokerArr);
-	mypokerArr = BubbleSort2(mypokerArr);
+	mypokerArr = BubbleSort(mypokerArr);
 
 	//先提取火箭
 	vector<PokerVO*>::iterator it;

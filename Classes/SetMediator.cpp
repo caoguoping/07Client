@@ -38,6 +38,7 @@ void SetMediator::onEvent(int i, void* data)
 	switch (i)
 	{
 	case 14001:
+		PLayEffect(EFFECT_BTN)
 		clickCloseBtnHander();
 		break;
 	case 14005:

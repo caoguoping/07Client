@@ -286,7 +286,7 @@ void NetDataCommand::executeLogin(NetData netData)
 	txtLogin->setString(temp);
 #endif
 
-	//logV("LoginServer main: %d,  sub: %d   size %d \n", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
+	logV("LoginServer main: %d,  sub: %d   size %d \n", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
 	//logF("LoginServer main: %d,  sub: %d   size %d \n", netData.command.wMainCmdID, netData.command.wSubCmdID, netData.wDataSize);
 
 	if (netData.command.wMainCmdID == 1)

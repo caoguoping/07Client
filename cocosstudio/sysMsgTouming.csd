@@ -25,7 +25,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
-            <OutlineColor A="255" R="0" G="0" B="0" />
+            <OutlineColor A="255" R="95" G="16" B="11" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>

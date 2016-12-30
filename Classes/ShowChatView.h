@@ -18,7 +18,7 @@ private:
 
 	int deskID = -1;
 	int chatID = -1;
-	Node* showNode;
+	Text* showNode;
 	ImageView* leftImage;
 	ImageView* rightImage;
 };

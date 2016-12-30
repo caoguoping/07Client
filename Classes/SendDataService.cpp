@@ -53,6 +53,7 @@ szNickName 昵称
 */
 void SendDataService::sendRegister(const char* szLogonPass, int wFaceID, int cbGender, const char* szAccounts, const char*  szNickName)
 {
+
 	//变量定义
 	BYTE cbBuffer[SOCKET_TCP_PACKET];
 	CMD_GP_RegisterAccounts * pRegisterAccounts = (CMD_GP_RegisterAccounts *)cbBuffer;
@@ -69,6 +70,52 @@ void SendDataService::sendRegister(const char* szLogonPass, int wFaceID, int cbG
 	memcpy(pRegisterAccounts->szAccounts, CallCppHelper::getInstance()->mUid, 32);
 	memcpy(pRegisterAccounts->szLogonPass, CallCppHelper::getInstance()->mUid, 32);
 	strncpy(pRegisterAccounts->szUid, CallCppHelper::getInstance()->mUid, 32);
+
+	pRegisterAccounts->cbValidateFlags = MB_VALIDATE_FLAGS | LOW_VER_VALIDATE_FLAGS;
+
+	((TCPSocketService *)getService(TCPSocketService::LOGIN))->SendData(MDM_GP_LOGON, 3, cbBuffer, sizeof(CMD_GP_RegisterAccounts));
+}
+
+//test for create acount
+void SendDataService::sendLoginTest(int sumer)
+{
+	//变量定义
+	BYTE cbBuffer[SOCKET_TCP_PACKET];
+	char randomUid[100];
+	sprintf(randomUid, "%09d", sumer);
+	CMD_GP_LogonAccounts * pLogonAccounts = (CMD_GP_LogonAccounts *)cbBuffer;
+	pLogonAccounts->dwPlazaVersion = VERSION_PLAZA;
+	memcpy(pLogonAccounts->szMachineID, randomUid, CountArray(pLogonAccounts->szMachineID) * 2);
+
+	memcpy(pLogonAccounts->szAccounts, randomUid, 32);
+	memcpy(pLogonAccounts->szPassword, randomUid, 32);
+	strncpy(pLogonAccounts->szUid, randomUid, 32);
+	pLogonAccounts->cbValidateFlags = MB_VALIDATE_FLAGS | LOW_VER_VALIDATE_FLAGS;
+	((TCPSocketService *)getService(TCPSocketService::LOGIN))->SendData(MDM_GP_LOGON, SUB_GP_LOGON_ACCOUNTS, cbBuffer, sizeof(CMD_GP_LogonAccounts));
+
+}
+
+//test for create acount
+void SendDataService::sendRegisterTest(int sumer)
+{
+	//变量定义
+	BYTE cbBuffer[SOCKET_TCP_PACKET];
+	char randomUid[32];
+	 sprintf(randomUid, "%09d", sumer);
+	CMD_GP_RegisterAccounts * pRegisterAccounts = (CMD_GP_RegisterAccounts *)cbBuffer;
+	pRegisterAccounts->dwPlazaVersion = VERSION_PLAZA;
+	memcpy(pRegisterAccounts->szMachineID, "aaaaaa", 66);
+	memcpy(pRegisterAccounts->szInsurePass, "abcdefghijklmn", 66);
+	pRegisterAccounts->wFaceID = 1;
+	pRegisterAccounts->cbGender = 1;
+	memcpy(pRegisterAccounts->szNickName, randomUid, 64);
+	memcpy(pRegisterAccounts->szSpreader, "", 64);
+	memcpy(pRegisterAccounts->szPassPortID, "", 38);
+	memcpy(pRegisterAccounts->szCompellation, "", 32);
+
+	memcpy(pRegisterAccounts->szAccounts, randomUid, 32);
+	memcpy(pRegisterAccounts->szLogonPass, randomUid, 32);
+	strncpy(pRegisterAccounts->szUid, randomUid, 32);
 
 	pRegisterAccounts->cbValidateFlags = MB_VALIDATE_FLAGS | LOW_VER_VALIDATE_FLAGS;
 

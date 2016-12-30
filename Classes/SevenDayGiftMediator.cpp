@@ -48,6 +48,7 @@ void SevenDayGiftMediator::onEvent(int i, void* data)
 		clickGetGiftBtnHander();
 		break;
 	case 10902:
+		PLayEffect(EFFECT_BTN)
 		clickCloseBtnHander();
 		break;
 	case EventType::SEVEN_LOGIN_INFO:

@@ -19,8 +19,8 @@ ShopView::ShopView(int id)
 	UIGet_CheckBox("zhuanShiBtn", rootNode, zhuanShiBtn)
 		UIGet_CheckBox("goldBtn", rootNode, goldBtn)
 		UIGet_Button("closeBtn", rootNode, closeBtn)
-		UIClickCheck(zhuanShiBtn, ShopView::showZuanShiView)
-		UIClickCheck(goldBtn, ShopView::showGoldView)
+		UIClickCheck(zhuanShiBtn, ShopView::clickBtnZuanShi)
+		UIClickCheck(goldBtn, ShopView::clickBtnGold)
 	BTN_EVENT(closeBtn, 10803	)
 
 	UIGet_Node("FileNode_zuanshi", rootNode, shopItem[E_zuanshi])
@@ -78,10 +78,10 @@ void ShopView::initView()
 	{
 
 	case 0:
-		showZuanShiView(NULL, CheckBox::EventType::SELECTED);
+		showZuanShiView();
 		break;
 	case 1:
-		showGoldView(NULL, CheckBox::EventType::SELECTED);
+		showGoldView();
 		break;
 
 	default:
@@ -105,22 +105,19 @@ ShopView::~ShopView()
 
 }
 
-void ShopView::showZuanShiView(Ref*  pSender, CheckBox::EventType type)
+void ShopView::showZuanShiView()
 {
-	PLayEffect(EFFECT_BTN);
 	zhuanShiBtn->setSelected(true);
 	goldBtn->setSelected(false);
 	zhuanShiBtn->setTouchEnabled(false);
 	goldBtn->setTouchEnabled(true);
 	shopItem[E_zuanshi]->setVisible(true);
 	shopItem[E_gold]->setVisible(false);
-
-
 }
 
-void ShopView::showGoldView(Ref*  pSender, CheckBox::EventType type)
+void ShopView::showGoldView()
 {
-	zhuanShiBtn->setSelected(false);
+		zhuanShiBtn->setSelected(false);
 	goldBtn->setSelected(true);
 	zhuanShiBtn->setTouchEnabled(true);
 	goldBtn->setTouchEnabled(false);
@@ -128,10 +125,24 @@ void ShopView::showGoldView(Ref*  pSender, CheckBox::EventType type)
 	shopItem[E_gold]->setVisible(true);
 }
 
+void ShopView::clickBtnZuanShi(Ref*  pSender, CheckBox::EventType type)
+{
+	PLayEffect(EFFECT_BTN);
+	showZuanShiView();
+
+}
+
+void ShopView::clickBtnGold(Ref*  pSender, CheckBox::EventType type)
+{
+	PLayEffect(EFFECT_BTN)
+		showGoldView();
+}
+
 void ShopView::clickChargeBtn(Ref* pSender)
 {
+	PLayEffect(EFFECT_BTN)
 	Button*  btn = static_cast<Button*>(pSender);
 	int itags = btn->getTag();
-	PLayEffect(EFFECT_BTN)
+	
 	blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "warningBuy", (10804 + itags), -1));
 }

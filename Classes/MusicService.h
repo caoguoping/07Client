@@ -30,7 +30,7 @@ using namespace CocosDenshion;
 #define LIAN_DUI_NAN			"sounds/am_sanliandui.mp3"			//连对		20015
 #define LIAN_DUI_NV				"sounds/mm_sanliandui.mp3"			//			20016
 #define SAN_DAI_ER_NAN			"sounds/am_sandaier.mp3"			//三带二、	20017
-#define SAN_DAI_ER_NV			"sounds/mm_sandaier.mp3"			//			20018
+#define SAN_DAI_ER_NV			"sounds/nv_sandaier.mp3"			//			20018
 #define SAN_ZHANG_NAN			"sounds/am_sanzhang.mp3"			//三张		20019
 #define SAN_ZHANG_NV			"sounds/mm_sanzhang.mp3"			//			20020
 #define FEI_JI_NAN				"sounds/am_gangban.mp3"				//飞机		20021

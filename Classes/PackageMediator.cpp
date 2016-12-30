@@ -40,6 +40,7 @@ void PackageMediator::onEvent(int i, void* data)
 	switch (i)
 	{
 	case 12001:
+		PLayEffect(EFFECT_BTN)
 		removeView(this);
 		break;
 // 	case 12002:

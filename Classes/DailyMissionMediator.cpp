@@ -71,6 +71,7 @@ Layer* DailyMissionMediator::getLayer()
 
 void DailyMissionMediator::clickCloseBtnHander()
 {
+	PLayEffect(EFFECT_BTN)
 	removeView(this);
 }
 

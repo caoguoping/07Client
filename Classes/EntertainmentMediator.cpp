@@ -38,6 +38,7 @@ void EntertainmentMediator::onEvent(int i, void* data)
 	{
 	case EventType::BACK_TO_HALL:
 	case 12700:
+		//PLayEffect(EFFECT_BTN)
 		removeView(this);
 		break;
 	case FRIEND_LIST:

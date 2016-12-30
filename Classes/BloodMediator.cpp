@@ -38,6 +38,7 @@ void BloodMediator::onEvent(int i, void* data)
 	{
 	case EventType::BACK_TO_HALL:
 	case 12800:
+	//	PLayEffect(EFFECT_BTN)
 		removeView(this);
 		break;
 	default:

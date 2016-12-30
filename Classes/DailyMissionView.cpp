@@ -105,6 +105,7 @@ void DailyMissionView::showAllMission()
 
 void DailyMissionView::clickGetBtn(Ref *pSender)
 {
+	PLayEffect(EFFECT_BTN)
 	Button* tempB = static_cast<Button*>(pSender);
 	if (!tempB)
 		return;
@@ -121,6 +122,7 @@ void DailyMissionView::clickGetBtn(Ref *pSender)
 
 void DailyMissionView::clickGotoBtn(Ref *pSender)
 {
+	PLayEffect(EFFECT_BTN)
 	//打牌中不能进去
 	if (VIEW->nowViewTag == ViewManager::eViewGame)
 	{

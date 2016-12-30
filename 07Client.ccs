@@ -1568,7 +1568,6 @@
         <Project Name="character_right.csd" Type="Node" />
         <Project Name="charcater.csd" Type="Node" />
         <Project Name="chat.csd" Type="Node" />
-        <Project Name="chatShow.csd" Type="Node" />
         <Project Name="clock.csd" Type="Node" />
         <Project Name="createRole.csd" Type="Scene" />
         <Project Name="createRoleShow.csd" Type="Node" />

@@ -43,13 +43,19 @@ void Tools::closeSysMsgTouming(Node*  psender)
 	psender->removeFromParentAndCleanup(true);
 }
 
-void Tools::showSysMsgTouming(std::string msg, float x, float y, Color3B color)
+void Tools::showSysMsgTouming(std::string msg, float x, float y, Color3B color, bool isShowBg)
 {
 	Node* rootNode = CSLoader::createNode("sysMsgTouming.csb");
 	Vec2 basePos = Vec2(WScreen * 0.5, HScreen * 0.5);
 	basePos.add(Vec2(x, y));
 	rootNode->setPosition(basePos);
 	Text*   txtMsg;
+	ImageView*  imgBg;
+	UIGet_ImageView("Image_38", rootNode, imgBg)
+	if (!isShowBg)
+	{
+		imgBg->setVisible(false);
+	}
 	UIGet_Text("msgText", rootNode, txtMsg)
 		txtMsg->setString(msg);
 	txtMsg->setColor(color);

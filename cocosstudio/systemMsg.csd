@@ -27,12 +27,12 @@
             <FileData Type="Normal" Path="bg/bg_2nd-ui.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="msgText" ActionTag="-1396438838" Tag="746" IconVisible="False" LeftMargin="-151.4919" RightMargin="-168.5081" TopMargin="-95.0086" BottomMargin="-54.9914" IsCustomSize="True" FontSize="24" LabelText="&#xA;" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="320.0000" Y="150.0000" />
+          <AbstractNodeData Name="msgText" ActionTag="-1396438838" Tag="746" IconVisible="False" LeftMargin="-131.4919" RightMargin="-148.5081" TopMargin="-80.0086" BottomMargin="-39.9914" IsCustomSize="True" FontSize="24" LabelText="&#xA;" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="280.0000" Y="120.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="8.5081" Y="20.0086" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="123" G="70" B="30" />
+            <CColor A="255" R="123" G="75" B="30" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />

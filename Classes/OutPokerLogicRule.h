@@ -41,7 +41,6 @@ class OutPokerLogicRule
 		//提取炸弹
 		static vector<vector<PokerVO*>> TiQuBoom(int value, int len, vector<PokerTypeVO> myPokerTypeArr, vector<PokerVO*> LaiZiArr);
 
-	private:
 		/************************************************************************/
 		/* 牌型的判断															    */
 		/************************************************************************/

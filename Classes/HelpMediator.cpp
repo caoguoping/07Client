@@ -40,6 +40,7 @@ void HelpMediator::onEvent(int i, void* data)
 	switch (i)
 	{
 	case 13001:
+		PLayEffect(EFFECT_BTN)
 		clickCloseBtnHander();
 		break;
 	}

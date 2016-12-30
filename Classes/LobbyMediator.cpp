@@ -87,6 +87,7 @@ void LobbyMediator::onEvent(int i, void* data)
 			break;
 		case EventType::BACK_TO_HALL:
 			lobbyView->refreshView();
+			PLayMUSIC(BG_MUSIC)
 			break;
 		default:
 			break;

@@ -11,6 +11,9 @@ class  LoginView : public BlueSkyView
 public:
 	LoginView();
 	~LoginView();
+	void createRoleUpdate(float dt);
+	void createRoleTest();
+	void delayCreateRoleTest();
 	cocostudio::timeline::ActionTimeline* cloudAction;
 	Node* cloudNode;
 

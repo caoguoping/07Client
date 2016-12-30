@@ -409,9 +409,10 @@ void PlayPokerView::clockShow(float dt)
 	leftTimer->setPercentage(i * 100 / TIME_SendPoker);
 
 	//倒数10秒时开始播放计时器音效
-	if (time > 15)
+	if (time > 10)
 	{
-		blueSkyDispatchEvent(20053);
+		//blueSkyDispatchEvent(20053);
+		PLayEffect(JI_SHI_QI)
 	}
 	if (time == TIME_SendPoker && myClock->isVisible())
 	{
@@ -522,7 +523,7 @@ void PlayPokerView::showTouyou(int i)
 	case 0:
 		UIFrameCreate(touyou, "touyou.csb", rootNode, false)
 		touyouNode->setPosition(point);
-
+		PLayEffect("sounds/touyouEff.mp3")
 // 		imgTouyou[0] = ImageView::create("outEnd0.png");
 // 		imgTouyou[0]->setPosition(point);
 // 		rootNode->addChild(imgTouyou[0]);

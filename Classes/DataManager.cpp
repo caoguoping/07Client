@@ -27,6 +27,8 @@ void DataManager::initData()
 	myBaseData.wBeiZaNum[1] = 0;
 	myBaseData.wBeiZaNum[2] = 0;
 	myBaseData.wBeiZaNum[3] = 0;
+	dwRoleCreate = 123456789;
+	dwGameState = 0;
 	
 }
 

@@ -37,6 +37,7 @@ void FriendMediator::onEvent(int i, void* data)
 	{
 	case EventType::BACK_TO_HALL:
 	case 12301:
+		PLayEffect(EFFECT_BTN)
 		removeView(this);
 		blueSkyDispatchEvent(BACK_TO_HALL);
 		break;

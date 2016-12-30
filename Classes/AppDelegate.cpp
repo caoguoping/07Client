@@ -160,12 +160,17 @@ void AppDelegate::applicationDidEnterBackground() {
     Director::getInstance()->stopAnimation();
 
     // if you use SimpleAudioEngine, it must be pause
-    SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+	SimpleAudioEngine::getInstance()->stopBackgroundMusic();
+   // SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 }
 
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground() 
 {
     Director::getInstance()->startAnimation();
-	SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+	if (VIEW->nowViewTag == ViewManager::eViewMain)
+	{
+		PLayMUSIC(BG_MUSIC)
+	}
+
 }

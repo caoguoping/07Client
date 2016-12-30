@@ -74,9 +74,9 @@ ActivityView::ActivityView(int actIndex)
 	UIGet_CheckBox("rechargeBtn", rootNode, rechargeBtn);
 	UIGet_CheckBox("CheckBox_1", rootNode, myCupBtn);
 	BTN_EVENT(closeBtn, 15001)
-		BTN_EVENT(lotteryBtn, 15002)
-		BTN_EVENT(rechargeBtn, 15003)
-		BTN_EVENT(myCupBtn, 15010)
+		CHECK_EVENT(lotteryBtn, 15002)
+		CHECK_EVENT(rechargeBtn, 15003)
+		CHECK_EVENT(myCupBtn, 15010)
 
 	textZuanshi = static_cast<TextBMFont*>(mallItem[E_activity]->getChildByName("BitmapFontLabel_needZuan"));
 

@@ -527,6 +527,8 @@ void FriendView::clickShuRenAdd(Ref* pSender)
 
 }
 
+
+
 void FriendView::showRanks(DWORD dwWhich)
 {
 	lstRank->removeAllChildrenWithCleanup(true);
@@ -552,6 +554,7 @@ void FriendView::showRanks(DWORD dwWhich)
 	int itemHeigth = 99;
 	int halfItemWidth = 614 * 0.5;
 	int itemSize = DATA->vFriends.size();
+	lstRank->setItemsMargin(itemHeigth + 6);
 	for (int i = 0; i < itemSize; i++)
 	{
 		Node* oneNode = CSLoader::createNode("FriendsRankCell.csb");
@@ -625,6 +628,8 @@ void FriendView::showRanks(DWORD dwWhich)
 	Layout*   layoutFate = Layout::create();
 	lstRank->pushBackCustomItem(layoutFate);
 }
+
+
 
 void FriendView::clickCheckItemFriends(Ref*  pSender, CheckBox::EventType type)
 {

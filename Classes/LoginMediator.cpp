@@ -2,6 +2,7 @@
 #include "PlatFormControl.h"
 #include "CallCppHelper.h"
 #include "ViewManager.h"
+#include "LoginView.h"
 
 #include "cocos2d.h"
 #include "network/HttpClient.h"
@@ -59,6 +60,12 @@ void LoginMediator::callJavaLogin()
 	helpers->sendLoginData();
 
 #endif
+
+#if(SDKWhich == SDK_CREATE_ROLE)
+	static_cast<LoginView*>(getView())->createRoleTest();
+
+#endif
+
 }
 
 

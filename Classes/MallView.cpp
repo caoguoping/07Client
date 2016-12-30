@@ -26,8 +26,8 @@ MallView::MallView()
 	UIGet_CheckBox("activityBtn", rootNode, activityBtn)
 	UIGet_CheckBox("zuanShiBtn", rootNode, zuanShiBtn)
 	BTN_EVENT(closeBtn, 11201)
-	BTN_EVENT(activityBtn, 11202)
-	BTN_EVENT(zuanShiBtn, 11203)
+	CHECK_EVENT(activityBtn, 11202)
+	CHECK_EVENT(zuanShiBtn, 11203)
 }
 
 MallView::~MallView()

@@ -340,8 +340,11 @@ public:
 	MyBaseData myBaseData;
 	string md5Passwd;
 
+	//随机生成账号测试
+	DWORD dwRoleCreate;
 	void *sendPokerData;
-
+	DWORD dwGameState;   //0:未进入游戏界面  , 1:匹配阶段  , 2:发牌之后
+	int mJoinInPlayer;  //进入桌子的玩家数目
 public:
 	static DataManager * getInstance();
 	void saveRankData(CMD_GP_CupInfo* cupInfo);

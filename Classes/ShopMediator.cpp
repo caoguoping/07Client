@@ -74,6 +74,7 @@ void ShopMediator::onEvent(int i, void* data)
 	switch (i)
 	{
 	case 10803:
+		PLayEffect(EFFECT_BTN)
 		clickCloseBtnHander();
 		break;
 	case 10804:

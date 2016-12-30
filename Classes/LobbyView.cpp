@@ -111,7 +111,7 @@ void LobbyView::initView()
 		UIClick(mBtnSetting, LobbyView::clickBtnSetting)
 
 		UIGet_ScrollView("ScrollView_button", rootNode, scrBtn)
-
+		scrBtn->setScrollBarEnabled(false);
 		UIGet_Button("Button_playGold", scrBtn, mBtnPlayGold)
 		UIClick(mBtnPlayGold, LobbyView::clickBtnPlayGold)
 

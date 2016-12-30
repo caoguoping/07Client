@@ -46,6 +46,7 @@ void MyInfoMediator::onEvent(int i, void* data)
 	switch (i)
 	{
 	case 11701:
+		PLayEffect(EFFECT_BTN)
 		clickCloseBtnHander();
 		break;
 	case 10702:
