@@ -74,7 +74,6 @@ void BlueSkyMediator::blueSkyDispatchEvent(int type, void* data)
 */
 void BlueSkyMediator::creatView(BlueSkyView *view, BlueSkyMediator *mediator, void* noteData)
 {
-	//BlueSkyRegister::getInstance()->registerOnEvent(mediator);
 	BlueSkyRegister::getInstance()->creatView(view,mediator,noteData);
 }
 
@@ -88,7 +87,7 @@ BlueSkyView* BlueSkyMediator::getView()
 /**
 É¾³ýÏÔÊ¾¶ÔÏó
 */
-void BlueSkyMediator::removeView(BlueSkyMediator *mediator)
+void BlueSkyMediator::removeView(BlueSkyMediator *mediator, bool isHide)
 {
-	BlueSkyRegister::getInstance()->removeView(mediator);
+	BlueSkyRegister::getInstance()->removeView(mediator, isHide);
 }

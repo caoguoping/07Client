@@ -71,8 +71,7 @@ void LoginMediator::callJavaLogin()
 
 LoginMediator::~LoginMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 

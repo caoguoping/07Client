@@ -8,8 +8,7 @@ BloodMediator::BloodMediator()
 
 BloodMediator::~BloodMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

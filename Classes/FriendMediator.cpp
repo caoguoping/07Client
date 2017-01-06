@@ -12,8 +12,7 @@ FriendMediator::FriendMediator()
 
 FriendMediator::~FriendMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 

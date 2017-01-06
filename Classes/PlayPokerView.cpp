@@ -56,8 +56,7 @@ PlayPokerView::PlayPokerView()
 }
 PlayPokerView::~PlayPokerView()
 {
-	delete rootNode;
-	rootNode = NULL;
+
 }
 
 void PlayPokerView::showFriendInvites()

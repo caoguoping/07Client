@@ -19,8 +19,7 @@ MessageShowView::MessageShowView()
 
 MessageShowView::~MessageShowView()
 {
-	delete rootNode;
-	rootNode = NULL;
+
 }
 
 void MessageShowView::initView()

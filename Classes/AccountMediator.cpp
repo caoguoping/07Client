@@ -65,8 +65,7 @@ AccountMediator::AccountMediator()
 
 AccountMediator::~AccountMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 void AccountMediator::OnRegister()

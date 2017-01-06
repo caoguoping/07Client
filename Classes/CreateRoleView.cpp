@@ -26,8 +26,7 @@ CreateRoleView::CreateRoleView()
 }
 CreateRoleView::~CreateRoleView()
 {
-	delete rootNode;
-	rootNode = NULL;
+
 }
 
 void CreateRoleView::initView()

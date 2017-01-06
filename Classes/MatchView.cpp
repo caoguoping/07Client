@@ -18,8 +18,7 @@ MatchView::MatchView()
 }
 MatchView::~MatchView()
 {
-	delete rootNode;
-	rootNode = NULL;
+
 }
 
 void MatchView::initView()
@@ -99,7 +98,10 @@ void MatchView::clickBtnCloseFast(Ref* pSender)
 		{
 			getcontainer()->unschedule(schedule_selector(ConnectGameServiceCommand::heartPacket));
 		}
-		creatView(new LobbyView(), new LobbyMediator());
+	//	creatView(new LobbyView(), new LobbyMediator());
+		DATA->lobbyview->setTouchEnabled(true);
+		DATA->lobbyview->setVisible(true);
+		DATA->lobbyview->refreshView();
 		blueSkyDispatchEvent(EventType::BACK_TO_HALL);  //cgp test
 
 

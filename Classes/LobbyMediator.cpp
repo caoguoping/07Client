@@ -10,9 +10,7 @@ LobbyMediator::LobbyMediator()
 
 LobbyMediator::~LobbyMediator()
 {
-	log("cocos2d-x ~LobbyMediator");
-	delete getView();
-	setView(NULL);
+
 }
 
 /**
@@ -82,7 +80,7 @@ void LobbyMediator::onEvent(int i, void* data)
 			if (onDeskResult.dwUserID == DATA->myBaseData.dwUserID && 
 				(onDeskResult.cbUserStatus == US_SIT || onDeskResult.cbUserStatus == US_READY))
 			{
-				removeView(this);
+				removeView(this, true);
 			}
 			break;
 		case EventType::BACK_TO_HALL:

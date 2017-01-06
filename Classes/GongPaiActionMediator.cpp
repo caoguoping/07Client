@@ -8,8 +8,7 @@ GongPaiActionMediator::GongPaiActionMediator(int fromUserID, int toUserID)
 
 GongPaiActionMediator::~GongPaiActionMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

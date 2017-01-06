@@ -48,6 +48,7 @@ private:
 
 	void getSendPokerInfo(NetData netData);	//获取发牌数据
 	void getPlayerOutPoker(NetData netData);//用户出牌
+	void getPlayerOutPokerError(NetData netData);//用户出牌错误
 	void notOutPoker(NetData netData);//不出
 	void getPayTribute(NetData netData);//进贡
 	void gameOver(NetData netData);//游戏结束

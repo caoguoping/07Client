@@ -8,8 +8,7 @@ SevenDayGiftMediator::SevenDayGiftMediator(bool isShowCloseBtn)
 
 SevenDayGiftMediator::~SevenDayGiftMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**
@@ -18,9 +17,6 @@ SevenDayGiftMediator::~SevenDayGiftMediator()
 void SevenDayGiftMediator::OnRegister()
 {
 	sevenDayGiftView = (SevenDayGiftView*)getView();
-	GameDataModel* gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
-	sevenDayGiftView->canGetGiftToday = DATA->myBaseData.isFirstLogin;
-	sevenDayGiftView->nowDay = gameDataModel->player[0].loginCnt;
 	sevenDayGiftView->initView(ShowCloseBtn);
 
 	Size size = Director::getInstance()->getVisibleSize();
@@ -41,7 +37,6 @@ void SevenDayGiftMediator::onRemove()
 void SevenDayGiftMediator::onEvent(int i, void* data)
 {
 	GameDataModel* gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
-	DBO_GP_Seven_Logon sevenLoginInfo;
 	switch (i)
 	{
 	case 10901:
@@ -51,12 +46,10 @@ void SevenDayGiftMediator::onEvent(int i, void* data)
 		PLayEffect(EFFECT_BTN)
 		clickCloseBtnHander();
 		break;
-	case EventType::SEVEN_LOGIN_INFO:
-		sevenLoginInfo = *(DBO_GP_Seven_Logon*)data;
-		sevenDayGiftView->nowDay = sevenLoginInfo.LogonCnt;
-		gameDataModel->player[0].loginCnt = sevenLoginInfo.LogonCnt;
-		sevenDayGiftView->showGift();
-		break;
+// 	case EventType::SEVEN_LOGIN_INFO:
+// 		sevenDayGiftView->nowDay = DATA->sevenLogin.LogonCnt;
+// 		sevenDayGiftView->showGift();
+// 		break;
 	}
 }
 
@@ -68,15 +61,15 @@ Layer* SevenDayGiftMediator::getLayer()
 
 void SevenDayGiftMediator::clickGetGiftBtnHander()
 {
-	GameDataModel* gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
-	WORD loginCnt = gameDataModel->player[0].loginCnt;
-	DWORD dwUserID = DATA->myBaseData.dwUserID;
-
-	//这边先自己修改今天是否第一次登录标识（后面要放到返回消息中）
-	DATA->myBaseData.isFirstLogin = 0;
-
-	//
-	removeView(this);
+// 	GameDataModel* gameDataModel = ((GameDataModel*)getModel(GameDataModel::NAME));
+// 	WORD loginCnt = gameDataModel->player[0].loginCnt;
+// 	DWORD dwUserID = DATA->myBaseData.dwUserID;
+// 
+// 	//这边先自己修改今天是否第一次登录标识（后面要放到返回消息中）
+// 	DATA->myBaseData.isFirstLogin = 0;
+// 
+// 	//
+// 	removeView(this);
 }
 
 void SevenDayGiftMediator::clickCloseBtnHander()

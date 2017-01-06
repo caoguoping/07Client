@@ -19,9 +19,6 @@ PackageView::PackageView()
 PackageView::~PackageView()
 {
 	rootNode->stopAllActions();
-	delete rootNode;
-	rootNode = NULL;
-
 }
 
 void PackageView::initView()

@@ -38,9 +38,6 @@ FriendView::FriendView()
 
 FriendView::~FriendView()
 {
-	delete rootNode;
-	rootNode = NULL;
-
 }
 
 //去除熟人中的好友
@@ -311,7 +308,7 @@ void FriendView::showFriends()
 			txtChangci->setVisible(true);
 			txtGame->setVisible(true);   //all guandan now
 			txtFree->setVisible(false);
-			txtChangci->setString(UTF8::getInstance()->getString("changci", Tools::parseInt2String(wChangci)));
+			txtChangci->setString(UTF8::getInstance()->getString("roomName", Tools::parseInt2String(wChangci)));
 		}
 
 		char headName[64];
@@ -900,10 +897,6 @@ void FriendView::handleFriendOptHim(void*  data)
 			&& currentTitle == E_familiar)   //当前正在好友推送界面
 		{
 			showPushFriends();
-		}
-		else
-		{
-			hasNewPushFriends = 1;
 		}
 		break;
 

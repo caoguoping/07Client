@@ -162,8 +162,7 @@ ActivityView::ActivityView(int actIndex)
 
 ActivityView::~ActivityView()
 {
-	delete rootNode;	
-	rootNode = NULL;
+
 }
 
 

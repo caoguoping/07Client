@@ -12,8 +12,7 @@ PlayerInfoMediator::PlayerInfoMediator(int deskID)
 
 PlayerInfoMediator::~PlayerInfoMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

@@ -8,6 +8,9 @@
 #include "ViewPopup.h"
 #include "ViewManager.h"
 #include "FriendView.h"
+#include "PokerLogic.h"
+#include "SevenDayGiftMediator.h"
+#include "SevenDayGiftView.h"
 /**
 事件通知执行函数
 */
@@ -28,9 +31,10 @@ NetDataCommand::NetDataCommand()
 	getcontainer()->addChild(txtLogin, 999999);
 
 	txtGame = Text::create();
-	txtGame->setFontSize(20);
-	txtGame->setPosition(Vec2(300, 350));
-	txtGame->setColor(Color3B(0, 255, 0));
+	txtGame->setFontSize(24);
+	txtGame->setPosition(Vec2(480, 350));
+	txtGame->setColor(Color3B(0xFB, 0xFF, 0xFF));
+	txtGame->enableOutline(Color4B(0, 0, 0, 255), 1);
 	getcontainer()->addChild(txtGame, 999999);
 
 	txtFail = Text::create();
@@ -126,6 +130,8 @@ void NetDataCommand::executeGame(NetData netData)
 			break;
 		case 102:	
 			getDeskInfo(netData);
+
+
 			break;
 		case 103:
 			getGameFail(netData);
@@ -241,6 +247,7 @@ void NetDataCommand::executeGame(NetData netData)
 				getSendPokerInfo(netData);  //发牌
 				break;
 			case 102://用户出牌
+				//getPlayerOutPokerError(netData);
 				getPlayerOutPoker(netData);
 				break;
 			case 103://放弃出牌
@@ -258,6 +265,10 @@ void NetDataCommand::executeGame(NetData netData)
 				getBroadCastDaoju(netData);
 				break;
 
+
+			case 115://出牌错误
+				getPlayerOutPokerError(netData);
+				break;
 
 			}
 		}
@@ -296,6 +307,7 @@ void NetDataCommand::executeLogin(NetData netData)
 		{
 			case SUB_GP_LOGON_SUCCESS:	//登录成功
 				loginComplete(netData);
+			//	getPlayerOutPokerError(netData);
 				//blueSkyDispatchEvent(EventType::ALERT, new AlertVO(0, "test", "test1", -1, -1));
 				break;
 			case SUB_GP_LOGON_FAILURE:	//登录失败
@@ -1016,6 +1028,38 @@ void NetDataCommand::getPlayerOutPoker(NetData netData)
 	}
 	blueSkyDispatchEvent(EventType::REV_PLAYER_OUT_POKER);
 }
+
+//用户出牌错误
+void NetDataCommand::getPlayerOutPokerError(NetData netData)
+{
+	BYTE outPokers[30];
+	//PokerGameModel *pokerGameModel = ((PokerGameModel*)getModel(PokerGameModel::NAME));
+ 	int bCardNum = netData.readByte();//扑克数目
+	netData.readByte();
+	netData.readWORD();//当前玩家
+	netData.readWORD();//出牌玩家
+	std::string strInfo;
+	char temp[16];
+// 	outPokers[0] = 0x32;
+// 	outPokers[1] = 0x13;
+// 	outPokers[2] = 0x14;
+// 	outPokers[3] = 0x15;
+// 	outPokers[4] = 0x16;
+// 	outPokers[5] = 0x17;
+// 	outPokers[6] = 0x18;
+// 	outPokers[7] = 0x19;
+// 	outPokers[8] = 0x1A;
+	for (int i = 0; i < bCardNum; i++)
+//	for (int i = 0; i < 9; i++)
+	{
+		outPokers[i] = netData.readByte();//扑克列表
+		sprintf(temp, "(%d %d)  ", PokerLogic::getPokerNum(outPokers[i]) + 2,
+			PokerLogic::getPokerHuaSe(outPokers[i]));
+		strInfo.append(temp);
+	}
+	txtGame->setString(strInfo);
+}
+
 //不出
 void NetDataCommand::notOutPoker(NetData netData)
 {
@@ -1092,11 +1136,20 @@ void NetDataCommand::getChat(NetData netData)
 //签到查询
 void NetDataCommand::getSignInformation(NetData netData)
 {
-	DBO_GP_Seven_Logon *sevenLogin = new DBO_GP_Seven_Logon();
+// 	DBO_GP_Seven_Logon *sevenLogin = new DBO_GP_Seven_Logon();
+// 
+// 	sevenLogin->dwUserID = netData.readDWORD();
+// 	sevenLogin->LogonCnt = netData.readWORD();
+// 	blueSkyDispatchEvent(EventType::SEVEN_LOGIN_INFO, sevenLogin);
 
-	sevenLogin->dwUserID = netData.readInt32();
-	sevenLogin->LogonCnt = netData.readWORD();
-	blueSkyDispatchEvent(EventType::SEVEN_LOGIN_INFO, sevenLogin);
+	DATA->sevenLogin.dwUserID = netData.readDWORD();
+	DATA->sevenLogin.LogonCnt = netData.readWORD();
+	int temp = DATA->sevenLogin.LogonCnt;
+	if (DATA->myBaseData.isFirstLogin == 1)
+	{
+		creatView(new SevenDayGiftView(), new SevenDayGiftMediator(true));
+	}
+
 }
 
 //任务信息
@@ -1304,19 +1357,32 @@ void NetDataCommand::getFriendsInfo(NetData netData)
 		logV("friends Size is too big, maybe error!");
 		return;
 	}
-	DATA->vFriends.resize(wSize);
+	//DATA->vFriends.resize(wSize);
+	DATA->vFriends.clear();
 	for (int i = 0; i < wSize; i ++)
 	{
-		DATA->vFriends.at(i).dwUserID = netData.readDWORD();
-		DATA->vFriends.at(i).szNickName = netData.readString(64);
-		DATA->vFriends.at(i).dwRmb = netData.readDWORD();
-		DATA->vFriends.at(i).FaceID = netData.readWORD();
-		DATA->vFriends.at(i).wServerID = netData.readWORD();
-		DATA->vFriends.at(i).wKindID = netData.readWORD();
-		DATA->vFriends.at(i).dwLoveLiness = netData.readDWORD();
-		DATA->vFriends.at(i).WinRate = netData.readWORD();
-		DATA->vFriends.at(i).bStates = netData.readByte();
+		tagFriendParameter*  friends = new tagFriendParameter();
 
+		friends->dwUserID = netData.readDWORD();
+		friends->szNickName = netData.readString(64);
+		friends->dwRmb = netData.readDWORD();
+		friends->FaceID = netData.readWORD();
+		friends->wServerID = netData.readWORD();
+		friends->wKindID = netData.readWORD();
+		friends->dwLoveLiness = netData.readDWORD();
+		friends->WinRate = netData.readWORD();
+		friends->bStates = netData.readByte();
+
+// 		DATA->vFriends.at(i).dwUserID = netData.readDWORD();
+// 		DATA->vFriends.at(i).szNickName = netData.readString(64);
+// 		DATA->vFriends.at(i).dwRmb = netData.readDWORD();
+// 		DATA->vFriends.at(i).FaceID = netData.readWORD();
+// 		DATA->vFriends.at(i).wServerID = netData.readWORD();
+// 		DATA->vFriends.at(i).wKindID = netData.readWORD();
+// 		DATA->vFriends.at(i).dwLoveLiness = netData.readDWORD();
+// 		DATA->vFriends.at(i).WinRate = netData.readWORD();
+// 		DATA->vFriends.at(i).bStates = netData.readByte();
+		DATA->vFriends.push_back(*friends);
 
 	}
 	blueSkyDispatchEvent(EventType::FRIEND_LIST);
@@ -1391,8 +1457,15 @@ void NetDataCommand::getFriedsAddInfoHim(NetData netData)
 		pInvite->wFaceID = pFriendOpt->FaceID;
 		pInvite->szNickName = pFriendOpt->szNickName;
 		DATA->vFriendPush.push_back(*pInvite);
-
-		blueSkyDispatchEvent(EventType::FRIEND_OPT_HIM, pFriendOpt);
+		if (VIEW->nowViewTag == ViewManager::eViewMain)
+		{
+			DATA->lobbyview->spFriendTip->setVisible(true);
+		}
+		else
+		{
+			blueSkyDispatchEvent(EventType::FRIEND_OPT_HIM, pFriendOpt);
+		}
+		
 		break;
 
 	case FriendView::ecAgreeSuccess:   //对方同意添加好友

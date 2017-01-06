@@ -106,7 +106,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_myRecord" ActionTag="-595457069" Tag="476" IconVisible="False" LeftMargin="159.9261" RightMargin="-270.9261" TopMargin="181.8367" BottomMargin="-213.8367" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="81" Scale9Height="10" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_myRecord" ActionTag="-595457069" VisibleForFrame="False" Tag="476" IconVisible="False" LeftMargin="159.9261" RightMargin="-270.9261" TopMargin="181.8367" BottomMargin="-213.8367" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="81" Scale9Height="10" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="111.0000" Y="32.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="215.4261" Y="-197.8367" />

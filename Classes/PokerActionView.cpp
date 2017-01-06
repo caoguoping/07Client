@@ -6,6 +6,5 @@ PokerActionView::PokerActionView()
 }
 PokerActionView::~PokerActionView()
 {
-	delete rootNode;
-	rootNode = NULL;
+
 }

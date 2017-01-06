@@ -10,8 +10,7 @@ DaoJuActionMediator::DaoJuActionMediator(DAO_JU_ACTION data)
 
 DaoJuActionMediator::~DaoJuActionMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

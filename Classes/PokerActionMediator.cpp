@@ -7,8 +7,7 @@ PokerActionMediator::PokerActionMediator()
 
 PokerActionMediator::~PokerActionMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

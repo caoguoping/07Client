@@ -8,8 +8,7 @@ InviteMediator::InviteMediator()
 
 InviteMediator::~InviteMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

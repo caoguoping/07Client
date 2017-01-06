@@ -4,14 +4,13 @@
 */
 void LoginCompleteCommand::execute(void* data)
 {
-	creatView(new LobbyView(), new LobbyMediator());
+	DATA->lobbyview = new LobbyView();
+	creatView(DATA->lobbyview, new LobbyMediator());
 
-	//
-	;
-	if (DATA->myBaseData.isFirstLogin == 1)
-	{
-		log("cocos2d-x step into sevenDay gift");
-		creatView(new SevenDayGiftView(), new SevenDayGiftMediator(true));
-	}
+// 	if (DATA->myBaseData.isFirstLogin == 1)
+// 	{
+// 		log("cocos2d-x step into sevenDay gift");
+// 		creatView(new SevenDayGiftView(), new SevenDayGiftMediator(true));
+// 	}
 
 }

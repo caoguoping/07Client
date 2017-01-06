@@ -14,13 +14,6 @@ public:
 	void initView(bool isShowCloseBtn);
 	void showGift();
 
-	//领至第几天的奖励
-	int nowDay = 1;
-	
-
-	//今日是否有奖励可领取
-	int canGetGiftToday = 0;
-
 private:
 	Button   * getGiftBtn;
 	Button   * closeBtn  ;

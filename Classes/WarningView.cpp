@@ -41,7 +41,6 @@ WarningView::WarningView(AlertVO *alertVO)
 
 WarningView::~WarningView()
 {
-	delete rootNode;
-	rootNode = NULL;
+
 }
 

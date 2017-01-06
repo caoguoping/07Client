@@ -28,8 +28,6 @@ DailyMissionView::DailyMissionView(bool showGetBtn)
 DailyMissionView::~DailyMissionView()
 {
 	rootNode->stopAllActions();
-	delete rootNode;
-	rootNode = NULL;
 }
 
 void DailyMissionView::initView()
@@ -80,25 +78,25 @@ void DailyMissionView::showAllMission()
 		if (dailyMisInfo[i].Complete == 1)
 		{
 			//没有完成
-			btnGoto[i]->setVisible(true);
-			btnGet[i]->setVisible(false);
+			btnGoto[dailyMisInfo[i].wMissionId - 1]->setVisible(true);
+			btnGet[dailyMisInfo[i].wMissionId - 1]->setVisible(false);
 
 		}
 		else if (dailyMisInfo[i].Receive == 0)
 		{
 			//已完成没有领取
-			btnGoto[i]->setVisible(false);
-			btnGet[i]->setVisible(true);
+			btnGoto[dailyMisInfo[i].wMissionId - 1]->setVisible(false);
+			btnGet[dailyMisInfo[i].wMissionId - 1]->setVisible(true);
 		}
 		else
 		{
 			//已经领取
-			btnGoto[i]->setVisible(false);
-			btnGet[i]->setVisible(false);
-			txtNowNum[i]->setVisible(false);
-			txtNeetNum[i]->setVisible(false);
-			txtNumLian[i]->setVisible(false);
-			imgBlack[i]->setVisible(true);
+			btnGoto[dailyMisInfo[i].wMissionId - 1]->setVisible(false);
+			btnGet[dailyMisInfo[i].wMissionId - 1]->setVisible(false);
+			txtNowNum[dailyMisInfo[i].wMissionId - 1]->setVisible(false);
+			txtNeetNum[dailyMisInfo[i].wMissionId - 1]->setVisible(false);
+			txtNumLian[dailyMisInfo[i].wMissionId - 1]->setVisible(false);
+			imgBlack[dailyMisInfo[i].wMissionId - 1]->setVisible(true);
 		}
 	}
 }
@@ -107,15 +105,11 @@ void DailyMissionView::clickGetBtn(Ref *pSender)
 {
 	PLayEffect(EFFECT_BTN)
 	Button* tempB = static_cast<Button*>(pSender);
-	if (!tempB)
-		return;
 	int index = tempB->getTag();
-	if ((index < 0) && (index > dailyMisInfo.size()-1))
-		return;
 
 	DBR_GR_UserLogonMissionRes info = dailyMisInfo[index];
 	DWORD dwUserID = DATA->myBaseData.dwUserID;
-	((SendDataService *)getService(SendDataService::NAME))->sendGetMisAward(dwUserID, info.wMissionId, info.wKindId);
+	((SendDataService *)getService(SendDataService::NAME))->sendGetMisAward(dwUserID, index + 1, info.wKindId);
 
 }
 

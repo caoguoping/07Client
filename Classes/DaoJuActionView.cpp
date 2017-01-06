@@ -9,8 +9,7 @@ DaoJuActionView::DaoJuActionView()
 
 DaoJuActionView::~DaoJuActionView()
 {
-	delete rootNode;
-	rootNode = NULL;
+
 }
 
 void DaoJuActionView::initView(int index, int fromDesk, int toDesk,int actionID)

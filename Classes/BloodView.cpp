@@ -19,8 +19,6 @@ BloodView::BloodView()
 BloodView::~BloodView()
 {
 	rootNode->stopAllActions();
-	delete rootNode;
-	rootNode = NULL;
 }
 
 void BloodView::initView()

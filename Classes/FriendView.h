@@ -102,9 +102,6 @@ public:
 	Text* txtDiamond;  //×êÊ¯
 	Text* txtGold;     //½ð±Ò
 
-	int hasNewPushFriends;
-
-
 public:
 	FriendView();
 	~FriendView();

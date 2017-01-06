@@ -7,8 +7,7 @@ MessageShowMediator::MessageShowMediator()
 
 MessageShowMediator::~MessageShowMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

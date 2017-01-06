@@ -14,8 +14,7 @@ HelpView::HelpView()
 
 HelpView::~HelpView()
 {
-	delete rootNode;
-	rootNode = NULL;
+
 }
 
 void HelpView::initView()

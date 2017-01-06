@@ -7,8 +7,7 @@ HelpMediator::HelpMediator()
 
 HelpMediator::~HelpMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

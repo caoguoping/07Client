@@ -111,12 +111,7 @@ struct DAO_JU_ACTION
 	
 };
 
-//签到查询
-struct DBO_GP_Seven_Logon
-{
-	DWORD					dwUserID;							//用户标识
-	WORD					LogonCnt;							//签到天数
-};
+
 
 //商城商品
 struct SHOP_GOOD

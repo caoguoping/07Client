@@ -276,6 +276,7 @@ void SendDataService::sendGetGrowth(DWORD dwUserID, WORD wIndex)
 */
 void SendDataService::sendBuyItems(DWORD dwUserID, WORD wPropCount, WORD wKindID)
 {
+	logV("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^sendBuyItems^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
 	BYTE cbBuffer[SOCKET_TCP_PACKET];
 	Buy_Mall_Item *buyMallItem = (Buy_Mall_Item*)cbBuffer;
 	buyMallItem->dwUserID = dwUserID;

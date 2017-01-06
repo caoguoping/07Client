@@ -10,8 +10,7 @@ ShowChatMediator::ShowChatMediator(int desk, int index,int chat)
 
 ShowChatMediator::~ShowChatMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

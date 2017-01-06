@@ -19,8 +19,7 @@ MyInfoView::MyInfoView()
 
 MyInfoView::~MyInfoView()
 {
-	delete rootNode;
-	rootNode = NULL;
+
 }
 
 void MyInfoView::initView()

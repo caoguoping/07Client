@@ -7,8 +7,7 @@ PackageMediator::PackageMediator()
 
 PackageMediator::~PackageMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

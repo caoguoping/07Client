@@ -274,6 +274,17 @@ struct stSystemMsg
 
 USING_NS_CC;
 
+//签到查询
+struct DBO_GP_Seven_Logon
+{
+	DWORD					dwUserID;							//用户标识
+	WORD					LogonCnt;							//签到天数
+};
+
+
+//class LobbyView;
+#include "LobbyView.h"
+
 class DataManager 
 {
 public:
@@ -304,6 +315,8 @@ public:
 	WORD diamondNum;     //抽一次需要的钻石
 
 	CMD_GP_CupInfo  myRankInfo;    //排行榜信息
+	DBO_GP_Seven_Logon  sevenLogin;
+
 
 	DWORD dwGameBtnId;   //点击的是哪个游戏按钮  
 
@@ -345,6 +358,10 @@ public:
 	void *sendPokerData;
 	DWORD dwGameState;   //0:未进入游戏界面  , 1:匹配阶段  , 2:发牌之后
 	int mJoinInPlayer;  //进入桌子的玩家数目
+
+	//不删除的界面
+public:
+	LobbyView*  lobbyview;
 public:
 	static DataManager * getInstance();
 	void saveRankData(CMD_GP_CupInfo* cupInfo);

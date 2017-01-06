@@ -6,6 +6,5 @@ JiPaiView::JiPaiView()
 }
 JiPaiView::~JiPaiView()
 {
-	delete rootNode;
-	rootNode = NULL;
+
 }

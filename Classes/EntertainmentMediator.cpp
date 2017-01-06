@@ -8,8 +8,7 @@ EntertainmentMediator::EntertainmentMediator()
 
 EntertainmentMediator::~EntertainmentMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

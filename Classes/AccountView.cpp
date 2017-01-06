@@ -15,8 +15,7 @@ AccountView::AccountView()
 
 AccountView::~AccountView()
 {
-	delete rootNode;
-	rootNode = NULL;
+
 }
 
 void AccountView::initView()
@@ -89,7 +88,12 @@ void AccountView::btnBackHandle()
 	}
 	//跳转至大厅界面
 	blueSkyDispatchEvent(EventType::BACK_TO_HALL);
-	creatView(new LobbyView(), new LobbyMediator());
+	//creatView(new LobbyView(), new LobbyMediator());
+	DATA->lobbyview->setTouchEnabled(true);
+	DATA->lobbyview->setVisible(true);
+	DATA->lobbyview->refreshView();
+
+
 	blueSkyDispatchEvent(10501);
 }
 

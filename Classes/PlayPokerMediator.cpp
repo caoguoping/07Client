@@ -52,10 +52,6 @@ PlayPokerMediator::~PlayPokerMediator()
 		playPokerView->imgHuaPai->removeFromParentAndCleanup(true);
 		playPokerView->imgHuaPai = NULL;
 	}
-	
-
-	delete getView();
-	setView(NULL);
 }
 
 void PlayPokerMediator::showFriendButtons(bool isShow)
@@ -980,14 +976,15 @@ void PlayPokerMediator::notOutPokerHandle(void* data)
 
 void PlayPokerMediator::payTributeHandle(void* data)
 {
+	logV("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  payTributeHandle\n");
 	int mySeviceDeskChairID;
 	PlayerInDeskModel *playerInDeskModel = ((PlayerInDeskModel*)getModel(PlayerInDeskModel::NAME));
 	CMD_S_PayTribute payTributeData;
 	payTributeData = *(CMD_S_PayTribute*)(data);
 
 	//贡牌时将托管按钮置灰
-	autoBtn->setTouchEnabled(false);
-	autoBtn->setColor(Color3B(128, 128, 128));
+	//autoBtn->setTouchEnabled(false);
+	//autoBtn->setColor(Color3B(128, 128, 128));
 
 	//自己是否要进贡
 	mySeviceDeskChairID = playerInDeskModel->getServiceChairID(0);
@@ -1341,7 +1338,10 @@ void PlayPokerMediator::handleFanhui()
 	DATAGameData->player[0].selectedPokerArr = {};
 
 
-	creatView(new LobbyView(), new LobbyMediator());
+	//creatView(new LobbyView(), new LobbyMediator());
+	DATA->lobbyview->setTouchEnabled(true);
+	DATA->lobbyview->setVisible(true);
+	DATA->lobbyview->refreshView();
 
 	blueSkyDispatchEvent(EventType::BACK_TO_HALL);
 
@@ -2419,7 +2419,8 @@ void PlayPokerMediator::jinGongTimeUp()
 		}
 	}
 
-	blueSkyDispatchEvent(10606);
+	//blueSkyDispatchEvent(10606);
+	clickJinGongBtnHander(NULL);
 }
 
 //还贡时间到
@@ -2458,9 +2459,16 @@ void PlayPokerMediator::huanGongTimeUp()
 	pokeridData *data = new pokeridData();
 	data->pokerID = gameDataModel->player[0].pokerArr.at(size - 1)->pokerID;
 	data->pokerID2 = gameDataModel->player[0].pokerArr.at(size - 1)->pokerID2;
+	logV("hello huangong!");
+	logV("hello huangong!");
+	logV("hello huangong!");
+	logV("hello huangong!");
+	logV("hello huangong!");
+
 	blueSkyDispatchEvent(EventType::CHANGE_POKER_STATE, data);
 
-	blueSkyDispatchEvent(10607);
+	//blueSkyDispatchEvent(10607);
+	clickHuanGongBtnHander(NULL);
 }
 
 //显示托管图标

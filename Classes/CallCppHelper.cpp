@@ -56,12 +56,16 @@ CallCppHelper *  CallCppHelper::getInstance()
 			UserDefault::getInstance()->setStringForKey("TokenId", _instance->mTokenId);
 #endif
 			UserDefault::getInstance()->flush();
+			bool isMusicOn = UserDefault::getInstance()->getBoolForKey("MusicOn");
+			bool isEffectOn = UserDefault::getInstance()->getBoolForKey("EffectOn");
+			MusicService::getInstance()->isEffectOn = isEffectOn;
+			MusicService::getInstance()->isMusicOn = isMusicOn;
 		}
 		else
 		{
 
-		MusicService::getInstance()->isMusicOn =  UserDefault::getInstance()->getBoolForKey("MusicOn");
-		MusicService::getInstance()->isEffectOn	= UserDefault::getInstance()->getBoolForKey("EffectOn");
+		MusicService::getInstance()->isMusicOn =  UserDefault::getInstance()->getBoolForKey("MusicOn",true);
+		MusicService::getInstance()->isEffectOn	= UserDefault::getInstance()->getBoolForKey("EffectOn", true);
 
 #if(SDKWhich == SDK_NULL)
 			std::string strUid;

@@ -48,8 +48,7 @@ LobbyView::LobbyView()
 
 LobbyView::~LobbyView()
 {
-	delete rootNode;
-	rootNode = NULL;
+
 }
 
 
@@ -201,6 +200,7 @@ void LobbyView::initView()
 void LobbyView::refreshView()
 {
 	PLayMUSIC(BG_MUSIC)
+	VIEW->nowViewTag = ViewManager::eViewMain;
 	if (DATA->vFriendPush.size() > 0)
 	{
 		spFriendTip->setVisible(true);
@@ -239,6 +239,7 @@ void LobbyView::clickBtnSignature(Ref* psender)
 {
 	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnSignature, LobbyView, enableBtnSignature)
+		DATA->myBaseData.isFirstLogin = 1;
 		creatView(new SevenDayGiftView(), new SevenDayGiftMediator());
 }
 
@@ -246,7 +247,9 @@ void LobbyView::clickBtnSetting(Ref* psender)
 {
 	PLayEffect(EFFECT_BTN);
 	UIDisableClick(mBtnSetting, LobbyView, enableBtnSetting)
-		creatView(new SetView(), new SetMediator());
+		BlueSkyView*  view = new SetView();
+	BlueSkyMediator*  mediator = new SetMediator();
+	creatView(view, mediator);
 }
 
 void LobbyView::clickBtnPlayGold(Ref* psender)

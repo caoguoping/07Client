@@ -10,8 +10,7 @@ MallMediator::MallMediator()
 
 MallMediator::~MallMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**
@@ -194,7 +193,6 @@ void MallMediator::getZuanShiHander(int index)
 void MallMediator::getGoldHander(int index)
 {
 	PLayEffect(EFFECT_BTN)
-	((SendDataService *)getService(SendDataService::NAME))->sendBuyItems(DATA->myBaseData.dwUserID, 1, 1);
 
 	switch (index)
 	{

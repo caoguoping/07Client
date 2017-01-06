@@ -8,8 +8,7 @@ WarningMediator::WarningMediator()
 
 WarningMediator::~WarningMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

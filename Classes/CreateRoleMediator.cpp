@@ -12,8 +12,7 @@ CreateRoleMediator::CreateRoleMediator(registLogin data)
 
 CreateRoleMediator::~CreateRoleMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

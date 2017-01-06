@@ -7,8 +7,7 @@ ChatMediator::ChatMediator()
 
 ChatMediator::~ChatMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

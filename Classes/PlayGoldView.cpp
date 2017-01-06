@@ -21,8 +21,7 @@ PlayGoldView::PlayGoldView()
 PlayGoldView::~PlayGoldView()
 {
 	rootNode->stopAllActions();
-	delete rootNode;
-	rootNode = NULL;
+
 }
 
 void PlayGoldView::initView()

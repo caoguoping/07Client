@@ -14,8 +14,7 @@ GongPaiActionView::GongPaiActionView(int pokerID)
 
 GongPaiActionView::~GongPaiActionView()
 {
-	delete rootNode;
-	rootNode = NULL;
+
 }
 
 void GongPaiActionView::initView(int fromUserID,int toUserID)

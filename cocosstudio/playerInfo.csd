@@ -9,7 +9,7 @@
           <AbstractNodeData Name="Image_1" ActionTag="1437870106" Alpha="191" Tag="1974" IconVisible="False" LeftMargin="-7.1337" RightMargin="-8.8663" TopMargin="-4.5000" BottomMargin="-4.5000" TouchEnable="True" LeftEage="6" RightEage="6" TopEage="2" BottomEage="2" Scale9OriginX="6" Scale9OriginY="2" Scale9Width="4" Scale9Height="5" ctype="ImageViewObjectData">
             <Size X="16.0000" Y="9.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="0.8663" Y="0.0000" />
+            <Position X="0.8663" />
             <Scale ScaleX="60.0000" ScaleY="60.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -199,30 +199,15 @@
             <FileData Type="Normal" Path="NewPlayInfo/number_bg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_gold" ActionTag="1101274016" Tag="1737" IconVisible="False" LeftMargin="19.3224" RightMargin="-78.3224" TopMargin="-68.3708" BottomMargin="41.3708" FontSize="24" LabelText="3000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_gold" ActionTag="1101274016" Tag="1737" IconVisible="False" LeftMargin="48.3246" RightMargin="-107.3246" TopMargin="-68.3708" BottomMargin="41.3708" FontSize="24" LabelText="3000" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="59.0000" Y="27.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="48.8224" Y="54.8708" />
+            <Position X="77.8246" Y="54.8708" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Button_addGold" ActionTag="498013216" Tag="1738" IconVisible="False" LeftMargin="134.8821" RightMargin="-162.8821" TopMargin="-69.8816" BottomMargin="41.8816" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="9" RightEage="9" TopEage="11" BottomEage="11" Scale9OriginX="9" Scale9OriginY="11" Scale9Width="10" Scale9Height="5" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="28.0000" Y="28.0000" />
-            <AnchorPoint ScaleX="0.4311" ScaleY="0.4272" />
-            <Position X="146.9529" Y="53.8432" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="bg/button_add_2.png" Plist="" />
-            <NormalFileData Type="Normal" Path="bg/button_add_1.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

@@ -12,8 +12,7 @@ MatchMediator::MatchMediator()
 
 MatchMediator::~MatchMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

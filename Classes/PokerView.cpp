@@ -11,8 +11,7 @@ PokerView::PokerView(int pokerID)
 }
 PokerView::~PokerView()
 {
-	delete rootNode;
-	rootNode = NULL;
+
 }
 
 void PokerView::changeToGongPai()

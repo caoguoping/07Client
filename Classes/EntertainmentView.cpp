@@ -19,8 +19,7 @@ EntertainmentView::EntertainmentView()
 EntertainmentView::~EntertainmentView()
 {
 	rootNode->stopAllActions();
-	delete rootNode;
-	rootNode = NULL;
+
 }
 
 void EntertainmentView::initView()

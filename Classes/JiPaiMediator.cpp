@@ -8,8 +8,7 @@ JiPaiMediator::JiPaiMediator()
 
 JiPaiMediator::~JiPaiMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

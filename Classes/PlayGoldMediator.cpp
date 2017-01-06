@@ -8,8 +8,7 @@ PlayGoldMediator::PlayGoldMediator()
 
 PlayGoldMediator::~PlayGoldMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

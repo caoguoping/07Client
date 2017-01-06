@@ -15,8 +15,7 @@ InviteView::InviteView(int i)
 
 InviteView::~InviteView()
 {
-	delete rootNode;
-	rootNode = NULL;
+
 }
 
 void InviteView::initView()

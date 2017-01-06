@@ -1,5 +1,6 @@
 #include "SevenDayGiftView.h"
 #include "SGTools.h"
+#include "DataManager.h"
 
 SevenDayGiftView::SevenDayGiftView()
 {
@@ -16,8 +17,7 @@ SevenDayGiftView::SevenDayGiftView()
 SevenDayGiftView::~SevenDayGiftView()
 {
 	rootNode->stopAllActions();
-	delete rootNode;
-	rootNode = NULL;
+
 }
 
 void SevenDayGiftView::initView(bool isShowCloseBtn)
@@ -46,8 +46,12 @@ void SevenDayGiftView::initView(bool isShowCloseBtn)
 //显示奖励领取情况
 void SevenDayGiftView::showGift()
 {
-	int maskSize = (nowDay % 7);
-	for (int i = 0; i < maskSize; i ++)
+	int cntDay = DATA->sevenLogin.LogonCnt % 7;
+	if (cntDay == 0)
+	{
+		cntDay = 7;
+	}
+	for (int i = 0; i < cntDay; i++)
 	{
 		imgMask[i]->setVisible(true);
 	}

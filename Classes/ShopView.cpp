@@ -100,8 +100,7 @@ void ShopView::showMyGold(SCORE num)
 
 ShopView::~ShopView()
 {
-	delete rootNode;
-	rootNode = NULL;
+
 
 }
 

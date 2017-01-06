@@ -31,8 +31,7 @@ ShopMediator::ShopMediator()
 
 ShopMediator::~ShopMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

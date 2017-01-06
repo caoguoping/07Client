@@ -28,15 +28,39 @@ void BlueSkyRegister::creatView(BlueSkyView *view,BlueSkyMediator *mediator, voi
 	}
 	BlueSkyRegister::getInstance()->registerOnEvent(mediator);
 }
-void BlueSkyRegister::removeView(BlueSkyMediator *mediator)
+
+void BlueSkyRegister::removeView(BlueSkyMediator *mediator, bool isHide)
 {
-	mediator->onRemove();
-	if (mediator->getLayer() != NULL)
+	BlueSkyView*  view = mediator->getView();
+	Layer*  layer = mediator->getLayer();
+	if (!isHide)
 	{
-		mediator->getLayer()->removeChild(mediator->getView());
+		view->removeChild(view->rootNode);
+		//logV(" $$$$$$$$$$$$$$$$$$$$$$$ view   %p,   layer %p\n", view, layer);
+		mediator->onRemove();
+		if (layer != NULL)
+		{
+			layer->removeChild(view);
+		}
+		deleteOnEvent(mediator);
+		mediator = NULL;
 	}
-	deleteOnEvent(mediator);
- 	mediator = NULL;
+	else
+	{
+		view->setVisible(false);
+		view->setTouchEnabled(false);
+	}
+
+
+
+// 	mediator->onRemove();
+// 	if (mediator->getLayer() != NULL)
+// 	{
+// 		mediator->getLayer()->removeChild(mediator->getView());
+// 
+// 	}
+// 	deleteOnEvent(mediator);
+//  	mediator = NULL;
 }
 /**
 ·¢ËÍÊÂ¼ş

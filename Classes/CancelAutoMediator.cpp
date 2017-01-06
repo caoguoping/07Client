@@ -7,8 +7,7 @@ CancelAutoMediator::CancelAutoMediator()
 
 CancelAutoMediator::~CancelAutoMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

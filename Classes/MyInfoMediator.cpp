@@ -8,8 +8,7 @@ MyInfoMediator::MyInfoMediator()
 
 MyInfoMediator::~MyInfoMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

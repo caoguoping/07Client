@@ -23,36 +23,16 @@ SetView::SetView()
     UIGet_Button("helpBtn", rootNode, helpBtn)
     UIGet_ImageView("Image_38", rootNode, imgClose)
     
-    closeBtn->addClickEventListener([this](Ref*  pSender)
-                                    {
-                                        blueSkyDispatchEvent(14001);
-                                    });
-
-    reLoginBtn->addClickEventListener([this](Ref*  pSender)
-    {
-		PLayEffect(BUTTON_CLICK)
-			blueSkyDispatchEvent(14005);
-	});
-    
-
-    helpBtn->addClickEventListener([this](Ref*  pSender)
-                                    {
-										PLayEffect(BUTTON_CLICK)
-                                        blueSkyDispatchEvent(14006);
-                                    });
-    
-
-    imgClose->addClickEventListener([this](Ref*  pSender)
-                                    {
-                                        blueSkyDispatchEvent(14001);
-                                    });
-    
+	BTN_EVENT(imgClose, 14001)
+	BTN_EVENT(closeBtn, 14001)
+	BTN_EVENT(reLoginBtn, 14005)
+	BTN_EVENT(helpBtn, 14006)
+   
 }
 
 SetView::~SetView()
 {
-	delete rootNode;
-	rootNode = NULL;
+	
 }
 
 void SetView::initView()

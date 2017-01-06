@@ -7,8 +7,7 @@ SetMediator::SetMediator()
 
 SetMediator::~SetMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**
@@ -16,8 +15,8 @@ SetMediator::~SetMediator()
 */
 void SetMediator::OnRegister()
 {
-	setView1 = (SetView*)getView();
-	setView1->initView();
+	setView = (SetView*)getView();
+	setView->initView();
 	Size size = Director::getInstance()->getVisibleSize();
 	getView()->rootNode->setPosition(size.width / 2, size.height / 2);
 }
@@ -52,6 +51,7 @@ void SetMediator::onEvent(int i, void* data)
 
 Layer* SetMediator::getLayer()
 {
+	logV("$$$$$$$$$$$$$ setMediator layer %p\n", VIEW->uiLayer);
 	return VIEW->uiLayer;
 }
 

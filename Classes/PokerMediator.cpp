@@ -130,8 +130,7 @@ void test()
 }
 PokerMediator::~PokerMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /*

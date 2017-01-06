@@ -76,8 +76,8 @@
         <dict>
             <key>loginServerIp</key>  
             <!-- <string>221.226.117.82</string<!-- > -->
-            <!-- <string>192.168.2.130</string> -->
-            <string>139.196.237.203</string>
+            <string>192.168.2.130</string>
+            <!-- <string>139.196.237.203</string> -->
 			<key>loginServerPort</key>  
             <string>5050</string>
 			<key>PrimaryPort</key>  
@@ -174,20 +174,28 @@
             <string>争夺丰厚奖励的入场券喔，一夜暴富就靠它了！</string>  
 		</dict>
 		
-		<key>task</key>
+		<key>roomName</key>
 		<dict>
             <key>1</key>  
-            <string>对局三局</string>  
+            <string>初级场</string>  
 			<key>2</key>  
-            <string>赢三局</string>  
+            <string>进阶场</string>  
 			<key>3</key>  
-            <string>头游三局</string>
+            <string>大师场</string>
 			<key>4</key>  
-            <string>添加一位好友</string>  
+            <string>比赛场</string>  
 			<key>5</key>  
-            <string>与好友比赛</string>      
+            <string>随机主牌场</string>      
 			<key>6</key>  
-            <string>充值一次</string>  			
+            <string>好友场</string>  	
+             <key>7</key>  
+            <string>组队场</string>
+            <key>8</key>  
+            <string>血战到5场</string>  
+            <key>9</key>  
+            <string>血战到10场</string>      
+            <key>10</key>  
+            <string>血战到底场</string>  		
 		</dict>
 		<key>friend</key>
 		<dict>

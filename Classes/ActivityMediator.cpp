@@ -9,8 +9,7 @@ ActivityMediator::ActivityMediator()
 
 ActivityMediator::~ActivityMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

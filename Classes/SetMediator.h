@@ -40,8 +40,7 @@ public:
 	Layer* getLayer();
 
 
-private:
-	SetView* setView1;
+	SetView* setView;
 
 	void clickCloseBtnHander();
 	void clickMusicBtnHander();

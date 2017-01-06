@@ -8,8 +8,7 @@ DailyMissionMediator::DailyMissionMediator()
 
 DailyMissionMediator::~DailyMissionMediator()
 {
-	delete getView();
-	setView(NULL);
+
 }
 
 /**

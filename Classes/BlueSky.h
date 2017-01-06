@@ -222,7 +222,7 @@ protected:
 	/**
 	删除显示对象
 	*/
-	void removeView(BlueSkyMediator *mediator);
+	void removeView(BlueSkyMediator *mediator, bool isHide = false);
 
 
 
@@ -327,7 +327,7 @@ public:
 	map<int, bool> btnIndex;
 
 	void creatView(BlueSkyView *view, BlueSkyMediator *mediator, void* noteData = NULL);
-	void removeView(BlueSkyMediator *mediator);
+	void removeView(BlueSkyMediator *mediator, bool isHide = false);
 	/**
 	发送事件
 	*/
