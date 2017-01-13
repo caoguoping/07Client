@@ -9,12 +9,10 @@ MyInfoView::MyInfoView()
 {
 	rootNode = CSLoader::createNode("playerInfo.csb");
 	addChild(rootNode);
-    Button*  closeBtn;
-    ImageView*   Image_1;
-    UIGet_Button("closeBtn", rootNode, closeBtn)
-    UIGet_ImageView("Image_1", rootNode, Image_1)
-	BTN_EVENT(closeBtn, 11701)
-	BTN_EVENT(Image_1, 11701)
+
+	cocostudio::timeline::ActionTimeline*  timeLine = CSLoader::createTimeline("playerInfo.csb");
+	timeLine->gotoFrameAndPlay(0, false);
+	rootNode->runAction(timeLine);
 }
 
 MyInfoView::~MyInfoView()
@@ -24,21 +22,31 @@ MyInfoView::~MyInfoView()
 
 void MyInfoView::initView()
 {
-	UIGet_Text("nameText", rootNode, txtName)
-		UIGet_Text("Text_id", rootNode, txtId)
-		Sprite  *spMy, *spOther;
-	UIGet_Sprite("zi01_me", rootNode, spMy)
-		UIGet_Sprite("zi01_other", rootNode, spOther)
+	Sprite*  spBg;
+	UIGet_Sprite("ImageFrame", rootNode, spBg)
+
+	Button*  closeBtn;
+	ImageView*   Image_1;
+	Sprite  *spMy, *spOther;
+	UIGet_ImageView("Image_1", rootNode, Image_1)
+		UIGet_Button("closeBtn", spBg, closeBtn)
+		BTN_EVENT(closeBtn, 11701)
+		BTN_EVENT(Image_1, 11701)
+		UIGet_Text("nameText", spBg, txtName)
+		UIGet_Text("Text_id", spBg, txtId)
+
+		UIGet_Sprite("zi01_me", spBg, spMy)
+		UIGet_Sprite("zi01_other", spBg, spOther)
 		spMy->setVisible(true);
 	spOther->setVisible(false);
 
 
 
 	Button  *btnAddGold, *btnAddDiamond;
-	UIGet_Text("Text_gold", rootNode, txtGold)
-		UIGet_Button("Button_addGold", rootNode, btnAddGold)
+	UIGet_Text("Text_gold", spBg, txtGold)
+		UIGet_Button("Button_addGold", spBg, btnAddGold)
 		Layout*   lyDiamond;
-	UIGet_Layout("Panel_diamond", rootNode, lyDiamond)
+	UIGet_Layout("Panel_diamond", spBg, lyDiamond)
 		UIGet_Text("Text_diamond", lyDiamond, txtDiamond)
 
 		UIGet_Button("Button_addDiamond", lyDiamond, btnAddDiamond)
@@ -58,7 +66,7 @@ void MyInfoView::initView()
 
 
 		Button*  btnAddFriend;
-	UIGet_Button("addFriendBtn", rootNode, btnAddFriend)
+		UIGet_Button("addFriendBtn", spBg, btnAddFriend)
 		btnAddFriend->setVisible(false);
 
 
@@ -70,7 +78,7 @@ void MyInfoView::initView()
 	for (int i = 0; i < 4; i++)
 	{
 		sprintf(temp, "Text_%d", i);
-		UIGet_Text(temp, rootNode, txtBeiza[i])
+		UIGet_Text(temp, spBg, txtBeiza[i])
 			txtBeiza[i]->setVisible(true);
 			txtBeiza[i]->setString(Tools::parseInt2String(DATA->myBaseData.wBeiZaNum[i]));
 	}
@@ -89,7 +97,7 @@ void MyInfoView::showZhuanShi(int num)
 
 void MyInfoView::showFace(int faceID)
 {
-	auto headNode = rootNode->getChildByName("headNode");
+	auto headNode = (rootNode->getChildByName("ImageFrame"))->getChildByName("headNode");
 	ImageView* image1 = dynamic_cast<ImageView*>(headNode->getChildByName("character_1"));
 	ImageView* image2 = dynamic_cast<ImageView*>(headNode->getChildByName("character_2"));
 	ImageView* image3 = dynamic_cast<ImageView*>(headNode->getChildByName("character_3"));

@@ -87,7 +87,7 @@
       <ObjectData Name="Node" Tag="182" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Sprite_1" ActionTag="-85046482" Tag="183" IconVisible="False" LeftMargin="-18.6648" RightMargin="-27.3352" TopMargin="-30.0323" BottomMargin="-15.9677" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Sprite_1" ActionTag="-85046482" Tag="183" IconVisible="False" LeftMargin="-47.1648" RightMargin="-55.8352" TopMargin="-32.0323" BottomMargin="-17.9677" ctype="SpriteObjectData">
             <Size X="103.0000" Y="50.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="4.3352" Y="7.0323" />
@@ -95,7 +95,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="action/jiefeng/jiefeng0028.png" Plist="" />
+            <FileData Type="Normal" Path="action/jiefeng/jiefeng0021.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

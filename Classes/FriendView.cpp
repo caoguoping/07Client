@@ -602,7 +602,8 @@ void FriendView::showRanks(DWORD dwWhich)
 			break;
 
 		case E_RankShenglv:
-			sprintf(winRates, "%d %%", DATA->vFriends.at(i).WinRate * 100);
+			sprintf(winRates, "%d.%02d%%", 
+				DATA->vFriends.at(i).WinRate / 100, DATA->vFriends.at(i).WinRate % 100);
 				txtRmb->setString(winRates);
 			sprintf(iconName, "rank%d.png", dwWhich);
 			imgRankIcon->loadTexture(iconName);
@@ -758,16 +759,7 @@ void FriendView::showSearchResult(WORD wFaceId, std::string szNickName)
 void FriendView::clickRefind(Ref* pSender)
 {
 	PLayEffect(EFFECT_BTN);
-// 	if (DATA->vFriendsShuRen.size() >= 12)
-// 	{
-// 		DATA->vFriendsShuRen.erase(DATA->vFriendsShuRen.begin(), DATA->vFriendsShuRen.begin() + 6);
-// 		showShuRen();
-// 	} 
-	//else
-	{
-		SEND_LOGIN->SendData(6, 14, NULL, 0);
-		//Tools::getInstance()->showSysMsgTouming(UTF8::getInstance()->getString("friend", "addMax"));
-	}
+	SEND_LOGIN->SendData(6, 14, NULL, 0);
 }
 
 void FriendView::clickOneKeyAdd(Ref* pSender)  //一键添加
@@ -899,29 +891,6 @@ void FriendView::handleFriendOptHim(void*  data)
 			showPushFriends();
 		}
 		break;
-
-// 	case FriendView::ecAgreeSuccess:   //对方同意添加好友
-// 	{
-// 		strName = pFriendOpt->szNickName;
-// 		strAgree = UTF8::getInstance()->getString("friend", "agreeAdd");
-// 		strName = strName + strAgree;
-// 		Tools::getInstance()->showSysMsgTouming(strName);
-// 
-// 		tagFriendParameter* addedFriends = new tagFriendParameter();
-// 		addedFriends->dwUserID = pFriendOpt->dwTargretUserID;  //对方
-// 		addedFriends->szNickName = pFriendOpt->szNickName;
-// 		addedFriends->dwRmb = pFriendOpt->dwRmb;
-// 		addedFriends->FaceID = pFriendOpt->FaceID;
-// 		addedFriends->wServerID = pFriendOpt->wServerID;
-// 		addedFriends->wKindID = pFriendOpt->wKindID;
-// 		addedFriends->dwLoveLiness = pFriendOpt->dwLoveLiness;
-// 		addedFriends->WinRate = pFriendOpt->WinRate;
-// 
-// 		DATA->vFriends.push_back(*addedFriends);
-// 
-// 
-// 		break;
-// 	}
 
 	case FriendView::ecAgreeFail:
 

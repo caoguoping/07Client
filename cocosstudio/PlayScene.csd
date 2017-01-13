@@ -260,13 +260,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ProjectNode_topBtn" ActionTag="1868111129" Tag="519" IconVisible="True" LeftMargin="814.0000" RightMargin="146.0000" TopMargin="49.6327" BottomMargin="490.3673" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="ProjectNode_topBtn" ActionTag="1868111129" Tag="519" IconVisible="True" LeftMargin="758.4130" RightMargin="201.5870" TopMargin="47.0132" BottomMargin="492.9868" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="814.0000" Y="490.3673" />
+            <Position X="758.4130" Y="492.9868" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8479" Y="0.9081" />
+            <PrePosition X="0.7900" Y="0.9129" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="Icon.csd" Plist="" />
           </AbstractNodeData>
@@ -330,43 +330,43 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="buchu1" ActionTag="-642894708" Tag="963" IconVisible="False" LeftMargin="441.5000" RightMargin="441.5000" TopMargin="322.0000" BottomMargin="182.0000" LeftEage="25" RightEage="25" TopEage="11" BottomEage="11" Scale9OriginX="25" Scale9OriginY="11" Scale9Width="27" Scale9Height="14" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="buchu1" ActionTag="-642894708" Tag="963" IconVisible="False" LeftMargin="447.7800" RightMargin="435.2200" TopMargin="299.8425" BottomMargin="204.1575" LeftEage="25" RightEage="25" TopEage="11" BottomEage="11" Scale9OriginX="25" Scale9OriginY="11" Scale9Width="27" Scale9Height="14" ctype="ImageViewObjectData">
             <Size X="77.0000" Y="36.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="480.0000" Y="200.0000" />
+            <Position X="486.2800" Y="222.1575" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.3704" />
+            <PrePosition X="0.5065" Y="0.4114" />
             <PreSize X="0.0802" Y="0.0667" />
             <FileData Type="Normal" Path="NewPlay/text_pass.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="buchu4" ActionTag="1901185479" Tag="964" IconVisible="False" LeftMargin="186.5001" RightMargin="696.4999" TopMargin="282.0000" BottomMargin="222.0000" LeftEage="25" RightEage="25" TopEage="11" BottomEage="11" Scale9OriginX="25" Scale9OriginY="11" Scale9Width="27" Scale9Height="14" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="buchu4" ActionTag="1901185479" Tag="964" IconVisible="False" LeftMargin="193.4877" RightMargin="689.5123" TopMargin="233.7231" BottomMargin="270.2769" LeftEage="25" RightEage="25" TopEage="11" BottomEage="11" Scale9OriginX="25" Scale9OriginY="11" Scale9Width="27" Scale9Height="14" ctype="ImageViewObjectData">
             <Size X="77.0000" Y="36.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="225.0001" Y="240.0000" />
+            <Position X="231.9877" Y="288.2769" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.2344" Y="0.4444" />
+            <PrePosition X="0.2417" Y="0.5338" />
             <PreSize X="0.0802" Y="0.0667" />
             <FileData Type="Normal" Path="NewPlay/text_pass.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="buchu2" ActionTag="-922973534" Tag="965" IconVisible="False" LeftMargin="702.5001" RightMargin="180.4999" TopMargin="282.0000" BottomMargin="222.0000" LeftEage="25" RightEage="25" TopEage="11" BottomEage="11" Scale9OriginX="25" Scale9OriginY="11" Scale9Width="27" Scale9Height="14" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="buchu2" ActionTag="-922973534" Tag="965" IconVisible="False" LeftMargin="696.5001" RightMargin="186.4999" TopMargin="249.0000" BottomMargin="255.0000" LeftEage="25" RightEage="25" TopEage="11" BottomEage="11" Scale9OriginX="25" Scale9OriginY="11" Scale9Width="27" Scale9Height="14" ctype="ImageViewObjectData">
             <Size X="77.0000" Y="36.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="741.0001" Y="240.0000" />
+            <Position X="735.0001" Y="273.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7719" Y="0.4444" />
+            <PrePosition X="0.7656" Y="0.5056" />
             <PreSize X="0.0802" Y="0.0667" />
             <FileData Type="Normal" Path="NewPlay/text_pass.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="buchu3" ActionTag="-575689100" Tag="966" IconVisible="False" LeftMargin="441.5000" RightMargin="441.5000" TopMargin="238.3401" BottomMargin="265.6599" LeftEage="25" RightEage="25" TopEage="11" BottomEage="11" Scale9OriginX="25" Scale9OriginY="11" Scale9Width="27" Scale9Height="14" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="buchu3" ActionTag="-575689100" Tag="966" IconVisible="False" LeftMargin="448.5000" RightMargin="434.5000" TopMargin="222.3401" BottomMargin="281.6599" LeftEage="25" RightEage="25" TopEage="11" BottomEage="11" Scale9OriginX="25" Scale9OriginY="11" Scale9Width="27" Scale9Height="14" ctype="ImageViewObjectData">
             <Size X="77.0000" Y="36.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="480.0000" Y="283.6599" />
+            <Position X="487.0000" Y="299.6599" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5253" />
+            <PrePosition X="0.5073" Y="0.5549" />
             <PreSize X="0.0802" Y="0.0667" />
             <FileData Type="Normal" Path="NewPlay/text_pass.png" Plist="" />
           </AbstractNodeData>
@@ -440,43 +440,43 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="myClock" ActionTag="1274919705" Tag="182" IconVisible="True" LeftMargin="63.0000" RightMargin="897.0000" TopMargin="403.0000" BottomMargin="137.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="myClock" ActionTag="1274919705" Tag="182" IconVisible="True" LeftMargin="81.3988" RightMargin="878.6012" TopMargin="411.8311" BottomMargin="128.1689" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="63.0000" Y="137.0000" />
+            <Position X="81.3988" Y="128.1689" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0656" Y="0.2537" />
+            <PrePosition X="0.0848" Y="0.2373" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="clock.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="topClock" ActionTag="1602903743" Tag="186" IconVisible="True" LeftMargin="597.8616" RightMargin="362.1384" TopMargin="212.9344" BottomMargin="327.0656" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="topClock" ActionTag="1602903743" Tag="186" IconVisible="True" LeftMargin="563.6099" RightMargin="396.3901" TopMargin="177.9875" BottomMargin="362.0125" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="597.8616" Y="327.0656" />
+            <Position X="563.6099" Y="362.0125" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.6228" Y="0.6057" />
+            <PrePosition X="0.5871" Y="0.6704" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="clock.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="rightClock" ActionTag="-1154614239" Tag="190" IconVisible="True" LeftMargin="777.8616" RightMargin="182.1384" TopMargin="239.9344" BottomMargin="300.0656" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="rightClock" ActionTag="-1154614239" Tag="190" IconVisible="True" LeftMargin="821.5978" RightMargin="138.4022" TopMargin="261.8099" BottomMargin="278.1901" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="777.8616" Y="300.0656" />
+            <Position X="821.5978" Y="278.1901" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8103" Y="0.5557" />
+            <PrePosition X="0.8558" Y="0.5152" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="clock.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="leftClock" ActionTag="678431983" Tag="194" IconVisible="True" LeftMargin="192.8616" RightMargin="767.1384" TopMargin="242.9344" BottomMargin="297.0656" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="leftClock" ActionTag="678431983" Tag="194" IconVisible="True" LeftMargin="154.8616" RightMargin="805.1384" TopMargin="238.9344" BottomMargin="301.0656" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="192.8616" Y="297.0656" />
+            <Position X="154.8616" Y="301.0656" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.2009" Y="0.5501" />
+            <PrePosition X="0.1613" Y="0.5575" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="clock.csd" Plist="" />
           </AbstractNodeData>
@@ -665,6 +665,20 @@
             <PrePosition X="0.5073" Y="0.9656" />
             <PreSize X="0.2854" Y="0.0667" />
             <FileData Type="Normal" Path="NewPlay/score-rank_bg.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Button_setting" ActionTag="-996693079" Tag="1027" IconVisible="False" LeftMargin="898.1285" RightMargin="7.8715" TopMargin="2.2611" BottomMargin="469.7389" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="24" Scale9Height="46" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="54.0000" Y="68.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="925.1285" Y="503.7389" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9637" Y="0.9328" />
+            <PreSize X="0.0562" Y="0.1259" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <PressedFileData Type="Normal" Path="NewPlay/button_setting_2.png" Plist="" />
+            <NormalFileData Type="Normal" Path="NewPlay/button_setting_1.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

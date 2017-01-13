@@ -6,8 +6,8 @@
       <ObjectData Name="Node" Tag="104" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Image_2" ActionTag="448933038" Tag="128" IconVisible="False" LeftMargin="-35.0999" RightMargin="-249.9001" TopMargin="-39.6632" BottomMargin="-41.3368" LeftEage="94" RightEage="94" TopEage="26" BottomEage="26" Scale9OriginX="94" Scale9OriginY="26" Scale9Width="97" Scale9Height="29" ctype="ImageViewObjectData">
-            <Size X="285.0000" Y="81.0000" />
+          <AbstractNodeData Name="Image_2" ActionTag="448933038" Tag="128" IconVisible="False" LeftMargin="-14.5999" RightMargin="-229.4001" TopMargin="-37.1632" BottomMargin="-38.8368" LeftEage="94" RightEage="94" TopEage="26" BottomEage="26" Scale9OriginX="94" Scale9OriginY="26" Scale9Width="56" Scale9Height="24" ctype="ImageViewObjectData">
+            <Size X="244.0000" Y="76.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="107.4001" Y="-0.8368" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -77,7 +77,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/headshot_4.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="myName_0_3" ActionTag="923459793" Tag="1688" IconVisible="False" LeftMargin="68.1069" RightMargin="-203.1069" TopMargin="-23.5510" BottomMargin="-1.4490" FontSize="22" LabelText="我是笨笨笨笨" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="myName_0_3" ActionTag="923459793" Tag="1688" IconVisible="False" LeftMargin="68.1069" RightMargin="-203.1069" TopMargin="-23.5510" BottomMargin="-1.4490" FontSize="22" LabelText="我是笨笨笨笨" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="135.0000" Y="25.0000" />
             <AnchorPoint ScaleX="0.6276" ScaleY="0.4116" />
             <Position X="152.8329" Y="8.8410" />
@@ -113,10 +113,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="numberGoldBg" ActionTag="942056597" Tag="1368" IconVisible="False" LeftMargin="263.7191" RightMargin="-463.7191" TopMargin="-28.9856" BottomMargin="-13.0144" ctype="SpriteObjectData">
+          <AbstractNodeData Name="numberGoldBg" ActionTag="942056597" Tag="1368" IconVisible="False" LeftMargin="270.7245" RightMargin="-470.7245" TopMargin="-28.9856" BottomMargin="-13.0144" ctype="SpriteObjectData">
             <Size X="200.0000" Y="42.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="363.7191" Y="7.9856" />
+            <Position X="370.7245" Y="7.9856" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -124,10 +124,10 @@
             <FileData Type="Normal" Path="NewLobby/number_bg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_gold" ActionTag="2036419876" Tag="1365" IconVisible="False" LeftMargin="262.3503" RightMargin="-311.3503" TopMargin="-28.9731" BottomMargin="-15.0269" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="9" RightEage="9" TopEage="11" BottomEage="11" Scale9OriginX="9" Scale9OriginY="11" Scale9Width="31" Scale9Height="22" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_gold" ActionTag="2036419876" Tag="1365" IconVisible="False" LeftMargin="269.3557" RightMargin="-318.3557" TopMargin="-28.9732" BottomMargin="-15.0268" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="9" RightEage="9" TopEage="11" BottomEage="11" Scale9OriginX="9" Scale9OriginY="11" Scale9Width="31" Scale9Height="22" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="49.0000" Y="44.0000" />
             <AnchorPoint ScaleX="0.5554" ScaleY="0.5667" />
-            <Position X="289.5649" Y="9.9079" />
+            <Position X="296.5703" Y="9.9080" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -139,10 +139,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_gold" ActionTag="904662070" Tag="132" IconVisible="False" LeftMargin="317.4148" RightMargin="-405.4148" TopMargin="-18.5321" BottomMargin="-6.4679" FontSize="22" LabelText="1234556" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_gold" ActionTag="904662070" Tag="132" IconVisible="False" LeftMargin="324.4206" RightMargin="-412.4206" TopMargin="-18.5321" BottomMargin="-6.4679" FontSize="22" LabelText="1234556" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="88.0000" Y="25.0000" />
             <AnchorPoint ScaleX="0.6276" ScaleY="0.4116" />
-            <Position X="372.6436" Y="3.8221" />
+            <Position X="379.6494" Y="3.8221" />
             <Scale ScaleX="1.0000" ScaleY="0.9293" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -151,10 +151,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="numberGoldBg_0" ActionTag="476902136" Tag="134" IconVisible="False" LeftMargin="476.7598" RightMargin="-676.7598" TopMargin="-27.9095" BottomMargin="-14.0905" ctype="SpriteObjectData">
+          <AbstractNodeData Name="numberGoldBg_0" ActionTag="476902136" Tag="134" IconVisible="False" LeftMargin="470.9211" RightMargin="-670.9211" TopMargin="-29.0771" BottomMargin="-12.9229" ctype="SpriteObjectData">
             <Size X="200.0000" Y="42.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="576.7598" Y="6.9095" />
+            <Position X="570.9211" Y="8.0771" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -162,10 +162,10 @@
             <FileData Type="Normal" Path="NewLobby/number_bg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_diamond" ActionTag="666831215" Tag="133" IconVisible="False" LeftMargin="475.3893" RightMargin="-524.3893" TopMargin="-27.8976" BottomMargin="-16.1024" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="9" RightEage="9" TopEage="11" BottomEage="11" Scale9OriginX="9" Scale9OriginY="11" Scale9Width="31" Scale9Height="22" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_diamond" ActionTag="666831215" Tag="133" IconVisible="False" LeftMargin="469.5500" RightMargin="-518.5500" TopMargin="-29.0653" BottomMargin="-14.9347" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="9" RightEage="9" TopEage="11" BottomEage="11" Scale9OriginX="9" Scale9OriginY="11" Scale9Width="31" Scale9Height="22" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="49.0000" Y="44.0000" />
             <AnchorPoint ScaleX="0.5554" ScaleY="0.5667" />
-            <Position X="502.6039" Y="8.8324" />
+            <Position X="496.7646" Y="10.0001" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -177,10 +177,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_diamond" ActionTag="734891218" Tag="135" IconVisible="False" LeftMargin="530.4536" RightMargin="-618.4536" TopMargin="-17.4560" BottomMargin="-7.5440" FontSize="22" LabelText="1234556" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_diamond" ActionTag="734891218" Tag="135" IconVisible="False" LeftMargin="524.6140" RightMargin="-612.6140" TopMargin="-18.6236" BottomMargin="-6.3764" FontSize="22" LabelText="1234556" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="88.0000" Y="25.0000" />
             <AnchorPoint ScaleX="0.6276" ScaleY="0.4116" />
-            <Position X="585.6824" Y="2.7460" />
+            <Position X="579.8428" Y="3.9136" />
             <Scale ScaleX="1.0000" ScaleY="0.9293" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

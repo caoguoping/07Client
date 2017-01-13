@@ -114,7 +114,7 @@
                         <PreSize X="0.2763" Y="0.8866" />
                         <FileData Type="Normal" Path="dailyMission/item_frame_1.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Text_now" ActionTag="143712584" Tag="289" IconVisible="False" LeftMargin="241.3997" RightMargin="47.6003" TopMargin="53.3494" BottomMargin="21.6506" FontSize="20" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_now" ActionTag="143712584" Tag="289" IconVisible="False" LeftMargin="241.3998" RightMargin="47.6002" TopMargin="53.3494" BottomMargin="21.6506" FontSize="20" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="15.0000" Y="22.0000" />
                         <AnchorPoint ScaleX="0.5788" ScaleY="0.6003" />
                         <Position X="250.0818" Y="34.8572" />
@@ -270,7 +270,7 @@
                         <PreSize X="0.2763" Y="0.8866" />
                         <FileData Type="Normal" Path="dailyMission/item_frame_1.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Text_now" ActionTag="1347467199" Tag="302" IconVisible="False" LeftMargin="241.3997" RightMargin="47.6003" TopMargin="53.3494" BottomMargin="21.6506" FontSize="20" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_now" ActionTag="1347467199" Tag="302" IconVisible="False" LeftMargin="241.3998" RightMargin="47.6002" TopMargin="53.3494" BottomMargin="21.6506" FontSize="20" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="15.0000" Y="22.0000" />
                         <AnchorPoint ScaleX="0.5788" ScaleY="0.6003" />
                         <Position X="250.0818" Y="34.8572" />
@@ -426,7 +426,7 @@
                         <PreSize X="0.2763" Y="0.8866" />
                         <FileData Type="Normal" Path="dailyMission/item_frame_1.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Text_now" ActionTag="-696468988" Tag="315" IconVisible="False" LeftMargin="241.3997" RightMargin="47.6003" TopMargin="53.3494" BottomMargin="21.6506" FontSize="20" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_now" ActionTag="-696468988" Tag="315" IconVisible="False" LeftMargin="241.3998" RightMargin="47.6002" TopMargin="53.3494" BottomMargin="21.6506" FontSize="20" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="15.0000" Y="22.0000" />
                         <AnchorPoint ScaleX="0.5788" ScaleY="0.6003" />
                         <Position X="250.0818" Y="34.8572" />
@@ -582,7 +582,7 @@
                         <PreSize X="0.2763" Y="0.8866" />
                         <FileData Type="Normal" Path="dailyMission/item_frame_1.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Text_now" ActionTag="-2123506621" Tag="328" IconVisible="False" LeftMargin="241.3997" RightMargin="47.6003" TopMargin="53.3494" BottomMargin="21.6506" FontSize="20" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_now" ActionTag="-2123506621" Tag="328" IconVisible="False" LeftMargin="241.3998" RightMargin="47.6002" TopMargin="53.3494" BottomMargin="21.6506" FontSize="20" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="15.0000" Y="22.0000" />
                         <AnchorPoint ScaleX="0.5788" ScaleY="0.6003" />
                         <Position X="250.0818" Y="34.8572" />
@@ -738,7 +738,7 @@
                         <PreSize X="0.2763" Y="0.8866" />
                         <FileData Type="Normal" Path="dailyMission/item_frame_1.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Text_now" ActionTag="-1855516978" Tag="341" IconVisible="False" LeftMargin="241.3997" RightMargin="47.6003" TopMargin="53.3494" BottomMargin="21.6506" FontSize="20" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_now" ActionTag="-1855516978" Tag="341" IconVisible="False" LeftMargin="241.3998" RightMargin="47.6002" TopMargin="53.3494" BottomMargin="21.6506" FontSize="20" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="15.0000" Y="22.0000" />
                         <AnchorPoint ScaleX="0.5788" ScaleY="0.6003" />
                         <Position X="250.0818" Y="34.8572" />
@@ -894,7 +894,7 @@
                         <PreSize X="0.2763" Y="0.8866" />
                         <FileData Type="Normal" Path="dailyMission/item_frame_1.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Text_now" ActionTag="70187185" Tag="354" IconVisible="False" LeftMargin="241.3997" RightMargin="47.6003" TopMargin="53.3494" BottomMargin="21.6506" FontSize="20" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_now" ActionTag="70187185" Tag="354" IconVisible="False" LeftMargin="241.3998" RightMargin="47.6002" TopMargin="53.3494" BottomMargin="21.6506" FontSize="20" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="15.0000" Y="22.0000" />
                         <AnchorPoint ScaleX="0.5788" ScaleY="0.6003" />
                         <Position X="250.0818" Y="34.8572" />

@@ -33,6 +33,7 @@ enum EventType
 	REMOVE_POKER_VIEW,			//移除牌的显示
 	SET_POKER_OPACITY,			//调整手牌的透明度
 	BACK_TO_HALL,				//返回大厅
+	BACK_TO_HALL_NEW,           //游戏结束
 	GET_JING_GONG,				//获取别人给自己进贡的牌
 	RE_SHOW_POKER,
 	TONG_HUA_SHUN,

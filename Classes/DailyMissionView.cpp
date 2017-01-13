@@ -40,6 +40,10 @@ void DailyMissionView::initView()
 		BTN_EVENT(closeBtn, 11007)
 		BTN_EVENT(Image_38, 11007)
 
+		//ѹסplayerInfo
+		Image_38->setGlobalZOrder(GOrderPlayerHead + 2);
+	closeBtn->setGlobalZOrder(GOrderPlayerHead + 2);
+
 		char tempStr[64];
 		for (int i = 0; i < 6; i ++)
 		{
@@ -57,6 +61,14 @@ void DailyMissionView::initView()
 
 			btnGoto[i]->setTag(i);
 			UIClick(btnGoto[i], DailyMissionView::clickGotoBtn)
+
+				//ѹסplayerInfo
+				btnGet[i]->setGlobalZOrder(GOrderPlayerHead + 2);
+			imgBlack[i]->setGlobalZOrder(GOrderPlayerHead + 2);
+			btnGoto[i]->setGlobalZOrder(GOrderPlayerHead + 2);
+			txtNowNum[i]->setGlobalZOrder(GOrderPlayerHead + 2);
+			txtNeetNum[i]->setGlobalZOrder(GOrderPlayerHead + 2);
+			txtNumLian[i]->setGlobalZOrder(GOrderPlayerHead + 2);
 
 		}	
 

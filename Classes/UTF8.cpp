@@ -39,8 +39,8 @@ string UTF8::WStrToUTF8(const wstring& str)
 
 string UTF8::getString(string parentName, string name)
 {
-	const char* testPlistPath = "word.plist";
-	string fullPath = CCFileUtils::sharedFileUtils()->fullPathFromRelativeFile("word.plist", testPlistPath);
+	const char* testPlistPath = "data/word.plist";
+	string fullPath = CCFileUtils::sharedFileUtils()->fullPathFromRelativeFile("data/word.plist", testPlistPath);
 	CCDictionary *plistDic = CCDictionary::createWithContentsOfFile(testPlistPath);
 	CCDictionary* levelDic = dynamic_cast<CCDictionary*>(plistDic->objectForKey("guandan"));
 	CCDictionary* farScene = dynamic_cast<CCDictionary*>(levelDic->objectForKey(parentName));

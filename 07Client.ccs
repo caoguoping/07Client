@@ -566,7 +566,9 @@
           <Image Name="button_add_2.png" />
           <Image Name="button_back_1.png" />
           <Image Name="button_back_2.png" />
+          <Image Name="button_back-to-lobby_1 (2).png" />
           <Image Name="button_back-to-lobby_1.png" />
+          <Image Name="button_back-to-lobby_2 (2).png" />
           <Image Name="button_back-to-lobby_2.png" />
           <Image Name="button_cancel_1 (2).png" />
           <Image Name="button_cancel_1 (3).png" />
@@ -1073,6 +1075,7 @@
           <Image Name="ad_page_1.png" />
           <Image Name="ad_page_2.png" />
           <Image Name="ad_unfold_bg.png" />
+          <Image Name="bg.png" />
           <Image Name="bg_lv1.png" />
           <Image Name="bg_lv2.png" />
           <Image Name="bg_lv3.png" />
@@ -1119,7 +1122,9 @@
           <Image Name="number_bg.png" />
           <Image Name="number_frame.png" />
           <Image Name="role_bg.png" />
+          <Image Name="role_snow.png" />
           <Image Name="role-name_bg.png" />
+          <PlistParticleFile Name="snow.plist" />
           <Image Name="title_gold.png" />
           <Image Name="top_bg.png" />
           <Image Name="touming.png" />
@@ -1251,6 +1256,8 @@
           <Image Name="button_pass_2.png" />
           <Image Name="button_record_1.png" />
           <Image Name="button_record_2.png" />
+          <Image Name="button_setting_1.png" />
+          <Image Name="button_setting_2.png" />
           <Image Name="button_sorting_1.png" />
           <Image Name="button_sorting_2.png" />
           <Image Name="button_straight-flush_1.png" />

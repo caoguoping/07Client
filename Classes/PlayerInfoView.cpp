@@ -7,20 +7,28 @@ PlayerInfoView::PlayerInfoView()
 	rootNode = CSLoader::createNode("playerInfo.csb");
 	addChild(rootNode);
 
-    Button  *closeBtn, *eggBtn,  *boomBtn,  *heartBtn,  *flowerBtn, *addFriendBtn;
-    UIGet_Button("closeBtn", rootNode,     closeBtn)
-    UIGet_Button("eggBtn", rootNode,       eggBtn)
-    UIGet_Button("boomBtn", rootNode,      boomBtn)
-    UIGet_Button("heartBtn", rootNode,     heartBtn)
-    UIGet_Button("flowerBtn", rootNode,    flowerBtn)
-    UIGet_Button("addFriendBtn", rootNode, addFriendBtn)
-    
 
+	cocostudio::timeline::ActionTimeline*  timeLine = CSLoader::createTimeline("playerInfo.csb");
+	timeLine->gotoFrameAndPlay(0, false);
+	rootNode->runAction(timeLine);
 
-	ImageView* imgClose, *imgBg;
+	Sprite*  spBg;
+	UIGet_Sprite("ImageFrame", rootNode, spBg)
+
+	
+	UIGet_Button("closeBtn", spBg, closeBtn)
+		UIGet_Button("eggBtn", spBg, eggBtn)
+		UIGet_Button("boomBtn", spBg, boomBtn)
+		UIGet_Button("heartBtn", spBg, heartBtn)
+		UIGet_Button("flowerBtn", spBg, flowerBtn)
+		UIGet_Button("addFriendBtn", spBg, addFriendBtn)
+		UIGet_Button("Button_addGold", spBg, btnAddGold)
+		btnAddGold->setVisible(false);
+
+	ImageView* imgClose;
+
 
 	UIGet_ImageView("Image_1", rootNode, imgClose)
-		UIGet_ImageView("Image_bg", rootNode, imgBg)
 
 	BTN_EVENT(closeBtn, 10701)
 	BTN_EVENT(eggBtn, 10702)
@@ -32,7 +40,6 @@ PlayerInfoView::PlayerInfoView()
 
 	//Ñ¹×¡playerInfo
 	imgClose->setGlobalZOrder(GOrderPlayerHead + 2);
-	imgBg->setGlobalZOrder(GOrderPlayerHead + 2);
 	closeBtn->setGlobalZOrder(GOrderPlayerHead + 2);
 	eggBtn->setGlobalZOrder(GOrderPlayerHead + 2);
 	boomBtn->setGlobalZOrder(GOrderPlayerHead + 2);
@@ -40,23 +47,23 @@ PlayerInfoView::PlayerInfoView()
 	flowerBtn->setGlobalZOrder(GOrderPlayerHead + 2);
 	addFriendBtn->setGlobalZOrder(GOrderPlayerHead + 2);
 
-//	_Image_1->setGlobalZOrder(11);   //¸Ç¹ýplaySceneLayer
 
-	UIGet_Text("nameText", rootNode, txtName)
-	UIGet_Text("Text_id", rootNode, txtId)
+
+	UIGet_Text("nameText", spBg, txtName)
+		UIGet_Text("Text_id", spBg, txtId)
 	Sprite  *spMy, *spOther;
-	UIGet_Sprite("zi01_me", rootNode, spMy)
-		UIGet_Sprite("zi01_other", rootNode, spOther)
+	UIGet_Sprite("zi01_me", spBg, spMy)
+		UIGet_Sprite("zi01_other", spBg, spOther)
 		spMy->setVisible(false);
 	spOther->setVisible(true);
 
-	UIGet_Text("Text_gold", rootNode, txtGold)
+	UIGet_Text("Text_gold", spBg, txtGold)
 		Layout*   lyDiamond;
-	UIGet_Layout("Panel_diamond", rootNode, lyDiamond)
+	UIGet_Layout("Panel_diamond", spBg, lyDiamond)
 		lyDiamond->setVisible(false);
 
 
-	UIGet_Button("addFriendBtn", rootNode, btnAddFriend)
+	UIGet_Button("addFriendBtn", spBg, btnAddFriend)
 		btnAddFriend->setVisible(true);
 
 
@@ -64,9 +71,6 @@ PlayerInfoView::PlayerInfoView()
 
 
 }
-
-
-
 
 PlayerInfoView::~PlayerInfoView()
 {

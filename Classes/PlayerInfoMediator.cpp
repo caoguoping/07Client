@@ -22,7 +22,7 @@ void PlayerInfoMediator::OnRegister()
 {
 	playerInfoView = (PlayerInfoView*)getView();
 
-	head = playerInfoView->rootNode->getChildByName("headNode");
+	head = playerInfoView->rootNode->getChildByName("ImageFrame")->getChildByName("headNode");
 	serviceDesk = DATAPlayerIndesk->getServiceChairID(clientDesk);
 	playerInfoView->txtName->setString(DATAPlayerIndesk->DeskPlayerInfo[serviceDesk].szNickName);
 	playerInfoView->txtGold->setString(Tools::parseLL2String(DATAPlayerIndesk->DeskPlayerInfo[serviceDesk].lScore));
@@ -31,6 +31,16 @@ void PlayerInfoMediator::OnRegister()
 	showHead();
 	Size size = Director::getInstance()->getVisibleSize();
 	getView()->rootNode->setPosition(size.width / 2, size.height / 2);
+
+	if (clientDesk == 0)  //me
+	{
+		  playerInfoView->boomBtn->setTouchEnabled(false);
+		  playerInfoView->flowerBtn->setTouchEnabled(false);
+		  playerInfoView->eggBtn->setTouchEnabled(false);
+		  playerInfoView->heartBtn->setTouchEnabled(false);
+		  playerInfoView->addFriendBtn->setVisible(false);
+	}
+
 }
 
 /**

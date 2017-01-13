@@ -61,10 +61,6 @@ void LoginMediator::callJavaLogin()
 
 #endif
 
-#if(SDKWhich == SDK_CREATE_ROLE)
-	static_cast<LoginView*>(getView())->createRoleTest();
-
-#endif
 
 }
 

@@ -371,8 +371,8 @@
             <PreSize X="0.0000" Y="0.0000" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="bg/button_back-to-lobby_2.png" Plist="" />
-            <NormalFileData Type="Normal" Path="bg/button_back-to-lobby_1.png" Plist="" />
+            <PressedFileData Type="Normal" Path="bg/button_back-to-lobby_2 (2).png" Plist="" />
+            <NormalFileData Type="Normal" Path="bg/button_back-to-lobby_1 (2).png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -458,6 +458,18 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="lizi/gold/gold.plist" Plist="" />
             <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_backTime" ActionTag="38104447" Tag="924" IconVisible="False" LeftMargin="-73.7585" RightMargin="42.7585" TopMargin="68.2475" BottomMargin="-103.2475" FontSize="28" LabelText="10" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="31.0000" Y="35.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-58.2585" Y="-85.7475" />
+            <Scale ScaleX="1.0600" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+            <OutlineColor A="255" R="75" G="113" B="155" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

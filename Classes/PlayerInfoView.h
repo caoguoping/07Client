@@ -12,6 +12,7 @@ public:
 	~PlayerInfoView();
 
 public:
+	Button  *closeBtn, *eggBtn, *boomBtn, *heartBtn, *flowerBtn, *addFriendBtn, *btnAddGold;
 	Text* txtName;
 	Text* txtId;
 	Text* txtGold;

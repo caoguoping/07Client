@@ -17,13 +17,13 @@
             <FileData Type="Normal" Path="createRole/beijing01.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="kuang01_3" ActionTag="-1515209762" Tag="88" IconVisible="False" LeftMargin="13.5002" RightMargin="41.4998" TopMargin="427.5000" BottomMargin="45.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="kuang01_3" ActionTag="-1515209762" Tag="88" IconVisible="False" LeftMargin="12.2257" RightMargin="42.7743" TopMargin="427.5000" BottomMargin="45.5000" ctype="SpriteObjectData">
             <Size X="905.0000" Y="67.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="466.0002" Y="79.0000" />
+            <Position X="464.7257" Y="79.0000" />
             <Scale ScaleX="1.2865" ScaleY="0.9409" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4854" Y="0.1463" />
+            <PrePosition X="0.4841" Y="0.1463" />
             <PreSize X="0.9427" Y="0.1241" />
             <FileData Type="Normal" Path="createRole/frame_name-created.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
@@ -58,14 +58,14 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="nameText" ActionTag="1261289140" Tag="32" IconVisible="False" LeftMargin="362.0799" RightMargin="437.9201" TopMargin="450.4186" BottomMargin="69.5814" TouchEnable="True" FontSize="20" IsCustomSize="True" LabelText="" PlaceHolderText="名字最多六字" MaxLengthEnable="True" MaxLengthText="8" ctype="TextFieldObjectData">
-            <Size X="160.0000" Y="20.0000" />
+          <AbstractNodeData Name="nameText" ActionTag="1261289140" Tag="32" IconVisible="False" LeftMargin="347.0653" RightMargin="412.9347" TopMargin="445.9221" BottomMargin="66.0779" TouchEnable="True" FontSize="22" IsCustomSize="True" LabelText="" PlaceHolderText="名字最多六字" MaxLengthEnable="True" MaxLengthText="8" ctype="TextFieldObjectData">
+            <Size X="200.0000" Y="28.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="442.0799" Y="79.5814" />
+            <Position X="447.0653" Y="80.0779" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4605" Y="0.1474" />
-            <PreSize X="0.1667" Y="0.0370" />
+            <PrePosition X="0.4657" Y="0.1483" />
+            <PreSize X="0.2083" Y="0.0519" />
             <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="character1" ActionTag="639547718" Tag="30" IconVisible="True" LeftMargin="136.0000" RightMargin="824.0000" TopMargin="262.0000" BottomMargin="278.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
@@ -115,7 +115,7 @@
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4990" Y="0.9282" />
-            <PreSize X="0.1281" Y="0.0630" />
+            <PreSize X="0.2781" Y="0.1389" />
             <FileData Type="Normal" Path="createRole/title_role-created.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>

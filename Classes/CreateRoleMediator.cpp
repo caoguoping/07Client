@@ -150,9 +150,22 @@ void CreateRoleMediator::clickAutoBtnHander()
 void CreateRoleMediator::clickCreateBtnHander()
 {
 	PLayEffect(EFFECT_BTN);
-	std::string atring;
-	atring.data();
-	rLogin->szNickName = (nameText->getString()).data();
+	std::string strName = nameText->getString();
+
+	logV("----------------------------------- strName.length %d\n", strName.length());
+	if (strName.length() < 4 )
+	{
+		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "nameLengthError", 11213, -1));
+		return;
+	}
+	if (DATA->onCheckScreenChar(strName))
+	{//½øÐÐÆÁ±Î×Ö¿â¼ì²â
+		blueSkyDispatchEvent(EventType::ALERT, new AlertVO(1, "warning", "nameErroy", 11213, -1));
+		return;
+	}
+
+
+	rLogin->szNickName = strName.c_str();
 	rLogin->wFaceID = faceID;
 	blueSkyDispatchEvent(EventType::SOCKET_INIT, rLogin);
 }

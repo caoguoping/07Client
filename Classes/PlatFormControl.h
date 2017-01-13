@@ -8,10 +8,12 @@
 
 #define SDK_NULL 0   //没有SDK
 #define SDK_YIKE 1   //易科SDK
-#define SDK_CREATE_ROLE 2 //创建角色测试
 
-#define PlatWhich PlatWin
-#define SDKWhich  SDK_NULL
+#define PlatWhich PlatAdr
+#define SDKWhich  SDK_YIKE
+
+//自动打牌
+#define  AutoPlayPoker 0   //1,结算时自动继续开始游戏，0，正常，时间到时跳转到大厅
 
 
 

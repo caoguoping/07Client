@@ -7,6 +7,8 @@
 #include "LobbyView.h"
 #include "LobbyMediator.h"
 #include "ViewManager.h"
+#include "PlatFormControl.h"
+
 
 AccountView::AccountView()
 {
@@ -18,9 +20,28 @@ AccountView::~AccountView()
 
 }
 
+void AccountView::updateBackTimes(float dt)
+{
+	leftTime--;
+	txtBackTime->setString(Tools::parseInt2String(leftTime));
+	if (leftTime <= 0)
+	{
+
+#if(AutoPlayPoker == 0)
+		clickBtnBack(NULL);
+#endif
+
+#if(AutoPlayPoker == 1)
+		clickBtnContinune(NULL);
+#endif
+	}
+
+}
+
 void AccountView::initView()
 {
-
+	leftTime = 10;
+	schedule(schedule_selector(AccountView::updateBackTimes), 1.0f);
 	if (DATA->bGameCate != DataManager::E_GameCateMatch)
 	{
 		rootNode = CSLoader::createNode("jieShuan.csb");
@@ -28,6 +49,8 @@ void AccountView::initView()
 
 		UIGet_Button("fanHuiBtn", rootNode, btnBack)
 			UIClick(btnBack, AccountView::clickBtnBack)
+
+		UIGet_Text("Text_backTime", rootNode, txtBackTime)
 
 		UIGet_Button("continueBtn", rootNode, btnContinue)
 		UIClick(btnContinue, AccountView::clickBtnContinune)
@@ -87,6 +110,7 @@ void AccountView::btnBackHandle()
 		getcontainer()->unschedule(schedule_selector(ConnectGameServiceCommand::heartPacket));
 	}
 	//跳转至大厅界面
+	blueSkyDispatchEvent(EventType::BACK_TO_HALL_NEW);
 	blueSkyDispatchEvent(EventType::BACK_TO_HALL);
 	//creatView(new LobbyView(), new LobbyMediator());
 	DATA->lobbyview->setTouchEnabled(true);
@@ -141,11 +165,13 @@ void AccountView::clickBtnBack(Ref* pSender)
 	}
 }
 
+
+//需要判断钱够不够？
 void AccountView::clickBtnContinune(Ref* pSender)
 {
 	PLayEffect(EFFECT_BTN);
-	((GameDataModel*)getModel(GameDataModel::NAME))->player[0].pokerArr = {};
-	((SendDataService *)getService(SendDataService::NAME))->sendReady();
+	DATAGameData->player[0].pokerArr = {};
+	SEND->sendReady();
 	blueSkyDispatchEvent(EventType::SHOW_PLAYER_ON_DESK);
 	//跳转至打牌界面
 	blueSkyDispatchEvent(10501);

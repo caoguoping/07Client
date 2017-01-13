@@ -26,8 +26,8 @@ PokerTypeVO OutPokerLogicRule::outPokerType(vector<PokerVO*> outPokerArr)
 	vector<PokerVO*> pokerArr = {};
 
 	//这边先将扑克按照牌值从小到大排序
-	//pokerArr = BubbleSort2(outPokerArr);
-	pokerArr = BubbleSort(outPokerArr);
+	pokerArr = BubbleSort2(outPokerArr);
+//	pokerArr = BubbleSort(outPokerArr);
 
 	//先判断是否是炸弹
 	if (len >= 4)
@@ -1118,8 +1118,22 @@ vector<vector<PokerVO*>> OutPokerLogicRule::TiQuDanPai(int value, vector<PokerTy
 	//保存所有的能跟牌的牌组
 	vector<vector<PokerVO*>> TypeArr = {};
 
+	//先考虑有单张的情况
 	for (DWORD i = 0; i < myPokerTypeArr.size(); i++)
 	{
+		if (myPokerTypeArr.at(i).type == 1 && myPokerTypeArr.at(i).value > value)
+		{
+			TypeArr.push_back(myPokerTypeArr.at(i).pokerArr);
+		}
+	}
+
+
+	for (DWORD i = 0; i < myPokerTypeArr.size(); i++)
+	{
+		if (myPokerTypeArr.at(i).type == 1)
+		{
+			break;
+		}
 		vector<PokerVO*> pokerArr = myPokerTypeArr.at(i).pokerArr;
 		for (DWORD j = 0; j < pokerArr.size(); j++)
 		{

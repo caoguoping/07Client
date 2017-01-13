@@ -76,8 +76,8 @@
         <dict>
             <key>loginServerIp</key>  
             <!-- <string>221.226.117.82</string<!-- > -->
-            <string>192.168.2.130</string>
-            <!-- <string>139.196.237.203</string> -->
+            <!-- <string>192.168.2.130</string> -->
+            <string>139.196.237.203</string>
 			<key>loginServerPort</key>  
             <string>5050</string>
 			<key>PrimaryPort</key>  
@@ -116,6 +116,10 @@
             <string>您的钻石不足，请充点钻再来吧。</string>  
 			<key>warningBuy</key>  
             <string>是否确定购买</string> 
+            <key>nameErroy</key>  
+            <string>输入的名字包含敏感词，请重新输入！</string> 
+            <key>nameLengthError</key>  
+            <string>名字长度太短，请重新输入！</string> 
 		</dict>
 
         <key>chat</key>  

@@ -23,6 +23,7 @@ public:
 	~NetDataCommand(){};
 	Text* txtLogin;
 	Text* txtGame;
+	Text* txtGame2;
 	Text* txtFail;
 
 	/**

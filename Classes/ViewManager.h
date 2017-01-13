@@ -8,7 +8,7 @@
 USING_NS_CC;
 
 
-#define GOrderPlayerHead 10
+#define GOrderPlayerHead 1000
 
 class ViewManager
 {

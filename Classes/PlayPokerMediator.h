@@ -12,7 +12,7 @@
 #include "SendDataService.h"
 #include "GameDataModel.h"
 #include "PlayerInDeskModel.h"
-#include "DataManager.h"
+
 #include "PokerMediator.h"
 #include "PokerGameModel.h"
 
@@ -47,7 +47,7 @@ public:
 
 	UIFrameDef(bloodStart)
 	UIFrameDef(zhupai)	
-		ImageView*  imgZhupai;
+	ImageView*  imgZhupai;
 	ImageView*  imgZhupaiDi;
 	UIFrameDef(matchEndLoading)
 		UIFrameDef(matchEndLoading2)
@@ -127,6 +127,8 @@ public:
 	void callRemoveZhupaiDi();
 	void callRemoveZhupaiNode();
 	void OnRegister();
+	void refresh();     //界面不清，每次打牌refresh一下。
+	void hideLayer();    //掩藏清理。
 	void readyPlay();
 	void showFriendButtons(bool isShow);
 
@@ -151,6 +153,8 @@ public:
 	void handleTiShi();
 	void handleBuChu();
 	void handleChuPai();
+	void handleJinGong();
+	void handleHuangGong();
 
 public:
 	void handleFriendPlay();

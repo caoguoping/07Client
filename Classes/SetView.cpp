@@ -1,32 +1,45 @@
 #include "SetView.h"
 #include "SGTools.h"
 #include "MusicService.h"
+#include "ViewManager.h"
 
 SetView::SetView()
 {
 	rootNode = CSLoader::createNode("set.csb");
 	addChild(rootNode);
-	rootNode->setScale(0.8f, 0.8f);
-	rootNode->runAction(Sequence::create(
-		ScaleTo::create(0.2f, 1.03f),
-		ScaleTo::create(0.15f, 1.0f),
-		nullptr));
-	UIGet_CheckBox("musicBtn", rootNode, chkMusic)
-	UIGet_CheckBox("effectBtn", rootNode, chkEffect)
+
+	cocostudio::timeline::ActionTimeline*  timeLine = CSLoader::createTimeline("set.csb");
+	timeLine->gotoFrameAndPlay(0, false);
+	rootNode->runAction(timeLine);
+
+	Sprite*  spBg;
+	UIGet_Sprite("ImageFrame", rootNode, spBg)
+
+		UIGet_CheckBox("musicBtn", spBg, chkMusic)
+		UIGet_CheckBox("effectBtn", spBg, chkEffect)
 	UIClick(chkMusic, SetView::clickChkMusic)
 	UIClick(chkEffect, SetView::clickChkEffect)
 
     Button  *closeBtn,  *reLoginBtn,  *helpBtn;
     ImageView*   imgClose;
-    UIGet_Button("closeBtn", rootNode, closeBtn)
-    UIGet_Button("reLoginBtn", rootNode, reLoginBtn)
-    UIGet_Button("helpBtn", rootNode, helpBtn)
-    UIGet_ImageView("Image_38", rootNode, imgClose)
+	UIGet_Button("closeBtn", spBg, closeBtn)
+		UIGet_Button("reLoginBtn", spBg, reLoginBtn)
+		UIGet_Button("helpBtn", spBg, helpBtn)
+		UIGet_ImageView("Image_38", rootNode, imgClose)
     
 	BTN_EVENT(imgClose, 14001)
 	BTN_EVENT(closeBtn, 14001)
 	BTN_EVENT(reLoginBtn, 14005)
 	BTN_EVENT(helpBtn, 14006)
+
+	//ѹסplayerInfo
+	imgClose->setGlobalZOrder(GOrderPlayerHead + 2);
+	closeBtn->setGlobalZOrder(GOrderPlayerHead + 2);
+	reLoginBtn->setGlobalZOrder(GOrderPlayerHead + 2);
+	helpBtn->setGlobalZOrder(GOrderPlayerHead + 2);
+	chkMusic->setGlobalZOrder(GOrderPlayerHead + 2);
+	chkEffect->setGlobalZOrder(GOrderPlayerHead + 2);
+
    
 }
 

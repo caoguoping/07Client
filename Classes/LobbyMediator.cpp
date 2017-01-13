@@ -34,6 +34,18 @@ void LobbyMediator::OnRegister()
 	lobbyView->txtPlayerName->setString(DATA->myBaseData.szNickName);
 
 	lobbyView->txtId->setString(CallCppHelper::getInstance()->mUid);
+
+
+	//创建打牌场
+	PlayPokerMediator*   pMediator = new PlayPokerMediator();
+	PlayPokerView*    pView = new PlayPokerView();
+	DATA->playPokerMediator = pMediator;
+	DATA->playPokerView = pView;
+	creatView(pView, pMediator);
+	//removeView(pMediator, true);
+	pView->hideLayer();
+	pMediator->hideLayer();
+
 }
 
 /**

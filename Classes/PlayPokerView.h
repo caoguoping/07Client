@@ -34,6 +34,8 @@ public:
 	void showTouyou(int);
 	void startClock(int deskID, int index = 1);  //deskId : client chairId.
 	void viewInit();
+	void refresh();   //界面不清，每次重置。
+	void hideLayer();  //掩藏界面，去除点击等
 public:
 
 	Sprite*   spDesk[4];
@@ -72,7 +74,7 @@ public:
 	Text*    txtChang;
 
 	int time;   //timer
-	int nowIndex;
+	int nowIndex;    //1 出牌时间到，  2 进贡时间到   3 还贡时间到
 	int sucessesPlayer ;   //已出完牌的玩家个数
 	int desk;
 	int face;
@@ -90,6 +92,7 @@ public:
 
 	//头游
 	UIFrameDef(touyou)
+//		UIFrameDef(jiefeng)
     void gameOverHandle();
 
 	//正在匹配

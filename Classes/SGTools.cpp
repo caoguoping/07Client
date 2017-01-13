@@ -61,9 +61,9 @@ void Tools::showSysMsgTouming(std::string msg, float x, float y, Color3B color, 
 	txtMsg->setColor(color);
 	getcontainer()->addChild(rootNode, 40000);
 	rootNode->runAction(Sequence::create(
-		MoveBy::create(0.4f, Vec2(0, 10)),
-		DelayTime::create(1.5f),
-		FadeOut::create(1.0f),
+		//MoveBy::create(0.7f, Vec2(0, 10)),
+		DelayTime::create(0.5f),
+		FadeOut::create(0.5f),
 		CallFuncN::create(CC_CALLBACK_1(Tools::closeSysMsgTouming , this)),
 		NULL
 

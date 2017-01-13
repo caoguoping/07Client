@@ -159,31 +159,28 @@ void PokerMediator::OnRegister()
 			//本玩家
 			case 0:
 				num = gameDataModel->player[0].outPokerArr.size();
-				getView()->rootNode->setPosition(Vec2(size.width / 2 - (4 / 2 * pkJianJu2) + (num - 1)*pkJianJu2, 200));
+				getView()->rootNode->setPosition(Vec2(size.width / 2 - (4 / 2 * pkJianJu2) + (num - 1)*pkJianJu2, 220));
 				getView()->rootNode->setScale(0.5);
 				break;
 
 				//左边的玩家
 			case 1:
-				//logP
 				playerV1 = gameDataModel->player[1];
-				//logP
 				num = playerV1.outPokerArr.size();
-				//logP
-				getView()->rootNode->setPosition(Vec2(size.width / 4 - (4 / 2 * pkJianJu2) + (num - 1)*pkJianJu2, size.height * 2 / 5));
+				getView()->rootNode->setPosition(Vec2(size.width / 4 - (4 / 2 * pkJianJu2) + (num - 1)*pkJianJu2 + 20, size.height * 0.5 - 20));
 				getView()->rootNode->setScale(0.5);
 				break;
 
 				//对面的玩家
 			case 2:
 					num = gameDataModel->player[2].outPokerArr.size();
-					getView()->rootNode->setPosition(Vec2(size.width / 2 - (4 / 2 * pkJianJu2) + (num - 1)*pkJianJu2, 280));
+					getView()->rootNode->setPosition(Vec2(size.width / 2 - (4 / 2 * pkJianJu2) + (num - 1)*pkJianJu2, 290));
 				getView()->rootNode->setScale(0.5);
 				break;
 			//右边的玩家
 			case 3:
 				num = gameDataModel->player[3].outPokerArr.size();
-				getView()->rootNode->setPosition(Vec2(size.width * 3 / 4 - (4 / 2 * pkJianJu2) + (num - 1)*pkJianJu2, size.height * 2 / 5));
+				getView()->rootNode->setPosition(Vec2(size.width * 3 / 4 - (4 / 2 * pkJianJu2) + (num - 1)*pkJianJu2, size.height * 0.5 - 20));
 				getView()->rootNode->setScale(0.5);
 				break;
 

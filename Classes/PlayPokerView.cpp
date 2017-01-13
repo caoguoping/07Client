@@ -3,31 +3,20 @@
 #include "DataManager.h"
 #include "ViewManager.h"
 #include "UILayerService.h"
+#include "SetView.h"
+#include "SetMediator.h"
 //test
 #include "InviteMediator.h"
 #include "InviteView.h"
 
 #define TIME_SendPoker 20
+#define TIME_GongPai   8
 
 PlayPokerView::PlayPokerView()
 {
-	time = 1;
-	nowIndex = 1;
-	sucessesPlayer = 0;   //已出完牌的玩家个数
-	desk = -1;
-	face = -1;
-	touyouNode = NULL;
-
+	imgHuaPai = NULL;
 	rootNode = CSLoader::createNode("PlayScene.csb");
 	addChild(rootNode);
-
-	blueSkyDispatchEvent(12600);
-	blueSkyDispatchEvent(12700);
-	blueSkyDispatchEvent(12800);
-	for (int i = 0; i < 3; i++)
-	{
-		imgTouyou[i] = NULL;
-	}
 
 	Node  *node1, *node2, *node3, *node4;
 	UIGet_Node("me_character"   ,rootNode, node1)
@@ -59,58 +48,36 @@ PlayPokerView::~PlayPokerView()
 
 }
 
-void PlayPokerView::showFriendInvites()
+void PlayPokerView::hideLayer()
 {
-	imgInviteBg->setVisible(true);
-	imgInvitebg[0]->setVisible(true);
-	imgInvitebg[1]->setVisible(true);
-	imgInvitebg[2]->setVisible(true);
-	btnInvite[0]->setVisible(true);
-	btnInvite[1]->setVisible(true);
-	btnInvite[2]->setVisible(true);
-	if (DataManager::E_GameTeam == DATA->bGameCate)
+	this->setVisible(false);
+	//this->setTouchEnabled(false);
+}
+
+void PlayPokerView::refresh()
+{
+	this->setVisible(true);
+	time = 1;
+	nowIndex = 1;
+	sucessesPlayer = 0;   //已出完牌的玩家个数
+	desk = -1;
+	face = -1;
+	touyouNode = NULL;
+	for (int i = 0; i < 3; i++)
 	{
-		btnInvite[0]->setVisible(false);
-		btnInvite[2]->setVisible(false);
-		imgInvitebg[0]->setVisible(false);
-		imgInvitebg[2]->setVisible(false);
+		imgTouyou[i] = NULL;
 	}
-}
 
-void PlayPokerView::hideFriendInvite(DWORD  dwWhich)
-{
-	if (dwWhich > 3 || dwWhich <= 0)
+	blueSkyDispatchEvent(12600);
+	blueSkyDispatchEvent(12700);
+	blueSkyDispatchEvent(12800);
+
+	for (int i = 0; i < 4; i ++)
 	{
-		return;
-	}
-	btnInvite[dwWhich - 1]->setVisible(false);
-	imgInvitebg[dwWhich - 1]->setVisible(false);
-}
-
-//外部的邀请按钮
-void PlayPokerView::clickBtnInvite(Ref*   pSender)
-{
-	PLayEffect(EFFECT_BTN)
-	Button*  btn = static_cast<Button*>(pSender);
-	int iTag = btn->getTag();
-
-	creatView(new InviteView(iTag), new InviteMediator());
-
-}
-
-void PlayPokerView::viewInit()
-{
-	char deskName[64];
-	char bgName[64];
-	for (int i = 0; i < 4; i++)
-	{
-		sprintf(deskName, "bscdesk_%d", i + 1);
-		sprintf(bgName, "bscback_%d", i + 1);
-		UIGet_Sprite(deskName, rootNode, spDesk[i])
-		UIGet_Sprite(bgName, rootNode, spBg[i])
 		spDesk[i]->setVisible(false);
 		spBg[i]->setVisible(false);
 	}
+
 	switch (DATA->bGameCate)
 	{
 	case DataManager::E_GameCateNormal:
@@ -147,7 +114,6 @@ void PlayPokerView::viewInit()
 
 	}
 
-
 	//好友场 ,组队
 	if (DataManager::E_GameFriend == DATA->bGameCate || DataManager::E_GameTeam == DATA->bGameCate)
 	{
@@ -161,22 +127,22 @@ void PlayPokerView::viewInit()
 		UIGet_Text("Text_friend", imgInviteBg, txtFriend)
 			UIGet_Text("Text_team", imgInviteBg, txtTeam)
 			txtFriend->setVisible(true);
-			txtTeam->setVisible(false);
-			if (DataManager::E_GameTeam == DATA->bGameCate)
-			{
-				txtFriend->setVisible(false);
-				txtTeam->setVisible(true);
-			}
+		txtTeam->setVisible(false);
+		if (DataManager::E_GameTeam == DATA->bGameCate)
+		{
+			txtFriend->setVisible(false);
+			txtTeam->setVisible(true);
+		}
 
-			UIGet_Button("Button_invite1", rootNode, btnInvite[0])
+		UIGet_Button("Button_invite1", rootNode, btnInvite[0])
 			UIGet_Button("Button_invite2", rootNode, btnInvite[1])
 			UIGet_Button("Button_invite3", rootNode, btnInvite[2])
 
-		btnInvite[0]->setTag(1);
+			btnInvite[0]->setTag(1);
 		btnInvite[1]->setTag(2);
 		btnInvite[2]->setTag(3);
 
-			UIClick(btnInvite[0], PlayPokerView::clickBtnInvite)
+		UIClick(btnInvite[0], PlayPokerView::clickBtnInvite)
 			UIClick(btnInvite[1], PlayPokerView::clickBtnInvite)
 			UIClick(btnInvite[2], PlayPokerView::clickBtnInvite)
 	}
@@ -194,7 +160,7 @@ void PlayPokerView::viewInit()
 		{
 			txtFriend->setVisible(true);
 			txtTeam->setVisible(false);
-		} 
+		}
 		else if (DataManager::E_GameTeamPassive == DATA->bGameCate)
 		{
 			txtFriend->setVisible(false);
@@ -202,6 +168,39 @@ void PlayPokerView::viewInit()
 		}
 	}
 
+	hideClock();
+	hideAllFace();
+	hideAllName();
+	hideAllPokerNum();
+	pipeiAction->setVisible(false);
+	showPiPei(true);
+
+	if (DATA->bGameCate == DataManager::E_GameCateMatch)
+	{
+		imgLunChang->setVisible(true);
+		imgBeilv->setVisible(false);
+		showLunChang();
+	}
+	else
+	{
+		imgLunChang->setVisible(false);
+		imgBeilv->setVisible(true);
+	}
+}
+
+void PlayPokerView::viewInit()
+{
+	char deskName[64];
+	char bgName[64];
+	for (int i = 0; i < 4; i++)
+	{
+		sprintf(deskName, "bscdesk_%d", i + 1);
+		sprintf(bgName, "bscback_%d", i + 1);
+		UIGet_Sprite(deskName, rootNode, spDesk[i])
+		UIGet_Sprite(bgName, rootNode, spBg[i])
+		spDesk[i]->setVisible(false);
+		spBg[i]->setVisible(false);
+	}
 
 	//时间钟
 	myClock = rootNode->getChildByName("myClock");
@@ -242,32 +241,21 @@ void PlayPokerView::viewInit()
 	rightClock->addChild(rightTimer);
 	rightTimer->setPosition(Vec2(0, -7));
 	rightClockText->setLocalZOrder(rightTimer->getLocalZOrder() + 1);
-
-	hideClock();
-
 	//玩家形象
 	meCharacterNode = rootNode->getChildByName("me_character");
 	leftCharacterNode = rootNode->getChildByName("left_character");
 	topCharacterNode = rootNode->getChildByName("top_character");
 	rightCharacterNode = rootNode->getChildByName("right_character");
-	hideAllFace();
-
 	//玩家名称
 	leftName = dynamic_cast<Text*>(rootNode->getChildByName("leftName"));
 	rightName = dynamic_cast<Text*>(rootNode->getChildByName("rightName"));
 	topName = dynamic_cast<Text*>(rootNode->getChildByName("topName"));
-	hideAllName();
-
 	//玩家剩余牌数
 	leftPokerNum = rootNode->getChildByName("leftPokerNum");
 	topPokerNum = rootNode->getChildByName("topPokerNum");
 	rightPokerNum = rootNode->getChildByName("rightPokerNum");
-	hideAllPokerNum();
 
 	pipeiAction = dynamic_cast<cocostudio::Armature*>(rootNode->getChildByName("pipeiAction"));
-	pipeiAction->setVisible(false);
-	showPiPei(true);
-
 
 	//倍率与轮场
 	Node* paiFenNode = rootNode->getChildByName("ProjectNode_score");
@@ -277,19 +265,55 @@ void PlayPokerView::viewInit()
 		UIGet_Text("Text_lun", imgLunChang, txtLun)
 		UIGet_Text("Text_chang", imgLunChang, txtChang)
 
-
-		if (DATA->bGameCate == DataManager::E_GameCateMatch)
+		Button*  btnSetting;
+		UIGet_Button("Button_setting", rootNode, btnSetting)
+			btnSetting->addClickEventListener([&](Ref* psender)
 		{
-			imgLunChang->setVisible(true);
-			imgBeilv->setVisible(false);
-			showLunChang();
+			PLayEffect(EFFECT_BTN)
+				creatView(new SetView(), new SetMediator());
+		}
+		);
 
-		}
-		else
-		{
-			imgLunChang->setVisible(false);
-			imgBeilv->setVisible(true);
-		}
+
+}
+
+void PlayPokerView::showFriendInvites()
+{
+	imgInviteBg->setVisible(true);
+	imgInvitebg[0]->setVisible(true);
+	imgInvitebg[1]->setVisible(true);
+	imgInvitebg[2]->setVisible(true);
+	btnInvite[0]->setVisible(true);
+	btnInvite[1]->setVisible(true);
+	btnInvite[2]->setVisible(true);
+	if (DataManager::E_GameTeam == DATA->bGameCate)
+	{
+		btnInvite[0]->setVisible(false);
+		btnInvite[2]->setVisible(false);
+		imgInvitebg[0]->setVisible(false);
+		imgInvitebg[2]->setVisible(false);
+	}
+}
+
+void PlayPokerView::hideFriendInvite(DWORD  dwWhich)
+{
+	if (dwWhich > 3 || dwWhich <= 0)
+	{
+		return;
+	}
+	btnInvite[dwWhich - 1]->setVisible(false);
+	imgInvitebg[dwWhich - 1]->setVisible(false);
+}
+
+//外部的邀请按钮
+void PlayPokerView::clickBtnInvite(Ref*   pSender)
+{
+	PLayEffect(EFFECT_BTN)
+		Button*  btn = static_cast<Button*>(pSender);
+	int iTag = btn->getTag();
+
+	creatView(new InviteView(iTag), new InviteMediator());
+
 }
 
 void PlayPokerView::showPiPei(bool show)
@@ -378,10 +402,21 @@ void PlayPokerView::startClock(int deskID,int index)
 		leftClock->setVisible(true);
 		break;
 	}
-	myClockText->setString("20");
-	rightClockText->setString("20");
-	topClockText->setString("20");
-	leftClockText->setString("20");
+	if (nowIndex == 1)
+	{
+		myClockText->setString("20");
+		rightClockText->setString("20");
+		topClockText->setString("20");
+		leftClockText->setString("20");
+	}
+	else
+	{
+		myClockText->setString("8");
+		rightClockText->setString("8");
+		topClockText->setString("8");
+		leftClockText->setString("8");
+	}
+
 
 	myTimer->setPercentage(100);
 	leftTimer->setPercentage(100);
@@ -391,48 +426,76 @@ void PlayPokerView::startClock(int deskID,int index)
 }
 void PlayPokerView::clockShow(float dt)
 {
-	if (time > TIME_SendPoker)
-		return;
 	char a[256];
-	int i = TIME_SendPoker - time;
-	sprintf(a, "%d", i);
-	string m = a;
-	myClockText->setString(m);
-	rightClockText->setString(m);
-	topClockText->setString(m);
-	leftClockText->setString(m);
+	int leftTime; 
+	std::string strTmp;
 
-	myTimer->setPercentage(i * 100 / TIME_SendPoker);
-	rightTimer->setPercentage(i * 100 / TIME_SendPoker);
-	topTimer->setPercentage(i * 100 / TIME_SendPoker);
-	leftTimer->setPercentage(i * 100 / TIME_SendPoker);
+	switch (nowIndex)
+	{
+	case 1:
+		if (time > TIME_SendPoker)
+			return;
+		//倒数10秒时开始播放计时器音效
+		if (time > 10)
+		{
+			PLayEffect(JI_SHI_QI)
+		}
+		leftTime = TIME_SendPoker - time;
+		strTmp = Tools::parseInt2String(leftTime);
 
-	//倒数10秒时开始播放计时器音效
-	if (time > 10)
-	{
-		//blueSkyDispatchEvent(20053);
-		PLayEffect(JI_SHI_QI)
-	}
-	if (time == TIME_SendPoker && myClock->isVisible())
-	{
-		if (nowIndex == 1)
+		myTimer->setPercentage(leftTime * 100 / TIME_SendPoker);
+		rightTimer->setPercentage(leftTime * 100 / TIME_SendPoker);
+		topTimer->setPercentage(leftTime * 100 / TIME_SendPoker);
+		leftTimer->setPercentage(leftTime * 100 / TIME_SendPoker);
+
+		if (time == TIME_SendPoker && myClock->isVisible())
 		{
 			blueSkyDispatchEvent(10043);
 		}
-		else if (nowIndex == 2)
+
+		break;
+
+	case 2:
+		if (time > TIME_GongPai)
+			return;
+		leftTime = TIME_GongPai - time;
+		strTmp = Tools::parseInt2String(leftTime);
+
+		myTimer->setPercentage(leftTime * 100 / TIME_GongPai);
+		rightTimer->setPercentage(leftTime * 100 / TIME_GongPai);
+		topTimer->setPercentage(leftTime * 100 / TIME_GongPai);
+		leftTimer->setPercentage(leftTime * 100 / TIME_GongPai);
+		if (time == TIME_GongPai && myClock->isVisible())
 		{
-			//进贡时间到
 			blueSkyDispatchEvent(10044);
-			myClock->setVisible(false);
 		}
-		else if (nowIndex == 3)
+		break;
+
+	case 3:
+		if (time > TIME_GongPai)
+			return;
+		leftTime = TIME_GongPai - time;
+		strTmp = Tools::parseInt2String(leftTime);
+
+		myTimer->setPercentage(leftTime * 100 / TIME_GongPai);
+		rightTimer->setPercentage(leftTime * 100 / TIME_GongPai);
+		topTimer->setPercentage(leftTime * 100 / TIME_GongPai);
+		leftTimer->setPercentage(leftTime * 100 / TIME_GongPai);
+		if (time == TIME_GongPai && myClock->isVisible())
 		{
-			//还贡时间到
 			blueSkyDispatchEvent(10045);
-			myClock->setVisible(false);
 		}
+		break;
+
+	default:
+		break;
+
 	}
-		
+
+	myClockText->setString(strTmp);
+	rightClockText->setString(strTmp);
+	topClockText->setString(strTmp);
+	leftClockText->setString(strTmp);
 	time++;
 }
 
@@ -479,8 +542,7 @@ void PlayPokerView::gameOverHandle()
 {
     hideClock();
     stopClock();
-    imgHuaPai->setVisible(false);
-    
+   
     if (touyouNode)
     {
         stopAction(touyouTimeline);

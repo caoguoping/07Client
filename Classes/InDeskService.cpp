@@ -29,7 +29,9 @@ void InDeskService::onEvent(int i, void* data)
 
 			if (wKindID == 2)
 			{
-				creatView(new PlayPokerView(), new PlayPokerMediator());
+				//creatView(new PlayPokerView(), new PlayPokerMediator());
+				DATA->playPokerMediator->refresh();
+				DATA->playPokerView->refresh();
 				creatView(new PokerActionView(), new PokerActionMediator());
 			}
 			

@@ -17,7 +17,9 @@ void AppDelegate::init()
 	initService();
 	initCommand();
 	blueSkyDispatchEvent(EventType::GAME_START);
-
+	
+	
+	DATA;  //初始化DataManager
 	//添加按键监听
 	auto listener = EventListenerKeyboard::create();
 	listener->onKeyReleased = CC_CALLBACK_2(AppDelegate::onKeyReleased, this);

@@ -33,9 +33,16 @@ NetDataCommand::NetDataCommand()
 	txtGame = Text::create();
 	txtGame->setFontSize(24);
 	txtGame->setPosition(Vec2(480, 350));
-	txtGame->setColor(Color3B(0xFB, 0xFF, 0xFF));
-	txtGame->enableOutline(Color4B(0, 0, 0, 255), 1);
+	txtGame->setColor(Color3B(0xFB, 0x00, 0x00));
 	getcontainer()->addChild(txtGame, 999999);
+
+	txtGame2 = Text::create();
+	txtGame2->setFontSize(24);
+	txtGame2->setPosition(Vec2(480, 450));
+	txtGame2->setColor(Color3B(0x00, 0x00, 0xFF));
+	getcontainer()->addChild(txtGame2, 999999);
+
+
 
 	txtFail = Text::create();
 	txtFail->setFontSize(20);
@@ -1033,31 +1040,32 @@ void NetDataCommand::getPlayerOutPoker(NetData netData)
 void NetDataCommand::getPlayerOutPokerError(NetData netData)
 {
 	BYTE outPokers[30];
-	//PokerGameModel *pokerGameModel = ((PokerGameModel*)getModel(PokerGameModel::NAME));
  	int bCardNum = netData.readByte();//扑克数目
 	netData.readByte();
 	netData.readWORD();//当前玩家
 	netData.readWORD();//出牌玩家
 	std::string strInfo;
+	std::string strInfo2;
 	char temp[16];
-// 	outPokers[0] = 0x32;
-// 	outPokers[1] = 0x13;
-// 	outPokers[2] = 0x14;
-// 	outPokers[3] = 0x15;
-// 	outPokers[4] = 0x16;
-// 	outPokers[5] = 0x17;
-// 	outPokers[6] = 0x18;
-// 	outPokers[7] = 0x19;
-// 	outPokers[8] = 0x1A;
+	char temp2[16];
 	for (int i = 0; i < bCardNum; i++)
-//	for (int i = 0; i < 9; i++)
 	{
 		outPokers[i] = netData.readByte();//扑克列表
 		sprintf(temp, "(%d %d)  ", PokerLogic::getPokerNum(outPokers[i]) + 2,
 			PokerLogic::getPokerHuaSe(outPokers[i]));
 		strInfo.append(temp);
 	}
-	txtGame->setString(strInfo);
+	txtGame->setString(strInfo);  //红色的，错误的牌
+
+	for (int i = 0; i < DATA->pokerSize; i++)
+	{
+
+		sprintf(temp2, "(%d %d)  ", PokerLogic::getPokerNum(DATA->pokers[i]) + 2,
+			PokerLogic::getPokerHuaSe(DATA->pokers[i]));
+		strInfo2.append(temp2);
+	}
+	txtGame2->setString(strInfo2);    //蓝色上一轮牌
+
 }
 
 //不出
@@ -1068,6 +1076,7 @@ void NetDataCommand::notOutPoker(NetData netData)
 	netData.readByte();
 	passCard->wPassUser = netData.readWORD();
 	passCard->wCurrentUser = netData.readWORD();
+	//passCard->wJieFeng = netData.readWORD();
 	blueSkyDispatchEvent(EventType::NOT_OUT_POKER, passCard);
 }
 //进贡

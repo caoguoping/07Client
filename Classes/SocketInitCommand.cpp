@@ -34,20 +34,8 @@ void SocketInitCommand::execute(void* data)
 		
 		getcontainer()->schedule(schedule_selector(SocketInitCommand::socketEventDispatch), 1.0 / 30.0f); //cgp
 		
-// #if(SDKWhich == SDK_CREATE_ROLE)
-// 		if (rLogin.type == 1)
-// 		{
-// 			//µÇÂ¼²âÊÔ
-// 			SEND->sendLoginTest(DATA->dwRoleCreate);
-// 		}
-// 		else
-// 		{
-// 			SEND->sendRegisterTest(DATA->dwRoleCreate);
-// 		}
-// 
-// 
-// 		return;
-// #endif
+
+
 		if (rLogin.type == 1)
 		{
 			//µÇÂ¼²âÊÔ
