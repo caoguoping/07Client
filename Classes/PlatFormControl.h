@@ -9,8 +9,8 @@
 #define SDK_NULL 0   //没有SDK
 #define SDK_YIKE 1   //易科SDK
 
-#define PlatWhich PlatAdr
-#define SDKWhich  SDK_YIKE
+#define PlatWhich PlatWin
+#define SDKWhich  SDK_NULL
 
 //自动打牌
 #define  AutoPlayPoker 0   //1,结算时自动继续开始游戏，0，正常，时间到时跳转到大厅

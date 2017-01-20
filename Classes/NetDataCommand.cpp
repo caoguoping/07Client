@@ -331,6 +331,7 @@ void NetDataCommand::executeLogin(NetData netData)
 					((TCPSocketService*)getService(TCPSocketService::LOGIN))->closeMySocket();
 					break;
 				case 7:
+					//logV("@@@@@@@@@@@@@@@@@@@\n\n\n    7 error string %s \n", netData.readString(46).c_str());
 					blueSkyDispatchEvent(EventType::ALERT, new AlertVO(0, "err", "err2", -1, -1));
 					((TCPSocketService*)getService(TCPSocketService::LOGIN))->closeMySocket();
 					blueSkyDispatchEvent(EventType::GAME_START);
@@ -994,6 +995,8 @@ void NetDataCommand::getInDeskPlayerInfo(NetData netData)
 //获取发牌数据
 void NetDataCommand::getSendPokerInfo(NetData netData)
 {
+	txtGame->setString("");
+	txtGame2->setString("");
 	CMD_S_GameStart *result = new CMD_S_GameStart();
 	result->wBankerUser = netData.readWORD();
 	result->wCurrentUser = netData.readWORD();
@@ -1076,7 +1079,7 @@ void NetDataCommand::notOutPoker(NetData netData)
 	netData.readByte();
 	passCard->wPassUser = netData.readWORD();
 	passCard->wCurrentUser = netData.readWORD();
-	//passCard->wJieFeng = netData.readWORD();
+	passCard->wJieFeng = netData.readWORD();
 	blueSkyDispatchEvent(EventType::NOT_OUT_POKER, passCard);
 }
 //进贡
@@ -1598,6 +1601,7 @@ void NetDataCommand::getFriendFieldInvite(NetData netData)
 	friendInvite->strName = netData.readString(64);
 	ViewPopup*  popup = ViewPopup::create(ViewPopup::popupFriendInvite, friendInvite);
 	VIEW->mainScene->addChild(popup, 1001);
+	blueSkyDispatchEvent(BACK_TO_HALL);
 }
 
 void NetDataCommand::getBroadCastDaoju(NetData netData)

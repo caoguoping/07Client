@@ -48,7 +48,7 @@ struct CMD_S_PassCard
 	BYTE					bNewTurn;							//一轮开始
 	WORD				 	wPassUser;							//放弃玩家
 	WORD				 	wCurrentUser;						//当前玩家
-//	WORD					wJieFeng;                           //1接风，  0不是接风
+	WORD					wJieFeng;                           //1接风，  0不是接风
 };
 //用户进贡
 struct CMD_C_PayTribute

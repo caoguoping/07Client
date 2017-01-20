@@ -28,7 +28,15 @@ void AccountView::updateBackTimes(float dt)
 	{
 
 #if(AutoPlayPoker == 0)
-		clickBtnBack(NULL);
+		if (DATA->bGameCate != DataManager::E_GameBlood)
+		{
+			clickBtnBack(NULL);
+		}
+		else
+		{
+			clickBtnContinune(NULL);
+		}
+
 #endif
 
 #if(AutoPlayPoker == 1)
@@ -41,9 +49,10 @@ void AccountView::updateBackTimes(float dt)
 void AccountView::initView()
 {
 	leftTime = 10;
-	schedule(schedule_selector(AccountView::updateBackTimes), 1.0f);
+
 	if (DATA->bGameCate != DataManager::E_GameCateMatch)
 	{
+		schedule(schedule_selector(AccountView::updateBackTimes), 1.0f);
 		rootNode = CSLoader::createNode("jieShuan.csb");
 		addChild(rootNode);
 
@@ -80,12 +89,7 @@ void AccountView::initView()
 
 		UIGet_Button("nextMatchBtn", rootNode, btnNextMatch)
 			UIClick(btnNextMatch, AccountView::clickBtnNextMatch)
-			UIGet_Layout("Panel_win", rootNode, winLayout)
-			UIGet_Layout("Panel_fail", rootNode, loseLayout)
-			UIGet_Text("Text_matchNum", rootNode, txtPeoples)
-			UIGet_Text("Text_matchRank", rootNode, txtRanks)
-			UIGet_Text("Text_matchRankBest", rootNode, txtBestRanks)
-			UIGet_Text("Text_reward", winLayout, txtRewards)
+
 	}
 
 }

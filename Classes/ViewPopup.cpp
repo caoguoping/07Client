@@ -86,7 +86,6 @@ void ViewPopup::clickClose(Ref* pSender)
 
 void ViewPopup::initView()
 {
-	logP
 	switch (dwKind)
 	{
 	case ViewPopup::popupFriendInvite:

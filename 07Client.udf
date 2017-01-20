@@ -28,5 +28,17 @@
         <EnableHTML5Advanced Value="False" />
       </Value>
     </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="FriendsCell.csd" />
+          <FilePathData Path="jiefeng.csd" />
+          <FilePathData Path="PlayScene.csd" />
+          <FilePathData Path="invite.csd" />
+          <FilePathData Path="jieShuan_match.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="jieShuan_match.csd" />
+      </Value>
+    </Item>
   </Properties>
 </UserData>

@@ -109,8 +109,8 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_free" ActionTag="1315753658" Tag="1217" IconVisible="False" LeftMargin="70.1687" RightMargin="-163.1687" TopMargin="-13.0243" BottomMargin="-13.9757" FontSize="24" LabelText="空闲中..." ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="93.0000" Y="27.0000" />
+          <AbstractNodeData Name="Text_free" ActionTag="1315753658" Tag="1217" IconVisible="False" LeftMargin="91.6687" RightMargin="-141.6687" TopMargin="-13.0243" BottomMargin="-13.9757" FontSize="24" LabelText="空闲" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="50.0000" Y="27.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="116.6687" Y="-0.4757" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />

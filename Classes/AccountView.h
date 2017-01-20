@@ -24,13 +24,7 @@ public:
 
 	int leftTime;    
 	Node*   ndPubMsg;
-	Layout*  winLayout;    //比赛胜利结算
-	Layout*  loseLayout;   //比赛失败结算
-	Text*    txtRanks;    //名次
-	Text*    txtBestRanks;  //最佳名次
-	Text*   txtPeoples;   //多少人场比赛
 
-	Text*   txtRewards;   //奖励金币
 	Text*   txtBackTime;   //返回剩余时间
 	Button  *btnBack, *btnContinue, *btnNextMatch;
 	//失败动画

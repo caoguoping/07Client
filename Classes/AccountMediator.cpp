@@ -167,13 +167,23 @@ void AccountMediator::OnRegister()
 		successImage2->setVisible(isSuccess);
 		failImage1->setVisible(!isSuccess);
 		failImage2->setVisible(!isSuccess);
-		accountView->winLayout->setVisible(isSuccess);
-		accountView->loseLayout->setVisible(!isSuccess);
 
-		accountView->txtRanks->setString(Tools::parseInt2String(DATA->wCdRank));
-		accountView->txtBestRanks->setString(Tools::parseInt2String(DATA->wBestRank));
 
-		accountView->txtRewards->setString(Tools::parseInt2String(dwReword));
+		UIGet_Layout("Panel_win", getView()->rootNode, winLayout)
+			UIGet_Layout("Panel_fail", getView()->rootNode, loseLayout)
+			UIGet_Text("Text_matchNum", getView()->rootNode, txtPeoples)
+			UIGet_Text("Text_matchRank", getView()->rootNode, txtRanks)
+			UIGet_Text("Text_matchRankBest", getView()->rootNode, txtBestRanks)
+			UIGet_Text("Text_reward", winLayout, txtRewards)
+
+
+		winLayout->setVisible(isSuccess);
+		loseLayout->setVisible(!isSuccess);
+
+		txtRanks->setString(Tools::parseInt2String(DATA->wCdRank));
+		txtBestRanks->setString(Tools::parseInt2String(DATA->wBestRank));
+
+		txtRewards->setString(Tools::parseInt2String(dwReword));
 
 		playAccountMusic(isSuccess);
 		accountView->playAccountAction(isSuccess);

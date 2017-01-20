@@ -56,6 +56,8 @@ void InviteView::showFriends()
 		lstInvite->pushBackCustomItem(oneLayout);
 
 	}
+	Layout*   layoutFate = Layout::create();
+	lstInvite->pushBackCustomItem(layoutFate);
 }
 
 

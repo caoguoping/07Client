@@ -147,7 +147,7 @@ void PlayPokerMediator::hideLayer()
 
 void PlayPokerMediator::refresh()
 {
-
+	jiefengNode = NULL;
 	touchBeginPos = Vec2(0, 0);
 	nowBeiLv = 1;  //本局倍率
 	huiGongID = -1;   //回贡对象的服务器椅子ID
@@ -487,6 +487,8 @@ void PlayPokerMediator::OnDeskHandle(void* data)
 {
 	OnDesk onDeskResult;
 	onDeskResult = *(OnDesk*)data;
+	logV("onDeskResult.dwUserID %d, dwUserID, %d, cbUserStatus %d",
+		onDeskResult.dwUserID, DATA->myBaseData.dwUserID, onDeskResult.cbUserStatus);
 	if (onDeskResult.dwUserID != DATA->myBaseData.dwUserID &&
 		(onDeskResult.cbUserStatus == US_OFFLINE || onDeskResult.cbUserStatus == US_FREE))
 	{
@@ -686,11 +688,6 @@ void PlayPokerMediator::delaySendPokerHandle()
 			playPokerView->showDaiJiFace(playerInDeskModel->chair[i], playerInDeskModel->DeskPlayerInfo[i].wFaceID);
 			playPokerView->showCharacterName(playerInDeskModel->chair[i], playerInDeskModel->DeskPlayerInfo[i].szNickName);
 		}
-
-		//remove zhupaiPoker
-// 		UIFrameCreate(zhupai, "zhupai.csb", playPokerView->rootNode, false);
-// 		zhupaiNode->setPosition(WScreen * 0.5, HScreen * 0.5);
-
 	}
 	else
 	{
@@ -726,6 +723,7 @@ void PlayPokerMediator::delaySendPokerHandle()
 		return;
 	}
 
+	UIFrameRemove(jiefeng, VIEW->uiLayer)
 
 	if (DATA->bGameCate == DataManager::E_GameCateMatch)
 	{
@@ -961,8 +959,33 @@ void PlayPokerMediator::notOutPokerHandle(void* data)
 	desk = playerInDeskModel->chair[passData.wPassUser];
 	nextDesk = playerInDeskModel->chair[passData.wCurrentUser];
 	isNewTurn = passData.bNewTurn;
-//	isJiefeng = passData.wJieFeng;
+	isJiefeng = passData.wJieFeng;
 	showBuchu(desk, true, true);
+
+	if (isJiefeng == 1)
+	{
+		Vec2 point;
+		switch (nextDesk)
+		{
+		case 0:
+			point = Vec2(250, 120);
+			break;
+		case 1:
+			point = Vec2(250, 290);
+			break;
+		case 2:
+			point = Vec2(490, 300);
+			break;
+		case 3:
+			point = Vec2(740, 270);
+			break;
+		default:
+			break;
+		}
+		UIFrameCreate(jiefeng, "jiefeng.csb", VIEW->uiLayer, false);
+		jiefengNode->setPosition(point);
+	}
+
 	if (nextDesk == 0)
 	{
 		isMyTurn(true);

@@ -40,6 +40,7 @@ void SendDataService::sendLogin(const char* Accounts, const char* Password, cons
 	memcpy(pLogonAccounts->szPassword, CallCppHelper::getInstance()->mUid, 32);
 	strncpy(pLogonAccounts->szUid, CallCppHelper::getInstance()->mUid, 32);
 
+	logV("\n\n\n################\n uid  %s", CallCppHelper::getInstance()->mUid);
 
 	pLogonAccounts->cbValidateFlags = MB_VALIDATE_FLAGS | LOW_VER_VALIDATE_FLAGS;
 	((TCPSocketService *)getService(TCPSocketService::LOGIN))->SendData(MDM_GP_LOGON, SUB_GP_LOGON_ACCOUNTS, cbBuffer, sizeof(CMD_GP_LogonAccounts));

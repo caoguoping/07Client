@@ -47,6 +47,7 @@ public:
 
 	UIFrameDef(bloodStart)
 	UIFrameDef(zhupai)	
+	UIFrameDef(jiefeng)
 	ImageView*  imgZhupai;
 	ImageView*  imgZhupaiDi;
 	UIFrameDef(matchEndLoading)

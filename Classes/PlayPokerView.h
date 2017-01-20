@@ -92,7 +92,7 @@ public:
 
 	//头游
 	UIFrameDef(touyou)
-//		UIFrameDef(jiefeng)
+
     void gameOverHandle();
 
 	//正在匹配
