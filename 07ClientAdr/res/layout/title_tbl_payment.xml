@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/tbl_title_height"
+    android:background="@color/tbl_white"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/tbl_payment_back"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/tbl_pay_back"
+        android:layout_marginLeft="@dimen/tbl_small"
+         />
+
+    <TextView
+        android:id="@+id/tbl_payment_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:textColor="@color/tbl_text_black"
+        android:textSize="@dimen/tbl_text_large" />
+
+    <TextView
+        android:id="@+id/tbl_payment_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:paddingRight="@dimen/tbl_small"
+        android:textColor="@color/tbl_text_black"
+        android:textSize="@dimen/tbl_text_medium" />
+
+</RelativeLayout>

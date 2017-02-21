@@ -1,0 +1,99 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="tblEditStyleBase">
+        <item name="android:textColorHint">@color/tbl_text_gray</item>
+        <item name="android:textColor">@color/tbl_text_black</item>
+        <item name="android:padding">@dimen/tbl_medium</item>
+        <item name="android:textSize">@dimen/tbl_text_medium</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:background">@color/tbl_gray</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+       
+    </style>
+    
+    <style name="tblEditStyle" parent="@style/tblEditStyleBase">
+        <item name="android:layout_marginLeft">@dimen/tbl_50px</item>
+        <item name="android:layout_marginRight">@dimen/tbl_50px</item>
+    </style>
+    
+    <style name="tblWrongTipsStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/tbl_text_ssmall</item>
+        <item name="android:textColor">@color/tbl_text_red</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginLeft">@dimen/tbl_50px</item>
+        <item name="android:visibility">visible</item>
+    </style>
+    
+    <style name="tblLoginPassBtnStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/tbl_text_medium</item>
+        <item name="android:textColor">@color/tbl_text_white</item>
+        <item name="android:layout_margin">@dimen/tbl_small</item>
+    </style>
+    
+    <style name="tblBottomBtnStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/tbl_text_large</item>
+        <item name="android:padding">@dimen/tbl_slarge</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/tbl_bottom_orange_btn</item>
+        <item name="android:textColor">@drawable/tbl_text_white_orange_bg</item>
+    </style>
+    
+    <style name="tblAccountTitleStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/tbl_text_white</item>
+        <item name="android:textSize">@dimen/tbl_text_medium</item>
+        <item name="android:drawablePadding">@dimen/tbl_medium</item>
+    </style>
+    
+    <style name="tblBtnStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@drawable/tbl_text_btn_bg</item>
+        <item name="android:textSize">@dimen/tbl_text_llarge</item>
+        <item name="android:padding">@dimen/tbl_small</item>
+        <item name="android:layout_marginTop">@dimen/tbl_large</item>
+        <item name="android:background">@drawable/tbl_btn_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">@dimen/tbl_96px</item>
+        <item name="android:layout_marginRight">@dimen/tbl_96px</item>
+    </style>
+
+    <style name="tblPaymnetGoodItemStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/tbl_text_gray</item>
+        <item name="android:textSize">@dimen/tbl_text_medium</item>
+    </style>
+    
+    <style name="tblPaySuccessGoodLabels">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/tbl_text_black</item>
+        <item name="android:textSize">@dimen/tbl_text_medium</item>
+        <item name="android:padding">@dimen/tbl_small</item>
+    </style>
+    <style name="tblPaySuccessGoodValues">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/tbl_text_black</item>
+        <item name="android:textSize">@dimen/tbl_text_small</item>
+    </style>
+    <style name="tblBackArrowStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/tbl_white</item>
+        <item name="android:textSize">@dimen/tbl_text_medium</item>
+        <item name="android:drawableLeft">@drawable/tbl_back_icon</item>
+        <item name="android:paddingLeft">@dimen/tbl_50px</item>
+        <item name="android:paddingRight">@dimen/tbl_50px</item>
+    </style>
+</resources>

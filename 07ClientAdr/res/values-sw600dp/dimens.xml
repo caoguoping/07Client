@@ -1,0 +1,29 @@
+<resources>
+
+    <dimen name="tbl_margin_width">100dp</dimen>
+    
+    <dimen name="tbl_160px">150dp</dimen>
+    <dimen name="tbl_120px">110dp</dimen>
+    <dimen name="tbl_100px">90dp</dimen>
+    <dimen name="tbl_104px">94dp</dimen>
+    <dimen name="tbl_96px">86dp</dimen>
+    <dimen name="tbl_76px">66dp</dimen>
+    <dimen name="tbl_60px">50dp</dimen>
+    <dimen name="tbl_50px">40dp</dimen>
+    <dimen name="tbl_llarge">36dp</dimen>
+    <dimen name="tbl_large">30dp</dimen>
+    <dimen name="tbl_slarge">24dp</dimen>
+    <dimen name="tbl_medium">20dp</dimen>
+    <dimen name="tbl_small">15dp</dimen>
+    <dimen name="tbl_ssmall">10dp</dimen>
+    <dimen name="tbl_micro">4dp</dimen>
+    <dimen name="tbl_single_pixel">2px</dimen>
+     <dimen name="tbl_title_height">86dp</dimen>
+    <dimen name="tbl_text_llarge">40sp</dimen>
+    <dimen name="tbl_text_large">35sp</dimen>
+    <dimen name="tbl_text_medium">28sp</dimen>
+    <dimen name="tbl_text_small">24sp</dimen>
+    <dimen name="tbl_text_ssmall">20sp</dimen>
+    
+    
+</resources>

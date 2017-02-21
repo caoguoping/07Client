@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tbl_white"
+    android:orientation="vertical"
+     >
+
+    <include layout="@layout/title_tbl_payment" />
+
+    <com.tongbulv.sdk.views.XListView
+        android:id="@+id/tbl_pay_record_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tbl_payment_bg"
+        android:layout_marginLeft="@dimen/tbl_small"
+        android:layout_marginRight="@dimen/tbl_small"
+        android:padding="@dimen/tbl_large"
+        android:dividerHeight="@dimen/tbl_large" />
+
+</LinearLayout>

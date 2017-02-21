@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/tbl_pay_record_item_bg"
+    android:padding="@dimen/tbl_large" >
+
+    <ImageView
+        android:id="@+id/tbl_item_pay_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/tbl_user_icon" />
+
+    <TextView
+        android:id="@+id/tbl_item_pay_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/tbl_large"
+        android:layout_toRightOf="@id/tbl_item_pay_icon"
+        android:textSize="@dimen/tbl_text_medium" />
+
+    <TextView
+        android:id="@+id/tbl_item_pay_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tbl_item_pay_label"
+        android:layout_marginLeft="@dimen/tbl_large"
+        android:layout_marginTop="@dimen/tbl_small"
+        android:layout_toRightOf="@id/tbl_item_pay_icon"
+        android:textSize="@dimen/tbl_text_small" />
+
+    <TextView
+        android:id="@+id/tbl_item_pay_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="@dimen/tbl_text_medium" />
+
+    <TextView
+        android:id="@+id/tbl_item_pay_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tbl_item_pay_money"
+        android:layout_marginTop="@dimen/tbl_small"
+        android:textSize="@dimen/tbl_text_small" />
+
+</RelativeLayout>

@@ -1,0 +1,57 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tbl_main_bg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/tbl_llarge" >
+
+            <TextView
+                android:id="@+id/tbl_edit_pass_back"
+                style="@style/tblBackArrowStyle" />
+
+            <TextView
+                style="@style/tblAccountTitleStyle"
+                android:layout_centerHorizontal="true"
+                android:text="@string/tbl_edit_pass" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tbl_editpass_wrong_tips"
+            style="@style/tblWrongTipsStyle" />
+
+        <EditText
+            android:id="@+id/tbl_editpass_old_pass"
+            style="@style/tblEditStyle"
+            android:password="true"
+            android:hint="@string/tbl_old_pass" />
+
+        <EditText
+            android:id="@+id/tbl_editpass_new_pass"
+            style="@style/tblEditStyle"
+            android:layout_marginTop="@dimen/tbl_slarge"
+            android:password="true"
+            android:hint="@string/tbl_new_pass" />
+
+        <EditText
+            android:id="@+id/tbl_editpass_confirm_pass"
+            style="@style/tblEditStyle"
+            android:layout_marginTop="@dimen/tbl_slarge"
+            android:password="true"
+            android:hint="@string/tbl_confrim_pass" />
+
+        <TextView
+            android:id="@+id/tbl_edit_pass_btn"
+            style="@style/tblBottomBtnStyle"
+            android:layout_marginTop="@dimen/tbl_76px"
+            android:text="@string/tbl_sure" />
+    </LinearLayout>
+
+</ScrollView>

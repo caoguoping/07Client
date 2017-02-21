@@ -1,0 +1,19 @@
+﻿<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="false">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/tbl_green" />
+
+            <corners android:bottomRightRadius="@dimen/tbl_small" />
+        </shape>
+	</item>
+	
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/tbl_green_dark" />
+
+            <corners android:bottomRightRadius="@dimen/tbl_small" />
+        </shape>
+	</item>
+
+</selector>

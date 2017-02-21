@@ -36,8 +36,11 @@
           <FilePathData Path="PlayScene.csd" />
           <FilePathData Path="invite.csd" />
           <FilePathData Path="jieShuan_match.csd" />
+          <FilePathData Path="LoginScene.csd" />
+          <FilePathData Path="NewLobby.csd" />
+          <FilePathData Path="lobbyHead.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="jieShuan_match.csd" />
+        <ActiveDocument Path="lobbyHead.csd" />
       </Value>
     </Item>
   </Properties>

@@ -1,0 +1,93 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tbl_main_bg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/tbl_llarge" >
+
+            <TextView
+                android:id="@+id/tbl_find_pass_phone_back"
+                style="@style/tblBackArrowStyle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/tbl_find_account"
+                android:textColor="@color/tbl_white"
+                android:textSize="@dimen/tbl_text_medium" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tbl_find_pass_phone_wrong_tips"
+            style="@style/tblWrongTipsStyle" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/tbl_find_pass_phone_account"
+                style="@style/tblEditStyle"
+                android:hint="@string/tbl_phone"
+                android:inputType="phone" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tbl_small" >
+
+                <EditText
+                    android:id="@+id/tbl_find_pass_phone_vrification"
+                    style="@style/tblEditStyle"
+                    android:layout_width="wrap_content"
+                    android:maxLength="15"
+                    android:hint="@string/tbl_vrification" />
+
+                <TextView
+                    android:id="@+id/tbl_find_pass_phone_vrification_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/tbl_small"
+                    android:layout_toRightOf="@id/tbl_find_pass_phone_vrification"
+                    android:background="@drawable/tbl_vcode_btn_bg"
+                    android:gravity="center"
+                    android:padding="@dimen/tbl_small"
+                    android:text="@string/tbl_get_vrification"
+                    android:textSize="@dimen/tbl_text_small"
+                    android:textColor="@color/tbl_main" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/tbl_find_pass_phone_new_pass"
+                style="@style/tblEditStyle"
+                android:layout_marginTop="@dimen/tbl_small"
+                android:hint="@string/tbl_new_pass"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/tbl_find_pass_phone_pass_confirm"
+                style="@style/tblEditStyle"
+                android:layout_marginTop="@dimen/tbl_small"
+                android:hint="@string/tbl_confrim_pass"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tbl_find_pass_phone_btn"
+            style="@style/tblBottomBtnStyle"
+            android:layout_marginTop="@dimen/tbl_llarge"
+            android:text="@string/tbl_sure" />
+    </LinearLayout>
+
+</ScrollView>

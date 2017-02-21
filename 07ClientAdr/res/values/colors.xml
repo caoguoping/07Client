@@ -1,0 +1,23 @@
+<resources>
+
+    <color name="tbl_main">#43b1ab</color>
+    <color name="tbl_black">#9000</color>
+    <color name="tbl_white">#ffffff</color>
+    <color name="tbl_gray">#daf0ee</color>
+    <color name="tbl_pay_gray">#dfeeec</color>
+    <color name="tbl_orange">#ebb73a</color>
+    <color name="tbl_orange_dark">#bf9731</color>
+    <color name="tbl_green">#a1e02a</color>
+    <color name="tbl_green_dark">#65cc09</color>
+    <color name="tbl_btn">#b3e0dc</color>
+    <color name="tbl_btn_dark">#9dd6d4</color>
+    <color name="tbl_text_gray">#94a2a3</color>
+    <color name="tbl_text_btn">#2f8784</color>
+    <color name="tbl_text_btn_dark">#64b3ab</color>
+    <color name="tbl_text_black">#000000</color>
+    <color name="tbl_text_white">#ffffff</color>
+    <color name="tbl_text_white_orange">#ffeedb</color>
+    <color name="tbl_text_white_green">#e8f6d8</color>
+    <color name="tbl_text_red">#ff0d00</color>
+
+</resources>

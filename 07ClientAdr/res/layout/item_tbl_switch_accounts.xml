@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+     >
+
+    <ImageView
+        android:id="@+id/tbl_item_usericon"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/tbl_user_icon" />
+
+    <TextView
+        android:id="@+id/tbl_item_account"
+        style="@style/tblEditStyleBase"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tbl_item_delete"
+        style="@style/tblEditStyleBase"
+        android:layout_width="wrap_content"
+        android:text="X"
+        android:textColor="@color/tbl_main"
+        android:visibility="gone" />
+
+</LinearLayout>

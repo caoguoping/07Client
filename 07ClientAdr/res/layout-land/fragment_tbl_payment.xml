@@ -1,0 +1,187 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tbl_pay_gray"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/tbl_payment_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:textColor="@color/tbl_text_black"
+        android:textSize="@dimen/tbl_text_large"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/tbl_orange"
+        android:padding="@dimen/tbl_llarge" >
+
+        <com.tongbulv.sdk.views.CircleImageView
+            android:id="@+id/tbl_payment_user_icon"
+            android:layout_width="@dimen/tbl_104px"
+            android:layout_height="@dimen/tbl_104px"
+            android:scaleType="centerCrop"
+            android:src="@drawable/tbl_pay_user_icon" />
+
+        <ImageView
+            android:id="@+id/tbl_payment_back"
+            android:layout_width="@dimen/tbl_50px"
+            android:layout_height="@dimen/tbl_50px"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/tbl_small"
+            android:src="@drawable/tbl_white_back" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tbl_payment_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/tbl_60px"
+                android:layout_marginTop="@dimen/tbl_llarge"
+                android:text="￥30"
+                android:textColor="@color/tbl_text_black"
+                android:textSize="@dimen/tbl_104px" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/tbl_llarge"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tbl_payment_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/tbl_llarge"
+                    android:text=""
+                    android:textColor="@color/tbl_black"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tbl_payment_user_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15927991923"
+                    android:textColor="@color/tbl_black" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tbl_payment_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/tbl_llarge"
+                android:text="记录"
+                android:textColor="@color/tbl_text_btn"
+                android:textSize="@dimen/tbl_text_medium" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/tbl_60px"
+            android:paddingTop="@dimen/tbl_50px" >
+
+            <TextView
+                android:id="@+id/tbl_payment_game_name"
+                style="@style/tblPaymnetGoodItemStyle"
+                android:text="游戏：美露可物语" />
+
+            <TextView
+                android:id="@+id/tbl_payment_game_item"
+                style="@style/tblPaymnetGoodItemStyle"
+                android:layout_marginTop="@dimen/tbl_llarge"
+                android:text="条目：20颗钻石" />
+
+            <TextView
+                android:id="@+id/tbl_payment_game_order"
+                style="@style/tblPaymnetGoodItemStyle"
+                android:layout_marginTop="@dimen/tbl_llarge"
+                android:text="单号：2019945789" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tbl_single_pixel"
+                android:layout_marginTop="@dimen/tbl_llarge"
+                android:background="@color/tbl_main" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/tbl_ssmall"
+                android:layout_marginTop="@dimen/tbl_large"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/tbl_payment_ali"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tbl_white_bg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:layout_width="@dimen/tbl_120px"
+                        android:layout_height="@dimen/tbl_120px"
+                        android:layout_marginLeft="@dimen/tbl_llarge"
+                        android:layout_marginRight="@dimen/tbl_llarge"
+                        android:layout_marginTop="@dimen/tbl_small"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/tbl_pay_ali_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="快捷支付"
+                        android:textColor="@color/tbl_text_gray"
+                        android:textSize="@dimen/tbl_text_medium" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tbl_payment_bank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/tbl_104px"
+                    android:background="@drawable/tbl_white_bg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:layout_width="@dimen/tbl_120px"
+                        android:layout_height="@dimen/tbl_120px"
+                        android:layout_marginLeft="@dimen/tbl_large"
+                        android:layout_marginRight="@dimen/tbl_large"
+                        android:layout_marginTop="@dimen/tbl_small"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/tbl_pay_bank_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="银行卡"
+                        android:textColor="@color/tbl_text_gray"
+                        android:textSize="@dimen/tbl_text_medium" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
