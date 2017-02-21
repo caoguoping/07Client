@@ -1,7 +1,0 @@
-<shape
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
-    <solid android:color="@color/tbl_orange"/>
-    <corners android:topLeftRadius="@dimen/tbl_ssmall"
-        android:topRightRadius="@dimen/tbl_ssmall"/>
-</shape>
